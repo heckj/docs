@@ -1,5 +1,11 @@
 # ``APIGuidelines``
 
+Design Swift APIs that prioritize clarity at the point of use through effective naming and consistent conventions.
+
+@Metadata {
+    @DisplayName("API Guidelines")
+}
+
 ## Overview
 
 Delivering a clear, consistent developer experience when writing Swift code is largely defined by the names and idioms that appear in APIs.

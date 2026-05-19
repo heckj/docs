@@ -1,0 +1,1304 @@
+{
+  "abstract" : [
+    {
+      "text" : "Make your code cross-platform and compatible with WebAssembly by checking for libraries and APIs",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "available for this platform.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Porting"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Porting code from other platforms"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In the currently standardized form widely supported by browsers and other hosts, WebAssembly",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is a 32-bit architecture. You have to take this into account when porting code from other",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "platforms, since ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type is a signed 32-bit integer, and ",
+              "type" : "text"
+            },
+            {
+              "code" : "UInt",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is an unsigned 32-bit integer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "when building with Wasm. You’ll need to audit codepaths that cast 64-bit integers to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or ",
+              "type" : "text"
+            },
+            {
+              "code" : "UInt",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and a good amount of cross-platform test coverage can help with that.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Additionally, there are differences in APIs exposed by the standard C library and Swift core",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "libraries which we discuss in the next few subsections.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "WASILibc-module",
+          "level" : 2,
+          "text" : "`WASILibc` module",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When porting existing projects from other platforms to Wasm you might stumble upon code that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "relies on importing a platform-specific ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/en.wikipedia.org\/wiki\/C_standard_library",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " module directly. It looks like ",
+              "type" : "text"
+            },
+            {
+              "code" : "import Glibc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on Linux, or ",
+              "type" : "text"
+            },
+            {
+              "code" : "import Darwin",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on Apple platforms. Fortunately, most of the standard C library",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "APIs are available when using Swift for Wasm, you just need to use ",
+              "type" : "text"
+            },
+            {
+              "code" : "import WASILibc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to get access to it.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You will most likely want to preserve compatibility with other platforms, thus your imports would look",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "#if canImport(Darwin)",
+            "import Darwin",
+            "#elseif canImport(Glibc)",
+            "import Glibc",
+            "#elseif canImport(WASILibc)",
+            "import WASILibc",
+            "#endif"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Limitations",
+          "level" : 3,
+          "text" : "Limitations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "WebAssembly and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/wasi.dev\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " provide a constrained environment. Multi-threading, for example,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is an experimental feature and is only supported in development snapshots from the ",
+              "type" : "text"
+            },
+            {
+              "code" : "main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " branch. Please be aware of these limitations when",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "porting your code, which also has an impact on what can be supported in the Swift",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Foundation library.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Swift-Foundation-and-Dispatch",
+          "level" : 2,
+          "text" : "Swift Foundation and Dispatch",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/swift.org\/core-libraries\/#foundation",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " is available in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Wasm, but in a limited capacity. The main reason is that ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swift.org\/core-libraries\/#libdispatch",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " is unavailable, as it relies heavily on multi-threading support",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that is still experimental in Swift for WebAssembly. Many Foundation APIs rely on the presence of Dispatch under the hood. A few other types are unavailable in browsers",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or aren’t standardized in WASI hosts, such as support for sockets and low-level networking,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and they had to be disabled. These types are therefore absent in Foundation for Wasm:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type or module",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Status",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "FoundationNetworking",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "FileManager",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Host",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Partially available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Notification",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NotificationQueue",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NSKeyedArchiver",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NSKeyedArchiverHelpers",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NSKeyedCoderOldStyleArray",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NSKeyedUnarchiver",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NSNotification",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "NSSpecialValue",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Port",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "PortMessage",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Process",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable. Consider using the new ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Subprocess",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " library available in Swift 6.2.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "ProcessInfo",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Partially available after 5.7",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "PropertyListEncoder",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "RunLoop",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Stream",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Partially available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "SocketPort",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Thread",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available in ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "main",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " development snapshots",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "Timer",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "UserDefaults",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "✅ Available after 6.0",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "anchor" : "Swift-Testing",
+          "level" : 2,
+          "text" : "Swift Testing",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The new ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/testing",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " library is the recommended way",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to write tests for your Wasm projects. All of its cross-platform APIs are available on WebAssembly, providing a modern and expressive way to validate your code.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "XCTest",
+          "level" : 2,
+          "text" : "XCTest",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-corelibs-xctest",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " is available",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "on WebAssembly platforms, and you can use it to write tests for your Wasm projects.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following XCTest features are unavailable when targeting Wasm:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "API",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Status",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "XCTestExpectation",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "XCTNSPredicateExpectation",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "XCTNSNotificationExpectation",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "XCTWaiter",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "XCTest.perform",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "XCTest.run",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "❌ Unavailable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/porting"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://developer.apple.com/documentation/testing": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/testing",
+  "title" : "Swift Testing",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Testing",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/testing"
+},
+"https://en.wikipedia.org/wiki/C_standard_library": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/C_standard_library",
+  "title" : "C library",
+  "titleInlineContent" : [
+    {
+      "text" : "C",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "library",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/C_standard_library"
+},
+"https://github.com/swiftlang/swift-corelibs-xctest": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-corelibs-xctest",
+  "title" : "The swift-corelibs-xctest project",
+  "titleInlineContent" : [
+    {
+      "text" : "The swift-corelibs-xctest project",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-corelibs-xctest"
+},
+"https://swift.org/core-libraries/#foundation": {
+  "identifier" : "https:\/\/swift.org\/core-libraries\/#foundation",
+  "title" : "The Foundation core library",
+  "titleInlineContent" : [
+    {
+      "text" : "The Foundation core library",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swift.org\/core-libraries\/#foundation"
+},
+"https://swift.org/core-libraries/#libdispatch": {
+  "identifier" : "https:\/\/swift.org\/core-libraries\/#libdispatch",
+  "title" : "the Dispatch core library",
+  "titleInlineContent" : [
+    {
+      "text" : "the Dispatch core",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "library",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swift.org\/core-libraries\/#libdispatch"
+},
+"https://wasi.dev/": {
+  "identifier" : "https:\/\/wasi.dev\/",
+  "title" : "WASI",
+  "titleInlineContent" : [
+    {
+      "text" : "WASI",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/wasi.dev\/"
+}
+}
+}

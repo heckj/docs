@@ -1,0 +1,394 @@
+{
+  "abstract" : [
+    {
+      "text" : "The JPEG image format.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/AttachableImageFormat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/AttachableImageFormat\/jpeg(withEncodingQuality:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Testing",
+    "externalID" : "s:7Testing21AttachableImageFormatV4jpeg19withEncodingQualityACSf_tFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "jpeg"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "withEncodingQuality"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sf",
+        "text" : "Float"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing21AttachableImageFormatV",
+        "text" : "AttachableImageFormat"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "introducedAt" : "6.3",
+        "name" : "Swift"
+      },
+      {
+        "beta" : false,
+        "introducedAt" : "26.4",
+        "name" : "Xcode"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "jpeg(withEncodingQuality:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "jpeg"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "withEncodingQuality"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "encodingQuality"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sf",
+              "text" : "Float"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/AttachableImageFormat",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing21AttachableImageFormatV",
+              "text" : "AttachableImageFormat"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The encoding quality to use when serializing an",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "image. A value of ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "0.0",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " indicates the lowest supported encoding",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "quality and a value of ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "1.0",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " indicates the highest supported encoding",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "quality.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "encodingQuality"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An instance of this type representing the JPEG image format",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "with the specified encoding quality.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/attachableimageformat\/jpeg(withencodingquality:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/AttachableImageFormat": {
+  "abstract" : [
+    {
+      "text" : "A type describing image formats supported by the system that can be used",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "when attaching an image to a test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AttachableImageFormat"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/AttachableImageFormat",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AttachableImageFormat"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AttachableImageFormat",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/attachableimageformat"
+},
+"doc://org.swift.testing/documentation/Testing/AttachableImageFormat/jpeg(withEncodingQuality:)": {
+  "abstract" : [
+    {
+      "text" : "The JPEG image format.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "jpeg"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withEncodingQuality"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sf",
+      "text" : "Float"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing21AttachableImageFormatV",
+      "text" : "AttachableImageFormat"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/AttachableImageFormat\/jpeg(withEncodingQuality:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "jpeg(withEncodingQuality:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/attachableimageformat\/jpeg(withencodingquality:)"
+}
+}
+}

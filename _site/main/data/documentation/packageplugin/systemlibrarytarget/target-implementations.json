@@ -1,0 +1,205 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/Target-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Target Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/recursiveTargetDependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/sourceModule"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/systemlibrarytarget\/target-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget": {
+  "abstract" : [
+    {
+      "text" : "A target describing a system library that is expected to be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "present on the host system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SystemLibraryTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SystemLibraryTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SystemLibraryTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/recursiveTargetDependencies": {
+  "abstract" : [
+    {
+      "text" : "The transitive closure of all the targets on which the receiver depends.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "recursiveTargetDependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/recursiveTargetDependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "recursiveTargetDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/recursivetargetdependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/sourceModule": {
+  "abstract" : [
+    {
+      "text" : "Convenience accessor which casts the receiver to",
+      "type" : "text"
+    },
+    {
+      "code" : "SourceModuleTarget",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", if possible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sourceModule"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin18SourceModuleTargetP",
+      "text" : "SourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/sourceModule",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sourceModule",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/sourcemodule"
+}
+}
+}

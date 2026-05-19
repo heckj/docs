@@ -1,0 +1,684 @@
+{
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the target.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/id"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin23ClangSourceModuleTargetV2idSSvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "id"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:13PackagePlugin23ClangSourceModuleTargetV",
+        "text" : "ClangSourceModuleTarget"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
+        "text" : "ID"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "id"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "id"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:13PackagePlugin23ClangSourceModuleTargetV",
+              "text" : "ClangSourceModuleTarget"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/ID-swift.typealias",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
+              "text" : "ID"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-a-Clang-Source-Module-Target",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/name",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/kind",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/moduleName",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/directoryURL",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/dependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/headerSearchPaths",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/preprocessorDefinitions",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/directory",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/publicHeadersDirectory",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/publicHeadersDirectoryURL"
+      ],
+      "title" : "Inspecting a Clang Source Module Target"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/clangsourcemoduletarget\/id"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget": {
+  "abstract" : [
+    {
+      "text" : "A target consisting of a source code module compiled using Clang.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClangSourceModuleTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClangSourceModuleTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClangSourceModuleTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/dependencies": {
+  "abstract" : [
+    {
+      "text" : "Any other targets on which this target depends, in the same order as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "specified in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin16TargetDependencyO",
+      "text" : "TargetDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/dependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/dependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/directory": {
+  "abstract" : [
+    {
+      "text" : "The absolute path of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin4PathV",
+      "text" : "Path"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/directory",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directory",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/directory"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/directoryURL": {
+  "abstract" : [
+    {
+      "text" : "The file URL of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directoryURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/directoryURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directoryURL",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/directoryurl"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/headerSearchPaths": {
+  "abstract" : [
+    {
+      "text" : "Any custom header search paths specified for the Clang target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "headerSearchPaths"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/headerSearchPaths",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "headerSearchPaths",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/headersearchpaths"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/id": {
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin23ClangSourceModuleTargetV",
+      "text" : "ClangSourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/id"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/kind": {
+  "abstract" : [
+    {
+      "text" : "The kind of module.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "kind"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin10ModuleKindO",
+      "text" : "ModuleKind"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/kind",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "kind",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/kind"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/moduleName": {
+  "abstract" : [
+    {
+      "text" : "The name of the module produced by the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "moduleName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/moduleName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "moduleName",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/modulename"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/name": {
+  "abstract" : [
+    {
+      "text" : "The name of the target, as defined in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/name"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/preprocessorDefinitions": {
+  "abstract" : [
+    {
+      "text" : "Any preprocessor definitions specified for the Clang target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "preprocessorDefinitions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/preprocessorDefinitions",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "preprocessorDefinitions",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/preprocessordefinitions"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/publicHeadersDirectory": {
+  "abstract" : [
+    {
+      "text" : "The directory containing public C headers, if applicable.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "publicHeadersDirectory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin4PathV",
+      "text" : "Path"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/publicHeadersDirectory",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "publicHeadersDirectory",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/publicheadersdirectory"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/publicHeadersDirectoryURL": {
+  "abstract" : [
+    {
+      "text" : "The directory containing public C headers, if applicable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "publicHeadersDirectoryURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/publicHeadersDirectoryURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "publicHeadersDirectoryURL",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/publicheadersdirectoryurl"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/ID-swift.typealias": {
+  "abstract" : [
+    {
+      "text" : "The type that represents the ID of the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/ID-swift.typealias",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Target.ID",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/id-swift.typealias"
+}
+}
+}

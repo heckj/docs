@@ -1,0 +1,387 @@
+{
+  "abstract" : [
+    {
+      "text" : "The build metadata of this version according to the semantic versioning standard, such as a commit hash.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/buildMetadataIdentifiers"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18PackageDescription7VersionV24buildMetadataIdentifiersSaySSGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "buildMetadataIdentifiers"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : "]"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "buildMetadataIdentifiers"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "buildMetadataIdentifiers"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : "]"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-a-version",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/major",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/minor",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/patch",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/prereleaseIdentifiers"
+      ],
+      "title" : "Inspecting a version"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/version\/buildmetadataidentifiers"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version": {
+  "abstract" : [
+    {
+      "text" : "A version according to the semantic versioning specification.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Version"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Version",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/version"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/buildMetadataIdentifiers": {
+  "abstract" : [
+    {
+      "text" : "The build metadata of this version according to the semantic versioning standard, such as a commit hash.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "buildMetadataIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/buildMetadataIdentifiers",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "buildMetadataIdentifiers",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/version\/buildmetadataidentifiers"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/major": {
+  "abstract" : [
+    {
+      "text" : "The major version according to the semantic versioning standard.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "major"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/major",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "major",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/version\/major"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/minor": {
+  "abstract" : [
+    {
+      "text" : "The minor version according to the semantic versioning standard.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "minor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/minor",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "minor",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/version\/minor"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/patch": {
+  "abstract" : [
+    {
+      "text" : "The patch version according to the semantic versioning standard.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "patch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/patch",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "patch",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/version\/patch"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/prereleaseIdentifiers": {
+  "abstract" : [
+    {
+      "text" : "The pre-release identifier according to the semantic versioning standard, such as ",
+      "type" : "text"
+    },
+    {
+      "code" : "-beta.1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prereleaseIdentifiers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/prereleaseIdentifiers",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prereleaseIdentifiers",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/version\/prereleaseidentifiers"
+}
+}
+}

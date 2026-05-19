@@ -1,0 +1,330 @@
+{
+  "abstract" : [
+    {
+      "text" : "A proxy to the Swift Package Manager or IDE hosting the command plugin,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "through which the plugin can ask for specialized information or actions.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementationsSections" : [
+    {
+      "anchor" : "CommandPlugin-Implementations",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin\/packageManager-80gjq"
+      ],
+      "title" : "CommandPlugin Implementations"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin\/packageManager"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin07CommandB0P14packageManagerAA0aE0Vvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "packageManager"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
+        "text" : "PackageManager"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "packageManager"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "packageManager"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
+              "text" : "PackageManager"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/commandplugin\/packagemanager"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/CommandPlugin": {
+  "abstract" : [
+    {
+      "text" : "The plugin protocol that defines functionality for all plugins that have a command capability.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CommandPlugin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CommandPlugin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CommandPlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/commandplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/CommandPlugin/packageManager": {
+  "abstract" : [
+    {
+      "text" : "A proxy to the Swift Package Manager or IDE hosting the command plugin,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "through which the plugin can ask for specialized information or actions.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "packageManager"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
+      "text" : "PackageManager"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin\/packageManager",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "packageManager",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/commandplugin\/packagemanager"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/CommandPlugin/packageManager-80gjq": {
+  "abstract" : [
+    {
+      "text" : "A proxy to the Swift Package Manager or IDE hosting the command plugin,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "through which the plugin can ask for specialized information or actions.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "packageManager"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
+      "text" : "PackageManager"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin\/packageManager-80gjq",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "packageManager",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/commandplugin\/packagemanager-80gjq"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager": {
+  "abstract" : [
+    {
+      "text" : "Provides specialized information and services from the Swift Package Manager",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or an IDE that supports Swift packages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageManager"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageManager"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageManager",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager"
+}
+}
+}

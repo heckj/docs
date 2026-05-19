@@ -1,0 +1,295 @@
+{
+  "abstract" : [
+    {
+      "text" : "The set of traits this package provides.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/traits"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18PackageDescription0A0C6traitsShyAA5TraitVGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "traits"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sh",
+        "text" : "Set"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:18PackageDescription5TraitV",
+        "text" : "Trait"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.1",
+        "name" : "SwiftPM",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "traits"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "traits"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sh",
+              "text" : "Set"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Trait",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:18PackageDescription5TraitV",
+              "text" : "Trait"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Configuring-Traits",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Trait"
+      ],
+      "title" : "Configuring Traits"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/package\/traits"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package": {
+  "abstract" : [
+    {
+      "text" : "The configuration of a Swift package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/traits": {
+  "abstract" : [
+    {
+      "text" : "The set of traits this package provides.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "traits"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sh",
+      "text" : "Set"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription5TraitV",
+      "text" : "Trait"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/traits",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "traits",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/traits"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Trait": {
+  "abstract" : [
+    {
+      "text" : "A package trait.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Trait",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Trait"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Trait",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/trait"
+}
+}
+}

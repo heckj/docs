@@ -1,0 +1,144 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "SwiftAndroid",
+    "modules" : [
+      {
+        "name" : "SwiftAndroid"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "SwiftAndroid"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Articles",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/BuildingForAndroid",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/GettingStarted",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/Integration",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/PortingPackages",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid"
+      ],
+      "title" : "Articles"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftandroid"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftAndroid/documentation/SwiftAndroid": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftAndroid",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/BuildingForAndroid": {
+  "abstract" : [
+    {
+      "text" : "Cross-compile Swift code and package it into Android applications",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/BuildingForAndroid",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Building for Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/buildingforandroid"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/GettingStarted": {
+  "abstract" : [
+    {
+      "text" : "Install the Swift toolchain, Android NDK, and Swift SDK for Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/GettingStarted",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Getting Started",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/gettingstarted"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/Integration": {
+  "abstract" : [
+    {
+      "text" : "Integrate Swift builds with Android tooling and frameworks",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/Integration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Integration",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/integration"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/PortingPackages": {
+  "abstract" : [
+    {
+      "text" : "Adapt existing Swift packages to build and run on Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/PortingPackages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Porting Swift Packages to Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/portingpackages"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/SwiftAndroid": {
+  "abstract" : [
+    {
+      "text" : "Use Swift to build native libraries and applications for Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift on Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/swiftandroid"
+}
+}
+}

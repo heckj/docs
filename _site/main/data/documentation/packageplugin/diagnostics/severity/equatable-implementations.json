@@ -1,0 +1,211 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics\/Severity"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics\/Severity\/Equatable-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Equatable Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Operators",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics\/Severity\/!=(_:_:)"
+      ],
+      "title" : "Operators"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/diagnostics\/severity\/equatable-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Emits errors, warnings, and remarks to show as a result of running the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "plugin.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Diagnostics"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Diagnostics"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/diagnostics"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Diagnostics/Severity": {
+  "abstract" : [
+    {
+      "text" : "The severity of the diagnostic.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Severity"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics\/Severity",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Severity"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Diagnostics.Severity",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/diagnostics\/severity"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Diagnostics/Severity/!=(_:_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "!="
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics\/Severity\/!=(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "!=(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/diagnostics\/severity\/!=(_:_:)"
+}
+}
+}

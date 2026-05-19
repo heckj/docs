@@ -1,0 +1,363 @@
+{
+  "abstract" : [
+    {
+      "text" : "The plug-in product of a Swift package.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/Plugin"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18PackageDescription7ProductC6PluginC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Plugin"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Plugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "Product.Plugin"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Plugin"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Creating-a-Plugin-Product",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/plugin(name:targets:)"
+      ],
+      "title" : "Creating a Plugin Product"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Describing-a-plug-in-product",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/Plugin\/targets"
+      ],
+      "title" : "Describing a plug-in product"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/product\/plugin"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Product": {
+  "abstract" : [
+    {
+      "text" : "The object that defines a package product.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Product"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Product"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Product",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/product"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Product/Plugin": {
+  "abstract" : [
+    {
+      "text" : "The plug-in product of a Swift package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Plugin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/Plugin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Plugin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Product.Plugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/product\/plugin"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Product/Plugin/targets": {
+  "abstract" : [
+    {
+      "text" : "The name of the plug-in target to vend as a product.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "targets"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/Plugin\/targets",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "targets",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/product\/plugin\/targets"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Product/plugin(name:targets:)": {
+  "abstract" : [
+    {
+      "text" : "Defines a product that vends a package plugin target for use by clients of the package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "plugin"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "targets"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription7ProductC",
+      "text" : "Product"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/plugin(name:targets:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "plugin(name:targets:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/product\/plugin(name:targets:)"
+},
+"doc://org.swift.swiftpm.packagedescription/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s8SendableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

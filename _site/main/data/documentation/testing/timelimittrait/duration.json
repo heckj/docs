@@ -1,0 +1,410 @@
+{
+  "abstract" : [
+    {
+      "text" : "A type representing the duration of a time limit applied to a test.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/Duration"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7Testing14TimeLimitTraitV8DurationV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Duration"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Duration"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "9.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "Swift",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Xcode",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "TimeLimitTrait.Duration"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Duration"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use this type to specify a test timeout with ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "TimeLimitTrait",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " uses this type instead of Swift’s built-in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Duration",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "type because the testing library doesn’t support high-precision,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "arbitrarily short durations for test timeouts. The smallest unit of time",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can specify in a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Duration",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is minutes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/s8SendableP",
+        "doc:\/\/org.swift.testing\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Type-Methods",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/Duration\/minutes(_:)"
+      ],
+      "title" : "Type Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/timelimittrait\/duration"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/TimeLimitTrait": {
+  "abstract" : [
+    {
+      "text" : "A type that defines a time limit to apply to a test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimeLimitTrait"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimeLimitTrait"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimeLimitTrait",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/timelimittrait"
+},
+"doc://org.swift.testing/documentation/Testing/TimeLimitTrait/Duration": {
+  "abstract" : [
+    {
+      "text" : "A type representing the duration of a time limit applied to a test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Duration"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/Duration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Duration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimeLimitTrait.Duration",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/timelimittrait\/duration"
+},
+"doc://org.swift.testing/documentation/Testing/TimeLimitTrait/Duration/minutes(_:)": {
+  "abstract" : [
+    {
+      "text" : "Construct a time limit duration given a number of minutes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "minutes"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "some"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sz",
+      "text" : "BinaryInteger"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
+      "text" : "TimeLimitTrait"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV8DurationV",
+      "text" : "Duration"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/Duration\/minutes(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "minutes(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/timelimittrait\/duration\/minutes(_:)"
+},
+"doc://org.swift.testing/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/org.swift.testing\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://org.swift.testing/s8SendableP": {
+  "identifier" : "doc:\/\/org.swift.testing\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

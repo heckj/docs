@@ -1,0 +1,787 @@
+{
+  "abstract" : [
+    {
+      "text" : "Improve the presentation and structure of your content by incorporating special page elements.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/other-formatting-options"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "DocC"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Other Formatting Options"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC offers support for various types of elements such as ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-tables-of-data",
+              "isActive" : true,
+              "overridingTitle" : "tables",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "tables",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : ", notes, and asides.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Add-Notes-and-Other-Asides",
+          "level" : 3,
+          "text" : "Add Notes and Other Asides",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There may be circumstances when you want to get the reader’s attention to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "provide additional advice, or to warn them about common errors or requisite",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "configuration. For those situations, use an aside.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC supports the following types of asides:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "General information that applies to some users.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Important information, such as a requirement.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Important",
+          "style" : "important",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Critical information, like potential data loss or an irrecoverable state.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Warning",
+          "style" : "warning",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Helpful information, such as shortcuts, suggestions, or hints.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Instructional information to reinforce a learning objective, or to encourage developers to try out different parts of your framework.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Experiment",
+          "style" : "experiment",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC supports two syntax alternatives for asides; one using Markdown’s list syntax and the other using Markdown’s block quote syntax.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For short single-line asides, these syntax alternatives differ only by their first character",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "—either a hyphen (",
+              "type" : "text"
+            },
+            {
+              "code" : "-",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), asterisk (",
+              "type" : "text"
+            },
+            {
+              "code" : "*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), or plus sign (",
+              "type" : "text"
+            },
+            {
+              "code" : "+",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") for the list syntax or a greater-than sign (",
+              "type" : "text"
+            },
+            {
+              "code" : ">",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") for the quote syntax—",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "followed by a space, the type of aside (case insensitive), a colon, and the formatted content of the aside.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These examples below are all equivalent:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- Note: Some information ",
+            "* Note: Some information ",
+            "+ Note: Some information ",
+            "> Note: Some information "
+          ],
+          "syntax" : "md",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The text of an aside can use the same style attributes as other text, and include links to other content, including symbols.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "DocC automatically capitalizes the first word of the aside’s content unless that word already includes a capitalized letter.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you want to include more than one paragraph of content in the aside—or include lists, code blocks, or images—then the two syntax alternatives differ in how they extend to cover those paragraphs, lists, code blocks, or images:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "For the list item syntax (with a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "*",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "+",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " prefix), you need to indent additional paragraphs, and other types of content, as far as the start of the containing list item so that the first character of that content lines up with the first letter of the type of aside.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "For the block quote syntax (with a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "*",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "+",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " prefix), you need to start each line—",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "including",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " blank lines between paragraphs, and other types of content—with a greater-than sign (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ">",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ").",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you prefer, both these multi-element syntaxes can sometimes be more clear when the first paragraph, after the type of tag and colon, is also on a new line:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "tabs" : [
+            {
+              "content" : [
+                {
+                  "columns" : [
+                    {
+                      "content" : [
+                        {
+                          "code" : [
+                            "- Note: The first paragraph.",
+                            " ",
+                            "  The second paragraph."
+                          ],
+                          "syntax" : "markdown",
+                          "type" : "codeListing"
+                        }
+                      ],
+                      "size" : 1
+                    },
+                    {
+                      "content" : [
+                        {
+                          "code" : [
+                            "> Note: The first paragraph.",
+                            ">                ",
+                            "> The second paragraph."
+                          ],
+                          "syntax" : "markdown",
+                          "type" : "codeListing"
+                        }
+                      ],
+                      "size" : 1
+                    }
+                  ],
+                  "numberOfColumns" : 2,
+                  "type" : "row"
+                }
+              ],
+              "title" : "First paragraph on the same line as the tag"
+            },
+            {
+              "content" : [
+                {
+                  "columns" : [
+                    {
+                      "content" : [
+                        {
+                          "code" : [
+                            "- Note: ",
+                            "  The first paragraph.",
+                            " ",
+                            "  The second paragraph."
+                          ],
+                          "syntax" : "markdown",
+                          "type" : "codeListing"
+                        }
+                      ],
+                      "size" : 1
+                    },
+                    {
+                      "content" : [
+                        {
+                          "code" : [
+                            "> Note: ",
+                            "> The first paragraph.",
+                            ">                ",
+                            "> The second paragraph."
+                          ],
+                          "syntax" : "markdown",
+                          "type" : "codeListing"
+                        }
+                      ],
+                      "size" : 1
+                    }
+                  ],
+                  "numberOfColumns" : 2,
+                  "type" : "row"
+                }
+              ],
+              "title" : "First paragraph on a new line"
+            }
+          ],
+          "type" : "tabNavigator"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "If you have much information to provide about a subtopic, consider using a subsection rather than a multi-paragraph aside.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "This can help with the flow of the text and make the information appear less visually heavy on the page.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Include-Special-Characters-in-Text",
+          "level" : 3,
+          "text" : "Include Special Characters in Text",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To escape one or more special characters, precede each with a backslash",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(",
+              "type" : "text"
+            },
+            {
+              "code" : "\\",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, to display an asterisk (",
+              "type" : "text"
+            },
+            {
+              "code" : "*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") at the beginning of a line and prevent",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC from converting it into a bulleted list item, place a backslash immediately before it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\\* Not a bulleted list item."
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you use single (",
+              "type" : "text"
+            },
+            {
+              "code" : "*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") or double (",
+              "type" : "text"
+            },
+            {
+              "code" : "**",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") asterisks to apply italic or bold",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "styling, respectively, you can escape any asterisks that the text contains so",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC doesn’t prematurely terminate the styling.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "*Sloths require sustenance\\* to perform activities.*",
+            "",
+            "**Sloths require sustenance\\*\\* to perform activities.**"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC also supports the translation of hex codes and HTML entities. For example, using the hex code ",
+              "type" : "text"
+            },
+            {
+              "code" : "\\&#xa9;",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "will render as the copyright sign (©).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Structure-and-Formatting",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-tables-of-data",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-images",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages"
+      ],
+      "title" : "Structure and Formatting"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/other-formatting-options"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/adding-images": {
+  "abstract" : [
+    {
+      "text" : "Elevate your content’s visual appeal by adding images.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-images",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Images to Your Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-images"
+},
+"doc://org.swift.docc/documentation/docc/adding-structure-to-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Make symbols easier to find by arranging them into groups and collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Structure to Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-structure-to-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/adding-tables-of-data": {
+  "abstract" : [
+    {
+      "text" : "Arrange information into rows and columns.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-tables-of-data",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Tables of Data",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-tables-of-data"
+},
+"doc://org.swift.docc/documentation/docc/customizing-the-appearance-of-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Customize the look and feel of your documentation webpages.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Customizing the Appearance of Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/formatting-your-documentation-content": {
+  "abstract" : [
+    {
+      "text" : "Enhance your content’s presentation with special formatting and styling for text and lists.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Formatting Your Documentation Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/formatting-your-documentation-content"
+}
+}
+}

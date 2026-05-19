@@ -1,0 +1,3235 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+            "sections" : [
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/$volume",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      ]
+    ],
+    "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "Get Started with Swift Server",
+    "categoryPathComponent" : "getting-started-swift-server",
+    "role" : "project",
+    "title" : "Integrate a database"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "Build a basic Vapor app",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 10,
+      "kind" : "hero",
+      "title" : "Integrate a database"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Set-up-the-infrastructure",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Set up the app dependencies.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Open a new terminal and run docker compose to start a Postgres server.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-bash.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% docker compose up postgres",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Set up the infrastructure"
+        },
+        {
+          "anchor" : "Configure-the-database-tables-and-connection",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create tables with Fluent in code as a Model and then use Migrations in the database. You configure the database connection and learn where to run the migrations for the app.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Open ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Package.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to add the Fluent dependencies to the target.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-package.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the Fluent dependencies",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Change ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to a class that will represent a database table.  ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Note:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " The class is nested in the parent type ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "DB",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to provide a namespace for the class.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Database.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This enables the class to benefit from default implementations of common database operations.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the class to conform to a Fluent ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Model",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ID",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " serves as the primary key of the database, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Field",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " identifies a column of type string called contents.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "schema",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property, define an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ID",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", to satisfy the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Model",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " protocol.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add CreateTODOs, conforming to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "AsyncMigration",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " with stubs to provide the migration to create a table.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.3.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Migrations",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " enum for a namespace",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "database.schema(_)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "field(_)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to reference the table, while the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "create()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "delete()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " methods do the bulk of the work.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.4.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Implement",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the migrations.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The function will configure the connection to the databse and run the migrations.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.5.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "configureDatabase",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " function",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Choose the URL by either reading it from the configuration or defaulting to something that would work in most development setups.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.6.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Define",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a URL that provides the connection to the database.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The database migrations will create the table.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-database.7.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Configure",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the function to run the database migrations",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Calling ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "configureDatabase",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " with a reference to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "app",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "config",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " will connect to the database using the URL and run the migrations before the app initializes the server.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-entrypoint.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a call to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "configureDatabase(app:config:)",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Configure the database tables and connection"
+        },
+        {
+          "anchor" : "Add-the-database-layer-to-the-routes",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Build on the OpenAPI stubs built in a previous section to add persistence to your OpenAPI routes.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "DB",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property, and add imports for ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Fluent",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "HTTPTypes",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-apihandler.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "As part of the OpenAPI generated types, we have the stubs of the methods we need to implement for our routes. In the previous chapter, we had returned a 500 status code for the create todo route.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-apihandler.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Review",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the idea for creating a new TODO.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "DB.TODO()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method to Instantiate a new TODO object from the database.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-apihandler.2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Implement",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the code to read from the postgres database.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Review the commented code to evalute the idea for listing all of the TODOs from the database.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-apihandler.3.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Review",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the idea for listing all the available TODOs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Fetch TODOs from the database and store them in an array using the code on the right.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-apihandler.4.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Implement",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " fetching and returning the TODOs from the database.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the database as a parameter to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-serverservice.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServerService.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Add the database layer to the routes"
+        },
+        {
+          "anchor" : "Run-and-test-the-code",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using a terminal, run the updated Vapor app and try it out!",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "To test your work, run the commands on the right in 2 separate terminals.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "In this first terminal, run the server.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-bash-swiftrun.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% swift run SwiftServerTodos",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In a second terminal, run a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "curl",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " HTTP ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "POST",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " request to create a TODO.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-bash-curl.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% curl -i -X POST \\ -H \"Content-Type: application\/json\" \\ -d '{ \"contents\": \"my first todo\" }' \\ localhost:8080\/api\/todos",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The output includes ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "HTTP\/1.1 201 Created",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and shows the new TODO created.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-bash-curl.1.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Review",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the output in the second terminal.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "After creating the new TODO, make a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "GET",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " request to retrieve all the TODOs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-bash-curl.2.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% curl localhost:8080\/api\/todos",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You should see the todo you created earlier.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "3-bash-curl.3.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Review",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the output",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Run and test the code"
+        }
+      ]
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "Export logs, metrics, and traces from the tutorial app using",
+          "type" : "text"
+        },
+        {
+          "text" : " ",
+          "type" : "text"
+        },
+        {
+          "text" : "OpenTelemetry, and visualize them with Grafana.",
+          "type" : "text"
+        }
+      ],
+      "action" : {
+        "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "featuredEyebrow" : "Tutorial",
+      "kind" : "callToAction",
+      "title" : "Add observability with OpenTelemetry"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/gettingstartedswiftserver\/3-database"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"3-apihandler.0.swift": {
+  "content" : [
+    "import Fluent",
+    "import HTTPTypes",
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    ",
+    "    var db: Database",
+    "    ",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 1
+    },
+    {
+      "line" : 2
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    }
+  ],
+  "identifier" : "3-apihandler.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-apihandler.1.swift": {
+  "content" : [
+    "import Fluent",
+    "import HTTPTypes",
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    ",
+    "    var db: Database",
+    "    ",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        \/\/ Exercise:",
+    "        \/\/ 0. uncomment switch condition",
+    "        \/\/ switch input.body {",
+    "        \/\/ case .json(let todo):",
+    "",
+    "        \/\/ 1. Create new ID string using UUID",
+    "        \/\/ https:\/\/developer.apple.com\/documentation\/foundation\/uuid\/uuidstring",
+    "",
+    "        \/\/ 2. Instantiate a new TODO object from the database with DB.TODO().",
+    "        \/\/    Populate the fields (id and contents)",
+    "",
+    "        \/\/ 3. Save the value",
+    "        ",
+    "        \/\/ 4. Uncomment to return the response",
+    "        \/\/ return .created(.init(body: .json(.init(",
+    "        \/\/     id: newId,",
+    "        \/\/     contents: contents",
+    "        \/\/ ))))",
+    "        \/\/ }",
+    "",
+    "        \/\/ Exercise: Remove this after above logic is completed",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}",
+    ""
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 30
+    },
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 33
+    },
+    {
+      "line" : 34
+    },
+    {
+      "line" : 35
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 55
+    }
+  ],
+  "identifier" : "3-apihandler.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-apihandler.2.swift": {
+  "content" : [
+    "import Fluent",
+    "import HTTPTypes",
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    ",
+    "    var db: Database",
+    "    ",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        switch input.body {",
+    "        case .json(let todo):",
+    "            \/\/ 1. Create new ID string using UUID",
+    "            let newId = UUID().uuidString",
+    "            let contents = todo.contents",
+    "",
+    "            \/\/ 2. Instantiate a new TODO object from the database with DB.TODO()",
+    "            \/\/    Populate the fields (id and contents)",
+    "            let dbTodo = DB.TODO()",
+    "            dbTodo.id = newId",
+    "            dbTodo.contents = contents",
+    "",
+    "            \/\/ 3. Save the value",
+    "            try await dbTodo.save(on: db)",
+    "",
+    "            return .created(",
+    "                .init(",
+    "                    body: .json(",
+    "                        .init(",
+    "                            id: newId,",
+    "                            contents: contents",
+    "                        )",
+    "                    )",
+    "                )",
+    "            )",
+    "        }",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}",
+    ""
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 34
+    },
+    {
+      "line" : 35
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    },
+    {
+      "line" : 41
+    },
+    {
+      "line" : 42
+    },
+    {
+      "line" : 43
+    },
+    {
+      "line" : 44
+    }
+  ],
+  "identifier" : "3-apihandler.2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-apihandler.3.swift": {
+  "content" : [
+    "import Fluent",
+    "import HTTPTypes",
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    ",
+    "    var db: Database",
+    "    ",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        \/\/ Exercise:",
+    "        \/\/ 1. Fetch todos from database",
+    "",
+    "        \/\/ 2. Serialize them to the TODO Detail array",
+    "        \/\/      [Components.Schemas.TODODetail]",
+    "",
+    "        \/\/ 3. Uncomment the return statement with the response below",
+    "        \/\/ return .ok(.init(body: .json(.init(items: apiTodos))))",
+    "",
+    "        \/\/ Exercise: Remove this after above logic is completed",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        switch input.body {",
+    "        case .json(let todo):",
+    "            \/\/ 1. Create new ID string using UUID",
+    "            let newId = UUID().uuidString",
+    "            let contents = todo.contents",
+    "",
+    "            \/\/ 2. Instantiate a new TODO object from the database with DB.TODO()",
+    "            \/\/    Populate the fields (id and contents)",
+    "            let dbTodo = DB.TODO()",
+    "            dbTodo.id = newId",
+    "            dbTodo.contents = contents",
+    "",
+    "            \/\/ 3. Save the value",
+    "            try await dbTodo.save(on: db)",
+    "",
+    "            return .created(",
+    "                .init(",
+    "                    body: .json(",
+    "                        .init(",
+    "                            id: newId,",
+    "                            contents: contents",
+    "                        )",
+    "                    )",
+    "                )",
+    "            )",
+    "        }",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}",
+    ""
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    }
+  ],
+  "identifier" : "3-apihandler.3.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-apihandler.4.swift": {
+  "content" : [
+    "import Fluent",
+    "import HTTPTypes",
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    ",
+    "    var db: Database",
+    "    ",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        \/\/ Exercise:",
+    "        \/\/ 1. Fetch todos from database",
+    "        let dbTodos = try await db.query(DB.TODO.self).all()",
+    "        ",
+    "        \/\/ 2. Serialize them to the TODO Detail array",
+    "        let apiTodos = try dbTodos.map { todo in",
+    "            Components.Schemas.TODODetail(",
+    "                id: try todo.requireID(),",
+    "                contents: todo.contents",
+    "            )",
+    "        }",
+    "        ",
+    "        return .ok(.init(body: .json(.init(items: apiTodos))))",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        switch input.body {",
+    "        case .json(let todo):",
+    "            \/\/ 1. Create new ID string using UUID",
+    "            let newId = UUID().uuidString",
+    "            let contents = todo.contents",
+    "",
+    "            \/\/ 2. Instantiate a new TODO object from the database with DB.TODO()",
+    "            \/\/    Populate the fields (id and contents)",
+    "            let dbTodo = DB.TODO()",
+    "            dbTodo.id = newId",
+    "            dbTodo.contents = contents",
+    "",
+    "            \/\/ 3. Save the value",
+    "            try await dbTodo.save(on: db)",
+    "",
+    "            return .created(",
+    "                .init(",
+    "                    body: .json(",
+    "                        .init(",
+    "                            id: newId,",
+    "                            contents: contents",
+    "                        )",
+    "                    )",
+    "                )",
+    "            )",
+    "        }",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}",
+    ""
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    }
+  ],
+  "identifier" : "3-apihandler.4.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-bash-curl.0.txt": {
+  "content" : [
+    "% curl -i -X POST \\",
+    "-H \"Content-Type: application\/json\" \\",
+    "-d '{ \"contents\": \"my first todo\" }' \\",
+    "localhost:8080\/api\/todos"
+  ],
+  "fileName" : "Terminal 2",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "3-bash-curl.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"3-bash-curl.1.txt": {
+  "content" : [
+    "% curl -i -X POST \\",
+    "-H \"Content-Type: application\/json\" \\",
+    "-d '{ \"contents\": \"my first todo\" }' \\",
+    "localhost:8080\/api\/todos",
+    "",
+    "HTTP\/1.1 201 Created",
+    "Content-Type: application\/json; charset=utf-8",
+    "content-length: 83",
+    "connection: keep-alive",
+    "date: Thu, 15 May 2025 04:59:34 GMT",
+    "",
+    "{",
+    "  \"contents\" : \"my first todo\",",
+    "  \"id\" : \"5A91C1AA-293C-4298-B725-01333BFF2544\"",
+    "}"
+  ],
+  "fileName" : "Terminal 2",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    }
+  ],
+  "identifier" : "3-bash-curl.1.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"3-bash-curl.2.txt": {
+  "content" : [
+    "% curl -i -X POST \\",
+    "-H \"Content-Type: application\/json\" \\",
+    "-d '{ \"contents\": \"my first todo\" }' \\",
+    "localhost:8080\/api\/todos",
+    "",
+    "HTTP\/1.1 201 Created",
+    "Content-Type: application\/json; charset=utf-8",
+    "content-length: 83",
+    "connection: keep-alive",
+    "date: Thu, 15 May 2025 04:59:34 GMT",
+    "",
+    "{",
+    "  \"contents\" : \"my first todo\",",
+    "  \"id\" : \"5A91C1AA-293C-4298-B725-01333BFF2544\"",
+    "}",
+    "",
+    "% curl localhost:8080\/api\/todos"
+  ],
+  "fileName" : "Terminal 2",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    }
+  ],
+  "identifier" : "3-bash-curl.2.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"3-bash-curl.3.txt": {
+  "content" : [
+    "% curl -i -X POST \\",
+    "-H \"Content-Type: application\/json\" \\",
+    "-d '{ \"contents\": \"my first todo\" }' \\",
+    "localhost:8080\/api\/todos",
+    "",
+    "HTTP\/1.1 201 Created",
+    "Content-Type: application\/json; charset=utf-8",
+    "content-length: 83",
+    "connection: keep-alive",
+    "date: Thu, 15 May 2025 04:59:34 GMT",
+    "",
+    "{",
+    "  \"contents\" : \"my first todo\",",
+    "  \"id\" : \"5A91C1AA-293C-4298-B725-01333BFF2544\"",
+    "}",
+    "",
+    "% curl localhost:8080\/api\/todos",
+    "{",
+    "  \"items\" : [",
+    "    {",
+    "      \"contents\" : \"my first todo\",",
+    "      \"id\" : \"5A91C1AA-293C-4298-B725-01333BFF2544\"",
+    "    }",
+    "  ]",
+    "}"
+  ],
+  "fileName" : "Terminal 2",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    }
+  ],
+  "identifier" : "3-bash-curl.3.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"3-bash-swiftrun.0.txt": {
+  "content" : [
+    " % swift run SwiftServerTodos",
+    "Building for debugging...",
+    "[1\/1] Write swift-version--61257B8C62E73F86.txt",
+    "Build of product 'SwiftServerTodos' complete! (0.45s)",
+    "[ INFO ] [Migrator] Starting prepare [database-id: psql, migration: SwiftServerTodos.Migrations.CreateTODOs]",
+    "[ INFO ] [Migrator] Finished prepare [database-id: psql, migration: SwiftServerTodos.Migrations.CreateTODOs]",
+    "[ NOTICE ] Server started on http:\/\/0.0.0.0:8080"
+  ],
+  "fileName" : "Terminal 1",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "3-bash-swiftrun.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"3-bash.0.txt": {
+  "content" : [
+    "% docker compose up postgres",
+    "[+] Running 2\/2",
+    " ⠿ Network swiftservertodos_default       Created              0.1s",
+    " ⠿ Container swiftservertodos-postgres-1  Created              0.1s",
+    "Attaching to swiftservertodos-postgres-1",
+    "..."
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "3-bash.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"3-database.0.swift": {
+  "content" : [
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "enum DB {",
+    "    final class TODO {",
+    "        \/\/ Exercise: add in the database module",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 1
+    },
+    {
+      "line" : 2
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    }
+  ],
+  "identifier" : "3-database.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.1.swift": {
+  "content" : [
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        \/\/ Exercise: add in the database module",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 7
+    }
+  ],
+  "identifier" : "3-database.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.2.swift": {
+  "content" : [
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        static let schema = \"todos\"",
+    "",
+    "        @ID(custom: \"id\", generatedBy: .user)",
+    "        var id: String?",
+    "",
+    "        @Field(key: \"contents\")",
+    "        var contents: String",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    }
+  ],
+  "identifier" : "3-database.2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.3.swift": {
+  "content" : [
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        static let schema = \"todos\"",
+    "",
+    "        @ID(custom: \"id\", generatedBy: .user)",
+    "        var id: String?",
+    "",
+    "        @Field(key: \"contents\")",
+    "        var contents: String",
+    "    }",
+    "}",
+    "",
+    "enum Migrations {",
+    "    struct CreateTODOs: AsyncMigration {",
+    "        func prepare(on database: Database) async throws {",
+    "            \/\/ Exercise: add table creation logic",
+    "        }",
+    "        ",
+    "        func revert(on database: Database) async throws {",
+    "            \/\/ Exercise: add table deletion logic",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    }
+  ],
+  "identifier" : "3-database.3.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.4.swift": {
+  "content" : [
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        static let schema = \"todos\"",
+    "",
+    "        @ID(custom: \"id\", generatedBy: .user)",
+    "        var id: String?",
+    "",
+    "        @Field(key: \"contents\")",
+    "        var contents: String",
+    "    }",
+    "}",
+    "",
+    "enum Migrations {",
+    "    struct CreateTODOs: AsyncMigration {",
+    "        func prepare(on database: Database) async throws {",
+    "            try await database.schema(DB.TODO.schema)",
+    "                .field(\"id\", .string, .identifier(auto: false))",
+    "                .field(\"contents\", .string, .required)",
+    "                .create()",
+    "        }",
+    "        ",
+    "        func revert(on database: Database) async throws {",
+    "            try await database",
+    "                .schema(DB.TODO.schema)",
+    "                .delete()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 30
+    }
+  ],
+  "identifier" : "3-database.4.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.5.swift": {
+  "content" : [
+    "import Configuration",
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "func configureDatabase(app: Application, config: ConfigReader) async throws {",
+    "    \/\/ Exercise: configure the database connection",
+    "}",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        static let schema = \"todos\"",
+    "",
+    "        @ID(custom: \"id\", generatedBy: .user)",
+    "        var id: String?",
+    "",
+    "        @Field(key: \"contents\")",
+    "        var contents: String",
+    "    }",
+    "}",
+    "",
+    "enum Migrations {",
+    "    struct CreateTODOs: AsyncMigration {",
+    "        func prepare(on database: Database) async throws {",
+    "            try await database.schema(DB.TODO.schema)",
+    "                .field(\"id\", .string, .identifier(auto: false))",
+    "                .field(\"contents\", .string, .required)",
+    "                .create()",
+    "        }",
+    "",
+    "        func revert(on database: Database) async throws {",
+    "            try await database",
+    "                .schema(DB.TODO.schema)",
+    "                .delete()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 1
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 31
+    }
+  ],
+  "identifier" : "3-database.5.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.6.swift": {
+  "content" : [
+    "import Configuration",
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "func configureDatabase(app: Application, config: ConfigReader) async throws {",
+    "    let postgresConfig = config.scoped(to: \"postgres\")",
+    "    let postgresURL = postgresConfig.string(",
+    "        forKey: \"url\",",
+    "        as: URL.self,",
+    "        default: URL(string: \"postgres:\/\/postgres@localhost:5432\/postgres?sslmode=disable\")!",
+    "    )",
+    "    try app.databases.use(.postgres(url: postgresURL), as: .psql)",
+    "}",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        static let schema = \"todos\"",
+    "",
+    "        @ID(custom: \"id\", generatedBy: .user)",
+    "        var id: String?",
+    "",
+    "        @Field(key: \"contents\")",
+    "        var contents: String",
+    "    }",
+    "}",
+    "",
+    "enum Migrations {",
+    "    struct CreateTODOs: AsyncMigration {",
+    "        func prepare(on database: Database) async throws {",
+    "            try await database.schema(DB.TODO.schema)",
+    "                .field(\"id\", .string, .identifier(auto: false))",
+    "                .field(\"contents\", .string, .required)",
+    "                .create()",
+    "        }",
+    "",
+    "        func revert(on database: Database) async throws {",
+    "            try await database",
+    "                .schema(DB.TODO.schema)",
+    "                .delete()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    }
+  ],
+  "identifier" : "3-database.6.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-database.7.swift": {
+  "content" : [
+    "import Configuration",
+    "import Fluent",
+    "import FluentPostgresDriver",
+    "import Foundation",
+    "import Vapor",
+    "",
+    "func configureDatabase(app: Application, config: ConfigReader) async throws {",
+    "    let postgresConfig = config.scoped(to: \"postgres\")",
+    "    let postgresURL = postgresConfig.string(",
+    "        forKey: \"url\",",
+    "        as: URL.self,",
+    "        default: URL(string: \"postgres:\/\/postgres@localhost:5432\/postgres?sslmode=disable\")!",
+    "    )",
+    "    try app.databases.use(.postgres(url: postgresURL), as: .psql)",
+    "",
+    "    app.migrations.add([",
+    "        Migrations.CreateTODOs()",
+    "    ])",
+    "    try await app.autoMigrate()",
+    "}",
+    "",
+    "enum DB {",
+    "    final class TODO: Model, @unchecked Sendable {",
+    "        static let schema = \"todos\"",
+    "",
+    "        @ID(custom: \"id\", generatedBy: .user)",
+    "        var id: String?",
+    "",
+    "        @Field(key: \"contents\")",
+    "        var contents: String",
+    "    }",
+    "}",
+    "",
+    "enum Migrations {",
+    "    struct CreateTODOs: AsyncMigration {",
+    "        func prepare(on database: Database) async throws {",
+    "            try await database.schema(DB.TODO.schema)",
+    "                .field(\"id\", .string, .identifier(auto: false))",
+    "                .field(\"contents\", .string, .required)",
+    "                .create()",
+    "        }",
+    "",
+    "        func revert(on database: Database) async throws {",
+    "            try await database",
+    "                .schema(DB.TODO.schema)",
+    "                .delete()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    }
+  ],
+  "identifier" : "3-database.7.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-entrypoint.1.swift": {
+  "content" : [
+    "import Configuration",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "@main",
+    "struct Entrypoint {",
+    "    static func main() async throws {",
+    "        let config = ConfigReader(provider: EnvironmentVariablesProvider())",
+    "",
+    "        \/\/ Configure telemetry",
+    "        try await configureTelemetry(config)",
+    "",
+    "        \/\/ Create the server",
+    "        let serverConfig = config.scoped(to: \"address\")",
+    "        let app = try await Vapor.Application.make()",
+    "        app.http.server.configuration.address = .hostname(",
+    "            serverConfig.string(forKey: \"address\", default: \"0.0.0.0\"),",
+    "            port: serverConfig.int(forKey: \"port\", default: 8080)",
+    "        )",
+    "",
+    "        \/\/ Configure the database",
+    "        try await configureDatabase(app: app, config: config)",
+    "",
+    "        \/\/ Configure the server",
+    "        let serverService = try await configureServer(app)",
+    "",
+    "        \/\/ Start the service group, which spins up all the service above",
+    "        let services: [Service] = [serverService]",
+    "        let serviceGroup = ServiceGroup(",
+    "            services: services,",
+    "            gracefulShutdownSignals: [.sigint],",
+    "            cancellationSignals: [.sigterm],",
+    "            logger: app.logger",
+    "        )",
+    "        try await serviceGroup.run()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Entrypoint.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    }
+  ],
+  "identifier" : "3-entrypoint.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-package.0.swift": {
+  "content" : [
+    "\/\/ swift-tools-version: 6.3",
+    "",
+    "import PackageDescription",
+    "",
+    "let package = Package(",
+    "    name: \"swift-server-todos\",",
+    "    platforms: [",
+    "        .macOS(.v15)",
+    "    ],",
+    "    dependencies: [",
+    "        \/\/ Server scaffolding",
+    "        .package(url: \"https:\/\/github.com\/vapor\/vapor\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-service-lifecycle\", from: \"2.1.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-generator\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-runtime\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-openapi-vapor\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-configuration\", from: \"1.2.0\"),",
+    "",
+    "        \/\/ Telemetry",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-log\", from: \"1.5.2\"),",
+    "",
+    "        \/\/ Database",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent.git\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent-postgres-driver.git\", from: \"2.0.0\"),",
+    "    ],",
+    "    targets: [",
+    "        .executableTarget(",
+    "            name: \"SwiftServerTodos\",",
+    "            dependencies: [",
+    "                \/\/ Server scaffolding",
+    "                .product(name: \"Vapor\", package: \"vapor\"),",
+    "                .product(name: \"ServiceLifecycle\", package: \"swift-service-lifecycle\"),",
+    "                .product(name: \"OpenAPIRuntime\", package: \"swift-openapi-runtime\"),",
+    "                .product(name: \"OpenAPIVapor\", package: \"swift-openapi-vapor\"),",
+    "                .product(name: \"Configuration\", package: \"swift-configuration\"),",
+    "",
+    "                \/\/ Telemetry",
+    "                .product(name: \"Logging\", package: \"swift-log\"),",
+    "",
+    "                \/\/ Database",
+    "                .product(name: \"Fluent\", package: \"fluent\"),",
+    "                .product(name: \"FluentPostgresDriver\", package: \"fluent-postgres-driver\"),",
+    "            ],",
+    "            plugins: [",
+    "                .plugin(name: \"OpenAPIGenerator\", package: \"swift-openapi-generator\")",
+    "            ]",
+    "        )",
+    "    ]",
+    ")"
+  ],
+  "fileName" : "Database.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    },
+    {
+      "line" : 41
+    },
+    {
+      "line" : 42
+    }
+  ],
+  "identifier" : "3-package.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"3-serverservice.1.swift": {
+  "content" : [
+    "import OpenAPIVapor",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    \/\/ Create app state.",
+    "    let handler = APIHandler(db: app.db)",
+    "",
+    "    \/\/ Register the generated handlers.",
+    "    let transport = VaporTransport(routesBuilder: app)",
+    "    try handler.registerHandlers(",
+    "        on: transport,",
+    "        serverURL: Servers.Server1.url()",
+    "    )",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 14
+    }
+  ],
+  "identifier" : "3-serverservice.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Set up your development environment",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Clone-and-build-the-tutorial-repository": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Clone and build the tutorial repository",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Clone-and-build-the-tutorial-repository"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Verify-installed-tools": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Verify installed tools",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Verify-installed-tools"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Introduction",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction#Explore-the-parts-of-a-basic-app": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Explore the parts of a basic app",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction#Explore-the-parts-of-a-basic-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Specify routes using OpenAPI",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Add-an-OpenAPI-document": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add an OpenAPI document",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Add-an-OpenAPI-document"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Configure-Vapor-to-use-the-API-handler": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure Vapor to use the API handler",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#OpenAPI-generator": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "OpenAPI generator",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#OpenAPI-generator"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Integrate a database",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Add-the-database-layer-to-the-routes": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add the database layer to the routes",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Add-the-database-layer-to-the-routes"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Configure-the-database-tables-and-connection": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure the database tables and connection",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Configure-the-database-tables-and-connection"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Run-and-test-the-code": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and test the code",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Run-and-test-the-code"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Set-up-the-infrastructure": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the infrastructure",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Set-up-the-infrastructure"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Add observability with OpenTelemetry",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Add-telemetry-dependencies": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add telemetry dependencies",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Add-telemetry-dependencies"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Configure-OpenTelemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure OpenTelemetry",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Configure-OpenTelemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Run-and-observe": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and observe",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Run-and-observe"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Set-up-the-observability-stack": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the observability stack",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Set-up-the-observability-stack"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Wire-up-the-entry-point-and-server": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Wire up the entry point and server",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Wire-up-the-entry-point-and-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and where to go next",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Review": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Review",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Review"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Summary": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Summary",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Summary"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Where-do-I-go-from-here": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Where do I go from here?",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Where-do-I-go-from-here"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
+  "abstract" : [
+    {
+      "text" : "Learn about cloud services in Swift by building and extending a Vapor app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Explore Swift on the server by building a Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Before-you-begin": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Before you begin",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/before-you-begin"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Build-a-basic-Vapor-app": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Build a basic Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/build-a-basic-vapor-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Review-and-next-steps": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and next steps",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/review-and-next-steps"
+}
+}
+}

@@ -1,0 +1,756 @@
+{
+  "abstract" : [
+    {
+      "text" : "What external system dependencies should you expect from Embedded Swift compilations",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "External dependencies"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Embedded Swift minimizes external dependencies (i.e. functions that need to be available at link-time), but they still exist. There are generally two categories of dependencies: (1) functions that the Swift standard library or Embedded Swift runtime need to call, and (2) functions\/symbols that are implicitly added by LLVM and the compiler pipeline.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For (1), external dependencies are only used based on actual usage of the program under compilation:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "instantiating a class, or using UnsafeMutablePointer.allocate()",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "int posix_memalign(void **, size_t, size_t);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "void free(void *);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "using print()",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "int putchar(int);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "using Hashable, Set, Dictionary, or random-number generating APIs",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "void arc4random_buf(void *, size_t);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For (2), external dependencies are also triggered by specific code needing them, but they are somewhat lower-level patterns where it might not be obvious that such patterns should cause external dependencies:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "basic memory copying and zeroing functions",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "usage added for a variety of reasons (e.g. using structs on the stack)",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "void *memset(void *, int, size_t);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "void *memcpy(void *, const void *, size_t);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "stack protectors",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " (aka stack cookies or stack canaries)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "void *__stack_chk_guard;",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency: ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "void __stack_chk_fail(void);",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "stack protectors can be disabled with ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "-disable-stack-protector",
+                              "type" : "codeVoice"
+                            },
+                            {
+                              "text" : " swiftc flag",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "atomics intrinsics",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "on CPU architectures that don’t have direct load-acquire\/store-release support in the ISA, LLVM calls helper functions for atomic operations",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "needed by refcounting in the Embedded Swift runtime (so any class usage will trigger this dependency)",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "also needed when using atomics from the Synchronization module",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "multiplication\/division\/modulo intrinsics",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "on CPU architectures that don’t have direct support for the math operations in the ISA",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency (on Mach-O): ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "__divti3",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency (on Mach-O): ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "__modti3",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "dependency (with EABI): ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "__aeabi_ldivmod",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "dynamic exclusivity checking",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " (enabled with ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-enforce-exclusivity=checked",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "for single-threaded environments, link ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "swiftExclusivitySingleThreaded",
+                              "type" : "codeVoice"
+                            },
+                            {
+                              "text" : " library",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "for multi-threaded environments that support C++11 thread-local storage, link ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "swiftExclusivityC11ThreadLocal",
+                              "type" : "codeVoice"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "for environments where neither of the above will suffice",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        },
+                        {
+                          "items" : [
+                            {
+                              "content" : [
+                                {
+                                  "inlineContent" : [
+                                    {
+                                      "text" : "dependency: ",
+                                      "type" : "text"
+                                    },
+                                    {
+                                      "code" : "void * _swift_getExclusivityTLS()",
+                                      "type" : "codeVoice"
+                                    }
+                                  ],
+                                  "type" : "paragraph"
+                                }
+                              ]
+                            },
+                            {
+                              "content" : [
+                                {
+                                  "inlineContent" : [
+                                    {
+                                      "text" : "dependency: void ",
+                                      "type" : "text"
+                                    },
+                                    {
+                                      "code" : "_swift_setExclusivityTLS(void *newValue)",
+                                      "type" : "codeVoice"
+                                    }
+                                  ],
+                                  "type" : "paragraph"
+                                }
+                              ]
+                            }
+                          ],
+                          "type" : "unorderedList"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The user and\/or the platform (via basic libraries like libc or compiler builtins) is expected to provide these APIs.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Using-Embedded-Swift",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods"
+      ],
+      "title" : "Using Embedded Swift"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Basics": {
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Basics of using Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/basics"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ConditionalCompilation": {
+  "abstract" : [
+    {
+      "text" : "How to share code between Embedded Swift and full Swift using conditional compilation",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conditionalizing compilation for Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/conditionalcompilation"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Existentials": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on existentials (“any” types) that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existentials",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/existentials"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Libraries": {
+  "abstract" : [
+    {
+      "text" : "Understand the library setup and linkage model of Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Libraries and modules in Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/libraries"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/NonFinalGenericMethods": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on unbound generic methods that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Non-final generic methods",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/nonfinalgenericmethods"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Strings": {
+  "abstract" : [
+    {
+      "text" : "How to enable full Unicode-compliant string support in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Strings",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/strings"
+}
+}
+}

@@ -1,0 +1,278 @@
+{
+  "abstract" : [
+    {
+      "text" : "A filename to use when saving this attachment.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Attachment"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Attachment\/preferredName"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7Testing10AttachmentVAARi_zrlE13preferredNameSSvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "preferredName"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "introducedAt" : "6.2",
+        "name" : "Swift"
+      },
+      {
+        "beta" : false,
+        "introducedAt" : "26.0",
+        "name" : "Xcode"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "preferredName"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "preferredName"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The value of this property is used as a hint to the testing library. The",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "testing library may substitute a different filename as needed. If the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "value of this property has not been explicitly set, the testing library",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "will attempt to generate its own value.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/attachment\/preferredname"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/Attachment": {
+  "abstract" : [
+    {
+      "text" : "A type describing values that can be attached to the output of a test run",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and inspected later by the user.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Attachment"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Attachment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Attachment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Attachment",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/attachment"
+},
+"doc://org.swift.testing/documentation/Testing/Attachment/preferredName": {
+  "abstract" : [
+    {
+      "text" : "A filename to use when saving this attachment.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "preferredName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Attachment\/preferredName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "preferredName",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/attachment\/preferredname"
+}
+}
+}

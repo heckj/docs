@@ -1,0 +1,824 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/protocol-type-non-conformance"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Protocol types cannot conform to protocols (ProtocolTypeNonConformance)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In Swift, a protocol that does not have ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or associated type requirements can be used as a type. You can use a variable or constant of a protocol type, also called an ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "existential type",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : ", to hold a value of any conforming type:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol Animal {",
+            "    func makeNoise()",
+            "    static var species: String { get }",
+            "}",
+            "struct Dog: Animal {",
+            "    func makeNoise() { print(\"Woof\") }",
+            "    static var species: String = \"Canus familiaris\"",
+            "}",
+            "struct Cat: Animal {",
+            "    func makeNoise() { print(\"Meow\") }",
+            "    static var species: String = \"Felis catus\"",
+            "}",
+            "",
+            "var animal: Animal \/\/ `Animal` is used here as a type.",
+            "animal = Dog()",
+            "animal.makeNoise() \/\/ Prints \"Woof\".",
+            "animal = Cat()",
+            "animal.makeNoise() \/\/ Prints \"Meow\"."
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Notice that it is possible to invoke the method ",
+              "type" : "text"
+            },
+            {
+              "code" : "makeNoise()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on a value of type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", just as it is possible to do so on a value of concrete type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Dog",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "Cat",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". However, the static property ",
+              "type" : "text"
+            },
+            {
+              "code" : "species",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is not available for the existential type:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "print(Dog.species)    \/\/ Prints \"Canus familiaris\"",
+            "print(Cat.species)    \/\/ Prints \"Felis catus\"",
+            "print(Animal.species) \/\/ error: static member 'species' cannot be used..."
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Since a type conforms to a protocol only when it satisfies ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "all",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " of that protocol’s requirements, the existential type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " does not conform to the protocol ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " because it cannot satisfy the protocol’s requirement for the static property ",
+              "type" : "text"
+            },
+            {
+              "code" : "species",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func declareAnimalSpecies<T: Animal>(_ animal: T) {",
+            "    animal.makeNoise()",
+            "    print(\"My species is known as \\(T.species)\")",
+            "}",
+            "",
+            "let dog = Dog()",
+            "declareAnimalSpecies(dog)",
+            "\/\/ Prints:",
+            "\/\/ \"Woof\"",
+            "\/\/ \"My species is known as Canus familiaris\"",
+            "declareAnimalSpecies(animal)",
+            "\/\/ error: protocol type 'Animal' cannot conform to 'Animal'..."
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In general, any initializers, static members, and associated types required by a protocol can be used only via conforming concrete types. Although Swift allows a protocol that requires initializers or static members to be used as a type, that type ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "does not and cannot",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " conform to the protocol itself.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Currently, even if a protocol ",
+              "type" : "text"
+            },
+            {
+              "code" : "P",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " requires no initializers or static members, the existential type ",
+              "type" : "text"
+            },
+            {
+              "code" : "P",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " does not conform to ",
+              "type" : "text"
+            },
+            {
+              "code" : "P",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (with exceptions below). This restriction allows library authors to add such requirements (initializers or static members) to an existing protocol without breaking their users’ source code.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Exceptions",
+          "level" : 2,
+          "text" : "Exceptions",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When used as a type, the Swift protocol ",
+              "type" : "text"
+            },
+            {
+              "code" : "Error",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " conforms to itself; ",
+              "type" : "text"
+            },
+            {
+              "code" : "@objc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " protocols with no static requirements can also be used as types that conform to themselves.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Alternatives",
+          "level" : 2,
+          "text" : "Alternatives",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Concrete types that ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "do",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " conform to protocols can provide functionality similar to that of existential types. For example, the standard library provides the ",
+              "type" : "text"
+            },
+            {
+              "code" : "AnyHashable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type for ",
+              "type" : "text"
+            },
+            {
+              "code" : "Hashable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " values. Manual implementation of such ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "type erasure",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " can require specific knowledge of the semantic requirements for each protocol involved and is beyond the scope of this discussion.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In certain scenarios, you might avoid any need for manual type erasure by reworking generic APIs to use existential types instead:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func declareAnimalSpeciesDynamically(_ animal: Animal) {",
+            "    animal.makeNoise()",
+            "    print(\"My species is known as \\(type(of: animal).species)\")",
+            "}",
+            "",
+            "declareAnimalSpeciesDynamically(animal)",
+            "\/\/ Prints:",
+            "\/\/ \"Meow\"",
+            "\/\/ \"My species is known as Felis catus\""
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "(Note that there is a distinction between the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "static",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " type of a value as given by the generic parameter ",
+              "type" : "text"
+            },
+            {
+              "code" : "T",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "dynamic",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " type of a value obtained by invoking ",
+              "type" : "text"
+            },
+            {
+              "code" : "type(of:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". For example, the static type of ",
+              "type" : "text"
+            },
+            {
+              "code" : "animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", while its dynamic type is ",
+              "type" : "text"
+            },
+            {
+              "code" : "Cat",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Therefore, the two functions ",
+              "type" : "text"
+            },
+            {
+              "code" : "declareAnimalSpecies(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "declareAnimalSpeciesDynamically(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " are not exact replacements of each other.)",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The same technique might be applicable to members of generic types:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Instead of...",
+            "struct Habitat<T: Animal> {",
+            "    var animal: T",
+            "}",
+            "\/\/ ...consider:",
+            "struct Habitat {",
+            "    var animal: Animal",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more on using existential types, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Protocols-as-Types",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " in ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The Swift Programming Language",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Protocols-as-Types"
+      ],
+      "title" : "Related Documentation"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/conversion-from-isolated-any-to-synchronous",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-call": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling an actor-isolated method from a synchronous nonisolated context (ActorIsolatedCall)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-call"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-mutating-async": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling a mutating async actor-isolated method (ActorIsolatedMutatingAsync)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-mutating-async"
+},
+"doc://diagnostics/documentation/diagnostics/add-preconcurrency-import": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add @preconcurrency import (AddPreconcurrencyImport)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/add-preconcurrency-import"
+},
+"doc://diagnostics/documentation/diagnostics/always-available-domain": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "@available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attributes and ",
+      "type" : "text"
+    },
+    {
+      "code" : "if #available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " statements that reference custom availability domains which have been permanently enabled.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Always enabled availability domains (AlwaysAvailableDomain)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/always-available-domain"
+},
+"doc://diagnostics/documentation/diagnostics/compilation-caching": {
+  "abstract" : [
+    {
+      "text" : "Errors and warnings related to the compiler’s CAS compilation caching.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Compilation caching (CompilationCaching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/compilation-caching"
+},
+"doc://diagnostics/documentation/diagnostics/conversion-from-isolated-any-to-synchronous": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/conversion-from-isolated-any-to-synchronous",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conversion from `@isolated(any)` function type to synchronous function type (ConversionFromIsolatedAnyToSynchronous)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/conversion-from-isolated-any-to-synchronous"
+},
+"doc://diagnostics/documentation/diagnostics/deprecated-declaration": {
+  "abstract" : [
+    {
+      "text" : "Warnings related to deprecated APIs that may be removed in future versions and should be replaced with more current alternatives.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated declaration warnings (DeprecatedDeclaration)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/deprecated-declaration"
+},
+"doc://diagnostics/documentation/diagnostics/diagnostic-groups": {
+  "abstract" : [
+    {
+      "text" : "Detailed explanations for various compiler diagnostics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Diagnostic groups",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/diagnostic-groups"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-callable-requirements": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "@dynamicCallable implementation requirements (DynamicCallable)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-callable-requirements"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-exclusivity": {
+  "abstract" : [
+    {
+      "text" : "Experimental",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dynamic exclusivity (DynamicExclusivity)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-exclusivity"
+},
+"doc://diagnostics/documentation/diagnostics/embedded-restrictions": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a subset of the Swift language that that introduces some restrictions on the use of language features to eliminate the need for the Swift runtime. These restrictions are captured by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedRestrictions",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " diagnostic group.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Embedded Swift language restrictions (EmbeddedRestrictions)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/embedded-restrictions"
+},
+"doc://diagnostics/documentation/diagnostics/implementation-only-deprecated": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "import",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " declarations with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "@_implementationOnly",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attribute.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated implementation-only imports (ImplementationOnlyDeprecated)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/implementation-only-deprecated"
+},
+"doc://diagnostics/documentation/diagnostics/region-isolation-cross-isolation-data-race": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Cross-isolation data race (RegionIsolationCrossIsolationDataRace)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race"
+},
+"doc://diagnostics/documentation/diagnostics/sendable-closure-captures": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Captures in a `@Sendable` closure (SendableClosureCaptures)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/sendable-closure-captures"
+},
+"doc://diagnostics/documentation/diagnostics/string-interpolation-conformance": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conforming to `StringInterpolationProtocol` (StringInterpolationConformance)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/string-interpolation-conformance"
+},
+"doc://diagnostics/documentation/diagnostics/trailing-closure-matching": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Argument matching for trailing closures (TrailingClosureMatching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/trailing-closure-matching"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols#Protocols-as-Types": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Protocols-as-Types",
+  "title" : "Protocols as Types",
+  "titleInlineContent" : [
+    {
+      "text" : "Protocols as Types",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Protocols-as-Types"
+}
+}
+}

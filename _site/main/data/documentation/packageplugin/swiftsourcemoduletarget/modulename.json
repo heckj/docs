@@ -1,0 +1,547 @@
+{
+  "abstract" : [
+    {
+      "text" : "The name of the module produced by the target.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/moduleName"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin23SwiftSourceModuleTargetV10moduleNameSSvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "moduleName"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "moduleName"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "moduleName"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This is derived from the target name, though future Swift package manager",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "versions may allow this to be customized.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-a-Swift-Source-Module-Target",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/id",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/name",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/kind",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/directoryURL",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/dependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/compilationConditions",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/directory"
+      ],
+      "title" : "Inspecting a Swift Source Module Target"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/swiftsourcemoduletarget\/modulename"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget": {
+  "abstract" : [
+    {
+      "text" : "A target consisting of a source code module compiled using Swift.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SwiftSourceModuleTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SwiftSourceModuleTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SwiftSourceModuleTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/compilationConditions": {
+  "abstract" : [
+    {
+      "text" : "Any custom compilation conditions specified for the Swift target in the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compilationConditions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/compilationConditions",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compilationConditions",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/compilationconditions"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/dependencies": {
+  "abstract" : [
+    {
+      "text" : "Any other targets on which this target depends, in the same order as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "specified in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin16TargetDependencyO",
+      "text" : "TargetDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/dependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/dependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/directory": {
+  "abstract" : [
+    {
+      "text" : "The absolute path of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin4PathV",
+      "text" : "Path"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/directory",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directory",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/directory"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/directoryURL": {
+  "abstract" : [
+    {
+      "text" : "The file URL of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directoryURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/directoryURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directoryURL",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/directoryurl"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/id": {
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin23SwiftSourceModuleTargetV",
+      "text" : "SwiftSourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/id"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/kind": {
+  "abstract" : [
+    {
+      "text" : "The kind of module, describing whether it contains unit tests, contains",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the main entry point of an executable, or neither.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "kind"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin10ModuleKindO",
+      "text" : "ModuleKind"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/kind",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "kind",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/kind"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/moduleName": {
+  "abstract" : [
+    {
+      "text" : "The name of the module produced by the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "moduleName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/moduleName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "moduleName",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/modulename"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget/name": {
+  "abstract" : [
+    {
+      "text" : "The name of the target, as defined in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget\/name"
+}
+}
+}

@@ -1,0 +1,295 @@
+{
+  "abstract" : [
+    {
+      "text" : "Debugging is a crucial part of the development process. With official toolchains providing more integrated tools, debugging WebAssembly modules has become more streamlined.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Debugging"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Debugging"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These tools are DWARF-based, so ensure you build your application with debug information enabled (which is the default for ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "LLDB-and-WasmKit",
+          "level" : 2,
+          "text" : "LLDB and WasmKit",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For Swift ",
+              "type" : "text"
+            },
+            {
+              "code" : "main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " development snapshots, the toolchain includes enhanced support for debugging WebAssembly. The toolchain bundles ",
+              "type" : "text"
+            },
+            {
+              "code" : "WasmKit",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", a runtime that can execute Wasm modules, and an LLDB with WebAssembly support.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "WasmKit",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " provides debugging capabilities through the GDB Remote Protocol. This allows you to use the version of LLDB bundled with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " snapshot toolchain to connect to a running ",
+              "type" : "text"
+            },
+            {
+              "code" : "WasmKit",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " process for in-depth, command-line debugging.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When using the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=swiftlang.swift-vscode",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " with a ",
+              "type" : "text"
+            },
+            {
+              "code" : "main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " snapshot toolchain, you can get a more integrated experience:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Step through code:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " Set breakpoints and step through your Swift code directly within the IDE.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Inspect state:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " View variables, backtraces, and the current state of your application.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Debugging-in-JavaScript-environments",
+          "level" : 2,
+          "text" : "Debugging in JavaScript environments",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you’re debugging a WebAssembly app that runs in JavaScript environments (browsers or Node.js), please refer to the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/documentation\/javascriptkit\/debugging",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for detailed information on how to use browser developer tools and other JS-specific debugging utilities.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/debugging"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://marketplace.visualstudio.com/items?itemName=swiftlang.swift-vscode": {
+  "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=swiftlang.swift-vscode",
+  "title" : "Swift extension for VS Code",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift extension for VS Code",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/marketplace.visualstudio.com\/items?itemName=swiftlang.swift-vscode"
+},
+"https://swiftpackageindex.com/swiftwasm/javascriptkit/documentation/javascriptkit/debugging": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/documentation\/javascriptkit\/debugging",
+  "title" : "JavaScriptKit Debugging documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "JavaScriptKit Debugging documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/documentation\/javascriptkit\/debugging"
+}
+}
+}

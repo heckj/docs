@@ -1,0 +1,682 @@
+{
+  "abstract" : [
+    {
+      "text" : "The access level for a symbol.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin0A7ManagerV18SymbolGraphOptionsV11AccessLevelO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "AccessLevel"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "AccessLevel"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "PackageManager.SymbolGraphOptions.AccessLevel"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "AccessLevel"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/s12CaseIterableP",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/SQ",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/SH",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-Symbol-Graph-Options",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/emitExtensionBlocks",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/includeSPI",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/includeSynthesized",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/minimumAccessLevel"
+      ],
+      "title" : "Inspecting Symbol Graph Options"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Access-Levels",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/public",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/package",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/open",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/internal",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/private",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/fileprivate"
+      ],
+      "title" : "Access Levels"
+    },
+    {
+      "anchor" : "Creating-an-Access-Level",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/init(rawValue:)"
+      ],
+      "title" : "Creating an Access Level"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/Equatable-Implementations",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/SH": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packageplugin/SQ": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packageplugin/SY": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager": {
+  "abstract" : [
+    {
+      "text" : "Provides specialized information and services from the Swift Package Manager",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or an IDE that supports Swift packages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageManager"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageManager"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageManager",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions": {
+  "abstract" : [
+    {
+      "text" : "Represents options for symbol graph generation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SymbolGraphOptions"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SymbolGraphOptions"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel": {
+  "abstract" : [
+    {
+      "text" : "The access level for a symbol.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AccessLevel"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AccessLevel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/equatable-implementations"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/rawrepresentable-implementations"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/fileprivate": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "`fileprivate`"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/fileprivate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel.fileprivate",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/fileprivate"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/init(rawvalue:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/internal": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "`internal`"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/internal",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel.internal",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/internal"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/open": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "open"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/open",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel.open",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/open"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/package": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "package"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/package",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel.package",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/package"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/private": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "`private`"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/private",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel.private",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/private"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/AccessLevel/public": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "`public`"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/AccessLevel\/public",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PackageManager.SymbolGraphOptions.AccessLevel.public",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/accesslevel\/public"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/emitExtensionBlocks": {
+  "abstract" : [
+    {
+      "text" : "A Boolean value that indicates whether to emit symbols for extensions to external types.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "emitExtensionBlocks"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/emitExtensionBlocks",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "emitExtensionBlocks",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/emitextensionblocks"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/includeSPI": {
+  "abstract" : [
+    {
+      "text" : "A Boolean value that indicates whether to include symbols marked as SPI.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "includeSPI"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/includeSPI",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "includeSPI",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/includespi"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/includeSynthesized": {
+  "abstract" : [
+    {
+      "text" : "A Boolean value that indicates whether to include synthesized members.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "includeSynthesized"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/includeSynthesized",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "includeSynthesized",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/includesynthesized"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/SymbolGraphOptions/minimumAccessLevel": {
+  "abstract" : [
+    {
+      "text" : "The minimum access level of symbols to return.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "minimumAccessLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
+      "text" : "PackageManager"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV18SymbolGraphOptionsV",
+      "text" : "SymbolGraphOptions"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV18SymbolGraphOptionsV11AccessLevelO",
+      "text" : "AccessLevel"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions\/minimumAccessLevel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "minimumAccessLevel",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager\/symbolgraphoptions\/minimumaccesslevel"
+},
+"doc://org.swift.swiftpm.packageplugin/s12CaseIterableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/s12CaseIterableP",
+  "title" : "Swift.CaseIterable",
+  "type" : "unresolvable"
+}
+}
+}

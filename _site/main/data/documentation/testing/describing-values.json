@@ -1,0 +1,1076 @@
+{
+  "abstract" : [
+    {
+      "text" : "Add custom descriptions and mirrors to values you use in your tests.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/describing-values"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Describing and reflecting values"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The testing library provides two protocols, ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "CustomTestReflectable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", that you can use to customize the appearance of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "values in Swift. The testing library uses these protocols to describe",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "parameterized test arguments and, if a call to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(_:_:sourceLocation:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(_:_:sourceLocation:)-5l63q",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " fails, to describe any values you pass",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Customize-the-description-of-a-value",
+          "level" : 2,
+          "text" : "Customize the description of a value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You use the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " protocol when you want to customize",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the description of a value ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "during testing only",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ". Values whose types conform to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "this protocol use it to describe themselves when the testing library presents",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "them as part of the output of a test. For example, this protocol affects the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "display of values you pass as arguments to test functions or that are elements",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of an expectation failure.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, the testing library converts values to strings using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/string\/init(describing:)-67ncf",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The resulting string may be inappropriate for some types and their values. If",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you make the type of the value conform to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", then",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the testing library will use the value of its ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible\/testDescription",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "property instead.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, consider the following type:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "enum Food: CaseIterable {",
+            "  case paella, oden, ragu",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you pass an array of cases from this enumeration to a parameterized test",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "function:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test(arguments: Food.allCases)",
+            "func isDelicious(_ food: Food) { ... }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Then the testing library needs to present all elements in the array in its",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "output, but the default description of these values may not be adequately",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "descriptive:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "◇ Test case passing 1 argument food → .paella to isDelicious(_:) started.",
+            "◇ Test case passing 1 argument food → .oden to isDelicious(_:) started.",
+            "◇ Test case passing 1 argument food → .ragu to isDelicious(_:) started."
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you adopt ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", you can include customized",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "descriptions in your test output instead.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Food: CustomTestStringConvertible {",
+            "  var testDescription: String {",
+            "    switch self {",
+            "    case .paella:",
+            "      \"paella valenciana\"",
+            "    case .oden:",
+            "      \"おでん\"",
+            "    case .ragu:",
+            "      \"ragù alla bolognese\"",
+            "    }",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The testing library then uses ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible\/testDescription",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "present these values:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "◇ Test case passing 1 argument food → paella valenciana to isDelicious(_:) started.",
+            "◇ Test case passing 1 argument food → おでん to isDelicious(_:) started.",
+            "◇ Test case passing 1 argument food → ragù alla bolognese to isDelicious(_:) started."
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Customize-the-reflection-of-a-value",
+          "level" : 2,
+          "text" : "Customize the reflection of a value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When a call to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(_:_:sourceLocation:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " or to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(_:_:sourceLocation:)-5l63q",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "fails, the testing library presents the value or values you pass to these macros",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in its output.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The testing library uses ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/mirror\/init(reflecting:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to break down these values if they contain properties that may be of interest to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you. For instance, if the ",
+              "type" : "text"
+            },
+            {
+              "code" : "isDelicious(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " test fails, you might see output",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "such as:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "✘ Test isDelicious(_:) recorded an issue with 1 argument food → sandwich",
+            "↳ food.isDelicious → false",
+            "↳   food → sandwich",
+            "↳     sandwich → (toppings: [Food.pickles, Food.candyCorn])",
+            "↳       toppings → [Food.pickles, Food.candyCorn]",
+            "↳   isDelicious → false"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This output is expressive, but also contains redundant information. You can",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "refine it further by making ",
+              "type" : "text"
+            },
+            {
+              "code" : "Food",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " conform to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "CustomTestReflectable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "protocol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Food: CustomTestReflectable {",
+            "  var customTestMirror: Mirror {",
+            "    switch self {",
+            "    case let .sandwich(toppings):",
+            "      let ingredientNames = toppings.map { String(describingForTest: $0) }",
+            "      return Mirror(",
+            "        self,",
+            "        children: [(label: \"toppings\", value: ingredientNames)]",
+            "      )",
+            "    default:",
+            "      Mirror(self, children: [])",
+            "    }",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With this conformance, the output of the failed test is instead:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "✘ Test isDelicious(_:) recorded an issue with 1 argument food → sandwich",
+            "↳ food.isDelicious → false",
+            "↳   food → sandwich",
+            "↳     toppings → [\"pickles\", \"candy corn\"]",
+            "↳   isDelicious → false"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Implement-custom-descriptions-using-private-properties",
+          "level" : 2,
+          "text" : "Implement custom descriptions using private properties",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If part or all of your type’s state is ",
+              "type" : "text"
+            },
+            {
+              "code" : "private",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or otherwise not visible to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "your test target, you may not be able to implement ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible\/testDescription",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or ",
+              "type" : "text"
+            },
+            {
+              "code" : "CustomTestReflectable\/customTestMirror",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in your test target. You can",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "implement these properties, without adding conformances to either protocol, in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "your production target, and then add empty protocol conformances in your test",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "target. Make sure to use ",
+              "type" : "text"
+            },
+            {
+              "code" : "internal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "package",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " visibility for the properties",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so that your test target is able to use them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ In your production target:",
+            "",
+            "extension Food {",
+            "  package var testDescription: String { ... }",
+            "  package var customTestMirror: Mirror { ... }",
+            "}",
+            "  ",
+            "\/\/ In your test target:",
+            "",
+            "import FoodTruck",
+            "",
+            "extension Food: CustomTestStringConvertible, CustomTestReflectable {}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you use ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "internal",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " visibility for these properties, you must import",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "your production target into your test target using the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "@testable",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " attribute.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Value-description-and-reflection",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible"
+      ],
+      "title" : "Value description and reflection"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/describing-values"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/CustomTestStringConvertible": {
+  "abstract" : [
+    {
+      "text" : "A protocol describing types with a custom string representation when",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "presented as part of a test’s output.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CustomTestStringConvertible"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CustomTestStringConvertible"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CustomTestStringConvertible",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/customteststringconvertible"
+},
+"doc://org.swift.testing/documentation/Testing/CustomTestStringConvertible/testDescription": {
+  "abstract" : [
+    {
+      "text" : "A description of this instance to use when presenting it in a test’s",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "output.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "testDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible\/testDescription",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "testDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/customteststringconvertible\/testdescription"
+},
+"doc://org.swift.testing/documentation/Testing/expect(_:_:sourceLocation:)": {
+  "abstract" : [
+    {
+      "text" : "Check that an expectation has passed after a condition has been evaluated.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "macro"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "expect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure "
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(_:_:sourceLocation:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "expect(_:_:sourceLocation:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expect(_:_:sourcelocation:)"
+},
+"doc://org.swift.testing/documentation/Testing/require(_:_:sourceLocation:)-5l63q": {
+  "abstract" : [
+    {
+      "text" : "Check that an expectation has passed after a condition has been evaluated",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and throw an error if it failed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "macro"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "require"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure "
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(_:_:sourceLocation:)-5l63q",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "require(_:_:sourceLocation:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/require(_:_:sourcelocation:)-5l63q"
+},
+"https://developer.apple.com/documentation/swift/mirror/init(reflecting:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/mirror\/init(reflecting:)",
+  "title" : "Mirror.init(reflecting:)",
+  "titleInlineContent" : [
+    {
+      "code" : "Mirror.init(reflecting:)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/mirror\/init(reflecting:)"
+},
+"https://developer.apple.com/documentation/swift/string/init(describing:)-67ncf": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/string\/init(describing:)-67ncf",
+  "title" : "String(describing:)",
+  "titleInlineContent" : [
+    {
+      "code" : "String(describing:)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/string\/init(describing:)-67ncf"
+}
+}
+}

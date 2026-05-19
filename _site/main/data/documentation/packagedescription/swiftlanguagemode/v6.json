@@ -1,0 +1,352 @@
+{
+  "abstract" : [
+    {
+      "text" : "The identifier for the Swift 6 language version.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v6"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18PackageDescription17SwiftLanguageModeO2v6yA2CmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "v6"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "SwiftPM",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "SwiftLanguageMode.v6"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "v6"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Swift-Language-Modes",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v5",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v4_2",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v4",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/version(_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v3"
+      ],
+      "title" : "Swift Language Modes"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/swiftlanguagemode\/v6"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode": {
+  "abstract" : [
+    {
+      "text" : "The Swift language mode used to compile Swift sources in the package",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SwiftLanguageMode"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SwiftLanguageMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode/v3": {
+  "abstract" : [
+    {
+      "text" : "The identifier for the Swift 3 language version.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v3"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v3",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode.v3",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode\/v3"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode/v4": {
+  "abstract" : [
+    {
+      "text" : "The identifier for the Swift 4 language version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v4"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v4",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode.v4",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode\/v4"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode/v4_2": {
+  "abstract" : [
+    {
+      "text" : "The identifier for the Swift 4.2 language version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v4_2"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v4_2",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode.v4_2",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode\/v4_2"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode/v5": {
+  "abstract" : [
+    {
+      "text" : "The identifier for the Swift 5 language version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v5"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v5",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode.v5",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode\/v5"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode/v6": {
+  "abstract" : [
+    {
+      "text" : "The identifier for the Swift 6 language version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v6"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/v6",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode.v6",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode\/v6"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftLanguageMode/version(_:)": {
+  "abstract" : [
+    {
+      "text" : "A user-defined value for the Swift version.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "version"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftLanguageMode\/version(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SwiftLanguageMode.version(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftlanguagemode\/version(_:)"
+}
+}
+}

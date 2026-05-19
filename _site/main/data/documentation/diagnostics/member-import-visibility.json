@@ -1,0 +1,262 @@
+{
+  "abstract" : [
+    {
+      "text" : "Enables errors for uses of members that cannot be accessed because their defining module is not directly",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "imported.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/upcoming-language-features"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/member-import-visibility"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Member import visibility (MemberImportVisibility)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Prior to enabling this feature, it was possible to use a member if it was declared in a module that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "was transitively imported. ",
+              "type" : "text"
+            },
+            {
+              "code" : "MemberImportVisibility",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " unifies the visibility rules for members to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "match those of top-level, such that only members contained in a direct import are visible:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func getFileContents() throws -> String {",
+            "  \/\/ error: initializer 'init(contentsOfFile:)' is not available due to missing import of defining module 'Foundation'",
+            "  return try String(contentsOfFile: \"example.txt\")",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To resolve the error, add an import of the module that defines the member.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Migration",
+          "level" : 2,
+          "text" : "Migration",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "-enable-upcoming-feature MemberImportVisibility:migrate"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Enabling migration for ",
+              "type" : "text"
+            },
+            {
+              "code" : "MemberImportVisibility",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " adds fix-its for the missing modules, i.e. those that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "declare members used in the file and are not directly imported.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "See-also",
+          "level" : 2,
+          "text" : "See also",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0444-member-import-visibility.md",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-any",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/nonisolated-nonsending-by-default"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/existential-any": {
+  "abstract" : [
+    {
+      "code" : "any",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " existential type syntax.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-any",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existential any (ExistentialAny)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/existential-any"
+},
+"doc://diagnostics/documentation/diagnostics/nonisolated-nonsending-by-default": {
+  "abstract" : [
+    {
+      "text" : "Runs nonisolated async functions on the caller’s actor by default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/nonisolated-nonsending-by-default",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "nonisolated(nonsending) by Default (NonisolatedNonsendingByDefault)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/nonisolated-nonsending-by-default"
+},
+"doc://diagnostics/documentation/diagnostics/upcoming-language-features": {
+  "abstract" : [
+    {
+      "text" : "Upcoming language features enable new (but potentially source breaking) functionality that be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "enabled by default in an upcoming language mode.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/upcoming-language-features",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Upcoming language features",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/upcoming-language-features"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0444-member-import-visibility.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0444-member-import-visibility.md",
+  "title" : "SE-0444: Member import visibility",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0444: Member import visibility",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0444-member-import-visibility.md"
+}
+}
+}

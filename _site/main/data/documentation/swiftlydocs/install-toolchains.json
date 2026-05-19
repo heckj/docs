@@ -1,0 +1,445 @@
+{
+  "abstract" : [
+    {
+      "text" : "Install swift toolchains with Swiftly.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swiftly"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Install Swift toolchains"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Installing a swift toolchain using swiftly involves downloading it securely and extracting it into a well-known location in your account.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This guides you through the different ways you can install a swift toolchain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Follow the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/getting-started",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " guide to install swiftly.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The easiest way to install a swift toolchain is to select the latest stable release:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install latest"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "After you install a toolchain there may be certain system dependencies that are needed.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Swiftly provides instructions for any additional dependencies that need to be installed.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If this is the only installed toolchain, swiftly automatically uses it. When you run ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (or another toolchain command), it uses the installed version.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swift --version",
+            "",
+            "Swift version 5.8.1 (swift-5.8.1-RELEASE)",
+            "Target: x86_64-unknown-linux-gnu"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can be very specific about the released version to install.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, the following command installs the 5.6.1 toolchain version:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install 5.6.1"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once you’ve installed more than one toolchain you may notice that swift is on the first version that you installed, not the last one. Swiftly lets you quickly switch between toolchains by “using” them. There’s a swiftly subcommand for that.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly use 5.6.1"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can combine ",
+              "type" : "text"
+            },
+            {
+              "code" : "install",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "use",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " into one command with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--use",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " switch on the ",
+              "type" : "text"
+            },
+            {
+              "code" : "install",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " subcommand:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install --use 5.7.1"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Sometimes you want the latest available patch of a minor release, such as 5.7. If you omit the patch number from the release you request, swiftly installs the latest patch.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install 5.7",
+            "Installing Swift 5.7.2"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly supports installing development snapshot toolchains. For example, you can install the latest available snapshot for the next major release using the “main-snapshot” selector and prepare your code for when it arrives.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install main-snapshot"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you are tracking down a problem on a specific snapshot you can download it using the date.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install main-snapshot-2022-01-28"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The same snapshot capabilities are available for version snapshots too either the latest available one, or a specific date.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install 5.7-snapshot",
+            "$ swiftly install 5.7-snapshot-2022-08-30"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble"
+      ],
+      "title" : "Guides"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftlydocs\/install-toolchains"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+  "abstract" : [
+    {
+      "text" : "Install and manage your Swift programming language toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/automated-install": {
+  "abstract" : [
+    {
+      "text" : "Automatically install swiftly and Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install swiftly automatically",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/automated-install"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/getting-started": {
+  "abstract" : [
+    {
+      "text" : "Start using swiftly and Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/getting-started",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Getting started with swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/getting-started"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/shell-autocompletion": {
+  "abstract" : [
+    {
+      "text" : "Generate shell autocompletions for swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add shell auto-completions",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/shell-autocompletion"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/trouble": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Troubleshooting",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/trouble"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/uninstall-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Remove unneeded Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Uninstall Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/uninstall-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/update-toolchain": {
+  "abstract" : [
+    {
+      "text" : "Update installed toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Update Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/update-toolchain"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/use-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Choose an installed toolchain to use as default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Use Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/use-toolchains"
+}
+}
+}

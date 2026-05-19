@@ -1,0 +1,559 @@
+{
+  "abstract" : [
+    {
+      "text" : "The name of the ",
+      "type" : "text"
+    },
+    {
+      "code" : "pkg-config",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " file, if any, describing the library.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/pkgConfig"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin19SystemLibraryTargetV9pkgConfigSSSgvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "pkgConfig"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : "?"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "pkgConfig"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "pkgConfig"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : "?"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-the-System-Library-Target",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/id",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/name",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/dependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/compilerFlags",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/linkerFlags",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/directoryURL",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/directory"
+      ],
+      "title" : "Inspecting the System Library Target"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/systemlibrarytarget\/pkgconfig"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget": {
+  "abstract" : [
+    {
+      "text" : "A target describing a system library that is expected to be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "present on the host system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SystemLibraryTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SystemLibraryTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SystemLibraryTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/compilerFlags": {
+  "abstract" : [
+    {
+      "text" : "Flags from ",
+      "type" : "text"
+    },
+    {
+      "code" : "pkg-config",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to pass to Clang and SwiftC.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compilerFlags"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/compilerFlags",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compilerFlags",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/compilerflags"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/dependencies": {
+  "abstract" : [
+    {
+      "text" : "Any other targets on which this target depends, in the same order as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "specified in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin16TargetDependencyO",
+      "text" : "TargetDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/dependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/dependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/directory": {
+  "abstract" : [
+    {
+      "text" : "The absolute path of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin4PathV",
+      "text" : "Path"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/directory",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directory",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/directory"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/directoryURL": {
+  "abstract" : [
+    {
+      "text" : "The file URL of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directoryURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/directoryURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directoryURL",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/directoryurl"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/id": {
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin19SystemLibraryTargetV",
+      "text" : "SystemLibraryTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/id"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/linkerFlags": {
+  "abstract" : [
+    {
+      "text" : "Flags from ",
+      "type" : "text"
+    },
+    {
+      "code" : "pkg-config",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to pass to the platform linker.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "linkerFlags"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/linkerFlags",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "linkerFlags",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/linkerflags"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/name": {
+  "abstract" : [
+    {
+      "text" : "The name of the target, as defined in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/name"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget/pkgConfig": {
+  "abstract" : [
+    {
+      "text" : "The name of the ",
+      "type" : "text"
+    },
+    {
+      "code" : "pkg-config",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " file, if any, describing the library.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pkgConfig"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/pkgConfig",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pkgConfig",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget\/pkgconfig"
+}
+}
+}

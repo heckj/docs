@@ -1,0 +1,400 @@
+{
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the product.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/id"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin17ExecutableProductV2idSSvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "id"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
+        "text" : "ExecutableProduct"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
+        "text" : "ID"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "id"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "id"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
+              "text" : "ExecutableProduct"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product\/ID-swift.typealias",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
+              "text" : "ID"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-an-Executable-Target",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/name",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/mainTarget",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/targets"
+      ],
+      "title" : "Inspecting an Executable Target"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/executableproduct\/id"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct": {
+  "abstract" : [
+    {
+      "text" : "An executable product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExecutableProduct"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExecutableProduct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExecutableProduct",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct/id": {
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the product.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
+      "text" : "ExecutableProduct"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct\/id"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct/mainTarget": {
+  "abstract" : [
+    {
+      "text" : "The target that contains the main entry point of the executable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "mainTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : ": any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/mainTarget",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "mainTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct\/maintarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct/name": {
+  "abstract" : [
+    {
+      "text" : "The name of the product, as defined in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct\/name"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct/targets": {
+  "abstract" : [
+    {
+      "text" : "The targets that directly comprise the product, in the order in which",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "they are declared in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "targets"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/targets",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "targets",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct\/targets"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Product/ID-swift.typealias": {
+  "abstract" : [
+    {
+      "text" : "The type that represents the identifier of a package product.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product\/ID-swift.typealias",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Product.ID",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/product\/id-swift.typealias"
+}
+}
+}

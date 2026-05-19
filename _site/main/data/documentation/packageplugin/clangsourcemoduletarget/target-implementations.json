@@ -1,0 +1,197 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/Target-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Target Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/recursiveTargetDependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/sourceModule"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/clangsourcemoduletarget\/target-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget": {
+  "abstract" : [
+    {
+      "text" : "A target consisting of a source code module compiled using Clang.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClangSourceModuleTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClangSourceModuleTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClangSourceModuleTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/recursiveTargetDependencies": {
+  "abstract" : [
+    {
+      "text" : "The transitive closure of all the targets on which the receiver depends.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "recursiveTargetDependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/recursiveTargetDependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "recursiveTargetDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/recursivetargetdependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget/sourceModule": {
+  "abstract" : [
+    {
+      "text" : "Convenience accessor which casts the receiver to",
+      "type" : "text"
+    },
+    {
+      "code" : "SourceModuleTarget",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", if possible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sourceModule"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin18SourceModuleTargetP",
+      "text" : "SourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget\/sourceModule",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sourceModule",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget\/sourcemodule"
+}
+}
+}

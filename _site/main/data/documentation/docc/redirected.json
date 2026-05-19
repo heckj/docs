@@ -1,0 +1,580 @@
+{
+  "abstract" : [
+    {
+      "text" : "A directive that specifies a previous URL for the page where the directive appears.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/Redirected"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "__docc_universal_symbol_reference_$Redirected",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "@"
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Redirected"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "identifier",
+        "text" : "from"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "URL"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "docc",
+        "relatedModules" : [
+
+        ]
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "attribute",
+        "text" : "@"
+      },
+      {
+        "kind" : "identifier",
+        "preciseIdentifier" : "__docc_universal_symbol_reference_$Redirected",
+        "text" : "Redirected"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "5.5",
+        "name" : "Swift-DocC",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Directive",
+    "symbolKind" : "class",
+    "title" : "Redirected"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            null
+          ],
+          "tokens" : [
+            {
+              "kind" : "typeIdentifier",
+              "text" : "@"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Redirected"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "identifier",
+              "text" : "from"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "URL"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The URL that redirects to the page associated with the directive.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "(required)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "strong"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "from"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the page has moved more than once you can add multiple  ",
+              "type" : "text"
+            },
+            {
+              "code" : "Redirected",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directives, each specifying one previous URL. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Redirected(from: \"old\/path\/to\/this\/page\")",
+            "@Redirected(from: \"another\/old\/path\/to\/this\/page\")"
+          ],
+          "syntax" : "md",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Starting with version 6.0, the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Redirected",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " directive is supported both top-level and as a member of a ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/Metadata",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " directive. In",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "earlier versions, the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Redirected",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " directive is only supported as a top-level directive.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Setting-up-Redirects",
+          "level" : 3,
+          "text" : "Setting up Redirects",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you host your documentation on a web server, you can set a HTTP “301 Moved Permanently” redirect for each ",
+              "type" : "text"
+            },
+            {
+              "code" : "Redirected",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value to avoid breaking existing links to your content.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To find each page’s Redirected values, pass the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--emit-digest",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag to DocC.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This flag configures DocC to write additional metadata files to the output directory.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "One of these files, ",
+              "type" : "text"
+            },
+            {
+              "code" : "linkable-entities.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", contains summarized information about all pages and on-page landmarks that you can link to from outside the DocC documentation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Each of these “entities” has a ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"path\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "—which represents the current relative path of that page—and an optional list of ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"redirects\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "—which represent all the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Redirected",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " values for page as they were authored in the markup.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can write either relative redirect values or absolute redirect values in the markup depending on what information you need when setting up HTTP “301 Moved Permanently” redirects on your web server.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Configuring-Documentation-Behavior",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/Options",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/Metadata",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/TechnologyRoot"
+      ],
+      "title" : "Configuring Documentation Behavior"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/redirected"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/Metadata": {
+  "abstract" : [
+    {
+      "text" : "Use metadata directives to instruct DocC how to build certain documentation files.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Metadata"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/Metadata",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "attribute",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "__docc_universal_symbol_reference_$Metadata",
+      "text" : "Metadata"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Metadata",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/metadata"
+},
+"doc://org.swift.docc/documentation/docc/Options": {
+  "abstract" : [
+    {
+      "text" : "A directive to adjust Swift-DocC’s default behaviors when rendering a page.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Options"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "identifier",
+      "text" : "scope"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Scope"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/Options",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "attribute",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "__docc_universal_symbol_reference_$Options",
+      "text" : "Options"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Options",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/options"
+},
+"doc://org.swift.docc/documentation/docc/Redirected": {
+  "abstract" : [
+    {
+      "text" : "A directive that specifies a previous URL for the page where the directive appears.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Redirected"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "identifier",
+      "text" : "from"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "URL"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/Redirected",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "attribute",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "__docc_universal_symbol_reference_$Redirected",
+      "text" : "Redirected"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Redirected",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/redirected"
+},
+"doc://org.swift.docc/documentation/docc/TechnologyRoot": {
+  "abstract" : [
+    {
+      "text" : "Configures an article to become a top-level page.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TechnologyRoot"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/TechnologyRoot",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "attribute",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "__docc_universal_symbol_reference_$TechnologyRoot",
+      "text" : "TechnologyRoot"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TechnologyRoot",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/technologyroot"
+}
+}
+}

@@ -1,0 +1,546 @@
+{
+  "abstract" : [
+    {
+      "text" : "Controls how all C++ compiler warnings are treated during compilation.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting\/treatAllWarnings(as:_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18PackageDescription10CXXSettingV16treatAllWarnings2as_AcA12WarningLevelO_AA21BuildSettingConditionVSgtFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "treatAllWarnings"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "as"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:18PackageDescription12WarningLevelO",
+        "text" : "WarningLevel"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+        "text" : "BuildSettingCondition"
+      },
+      {
+        "kind" : "text",
+        "text" : "?) -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:18PackageDescription10CXXSettingV",
+        "text" : "CXXSetting"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.2",
+        "name" : "SwiftPM",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "treatAllWarnings(as:_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "treatAllWarnings"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "as"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "level"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/WarningLevel",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:18PackageDescription12WarningLevelO",
+              "text" : "WarningLevel"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "condition"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/BuildSettingCondition",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+              "text" : "BuildSettingCondition"
+            },
+            {
+              "kind" : "text",
+              "text" : "? = nil) -> "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:18PackageDescription10CXXSettingV",
+              "text" : "CXXSetting"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The treatment level for all warnings (",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".warning",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " or ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".error",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ").",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "level"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A condition that restricts the application of the build setting.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "condition"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use this setting to specify whether all warnings should be treated as warnings (default behavior)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or as errors. This is equivalent to passing ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Werror",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Wno-error",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to the C++ compiler.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This setting applies to all warnings emitted by the C++ compiler. To control specific",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "warnings individually, use ",
+              "type" : "text"
+            },
+            {
+              "code" : "treatWarning(name:as:_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instead.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "First available in PackageDescription 6.2.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Since",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/cxxsetting\/treatallwarnings(as:_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/BuildSettingCondition": {
+  "abstract" : [
+    {
+      "text" : "A condition that limits the application of a build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuildSettingCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/BuildSettingCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BuildSettingCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BuildSettingCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/buildsettingcondition"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/CXXSetting": {
+  "abstract" : [
+    {
+      "text" : "A CXX-language build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CXXSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CXXSetting"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CXXSetting",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/cxxsetting"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/CXXSetting/treatAllWarnings(as:_:)": {
+  "abstract" : [
+    {
+      "text" : "Controls how all C++ compiler warnings are treated during compilation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "treatAllWarnings"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "as"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12WarningLevelO",
+      "text" : "WarningLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription10CXXSettingV",
+      "text" : "CXXSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting\/treatAllWarnings(as:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "treatAllWarnings(as:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/cxxsetting\/treatallwarnings(as:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/WarningLevel": {
+  "abstract" : [
+    {
+      "text" : "The level at which a compiler warning should be treated.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WarningLevel"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/WarningLevel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WarningLevel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WarningLevel",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/warninglevel"
+}
+}
+}

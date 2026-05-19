@@ -1,0 +1,619 @@
+{
+  "abstract" : [
+    {
+      "text" : "Details of the Embedded Swift language subset compared to full Swift",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Language subset"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Embedded Swift is a subset of the Swift language, and some features are not available in Embedded Swift. This is necessary in order to achieve small binaries with effective dead-code elimination and minimized system dependencies.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "That said, ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "the vast majority",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " of the Swift language works exactly the same in Embedded Swift. This includes generics, protocols, enums with associated values, tuples, optionals, classes (instances are allocated on the heap and refcounted just like in regular Swift), inheritance, runtime polymorphism, arrays (heap-allocated copy-on-write just like in regular Swift) and much more.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that there are no behavior changes in Embedded Swift compared to full Swift, and Embedded Swift is strictly a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "subset",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " and not a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "dialect",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ". Any code compatible with Embedded Swift will also compile and have the same semantics in full Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Code-level-features-that-are-not-available",
+          "level" : 2,
+          "text" : "Code-level features that are not available",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Runtime reflection (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Mirror",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " APIs).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Values of protocol types (“existentials”), unless the protocol is restricted to be class-bound (derived from AnyObject). E.g. ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "let a: Hashable = ...",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " is not allowed. ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Any",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " is also not allowed. See ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " for details and alternatives of existentials.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Throwing errors or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "any Error",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " type (in contrast with “typed throws”, which ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "is",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " supported in Embedded Swift).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Metatypes, e.g. ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "let t = SomeClass.Type",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "type(of: value)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " are not allowed.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Standard library types that rely on the above, for example ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Codable",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "KeyPath",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", are not allowed.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Printing and stringification of arbitrary types (which is achieved via reflection in desktop Swift).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Using non-final generic class methods. See ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " for details on this.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Weak and unowned references are not allowed (unsafe unowned references ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "are",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " available).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Compilation-facilities-that-are-not-available",
+          "level" : 2,
+          "text" : "Compilation facilities that are not available",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Library Evolution (stable ABI), and facilities that requires Library Evolution (e.g. internal module imports)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Objective-C interoperability",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Not available",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Builds without WMO (whole module optimization)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Further-resources",
+          "level" : 2,
+          "text" : "Further resources",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The above lists are describing features that are removed from Embedded Swift ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "by design",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ". Since Embedded Swift is currently an experimental preview, there might also be  features that are not yet implemented. See the in-development status at ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Status",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Getting-Started",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift"
+      ],
+      "title" : "Getting Started"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Existentials": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on existentials (“any” types) that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existentials",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/existentials"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/InstallEmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/installembeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Introduction": {
+  "abstract" : [
+    {
+      "text" : "Write Swift code for microcontrollers, embedded systems, and bare-metal applications",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Introduction to Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/introduction"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/NonFinalGenericMethods": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on unbound generic methods that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Non-final generic methods",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/nonfinalgenericmethods"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Status": {
+  "abstract" : [
+    {
+      "text" : "Implementation status of compiler and language features in Embedded Swift, comparison to standard Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Status",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Implementation Status",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/status"
+}
+}
+}

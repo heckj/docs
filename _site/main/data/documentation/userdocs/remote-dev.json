@@ -1,0 +1,847 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create reusable development environments using containers.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/remote-dev"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Visual Studio Code Dev Containers"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/code.visualstudio.com\/docs\/remote\/containers",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " allows you to run your code and environment in a container. This is especially useful for Swift when developing on macOS and deploying to Linux. You can ensure there are no compatibility issues in Foundation when running your code. The extension also works with ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/features\/codespaces",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to allow you to write your code on the web.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Requirements",
+          "level" : 2,
+          "text" : "Requirements",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As well as installing the Swift extension, you must install Docker on your machine to run the dev container in. See the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/code.visualstudio.com\/docs\/devcontainers\/containers",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for more details.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Next, install the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=ms-vscode-remote.vscode-remote-extensionpack",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " that contains extensions for working in remote environments in VS Code. If you only want to work with dev containers (and not use the SSH or WSL containers), you may want to only install the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=ms-vscode-remote.remote-containers",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " instead.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Running-in-a-container",
+          "level" : 2,
+          "text" : "Running in a container",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Manual-Setup",
+          "level" : 3,
+          "text" : "Manual Setup",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "VS Code requires a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".devcontainer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directory which defines the settings in ",
+              "type" : "text"
+            },
+            {
+              "code" : "devcontainer.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and optionally a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Dockerfile",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " defining the container to run in.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "First create the directory. Next, create ",
+              "type" : "text"
+            },
+            {
+              "code" : "devcontainer.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and insert the following:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"name\": \"Swift 5.5\",",
+            "    \"image\": \"swift:5.5\",",
+            "    \"extensions\": [",
+            "      \"swiftlang.swift-vscode\"",
+            "    ],",
+            "    \"settings\": {",
+            "      \"lldb.library\": \"\/usr\/lib\/liblldb.so\"",
+            "    },",
+            "    \"forwardPorts\": [8080]",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This defines the minimum settings required to run a Swift package in a dev container. Here’s what each thing does:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "name",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ": Used to specify the name of the dev container.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "image",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ": The Docker container image to run. You can choose whichever version of Swift you like, including ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/hub.docker.com\/r\/swiftlang\/swift",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "extensions",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ": Extensions to install in your dev environment. You do not need to specify extensions’ dependencies, such as LLDB.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "settings",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ": Override any settings for extensions. The above example sets the LLDB path to stop the Swift extension from attempting to set it up.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "forwardPorts",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ": Ports to enable forwarding for. You may want to include this if building a Swift server application for example.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "That’s all you need to get a dev container working!",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Using-a-custom-Dockerfile",
+          "level" : 4,
+          "text" : "Using a custom Dockerfile",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You may want to use a custom Docker container that’s version controlled to make it easy to set up a development environment for you team. In ",
+              "type" : "text"
+            },
+            {
+              "code" : "devcontainer.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " replace ",
+              "type" : "text"
+            },
+            {
+              "code" : "image",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with the following:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"build\": { \"dockerfile\": \"Dockerfile\" },",
+            "    \/\/ ...",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Dockerfile",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " provided in ",
+              "type" : "text"
+            },
+            {
+              "code" : ".devcontainer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Create that file and insert your custom Dockerfile. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "FROM swift:5.5"
+          ],
+          "syntax" : "docker",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Using-a-custom-Docker-Compose-File",
+          "level" : 3,
+          "text" : "Using a custom Docker Compose File",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more complex development environments you may need to use Docker Compose. The ",
+              "type" : "text"
+            },
+            {
+              "code" : "devcontainer.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file has three settings you need to include if you want to use Docker Compose:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "dockerComposeFile",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " your docker compose file",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "service",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " the service you want to run",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "workspaceFolder",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " the root folder for your project",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Your ",
+              "type" : "text"
+            },
+            {
+              "code" : "devcontainer.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " should look something like this",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"name\": \"MyService: 5.6-focal\",",
+            "    \"dockerComposeFile\": \"docker-compose.yml\",",
+            "    \"service\": \"app\",",
+            "    \"workspaceFolder\": \"\/workspace\",",
+            "    \"extensions\": [",
+            "      \"swiftlang.swift-vscode\",",
+            "    ],",
+            "    \"settings\": {",
+            "      \"lldb.library\": \"\/usr\/lib\/liblldb.so\"",
+            "    },",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Below is an example of a ",
+              "type" : "text"
+            },
+            {
+              "code" : "docker-compose.yml",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file that brings up a redis server",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "version: \"3.3\"",
+            "",
+            "services:",
+            "  app:",
+            "    image: swift:5.6-focal",
+            "    volumes:",
+            "      - ..:\/workspace",
+            "    depends_on:",
+            "      - redis",
+            "    environment:",
+            "      - REDIS_HOST=redis",
+            "    command: sleep infinity",
+            "",
+            "  redis:",
+            "    image: redis",
+            "    ports:",
+            "      - \"6379:6379\""
+          ],
+          "syntax" : "yaml",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note the ",
+              "type" : "text"
+            },
+            {
+              "code" : "service",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "workspace",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " variables from the ",
+              "type" : "text"
+            },
+            {
+              "code" : "devcontainer.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " reference the service ",
+              "type" : "text"
+            },
+            {
+              "code" : "app",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and workspace volume in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "docker-compose.yml",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". The ",
+              "type" : "text"
+            },
+            {
+              "code" : "app",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " service is required to run all the time you are using the devcontainer. We do this here by using the command ",
+              "type" : "text"
+            },
+            {
+              "code" : "sleep infinity",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". It is dependent on the ",
+              "type" : "text"
+            },
+            {
+              "code" : "redis",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " service which can be referenced in code using the service name ",
+              "type" : "text"
+            },
+            {
+              "code" : "redis",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". I have also included a ",
+              "type" : "text"
+            },
+            {
+              "code" : "REDIS_HOST",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " environment variable which can be used in your code.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Automatic-Setup",
+          "level" : 3,
+          "text" : "Automatic Setup",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "VS Code allows you to automatically configure your project with a dev container. In the command palette (",
+              "type" : "text"
+            },
+            {
+              "code" : "F1",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") choose ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Dev Containers: Add Development Container Configuration Files…",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " and choose Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Running-in-a-container",
+          "level" : 3,
+          "text" : "Running in a container",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once you’ve set up your ",
+              "type" : "text"
+            },
+            {
+              "code" : ".devcontainer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", in the command palette run ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Dev Containers: Reopen in Container",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : ". VS Code will relaunch running in your dev container!",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more details about running your project in a dev container, and the available configuration options, see the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/code.visualstudio.com\/docs\/remote\/remote-overview",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Advanced",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/install-pre-release"
+      ],
+      "title" : "Advanced"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/install-pre-release": {
+  "abstract" : [
+    {
+      "text" : "Try out the latest updates by switching to the pre-release version.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/install-pre-release",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Installing Pre-Release Builds",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/install-pre-release"
+},
+"https://code.visualstudio.com/docs/devcontainers/containers": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/devcontainers\/containers",
+  "title" : "Visual Studio Code documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "Visual Studio Code documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/devcontainers\/containers"
+},
+"https://code.visualstudio.com/docs/remote/containers": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/remote\/containers",
+  "title" : "VS Code Dev Containers",
+  "titleInlineContent" : [
+    {
+      "text" : "VS Code Dev Containers",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/remote\/containers"
+},
+"https://code.visualstudio.com/docs/remote/remote-overview": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/remote\/remote-overview",
+  "title" : "Visual Studio Code documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "Visual Studio Code documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/remote\/remote-overview"
+},
+"https://github.com/features/codespaces": {
+  "identifier" : "https:\/\/github.com\/features\/codespaces",
+  "title" : "GitHub Codespaces",
+  "titleInlineContent" : [
+    {
+      "text" : "GitHub Codespaces",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/features\/codespaces"
+},
+"https://hub.docker.com/r/swiftlang/swift": {
+  "identifier" : "https:\/\/hub.docker.com\/r\/swiftlang\/swift",
+  "title" : "nightlies",
+  "titleInlineContent" : [
+    {
+      "text" : "nightlies",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/hub.docker.com\/r\/swiftlang\/swift"
+},
+"https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers": {
+  "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=ms-vscode-remote.remote-containers",
+  "title" : "Dev Containers extension",
+  "titleInlineContent" : [
+    {
+      "text" : "Dev Containers extension",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/marketplace.visualstudio.com\/items?itemName=ms-vscode-remote.remote-containers"
+},
+"https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack": {
+  "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=ms-vscode-remote.vscode-remote-extensionpack",
+  "title" : "Remote Development extension pack",
+  "titleInlineContent" : [
+    {
+      "text" : "Remote Development extension pack",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/marketplace.visualstudio.com\/items?itemName=ms-vscode-remote.vscode-remote-extensionpack"
+}
+}
+}

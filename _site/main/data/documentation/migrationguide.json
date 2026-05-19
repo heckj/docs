@@ -1,0 +1,738 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "collection",
+    "title" : "Migrating to Swift 6"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift’s concurrency system, introduced in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/blog\/swift-5.5-released\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "makes asynchronous and parallel code easier to write and understand.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "With the Swift 6 language mode, the compiler can now",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "guarantee that concurrent programs are free of data races.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When enabled, compiler safety checks that were",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "previously optional become required.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adopting the Swift 6 language mode is entirely under your control",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "on a per-target basis.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Targets that build with previous modes, as well as code in other",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "languages exposed to Swift, can all interoperate with",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "modules that have been migrated to the Swift 6 language mode.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It is possible you have been incrementally adopting concurrency features",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as they were introduced.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Or, you may have been waiting for the Swift 6 release to begin using them.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Regardless of where your project is in this process, this guide provides",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "concepts and practical help to ease the migration.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You will find articles and code examples here that:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Explain the concepts used by Swift’s data-race safety model.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Outline a possible way to get started with migration.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Show how to enable complete concurrency checking for Swift 5 projects.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Demonstrate how to enable the Swift 6 language mode.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Present strategies to resolve common problems.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Provide techniques for incremental adoption.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The Swift 6 language mode is ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "opt-in",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Existing projects will not switch to this mode without configuration changes.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "There is a distinction between the ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "compiler version",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " and ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "language mode",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift 6 compiler supports four distinct language modes: “6”, “5”, “4.2”,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "and “4”.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Important",
+          "style" : "important",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Contributing",
+          "level" : 3,
+          "text" : "Contributing",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This guide is under active development. You can view the source, see",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "full code examples, and learn about how to contribute in the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "We would love your contributions in the form of:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Filing ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide\/issues",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " to cover specific code patterns or additional sections of the guide",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Opening pull requests to improve existing content or add new content",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Reviewing others’ ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide\/pulls",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " for clarity and correctness of writing and code examples",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more information, see the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide\/blob\/main\/CONTRIBUTING.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " document.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Topics",
+      "identifiers" : [
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/DataRaceSafety",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/MigrationStrategy",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/EnableDataRaceSafety",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/IncrementalAdoption",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/FeatureMigration",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/SourceCompatibility",
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/LibraryEvolution"
+      ]
+    },
+    {
+      "anchor" : "Swift-Concurrency-in-Depth",
+      "identifiers" : [
+        "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/RuntimeBehavior"
+      ],
+      "title" : "Swift Concurrency in Depth"
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/CommonProblems": {
+  "abstract" : [
+    {
+      "text" : "Identify, understand, and address common problems you can encounter while",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "working with Swift concurrency.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Common Compiler Errors",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/commonproblems"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/DataRaceSafety": {
+  "abstract" : [
+    {
+      "text" : "Learn about the fundamental concepts Swift uses to enable data-race-free",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "concurrent code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/DataRaceSafety",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Data Race Safety",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/dataracesafety"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/EnableDataRaceSafety": {
+  "abstract" : [
+    {
+      "text" : "Use Swift 6 to get full data-race safety checking or add checking to an existing Swift 5 project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/EnableDataRaceSafety",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Enable data-race safety checking",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/enabledataracesafety"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/FeatureMigration": {
+  "abstract" : [
+    {
+      "text" : "Migrate your project to upcoming language features.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/FeatureMigration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Migrating to upcoming language features",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/featuremigration"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/IncrementalAdoption": {
+  "abstract" : [
+    {
+      "text" : "Learn how you can introduce Swift concurrency features into your project",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "incrementally.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/IncrementalAdoption",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Incremental Adoption",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/incrementaladoption"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/LibraryEvolution": {
+  "abstract" : [
+    {
+      "text" : "Annotate library APIs for concurrency while preserving source and ABI",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "compatibility.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/LibraryEvolution",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Library Evolution",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/libraryevolution"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/MigrationStrategy": {
+  "abstract" : [
+    {
+      "text" : "Get started migrating your project to the Swift 6 language mode.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/MigrationStrategy",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Migration Strategy",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/migrationstrategy"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/RuntimeBehavior": {
+  "abstract" : [
+    {
+      "text" : "Learn how Swift concurrency runtime semantics differ from other runtimes you may",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be familiar with, and familiarize yourself with common patterns to achieve",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "similar end results in terms of execution semantics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/RuntimeBehavior",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Runtime Behavior",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/runtimebehavior"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/SourceCompatibility": {
+  "abstract" : [
+    {
+      "text" : "See an overview of potential source compatibility issues.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/SourceCompatibility",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Source Compatibility",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/sourcecompatibility"
+},
+"https://github.com/apple/swift-migration-guide": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide",
+  "title" : "repository",
+  "titleInlineContent" : [
+    {
+      "text" : "repository",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-migration-guide"
+},
+"https://github.com/apple/swift-migration-guide/blob/main/CONTRIBUTING.md": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide\/blob\/main\/CONTRIBUTING.md",
+  "title" : "contributing",
+  "titleInlineContent" : [
+    {
+      "text" : "contributing",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-migration-guide\/blob\/main\/CONTRIBUTING.md"
+},
+"https://github.com/apple/swift-migration-guide/issues": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide\/issues",
+  "title" : "issues",
+  "titleInlineContent" : [
+    {
+      "text" : "issues",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-migration-guide\/issues"
+},
+"https://github.com/apple/swift-migration-guide/pulls": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-migration-guide\/pulls",
+  "title" : "pull requests",
+  "titleInlineContent" : [
+    {
+      "text" : "pull requests",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-migration-guide\/pulls"
+},
+"https://www.swift.org/blog/swift-5.5-released/": {
+  "identifier" : "https:\/\/www.swift.org\/blog\/swift-5.5-released\/",
+  "title" : "Swift 5.5",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift 5.5",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/blog\/swift-5.5-released\/"
+}
+}
+}

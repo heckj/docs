@@ -1,0 +1,1444 @@
+{
+  "abstract" : [
+    {
+      "text" : "Mark issues as known when running tests.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/known-issues"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Known issues"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The testing library provides several functions named ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can use to mark issues as known. Use them to inform the testing library that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a test should not be marked as failing if only known issues are recorded.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Mark-an-expectation-failure-as-known",
+          "level" : 3,
+          "text" : "Mark an expectation failure as known",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Consider a test function with a single expectation:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func grillHeating() throws {",
+            "  var foodTruck = FoodTruck()",
+            "  try foodTruck.startGrill()",
+            "  #expect(foodTruck.grill.isHeating) \/\/ ❌ Expectation failed",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the value of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "isHeating",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property is ",
+              "type" : "text"
+            },
+            {
+              "code" : "false",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "#expect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will record an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "issue. If you cannot fix the underlying problem, you can surround the failing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "code in a closure passed to ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func grillHeating() throws {",
+            "  var foodTruck = FoodTruck()",
+            "  try foodTruck.startGrill()",
+            "  withKnownIssue(\"Propane tank is empty\") {",
+            "    #expect(foodTruck.grill.isHeating) \/\/ Known issue",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The issue recorded by ",
+              "type" : "text"
+            },
+            {
+              "code" : "#expect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will then be considered “known” and the test",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "will not be marked as a failure. You may include an optional comment to explain",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the problem or provide context.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Mark-a-thrown-error-as-known",
+          "level" : 3,
+          "text" : "Mark a thrown error as known",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If an ",
+              "type" : "text"
+            },
+            {
+              "code" : "Error",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is caught by the closure passed to ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the issue",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "representing that caught error will be marked as known. Continuing the previous",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "example, suppose the problem is that the ",
+              "type" : "text"
+            },
+            {
+              "code" : "startGrill()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function is throwing an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "error. You can apply ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to this situation as well:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func grillHeating() {",
+            "  var foodTruck = FoodTruck()",
+            "  withKnownIssue {",
+            "    try foodTruck.startGrill() \/\/ Known issue",
+            "    #expect(foodTruck.grill.isHeating)",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because all errors thrown from the closure are caught and interpreted as known",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "issues, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function is not throwing. Consequently, any",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "subsequent code which depends on the throwing call having succeeded (such as the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "#expect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " after ",
+              "type" : "text"
+            },
+            {
+              "code" : "startGrill()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") must be included in the closure to avoid",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "additional issues.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : "withKnownIssue()",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is recommended instead of ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "#expect(throws:)",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for any",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "error which is considered a known issue so that the test status and results",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "will reflect the situation more accurately.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Match-a-specific-issue",
+          "level" : 3,
+          "text" : "Match a specific issue",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " considers all issues recorded while invoking the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "body closure known. If multiple issues may be recorded, you can pass a trailing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "closure labeled ",
+              "type" : "text"
+            },
+            {
+              "code" : "matching:",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " which will be called once for each recorded issue",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to determine whether it should be treated as known:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func batteryLevel() throws {",
+            "  var foodTruck = FoodTruck()",
+            "  try withKnownIssue {",
+            "    let batteryLevel = try #require(foodTruck.batteryLevel) \/\/ Known",
+            "    #expect(batteryLevel >= 0.8) \/\/ Not considered known",
+            "  } matching: { issue in",
+            "    guard case .expectationFailed(let expectation) = issue.kind else {",
+            "      return false",
+            "    }",
+            "    return expectation.isRequired",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Resolve-a-known-issue",
+          "level" : 3,
+          "text" : "Resolve a known issue",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If there are no issues recorded while calling ",
+              "type" : "text"
+            },
+            {
+              "code" : "function",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "will record a distinct issue about the lack of any issues having been recorded.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This notifies you that the underlying problem may have been resolved so that you",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "can investigate and consider removing ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " if it’s no longer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "necessary.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Handle-a-nondeterministic-failure",
+          "level" : 3,
+          "text" : "Handle a nondeterministic failure",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If ",
+              "type" : "text"
+            },
+            {
+              "code" : "withKnownIssue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " sometimes succeeds but other times records an issue",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "indicating there were no known issues, this may indicate a nondeterministic",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "failure or a “flaky” test.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The first step in resolving a nondeterministic test failure is to analyze the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "code being tested and determine the source of the unpredictable behavior. If",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you discover a bug such as a race condition, the ideal resolution is to fix",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the underlying problem so that the code always behaves consistently even if",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "it continues to exhibit the known issue.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the underlying problem only occurs in certain circumstances, consider",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "including a precondition. For example, if the grill only fails to heat when",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "there’s no propane, you can pass a trailing closure labeled ",
+              "type" : "text"
+            },
+            {
+              "code" : "when:",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " which",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "determines whether issues recorded in the body closure should be considered",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "known:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func grillHeating() throws {",
+            "  var foodTruck = FoodTruck()",
+            "  try foodTruck.startGrill()",
+            "  withKnownIssue {",
+            "    \/\/ Only considered known when hasPropane == false",
+            "    #expect(foodTruck.grill.isHeating)",
+            "  } when: {",
+            "    !hasPropane",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the underlying problem is unpredictable and fails at random, you can pass",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "isIntermittent: true",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to let the testing library know that it will not always",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "occur. Then, the testing library will not record an issue when zero known issues",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are recorded:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func grillHeating() throws {",
+            "  var foodTruck = FoodTruck()",
+            "  try foodTruck.startGrill()",
+            "  withKnownIssue(isIntermittent: true) {",
+            "    #expect(foodTruck.grill.isHeating)",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Behavior-validation",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectations"
+      ],
+      "title" : "Behavior validation"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Recording-known-issues-in-tests",
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:sourceLocation:_:)",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:)",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:sourceLocation:_:when:matching:)",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:when:matching:)",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/KnownIssueMatcher"
+      ],
+      "title" : "Recording known issues in tests"
+    },
+    {
+      "anchor" : "Describing-a-failure-or-warning",
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue"
+      ],
+      "title" : "Describing a failure or warning"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/known-issues"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/Expectations": {
+  "abstract" : [
+    {
+      "text" : "Check for expected values, outcomes, and asynchronous events in tests.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Expectations and confirmations",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expectations"
+},
+"doc://org.swift.testing/documentation/Testing/Issue": {
+  "abstract" : [
+    {
+      "text" : "A type describing a failure or warning which occurred during a test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Issue"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Issue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Issue",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/issue"
+},
+"doc://org.swift.testing/documentation/Testing/KnownIssueMatcher": {
+  "abstract" : [
+    {
+      "text" : "A function that is used to match known issues.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "KnownIssueMatcher"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/KnownIssueMatcher",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "KnownIssueMatcher"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "KnownIssueMatcher",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/knownissuematcher"
+},
+"doc://org.swift.testing/documentation/Testing/withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:)": {
+  "abstract" : [
+    {
+      "text" : "Invoke a function that has a known issue that is expected to occur during",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withKnownIssue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isIntermittent"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isolation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "isolated"
+    },
+    {
+      "kind" : "text",
+      "text" : " (any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ScA",
+      "text" : "Actor"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/withknownissue(_:isintermittent:isolation:sourcelocation:_:)"
+},
+"doc://org.swift.testing/documentation/Testing/withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:when:matching:)": {
+  "abstract" : [
+    {
+      "text" : "Invoke a function that has a known issue that is expected to occur during",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withKnownIssue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isIntermittent"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isolation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "isolated"
+    },
+    {
+      "kind" : "text",
+      "text" : " (any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ScA",
+      "text" : "Actor"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "when"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "matching"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing17KnownIssueMatchera",
+      "text" : "KnownIssueMatcher"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:when:matching:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withKnownIssue(_:isIntermittent:isolation:sourceLocation:_:when:matching:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/withknownissue(_:isintermittent:isolation:sourcelocation:_:when:matching:)"
+},
+"doc://org.swift.testing/documentation/Testing/withKnownIssue(_:isIntermittent:sourceLocation:_:)": {
+  "abstract" : [
+    {
+      "text" : "Invoke a function that has a known issue that is expected to occur during",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withKnownIssue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isIntermittent"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:sourceLocation:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withKnownIssue(_:isIntermittent:sourceLocation:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/withknownissue(_:isintermittent:sourcelocation:_:)"
+},
+"doc://org.swift.testing/documentation/Testing/withKnownIssue(_:isIntermittent:sourceLocation:_:when:matching:)": {
+  "abstract" : [
+    {
+      "text" : "Invoke a function that has a known issue that is expected to occur during",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withKnownIssue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isIntermittent"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "when"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "matching"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing17KnownIssueMatchera",
+      "text" : "KnownIssueMatcher"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/withKnownIssue(_:isIntermittent:sourceLocation:_:when:matching:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withKnownIssue(_:isIntermittent:sourceLocation:_:when:matching:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/withknownissue(_:isintermittent:sourcelocation:_:when:matching:)"
+}
+}
+}

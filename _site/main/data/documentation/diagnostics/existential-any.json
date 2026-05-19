@@ -1,0 +1,336 @@
+{
+  "abstract" : [
+    {
+      "code" : "any",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " existential type syntax.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/upcoming-language-features"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-any"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Existential any (ExistentialAny)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "any",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " was introduced in Swift 5.6 to explicitly mark “existential types”, i.e., abstract boxed types",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that conform to a set of constraints. For source compatibility, these are not diagnosed by default",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "except for existential types constrained to protocols with ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or associated type requirements",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(as this was introduced in the same version):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol Foo {",
+            "  associatedtype Bar",
+            "",
+            "  func foo(_: Bar)",
+            "}",
+            "",
+            "protocol Baz {}",
+            "",
+            "func pass(foo: Foo) {} \/\/ `any Foo` is required instead of `Foo`",
+            "",
+            "func pass(baz: Baz) {} \/\/ no warning or error by default for source compatibility"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When enabled via ",
+              "type" : "text"
+            },
+            {
+              "code" : "-enable-upcoming-feature ExistentialAny",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the upcoming language feature",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExistentialAny",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will diagnose ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "all",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " existential types without ",
+              "type" : "text"
+            },
+            {
+              "code" : "any",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func pass(baz: Baz) {} \/\/ `any Baz` required instead of `Baz`"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will become the default in a future language mode.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Migration",
+          "level" : 2,
+          "text" : "Migration",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "-enable-upcoming-feature ExistentialAny:migrate"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Enabling migration for ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExistentialAny",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " adds fix-its that prepend all existential types with ",
+              "type" : "text"
+            },
+            {
+              "code" : "any",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as required. No attempt is made to convert to generic (",
+              "type" : "text"
+            },
+            {
+              "code" : "some",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") types.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0335-existential-any.md"
+      ],
+      "title" : "Related Documentation"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/member-import-visibility",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/nonisolated-nonsending-by-default"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/member-import-visibility": {
+  "abstract" : [
+    {
+      "text" : "Enables errors for uses of members that cannot be accessed because their defining module is not directly",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "imported.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/member-import-visibility",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Member import visibility (MemberImportVisibility)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/member-import-visibility"
+},
+"doc://diagnostics/documentation/diagnostics/nonisolated-nonsending-by-default": {
+  "abstract" : [
+    {
+      "text" : "Runs nonisolated async functions on the caller’s actor by default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/nonisolated-nonsending-by-default",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "nonisolated(nonsending) by Default (NonisolatedNonsendingByDefault)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/nonisolated-nonsending-by-default"
+},
+"doc://diagnostics/documentation/diagnostics/upcoming-language-features": {
+  "abstract" : [
+    {
+      "text" : "Upcoming language features enable new (but potentially source breaking) functionality that be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "enabled by default in an upcoming language mode.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/upcoming-language-features",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Upcoming language features",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/upcoming-language-features"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0335-existential-any.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0335-existential-any.md",
+  "title" : "SE-0335: Introduce existential any",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0335: Introduce existential ",
+      "type" : "text"
+    },
+    {
+      "code" : "any",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0335-existential-any.md"
+}
+}
+}

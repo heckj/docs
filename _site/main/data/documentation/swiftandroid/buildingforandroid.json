@@ -1,0 +1,203 @@
+{
+  "abstract" : [
+    {
+      "text" : "Cross-compile Swift code and package it into Android applications",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid"
+      ],
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/BuildingForAndroid"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "SwiftAndroid"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Building for Android"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift on Android uses cross-compilation: you build on a macOS or Linux host, and the compiler produces native ARM or x86_64 binaries targeting Android.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swift build --swift-sdk aarch64-unknown-linux-android28"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Conditional-compilation",
+          "level" : 2,
+          "text" : "Conditional compilation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "code" : "#if os(Android)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to conditionalize code for Android:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "#if os(Android)",
+            "import Android",
+            "#elseif canImport(Darwin)",
+            "import Darwin",
+            "#endif"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Foundation",
+          "level" : 2,
+          "text" : "Foundation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Foundation networking types require a separate import on non-Apple platforms:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "import Foundation",
+            "#if canImport(FoundationNetworking)",
+            "import FoundationNetworking",
+            "#endif"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "JNI-integration",
+          "level" : 2,
+          "text" : "JNI integration",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Export Swift functions for JNI using ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_cdecl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@_cdecl(\"Java_com_example_MyClass_hello\")",
+            "func hello(env: UnsafeMutablePointer<JNIEnv>, thisObj: jobject) -> jstring {",
+            "    return env.pointee.pointee.NewStringUTF(env, \"Hello from Swift\")!",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftandroid\/buildingforandroid"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftAndroid/documentation/SwiftAndroid": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftAndroid",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/SwiftAndroid": {
+  "abstract" : [
+    {
+      "text" : "Use Swift to build native libraries and applications for Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift on Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/swiftandroid"
+}
+}
+}

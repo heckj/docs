@@ -1,0 +1,201 @@
+{
+  "abstract" : [
+    {
+      "text" : "Use this view to get a high level view of your Swift project.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/project-view"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Swift Project View"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your workspace contains a package, this extension will add a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Swift Project",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " view to the Explorer:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "project-panel.png",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use the project panel to view all targets, tasks, dependencies and commands of your Swift project.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Features",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+        "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+        "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+        "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+        "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview"
+      ],
+      "title" : "Features"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/automatic-task-creation": {
+  "abstract" : [
+    {
+      "text" : "Add tasks for common operations with your Package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Automatic Task Creation",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/automatic-task-creation"
+},
+"doc://userdocs/documentation/userdocs/debugging": {
+  "abstract" : [
+    {
+      "text" : "Debug your Swift executables using LLDB.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Debugging",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/debugging"
+},
+"doc://userdocs/documentation/userdocs/docc-live-preview": {
+  "abstract" : [
+    {
+      "text" : "Show a live preview of your Swift documentation while editing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documentation Live Preview",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/docc-live-preview"
+},
+"doc://userdocs/documentation/userdocs/language-features": {
+  "abstract" : [
+    {
+      "text" : "Navigate and write your Swift code more easily with Language features.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language Features",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/language-features"
+},
+"doc://userdocs/documentation/userdocs/test-explorer": {
+  "abstract" : [
+    {
+      "text" : "View test results in the Test Explorer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Running and Debugging Tests",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/test-explorer"
+},
+"project-panel.png": {
+  "alt" : "A snapshot of the Package Dependencies view showing dependencies for the async-http-client Swift project.",
+  "identifier" : "project-panel.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/userdocs\/project-panel.png"
+    }
+  ]
+}
+}
+}

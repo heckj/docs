@@ -1,0 +1,1383 @@
+{
+  "abstract" : [
+    {
+      "text" : "Annotate library APIs for concurrency while preserving source and ABI",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "compatibility.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/LibraryEvolution"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Library Evolution"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Concurrency annotations such as ",
+              "type" : "text"
+            },
+            {
+              "code" : "@MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can impact source",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ABI compatibility. Library authors should be aware of these implications when",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "annotating existing APIs.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Preconcurrency-annotations",
+          "level" : 2,
+          "text" : "Preconcurrency annotations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " attribute can be used directly on library APIs to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "stage in new concurrency requirements that are checked at compile time",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "without breaking source or ABI compatibility for clients:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@preconcurrency @MainActor",
+            "struct S { ... }",
+            "",
+            "@preconcurrency",
+            "public func performConcurrently(",
+            "  completion: @escaping @Sendable () -> Void",
+            ") { ... }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Clients do not need to use a ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency import",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for the new errors",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to be downgraded. If the clients build with minimal concurrency checking,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "errors from ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " APIs will be suppressed. If the clients build",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "with complete concurrency checking or the Swift 6 language mode, the errors",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "will be downgraded to warnings.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For ABI compatibility, ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will mangle symbol names without any",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "concurrency annotations. If an API was introduced with some concurrency",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "annotations, and is later updated to include additional concurrency",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "annotations, then applying ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is not sufficient for preserving",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "mangling. ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_silgen_name",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be used in cases where you need more precise",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "control over mangling concurrency annotations.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that all APIs imported from C, C++, and Objective-C are automatically",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "considered ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Concurrency attributes can always be applied",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to these APIs using ",
+              "type" : "text"
+            },
+            {
+              "code" : "__attribute__((__swift_attr__(\"<attribute name>\")))",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "without breaking source or ABI compatibility.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Sendable",
+          "level" : 2,
+          "text" : "Sendable",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Conformances-on-concrete-types",
+          "level" : 3,
+          "text" : "Conformances on concrete types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " conformance to a concrete type, including conditional",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "conformances, is typically a source compatible change in practice.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI compatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public struct S",
+            "+public struct S: Sendable"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Like any other conformance, adding a conformance to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can change",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "overload resolution if the concrete type satisfies more specialized",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "requirements. However, it’s unlikely that an API which overloads on a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " conformance would change type inference in a way that breaks",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "source compatibility or program behavior.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " conformance to a concrete type, and not one of its type",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "parameters, is always an ABI compatible change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Generic-requirements",
+          "level" : 3,
+          "text" : "Generic requirements",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " conformance requirement to a generic type or function is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a source incompatible change, because it places a restriction on generic",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "arguments passed by the client.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI incompatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public func generic<T>",
+            "+public func generic<T> where T: Sendable"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "To resolve:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " Apply ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to the type or function declaration to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "downgrade requirement failures to warnings and preserve ABI:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@preconcurrency",
+            "public func generic<T> where T: Sendable { ... }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Function-types",
+          "level" : 3,
+          "text" : "Function types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Like generic requirements, adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to a function type is a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "source and ABI incompatible change:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI incompatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public func performConcurrently(completion: @escaping () -> Void)",
+            "+public func performConcurrently(completion: @escaping @Sendable () -> Void)"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "To resolve:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " Apply ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to the enclosing function declaration",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to downgrade requirement failures to warnings and preserve ABI:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@preconcurrency",
+            "public func performConcurrently(completion: @escaping @Sendable () -> Void)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Main-actor-annotations",
+          "level" : 2,
+          "text" : "Main actor annotations",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Protocols-and-types",
+          "level" : 3,
+          "text" : "Protocols and types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "@MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotations to protocols or type declarations is a source",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ABI incompatible change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI incompatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public protocol P",
+            "+@MainActor public protocol P",
+            "",
+            "-public class C",
+            "+@MainActor public class C"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "@MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to protocols and type declarations has a wider impact than",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "other concurrency annotations because the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotation can be",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "inferred throughout client code, including protocol conformances, subclasses,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and extension methods.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Applying ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to the protocol or type declaration will downgrade",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actor isolation errors based on the concurrency checking level. However,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is not sufficient for preserving ABI compatibility for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "clients in cases where the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency @MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotation can be",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "inferred on other declarations in client code. For example, consider the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "following API in a client library:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension P {",
+            "  public func onChange(action: @escaping @Sendable () -> Void)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If ",
+              "type" : "text"
+            },
+            {
+              "code" : "P",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is retroactively annotated with ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency @MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", these",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "annotations will be inferred on the extension method. If an extension method is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "also part of a library with ABI compatibility constraints, then",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will strip all concurrency related annotations from mangling.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This can be worked around in the client library either by applying the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "appropriate isolation explicitly, such as:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension P {",
+            "  nonisolated public func onChange(action: @escaping @Sendable () -> Void)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Language affordances for precise control over the ABI of a declaration are",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/forums.swift.org\/t\/pitch-controlling-the-abi-of-a-declaration\/75123",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Function-declarations-and-types",
+          "level" : 3,
+          "text" : "Function declarations and types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "@MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to a function declaration or a function type is a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "source and ABI incompatible change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI incompatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public func runOnMain()",
+            "+@MainActor public func runOnMain()",
+            "",
+            "-public func performConcurrently(completion: @escaping () -> Void)",
+            "+public func performConcurrently(completion: @escaping @MainActor () -> Void)"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "To resolve:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " Apply ",
+              "type" : "text"
+            },
+            {
+              "code" : "@preconcurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to the enclosing function declaration",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to downgrade requirement failures to warnings and preserve ABI:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@preconcurrency @MainActor",
+            "public func runOnMain() { ... }",
+            "",
+            "@preconcurrency",
+            "public func performConcurrently(completion: @escaping @MainActor () -> Void) { ... }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "sending-parameters-and-results",
+          "level" : 2,
+          "text" : "`sending` parameters and results",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to a result lifts restrictions in client code, and is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "always a source and ABI compatible change:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI compatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public func getValue() -> NotSendable",
+            "+public func getValue() -> sending NotSendable"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "However, adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to a parameter is more restrictive at the caller.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source and ABI incompatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public func takeValue(_: NotSendable)",
+            "+public func takeValue(_: sending NotSendable)"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There is currently no way to stage in a new ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotation on a parameter",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "without breaking source compatibility.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Replacing-Sendable-with-sending",
+          "level" : 3,
+          "text" : "Replacing `@Sendable` with `sending`",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Replacing an existing ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotation with ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on a closure",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "parameter is a source compatible, ABI incompatible change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source compatible, ABI incompatible:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "-public func takeValue(_: @Sendable @escaping () -> Void)",
+            "+public func takeValue(_: sending @escaping () -> Void)"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "To resolve:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " Adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to a parameter changes name mangling, so any",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "adoption must preserve the mangling using ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_silgen_name",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Adopting ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in parameter position must preserve the ownership convention of parameters. No",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "additional annotation is necessary if the parameter already has an explicit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "ownership modifier. For all functions except initializers, use",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "__shared sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to preserve the ownership convention:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "public func takeValue(_: __shared sending NotSendable)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For initializers, ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " preserves the default ownership convention, so it’s not",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "necessary to specify an ownership modifier when adopting ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on initializer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "parameters:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "public class C {",
+            "  public init(ns: sending NotSendable)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+},
+"https://forums.swift.org/t/pitch-controlling-the-abi-of-a-declaration/75123": {
+  "identifier" : "https:\/\/forums.swift.org\/t\/pitch-controlling-the-abi-of-a-declaration\/75123",
+  "title" : "under development",
+  "titleInlineContent" : [
+    {
+      "text" : "under development",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/forums.swift.org\/t\/pitch-controlling-the-abi-of-a-declaration\/75123"
+}
+}
+}

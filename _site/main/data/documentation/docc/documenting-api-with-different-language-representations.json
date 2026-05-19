@@ -1,0 +1,893 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create documentation for API that’s callable from more than one source language.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "DocC"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Documenting API with Different Language Representations"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When a symbol has representations in more than one source language, DocC adds a source language toggle to the symbol’s page so that the reader can select which language’s representation of the symbol to view.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The documentation you write for the symbol—both in-source, alongside its declaration, and in a documentation extension file—is displayed in all language versions of that symbol’s page.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Linking-to-Symbols-with-Different-Language-Representations",
+          "level" : 3,
+          "text" : "Linking to Symbols with Different Language Representations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can use either source language’s spelling of the symbol path to refer to the symbol in a symbol link.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, consider a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " class with ",
+              "type" : "text"
+            },
+            {
+              "code" : "@objc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " attributes:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@objc(TLASloth) public class Sloth: NSObject {",
+            "    @objc public init(name: String, color: Color, power: Power) {",
+            "        self.name = name",
+            "        self.color = color",
+            "        self.power = power",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Both ",
+              "type" : "text"
+            },
+            {
+              "code" : "``Sloth\/init(name:color:power:)``",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "``TLASloth\/initWithName:color:power:``",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " refer to the same Sloth initializer.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Regardless of which source language’s spelling you use in the symbol link, DocC matches the on-page link text to the symbol name in the source language version of the page that the reader selected. If the symbol doesn’t have a representation in the source language that the reader selected, the link text will use the symbol name in the language that declared the symbol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more information about linking to symbols, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Document-Language-Specific-Parameters-and-Return-Values",
+          "level" : 3,
+          "text" : "Document Language Specific Parameters and Return Values",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When a symbol has different parameters or return values in different source language representations, DocC hides the documentation for the parameters or return values that don’t apply to the source language version of the page that the reader selected. For example, consider an Objective-C method with an ",
+              "type" : "text"
+            },
+            {
+              "code" : "error",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter and a ",
+              "type" : "text"
+            },
+            {
+              "code" : "BOOL",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " return value that correspond to a throwing function without a return value in Swift:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Objective-C definition",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/\/ - Parameters:",
+            "\/\/\/   - someValue: Some description of this parameter.",
+            "\/\/\/   - error: On output, a pointer to an error object that describes why \"doing something\" failed, or `nil` if no error occurred.",
+            "\/\/\/ - Returns: `YES` if \"doing something\" was successful, `NO` if an error occurred.",
+            "- (BOOL)doSomethingWith:(NSInteger)someValue",
+            "                  error:(NSError **)error;"
+          ],
+          "syntax" : "objc",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Generated Swift interface",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func doSomething(with someValue: Int) throws"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because the Swift representation of this method only has the “someValue” parameter and no return value, DocC hides the “error” parameter documentation and the return value documentation from the Swift version of this symbol’s page.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "params-1-swift",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "params-1-objc",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You don’t need to document the Objective-C representation’s “error” parameter or the Objective-C specific return value for methods that correspond to throwing functions in Swift.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC automatically adds a generic description for the “error” parameter for the Objective-C version of that symbol’s page.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If you want to customize this documentation you can manually document the “error” parameter.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Doing so won’t change the Swift version of that symbol’s page.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When the Swift representation returns ",
+              "type" : "text"
+            },
+            {
+              "code" : "Void",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "—which corresponds to a ",
+              "type" : "text"
+            },
+            {
+              "code" : "BOOL",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " return value in Objective-C (like in the example above)—DocC adds a generic description of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "BOOL",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " return value to the Objective-C version of that symbol’s page.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "params-2-swift",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "params-2-objc",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When the Swift representation returns a value—which corresponds to a ",
+              "type" : "text"
+            },
+            {
+              "code" : "nullable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " return value in Objective-C—DocC extends your return value documentation, for the Objective-C version of that symbol’s page, to describe that the methods returns ",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " if an error occurs unless your documentation already covers this behavior.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, consider this throwing function in Swift and its corresponding Objective-C interface:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Swift definition",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/\/ - Parameters:",
+            "\/\/\/   - someValue: Some description of this parameter.",
+            "\/\/\/ - Returns: Some general description of this return value.",
+            "@objc func doSomething(with someValue: Int) throws -> String"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Generated Objective-C interface",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- (nullable NSString *)doSomethingWith:(NSInteger)someValue",
+            "                                 error:(NSError **)error;"
+          ],
+          "syntax" : "objc",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For the Swift representation, with one parameter and a non-optional return value,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC displays the “someValue” parameter documentation and return value documentation as-is.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For the Objective-C representation, with two parameters and a nullable return value,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC displays the “someValue” parameter documentation, generic “error” parameter documentation, and extends the return value documentation with a generic description about the Objective-C specific ",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " return value when the method encounters an error.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "params-3-swift",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "params-3-objc",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "If you document the Objective-C specific ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "nil",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " return value for a method that corresponds to a throwing function in Swift,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "but don’t provide more information to the reader than “On failure, this method returns ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "nil",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "”,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "consider removing that written documentation to let DocC display its generic description about the Objective-C specific ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "nil",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " return value,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "only on the Objective-C version of that symbol’s page.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The return value documentation you write displays on both the Swift and Objective-C versions of that symbol’s page.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC won’t add its generic ",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " return value description to the Objective-C page,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "if your return value documentation already describes that the method returns ",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " when it fails or encounters an error,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but that Objective-C specific documentation you’ve written will display on the Swift version of that page where the symbol has a non-optional return type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Documentation-Content",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content"
+      ],
+      "title" : "Documentation Content"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/documenting-api-with-different-language-representations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/adding-code-snippets-to-your-content": {
+  "abstract" : [
+    {
+      "text" : "Create and include code snippets to illustrate and provide examples of how to use your API.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Adding Code Snippets to your Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-code-snippets-to-your-content"
+},
+"doc://org.swift.docc/documentation/docc/adding-supplemental-content-to-a-documentation-catalog": {
+  "abstract" : [
+    {
+      "text" : "Include articles and extension files to extend your source documentation comments or provide supporting conceptual content.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Supplemental Content to a Documentation Catalog",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog"
+},
+"doc://org.swift.docc/documentation/docc/linking-to-symbols-and-other-content": {
+  "abstract" : [
+    {
+      "text" : "Facilitate navigation between pages using links.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Linking to Symbols and Other Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/linking-to-symbols-and-other-content"
+},
+"doc://org.swift.docc/documentation/docc/writing-symbol-documentation-in-your-source-files": {
+  "abstract" : [
+    {
+      "text" : "Add reference documentation to your symbols that explains how to use them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Writing Symbol Documentation in Your Source Files",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/writing-symbol-documentation-in-your-source-files"
+},
+"params-1-objc": {
+  "alt" : null,
+  "identifier" : "params-1-objc",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-1-objc.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-1-objc~dark.svg"
+    }
+  ]
+},
+"params-1-swift": {
+  "alt" : null,
+  "identifier" : "params-1-swift",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-1-swift.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-1-swift~dark.svg"
+    }
+  ]
+},
+"params-2-objc": {
+  "alt" : null,
+  "identifier" : "params-2-objc",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-2-objc.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-2-objc~dark.svg"
+    }
+  ]
+},
+"params-2-swift": {
+  "alt" : null,
+  "identifier" : "params-2-swift",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-2-swift.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-2-swift~dark.svg"
+    }
+  ]
+},
+"params-3-objc": {
+  "alt" : null,
+  "identifier" : "params-3-objc",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-3-objc.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-3-objc~dark.svg"
+    }
+  ]
+},
+"params-3-swift": {
+  "alt" : null,
+  "identifier" : "params-3-swift",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-3-swift.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/params-3-swift~dark.svg"
+    }
+  ]
+}
+}
+}

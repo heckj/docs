@@ -1,0 +1,840 @@
+{
+  "abstract" : [
+    {
+      "text" : "Configure the behavior of the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/settings"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Extension Settings"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The Settings Editor is common to all VS Code extensions. See the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/code.visualstudio.com\/docs\/getstarted\/personalize-vscode",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for a more in-depth overview.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "💡 Tip",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift extension comes with a number of settings you can use to control how it works. Detailed descriptions of each setting are provided in the extension settings page.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This document outlines useful configuration options not covered by the settings descriptions in the extension settings page.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Workspace-Setup",
+          "level" : 2,
+          "text" : "Workspace Setup",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Multiple-packages-in-workspace-folder",
+          "level" : 3,
+          "text" : "Multiple packages in workspace folder",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the workspace folder you open in VS Code contains multiple Swift packages:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<workspace folder>",
+            "    \/proj1",
+            "        \/Package.swift",
+            "    \/proj2",
+            "        \/Package.swift",
+            "    \/aSubfolder",
+            "        \/proj3",
+            "            \/Package.swift"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can enable the ",
+              "type" : "text"
+            },
+            {
+              "code" : "searchSubfoldersForPackages",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " setting so the Swift extension can initializing all these projects.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"swift.searchSubfoldersForPackages\": true,",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Additionally you can exclude individual packages from initializing:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"swift.excludePathsFromActivation\": {",
+            "    \"**\/proj2\": true,",
+            "    \"**\/aSubfolder\": true,",
+            "    \"**\/aSubfolder\/proj3\": false,",
+            "  },",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Multi-root-Workspaces",
+          "level" : 3,
+          "text" : "Multi-root Workspaces",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As an alternative to opening ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "#multiple-packages-in-workspace-folder",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", VS Code has a concept of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/code.visualstudio.com\/docs\/editing\/workspaces\/multi-root-workspaces",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " which the Swift extension supports.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Ex. myProj.code-workspace",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "\t\"folders\": [",
+            "\t\t{",
+            "\t\t\t\"name\": \"proj1\",",
+            "\t\t\t\"path\": \".\/proj1\"",
+            "\t\t},",
+            "\t\t{",
+            "\t\t\t\"name\": \"proj3\",",
+            "\t\t\t\"path\": \".\/aSubfolder\/proj3\"",
+            "\t\t},",
+            "\t],",
+            "\t\"settings\": {",
+            "\t\t\"swift.autoGenerateLaunchConfigurations\": false,",
+            "\t\t\"swift.debugger.debugAdapter\": \"lldb-dap\",",
+            "    }",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Command-Plugins",
+          "level" : 2,
+          "text" : "Command Plugins",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift packages can define ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/blob\/main\/Documentation\/Plugins.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " that can perform arbitrary tasks. For example, the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-format",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " package exposes a ",
+              "type" : "text"
+            },
+            {
+              "code" : "format-source-code",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command which will use swift-format to format source code in a folder. These plugin commands can be invoked from VS Code using ",
+              "type" : "text"
+            },
+            {
+              "code" : "> Swift: Run Command Plugin",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A plugin may require permissions to perform tasks like writing to the file system or using the network. If a plugin command requires one of these permissions, you will be prompted in the integrated terminal to accept them. If you trust the command and wish to apply permissions on every command execution, you can configure the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "vscode:\/\/settings\/swift.pluginPermissions",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " setting in your ",
+              "type" : "text"
+            },
+            {
+              "code" : "settings.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"swift.pluginPermissions\": {",
+            "    \"PluginName:command\": {",
+            "      \"allowWritingToPackageDirectory\": true,",
+            "      \"allowWritingToDirectory\": \"\/some\/path\/\",",
+            "      \"allowNetworkConnections\": \"all\",",
+            "      \"disableSandbox\": true",
+            "    }",
+            "  }",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A key of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PluginName:command",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will set permissions for a specific command. A key of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PluginName",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will set permissions for all commands in the plugin. If you’d like the same permissions to be applied to all plugins use ",
+              "type" : "text"
+            },
+            {
+              "code" : "*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as the plugin name. Precedence order is determined by specificity, where more specific names take priority. The name ",
+              "type" : "text"
+            },
+            {
+              "code" : "*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is the least specific and ",
+              "type" : "text"
+            },
+            {
+              "code" : "PluginName:command",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is the most specific.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively, you can define a task in your tasks.json and define permissions directly on the task. This will create a new entry in the list shown by ",
+              "type" : "text"
+            },
+            {
+              "code" : "> Swift: Run Command Plugin",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"type\": \"swift-plugin\",",
+            "  \"command\": \"command_plugin\",",
+            "  \"args\": [\"--foo\"],",
+            "  \"cwd\": \"command-plugin\",",
+            "  \"problemMatcher\": [\"$swiftc\"],",
+            "  \"label\": \"swift: command-plugin from tasks.json\",",
+            "",
+            "  \"allowWritingToPackageDirectory\": true,",
+            "  \"allowWritingToDirectory\": \"\/some\/path\/\",",
+            "  \"allowNetworkConnections\": \"all\",",
+            "  \"disableSandbox\": true",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you’d like to provide specific arguments to your plugin command invocation you can  use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift.pluginArguments",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " setting. Defining an array for this setting applies the same arguments to all plugin command invocations.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"swift.pluginArguments\": [\"-c\", \"release\"]",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively you can specify which specific command the arguments should apply to using ",
+              "type" : "text"
+            },
+            {
+              "code" : "PluginName:command",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". A key of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PluginName",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will use the arguments for all commands in the plugin. If you’d like the same arguments to be used for all plugins use ",
+              "type" : "text"
+            },
+            {
+              "code" : "*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as the plugin name.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"swift.pluginArguments\": {",
+            "    \"PluginName:command\": [\"-c\", \"release\"]",
+            "  }",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "SourceKit-LSP",
+          "level" : 2,
+          "text" : "SourceKit-LSP",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/apple\/sourcekit-lsp",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " is the language server used by the Swift extension to provide symbol completion, jump to definition, etc. It is developed by Apple to provide Swift and C language support for any editor that supports the Language Server Protocol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Background-Indexing",
+          "level" : 3,
+          "text" : "Background Indexing",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Background Indexing was added as an experimental feature in Swift toolchain version 6.0 and then enabled by default in 6.1. This feature removes the need to do a build before getting code completion and diagnostics.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "On startup, SourceKit-LSP will read your project information from your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and begin indexing your project automatically. All indexing results are cached in the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build\/index-build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " folder within your workspace.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can enable or disable this feature with the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "vscode:\/\/settings\/swift.sourcekit-lsp.backgroundIndexing",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " setting.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Support-for-Expand-Macro",
+          "level" : 3,
+          "text" : "Support for ‘Expand Macro’",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you are using a nightly (",
+              "type" : "text"
+            },
+            {
+              "code" : "main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") toolchain you can enable support for the “Peek Macro” Quick Action, accessible through the light bulb icon when the cursor is on a macro.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable support, set the following Sourcekit-LSP server arguments in your settings.json, or add two new entries to the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "vscode:\/\/settings\/swift.sourcekit-lsp.serverArguments",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " setting.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\"swift.sourcekit-lsp.serverArguments\": [",
+            "  \"--experimental-feature\",",
+            "  \"show-macro-expansions\"",
+            "]"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Windows-Development",
+          "level" : 2,
+          "text" : "Windows Development",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Specifying-a-Visual-Studio-installation",
+          "level" : 3,
+          "text" : "Specifying a Visual Studio installation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift depends on a number of developer tools when running on Windows, including the C++ toolchain and the Windows SDK. Typically these are installed with ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/visualstudio.microsoft.com\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you have multiple versions of Visual Studio installed you can specify the path to the desired version by setting a ",
+              "type" : "text"
+            },
+            {
+              "code" : "VCToolsInstallDir",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " environment variable using the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "vscode:\/\/settings\/swift.swiftEnvironmentVariables",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " setting.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Reference",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/commands"
+      ],
+      "title" : "Reference"
+    }
+  ]
+, 
+"references": {
+"#multiple-packages-in-workspace-folder": {
+  "identifier" : "#multiple-packages-in-workspace-folder",
+  "title" : "a single workspace folder with multiple packages in it",
+  "titleInlineContent" : [
+    {
+      "text" : "a single workspace folder with multiple packages in it",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "#multiple-packages-in-workspace-folder"
+},
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/commands": {
+  "abstract" : [
+    {
+      "text" : "Useful VS Code commands added by the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/commands",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Commands",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/commands"
+},
+"https://code.visualstudio.com/docs/editing/workspaces/multi-root-workspaces": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/editing\/workspaces\/multi-root-workspaces",
+  "title" : "multi-root workspaces",
+  "titleInlineContent" : [
+    {
+      "text" : "multi-root workspaces",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/editing\/workspaces\/multi-root-workspaces"
+},
+"https://code.visualstudio.com/docs/getstarted/personalize-vscode": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/getstarted\/personalize-vscode",
+  "title" : "documentation about personalizing VS Code",
+  "titleInlineContent" : [
+    {
+      "text" : "documentation about personalizing VS Code",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/getstarted\/personalize-vscode"
+},
+"https://github.com/apple/sourcekit-lsp": {
+  "identifier" : "https:\/\/github.com\/apple\/sourcekit-lsp",
+  "title" : "SourceKit-LSP",
+  "titleInlineContent" : [
+    {
+      "text" : "SourceKit-LSP",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/sourcekit-lsp"
+},
+"https://github.com/swiftlang/swift-format": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-format",
+  "title" : "swift-format",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-format",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-format"
+},
+"https://github.com/swiftlang/swift-package-manager/blob/main/Documentation/Plugins.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/blob\/main\/Documentation\/Plugins.md",
+  "title" : "command plugins",
+  "titleInlineContent" : [
+    {
+      "text" : "command plugins",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/blob\/main\/Documentation\/Plugins.md"
+},
+"https://visualstudio.microsoft.com/": {
+  "identifier" : "https:\/\/visualstudio.microsoft.com\/",
+  "title" : "Visual Studio",
+  "titleInlineContent" : [
+    {
+      "text" : "Visual Studio",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/visualstudio.microsoft.com\/"
+},
+"vscode://settings/swift.pluginPermissions": {
+  "identifier" : "vscode:\/\/settings\/swift.pluginPermissions",
+  "title" : "swift.pluginPermissions",
+  "titleInlineContent" : [
+    {
+      "code" : "swift.pluginPermissions",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "vscode:\/\/settings\/swift.pluginPermissions"
+},
+"vscode://settings/swift.sourcekit-lsp.backgroundIndexing": {
+  "identifier" : "vscode:\/\/settings\/swift.sourcekit-lsp.backgroundIndexing",
+  "title" : "swift.sourcekit-lsp.backgroundIndexing",
+  "titleInlineContent" : [
+    {
+      "code" : "swift.sourcekit-lsp.backgroundIndexing",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "vscode:\/\/settings\/swift.sourcekit-lsp.backgroundIndexing"
+},
+"vscode://settings/swift.sourcekit-lsp.serverArguments": {
+  "identifier" : "vscode:\/\/settings\/swift.sourcekit-lsp.serverArguments",
+  "title" : "swift.sourcekit-lsp.serverArguments",
+  "titleInlineContent" : [
+    {
+      "code" : "swift.sourcekit-lsp.serverArguments",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "vscode:\/\/settings\/swift.sourcekit-lsp.serverArguments"
+},
+"vscode://settings/swift.swiftEnvironmentVariables": {
+  "identifier" : "vscode:\/\/settings\/swift.swiftEnvironmentVariables",
+  "title" : "swift.swiftEnvironmentVariables",
+  "titleInlineContent" : [
+    {
+      "code" : "swift.swiftEnvironmentVariables",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "vscode:\/\/settings\/swift.swiftEnvironmentVariables"
+}
+}
+}

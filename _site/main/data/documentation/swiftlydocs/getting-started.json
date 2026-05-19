@@ -1,0 +1,516 @@
+{
+  "abstract" : [
+    {
+      "text" : "Start using swiftly and Swift.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/getting-started"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swiftly"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Getting started with swiftly"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To get started with swiftly you can download it from ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swift.org\/download",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and extract the package.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "tabs" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you are using Linux then you can download the binary:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "curl -L https:\/\/download.swift.org\/swiftly\/linux\/swiftly-$(uname -m).tar.gz > swiftly.tar.gz",
+                    "tar zxf swiftly.tar.gz"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Now run swiftly init to finish the installation:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    ".\/swiftly init"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ],
+              "title" : "Linux"
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "On macOS you can either run the pkg installer from the command-line like this or run the package by double-clicking on it (not recommended):",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "curl -L https:\/\/download.swift.org\/swiftly\/darwin\/swiftly.pkg > swiftly.pkg",
+                    "installer -pkg swiftly.pkg -target CurrentUserHomeDirectory"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Once the package is installed, run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swiftly init",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to finish the installation:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "~\/.swiftly\/bin\/swiftly init"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ],
+              "title" : "macOS"
+            }
+          ],
+          "type" : "tabNavigator"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly installs itself and downloads the latest available Swift toolchain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Follow the prompts for any additional steps that may be required.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Once everything is done you can begin using swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swift --version",
+            "",
+            "Swift version 6.0.3 (swift-6.0.3-RELEASE)",
+            "...",
+            "",
+            "$ swift build        # Build with the latest (6.0.3) toolchain"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can install (and use) another release toolchain:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install --use 5.10",
+            "",
+            "$ swift --version",
+            "",
+            "Swift version 5.10.1 (swift-5.10.1-RELEASE)",
+            "...",
+            "",
+            "$ swift build    # Build with the 5.10.1 toolchain"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Quickly test your package with the latest nightly snapshot to prepare for the next release:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install main-snapshot",
+            "$ swiftly run swift test +main-snapshot   # Run \"swift test\" with the main-snapshot toolchain",
+            "$ swift build                             # Continue to build with my usual toolchain"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Uninstall this toolchain after you’re finished with it:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly uninstall main-snapshot"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Installing-toolchains-through-an-HTTP-proxy",
+          "level" : 2,
+          "text" : "Installing toolchains through an HTTP proxy",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly downloads a list of toolchains from https:\/\/www.swift.org\/ and retrieves them from CDN via https:\/\/download.swift.org.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If your environment requires a proxy, Swiftly attempts to use the standard environment variables ",
+              "type" : "text"
+            },
+            {
+              "code" : "http_proxy",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTP_PROXY",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "https_proxy",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPS_PROXY",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to determine which proxy server to use instead of making a direct connection.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To download latest nightly snapshot using a proxy:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ export https_proxy=http:\/\/proxy:3128",
+            "$ swiftly install main-snapshot"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "See-Also",
+          "level" : 2,
+          "text" : "See Also:",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/swiftly-cli-reference",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftlydocs\/getting-started"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+  "abstract" : [
+    {
+      "text" : "Install and manage your Swift programming language toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/install-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Install swift toolchains with Swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/install-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/shell-autocompletion": {
+  "abstract" : [
+    {
+      "text" : "Generate shell autocompletions for swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add shell auto-completions",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/shell-autocompletion"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/swiftly-cli-reference": {
+  "abstract" : [
+    {
+      "text" : "A utility for installing and managing Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/swiftly-cli-reference",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/swiftly-cli-reference"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/uninstall-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Remove unneeded Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Uninstall Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/uninstall-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/use-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Choose an installed toolchain to use as default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Use Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/use-toolchains"
+},
+"https://swift.org/download": {
+  "identifier" : "https:\/\/swift.org\/download",
+  "title" : "swift.org",
+  "titleInlineContent" : [
+    {
+      "text" : "swift.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swift.org\/download"
+}
+}
+}

@@ -1,0 +1,3040 @@
+{
+  "abstract" : [
+    {
+      "text" : "Facilitate navigation between pages using links.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "DocC"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Linking to Symbols and Other Content"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC supports the following link types to enable navigation between pages:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Usage",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Symbol",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Links to a symbol’s reference page in your documentation.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Article",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Links to an article or API collection in your documentation catalog.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Tutorial",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Links to a tutorial in your documentation catalog.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Web",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Links to an external URL.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you link to a symbol from an article’s content, DocC automatically creates a “mentioned in” link from mentioned symbol’s page to the article that mentioned the symbol.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These “mentioned in” links helps the reader find conceptual content that put a specific symbol in context or that describe how to accomplish some task using that symbol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC only creates “mentioned in” links when an ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "article",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " links to a symbol and only when that link appears in the article’s ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "content",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Links in topic groups—that organize your documentation into a hierarchy of topics and subtopics—doesn’t produce “mentioned in” links.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For more information about topic groups, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Before Swift-DocC 6.2, automatic “mentioned in” links require that you pass the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "--enable-experimental-mentioned-in",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " command line flag to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "docc",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "This flag is available as of Swift-DocC 6.0.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Earlier Versions",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Navigate-to-a-Symbol",
+          "level" : 3,
+          "text" : "Navigate to a Symbol",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To add a link to a symbol in your module, wrap the symbol’s name in a set of double backticks (``):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "``Sloth``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For links to member symbols or nested types, include the path to the symbol in the link:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "``Sloth\/eat(_:quantity:)``",
+            "``Sloth\/Food``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC resolves symbol links relative to the context that the link appears in.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This allows links in a type’s documentation comment to omit the type’s name from the symbol path when referring to its members.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure below, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "init(name:color:power:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " symbol link omits the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth\/",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " portion of the symbol path:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/\/ ...",
+            "\/\/\/ You can create a sloth using ``init(name:color:power:)``.",
+            "public struct Sloth { \/\/           ╰──────────┬──────────╯",
+            "    \/\/\/ ...           \/\/                      ╰─────refers-to────╮",
+            "    public init(name: String, color: Color, power: Power) { \/\/ ◁─╯ ",
+            "        \/* ... *\/ ",
+            "    }         ",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If DocC can’t resolve a link in the current context, it gradually expands the search to the containing scope.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This allows links from one member to another member of the same type to omit the containing type’s name from the symbol path.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure below,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the ",
+              "type" : "text"
+            },
+            {
+              "code" : "eat(_:quantity:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " symbol link in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "energyLevel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property’s documentation comment omits the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth\/",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " portion of the symbol path:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/\/ ...",
+            "public struct Sloth {",
+            "    \/\/\/ ... ",
+            "    \/\/\/ Restore the sloth's energy using ``eat(_:quantity:)``.",
+            "    public var energyLevel = 10 \/\/         ╰───────┬──────╯       ",
+            "                                \/\/                 │ ",
+            "    \/\/\/ ...                     \/\/                 ╰──────refers-to─────╮",
+            "    public mutating func eat(_ food: Food, quantity: Int) -> Int { \/\/ ◁─╯ ",
+            "        \/* ... *\/",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "If you prefer absolute symbol links you can prefix the symbol path with a leading slash followed by the name of the module to which that symbol belongs:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "code" : [
+                "``\/SlothCreator\/Sloth``",
+                "``\/SlothCreator\/Sloth\/eat(_:quantity:)``",
+                "``\/SlothCreator\/Sloth\/Food``"
+              ],
+              "syntax" : "markdown",
+              "type" : "codeListing"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "DocC resolves absolute symbol links from the module’s scope instead of the context that the link appears in.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Symbol paths are case-sensitive, meaning that symbols with the same name in different text casing are unambiguous.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, consider a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure with both a ",
+              "type" : "text"
+            },
+            {
+              "code" : "color",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property and a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Color",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " enumeration type:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "public struct Sloth {",
+            "    public var color: Color ",
+            "",
+            "    public enum Color {",
+            "        \/* ... *\/",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "code" : "``Sloth\/color``",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " symbol link unambiguously refers to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "color",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property and a ",
+              "type" : "text"
+            },
+            {
+              "code" : "``Sloth\/Color``",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " symbol link unambiguously refers to the inner ",
+              "type" : "text"
+            },
+            {
+              "code" : "Color",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Symbols-with-Multiple-Language-Representations",
+          "level" : 4,
+          "text" : "Symbols with Multiple Language Representations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Symbol links to symbols that have representations in more than one programming language can use symbol paths in either source language.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, consider a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " class with ",
+              "type" : "text"
+            },
+            {
+              "code" : "@objc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " attributes:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@objc(TLASloth) public class Sloth: NSObject {",
+            "    @objc public init(name: String, color: Color, power: Power) {",
+            "        self.name = name",
+            "        self.color = color",
+            "        self.power = power",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can write a symbol link to the Sloth initializer using the symbol path in either source language:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Swift name",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "``Sloth\/init(name:color:power:)``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Objective-C name",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "``TLASloth\/initWithName:color:power:``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Ambiguous-Symbol-Links",
+          "level" : 4,
+          "text" : "Ambiguous Symbol Links",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In some cases a symbol’s path isn’t unique.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This makes it ambiguous what specific symbol a symbol link refers to.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, consider a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Color",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure with ",
+              "type" : "text"
+            },
+            {
+              "code" : "red",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "green",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and ",
+              "type" : "text"
+            },
+            {
+              "code" : "blue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " properties for color components and static properties for a handful of predefined color values:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "public struct Color {",
+            "    public var red, green, blue: Double",
+            "}",
+            "",
+            "extension Color {",
+            "    public static let red    = Color(red: 1.0, green: 0.0, blue: 0.0)",
+            "    public static let purple = Color(red: 0.5, green: 0.0, blue: 0.5)",
+            "    public static let blue   = Color(red: 0.0, green: 0.0, blue: 1.0)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Both the ",
+              "type" : "text"
+            },
+            {
+              "code" : "red",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property and the ",
+              "type" : "text"
+            },
+            {
+              "code" : "red",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " static property have a symbol path of ",
+              "type" : "text"
+            },
+            {
+              "code" : "Color\/red",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Because these are different types of symbols you can disambiguate ",
+              "type" : "text"
+            },
+            {
+              "code" : "``Color\/red``",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with a suffix indicating the symbol’s type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example shows a symbol link to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "red",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "``Color\/red-property``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example shows a symbol link to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "red",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " static property:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "``Color\/red-type.property``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC supports the following symbol types as disambiguation in symbol links:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Symbol type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Suffix",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Enumeration",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-enum",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Enumeration case",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-enum.case",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Protocol",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-protocol",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Typealias",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-typealias",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Associated Type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-associatedtype",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Structure",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-struct",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Class",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-class",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Function",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-func",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Operator",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-func.op",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Property",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-property",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type property",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-type.property",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Method",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-method",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type method",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-type.method",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Subscript",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-subscript",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type subscript",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-type.subscript",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Initializer",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-init",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Deinitializer",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-deinit",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Global variable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-var",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Instance variable",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-ivar",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Macro",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-macro",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Module",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-module",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Namespace",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-namespace",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "HTTP Request",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-httpRequest",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "HTTP Parameter",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-httpParameter",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "HTTP Response",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-httpResponse",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "HTTPBody",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-httpBody",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Dictionary",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-dictionary",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Dictionary Key",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-dictionaryKey",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can discover these symbol type suffixes from DocC’s warnings about ambiguous symbol links.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC suggests one disambiguation for each of the symbols that match the ambiguous symbol path.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Symbol type suffixes can include a source language identifier prefix—for example, ",
+              "type" : "text"
+            },
+            {
+              "code" : "-swift.enum",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instead of ",
+              "type" : "text"
+            },
+            {
+              "code" : "-enum",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, the language identifier doesn’t disambiguate the link.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In the example above, both symbols that match the ambiguous symbol path were different types of symbol.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the symbols that match the ambiguous symbol path have are the same type of symbol,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "such as with overloaded methods in Swift, a symbol type suffix won’t disambiguate the link.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In this scenario, DocC uses information from the symbols’ type signatures to disambiguate.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, consider the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " structure—from the SlothCreator example—which has two different ",
+              "type" : "text"
+            },
+            {
+              "code" : "update(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " methods:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/\/ Updates the sloth's power.",
+            "\/\/\/",
+            "\/\/\/ - Parameter power: The sloth's new power.",
+            "mutating public func update(_ power: Power) {",
+            "    self.power = power",
+            "}",
+            "",
+            "\/\/\/ Updates the sloth's energy level.",
+            "\/\/\/",
+            "\/\/\/ - Parameter energyLevel: The sloth's new energy level.",
+            "mutating public func update(_ energyLevel: Int) {",
+            "    self.energyLevel = energyLevel",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Both methods have an identical symbol path of ",
+              "type" : "text"
+            },
+            {
+              "code" : "SlothCreator\/Sloth\/update(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In this example there’s only one parameter and its type is ",
+              "type" : "text"
+            },
+            {
+              "code" : "Power",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for the first overload and ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for the second overload.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC uses this parameter type information to suggest adding ",
+              "type" : "text"
+            },
+            {
+              "code" : "(Power)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "(Int)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to disambiguate each respective overload.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example shows a topic group with disambiguated symbol links to both ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sloth\/update(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " methods:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "### Updating Sloths",
+            "",
+            "- ``Sloth\/update(_:)-(Power)``",
+            "- ``Sloth\/update(_:)-(Int)``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If there are more overloads with more parameters and return values,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC may suggest a combination of parameter types and return value types to uniquely disambiguate each overload.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example consider a hypothetical weather service with these three overloads—with different parameter types and different return types—for a ",
+              "type" : "text"
+            },
+            {
+              "code" : "forecast(for:at:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " method:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "public func forecast(for days: DateInterval, at location: Location) -> HourByHourForecast     { \/* ... *\/ }",
+            "public func forecast(for day:  Date,         at location: Location) -> MinuteByMinuteForecast { \/* ... *\/ }",
+            "public func forecast(for day:  Date,         at location: Location) -> HourByHourForecast     { \/* ... *\/ }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The first overload is the only one with where the first parameter has a ",
+              "type" : "text"
+            },
+            {
+              "code" : "DateInterval",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The second parameter type isn’t necessary to disambiguate the overload, and is the same in all three overloads,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so DocC suggests to add ",
+              "type" : "text"
+            },
+            {
+              "code" : "(DateInterval,_)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to disambiguate the first overload.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The second overload is the only one with where the return value has a ",
+              "type" : "text"
+            },
+            {
+              "code" : "MinuteByMinuteForecast",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so DocC suggests to add ",
+              "type" : "text"
+            },
+            {
+              "code" : "‑>MinuteByMinuteForecast",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to disambiguate the second overload.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The third overload has the same parameter types as the second overload and the same return value as the first overload,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so neither parameter types nor return types alone can uniquely disambiguate this overload.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In this scenario, DocC considers a combination of parameter types and return types to disambiguate the overload.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The first parameter type is different from the first overload and the return type is different from the second overload.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Together this information uniquely disambiguates the third overload,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so DocC suggests to add ",
+              "type" : "text"
+            },
+            {
+              "code" : "(Date,_)‑>HourByHourForecast",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to disambiguate the third overload.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can discover the minimal combination of parameter types and return types for each overload from DocC’s warnings about ambiguous symbol links.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example shows a topic group with disambiguated symbol links to the three ",
+              "type" : "text"
+            },
+            {
+              "code" : "forecast(for:at:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " methods from before:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "### Requesting weather forecasts",
+            "",
+            "- ``forecast(for:at:)-(DateInterval,_)``",
+            "- ``forecast(for:at:)->MinuteByMinuteForecast``",
+            "- ``forecast(for:at:)-(Date,_)->HourByHourForecast``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Before Swift-DocC 6.1, disambiguation using parameter types or return types isn’t supported.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Earlier Versions",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If DocC can’t disambiguate the symbol link using either a symbol type suffix or a combination parameter type names and return type names,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "it will fall back to using a short hash of each symbol’s unique identifier to disambiguate the symbol link.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can discover these hashes from DocC’s warnings about ambiguous symbol links.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following example shows the same topic group with symbol links to the three ",
+              "type" : "text"
+            },
+            {
+              "code" : "forecast(for:at:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " methods as before,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but using each symbol’s unique identifier hash for disambiguation:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "### Requesting weather forecasts",
+            "",
+            "- ``forecast(for:at:)-3brnk``",
+            "- ``forecast(for:at:)-4gcpg``",
+            "- ``forecast(for:at:)-7f3u``"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The table below shows some examples of the types of link disambiguation suffixes that DocC supports:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "extendedData" : {
+            "2_0" : {
+              "colspan" : 1,
+              "rowspan" : 2
+            },
+            "3_0" : {
+              "colspan" : 1,
+              "rowspan" : 0
+            },
+            "4_0" : {
+              "colspan" : 1,
+              "rowspan" : 2
+            },
+            "5_0" : {
+              "colspan" : 1,
+              "rowspan" : 0
+            }
+          },
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Disambiguation type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Example",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Meaning",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type of symbol",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-enum",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This symbol is an enumeration.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Parameter type names",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-(Int,_,_)",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This symbol has three parameters and the first parameter is an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Int",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " value.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-()",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This symbol has no parameters.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Return type names",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "->String",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This symbol returns a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "String",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " value.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "->(_,_)",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This symbol returns a tuple with two elements.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Parameter and return type names",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-(Bool)->()",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This symbol has one ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Bool",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " parameter and no return value.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Symbol identifier hash",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-4gcpg",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The hash of this symbol’s unique identifier is “",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "4gcpg",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : "”.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "anchor" : "Navigate-to-an-Article",
+          "level" : 3,
+          "text" : "Navigate to an Article",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To add a link to an article, use the less-than symbol (",
+              "type" : "text"
+            },
+            {
+              "code" : "<",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), the ",
+              "type" : "text"
+            },
+            {
+              "code" : "doc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a colon (",
+              "type" : "text"
+            },
+            {
+              "code" : ":",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), the article’s file name without file extension, and a greater-than symbol",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(",
+              "type" : "text"
+            },
+            {
+              "code" : ">",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<doc:GettingStarted>"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the article’s file name contains whitespace characters, replace each consecutive sequence of whitespace characters with a dash.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, the link to an article with a file name “Getting Started.md” is",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<doc:Getting-Started>"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When DocC resolves the link, it uses the article’s page title as the link’s",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "text. Links to tutorials follow the same format.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<doc:SlothCreator>"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you have an article file and a tutorial file with the same base name, DocC will resolve the ",
+              "type" : "text"
+            },
+            {
+              "code" : "<doc:BaseName>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " link to the article. To refer to the tutorial instead you can add a leading ",
+              "type" : "text"
+            },
+            {
+              "code" : "tutorials",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " component to the path, with or without a leading slash:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<doc:tutorials\/BaseName>",
+            "<doc:\/tutorials\/BaseName>"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "You can also link to symbols using the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "<doc:>",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " syntax. Just insert the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "symbol’s path between the colon (",
+                  "type" : "text"
+                },
+                {
+                  "code" : ":",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ") and the terminating greater-than",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "symbol (",
+                  "type" : "text"
+                },
+                {
+                  "code" : ">",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ").",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "<doc:Sloth\/init(name:color:power:)>",
+                  "type" : "codeVoice"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Navigate-to-a-Heading-or-Task-Group",
+          "level" : 3,
+          "text" : "Navigate to a Heading or Task Group",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To add a link to heading or task group on another page, use a ",
+              "type" : "text"
+            },
+            {
+              "code" : "<doc:>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " link to the page and end the link with a hash (",
+              "type" : "text"
+            },
+            {
+              "code" : "#",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") followed by the name of the heading.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the heading text contains whitespace or punctuation characters, replace each consecutive sequence of whitespace characters with a dash and optionally remove the punctuation characters.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, consider this level 3 heading with a handful of punctuation characters:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "### (1) \"Example\": Sloth's diet."
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A link to this heading can either include all the punctuation characters from the heading text or remove some or all of the punctuation characters.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<doc:OtherPage#(1)-\"Example\":-Sloth's-diet.>",
+            "<doc:OtherPage#1-Example-Sloths-diet>"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Links to headings or task groups on symbol pages use ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "<doc:>",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " syntax.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To add a link to heading or task group on the current page, use a ",
+              "type" : "text"
+            },
+            {
+              "code" : "<doc:>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " link that starts with the name of the heading. If you prefer you can include the hash (",
+              "type" : "text"
+            },
+            {
+              "code" : "#",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") prefix before the heading name. For example, both these links resolve to a heading named “Some heading title” on the current page:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "<doc:#Some-heading-title>",
+            "<doc:Some-heading-title>"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If a task group is empty or none of its links resolve successfully, it’s not possible to link to that task group because it will be omitted from the rendered page. Linking to generated per-symbol-kind task groups is not supported.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Before Swift-DocC 6.0, links to task groups isn’t supported. The syntax above only works for links to general headings.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Before Swift-DocC 5.9, links to same-page headings don’t support a leading hash (",
+                  "type" : "text"
+                },
+                {
+                  "code" : "#",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ") character.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Earlier Versions",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Include-web-links",
+          "level" : 3,
+          "text" : "Include web links",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To include a regular web link, add a set of brackets (",
+              "type" : "text"
+            },
+            {
+              "code" : "[]",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a set of parentheses (",
+              "type" : "text"
+            },
+            {
+              "code" : "()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "). Then add the link’s text between the brackets, and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "add the link’s URL within the parentheses.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "[Apple](https:\/\/www.apple.com)"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Documentation-Content",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations"
+      ],
+      "title" : "Documentation Content"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/linking-to-symbols-and-other-content"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/adding-code-snippets-to-your-content": {
+  "abstract" : [
+    {
+      "text" : "Create and include code snippets to illustrate and provide examples of how to use your API.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Adding Code Snippets to your Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-code-snippets-to-your-content"
+},
+"doc://org.swift.docc/documentation/docc/adding-structure-to-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Make symbols easier to find by arranging them into groups and collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Structure to Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-structure-to-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/adding-supplemental-content-to-a-documentation-catalog": {
+  "abstract" : [
+    {
+      "text" : "Include articles and extension files to extend your source documentation comments or provide supporting conceptual content.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Supplemental Content to a Documentation Catalog",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog"
+},
+"doc://org.swift.docc/documentation/docc/documenting-api-with-different-language-representations": {
+  "abstract" : [
+    {
+      "text" : "Create documentation for API that’s callable from more than one source language.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documenting API with Different Language Representations",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/documenting-api-with-different-language-representations"
+},
+"doc://org.swift.docc/documentation/docc/writing-symbol-documentation-in-your-source-files": {
+  "abstract" : [
+    {
+      "text" : "Add reference documentation to your symbols that explains how to use them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Writing Symbol Documentation in Your Source Files",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/writing-symbol-documentation-in-your-source-files"
+}
+}
+}

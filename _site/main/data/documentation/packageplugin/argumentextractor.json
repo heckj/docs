@@ -1,0 +1,505 @@
+{
+  "abstract" : [
+    {
+      "text" : "A rudimentary helper for extracting options and flags from a list of strings that represent command line arguments.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin17ArgumentExtractorV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ArgumentExtractor"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ArgumentExtractor"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "ArgumentExtractor"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ArgumentExtractor"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Create the extractor with the full command line arguments provided, then extract all known",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "options and flags, which leaves the positional arguments.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This does not handle the case where positional arguments (or optional argument values) have the same",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "name as an option or a flag. It only handles the long form of options, not short forms, for example: ",
+              "type" : "text"
+            },
+            {
+              "code" : "--<name>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", not ",
+              "type" : "text"
+            },
+            {
+              "code" : "-n",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It respects an argument that consists of two hyphens (",
+              "type" : "text"
+            },
+            {
+              "code" : "--",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") as an indication that all remaining arguments are positional.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Creating-an-Argument-Extractor",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/init(_:)"
+      ],
+      "title" : "Creating an Argument Extractor"
+    },
+    {
+      "anchor" : "Inspecting-Arguments",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/remainingArguments",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/unextractedOptionsOrFlags"
+      ],
+      "title" : "Inspecting Arguments"
+    },
+    {
+      "anchor" : "Extracting-Arguments",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/extractFlag(named:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/extractOption(named:)"
+      ],
+      "title" : "Extracting Arguments"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/argumentextractor"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor": {
+  "abstract" : [
+    {
+      "text" : "A rudimentary helper for extracting options and flags from a list of strings that represent command line arguments.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ArgumentExtractor"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArgumentExtractor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ArgumentExtractor",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor/extractFlag(named:)": {
+  "abstract" : [
+    {
+      "text" : "Extracts flags of the form ",
+      "type" : "text"
+    },
+    {
+      "code" : "--<name>",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the remaining arguments, and returns the count.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "extractFlag"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "named"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/extractFlag(named:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "extractFlag(named:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor\/extractflag(named:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor/extractOption(named:)": {
+  "abstract" : [
+    {
+      "text" : "Extracts options of the form ",
+      "type" : "text"
+    },
+    {
+      "code" : "--<name> <value>",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : "--<name>=<value>",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the remaining arguments and returns the extracted values.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "extractOption"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "named"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/extractOption(named:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "extractOption(named:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor\/extractoption(named:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor/init(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates an argument extractor with a list of strings from which to extract flags and options.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/init(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor\/init(_:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor/remainingArguments": {
+  "abstract" : [
+    {
+      "text" : "Returns all remaining arguments.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "remainingArguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/remainingArguments",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "remainingArguments",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor\/remainingarguments"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor/unextractedOptionsOrFlags": {
+  "abstract" : [
+    {
+      "text" : "Returns any unextracted flags or options.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unextractedOptionsOrFlags"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor\/unextractedOptionsOrFlags",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "unextractedOptionsOrFlags",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor\/unextractedoptionsorflags"
+}
+}
+}

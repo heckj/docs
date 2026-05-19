@@ -1,0 +1,538 @@
+{
+  "abstract" : [
+    {
+      "text" : "The file URL of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/directoryURL"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin6TargetP12directoryURL10Foundation0E0Vvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "directoryURL"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10Foundation3URLV",
+        "text" : "URL"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.1",
+        "name" : "SwiftPM",
+        "unavailable" : false
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "directoryURL"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "directoryURL"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10Foundation3URLV",
+              "text" : "URL"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-a-target",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/id-swift.property",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/name",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/sourceModule",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/dependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/recursiveTargetDependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/ID-swift.typealias",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/directory"
+      ],
+      "title" : "Inspecting a target"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/target\/directoryurl"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target": {
+  "abstract" : [
+    {
+      "text" : "A single target defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Target"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Target"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Target",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/ID-swift.typealias": {
+  "abstract" : [
+    {
+      "text" : "The type that represents the ID of the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/ID-swift.typealias",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Target.ID",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/id-swift.typealias"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/dependencies": {
+  "abstract" : [
+    {
+      "text" : "Any other targets on which this target depends, in the same order as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "they are specified in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin16TargetDependencyO",
+      "text" : "TargetDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/dependencies",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/dependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/directory": {
+  "abstract" : [
+    {
+      "text" : "The absolute path of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin4PathV",
+      "text" : "Path"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/directory",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "directory",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/directory"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/directoryURL": {
+  "abstract" : [
+    {
+      "text" : "The file URL of the target directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directoryURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/directoryURL",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "directoryURL",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/directoryurl"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/id-swift.property": {
+  "abstract" : [
+    {
+      "text" : "Unique identifier for the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/id-swift.property",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/id-swift.property"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/name": {
+  "abstract" : [
+    {
+      "text" : "The name of the target, as defined in the package manifest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/name",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/name"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/recursiveTargetDependencies": {
+  "abstract" : [
+    {
+      "text" : "The transitive closure of all the targets on which the receiver depends.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "recursiveTargetDependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/recursiveTargetDependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "recursiveTargetDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/recursivetargetdependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target/sourceModule": {
+  "abstract" : [
+    {
+      "text" : "Convenience accessor which casts the receiver to",
+      "type" : "text"
+    },
+    {
+      "code" : "SourceModuleTarget",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", if possible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sourceModule"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin18SourceModuleTargetP",
+      "text" : "SourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/sourceModule",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sourceModule",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target\/sourcemodule"
+}
+}
+}

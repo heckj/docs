@@ -1,0 +1,1113 @@
+{
+  "abstract" : [
+    {
+      "text" : "A single package in a graph of packages.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin0A0V",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Package"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Package"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "Package"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Package"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The package can either be the root package, or a dependency.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Inspecting-the-Package-Representation",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ToolsVersion",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageOrigin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageDependency",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct"
+      ],
+      "title" : "Inspecting the Package Representation"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Inspecting-Packages",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/id-swift.property",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/displayName",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/toolsVersion",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/directoryURL",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/origin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/dependencies",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/sourceModules",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/ID-swift.typealias",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/directory"
+      ],
+      "title" : "Inspecting Packages"
+    },
+    {
+      "anchor" : "Inspecting-Package-Targets",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/targets",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/targets(named:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/targets(ofType:)"
+      ],
+      "title" : "Inspecting Package Targets"
+    },
+    {
+      "anchor" : "Inspecting-Package-Products",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/products",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/products(named:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/products(ofType:)"
+      ],
+      "title" : "Inspecting Package Products"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/package"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct": {
+  "abstract" : [
+    {
+      "text" : "An executable product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExecutableProduct"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExecutableProduct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExecutableProduct",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/LibraryProduct": {
+  "abstract" : [
+    {
+      "text" : "A library product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LibraryProduct"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LibraryProduct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LibraryProduct",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/libraryproduct"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package": {
+  "abstract" : [
+    {
+      "text" : "A single package in a graph of packages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/ID-swift.typealias": {
+  "abstract" : [
+    {
+      "text" : "The type that represents a package identifier.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/ID-swift.typealias",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ID"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package.ID",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/id-swift.typealias"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/dependencies": {
+  "abstract" : [
+    {
+      "text" : "Any dependencies on other packages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A10DependencyV",
+      "text" : "PackageDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/dependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/dependencies"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/directory": {
+  "abstract" : [
+    {
+      "text" : "The absolute path of the package directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin4PathV",
+      "text" : "Path"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/directory",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directory",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/directory"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/directoryURL": {
+  "abstract" : [
+    {
+      "text" : "The file URL of the package directory in the local file system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directoryURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/directoryURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directoryURL",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/directoryurl"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/displayName": {
+  "abstract" : [
+    {
+      "text" : "The name of the package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "displayName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/displayName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "displayName",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/displayname"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/id-swift.property": {
+  "abstract" : [
+    {
+      "text" : "The unique identifier for the package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V2IDa",
+      "text" : "ID"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/id-swift.property",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/id-swift.property"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/origin": {
+  "abstract" : [
+    {
+      "text" : "The origin of the package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "origin"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A6OriginO",
+      "text" : "PackageOrigin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/origin",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "origin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/origin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/products": {
+  "abstract" : [
+    {
+      "text" : "Any regular products defined in this package, with the exception of plugin products.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "products"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin7ProductP",
+      "text" : "Product"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/products",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "products",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/products"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/products(named:)": {
+  "abstract" : [
+    {
+      "text" : "The list of products matching the given names.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "products"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "named"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin7ProductP",
+      "text" : "Product"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/products(named:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "products(named:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/products(named:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/products(ofType:)": {
+  "abstract" : [
+    {
+      "text" : "The products in this package that conform to a specific type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "products"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ofType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/products(ofType:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "products(ofType:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/products(oftype:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/sourceModules": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sourceModules"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin18SourceModuleTargetP",
+      "text" : "SourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/sourceModules",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sourceModules",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/sourcemodules"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/targets": {
+  "abstract" : [
+    {
+      "text" : "Any regular targets defined in this packagewith the exception of plugin targets.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "targets"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/targets",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "targets",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/targets"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/targets(named:)": {
+  "abstract" : [
+    {
+      "text" : "The list of targets matching the given names.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "targets"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "named"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin6TargetP",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/targets(named:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "targets(named:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/targets(named:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/targets(ofType:)": {
+  "abstract" : [
+    {
+      "text" : "The targets in this package that conform to a specific type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "targets"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ofType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/targets(ofType:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "targets(ofType:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/targets(oftype:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package/toolsVersion": {
+  "abstract" : [
+    {
+      "text" : "The tools version specified by the resolved version of the package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "toolsVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin12ToolsVersionV",
+      "text" : "ToolsVersion"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package\/toolsVersion",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "toolsVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package\/toolsversion"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageDependency": {
+  "abstract" : [
+    {
+      "text" : "A resolved dependency of a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageDependency"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageDependency",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageDependency"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageDependency",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagedependency"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageOrigin": {
+  "abstract" : [
+    {
+      "text" : "The origin of a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageOrigin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageOrigin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageOrigin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageOrigin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packageorigin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Product": {
+  "abstract" : [
+    {
+      "text" : "A single product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Product"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Product"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Product",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/product"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ToolsVersion": {
+  "abstract" : [
+    {
+      "text" : "A version of Swift package manager on whose semantics a package relies.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ToolsVersion"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ToolsVersion",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ToolsVersion"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ToolsVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/toolsversion"
+}
+}
+}

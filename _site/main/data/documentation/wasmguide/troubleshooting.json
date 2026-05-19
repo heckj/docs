@@ -1,0 +1,381 @@
+{
+  "abstract" : [
+    {
+      "text" : "These are some common issues you may run into while using Swift with WebAssembly.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Troubleshooting"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Troubleshooting"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you are having trouble that is not listed here, try searching for it on the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/forums.swift.org",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " or other community channels.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "RuntimeError-memory-access-out-of-bounds",
+          "level" : 2,
+          "text" : "`RuntimeError: memory access out of bounds`",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you encounter this error, there are a few possible causes:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "1-Invalid-memory-access-in-your-code",
+          "level" : 3,
+          "text" : "1. Invalid memory access in your code",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This can happen when using ",
+              "type" : "text"
+            },
+            {
+              "code" : "UnsafePointer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or other unsafe constructs. Review your code for potential memory safety issues.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "2-Incorrect-WASI-reactor-initialization",
+          "level" : 3,
+          "text" : "2. Incorrect WASI reactor initialization",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your Wasm module is intended to be used as a library (a “reactor”), it needs to be initialized correctly by the host.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Ensure your host environment calls the ",
+              "type" : "text"
+            },
+            {
+              "code" : "_initialize",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function if required by the WASI reactor ABI. See the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/ImportingExportingFunctions",
+              "isActive" : true,
+              "overridingTitle" : "Exporting a function",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "Exporting a function",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " guide for an example.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "3-Stack-overflow",
+          "level" : 3,
+          "text" : "3. Stack overflow",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A stack overflow can trigger this error. You have a few options to address this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Avoid deep recursion:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " Refactor your code to use an iterative approach if possible.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Increase stack size:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " You can increase the stack size via a linker option.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "swift build --swift-sdk <SDK_ID> -Xlinker -z -Xlinker stack-size=131072"
+                  ],
+                  "syntax" : "bash",
+                  "type" : "codeListing"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "fatal-error-stdlibh-file-not-found",
+          "level" : 2,
+          "text" : "`fatal error: 'stdlib.h' file not found`",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This error indicates that the compiler cannot find the necessary C standard library headers for the target platform. Ensure you are using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--swift-sdk <SDK_ID>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag with ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to correctly configure the compiler for cross-compilation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "error-missing-external-dependency-",
+          "level" : 2,
+          "text" : "`error: missing external dependency ...`",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You may encounter this error if you are trying to invoke ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directly. The Swift SDK for WebAssembly currently requires you to build using the Swift Package Manager. Use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build --swift-sdk <SDK_ID>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command instead.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/troubleshooting"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/ImportingExportingFunctions": {
+  "abstract" : [
+    {
+      "text" : "WebAssembly modules often need to interact with their host environment.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This guide demonstrates how to build a Swift guest module that both exports",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "functions to the host and imports functions from it, using ",
+      "type" : "text"
+    },
+    {
+      "code" : "WasmKit",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as the host application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/ImportingExportingFunctions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Importing and Exporting Functions",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/importingexportingfunctions"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://forums.swift.org": {
+  "identifier" : "https:\/\/forums.swift.org",
+  "title" : "Swift Forums",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Forums",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/forums.swift.org"
+}
+}
+}

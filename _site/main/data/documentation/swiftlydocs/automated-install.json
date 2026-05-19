@@ -1,0 +1,676 @@
+{
+  "abstract" : [
+    {
+      "text" : "Automatically install swiftly and Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swiftly"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Install swiftly automatically"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This guide helps you to automate the installation of swiftly and toolchains so that it can run unattended, for example in build or continous integration systems.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This guide assumes that you have working understanding of your build system.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The examples are based on a typical Unix environment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Download-the-binary",
+          "level" : 3,
+          "text" : "Download the binary",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "First, download the swiftly binary from swift.org for your operating system (for example, Linux) and processor architecture (for example ",
+              "type" : "text"
+            },
+            {
+              "code" : "arm64",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "x86_64",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Here’s an example using the popular curl command.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "curl -L https:\/\/download.swift.org\/swiftly\/linux\/swiftly-$(uname -m).tar.gz > swiftly.tar.gz",
+            "tar zxf swiftly.tar.gz"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "On macOS, download the pkg file and extract it like this from the command-line:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "curl -L https:\/\/download.swift.org\/swiftly\/darwin\/swiftly.pkg > swiftly.pkg",
+            "installer -pkg swiftly.pkg -target CurrentUserHomeDirectory"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you are using Linux you will need GPG and the “ca-certificates” package for the root certificate authorities that will establish the trust that swiftly needs to make API requests that it needs. This package is frequently pre-installed on end-user environments, but may not be present in more minimal installations.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Install-swiftly",
+          "level" : 3,
+          "text" : "Install swiftly",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once swiftly is downloaded, run the ",
+              "type" : "text"
+            },
+            {
+              "code" : "init",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " subcommand to finish the installation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following example command prints verbose outputs, assume yes for all prompts, and skips the automatic installation of the latest swift toolchain:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".\/swiftly init --verbose --assume-yes --skip-install    # the swiftly binary is extracted to ~\/local\/bin\/swiftly on macOS"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly is installed, but the current shell may not yet be updated with the new environment variables, such as ",
+              "type" : "text"
+            },
+            {
+              "code" : "PATH",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "init",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command prints instructions on how to update the current shell environment without opening a new shell.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following output is an example from Linux, the details might be different for other OSes, username, or shell:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "To begin using installed swiftly from your current shell, first run the following command:",
+            "",
+            ". \"\/root\/.local\/share\/swiftly\/env.sh\""
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "On macOS, run ‘hash -r’ to recalculate the zsh PATH cache when installing swiftly and toolchains.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can go ahead and add this command to the list of commands in your build script so that the build can proceed to call swiftly from the path.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Install-a-toolchain",
+          "level" : 3,
+          "text" : "Install a toolchain",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The usual next step is to install a specific swift toolchain using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "install",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--post-install-file",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " option:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swiftly install 5.10.1 --post-install-file=post-install.sh"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It’s possible that there will be some post-installation steps to prepare the system for using the swift toolchain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If additional post-install steps are needed to use the toolchain they are written to the file you specified; ",
+              "type" : "text"
+            },
+            {
+              "code" : "post-install.sh",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in the example above.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can check if the file exists and run it to perform those final steps.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the build runs as the root user you can check it and run it like this in a typical Unix shell:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "if [ -f post-install.sh ]; then",
+            "    . post-install.sh",
+            "fi"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If the system runs your script as a regular user then you will need to take this into account by either pre-installing the toolchain’s system dependencies or running the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "post-install.sh",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " script in a secure manner as the administrative user.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Customize-the-installation",
+          "level" : 3,
+          "text" : "Customize the installation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you want to install swiftly, or the binaries that it manages into different locations these can be customized using environment variables before running ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly init",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "definition" : {
+                "content" : [
+                  {
+                    "inlineContent" : [
+                      {
+                        "text" : "The location of the swiftly configuration files, and environment scripts",
+                        "type" : "text"
+                      }
+                    ],
+                    "type" : "paragraph"
+                  }
+                ]
+              },
+              "term" : {
+                "inlineContent" : [
+                  {
+                    "code" : "SWIFTLY_HOME_DIR",
+                    "type" : "codeVoice"
+                  }
+                ]
+              }
+            },
+            {
+              "definition" : {
+                "content" : [
+                  {
+                    "inlineContent" : [
+                      {
+                        "text" : "The location of the swiftly binary and toolchain symbolic links (for example swift, swiftc, and so on)",
+                        "type" : "text"
+                      }
+                    ],
+                    "type" : "paragraph"
+                  }
+                ]
+              },
+              "term" : {
+                "inlineContent" : [
+                  {
+                    "code" : "SWIFTLY_BIN_DIR",
+                    "type" : "codeVoice"
+                  }
+                ]
+              }
+            },
+            {
+              "definition" : {
+                "content" : [
+                  {
+                    "inlineContent" : [
+                      {
+                        "text" : "The temporary directory swiftly uses to hold large files, such as downloads, until it cleans them up.",
+                        "type" : "text"
+                      }
+                    ],
+                    "type" : "paragraph"
+                  }
+                ]
+              },
+              "term" : {
+                "inlineContent" : [
+                  {
+                    "code" : "TMPDIR",
+                    "type" : "codeVoice"
+                  }
+                ]
+              }
+            }
+          ],
+          "type" : "termList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Sometimes swiftly can’t automatically detect the system platform, or isn’t supported by swift.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can provide the platform as an option to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly init",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " subcommand:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swiftly init --platform=<platform_name>"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There are other customizable options, such as overwrite.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For more details about the available options, check the help:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swiftly init --help"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In summary, swiftly can be installed and install toolchains unattended on build and CI-style systems.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This guide has outlined the process to script the process covering some of the different options available to you.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble"
+      ],
+      "title" : "Guides"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftlydocs\/automated-install"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+  "abstract" : [
+    {
+      "text" : "Install and manage your Swift programming language toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/install-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Install swift toolchains with Swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/install-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/shell-autocompletion": {
+  "abstract" : [
+    {
+      "text" : "Generate shell autocompletions for swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add shell auto-completions",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/shell-autocompletion"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/trouble": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Troubleshooting",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/trouble"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/uninstall-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Remove unneeded Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Uninstall Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/uninstall-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/update-toolchain": {
+  "abstract" : [
+    {
+      "text" : "Update installed toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Update Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/update-toolchain"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/use-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Choose an installed toolchain to use as default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Use Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/use-toolchains"
+}
+}
+}

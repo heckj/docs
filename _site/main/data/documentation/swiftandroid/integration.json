@@ -1,0 +1,276 @@
+{
+  "abstract" : [
+    {
+      "text" : "Integrate Swift builds with Android tooling and frameworks",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid"
+      ],
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/Integration"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "SwiftAndroid"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Integration"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Gradle",
+          "level" : 2,
+          "text" : "Gradle",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Add a custom Gradle task to invoke ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and copy the resulting ",
+              "type" : "text"
+            },
+            {
+              "code" : ".so",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " into ",
+              "type" : "text"
+            },
+            {
+              "code" : "jniLibs\/",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "tasks.register<Exec>(\"buildSwiftLibrary\") {",
+            "    workingDir = file(\"${rootDir}\/swift\")",
+            "    commandLine(\"swift\", \"build\",",
+            "        \"--swift-sdk\", \"aarch64-unknown-linux-android28\",",
+            "        \"-c\", \"release\", \"--static-swift-stdlib\")",
+            "}"
+          ],
+          "syntax" : "kotlin",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Swift-Package-Manager",
+          "level" : 2,
+          "text" : "Swift Package Manager",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "$ swift build --swift-sdk aarch64-unknown-linux-android28"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Resources",
+          "level" : 2,
+          "text" : "Resources",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/swift-sdk-for-android-getting-started.html",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-java",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " – Java\/Kotlin interop",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/marketplace\/actions\/swift-android-action",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " – GitHub Actions",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/forums.swift.org\/",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftandroid\/integration"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftAndroid/documentation/SwiftAndroid": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftAndroid",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/SwiftAndroid": {
+  "abstract" : [
+    {
+      "text" : "Use Swift to build native libraries and applications for Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift on Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/swiftandroid"
+},
+"https://forums.swift.org/": {
+  "identifier" : "https:\/\/forums.swift.org\/",
+  "title" : "Swift Forums",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Forums",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/forums.swift.org\/"
+},
+"https://github.com/marketplace/actions/swift-android-action": {
+  "identifier" : "https:\/\/github.com\/marketplace\/actions\/swift-android-action",
+  "title" : "swift-android-action",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-android-action",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/marketplace\/actions\/swift-android-action"
+},
+"https://github.com/swiftlang/swift-java": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-java",
+  "title" : "swift-java",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-java",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-java"
+},
+"https://www.swift.org/documentation/articles/swift-sdk-for-android-getting-started.html": {
+  "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/swift-sdk-for-android-getting-started.html",
+  "title" : "Swift SDK for Android – Getting Started",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift SDK for Android – Getting Started",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/documentation\/articles\/swift-sdk-for-android-getting-started.html"
+}
+}
+}

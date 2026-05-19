@@ -1,0 +1,1986 @@
+{
+  "abstract" : [
+    {
+      "text" : "Build a container that includes your Swift service with its resources and dependencies.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Server Guides"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Packaging Swift services with containers"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Running your service in the cloud requires configuration, dependencies, and resources.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Containers provide a standard way to package your service along with everything it needs.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You build a container image using tools such as ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.docker.com",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/container",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "then deploy that image to a virtual machine or cloud hosting infrastructure",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "such as a Kubernetes cluster.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A container image packages everything your service needs to run into a single, portable artifact.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The image’s filesystem contains:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The compiled executable for your service",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Linux system libraries and runtime dependencies",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Resources your service requires, such as configuration files or static assets",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The image also declares runtime metadata that controls how a container starts:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A default command to run",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Ports to expose for incoming network connections",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Default values for environment variables that configure your service",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A container image is built from layers of filesystem changes, stacked on top of each other.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Each layer is read-only and shared across images that use it, which makes images efficient to store and transfer.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When you run an image, the container runtime adds a writable layer on top and starts your service as a container:",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a running instance of the image in its own isolated environment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "At runtime, your deployment environment can mount additional filesystems",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "into a container, such as configuration maps or secrets, to provide values that vary between environments.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Swift-container-images",
+          "level" : 3,
+          "text" : "Swift container images",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift project publishes container images on ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/hub.docker.com\/_\/swift",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " that you can use to build and run your services.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These images come in two forms:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Full SDK images",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " include the Swift compiler, standard library, and development tools.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "For example, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift:6.2-noble",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " provides Swift 6.2 on Ubuntu 24.04.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Slim runtime images",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " include only the Swift runtime libraries on a minimal Linux distribution.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Use these as the final stage in a multi-stage build to keep your deployed image small.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "For example, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift:6.2-noble-slim",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " provides a minimal Ubuntu 24.04 image with the Swift runtime.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can also use a plain Linux distribution image, such as ",
+              "type" : "text"
+            },
+            {
+              "code" : "ubuntu:noble",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", as your base image when you statically link the Swift standard library.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Pin your images to a specific Swift version, such as ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "swift:6.2-noble",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", rather than using the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "latest",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " tag.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Pinning the image makes your builds more reproducible and prevents unexpected changes when a new Swift release is published.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Your organization may provide vetted base images that reflect its security policies and operational best practices.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If it does, build on those base images.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-a-container-image",
+          "level" : 3,
+          "text" : "Build a container image",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A single-stage build compiles and packages your service in one image.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Create a file named ",
+              "type" : "text"
+            },
+            {
+              "code" : "Dockerfile",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " at the root of your project:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "FROM swift:6.2-noble",
+            "",
+            "WORKDIR \/workspace",
+            "COPY . \/workspace",
+            "",
+            "RUN swift build -c release --static-swift-stdlib",
+            "",
+            "EXPOSE 8080",
+            "CMD [\".build\/release\/<executable-name>\"]"
+          ],
+          "syntax" : "Dockerfile",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "EXPOSE",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directive declares which port your service listens on.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It doesn’t publish the port — you do that at runtime with ",
+              "type" : "text"
+            },
+            {
+              "code" : "-p",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " — but it documents the intended network interface, and some orchestrators and tools use it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Build the image.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "-t",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag tags the image with a name and version:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container build -t <my-app>:latest ."
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Tags identify images locally and determine where images go when you push them to a registry.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The convention is ",
+              "type" : "text"
+            },
+            {
+              "code" : "<name>:<version>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " — for example, ",
+              "type" : "text"
+            },
+            {
+              "code" : "my-app:1.0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "my-app:latest",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Choose a name that matches your service and a version that reflects the build.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If you don’t include ",
+              "type" : "text"
+            },
+            {
+              "code" : ":",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and a version string, the tools default to ",
+              "type" : "text"
+            },
+            {
+              "code" : ":latest",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The examples in this guide use the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "container",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " command from ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/github.com\/apple\/container",
+                  "isActive" : true,
+                  "overridingTitle" : "Apple’s container tool",
+                  "overridingTitleInlineContent" : [
+                    {
+                      "text" : "Apple’s container tool",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "docker",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " command accepts the same arguments and works the same way.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This approach works for a quick local build,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but the image includes the full Swift compiler and development tools,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which add hundreds of megabytes that your service never uses at runtime",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and expand the attack surface of the deployed container.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Slim-the-image-with-a-multi-stage-build",
+          "level" : 3,
+          "text" : "Slim the image with a multi-stage build",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.docker.com\/build\/building\/multi-stage\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " separates compilation from packaging.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The first stage compiles your service using the full SDK image.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The second stage copies only the compiled executable into a minimal runtime image,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "producing a final image that is a fraction of the size.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Stage 1: Build",
+            "FROM swift:6.2-noble AS builder",
+            "",
+            "WORKDIR \/workspace",
+            "COPY . \/workspace",
+            "",
+            "RUN swift build -c release --static-swift-stdlib",
+            "",
+            "# Stage 2: Package",
+            "FROM ubuntu:noble",
+            "COPY --from=builder \/workspace\/.build\/release\/<executable-name> \/",
+            "",
+            "EXPOSE 8080",
+            "CMD [\"\/<executable-name>\"]"
+          ],
+          "syntax" : "Dockerfile",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "--static-swift-stdlib",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag links the Swift standard library into your executable,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so the final image doesn’t need the Swift runtime installed.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If your service uses ",
+              "type" : "text"
+            },
+            {
+              "code" : "FoundationNetworking",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "FoundationXML",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", use ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift:6.2-noble-slim",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instead of ",
+              "type" : "text"
+            },
+            {
+              "code" : "ubuntu:noble",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for the runtime image.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This image includes system libraries that those frameworks require: ",
+              "type" : "text"
+            },
+            {
+              "code" : "libcurl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "libxml2",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Build and run the image the same way:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container build -t <my-app>:latest ."
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Create a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".dockerignore",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " file at the root of your project to exclude directories",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "like ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".build\/",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " and ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".git\/",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " from the build context.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Without it, ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "COPY . \/workspace",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " sends everything to the build daemon,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "which slows builds and can bloat image layers.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Cache-build-artifacts-to-speed-up-rebuilds",
+          "level" : 3,
+          "text" : "Cache build artifacts to speed up rebuilds",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Dockerfiles above copy all source files into the image and build from scratch every time.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For a small project, this is fine, but as your service grows,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "rebuilding all dependencies on every change slows down the development cycle.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/docs.docker.com\/build\/cache\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "persist directories across builds.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Swift Package Manager’s resolved packages and compiled artifacts survive between invocations.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Bind mounts pass in only the files each step needs",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "without copying them into the image layer,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which keeps the cache effective even when source files change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following Dockerfile resolves dependencies and builds in separate steps,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "each with a cache mount for the build directory:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Stage 1: Build",
+            "FROM swift:6.2-noble AS builder",
+            "",
+            "WORKDIR \/workspace",
+            "",
+            "# Resolve dependencies — re-runs only when Package.swift or Package.resolved change",
+            "RUN --mount=type=cache,target=\/tmp\/.build,sharing=locked \\",
+            "    --mount=type=bind,source=Package.swift,target=Package.swift \\",
+            "    --mount=type=bind,source=Package.resolved,target=Package.resolved \\",
+            "    swift package resolve --force-resolved-versions --build-path \/tmp\/.build",
+            "",
+            "# Build the executable — reuses cached dependencies and prior compilation results",
+            "RUN --mount=type=cache,target=\/tmp\/.build,sharing=locked \\",
+            "    --mount=type=bind,source=Package.swift,target=Package.swift \\",
+            "    --mount=type=bind,source=Package.resolved,target=Package.resolved \\",
+            "    --mount=type=bind,source=.\/Sources,target=.\/Sources \\",
+            "    swift build -c release --static-swift-stdlib \\",
+            "      --product <executable-name> --build-path \/tmp\/.build && \\",
+            "    cp \/tmp\/.build\/release\/<executable-name> \/usr\/local\/bin\/",
+            "",
+            "# Stage 2: Package",
+            "FROM ubuntu:noble",
+            "COPY --from=builder \/usr\/local\/bin\/<executable-name> \/",
+            "",
+            "EXPOSE 8080",
+            "CMD [\"\/<executable-name>\"]"
+          ],
+          "syntax" : "Dockerfile",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Cache mounts (",
+              "type" : "text"
+            },
+            {
+              "code" : "--mount=type=cache",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") keep the ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/tmp\/.build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directory across builds.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Swift Package Manager reuses previously resolved packages and compiled modules.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Bind mounts (",
+              "type" : "text"
+            },
+            {
+              "code" : "--mount=type=bind",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") pass specific files into each ",
+              "type" : "text"
+            },
+            {
+              "code" : "RUN",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " step",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "without adding them to the image layer.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Changes to your source files don’t invalidate the cache.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because cache mounts aren’t part of the final image layer,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the build step explicitly copies the compiled binary to a known path",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "before the second stage picks it up.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If your project includes a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Snippets\/",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " directory or other non-source directories",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "referenced by ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Package.swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", add additional bind mounts for those directories",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "in the build step.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Build-for-a-different-platform",
+          "level" : 3,
+          "text" : "Build for a different platform",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your development machine and deployment target use different CPU architectures —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for example, building on Apple Silicon (arm64) and deploying to x86_64 cloud infrastructure —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you need to specify the target platform when building the image.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With ",
+              "type" : "text"
+            },
+            {
+              "code" : "docker",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--platform",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "docker build --platform linux\/amd64 -t <my-app>:latest ."
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build for multiple architectures in a single command,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "use ",
+              "type" : "text"
+            },
+            {
+              "code" : "docker buildx",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which produces a multi-architecture image manifest:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "docker buildx build --platform linux\/amd64,linux\/arm64 -t <my-app>:latest ."
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.docker.com\/build\/building\/multi-platform\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for setup details, including creating a builder that supports cross-platform emulation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Apple’s ",
+              "type" : "text"
+            },
+            {
+              "code" : "container",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " tool builds for the host architecture by default.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To target a different architecture, use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--arch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container build --arch amd64 -t <my-app>:latest ."
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Cross-platform builds use emulation, which is significantly slower than native builds.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "When possible, build on infrastructure that matches your deployment architecture,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "such as an x86_64 CI runner for x86_64 deployments.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Push-to-a-registry",
+          "level" : 3,
+          "text" : "Push to a registry",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A container registry stores and distributes images so that other systems can pull and run them.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To push an image, tag it with the registry’s hostname and repository path,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "then push the tagged image.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.github.com\/en\/packages\/working-with-a-github-packages-registry\/working-with-the-container-registry",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " as an example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container tag <my-app>:latest ghcr.io\/<github-username>\/<my-app>:latest",
+            "container push ghcr.io\/<github-username>\/<my-app>:latest"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Pushing requires authentication with the registry.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.docker.com\/reference\/cli\/docker\/login\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for how to log in from the command line.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you’re using ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "container",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " instead of ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "docker",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", authenticate with ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "container registry login",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can also apply the full registry tag directly during the build:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container build -t ghcr.io\/<github-username>\/<my-app>:1.0 .",
+            "container push ghcr.io\/<github-username>\/<my-app>:1.0"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Your organization or cloud hosting provider may operate its own container registry.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Check with your team for the correct registry hostname and authentication method.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Run-locally-to-verify-and-debug",
+          "level" : 3,
+          "text" : "Run locally to verify and debug",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Run a container from your image to verify it starts correctly:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container run <my-app>:latest"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To expose a port from the container to your host machine, use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-p",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The first number is the host port, the second is the container port:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container run -p 8080:8080 <my-app>:latest"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Pass environment variables with ",
+              "type" : "text"
+            },
+            {
+              "code" : "-e",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to configure your service without rebuilding:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container run -p 8080:8080 -e LOG_LEVEL=debug <my-app>:latest"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Mount a local directory into the container with ",
+              "type" : "text"
+            },
+            {
+              "code" : "-v",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to provide configuration files",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or inspect output your service writes to disk:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container run -v \"$PWD\/config:\/config\" <my-app>:latest"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For interactive debugging, combine ",
+              "type" : "text"
+            },
+            {
+              "code" : "--rm",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "-it",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "--rm",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag removes the container when it exits, so stopped containers don’t accumulate.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "-it",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flags attach an interactive terminal.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can interrupt the process with Control-C, or override the default command to explore the container’s filesystem:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container run --rm -it <my-app>:latest \/bin\/sh"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This drops you into a shell inside the container.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can inspect the filesystem, check that files are in the expected locations, and verify the runtime environment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building",
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/serverguides\/packaging"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://ServerGuides/documentation/ServerGuides": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Server Guides",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides"
+},
+"doc://ServerGuides/documentation/ServerGuides/building": {
+  "abstract" : [
+    {
+      "text" : "Assemble your server applications using Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Building Swift Server Applications",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/building"
+},
+"doc://ServerGuides/documentation/ServerGuides/deploying-static-binaries": {
+  "abstract" : [
+    {
+      "text" : "Build fully self-contained Swift executables and deploy them",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to minimal containers or directly to Linux machines.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deploying Swift services as static binaries",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/deploying-static-binaries"
+},
+"https://docs.docker.com/build/building/multi-platform/": {
+  "identifier" : "https:\/\/docs.docker.com\/build\/building\/multi-platform\/",
+  "title" : "Docker’s multi-platform build documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "Docker’s multi-platform build documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.docker.com\/build\/building\/multi-platform\/"
+},
+"https://docs.docker.com/build/building/multi-stage/": {
+  "identifier" : "https:\/\/docs.docker.com\/build\/building\/multi-stage\/",
+  "title" : "multi-stage build",
+  "titleInlineContent" : [
+    {
+      "text" : "multi-stage build",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.docker.com\/build\/building\/multi-stage\/"
+},
+"https://docs.docker.com/build/cache/": {
+  "identifier" : "https:\/\/docs.docker.com\/build\/cache\/",
+  "title" : "Docker BuildKit cache mounts",
+  "titleInlineContent" : [
+    {
+      "text" : "Docker BuildKit cache mounts",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.docker.com\/build\/cache\/"
+},
+"https://docs.docker.com/reference/cli/docker/login/": {
+  "identifier" : "https:\/\/docs.docker.com\/reference\/cli\/docker\/login\/",
+  "title" : "Docker’s registry authentication documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "Docker’s registry authentication documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.docker.com\/reference\/cli\/docker\/login\/"
+},
+"https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry": {
+  "identifier" : "https:\/\/docs.github.com\/en\/packages\/working-with-a-github-packages-registry\/working-with-the-container-registry",
+  "title" : "GitHub Container Registry",
+  "titleInlineContent" : [
+    {
+      "text" : "GitHub Container Registry",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.github.com\/en\/packages\/working-with-a-github-packages-registry\/working-with-the-container-registry"
+},
+"https://github.com/apple/container": {
+  "identifier" : "https:\/\/github.com\/apple\/container",
+  "title" : "Container",
+  "titleInlineContent" : [
+    {
+      "text" : "Container",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/container"
+},
+"https://hub.docker.com/_/swift": {
+  "identifier" : "https:\/\/hub.docker.com\/_\/swift",
+  "title" : "Docker Hub",
+  "titleInlineContent" : [
+    {
+      "text" : "Docker Hub",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/hub.docker.com\/_\/swift"
+},
+"https://www.docker.com": {
+  "identifier" : "https:\/\/www.docker.com",
+  "title" : "Docker",
+  "titleInlineContent" : [
+    {
+      "text" : "Docker",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.docker.com"
+}
+}
+}

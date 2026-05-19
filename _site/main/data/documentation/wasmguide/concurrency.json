@@ -1,0 +1,585 @@
+{
+  "abstract" : [
+    {
+      "text" : "On macOS, iOS, and Linux, the ",
+      "type" : "text"
+    },
+    {
+      "code" : "libdispatch",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "-based executor is used by default, but ",
+      "type" : "text"
+    },
+    {
+      "code" : "libdispatch",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is not supported in a single-threaded WebAssembly environment.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "However, there are still two global task executors available in Swift for Wasm.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Concurrency"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Concurrency"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you need multi-threading support, please see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Multithreading",
+              "isActive" : true,
+              "overridingTitle" : "Multithreading guide",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "Multithreading guide",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " for more details.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Cooperative-Task-Executor",
+          "level" : 2,
+          "text" : "Cooperative Task Executor",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "Cooperative Task Executor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is the default task executor when targeting Wasm. It is a simple single-threaded",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "cooperative task executor implemented in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift\/blob\/0c67ce64874d83b2d4f8d73b899ee58f2a75527f\/stdlib\/public\/Concurrency\/CooperativeGlobalExecutor.inc",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If you are not familiar with the term “Cooperative” in the context of concurrent programming, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Cooperative_multitasking",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This executor has an ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "event loop",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " that dispatches tasks until no more tasks are enqueued, and exits immediately after all tasks are dispatched.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Note that this executor won’t yield control to the host environment during execution, so any host’s async operation cannot call back to the Wasm execution.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This executor is suitable for WASI command line tools, or host-independent standalone applications.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Here’s an example that you can run on CLI with ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift run --swift-sdk \"$(swiftc -print-target-info | jq -r '.swiftCompilerTag')_wasm\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@main",
+            "struct Main {",
+            "    static func main() async throws {",
+            "        print(\"Sleeping for 1 second... 😴\")",
+            "        try await Task.sleep(nanoseconds: 1_000_000_000)",
+            "        print(\"Wake up! 😁\")",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "JavaScript-Event-Loop-based-Task-Executor",
+          "level" : 2,
+          "text" : "JavaScript Event Loop-based Task Executor",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "JavaScript Event Loop-based Task Executor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is a task executor that cooperates with JavaScript’s event loop. It is provided by ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and you need to activate it explicitly by calling a predefined ",
+              "type" : "text"
+            },
+            {
+              "code" : "JavaScriptEventLoop.installGlobalExecutor()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function (see below for more details).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This executor also has its own ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "event loop",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " that dispatches tasks until no more tasks are enqueued synchronously.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It yields control to the JavaScript side after all pending tasks are dispatched, so the JavaScript program can call back to the executed Wasm module.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "After a task is resumed by callbacks from JavaScript, the executor starts its event loop again in the next microtask tick.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable this executor, you need to use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "JavaScriptEventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " module, which is provided as a part of ",
+              "type" : "text"
+            },
+            {
+              "code" : "JavaScriptKit",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " package.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Ensure that you have added ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "JavaScriptKit",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " dependency to your ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Package.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "JavaScriptEventLoop",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " dependency to your targets that use this executor",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "code" : [
+            ".product(name: \"JavaScriptEventLoop\", package: \"JavaScriptKit\"),"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Import ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "JavaScriptEventLoop",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and call ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "JavaScriptEventLoop.installGlobalExecutor()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " before spawning any tasks to activate the executor instead of the default cooperative executor.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "start" : 3,
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This executor is only available on JavaScript host environment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See also ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/#asyncawait",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for more details.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "import JavaScriptEventLoop",
+            "import JavaScriptKit",
+            "",
+            "JavaScriptEventLoop.installGlobalExecutor()",
+            "",
+            "let document = JSObject.global.document",
+            "var asyncButtonElement = document.createElement(\"button\")",
+            "_ = document.body.appendChild(asyncButtonElement)",
+            "",
+            "asyncButtonElement.innerText = \"Fetch Zen\"",
+            "func printZen() async throws {",
+            "    let fetch = JSObject.global.fetch.function!",
+            "    let response = try await JSPromise(fetch(\"https:\/\/api.github.com\/zen\").object!)!.value",
+            "    let text = try await JSPromise(response.text().object!)!.value",
+            "    print(text)",
+            "}",
+            "asyncButtonElement.onclick = .object(JSClosure { _ in",
+            "    Task {",
+            "        do {",
+            "            try await printZen()",
+            "        } catch {",
+            "            print(error)",
+            "        }",
+            "    }",
+            "",
+            "    return .undefined",
+            "})"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/concurrency"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/Multithreading": {
+  "abstract" : [
+    {
+      "text" : "While Swift Concurrency is available in Swift for WebAssembly out of the box, it is single-threaded by default. Read this article for special considerations relevant to multi-threading.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Multithreading",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Multi-threading",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/multithreading"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://en.wikipedia.org/wiki/Cooperative_multitasking": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Cooperative_multitasking",
+  "title" : "its definition for more details",
+  "titleInlineContent" : [
+    {
+      "text" : "its definition for more details",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Cooperative_multitasking"
+},
+"https://github.com/swiftlang/swift/blob/0c67ce64874d83b2d4f8d73b899ee58f2a75527f/stdlib/public/Concurrency/CooperativeGlobalExecutor.inc": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift\/blob\/0c67ce64874d83b2d4f8d73b899ee58f2a75527f\/stdlib\/public\/Concurrency\/CooperativeGlobalExecutor.inc",
+  "title" : "Swift Concurrency library",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Concurrency library",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift\/blob\/0c67ce64874d83b2d4f8d73b899ee58f2a75527f\/stdlib\/public\/Concurrency\/CooperativeGlobalExecutor.inc"
+},
+"https://github.com/swiftwasm/JavaScriptKit": {
+  "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit",
+  "title" : "JavaScriptKit",
+  "titleInlineContent" : [
+    {
+      "code" : "JavaScriptKit",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit"
+},
+"https://github.com/swiftwasm/JavaScriptKit/#asyncawait": {
+  "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/#asyncawait",
+  "title" : "JavaScriptKit documentation",
+  "titleInlineContent" : [
+    {
+      "code" : "JavaScriptKit",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/#asyncawait"
+}
+}
+}

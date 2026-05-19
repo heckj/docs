@@ -1,0 +1,1429 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+            "sections" : [
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/$volume",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps"
+      ]
+    ],
+    "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "category" : "Get Started with Swift Server",
+    "categoryPathComponent" : "getting-started-swift-server",
+    "role" : "article",
+    "title" : "Review and where to go next"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Review what you built and where to find resources to build something you can ship to production.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 5,
+      "kind" : "hero",
+      "title" : "Review and where to go next"
+    },
+    {
+      "content" : [
+        {
+          "content" : [
+            {
+              "anchor" : "Summary",
+              "level" : 2,
+              "text" : "Summary",
+              "type" : "heading"
+            },
+            {
+              "anchor" : "Review",
+              "level" : 3,
+              "text" : "Review",
+              "type" : "heading"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "In this tutorial, you built the server side of a TODO management application in Swift!",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Specifically, you:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "items" : [
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Started with a simple Swift ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "HTTP",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " service using Vapor that returned a pre-generated response to an ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "HTTP",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "GET",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " request.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Leveraged ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "OpenAPI",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " to generate the routes and handlers.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Added in ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "Fluent",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " to interact with a PostgreSQL database.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Integrated ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "OpenTelemetry",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " for distributed tracing and metrics, with a Grafana dashboard to visualize them.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                }
+              ],
+              "type" : "orderedList"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This should give you a taste of how to write ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "HTTP",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " services with Swift!",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The list below provides a complete list of the tools used:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "items" : [
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Swift OpenAPI libraries",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    },
+                    {
+                      "items" : [
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/www.youtube.com\/watch?v=US5Blei-5Kg&vl=en",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        }
+                      ],
+                      "type" : "unorderedList"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/vapor.codes",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " to provide the web framework.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/docs.vapor.codes\/fluent\/overview\/",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " for database persistence and migrations.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/swiftpackageindex.com\/apple\/swift-log\/1.6.3\/documentation\/logging",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " to add basic logging to the application.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/swift-server\/swift-service-lifecycle\/tree\/main",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " library to coordinate services and signaling.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/apple\/swift-configuration\/tree\/main",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " library to read the application configuration.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/swift-otel\/swift-otel",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " for OpenTelemetry integration (tracing and metrics export).",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/apple\/swift-metrics",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " for the metrics API.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/apple\/swift-distributed-tracing",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " for the tracing API.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/apple\/swift-system-metrics",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " for automatic CPU, memory, and process metrics.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/github.com\/grafana\/docker-otel-lgtm",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " for local observability visualization.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "identifier" : "https:\/\/docs.docker.com\/compose\/",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " to help build the swift service and connect to PostgreSQL.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                }
+              ],
+              "type" : "unorderedList"
+            },
+            {
+              "anchor" : "Where-do-I-go-from-here",
+              "level" : 3,
+              "text" : "Where do I go from here?",
+              "type" : "heading"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Apart from the tools and libraries we covered in the tutorial, there’s a plethora of options that are available to write Swift services:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "items" : [
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "HTTP",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    },
+                    {
+                      "items" : [
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/vapor.codes",
+                                  "isActive" : true,
+                                  "overridingTitle" : "Vapor",
+                                  "overridingTitleInlineContent" : [
+                                    {
+                                      "text" : "Vapor",
+                                      "type" : "text"
+                                    }
+                                  ],
+                                  "type" : "reference"
+                                },
+                                {
+                                  "text" : " is the web framework this tutorial used.",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        },
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/hummingbird.codes",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                },
+                                {
+                                  "text" : " is another web framework you could use.",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        }
+                      ],
+                      "type" : "unorderedList"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "GRPC",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    },
+                    {
+                      "items" : [
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/github.com\/grpc\/grpc-swift",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                },
+                                {
+                                  "text" : " is another library you can use to build API focused cloud services in Swift.",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        }
+                      ],
+                      "type" : "unorderedList"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "OpenAPI provides examples of how to use it as both client and server, with multiple frameworks:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    },
+                    {
+                      "items" : [
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-vapor-server-example",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        },
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-hummingbird-server-example",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        },
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-async-http-client-example",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        },
+                        {
+                          "content" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/",
+                                  "isActive" : true,
+                                  "type" : "reference"
+                                }
+                              ],
+                              "type" : "paragraph"
+                            }
+                          ]
+                        }
+                      ],
+                      "type" : "unorderedList"
+                    }
+                  ]
+                }
+              ],
+              "type" : "unorderedList"
+            }
+          ],
+          "kind" : "fullWidth"
+        }
+      ],
+      "kind" : "articleBody"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/gettingstartedswiftserver\/5-wrapup"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Set up your development environment",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Clone-and-build-the-tutorial-repository": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Clone and build the tutorial repository",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Clone-and-build-the-tutorial-repository"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Verify-installed-tools": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Verify installed tools",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Verify-installed-tools"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Introduction",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction#Explore-the-parts-of-a-basic-app": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Explore the parts of a basic app",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction#Explore-the-parts-of-a-basic-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Specify routes using OpenAPI",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Add-an-OpenAPI-document": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add an OpenAPI document",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Add-an-OpenAPI-document"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Configure-Vapor-to-use-the-API-handler": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure Vapor to use the API handler",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#OpenAPI-generator": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "OpenAPI generator",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#OpenAPI-generator"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Integrate a database",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Add-the-database-layer-to-the-routes": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add the database layer to the routes",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Add-the-database-layer-to-the-routes"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Configure-the-database-tables-and-connection": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure the database tables and connection",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Configure-the-database-tables-and-connection"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Run-and-test-the-code": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and test the code",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Run-and-test-the-code"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Set-up-the-infrastructure": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the infrastructure",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Set-up-the-infrastructure"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Add observability with OpenTelemetry",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Add-telemetry-dependencies": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add telemetry dependencies",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Add-telemetry-dependencies"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Configure-OpenTelemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure OpenTelemetry",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Configure-OpenTelemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Run-and-observe": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and observe",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Run-and-observe"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Set-up-the-observability-stack": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the observability stack",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Set-up-the-observability-stack"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Wire-up-the-entry-point-and-server": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Wire up the entry point and server",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Wire-up-the-entry-point-and-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and where to go next",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Review": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Review",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Review"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Summary": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Summary",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Summary"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Where-do-I-go-from-here": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Where do I go from here?",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Where-do-I-go-from-here"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
+  "abstract" : [
+    {
+      "text" : "Learn about cloud services in Swift by building and extending a Vapor app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Explore Swift on the server by building a Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Before-you-begin": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Before you begin",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/before-you-begin"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Build-a-basic-Vapor-app": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Build a basic Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/build-a-basic-vapor-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Review-and-next-steps": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and next steps",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/review-and-next-steps"
+},
+"https://docs.docker.com/compose/": {
+  "identifier" : "https:\/\/docs.docker.com\/compose\/",
+  "title" : "docker compose",
+  "titleInlineContent" : [
+    {
+      "text" : "docker compose",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.docker.com\/compose\/"
+},
+"https://docs.vapor.codes/fluent/overview/": {
+  "identifier" : "https:\/\/docs.vapor.codes\/fluent\/overview\/",
+  "title" : "Fluent ORM",
+  "titleInlineContent" : [
+    {
+      "text" : "Fluent ORM",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.vapor.codes\/fluent\/overview\/"
+},
+"https://github.com/apple/swift-configuration/tree/main": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-configuration\/tree\/main",
+  "title" : "Swift Configuration",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Configuration",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-configuration\/tree\/main"
+},
+"https://github.com/apple/swift-distributed-tracing": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-distributed-tracing",
+  "title" : "Swift Distributed Tracing",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Distributed Tracing",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-distributed-tracing"
+},
+"https://github.com/apple/swift-metrics": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-metrics",
+  "title" : "Swift Metrics",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Metrics",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-metrics"
+},
+"https://github.com/apple/swift-openapi-generator/tree/main/Examples/": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/",
+  "title" : "More examples",
+  "titleInlineContent" : [
+    {
+      "text" : "More examples",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/"
+},
+"https://github.com/apple/swift-openapi-generator/tree/main/Examples/hello-world-async-http-client-example": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-async-http-client-example",
+  "title" : "HTTP Client example",
+  "titleInlineContent" : [
+    {
+      "text" : "HTTP Client example",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-async-http-client-example"
+},
+"https://github.com/apple/swift-openapi-generator/tree/main/Examples/hello-world-hummingbird-server-example": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-hummingbird-server-example",
+  "title" : "Hummingbird server example",
+  "titleInlineContent" : [
+    {
+      "text" : "Hummingbird server example",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-hummingbird-server-example"
+},
+"https://github.com/apple/swift-openapi-generator/tree/main/Examples/hello-world-vapor-server-example": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-vapor-server-example",
+  "title" : "Vapor server example",
+  "titleInlineContent" : [
+    {
+      "text" : "Vapor server example",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-openapi-generator\/tree\/main\/Examples\/hello-world-vapor-server-example"
+},
+"https://github.com/apple/swift-system-metrics": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-system-metrics",
+  "title" : "Swift System Metrics",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift System Metrics",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-system-metrics"
+},
+"https://github.com/grafana/docker-otel-lgtm": {
+  "identifier" : "https:\/\/github.com\/grafana\/docker-otel-lgtm",
+  "title" : "Grafana OTEL LGTM",
+  "titleInlineContent" : [
+    {
+      "text" : "Grafana OTEL LGTM",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/grafana\/docker-otel-lgtm"
+},
+"https://github.com/grpc/grpc-swift": {
+  "identifier" : "https:\/\/github.com\/grpc\/grpc-swift",
+  "title" : "Swift GRPC",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift GRPC",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/grpc\/grpc-swift"
+},
+"https://github.com/swift-otel/swift-otel": {
+  "identifier" : "https:\/\/github.com\/swift-otel\/swift-otel",
+  "title" : "Swift OTel",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift OTel",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swift-otel\/swift-otel"
+},
+"https://github.com/swift-server/swift-service-lifecycle/tree/main": {
+  "identifier" : "https:\/\/github.com\/swift-server\/swift-service-lifecycle\/tree\/main",
+  "title" : "ServiceLifecycle",
+  "titleInlineContent" : [
+    {
+      "text" : "ServiceLifecycle",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swift-server\/swift-service-lifecycle\/tree\/main"
+},
+"https://hummingbird.codes": {
+  "identifier" : "https:\/\/hummingbird.codes",
+  "title" : "Hummingbird",
+  "titleInlineContent" : [
+    {
+      "text" : "Hummingbird",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/hummingbird.codes"
+},
+"https://swiftpackageindex.com/apple/swift-log/1.6.3/documentation/logging": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/apple\/swift-log\/1.6.3\/documentation\/logging",
+  "title" : "Swift Log",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Log",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/apple\/swift-log\/1.6.3\/documentation\/logging"
+},
+"https://vapor.codes": {
+  "identifier" : "https:\/\/vapor.codes",
+  "title" : "Vapor",
+  "titleInlineContent" : [
+    {
+      "text" : "Vapor",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/vapor.codes"
+},
+"https://www.youtube.com/watch?v=US5Blei-5Kg&vl=en": {
+  "identifier" : "https:\/\/www.youtube.com\/watch?v=US5Blei-5Kg&vl=en",
+  "title" : "Meet Swift OpenAPI Generator",
+  "titleInlineContent" : [
+    {
+      "text" : "Meet Swift OpenAPI Generator",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.youtube.com\/watch?v=US5Blei-5Kg&vl=en"
+}
+}
+}

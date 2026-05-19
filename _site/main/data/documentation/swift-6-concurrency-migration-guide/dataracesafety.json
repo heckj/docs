@@ -1,0 +1,3773 @@
+{
+  "abstract" : [
+    {
+      "text" : "Learn about the fundamental concepts Swift uses to enable data-race-free",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "concurrent code.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/DataRaceSafety"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Data Race Safety"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Traditionally, mutable state had to be manually protected via careful runtime",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "synchronization.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Using tools such as locks and queues, the prevention of data races was",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "entirely up to the programmer. This is notoriously difficult",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "not just to do correctly, but also to keep correct over time.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Even determining the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "need",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " for synchronization may be challenging.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Worst of all, unsafe code does not guarantee failure at runtime.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This code can often seem to work, possibly because highly unusual conditions",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are required to exhibit the incorrect and unpredictable behavior characteristic",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of a data race.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "More formally, a data race occurs when one thread accesses memory while the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "same memory is being mutated by another thread.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The Swift 6 language mode eliminates these problems by preventing data races",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "at compile time.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "You may have encountered constructs like ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "async",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "\/",
+                  "type" : "text"
+                },
+                {
+                  "code" : "await",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "and actors in other languages. Pay extra attention, as similarities to",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "these concepts in Swift may only be superficial.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Important",
+          "style" : "important",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Data-Isolation",
+          "level" : 2,
+          "text" : "Data Isolation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift’s concurrency system allows the compiler to understand and verify the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "safety of all mutable state.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It does this with a mechanism called ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "data isolation",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Data isolation guarantees mutually exclusive",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "access to mutable state. It is a form of synchronization,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "conceptually similar to a lock.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But unlike a lock, the protection data isolation provides happens at",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "compile-time.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A Swift programmer interacts with data isolation in two ways:",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "statically and dynamically.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The term ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "static",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " is used to describe program elements that are unaffected by",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "runtime state. These elements, such as a function definition,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are made up of keywords and annotations. Swift’s concurrency system is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "an extension of its type system. When you declare functions and types,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you are doing so statically. Isolation can be a part of these static",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "declarations.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There are cases, however, where the type system alone cannot sufficiently",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "describe runtime behavior. An example could be an Objective-C type",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that has been exposed to Swift. This declaration, made outside of Swift code,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "may not provide enough information to the compiler to ensure safe usage. To",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "accommodate these situations, there are additional features that allow you",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to express isolation requirements dynamically.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Data isolation, be it static or dynamic, allows the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "compiler to guarantee Swift code you write is free of data races.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information about using dynamic isolation,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "see ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/IncrementalAdoption#Dynamic-Isolation",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Isolation-Domains",
+          "level" : 3,
+          "text" : "Isolation Domains",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Data isolation is the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "mechanism",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " used to protect shared mutable state.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But it is often useful to talk about an independent unit of isolation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is known as an ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "isolation domain",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "How much state a particular domain is responsible for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "protecting varies widely. An isolation domain might protect a single variable,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or an entire subsystem, such as a user interface.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The critical feature of an isolation domain is the safety it provides.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Mutable state can only be accessed from one isolation domain at a time.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can pass mutable state from one isolation domain to another, but you can",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "never access that state concurrently from a different domain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This guarantee is validated by the compiler.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Even if you have not explicitly defined it yourself,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "all",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " function and variable declarations have a well-defined static",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation domain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These domains will always fall into one of three categories:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Non-isolated",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Isolated to an actor value",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Isolated to a global actor",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "anchor" : "Non-isolated",
+          "level" : 3,
+          "text" : "Non-isolated",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Functions and variables do not have to be a part of an explicit isolation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "domain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In fact, a lack of isolation is the default, called ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "non-isolated",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Because all the data isolation rules apply,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "there is no way for non-isolated code to mutate state protected in another",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func sailTheSea() {",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This top-level function has no static isolation, making it non-isolated.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It can safely call other non-isolated functions, and access non-isolated",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "variables, but it cannot access anything from another isolation domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "class Chicken {",
+            "    let name: String",
+            "    var currentHunger: HungerLevel",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This is an example of a non-isolated type.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Inheritance can play a role in static isolation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But this simple class, with no superclass or protocol conformances,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "also uses the default isolation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Data isolation guarantees that non-isolated entities cannot access the mutable",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "state of other domains.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "As a result of this, non-isolated functions and variables are always safe to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "access from any other domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Actors",
+          "level" : 3,
+          "text" : "Actors",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Actors give the programmer a way to define an isolation domain,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "along with methods that operate within that domain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "All stored properties of an actor are isolated to the enclosing actor instance.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "actor Island {",
+            "    var flock: [Chicken]",
+            "    var food: [Pineapple]",
+            "",
+            "    func addToFlock() {",
+            "        flock.append(Chicken())",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Here, every ",
+              "type" : "text"
+            },
+            {
+              "code" : "Island",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instance will define a new domain,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which will be used to protect access to its properties.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The method ",
+              "type" : "text"
+            },
+            {
+              "code" : "Island.addToFlock",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is said to be isolated to ",
+              "type" : "text"
+            },
+            {
+              "code" : "self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The body of a method has access to all data that shares its isolation domain,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "making the ",
+              "type" : "text"
+            },
+            {
+              "code" : "flock",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property synchronously accessible.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Actor isolation can be selectively disabled.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This can be useful any time you want to keep code organized within an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolated type, but opt-out of the isolation requirements that go along with it.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Non-isolated methods cannot synchronously access any protected state.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "actor Island {",
+            "    var flock: [Chicken]",
+            "    var food: [Pineapple]",
+            "",
+            "    nonisolated func canGrow() -> PlantSpecies {",
+            "        \/\/ neither flock nor food are accessible here",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The isolation domain of an actor is not limited to its own methods.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Functions that accept an isolated parameter can also gain access to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actor-isolated state without the need for any other form of synchronization.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func addToFlock(of island: isolated Island) {",
+            "    island.flock.append(Chicken())",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For an overview of actors, please see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Actors",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Global-Actors",
+          "level" : 3,
+          "text" : "Global Actors",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Global actors share all of the properties of regular actors, but also provide",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a means of statically assigning declarations to their isolation domain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is done with an annotation matching the actor name.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Global actors are particularly useful when groups of types all need to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "interoperate as a single pool of shared mutable state.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "class ChickenValley {",
+            "    var flock: [Chicken]",
+            "    var food: [Pineapple]",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This class is statically-isolated to ",
+              "type" : "text"
+            },
+            {
+              "code" : "MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". This ensures that all access",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to its mutable state is done from that isolation domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can opt-out of this type of actor isolation as well,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "nonisolated",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "And just as with actor types,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "doing so will disallow access to any protected state.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "class ChickenValley {",
+            "    var flock: [Chicken]",
+            "    var food: [Pineapple]",
+            "",
+            "    nonisolated func canGrow() -> PlantSpecies {",
+            "        \/\/ neither flock, food, nor any other MainActor-isolated",
+            "        \/\/ state is accessible here",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Tasks",
+          "level" : 3,
+          "text" : "Tasks",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "code" : "task",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is a unit of work that can run concurrently within your program.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You cannot run concurrent code in Swift outside of a task,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but that doesn’t mean you must always manually start one.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Typically, asynchronous functions do not need to be aware of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "task running them.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In fact, tasks can often begin at a much higher level,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "within an application framework, or even at the entry point of the program.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Tasks may run concurrently with one another,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "but each individual task only executes one function at a time.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "They run code in order, from beginning to end.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "Task {",
+            "    flock.map(Chicken.produce)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A task always has an isolation domain. They can be isolated to an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actor instance, a global actor, or could be non-isolated.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This isolation can be established manually, but can also be inherited",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "automatically based on context.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Task isolation, just like all other Swift code, determines what mutable state",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is accessible.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Tasks can run both synchronous and asynchronous code. Regardless of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "structure and how many tasks are involved, functions in the same isolation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "domain cannot run concurrently with each other.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "There will only ever be one task running synchronous code for any given",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Tasks-and-Task-Groups",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Isolation-Inference-and-Inheritance",
+          "level" : 3,
+          "text" : "Isolation Inference and Inheritance",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There are many ways to specify isolation explicitly.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But there are cases where the context of a declaration establishes isolation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "implicitly, via ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "isolation inference",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Classes",
+          "level" : 4,
+          "text" : "Classes",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A subclass will always have the same isolation as its parent.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "class Animal {",
+            "}",
+            "",
+            "class Chicken: Animal {",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because ",
+              "type" : "text"
+            },
+            {
+              "code" : "Chicken",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " inherits from ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the static isolation of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "type also implicitly applies.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Not only that, it also cannot be changed by a subclass.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "All ",
+              "type" : "text"
+            },
+            {
+              "code" : "Animal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instances have been declared to be ",
+              "type" : "text"
+            },
+            {
+              "code" : "MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-isolated, which",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "means all ",
+              "type" : "text"
+            },
+            {
+              "code" : "Chicken",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instances must be as well.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The static isolation of a type will also be inferred for its properties and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "methods by default.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "class Animal {",
+            "    \/\/ all declarations within this type are also",
+            "    \/\/ implicitly MainActor-isolated",
+            "    let name: String",
+            "",
+            "    func eat(food: Pineapple) {",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information, see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Protocols",
+          "level" : 4,
+          "text" : "Protocols",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A protocol conformance can implicitly affect isolation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, the protocol’s effect on isolation depends on how the conformance",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is applied.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "protocol Feedable {",
+            "    func eat(food: Pineapple)",
+            "}",
+            "",
+            "\/\/ inferred isolation applies to the entire type",
+            "class Chicken: Feedable {",
+            "}",
+            "",
+            "\/\/ inferred isolation only applies within the extension",
+            "extension Pirate: Feedable {",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A protocol’s requirements themselves can also be isolated.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This allows more fine-grained control around how isolation is inferred",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for conforming types.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol Feedable {",
+            "    @MainActor",
+            "    func eat(food: Pineapple)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Regardless of how a protocol is defined and conformance added, you cannot alter",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "other mechanisms of static isolation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If a type is globally-isolated, either explicitly or via inference from a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "superclass, a protocol conformance cannot be used to change it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information, see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Function-Types",
+          "level" : 4,
+          "text" : "Function Types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Isolation ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "inference",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " allows a type to implicitly define the isolation of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "its properties and methods.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But these are all examples of ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "declarations",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It is also possible to achieve a similar effect with function values, through",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "inheritance",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, closures are isolated to the same context they’re formed in.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "class Model { ... }",
+            "",
+            "@MainActor",
+            "class C {",
+            "    var models: [Model] = []",
+            "",
+            "    func mapModels<Value>(",
+            "      _ keyPath: KeyPath<Model, Value>",
+            "    ) -> some Collection<Value> {",
+            "        models.lazy.map { $0[keyPath: keyPath] }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In the above code, the closure to ",
+              "type" : "text"
+            },
+            {
+              "code" : "LazySequence.map",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has type",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "@escaping (Base.Element) -> U",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". This closure must stay on the main",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actor where it was originally formed. This allows the closure to capture",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "state or call isolated methods from the surrounding context.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Closures that can run concurrently with the original context are marked",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "explicitly through ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotations described in later",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "sections.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For ",
+              "type" : "text"
+            },
+            {
+              "code" : "async",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " closures that may be evaluated concurrently, the closure can still",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "capture the isolation of the original context. This mechanism is used by the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "Task",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " initializer so that the given operation is isolated to the original",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "context by default, while still allowing explicit isolation to be specified:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "func eat(food: Pineapple) {",
+            "    \/\/ the static isolation of this function's declaration is",
+            "    \/\/ captured by the closure created here",
+            "    Task {",
+            "        \/\/ allowing the closure's body to inherit MainActor-isolation",
+            "        Chicken.prizedHen.eat(food: food)",
+            "    }",
+            "",
+            "    Task { @MyGlobalActor in",
+            "        \/\/ this task is isolated to `MyGlobalActor`",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The closure’s type here is defined by ",
+              "type" : "text"
+            },
+            {
+              "code" : "Task.init",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Despite that declaration not being isolated to any actor,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "this newly-created task will ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "inherit",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " the ",
+              "type" : "text"
+            },
+            {
+              "code" : "MainActor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " isolation of its",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "enclosing scope unless an explicit global actor is written.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Function types offer a number of mechanisms for controlling their",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation behavior, but by default they behave identically to other types.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information, see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Isolation-Boundaries",
+          "level" : 2,
+          "text" : "Isolation Boundaries",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Isolation domains protect their mutable state, but useful programs need more",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "than just protection. They have to communicate and coordinate,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "often by passing data back and forth.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Moving values into or out of an isolation domain is known as ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "crossing",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation boundary.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Values are only ever permitted to cross an isolation boundary where there",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is no potential for concurrent access to shared mutable state.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Values can cross boundaries directly, via asynchronous function calls.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When you call an asynchronous function with a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "different",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " isolation domain,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the parameters and return value need to move into that domain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Values can also cross boundaries indirectly when captured by closures.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Closures introduce many potential opportunities for concurrent accesses.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "They can be created in one domain and then executed in another.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "They can even be executed in multiple, different domains.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Sendable-Types",
+          "level" : 3,
+          "text" : "Sendable Types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In some cases, all values of a particular type are safe to pass across",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation boundaries because thread-safety is a property of the type itself.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is represented by the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " protocol.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A conformance to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " means the given type is thread safe,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and values of the type can be shared across arbitrary isolation domains",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "without introducing a risk of data races.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift encourages using value types because they are naturally safe.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "With value types, different parts of your program can’t have",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "shared references to the same value.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When you pass an instance of a value type to a function,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the function has its own independent copy of that value.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Because value semantics guarantees the absence of shared mutable state, value",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "types in Swift are implicitly ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " when all their stored properties",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are also Sendable.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, this implicit conformance is not visible outside of their",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "defining module.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Making a type ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is part of its public API contract",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and must always be done explicitly.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "enum Ripeness {",
+            "    case hard",
+            "    case perfect",
+            "    case mushy(daysPast: Int)",
+            "}",
+            "",
+            "struct Pineapple {",
+            "    var weight: Double",
+            "    var ripeness: Ripeness",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Here, both the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Ripeness",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "Pineapple",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " types are implicitly ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "since they are composed entirely of ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value types.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Sendable-Types",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Flow-Sensitive-Isolation-Analysis",
+          "level" : 4,
+          "text" : "Flow-Sensitive Isolation Analysis",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " protocol is used to express thread-safety for a type as a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "whole.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But there are situations when a particular ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "instance",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " of a non-",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "type is being used in a safe way.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The compiler is often capable of inferring this safety through",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "flow-sensitive analysis known as ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Region-based isolation allows the compiler to permit instances of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "non-",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " types to cross isolation domains when it can prove doing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so cannot introduce data races.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func populate(island: Island) async {",
+            "    let chicken = Chicken()",
+            "",
+            "    await island.adopt(chicken)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Here, the compiler can correctly reason that even though ",
+              "type" : "text"
+            },
+            {
+              "code" : "chicken",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "non-",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type, allowing it to cross into the ",
+              "type" : "text"
+            },
+            {
+              "code" : "island",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " isolation domain is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "safe.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, this exception to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " checking is inherently contigent on",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the surrounding code.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The compiler will still produce an error should any unsafe accesses to the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "chicken",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " variable ever be introduced.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func populate(island: Island) async {",
+            "    let chicken = Chicken()",
+            "",
+            "    await island.adopt(chicken)",
+            "",
+            "    \/\/ this would result in an error",
+            "    chicken.eat(food: Pineapple())",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Region-based isolation works without any code changes.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "But a function’s parameters and return values can also explicitly state",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that they support crossing domains using this mechanism.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func populate(island: Island, with chicken: sending Chicken) async {",
+            "    await island.adopt(chicken)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The compiler can now provide the guarantee that at all call sites, the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "chicken",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter will never be subject to unsafe access.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is a relaxing of an otherwise significant constraint.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Without ",
+              "type" : "text"
+            },
+            {
+              "code" : "sending",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", this function would only be possible to implement by",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "requiring that ",
+              "type" : "text"
+            },
+            {
+              "code" : "Chicken",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " first conform to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Actor-Isolated-Types",
+          "level" : 3,
+          "text" : "Actor-Isolated Types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Actors are not value types, but because they protect all of their state",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in their own isolation domain,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "they are inherently safe to pass across boundaries.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This makes all actor types implicitly ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", even if their properties",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are not ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " themselves.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "actor Island {",
+            "    var flock: [Chicken]  \/\/ non-Sendable",
+            "    var food: [Pineapple] \/\/ Sendable",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Global-actor-isolated types are also implicitly ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for similar reasons.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "They do not have a private, dedicated isolation domain, but their state is still",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "protected by an actor.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "class ChickenValley {",
+            "    var flock: [Chicken]  \/\/ non-Sendable",
+            "    var food: [Pineapple] \/\/ Sendable",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Reference-Types",
+          "level" : 3,
+          "text" : "Reference Types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Unlike value types, reference types cannot be implicitly ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "And while they can be made ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "doing so comes with a number of constraints.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To make a class ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " it must contain no mutable state and all",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "immutable properties must also be ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Further, the compiler can only validate the implementation of final classes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class Chicken: Sendable {",
+            "    let name: String",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It is possible to satisfy the thread-safety requirements of ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "using synchronization primitives that the compiler cannot reason about,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "such as through OS-specific constructs or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "when working with thread-safe types implemented in C\/C++\/Objective-C.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Such types may be marked as conforming to ",
+              "type" : "text"
+            },
+            {
+              "code" : "@unchecked Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to promise the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "compiler that the type is thread-safe.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The compiler will not perform any checking on an ",
+              "type" : "text"
+            },
+            {
+              "code" : "@unchecked Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so this opt-out must be used with caution.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Suspension-Points",
+          "level" : 3,
+          "text" : "Suspension Points",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A task can switch between isolation domains when a function in one",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "domain calls a function in another.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A call that crosses an isolation boundary must be made asynchronously,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "because the destination isolation domain might be busy running other tasks.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In that case, the task will be suspended until the destination isolation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "domain is available.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Critically, a suspension point does ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "not",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " block.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The current isolation domain (and the thread it is running on)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are freed up to perform other work.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The Swift concurrency runtime expects code to never block on future work,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "allowing the system to always make forward progress.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This eliminates a common source of deadlocks in concurrent code.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@MainActor",
+            "func stockUp() {",
+            "    \/\/ beginning execution on MainActor",
+            "    let food = Pineapple()",
+            "",
+            "    \/\/ switching to the island actor's domain",
+            "    await island.store(food)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Potential suspension points are marked in source code with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "await",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " keyword.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Its presence indicates that the call might suspend at runtime, but ",
+              "type" : "text"
+            },
+            {
+              "code" : "await",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " does not force a suspension. The function being called might",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "suspend only under certain dynamic conditions.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It’s possible that a call marked with ",
+              "type" : "text"
+            },
+            {
+              "code" : "await",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will not actually suspend.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Atomicity",
+          "level" : 3,
+          "text" : "Atomicity",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "While actors do guarantee safety from data races, they do not ensure",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "atomicity across suspension points.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Concurrent code often needs to execute a sequence of operations together as an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "atomic unit, such that other threads can never see an intermediate state.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Units of code that require this property are known as ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "critical sections",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because the current isolation domain is freed up to perform other work,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actor-isolated state may change after an asynchronous call.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "As a consequence, you can think of explicitly marking potential suspension",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "points as a way to indicate the end of a critical section.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func deposit(pineapples: [Pineapple], onto island: Island) async {",
+            "   var food = await island.food",
+            "   food += pineapples",
+            "   await island.store(food)",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This code assumes, incorrectly, that the ",
+              "type" : "text"
+            },
+            {
+              "code" : "island",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " actor’s ",
+              "type" : "text"
+            },
+            {
+              "code" : "food",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value will not",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "change between asynchronous calls.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Critical sections should always be structured to run synchronously.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For more information, see the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency\/#Defining-and-Calling-Asynchronous-Functions",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " section of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift Programming Language.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/IncrementalAdoption#Dynamic-Isolation": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/IncrementalAdoption#Dynamic-Isolation",
+  "kind" : "section",
+  "title" : "Dynamic Isolation",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/incrementaladoption#Dynamic-Isolation"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures",
+  "title" : "Closures",
+  "titleInlineContent" : [
+    {
+      "text" : "Closures",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency#Actors": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Actors",
+  "title" : "Actors",
+  "titleInlineContent" : [
+    {
+      "text" : "Actors",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Actors"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency#Sendable-Types": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Sendable-Types",
+  "title" : "Sendable Types",
+  "titleInlineContent" : [
+    {
+      "text" : "Sendable Types",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Sendable-Types"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency#Tasks-and-Task-Groups": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Tasks-and-Task-Groups",
+  "title" : "Tasks",
+  "titleInlineContent" : [
+    {
+      "text" : "Tasks",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency#Tasks-and-Task-Groups"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/#Defining-and-Calling-Asynchronous-Functions": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency\/#Defining-and-Calling-Asynchronous-Functions",
+  "title" : "Defining and Calling Asynchronous Functions",
+  "titleInlineContent" : [
+    {
+      "text" : "Defining and Calling Asynchronous Functions",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/concurrency\/#Defining-and-Calling-Asynchronous-Functions"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/inheritance": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance",
+  "title" : "Inheritance",
+  "titleInlineContent" : [
+    {
+      "text" : "Inheritance",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols",
+  "title" : "Protocols",
+  "titleInlineContent" : [
+    {
+      "text" : "Protocols",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0414-region-based-isolation.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md",
+  "title" : "region-based isolation",
+  "titleInlineContent" : [
+    {
+      "text" : "region-based isolation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md"
+}
+}
+}

@@ -1,0 +1,272 @@
+{
+  "abstract" : [
+    {
+      "text" : "Navigate and write your Swift code more easily with Language features.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/language-features"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Language Features"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift extension provides language features such as code completion and jump to definition via ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/sourcekit-lsp",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "With Swift toolchains prior to 6.1 you will need to build your project at least once for SourceKit-LSP to function correcly. Whenever you add a new dependency to your project, make sure to rebuild it so that SourceKit-LSP can update its information.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "⚠️ Important",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "SourceKit-LSP provides background indexing in Swift toolchain 6.1 which will automatically index your project on startup. All indexing results are cached in the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build\/index-build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " folder within your workspace.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Language features are common to all VS Code extensions. See the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/code.visualstudio.com\/docs\/editing\/editingevolved",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for a more in-depth overview.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "SourceKit-LSP can be configured via extension settings. See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/settings",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for more information.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Features",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+        "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+        "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+        "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+        "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview"
+      ],
+      "title" : "Features"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/automatic-task-creation": {
+  "abstract" : [
+    {
+      "text" : "Add tasks for common operations with your Package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Automatic Task Creation",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/automatic-task-creation"
+},
+"doc://userdocs/documentation/userdocs/debugging": {
+  "abstract" : [
+    {
+      "text" : "Debug your Swift executables using LLDB.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Debugging",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/debugging"
+},
+"doc://userdocs/documentation/userdocs/docc-live-preview": {
+  "abstract" : [
+    {
+      "text" : "Show a live preview of your Swift documentation while editing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documentation Live Preview",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/docc-live-preview"
+},
+"doc://userdocs/documentation/userdocs/project-view": {
+  "abstract" : [
+    {
+      "text" : "Use this view to get a high level view of your Swift project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Swift Project View",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/project-view"
+},
+"doc://userdocs/documentation/userdocs/settings": {
+  "abstract" : [
+    {
+      "text" : "Configure the behavior of the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/settings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Extension Settings",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/settings"
+},
+"doc://userdocs/documentation/userdocs/test-explorer": {
+  "abstract" : [
+    {
+      "text" : "View test results in the Test Explorer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Running and Debugging Tests",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/test-explorer"
+},
+"https://code.visualstudio.com/docs/editing/editingevolved": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/editing\/editingevolved",
+  "title" : "VS Code documentation about navigating code",
+  "titleInlineContent" : [
+    {
+      "text" : "VS Code documentation about navigating code",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/editing\/editingevolved"
+},
+"https://github.com/apple/sourcekit-lsp": {
+  "identifier" : "https:\/\/github.com\/apple\/sourcekit-lsp",
+  "title" : "SourceKit-LSP",
+  "titleInlineContent" : [
+    {
+      "text" : "SourceKit-LSP",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/sourcekit-lsp"
+}
+}
+}

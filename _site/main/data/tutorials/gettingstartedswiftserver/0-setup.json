@@ -1,0 +1,1389 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+            "sections" : [
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/$volume",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin"
+      ]
+    ],
+    "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "Get Started with Swift Server",
+    "categoryPathComponent" : "getting-started-swift-server",
+    "role" : "project",
+    "title" : "Set up your development environment"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "Before you begin",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 5,
+      "kind" : "hero",
+      "title" : "Set up your development environment"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Verify-installed-tools",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "To start the tutorial you need to have compatible versions of Swift, Git, and Docker Compose installed.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Follow the steps below to verify your installed software and if necessary update or install to the latest version.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Verify you have Swift version 6.3 or later installed. If not, upgrade now.  Instructions to install Swift can be found at ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "http:\/\/swift.org\/install",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% swift --version",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You will use ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% git clone",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to clone the repository accompanying this tutorial.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Instructions to install ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "git",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " can be found ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/git-scm.com\/book\/en\/v2\/Getting-Started-Installing-Git",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.1.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% git --version",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This tutorial requires you to run containers that adhere to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/www.compose-spec.io",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Docker Desktop installation steps can be found ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/docs.docker.com\/desktop\/",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.2.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% docker compose version",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Verify installed tools"
+        },
+        {
+          "anchor" : "Clone-and-build-the-tutorial-repository",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A sample repository was created to simplify the examples in this tutorial.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "To complete your setup, you’ll clone and build the repository.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use the URL provided on the right to clone the tutorial repo.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.2.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% git clone",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Navigate to the directory that was cloned.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.2.1.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% cd swift-server-todos-tutorial",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "swift build --product",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " leverages the Swift Package Manager to fetch all the dependencies and build an executable binary for the product you specify.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "This can take a minute or two.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.2.2.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% swift build --product SwiftServerTodos",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The –show-bin-path switch returns the path of the binary that swift build produced.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.2.3.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% swift build --product SwiftServerTodos --show-bin-path",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This verifies that the executable binary was built and that you are ready to start the tutorial!",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "0-bash.2.4.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "% ls .build\/debug\/SwiftServerTodos",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Clone and build the tutorial repository"
+        }
+      ]
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+          "type" : "text"
+        }
+      ],
+      "action" : {
+        "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "featuredEyebrow" : "Tutorial",
+      "kind" : "callToAction",
+      "title" : "Introduction"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/gettingstartedswiftserver\/0-setup"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"0-bash.0.txt": {
+  "content" : [
+    "% swift --version",
+    "Apple Swift version 6.3 (swift-6.3-RELEASE)"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "0-bash.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.1.txt": {
+  "content" : [
+    "% swift --version",
+    "Apple Swift version 6.3 (swift-6.3-RELEASE)",
+    "",
+    "% git --version",
+    "git version 2.48.1"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 3
+    },
+    {
+      "line" : 4
+    },
+    {
+      "line" : 5
+    }
+  ],
+  "identifier" : "0-bash.1.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.2.0.txt": {
+  "content" : [
+    "% git clone https:\/\/github.com\/swiftlang\/swift-server-todos-tutorial"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "0-bash.2.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.2.1.txt": {
+  "content" : [
+    "% git clone https:\/\/github.com\/swiftlang\/swift-server-todos-tutorial",
+    "",
+    "% cd swift-server-todos-tutorial"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 2
+    },
+    {
+      "line" : 3
+    }
+  ],
+  "identifier" : "0-bash.2.1.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.2.2.txt": {
+  "content" : [
+    "% git clone https:\/\/github.com\/swiftlang\/swift-server-todos-tutorial",
+    "",
+    "% cd swift-server-todos-tutorial",
+    "",
+    "% swift build --product SwiftServerTodos",
+    "Building for debugging...",
+    "[1440\/1440] Emitting module SwiftServerTodos",
+    "Build of target: 'SwiftServerTodos' complete! (74.06s)"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 4
+    },
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    }
+  ],
+  "identifier" : "0-bash.2.2.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.2.3.txt": {
+  "content" : [
+    "% git clone https:\/\/github.com\/swiftlang\/swift-server-todos-tutorial",
+    "",
+    "% cd swift-server-todos-tutorial",
+    "",
+    "% swift build --product SwiftServerTodos",
+    "Building for debugging...",
+    "[1440\/1440] Emitting module SwiftServerTodos",
+    "Build of target: 'SwiftServerTodos' complete! (74.06s)",
+    "",
+    "# NOTE: this path may look different based on your architecture and OS",
+    "% swift build --product SwiftServerTodos --show-bin-path",
+    "<some prefix>\/.build\/arm64-apple-macosx\/debug",
+    "# or depending on your hardware",
+    "<some prefix>\/.build\/x86_64-apple-macosx\/debug",
+    "# or depending on your OS",
+    "<some prefix>\/.build\/aarch64-unknown-linux-gnu\/debug"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    }
+  ],
+  "identifier" : "0-bash.2.3.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.2.4.txt": {
+  "content" : [
+    "% git clone https:\/\/github.com\/swiftlang\/swift-server-todos-tutorial",
+    "",
+    "% cd swift-server-todos-tutorial",
+    "",
+    "% swift build --product SwiftServerTodos",
+    "Building for debugging...",
+    "[1440\/1440] Emitting module SwiftServerTodos",
+    "Build of target: 'SwiftServerTodos' complete! (74.06s)",
+    "",
+    "# NOTE: this path may look different based on your architecture and OS",
+    "% swift build --product SwiftServerTodos --show-bin-path",
+    "<some prefix>\/.build\/arm64-apple-macosx\/debug",
+    "# or depending on your hardware",
+    "<some prefix>\/.build\/x86_64-apple-macosx\/debug",
+    "# or depending on your OS",
+    "<some prefix>\/.build\/aarch64-unknown-linux-gnu\/debug",
+    "",
+    "% ls .build\/debug\/SwiftServerTodos",
+    ".build\/debug\/SwiftServerTodos"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    }
+  ],
+  "identifier" : "0-bash.2.4.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"0-bash.2.txt": {
+  "content" : [
+    "% swift --version",
+    "Apple Swift version 6.3 (swift-6.3-RELEASE)",
+    "",
+    "% git --version",
+    "git version 2.48.1",
+    "",
+    "% docker compose version",
+    "Docker Compose version v2.13.0"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    }
+  ],
+  "identifier" : "0-bash.2.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Set up your development environment",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Clone-and-build-the-tutorial-repository": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Clone and build the tutorial repository",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Clone-and-build-the-tutorial-repository"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Verify-installed-tools": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Verify installed tools",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Verify-installed-tools"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Introduction",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction#Explore-the-parts-of-a-basic-app": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Explore the parts of a basic app",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction#Explore-the-parts-of-a-basic-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Specify routes using OpenAPI",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Add-an-OpenAPI-document": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add an OpenAPI document",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Add-an-OpenAPI-document"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Configure-Vapor-to-use-the-API-handler": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure Vapor to use the API handler",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#OpenAPI-generator": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "OpenAPI generator",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#OpenAPI-generator"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Integrate a database",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Add-the-database-layer-to-the-routes": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add the database layer to the routes",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Add-the-database-layer-to-the-routes"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Configure-the-database-tables-and-connection": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure the database tables and connection",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Configure-the-database-tables-and-connection"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Run-and-test-the-code": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and test the code",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Run-and-test-the-code"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Set-up-the-infrastructure": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the infrastructure",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Set-up-the-infrastructure"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Add observability with OpenTelemetry",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Add-telemetry-dependencies": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add telemetry dependencies",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Add-telemetry-dependencies"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Configure-OpenTelemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure OpenTelemetry",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Configure-OpenTelemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Run-and-observe": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and observe",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Run-and-observe"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Set-up-the-observability-stack": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the observability stack",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Set-up-the-observability-stack"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Wire-up-the-entry-point-and-server": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Wire up the entry point and server",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Wire-up-the-entry-point-and-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and where to go next",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Review": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Review",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Review"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Summary": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Summary",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Summary"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Where-do-I-go-from-here": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Where do I go from here?",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Where-do-I-go-from-here"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
+  "abstract" : [
+    {
+      "text" : "Learn about cloud services in Swift by building and extending a Vapor app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Explore Swift on the server by building a Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Before-you-begin": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Before you begin",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/before-you-begin"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Build-a-basic-Vapor-app": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Build a basic Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/build-a-basic-vapor-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Review-and-next-steps": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and next steps",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/review-and-next-steps"
+},
+"http://swift.org/install": {
+  "identifier" : "http:\/\/swift.org\/install",
+  "title" : "swift.org\/install",
+  "titleInlineContent" : [
+    {
+      "text" : "swift.org\/install",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "http:\/\/swift.org\/install"
+},
+"https://docs.docker.com/desktop/": {
+  "identifier" : "https:\/\/docs.docker.com\/desktop\/",
+  "title" : "here",
+  "titleInlineContent" : [
+    {
+      "text" : "here",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.docker.com\/desktop\/"
+},
+"https://git-scm.com/book/en/v2/Getting-Started-Installing-Git": {
+  "identifier" : "https:\/\/git-scm.com\/book\/en\/v2\/Getting-Started-Installing-Git",
+  "title" : "here",
+  "titleInlineContent" : [
+    {
+      "text" : "here",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/git-scm.com\/book\/en\/v2\/Getting-Started-Installing-Git"
+},
+"https://www.compose-spec.io": {
+  "identifier" : "https:\/\/www.compose-spec.io",
+  "title" : "compose specification",
+  "titleInlineContent" : [
+    {
+      "text" : "compose specification",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.compose-spec.io"
+}
+}
+}

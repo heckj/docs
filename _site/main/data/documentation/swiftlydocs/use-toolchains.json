@@ -1,0 +1,622 @@
+{
+  "abstract" : [
+    {
+      "text" : "Choose an installed toolchain to use as default.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swiftly"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Use Swift toolchains"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly toolchains include a variety of compilers, linkers, debuggers, documentation generators, and other useful tools for working with Swift. Using a toolchain activates it so that when you run toolchain commands they are run with that version.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you install a toolchain you can start using it right away. If you don’t have any other toolchains installed then it becomes the default.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install latest",
+            "$ swift --version",
+            "Swift version 6.0.3 (swift-6.0.3-RELEASE)",
+            "Target: aarch64-unknown-linux-gnu",
+            "$ swift build    # Build with the current toolchain"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you have more than one toolchain installed, you can choose which one to use with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly use",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following example illustrates installing two toolchains and explicitly using one:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install 5.10.1",
+            "$ swiftly install main-snapshot",
+            "$ swiftly use 5.10.1",
+            "$ swift build    # Builds with the 5.10.1 toolchain",
+            "$ swift test     # Tests with the 5.10.1 toolchain",
+            "$ swiftly use main-snapshot",
+            "$ swift build    # Builds with the latest snapshot toolchain on the main branch",
+            "$ lldb           # Run the debugger from the latest snapshot toolchain"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "use",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command doesn’t require a full version.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It is sufficient to provide just a major version, or the major and minor versions.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Swiftly uses the newest matching version that you have installed, if any.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly use 5",
+            "swift --version  # Version matches the 5.10.1 toolchain that was installed above"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you’re not certain which toolchain is in-use, invoke the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly use",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command to provide details:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly use",
+            "Swift 5.10.1 (default)"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can print the exact toolchain location with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--print-location",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly use --print-location",
+            "\/Users\/someuser\/Library\/Developer\/Toolchains\/swift-5.10.1-RELEASE.xctoolchain"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Sharing-recommended-toolchain-versions",
+          "level" : 2,
+          "text" : "Sharing recommended toolchain versions",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly can create and update a special ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift-version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file at the top of your git repository so that you can share your toolchain preference with the rest of your team:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ cd path\/to\/git\/repository",
+            "$ swiftly use 6.0.1",
+            "A new file `path\/to\/git\/repository\/.swift-version` will be created to set the new in-use toolchain for this project.",
+            "Alternatively, you can set your default globally with the `--global-default` flag. Proceed with creating this file? (Y\/n) Y",
+            "$ cat .swift-version",
+            "6.0.1"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When a team member uses swiftly with this git repository the toolchain that is in use matches the version in the file.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ cd path\/to\/git\/repository",
+            "$ swift --version",
+            "Swift version 6.0.1 (swift-6.0.1-RELEASE)",
+            "Target: aarch64-unknown-linux-gnu"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If that team member doesn’t have the toolchain installed on their system there will be an error. They can install the selected toolchain automatically like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ cd path\/to\/git\/repository",
+            "$ swiftly install    # Installs the version of the toolchain in the .swift-version file"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you want to temporarily use a toolchain version for one command you can try ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly run",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The following command shows an example of using swiftly to build your package with the latest snapshot toolchain:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly run swift build +main-snapshot"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The toolchain must be installed on your system before you can run with it.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly uses the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift-version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file, if present in your working directory (or parent), to select the toolchain that is in use.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If you are working in a directory that doesn’t have this file, then you can set a global default toolchain to use in these places.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly use --global-default 6.0.1"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Here the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--global-default",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag ensures that the default is set globally to the “6.0.1” toolchain whenever there isn’t a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift-version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file, and there isn’t a version specified in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly run",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This flag doesn’t attempt to create a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift-version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file, or update it if it already exists.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "In-use-toolchains-and-default-toolchains",
+          "level" : 2,
+          "text" : "In use toolchains and default toolchains",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you list installed toolchains or use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly use",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command to print the current in use toolchain, there will be tags for both “in use” and “default.” Sometimes the same toolchain has both tags!",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly list",
+            "Installed release toolchains",
+            "----------------------------",
+            "Swift 6.0.3",
+            "Swift 6.0.2 (in use) (default)",
+            "",
+            "Installed snapshot toolchains",
+            "-----------------------------"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Whenever a toolchain is tagged as “in use” indicates the toolchain that will be used when running toolchain commands from your current working directory.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The one that is selected is based either on what is in a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift-version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file or the global default if there is no such file there.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The default tag is used to show the global default toolchain, which is independent of any swift version file.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The global default is there for cases where the file doesn’t exist.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It sets the toolchain that is in use in those cases.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble"
+      ],
+      "title" : "Guides"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftlydocs\/use-toolchains"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+  "abstract" : [
+    {
+      "text" : "Install and manage your Swift programming language toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/automated-install": {
+  "abstract" : [
+    {
+      "text" : "Automatically install swiftly and Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install swiftly automatically",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/automated-install"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/install-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Install swift toolchains with Swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/install-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/shell-autocompletion": {
+  "abstract" : [
+    {
+      "text" : "Generate shell autocompletions for swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add shell auto-completions",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/shell-autocompletion"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/trouble": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Troubleshooting",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/trouble"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/uninstall-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Remove unneeded Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Uninstall Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/uninstall-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/update-toolchain": {
+  "abstract" : [
+    {
+      "text" : "Update installed toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Update Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/update-toolchain"
+}
+}
+}

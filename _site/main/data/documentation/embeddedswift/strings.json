@@ -1,0 +1,524 @@
+{
+  "abstract" : [
+    {
+      "text" : "How to enable full Unicode-compliant string support in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Strings"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Both StaticString and String types are available in Embedded Swift. As is the case in desktop Swift, certain operations on strings require Unicode data tables for strict Unicode compliance. In Embedded Swift these data tables are provided as a separate static library (libswiftUnicodeDataTables.a) that users need to link in manually – if they need to use these string operations. If the library is required, linking will fail due to missing on one or more of the following symbols:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "_swift_stdlib_getAge",
+            "_swift_stdlib_getBinaryProperties",
+            "_swift_stdlib_getCaseMapping",
+            "_swift_stdlib_getComposition",
+            "_swift_stdlib_getDecompositionEntry",
+            "_swift_stdlib_getGeneralCategory",
+            "_swift_stdlib_getGraphemeBreakProperty",
+            "_swift_stdlib_getMapping",
+            "_swift_stdlib_getMphIdx",
+            "_swift_stdlib_getNameAlias",
+            "_swift_stdlib_getNormData",
+            "_swift_stdlib_getNumericType",
+            "_swift_stdlib_getNumericValue",
+            "_swift_stdlib_getScalarBitArrayIdx",
+            "_swift_stdlib_getScalarName",
+            "_swift_stdlib_getScript",
+            "_swift_stdlib_getScriptExtensions",
+            "_swift_stdlib_getSpecialMapping",
+            "_swift_stdlib_getWordBreakProperty",
+            "_swift_stdlib_isLinkingConsonant",
+            "_swift_stdlib_nfd_decompositions"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To resolve this, link in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "libswiftUnicodeDataTables.a",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " that’s in Swift toolchain’s resource directory (",
+              "type" : "text"
+            },
+            {
+              "code" : "lib\/swift\/",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") under the target triple that you’re using:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftc <inputs> -target armv6m-none-none-eabi -enable-experimental-feature Embedded -wmo -c -o output.o",
+            "$ ld ... -o binary output.o $(dirname `which swiftc`)\/..\/lib\/swift\/embedded\/armv6m-none-none-eabi\/libswiftUnicodeDataTables.a"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively in a CMake build try something like the below which will check a Swiftly based install.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Update the ",
+              "type" : "text"
+            },
+            {
+              "code" : "COMPILER_TARGET",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " variable to the architecture desired.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "set(COMPILER_TARGET \"riscv32-none-none-eabi\")",
+            "",
+            "find_program(SWIFTLY \"swiftly\")",
+            "IF(SWIFTLY)",
+            "  execute_process(COMMAND swiftly use --print-location OUTPUT_VARIABLE toolchain_path OUTPUT_STRIP_TRAILING_WHITESPACE)",
+            "  cmake_path(SET additional_lib_path NORMALIZE \"${toolchain_path}\/usr\/lib\/swift\/embedded\/${COMPILER_TARGET}\")",
+            "ELSE()",
+            "  get_filename_component(compiler_bin_dir ${CMAKE_Swift_COMPILER} DIRECTORY)",
+            "  cmake_path(SET additional_lib_path NORMALIZE \"${compiler_bin_dir}\/..\/lib\/swift\/embedded\/${COMPILER_TARGET}\")",
+            "ENDIF()",
+            "",
+            "target_link_directories(${COMPONENT_LIB} PUBLIC \"${additional_lib_path}\")",
+            "target_link_libraries(${COMPONENT_LIB}",
+            "    -Wl,--whole-archive",
+            "    swiftUnicodeDataTables",
+            "    -Wl,--no-whole-archive",
+            "    )",
+            "",
+            "## decomment the below line to troubleshoot path issues if needed.",
+            "# message(\" ----------::: ${additional_lib_path} :::---------- \")"
+          ],
+          "syntax" : "CMake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Unicode data tables are required for (list not exhaustive):",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Comparing String objects for equality",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Sorting Strings",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using String’s hash values, and in particular using String as dictionary keys",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using String’s ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".count",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using Unicode-aware string processing APIs (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".split()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", iterating characters, indexing)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using Unicode-aware conversion String APIs (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".uppercased()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".lowercased()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", etc.)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For contrast, unicode data tables are ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "not required for",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " (list not exhaustive):",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using StaticString",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Creating, concatenating, string interpolating, and printing String objects",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".utf8",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".utf16",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".unicodeScalars",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " views of strings, including their .count property, using them as dictionary keys",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Manually linking ",
+              "type" : "text"
+            },
+            {
+              "code" : "libswiftUnicodeDataTables.a",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is required for several reasons, including acknowledging that the data tables are desirable: Since they have a non-negligible size, it’s useful to be aware that you are using them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Using-Embedded-Swift",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods"
+      ],
+      "title" : "Using Embedded Swift"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Basics": {
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Basics of using Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/basics"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ConditionalCompilation": {
+  "abstract" : [
+    {
+      "text" : "How to share code between Embedded Swift and full Swift using conditional compilation",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conditionalizing compilation for Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/conditionalcompilation"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Existentials": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on existentials (“any” types) that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existentials",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/existentials"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ExternalDependencies": {
+  "abstract" : [
+    {
+      "text" : "What external system dependencies should you expect from Embedded Swift compilations",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "External dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/externaldependencies"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Libraries": {
+  "abstract" : [
+    {
+      "text" : "Understand the library setup and linkage model of Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Libraries and modules in Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/libraries"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/NonFinalGenericMethods": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on unbound generic methods that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Non-final generic methods",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/nonfinalgenericmethods"
+}
+}
+}

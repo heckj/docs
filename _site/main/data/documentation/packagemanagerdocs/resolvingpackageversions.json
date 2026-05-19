@@ -1,0 +1,834 @@
+{
+  "abstract" : [
+    {
+      "text" : "Coordinate and constrain dependencies for your package.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs"
+      ],
+      [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ResolvingPackageVersions"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swift Package Manager"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Resolving and updating dependencies"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The package manager records the result of dependency resolution in a file named ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " at the top-level of the package.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When this file is present and you are resolving dependencies for the top-level (leaf) package of a dependency tree, the package manager uses the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file as a cache of versions of the dependencies.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The Package.resolved file does not pin dependency versions for packages used as libraries, or are otherwise included as a dependency for another Swift project.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the package is being resolved as a dependency from another package, its own ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file is ignored during that resolution.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most SwiftPM commands implicitly invoke dependency resolution before running, and cancel with an error if dependencies cannot be resolved.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Resolving-Dependencies",
+          "level" : 3,
+          "text" : "Resolving Dependencies",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Run ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageResolve",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to resolve the dependencies, taking into account the current version constraints in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " manifest and a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " resolved versions file.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For packages with a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "resolve",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command resolves to those versions as long as they are still eligible.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If you want to explicitly use the dependencies written into ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--force-resolved-versions",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " when invoking ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift resolve",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, to force the dependencies to align with the versions defined in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", use:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift package resolve --force-resolved-versions"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the resolved version’s file changes (for example, because a teammate shared an update through source control), the next ",
+              "type" : "text"
+            },
+            {
+              "code" : "resolve",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command attempts to update the package dependencies to match that file.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In most cases, the resolve command performs no changes unless the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " manifest or ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file has changed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Updating-the-dependencies",
+          "level" : 3,
+          "text" : "Updating the dependencies",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Run ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageUpdate",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to update a package’s dependencies to the latest eligible versions, which also updates the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Coordinating-versions-of-dependencies-for-your-package",
+          "level" : 3,
+          "text" : "Coordinating versions of dependencies for your package",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can use ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to coordinate the versions of dependencies it uses for a leaf Swift project - one that isn’t being used as a dependency.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, you can keep a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file in source control, or resolve it locally and pass it to a container image build process, in order to ensure another build uses the same versions of dependencies.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " only helps to resolve dependencies to the specific versions it defines for leaf projects.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It does not provide any dependency pinning for libraries or packages that are used as dependencies for other Swift projects.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, if your package presents a library and has ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " checked in, those versions are ignored by the package that depends on your library, and the latest eligible versions are chosen.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For more information on constraining dependency versions, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " doesn’t exist, each user or build system separately resolves dependency versions, only updating when they run ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageUpdate",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and new users start with the latest eligible version of each dependency.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.resolved",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file does exist, any command that requires dependencies (for example, ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftBuild",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftRun",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ") attempts to resolve the versions of dependencies recorded in the file.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingSwiftPackage",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SettingSwiftToolsVersion",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingCLanguageTargets",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingBuildConfigurations",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftVersionSpecificPackaging",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/BundlingResources",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleasingPublishingAPackage",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ContinuousIntegration",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/Plugins",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ModuleAliasing",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingSwiftPackageRegistry",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageCollections",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingShellCompletion"
+      ],
+      "title" : "Guides"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagemanagerdocs\/resolvingpackageversions"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"command-icon.svg": {
+  "alt" : null,
+  "identifier" : "command-icon.svg",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/PackageManagerDocs\/command-icon.svg"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/PackageManagerDocs\/command-icon~dark.svg"
+    }
+  ]
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs": {
+  "abstract" : [
+    {
+      "text" : "Organize, manage, and edit Swift packages.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swift Package Manager",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/AddingDependencies": {
+  "abstract" : [
+    {
+      "text" : "Use other Swift packages, system libraries, or binary dependencies in your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Adding dependencies to a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/addingdependencies"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/BundlingResources": {
+  "abstract" : [
+    {
+      "text" : "Add resource files to your Swift package and access them in your code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/BundlingResources",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Bundling resources with a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/bundlingresources"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ContinuousIntegration": {
+  "abstract" : [
+    {
+      "text" : "Build Swift packages with an existing continuous integration setup and prepare apps that consume package dependencies within an existing CI pipeline.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ContinuousIntegration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Continuous Integration Workflows",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/continuousintegration"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/CreatingCLanguageTargets": {
+  "abstract" : [
+    {
+      "text" : "Include C language code as a target in your Swift package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingCLanguageTargets",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Creating C language targets",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/creatingclanguagetargets"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/CreatingSwiftPackage": {
+  "abstract" : [
+    {
+      "text" : "Bundle executable or shareable code into a standalone Swift package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingSwiftPackage",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Creating a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/creatingswiftpackage"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/GeneratingSBOMs": {
+  "abstract" : [
+    {
+      "text" : "Create an inventory of components and dependencies using SBOM documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Generating Software Bill of Materials (SBOM)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/generatingsboms"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ModuleAliasing": {
+  "abstract" : [
+    {
+      "text" : "Create aliased names for modules to avoid collisions between targets in your package or its dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ModuleAliasing",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Module Aliasing",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/modulealiasing"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/PackageCollections": {
+  "abstract" : [
+    {
+      "text" : "Learn to create, publish and use Swift package collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageCollections",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Package Collections",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/packagecollections"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/PackageResolve": {
+  "abstract" : [
+    {
+      "text" : "Resolve package dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageResolve",
+  "images" : [
+    {
+      "identifier" : "command-icon.svg",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "article",
+  "role" : "article",
+  "title" : "swift package resolve",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/packageresolve"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/PackageUpdate": {
+  "abstract" : [
+    {
+      "text" : "Update package dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageUpdate",
+  "images" : [
+    {
+      "identifier" : "command-icon.svg",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "article",
+  "role" : "article",
+  "title" : "swift package update",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/packageupdate"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/Plugins": {
+  "abstract" : [
+    {
+      "text" : "Extend package manager functionality with build or command plugins.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/Plugins",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Plugins",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/plugins"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ReleasingPublishingAPackage": {
+  "abstract" : [
+    {
+      "text" : "Share a specific version of your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleasingPublishingAPackage",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Releasing and publishing a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/releasingpublishingapackage"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SettingSwiftToolsVersion": {
+  "abstract" : [
+    {
+      "text" : "Define the minimum version of the swift compiler required for your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SettingSwiftToolsVersion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Setting the Swift tools version",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/settingswifttoolsversion"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftBuild": {
+  "abstract" : [
+    {
+      "text" : "Build sources into binary products.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftBuild",
+  "images" : [
+    {
+      "identifier" : "command-icon.svg",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "article",
+  "role" : "article",
+  "title" : "swift build",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/swiftbuild"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftRun": {
+  "abstract" : [
+    {
+      "text" : "Build and run an executable product.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftRun",
+  "images" : [
+    {
+      "identifier" : "command-icon.svg",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "article",
+  "role" : "article",
+  "title" : "swift run",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/swiftrun"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftVersionSpecificPackaging": {
+  "abstract" : [
+    {
+      "text" : "Provide a package manifest for a specific version of Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftVersionSpecificPackaging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Packaging based on the version of Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/swiftversionspecificpackaging"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/UsingBuildConfigurations": {
+  "abstract" : [
+    {
+      "text" : "Control the build configuration for your app or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingBuildConfigurations",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Using build configurations",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/usingbuildconfigurations"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/UsingShellCompletion": {
+  "abstract" : [
+    {
+      "text" : "Customize your shell to automatically complete swift package commands.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingShellCompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Using shell completion scripts",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/usingshellcompletion"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/UsingSwiftPackageRegistry": {
+  "abstract" : [
+    {
+      "text" : "Configure and use a package registry for Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingSwiftPackageRegistry",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Using a package registry",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/usingswiftpackageregistry"
+}
+}
+}

@@ -1,0 +1,300 @@
+{
+  "abstract" : [
+    {
+      "text" : "A module that contains unit tests.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/test"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin10ModuleKindO4testyA2CmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "test"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "ModuleKind.test"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "test"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Kinds-of-Modules",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/executable",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/generic",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/macro",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/snippet"
+      ],
+      "title" : "Kinds of Modules"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/modulekind\/test"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind": {
+  "abstract" : [
+    {
+      "text" : "The kind of module.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ModuleKind"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ModuleKind"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ModuleKind",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind/executable": {
+  "abstract" : [
+    {
+      "text" : "A module that contains code for an executable’s main module.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "executable"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/executable",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ModuleKind.executable",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind\/executable"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind/generic": {
+  "abstract" : [
+    {
+      "text" : "A module that contains generic code (not a test nor an executable).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "generic"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/generic",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ModuleKind.generic",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind\/generic"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind/macro": {
+  "abstract" : [
+    {
+      "text" : "A module that contains code for a macro.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "macro"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/macro",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ModuleKind.macro",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind\/macro"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind/snippet": {
+  "abstract" : [
+    {
+      "text" : "A module that contains code for a snippet.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "snippet"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/snippet",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ModuleKind.snippet",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind\/snippet"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind/test": {
+  "abstract" : [
+    {
+      "text" : "A module that contains unit tests.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "test"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind\/test",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ModuleKind.test",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind\/test"
+}
+}
+}

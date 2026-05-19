@@ -1,0 +1,1492 @@
+{
+  "abstract" : [
+    {
+      "text" : "A Swift language build setting.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18PackageDescription12SwiftSettingV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SwiftSetting"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SwiftSetting"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "SwiftSetting"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SwiftSetting"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Configuring-the-Target",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/cSettings",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/cxxSettings",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/swiftSettings",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/linkerSettings",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/plugins",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/BuildConfiguration",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/BuildSettingCondition",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CSetting",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/LinkerSetting",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/PluginUsage",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/packageAccess"
+      ],
+      "title" : "Configuring the Target"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Configuring-Swift-Settings",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/define(_:_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/unsafeFlags(_:_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/treatAllWarnings(as:_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/treatWarning(_:as:_:)"
+      ],
+      "title" : "Configuring Swift Settings"
+    },
+    {
+      "anchor" : "Configuring-Swift-Language-Mode",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/swiftLanguageMode(_:_:)"
+      ],
+      "title" : "Configuring Swift Language Mode"
+    },
+    {
+      "anchor" : "Configuring-Swift-Concurrency",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/strictMemorySafety(_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/defaultIsolation(_:_:)"
+      ],
+      "title" : "Configuring Swift Concurrency"
+    },
+    {
+      "anchor" : "Configuring-Swift-Experimental-and-Upcoming-Features",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/enableExperimentalFeature(_:_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/enableUpcomingFeature(_:_:)"
+      ],
+      "title" : "Configuring Swift Experimental and Upcoming Features"
+    },
+    {
+      "anchor" : "Configuring-Swift-Interoperability",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/interoperabilityMode(_:_:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/InteroperabilityMode"
+      ],
+      "title" : "Configuring Swift Interoperability"
+    },
+    {
+      "anchor" : "Deprecated-configurations",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/swiftLanguageVersion(_:_:)"
+      ],
+      "title" : "Deprecated configurations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/swiftsetting"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/BuildConfiguration": {
+  "abstract" : [
+    {
+      "text" : "The build configuration, such as debug or release.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuildConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/BuildConfiguration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BuildConfiguration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BuildConfiguration",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/buildconfiguration"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/BuildSettingCondition": {
+  "abstract" : [
+    {
+      "text" : "A condition that limits the application of a build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuildSettingCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/BuildSettingCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BuildSettingCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BuildSettingCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/buildsettingcondition"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/CSetting": {
+  "abstract" : [
+    {
+      "text" : "A C language build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CSetting",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CSetting"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CSetting",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/csetting"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/CXXSetting": {
+  "abstract" : [
+    {
+      "text" : "A CXX-language build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CXXSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/CXXSetting",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CXXSetting"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CXXSetting",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/cxxsetting"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/LinkerSetting": {
+  "abstract" : [
+    {
+      "text" : "A linker build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LinkerSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/LinkerSetting",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LinkerSetting"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LinkerSetting",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/linkersetting"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting": {
+  "abstract" : [
+    {
+      "text" : "A Swift language build setting.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SwiftSetting",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/InteroperabilityMode": {
+  "abstract" : [
+    {
+      "text" : "The interoperability mode",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InteroperabilityMode"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/InteroperabilityMode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InteroperabilityMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SwiftSetting.InteroperabilityMode",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/interoperabilitymode"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/defaultIsolation(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Set the default isolation to the given global actor type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "defaultIsolation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ScM",
+      "text" : "MainActor"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type?, "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/defaultIsolation(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "defaultIsolation(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/defaultisolation(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/define(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Defines a compilation condition.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "define"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/define(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "define(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/define(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/enableExperimentalFeature(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Enable an experimental feature with the given name.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enableExperimentalFeature"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/enableExperimentalFeature(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enableExperimentalFeature(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/enableexperimentalfeature(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/enableUpcomingFeature(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Enable an upcoming feature with the given name.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enableUpcomingFeature"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/enableUpcomingFeature(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enableUpcomingFeature(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/enableupcomingfeature(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/interoperabilityMode(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Enables Swift interoperability with a given language.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "interoperabilityMode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV20InteroperabilityModeO",
+      "text" : "InteroperabilityMode"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/interoperabilityMode(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "interoperabilityMode(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/interoperabilitymode(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/strictMemorySafety(_:)": {
+  "abstract" : [
+    {
+      "text" : "Enable strict memory safety checking.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "strictMemorySafety"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/strictMemorySafety(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "strictMemorySafety(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/strictmemorysafety(_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/swiftLanguageMode(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Defines a ",
+      "type" : "text"
+    },
+    {
+      "code" : "-language-mode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to pass  to the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding build tool.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "swiftLanguageMode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription17SwiftLanguageModeO",
+      "text" : "SwiftLanguageMode"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/swiftLanguageMode(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "swiftLanguageMode(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/swiftlanguagemode(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/swiftLanguageVersion(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Defines a ",
+      "type" : "text"
+    },
+    {
+      "code" : "-swift-version",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to pass  to the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding build tool.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "swiftLanguageVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftVersiona",
+      "text" : "SwiftVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/swiftLanguageVersion(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "swiftLanguageVersion(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/swiftlanguageversion(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/treatAllWarnings(as:_:)": {
+  "abstract" : [
+    {
+      "text" : "Controls how all Swift compiler warnings are treated during compilation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "treatAllWarnings"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "as"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12WarningLevelO",
+      "text" : "WarningLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/treatAllWarnings(as:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "treatAllWarnings(as:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/treatallwarnings(as:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/treatWarning(_:as:_:)": {
+  "abstract" : [
+    {
+      "text" : "Controls how a specific Swift compiler warning is treated during compilation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "treatWarning"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "as"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12WarningLevelO",
+      "text" : "WarningLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/treatWarning(_:as:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "treatWarning(_:as:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/treatwarning(_:as:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/SwiftSetting/unsafeFlags(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Set unsafe flags to pass arbitrary command-line flags to the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding build tool.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unsafeFlags"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription21BuildSettingConditionV",
+      "text" : "BuildSettingCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/unsafeFlags(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "unsafeFlags(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/swiftsetting\/unsafeflags(_:_:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/PluginUsage": {
+  "abstract" : [
+    {
+      "text" : "A plug-in used in a target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PluginUsage"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/PluginUsage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PluginUsage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Target.PluginUsage",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/pluginusage"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/cSettings": {
+  "abstract" : [
+    {
+      "text" : "The target’s C build settings.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cSettings"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription8CSettingV",
+      "text" : "CSetting"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/cSettings",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cSettings",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/csettings"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/cxxSettings": {
+  "abstract" : [
+    {
+      "text" : "The target’s C++ build settings.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cxxSettings"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription10CXXSettingV",
+      "text" : "CXXSetting"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/cxxSettings",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cxxSettings",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/cxxsettings"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/linkerSettings": {
+  "abstract" : [
+    {
+      "text" : "The target’s linker settings.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "linkerSettings"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription13LinkerSettingV",
+      "text" : "LinkerSetting"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/linkerSettings",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "linkerSettings",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/linkersettings"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/packageAccess": {
+  "abstract" : [
+    {
+      "text" : "If true, access to package declarations from other targets in the package is allowed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "packageAccess"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/packageAccess",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "packageAccess",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/packageaccess"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/plugins": {
+  "abstract" : [
+    {
+      "text" : "The uses of package plug-ins by the target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "plugins"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription6TargetC",
+      "text" : "Target"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
+      "text" : "PluginUsage"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/plugins",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "plugins",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/plugins"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Target/swiftSettings": {
+  "abstract" : [
+    {
+      "text" : "The target’s Swift build settings.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "swiftSettings"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
+      "text" : "SwiftSetting"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Target\/swiftSettings",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "swiftSettings",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/target\/swiftsettings"
+},
+"doc://org.swift.swiftpm.packagedescription/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s8SendableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

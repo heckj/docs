@@ -1,0 +1,859 @@
+{
+  "abstract" : [
+    {
+      "text" : "Use Swift 6 to get full data-race safety checking or add checking to an existing Swift 5 project.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/EnableDataRaceSafety"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Enable data-race safety checking"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable data race safety checking for a Swift project, use the Swift 6 language mode.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "By default, Swift 6 enables full data race safety checking.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Enable-the-Swift-6-language-mode",
+          "level" : 2,
+          "text" : "Enable the Swift 6 language mode",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Swift-6-mode-with-Swift-packages",
+          "level" : 3,
+          "text" : "Swift 6 mode with Swift packages",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file that uses ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift-tools-version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " of ",
+              "type" : "text"
+            },
+            {
+              "code" : "6.0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " enables the Swift 6 language mode for all targets.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can still set the language mode for the package as a whole using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftLanguageModes",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property of ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can also change the language mode as needed on a per-target basis using the new ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftLanguageMode",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " build setting:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version: 6.0",
+            "",
+            "let package = Package(",
+            "    name: \"MyPackage\",",
+            "    products: [",
+            "        \/\/ ...",
+            "    ],",
+            "    targets: [",
+            "        \/\/ Uses the default tools language mode (6)",
+            "        .target(",
+            "            name: \"FullyMigrated\",",
+            "        ),",
+            "        \/\/ Still requires 5",
+            "        .target(",
+            "            name: \"NotQuiteReadyYet\",",
+            "            swiftSettings: [",
+            "                .swiftLanguageMode(.v5)",
+            "            ]",
+            "        )",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that if your package needs to continue supporting earlier Swift toolchain versions and you want",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to use per-target ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftLanguageMode",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", you will need to create a version-specific manifest for pre-6",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "toolchains. For example, if you’d like to continue supporting 5.9 toolchains and up, you could have",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "one manifest ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package@swift-5.9.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version: 5.9",
+            "",
+            "let package = Package(",
+            "    name: \"MyPackage\",",
+            "    products: [",
+            "        \/\/ ...",
+            "    ],",
+            "    targets: [",
+            "        .target(",
+            "            name: \"FullyMigrated\",",
+            "        ),",
+            "        .target(",
+            "            name: \"NotQuiteReadyYet\",",
+            "        )",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "And another ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for Swift toolchains 6.0+:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version: 6.0",
+            "",
+            "let package = Package(",
+            "    name: \"MyPackage\",",
+            "    products: [",
+            "        \/\/ ...",
+            "    ],",
+            "    targets: [",
+            "        \/\/ Uses the default tools language mode (6)",
+            "        .target(",
+            "            name: \"FullyMigrated\",",
+            "        ),",
+            "        \/\/ Still requires 5",
+            "        .target(",
+            "            name: \"NotQuiteReadyYet\",",
+            "            swiftSettings: [",
+            "                .swiftLanguageMode(.v5)",
+            "            ]",
+            "        )",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If instead you would just like to use Swift 6 language mode when it’s available (while still",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "continuing to support older modes) you can keep a single ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and specify the version in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a compatible manner:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version: 5.9",
+            "",
+            "let package = Package(",
+            "    name: \"MyPackage\",",
+            "    products: [",
+            "        \/\/ ...",
+            "    ],",
+            "    targets: [",
+            "        .target(",
+            "            name: \"FullyMigrated\",",
+            "        ),",
+            "    ],",
+            "    \/\/ `swiftLanguageVersions` and `.version(\"6\")` to support pre 6.0 swift-tools-version.",
+            "    swiftLanguageVersions: [.version(\"6\"), .v5]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Swift-6-mode-with-command-line-invocations",
+          "level" : 3,
+          "text" : "Swift 6 mode with command-line invocations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "-swift-version 6",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be passed in a Swift package manager command-line",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "invocation using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Xswiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "~ swift build -Xswiftc -swift-version -Xswiftc 6",
+            "~ swift test -Xswiftc -swift-version -Xswiftc 6"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable the Swift 6 language mode when running ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "directly at the command line, pass ",
+              "type" : "text"
+            },
+            {
+              "code" : "-swift-version 6",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "~ swift -swift-version 6 main.swift"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Swift-6-mode-with-Xcode",
+          "level" : 3,
+          "text" : "Swift 6 mode with Xcode",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can control the language mode for an Xcode project or target by setting",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the “Swift Language Version” build setting to “6”.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Setting-XCConfig",
+          "level" : 4,
+          "text" : "Setting XCConfig",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can also set the ",
+              "type" : "text"
+            },
+            {
+              "code" : "SWIFT_VERSION",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " setting to ",
+              "type" : "text"
+            },
+            {
+              "code" : "6",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in an xcconfig file:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ In a Settings.xcconfig",
+            "",
+            "SWIFT_VERSION = 6;"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Enable-data-race-safety-checking-as-warnings",
+          "level" : 2,
+          "text" : "Enable data-race safety checking as warnings",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With a Swift target or package in a Swift 5 language mode or earlier, you can address data-race safety issues in your projects on a module-by-module basis.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Enable the compiler’s actor isolation and ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " checking as warnings to assess your progress toward eliminating data races before turning on the Swift 6 language mode.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Complete data-race safety checking can be enabled as warnings using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-strict-concurrency",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " compiler flag.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Checking-with-Swift-packages",
+          "level" : 3,
+          "text" : "Checking with Swift packages",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable complete concurrency checking for a target in a Swift package using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Swift 5.9 or Swift 5.10 tools, use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/swiftsetting\/enableexperimentalfeature(_:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in the Swift settings for the given target:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".target(",
+            "  name: \"MyTarget\",",
+            "  swiftSettings: [",
+            "    .enableExperimentalFeature(\"StrictConcurrency\")",
+            "  ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When using Swift 6.0 tools or later, use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/swiftsetting\/enableupcomingfeature(_:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in the Swift settings for a pre-Swift 6 language mode target:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".target(",
+            "  name: \"MyTarget\",",
+            "  swiftSettings: [",
+            "    .enableUpcomingFeature(\"StrictConcurrency\")",
+            "  ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Targets that adopt the Swift 6 language mode have complete checking",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "enabled unconditionally and do not require any settings changes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Checking-with-command-line-invocations",
+          "level" : 3,
+          "text" : "Checking with command-line invocations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable complete concurrency checking when running ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "directly at the command line, pass ",
+              "type" : "text"
+            },
+            {
+              "code" : "-strict-concurrency=complete",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "~ swift -strict-concurrency=complete main.swift"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "-strict-concurrency=complete",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be passed in a Swift package manager",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "command-line invocation using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Xswiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "~ swift build -Xswiftc -strict-concurrency=complete",
+            "~ swift test -Xswiftc -strict-concurrency=complete"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This can be useful to gauge the amount of concurrency warnings before adding",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the flag permanently in the package manifest as described in the following",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "section.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Checking-with-Xcode",
+          "level" : 3,
+          "text" : "Checking with Xcode",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To enable complete concurrency checking in an Xcode project, set the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "“Strict Concurrency Checking” setting to “Complete” in the Xcode build",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "settings.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Setting-XCConfig",
+          "level" : 4,
+          "text" : "Setting XCConfig",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively, you can set ",
+              "type" : "text"
+            },
+            {
+              "code" : "SWIFT_STRICT_CONCURRENCY",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to ",
+              "type" : "text"
+            },
+            {
+              "code" : "complete",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in an xcconfig file:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ In a Settings.xcconfig",
+            "",
+            "SWIFT_STRICT_CONCURRENCY = complete;"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+},
+"https://docs.swift.org/swiftpm/documentation/packagedescription/swiftsetting/enableexperimentalfeature(_:_:)": {
+  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/swiftsetting\/enableexperimentalfeature(_:_:)",
+  "title" : "SwiftSetting.enableExperimentalFeature",
+  "titleInlineContent" : [
+    {
+      "code" : "SwiftSetting.enableExperimentalFeature",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/swiftsetting\/enableexperimentalfeature(_:_:)"
+},
+"https://docs.swift.org/swiftpm/documentation/packagedescription/swiftsetting/enableupcomingfeature(_:_:)": {
+  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/swiftsetting\/enableupcomingfeature(_:_:)",
+  "title" : "SwiftSetting.enableUpcomingFeature",
+  "titleInlineContent" : [
+    {
+      "code" : "SwiftSetting.enableUpcomingFeature",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/swiftsetting\/enableupcomingfeature(_:_:)"
+}
+}
+}

@@ -1,0 +1,257 @@
+{
+  "abstract" : [
+    {
+      "text" : "Show a live preview of your Swift documentation while editing.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "platforms" : [
+      {
+        "beta" : false,
+        "introducedAt" : "6.2",
+        "name" : "Swift"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Documentation Live Preview"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift toolchain provides DocC, which compiles documentation for your Swift package. You can distribute compiled documentation to developers, or host the content. It’s what this project used to make its documentation! You can learn more about DocC by reading ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/documentation\/docc\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "View a side-by-side live preview of your documentation as you edit it with the Swift extension for VS Code.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Access this feature using the Preview Swift Documentation button at the top right of an editor, or by invoking ",
+              "type" : "text"
+            },
+            {
+              "code" : "Swift: Preview Documentation",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in the command palette.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This opens up a new editor pane with your rendered documentation:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "docc-live-preview.gif",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This feature is only available when using a Swift toolchain 6.2 or higher running on macOS or Linux.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Features",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+        "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+        "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+        "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+        "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer"
+      ],
+      "title" : "Features"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/automatic-task-creation": {
+  "abstract" : [
+    {
+      "text" : "Add tasks for common operations with your Package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Automatic Task Creation",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/automatic-task-creation"
+},
+"doc://userdocs/documentation/userdocs/debugging": {
+  "abstract" : [
+    {
+      "text" : "Debug your Swift executables using LLDB.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Debugging",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/debugging"
+},
+"doc://userdocs/documentation/userdocs/language-features": {
+  "abstract" : [
+    {
+      "text" : "Navigate and write your Swift code more easily with Language features.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language Features",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/language-features"
+},
+"doc://userdocs/documentation/userdocs/project-view": {
+  "abstract" : [
+    {
+      "text" : "Use this view to get a high level view of your Swift project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Swift Project View",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/project-view"
+},
+"doc://userdocs/documentation/userdocs/test-explorer": {
+  "abstract" : [
+    {
+      "text" : "View test results in the Test Explorer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Running and Debugging Tests",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/test-explorer"
+},
+"docc-live-preview.gif": {
+  "alt" : "An animation showing how to launch documentation live preview.",
+  "identifier" : "docc-live-preview.gif",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/userdocs\/docc-live-preview.gif"
+    }
+  ]
+},
+"https://www.swift.org/documentation/docc/": {
+  "identifier" : "https:\/\/www.swift.org\/documentation\/docc\/",
+  "title" : "the documentation on the Swift organization’s website",
+  "titleInlineContent" : [
+    {
+      "text" : "the documentation on the Swift organization’s website",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/documentation\/docc\/"
+}
+}
+}

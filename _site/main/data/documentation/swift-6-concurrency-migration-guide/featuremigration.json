@@ -1,0 +1,424 @@
+{
+  "abstract" : [
+    {
+      "text" : "Migrate your project to upcoming language features.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/FeatureMigration"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Migrating to upcoming language features"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Upcoming language features can be enabled in the Swift compiler via a ",
+              "type" : "text"
+            },
+            {
+              "code" : "-enable-upcoming-feature <FeatureName>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag. Some of these features also support a migration mode. This mode does not",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actually enable the desired feature. Instead, it produces compiler warnings with the necessary",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "fix-its to make the existing code both source- and binary-compatible with the feature. The exact",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "semantics of such a migration is dependent on the feature, see their ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/compiler\/documentation\/diagnostics\/upcoming-language-features",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for more details.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "SwiftPM",
+          "level" : 2,
+          "text" : "SwiftPM",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This feature is in active development. Test with a ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/www.swift.org\/install",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for best results.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "swift package migrate",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " builds and applies migration fix-its to allow for semi-automated migration.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Make sure to start with a clean working tree (no current changes staged or otherwise) and a working",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "build - applying the fix-its requires there to be no build errors and will modify files in the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "package ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "in place",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To eg. migrate all targets in your package to ",
+              "type" : "text"
+            },
+            {
+              "code" : "NonisolatedNonsendingByDefault",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift package migrate --to-feature NonisolatedNonsendingByDefault"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Or a target at a time with ",
+              "type" : "text"
+            },
+            {
+              "code" : "--targets",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift package migrate --targets TargetA --to-feature NonisolatedNonsendingByDefault"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will start a build, apply any migration fix-its, and then update the manifest:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "> Starting the build.",
+            "... regular build output with migration diagnostics ...",
+            "> Applying fix-its.",
+            "> Updating manifest."
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Check out the changes with your usual version control tooling, e.g., ",
+              "type" : "text"
+            },
+            {
+              "code" : "git diff",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "diff --git a\/Package.swift b\/Package.swift",
+            "index a1e587c..11097be 100644",
+            "--- a\/Package.swift",
+            "+++ b\/Package.swift",
+            "@@ -14,10 +14,16 @@ let package = Package(",
+            "     targets: [",
+            "         .target(",
+            "             name: \"TargetA\",",
+            "+            swiftSettings: [",
+            "+                .enableUpcomingFeature(\"NonisolatedNonsendingByDefault\"),",
+            "+            ]",
+            "         ),",
+            "     ]",
+            "",
+            "diff --git a\/Sources\/packtest\/packtest.swift b\/Sources\/packtest\/packtest.swift",
+            "index 85253f5..8498bb5 100644",
+            "--- a\/Sources\/TargetA\/TargetA.swift",
+            "+++ b\/Sources\/TargetA\/TargetA.swift",
+            "@@ -1,5 +1,5 @@",
+            " struct S: Sendable {",
+            "-  func alwaysSwitch() async {}",
+            "+  @concurrent func alwaysSwitch() async {}",
+            " }"
+          ],
+          "syntax" : "diff",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In some cases, the automated application of upcoming features to a target in the package manifest",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "can fail for more complicated packages, e.g., if settings have been factored out into a variable",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that’s then applied to multiple targets:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "error: Could not update manifest for 'TargetA' (unable to find array literal for 'swiftSettings' argument). Please enable 'NonisolatedNonsendingByDefault' features manually."
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If this happens, manually add a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".enableUpcomingFeature(\"SomeFeature\")",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " Swift setting to complete",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the migration:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version: 6.2",
+            "",
+            "let targetSettings: [SwiftSetting] = [",
+            "    \/\/ ...",
+            "    .enableUpcomingFeature(\"NonisolatedNonsendingByDefault\")",
+            "]",
+            "",
+            "let targetSettings:",
+            "let package = Package(",
+            "    name: \"MyPackage\",",
+            "    products: [",
+            "        \/\/ ...",
+            "    ],",
+            "    targets: [",
+            "        .target(",
+            "            name: \"TargetA\",",
+            "            swiftSettings: targetSettings",
+            "        ),",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+},
+"https://docs.swift.org/compiler/documentation/diagnostics/upcoming-language-features": {
+  "identifier" : "https:\/\/docs.swift.org\/compiler\/documentation\/diagnostics\/upcoming-language-features",
+  "title" : "corresponding documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "corresponding",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/compiler\/documentation\/diagnostics\/upcoming-language-features"
+},
+"https://www.swift.org/install": {
+  "identifier" : "https:\/\/www.swift.org\/install",
+  "title" : "nightly snapshot",
+  "titleInlineContent" : [
+    {
+      "text" : "nightly",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "snapshot",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/install"
+}
+}
+}

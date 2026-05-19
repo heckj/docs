@@ -1,0 +1,979 @@
+{
+  "abstract" : [
+    {
+      "text" : "Get started migrating your project to the Swift 6 language mode.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/MigrationStrategy"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Migration Strategy"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Enabling complete concurrency checking in a module can yield many data-race",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "safety issues reported by the compiler.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Hundreds, possibly even thousands of warnings are not uncommon.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When faced with a such a large number of problems,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "especially if you are just beginning to learn about Swift’s data isolation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "model, this can feel insurmountable.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Don’t panic.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Frequently, you’ll find yourself making substantial progress with just a few",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "changes.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "And as you do, your mental model of how the Swift concurrency system works",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "will develop just as rapidly.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This guidance should not be interpreted as a recommendation.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "You should feel confident about using other approaches.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Important",
+          "style" : "important",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Strategy",
+          "level" : 2,
+          "text" : "Strategy",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This document outlines a general strategy that could be a good starting point.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "There is no one single approach that will work for all projects.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The approach has three key steps:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Select a module",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Enable stricter checking with Swift 5",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Address warnings",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This process will be inherently ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "iterative",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Even a single change in one module can have a large impact on the state of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "project as a whole.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Begin-from-the-Outside",
+          "level" : 2,
+          "text" : "Begin from the Outside",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It can be easier to start with the outer-most root module in a project.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This, by definition, is not a dependency of any other module.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Changes here can only have local effects, making it possible to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "keep work contained.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Your changes do not ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "need",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " to be contained to the module, however.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Dependencies under your control that have ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems#Unsafe-Global-and-Static-Variables",
+              "isActive" : true,
+              "overridingTitle" : "unsafe global state",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "unsafe global state",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems#Implicitly-Sendable-Types",
+              "isActive" : true,
+              "overridingTitle" : "trivially-Sendable types",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "trivially-",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Sendable",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " types",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " can be the root cause of many warnings",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "across your project.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These can often be the best things to focus on first.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Use-the-Swift-5-Language-Mode",
+          "level" : 2,
+          "text" : "Use the Swift 5 Language Mode",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You could find it quite challenging to move a project from Swift 5 with no",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "checking directly to the Swift 6 language mode.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It is possible, instead, to incrementally enable more of the Swift 6 checking",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "mechanisms while remaining in Swift 5 mode.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This will surface issues only as warnings,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "keeping your build and tests functional as you progress.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To start, enable a single upcoming concurrency feature.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This allows you to focus on one ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "specific type",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " of problem at a time.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "alignments" : [
+            "left",
+            "unset",
+            "unset"
+          ],
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Proposal",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Description",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Feature Flag",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0401-remove-property-wrapper-isolation.md",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Remove Actor Isolation Inference caused by Property Wrappers",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "DisableOutwardActorInference",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0412-strict-concurrency-for-global-variables.md",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Strict concurrency for global variables",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "GlobalConcurrency",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0418-inferring-sendable-for-methods.md",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Inferring ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Sendable",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " for methods and key path literals",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "InferSendableFromCaptures",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These can be enabled independently and in any order.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After you have addressed issues uncovered by upcoming feature flags,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the next step is to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/EnableDataRaceSafety",
+              "isActive" : true,
+              "overridingTitle" : "enable complete checking",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "enable complete checking",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " for the module.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This will turn on all of the compiler’s remaining data isolation checks.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Address-Warnings",
+          "level" : 2,
+          "text" : "Address Warnings",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There is one guiding principle you should use as you investigate",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "warnings: ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "express what is true now",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Resist the urge to refactor your code to address issues.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You will find it beneficial to minimize the amount of change necessary to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "get to a warning-free state with complete concurrency checking.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "After that is done, use any unsafe opt-outs you applied as an indication of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "follow-on refactoring opportunities to introduce a safer isolation mechanism.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "To learn more about addressing common problems, see ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Iteration",
+          "level" : 2,
+          "text" : "Iteration",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "At first, you’ll likely be employing techniques to disable or workaround",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "data isolation problems.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Once you feel like you’ve reached the stopping point for a higher-level module,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "target one of its dependencies that has required a workaround.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You don’t have to eliminate all warnings to move on.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Remember that sometimes very minor changes can have a significant impact.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can always return to a module once one of its dependencies has been",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "updated.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/CommonProblems": {
+  "abstract" : [
+    {
+      "text" : "Identify, understand, and address common problems you can encounter while",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "working with Swift concurrency.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Common Compiler Errors",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/commonproblems"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/CommonProblems#Implicitly-Sendable-Types": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems#Implicitly-Sendable-Types",
+  "kind" : "section",
+  "title" : "Implicitly-Sendable Types",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/commonproblems#Implicitly-Sendable-Types"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/CommonProblems#Unsafe-Global-and-Static-Variables": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/CommonProblems#Unsafe-Global-and-Static-Variables",
+  "kind" : "section",
+  "title" : "Unsafe Global and Static Variables",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/commonproblems#Unsafe-Global-and-Static-Variables"
+},
+"doc://org.swift.migration.6/documentation/Swift-6-Concurrency-Migration-Guide/EnableDataRaceSafety": {
+  "abstract" : [
+    {
+      "text" : "Use Swift 6 to get full data-race safety checking or add checking to an existing Swift 5 project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/EnableDataRaceSafety",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Enable data-race safety checking",
+  "type" : "topic",
+  "url" : "\/documentation\/swift-6-concurrency-migration-guide\/enabledataracesafety"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0401-remove-property-wrapper-isolation.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0401-remove-property-wrapper-isolation.md",
+  "title" : "SE-0401",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0401",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0401-remove-property-wrapper-isolation.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0412-strict-concurrency-for-global-variables.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0412-strict-concurrency-for-global-variables.md",
+  "title" : "SE-0412",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0412",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0412-strict-concurrency-for-global-variables.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0418-inferring-sendable-for-methods.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0418-inferring-sendable-for-methods.md",
+  "title" : "SE-0418",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0418",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0418-inferring-sendable-for-methods.md"
+}
+}
+}

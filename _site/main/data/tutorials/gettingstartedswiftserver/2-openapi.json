@@ -1,0 +1,3516 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+            "sections" : [
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/$volume",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      ]
+    ],
+    "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "Get Started with Swift Server",
+    "categoryPathComponent" : "getting-started-swift-server",
+    "role" : "project",
+    "title" : "Specify routes using OpenAPI"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "Build a basic Vapor app",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 10,
+      "kind" : "hero",
+      "title" : "Specify routes using OpenAPI"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Add-an-OpenAPI-document",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a new OpenAPI document to define the service’s HTTP API.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the OpenAPI dependencies noted on the right.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-package.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Packages.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Sources\/SwiftServerTodos",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " directory create a base OpenAPI document named ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "openapi.yaml",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "The document should include a version, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "info",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " providing a high level summary of the API, and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "servers",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " that is used in generated documentation for the API as illustrated on the right.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.0.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "openapi.yaml",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the openapi.yaml add a schema for a TODO item, mapping to the model defined in ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Database.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "The schema ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TODODetail",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " defines ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "contents",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " properties, both as Strings.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "The additional ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "format",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " in the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property constrains OpenAPI to verify the string format matches a UUID.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.1.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the first schema",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The schema ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "PageOfTODOs",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " defines a list of TODO items, referencing the schema for ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TODODetail",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.2.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Extend",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the schemas to support a list of TODOs",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The schema ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "CreateTODORequest",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " defines ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "contents",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", but not an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", as the app creates that.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.3.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Extend",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the schemas to support creating a new ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " item.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add paths to include a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "\/todos",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " get route to return a list of the TODOs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.4.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a route to return TODOs",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add to paths a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "\/todos",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " post route to create a new TODO",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.5.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a route to create a new TODO.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The parameter for the route uses a reference to a component, which allows for re-use.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.6.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " routes to retrieve and to delete an individual TODO.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The TODO identifier will be used to determine which TOTO to retrieve or delete.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi.7.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Define",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the parameter for the TODO identifier.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Add an OpenAPI document"
+        },
+        {
+          "anchor" : "OpenAPI-generator",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Configure and use the OpenAPI plugin to generate code from the OpenAPI document.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This provides configuration for the generator to create both types from the schema and server stubs. ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Note:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " Create ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "openapi-generator-config.yaml",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " alongside the OpenAPI document.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-openapi-generator-config.0.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "openapi-generator-config.yaml",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the OpenAPI generator plugin to the plugins section as illistrated on the right.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-package.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the OpenAPI generator plugin.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Open a terminal, stop the running server with ctrl+C, and rebuild the project.  ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Note:",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " Remember to use the –product switch to speed up the build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-bash.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Run",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift build --product SwiftServerTodos",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Whenever you build your package, if the OpenAPI document or the config file has changed, the plugin regenerates the Swift code behind the scenes.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-bash.1.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Review",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the output from the build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a new file in ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".\/Sources\/SwiftServerTodos\/",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to provide the implementation for the stubs.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Import the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "OpenAPIRuntime",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " module.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-apihandler.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The struct must conform to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIProtocol",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIProtocol",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " is a protocol generated from the OpenAPI document and defines the methods to implement the server.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-apihandler.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " struct",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You must provide an initial implementation for the method so it compiles with the intent to provide the implementation later, return a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "500",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " error code.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-apihandler.2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a stub for the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "listTODOs",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You must also provide an initial implementation for the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "createTODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-apihandler.3.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a stub for the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "createTODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Provide an initial implementation for the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "getTODODetail",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-apihandler.4.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "getTODODetail",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method implementation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Provide an initial implementation for the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "deleteTODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-apihandler.5.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "deleteTODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method implementation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "OpenAPI generator"
+        },
+        {
+          "anchor" : "Configure-Vapor-to-use-the-API-handler",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Now create an instance of the APIHandler and a Vapor transport. Use the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/swiftpackageindex.com\/apple\/swift-openapi-runtime\/documentation\/openapiruntime\/servertransport",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " to register your implementation, enabling your app to use the transport for routes you implemented.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "1-serverservice.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Review",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServerService.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "1-serverservice.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Remove",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the initial ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "app.get(\"todos\")",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " route.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Edit the file ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServerService.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and import ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "OpenAPIVapor",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-serverservice.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "OpenAPIVapor",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " import",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create an instance of the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " struct",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-serverservice.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Create",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " an instance of ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the code on the right to use the implementation you created.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "2-serverservice.2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Instantiate",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the transport and register the handler.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Configure Vapor to use the API handler"
+        }
+      ]
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+          "type" : "text"
+        }
+      ],
+      "action" : {
+        "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "featuredEyebrow" : "Tutorial",
+      "kind" : "callToAction",
+      "title" : "Integrate a database"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/gettingstartedswiftserver\/2-openapi"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"1-serverservice.0.swift": {
+  "content" : [
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    \/\/ A route to list TODOs.",
+    "    app.get(\"todos\") { req in",
+    "        [",
+    "            Todo(contents: \"example todo\")",
+    "        ]",
+    "    }",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "1-serverservice.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"1-serverservice.1.swift": {
+  "content" : [
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "1-serverservice.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-apihandler.0.swift": {
+  "content" : [
+    "import Foundation",
+    "import OpenAPIRuntime"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "2-apihandler.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-apihandler.1.swift": {
+  "content" : [
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    ",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 3
+    },
+    {
+      "line" : 4
+    },
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    }
+  ],
+  "identifier" : "2-apihandler.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-apihandler.2.swift": {
+  "content" : [
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "    ",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    }
+  ],
+  "identifier" : "2-apihandler.2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-apihandler.3.swift": {
+  "content" : [
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    }
+  ],
+  "identifier" : "2-apihandler.3.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-apihandler.4.swift": {
+  "content" : [
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    }
+  ],
+  "identifier" : "2-apihandler.4.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-apihandler.5.swift": {
+  "content" : [
+    "import Foundation",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    }
+  ],
+  "identifier" : "2-apihandler.5.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-bash.0.txt": {
+  "content" : [
+    "% swift build --product SwiftServerTodos"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "2-bash.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"2-bash.1.txt": {
+  "content" : [
+    "% swift build --product SwiftServerTodos",
+    "Building for debugging...",
+    "Swift OpenAPI Generator is running with the following configuration:",
+    "- OpenAPI document path: ...",
+    "- Configuration path: ...",
+    "- Generator modes: types, server",
+    "- Access modifier: internal",
+    "- Naming strategy: idiomatic",
+    "- Name overrides: <none>",
+    "- Feature flags: <none>",
+    "- Output file names: Types.swift, Server.swift",
+    "- Output directory: ...",
+    "- Diagnostics output path: <none - logs to stderr>",
+    "- Current directory: \/Users\/johny\/Documents\/swift-server-todos",
+    "- Plugin source: build",
+    "- Is dry run: false",
+    "- Additional imports: <none>",
+    "Writing data to file Server.swift...",
+    "Writing data to file Types.swift...",
+    "Writing data to file Client.swift..."
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 2
+    },
+    {
+      "line" : 3
+    },
+    {
+      "line" : 4
+    },
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    }
+  ],
+  "identifier" : "2-bash.1.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"2-openapi-generator-config.0.yaml": {
+  "content" : [
+    "generate:",
+    "  - types",
+    "  - server",
+    "namingStrategy: idiomatic"
+  ],
+  "fileName" : "openapi-generator-config.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+
+  ],
+  "identifier" : "2-openapi-generator-config.0.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.0.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+
+  ],
+  "identifier" : "2-openapi.0.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.1.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "components:",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    }
+  ],
+  "identifier" : "2-openapi.1.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.2.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "components:",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents",
+    "    PageOfTODOs:",
+    "      description: A single page of TODOs.",
+    "      properties:",
+    "        items:",
+    "          type: array",
+    "          items:",
+    "            $ref: '#\/components\/schemas\/TODODetail'",
+    "      required:",
+    "        - items"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 30
+    },
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 33
+    },
+    {
+      "line" : 34
+    }
+  ],
+  "identifier" : "2-openapi.2.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.3.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "components:",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents",
+    "    PageOfTODOs:",
+    "      description: A single page of TODOs.",
+    "      properties:",
+    "        items:",
+    "          type: array",
+    "          items:",
+    "            $ref: '#\/components\/schemas\/TODODetail'",
+    "      required:",
+    "        - items",
+    "    CreateTODORequest:",
+    "      description: The metadata required to create a TODO.",
+    "      properties:",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - contents"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 35
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    },
+    {
+      "line" : 41
+    },
+    {
+      "line" : 42
+    }
+  ],
+  "identifier" : "2-openapi.3.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.4.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "paths:",
+    "  \/todos:",
+    "    get:",
+    "      summary: Fetch a list of TODOs.",
+    "      operationId: listTODOs",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '200':",
+    "          description: Returns the list of TODOs.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/PageOfTODOs'",
+    "components:",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents",
+    "    PageOfTODOs:",
+    "      description: A single page of TODOs.",
+    "      properties:",
+    "        items:",
+    "          type: array",
+    "          items:",
+    "            $ref: '#\/components\/schemas\/TODODetail'",
+    "      required:",
+    "        - items",
+    "    CreateTODORequest:",
+    "      description: The metadata required to create a TODO.",
+    "      properties:",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - contents"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    }
+  ],
+  "identifier" : "2-openapi.4.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.5.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "paths:",
+    "  \/todos:",
+    "    get:",
+    "      summary: Fetch a list of TODOs.",
+    "      operationId: listTODOs",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '200':",
+    "          description: Returns the list of TODOs.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/PageOfTODOs'",
+    "    post:",
+    "      summary: Create a new TODO.",
+    "      operationId: createTODO",
+    "      tags:",
+    "        - TODOs",
+    "      requestBody:",
+    "        required: true",
+    "        content:",
+    "          application\/json:",
+    "            schema:",
+    "              $ref: '#\/components\/schemas\/CreateTODORequest'",
+    "      responses:",
+    "        '201':",
+    "          description: The TODO was created successfully.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/TODODetail'",
+    "components:",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents",
+    "    PageOfTODOs:",
+    "      description: A single page of TODOs.",
+    "      properties:",
+    "        items:",
+    "          type: array",
+    "          items:",
+    "            $ref: '#\/components\/schemas\/TODODetail'",
+    "      required:",
+    "        - items",
+    "    CreateTODORequest:",
+    "      description: The metadata required to create a TODO.",
+    "      properties:",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - contents"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 30
+    },
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 33
+    },
+    {
+      "line" : 34
+    },
+    {
+      "line" : 35
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    },
+    {
+      "line" : 41
+    },
+    {
+      "line" : 42
+    }
+  ],
+  "identifier" : "2-openapi.5.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.6.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "paths:",
+    "  \/todos:",
+    "    get:",
+    "      summary: Fetch a list of TODOs.",
+    "      operationId: listTODOs",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '200':",
+    "          description: Returns the list of TODOs.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/PageOfTODOs'",
+    "    post:",
+    "      summary: Create a new TODO.",
+    "      operationId: createTODO",
+    "      tags:",
+    "        - TODOs",
+    "      requestBody:",
+    "        required: true",
+    "        content:",
+    "          application\/json:",
+    "            schema:",
+    "              $ref: '#\/components\/schemas\/CreateTODORequest'",
+    "      responses:",
+    "        '201':",
+    "          description: The TODO was created successfully.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/TODODetail'",
+    "  \/todos\/{todoId}:",
+    "    parameters:",
+    "      - $ref: '#\/components\/parameters\/path.todoId'",
+    "    get:",
+    "      summary: Fetch the details of a single TODO.",
+    "      operationId: getTODODetail",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '200':",
+    "          description: A successful response.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: \"#\/components\/schemas\/TODODetail\"",
+    "        '404':",
+    "          description: A TODO with this id was not found.",
+    "    delete:",
+    "      summary: Delete a TODO.",
+    "      operationId: deleteTODO",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '204':",
+    "          description: Successfully deleted the TODO.",
+    "components:",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents",
+    "    PageOfTODOs:",
+    "      description: A single page of TODOs.",
+    "      properties:",
+    "        items:",
+    "          type: array",
+    "          items:",
+    "            $ref: '#\/components\/schemas\/TODODetail'",
+    "      required:",
+    "        - items",
+    "    CreateTODORequest:",
+    "      description: The metadata required to create a TODO.",
+    "      properties:",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - contents"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 43
+    },
+    {
+      "line" : 44
+    },
+    {
+      "line" : 45
+    },
+    {
+      "line" : 46
+    },
+    {
+      "line" : 47
+    },
+    {
+      "line" : 48
+    },
+    {
+      "line" : 49
+    },
+    {
+      "line" : 50
+    },
+    {
+      "line" : 51
+    },
+    {
+      "line" : 52
+    },
+    {
+      "line" : 53
+    },
+    {
+      "line" : 54
+    },
+    {
+      "line" : 55
+    },
+    {
+      "line" : 56
+    },
+    {
+      "line" : 57
+    },
+    {
+      "line" : 58
+    },
+    {
+      "line" : 59
+    },
+    {
+      "line" : 60
+    },
+    {
+      "line" : 61
+    },
+    {
+      "line" : 62
+    },
+    {
+      "line" : 63
+    },
+    {
+      "line" : 64
+    },
+    {
+      "line" : 65
+    },
+    {
+      "line" : 66
+    },
+    {
+      "line" : 67
+    }
+  ],
+  "identifier" : "2-openapi.6.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-openapi.7.yaml": {
+  "content" : [
+    "openapi: '3.1.0'",
+    "info:",
+    "  title: SwiftServerTodos",
+    "  description: Create, read, delete, and list TODOs.",
+    "  version: 1.0.0",
+    "servers:",
+    "  - url: \/api",
+    "    description: Invoke methods on this server.",
+    "tags:",
+    "  - name: TODOs",
+    "paths:",
+    "  \/todos:",
+    "    get:",
+    "      summary: Fetch a list of TODOs.",
+    "      operationId: listTODOs",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '200':",
+    "          description: Returns the list of TODOs.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/PageOfTODOs'",
+    "    post:",
+    "      summary: Create a new TODO.",
+    "      operationId: createTODO",
+    "      tags:",
+    "        - TODOs",
+    "      requestBody:",
+    "        required: true",
+    "        content:",
+    "          application\/json:",
+    "            schema:",
+    "              $ref: '#\/components\/schemas\/CreateTODORequest'",
+    "      responses:",
+    "        '201':",
+    "          description: The TODO was created successfully.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: '#\/components\/schemas\/TODODetail'",
+    "  \/todos\/{todoId}:",
+    "    parameters:",
+    "      - $ref: '#\/components\/parameters\/path.todoId'",
+    "    get:",
+    "      summary: Fetch the details of a single TODO.",
+    "      operationId: getTODODetail",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '200':",
+    "          description: A successful response.",
+    "          content:",
+    "            application\/json:",
+    "              schema:",
+    "                $ref: \"#\/components\/schemas\/TODODetail\"",
+    "        '404':",
+    "          description: A TODO with this id was not found.",
+    "    delete:",
+    "      summary: Delete a TODO.",
+    "      operationId: deleteTODO",
+    "      tags:",
+    "        - TODOs",
+    "      responses:",
+    "        '204':",
+    "          description: Successfully deleted the TODO.",
+    "components:",
+    "  parameters:",
+    "    path.todoId:",
+    "      name: todoId",
+    "      in: path",
+    "      required: true",
+    "      schema:",
+    "        type: string",
+    "        format: uuid",
+    "  schemas:",
+    "    TODODetail:",
+    "      description: The details of a TODO.",
+    "      properties:",
+    "        id:",
+    "          description: A unique identifier of the TODO.",
+    "          type: string",
+    "          format: uuid",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - id",
+    "        - contents",
+    "    PageOfTODOs:",
+    "      description: A single page of TODOs.",
+    "      properties:",
+    "        items:",
+    "          type: array",
+    "          items:",
+    "            $ref: '#\/components\/schemas\/TODODetail'",
+    "      required:",
+    "        - items",
+    "    CreateTODORequest:",
+    "      description: The metadata required to create a TODO.",
+    "      properties:",
+    "        contents:",
+    "          description: The contents of the TODO.",
+    "          type: string",
+    "      required:",
+    "        - contents"
+  ],
+  "fileName" : "openapi.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 69
+    },
+    {
+      "line" : 70
+    },
+    {
+      "line" : 71
+    },
+    {
+      "line" : 72
+    },
+    {
+      "line" : 73
+    },
+    {
+      "line" : 74
+    },
+    {
+      "line" : 75
+    },
+    {
+      "line" : 76
+    }
+  ],
+  "identifier" : "2-openapi.7.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"2-package.0.swift": {
+  "content" : [
+    "\/\/ swift-tools-version: 6.3",
+    "",
+    "import PackageDescription",
+    "",
+    "let package = Package(",
+    "    name: \"swift-server-todos\",",
+    "    platforms: [",
+    "        .macOS(.v15)",
+    "    ],",
+    "    dependencies: [",
+    "        \/\/ Server scaffolding",
+    "        .package(url: \"https:\/\/github.com\/vapor\/vapor\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-service-lifecycle\", from: \"2.1.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-generator\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-runtime\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-openapi-vapor\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-configuration\", from: \"1.2.0\"),",
+    "",
+    "        \/\/ Telemetry",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-log\", from: \"1.5.2\"),",
+    "",
+    "        \/\/ Database",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent.git\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent-postgres-driver.git\", from: \"2.0.0\"),",
+    "    ],",
+    "    targets: [",
+    "        .executableTarget(",
+    "            name: \"SwiftServerTodos\",",
+    "            dependencies: [",
+    "                \/\/ Server scaffolding",
+    "                .product(name: \"Vapor\", package: \"vapor\"),",
+    "                .product(name: \"ServiceLifecycle\", package: \"swift-service-lifecycle\"),",
+    "                .product(name: \"OpenAPIRuntime\", package: \"swift-openapi-runtime\"),",
+    "                .product(name: \"OpenAPIVapor\", package: \"swift-openapi-vapor\"),",
+    "                .product(name: \"Configuration\", package: \"swift-configuration\"),",
+    "",
+    "                \/\/ Telemetry",
+    "                .product(name: \"Logging\", package: \"swift-log\"),",
+    "            ]",
+    "        )",
+    "    ]",
+    ")"
+  ],
+  "fileName" : "Package.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 33
+    },
+    {
+      "line" : 34
+    }
+  ],
+  "identifier" : "2-package.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-package.1.swift": {
+  "content" : [
+    "\/\/ swift-tools-version: 6.3",
+    "",
+    "import PackageDescription",
+    "",
+    "let package = Package(",
+    "    name: \"swift-server-todos\",",
+    "    platforms: [",
+    "        .macOS(.v15)",
+    "    ],",
+    "    dependencies: [",
+    "        \/\/ Server scaffolding",
+    "        .package(url: \"https:\/\/github.com\/vapor\/vapor\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-service-lifecycle\", from: \"2.1.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-generator\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-runtime\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-openapi-vapor\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-configuration\", from: \"1.2.0\"),",
+    "",
+    "        \/\/ Telemetry",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-log\", from: \"1.5.2\"),",
+    "",
+    "        \/\/ Database",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent.git\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent-postgres-driver.git\", from: \"2.0.0\"),",
+    "    ],",
+    "    targets: [",
+    "        .executableTarget(",
+    "            name: \"SwiftServerTodos\",",
+    "            dependencies: [",
+    "                \/\/ Server scaffolding",
+    "                .product(name: \"Vapor\", package: \"vapor\"),",
+    "                .product(name: \"ServiceLifecycle\", package: \"swift-service-lifecycle\"),",
+    "                .product(name: \"OpenAPIRuntime\", package: \"swift-openapi-runtime\"),",
+    "                .product(name: \"OpenAPIVapor\", package: \"swift-openapi-vapor\"),",
+    "                .product(name: \"Configuration\", package: \"swift-configuration\"),",
+    "",
+    "                \/\/ Telemetry",
+    "                .product(name: \"Logging\", package: \"swift-log\"),",
+    "            ],",
+    "            plugins: [",
+    "                .plugin(name: \"OpenAPIGenerator\", package: \"swift-openapi-generator\")",
+    "            ]",
+    "        )",
+    "    ]",
+    ")"
+  ],
+  "fileName" : "Package.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    },
+    {
+      "line" : 41
+    }
+  ],
+  "identifier" : "2-package.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-serverservice.0.swift": {
+  "content" : [
+    "import OpenAPIVapor",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 1
+    }
+  ],
+  "identifier" : "2-serverservice.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-serverservice.1.swift": {
+  "content" : [
+    "import OpenAPIVapor",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    \/\/ Create app state.",
+    "    let handler = APIHandler()",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    }
+  ],
+  "identifier" : "2-serverservice.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"2-serverservice.2.swift": {
+  "content" : [
+    "import OpenAPIVapor",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    \/\/ Create app state.",
+    "    let handler = APIHandler()",
+    "",
+    "    \/\/ Register the generated handlers.",
+    "    let transport = VaporTransport(routesBuilder: app)",
+    "    try handler.registerHandlers(",
+    "        on: transport,",
+    "        serverURL: Servers.Server1.url()",
+    "    )",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    }
+  ],
+  "identifier" : "2-serverservice.2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Set up your development environment",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Clone-and-build-the-tutorial-repository": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Clone and build the tutorial repository",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Clone-and-build-the-tutorial-repository"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Verify-installed-tools": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Verify installed tools",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Verify-installed-tools"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Introduction",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction#Explore-the-parts-of-a-basic-app": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Explore the parts of a basic app",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction#Explore-the-parts-of-a-basic-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Specify routes using OpenAPI",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Add-an-OpenAPI-document": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add an OpenAPI document",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Add-an-OpenAPI-document"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Configure-Vapor-to-use-the-API-handler": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure Vapor to use the API handler",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#OpenAPI-generator": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "OpenAPI generator",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#OpenAPI-generator"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Integrate a database",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Add-the-database-layer-to-the-routes": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add the database layer to the routes",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Add-the-database-layer-to-the-routes"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Configure-the-database-tables-and-connection": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure the database tables and connection",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Configure-the-database-tables-and-connection"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Run-and-test-the-code": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and test the code",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Run-and-test-the-code"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Set-up-the-infrastructure": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the infrastructure",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Set-up-the-infrastructure"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Add observability with OpenTelemetry",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Add-telemetry-dependencies": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add telemetry dependencies",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Add-telemetry-dependencies"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Configure-OpenTelemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure OpenTelemetry",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Configure-OpenTelemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Run-and-observe": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and observe",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Run-and-observe"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Set-up-the-observability-stack": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the observability stack",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Set-up-the-observability-stack"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Wire-up-the-entry-point-and-server": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Wire up the entry point and server",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Wire-up-the-entry-point-and-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and where to go next",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Review": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Review",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Review"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Summary": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Summary",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Summary"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Where-do-I-go-from-here": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Where do I go from here?",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Where-do-I-go-from-here"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
+  "abstract" : [
+    {
+      "text" : "Learn about cloud services in Swift by building and extending a Vapor app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Explore Swift on the server by building a Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Before-you-begin": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Before you begin",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/before-you-begin"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Build-a-basic-Vapor-app": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Build a basic Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/build-a-basic-vapor-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Review-and-next-steps": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and next steps",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/review-and-next-steps"
+},
+"https://swiftpackageindex.com/apple/swift-openapi-runtime/documentation/openapiruntime/servertransport": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/apple\/swift-openapi-runtime\/documentation\/openapiruntime\/servertransport",
+  "title" : "transport",
+  "titleInlineContent" : [
+    {
+      "text" : "transport",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/apple\/swift-openapi-runtime\/documentation\/openapiruntime\/servertransport"
+}
+}
+}

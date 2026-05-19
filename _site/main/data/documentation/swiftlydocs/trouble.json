@@ -1,0 +1,251 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swiftly"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Troubleshooting"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Self-update-swiftly-from-version-110-fails-with-macOS",
+          "level" : 2,
+          "text" : "Self update swiftly from version 1.1.0 fails with macOS",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When trying ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly self-update",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with the default installation location on macOS, the download succeeds, the initial installation screen appears unexpectedly, and swiftly remains at version 1.1.0.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Go to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/swift.org\/install",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Copy the install script",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Run the script at the terminal to upgrade to the latest",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install"
+      ],
+      "title" : "Guides"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftlydocs\/trouble"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+  "abstract" : [
+    {
+      "text" : "Install and manage your Swift programming language toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/automated-install": {
+  "abstract" : [
+    {
+      "text" : "Automatically install swiftly and Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install swiftly automatically",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/automated-install"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/install-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Install swift toolchains with Swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/install-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/shell-autocompletion": {
+  "abstract" : [
+    {
+      "text" : "Generate shell autocompletions for swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add shell auto-completions",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/shell-autocompletion"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/uninstall-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Remove unneeded Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Uninstall Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/uninstall-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/update-toolchain": {
+  "abstract" : [
+    {
+      "text" : "Update installed toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Update Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/update-toolchain"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/use-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Choose an installed toolchain to use as default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Use Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/use-toolchains"
+},
+"https://swift.org/install": {
+  "identifier" : "https:\/\/swift.org\/install",
+  "title" : "swift install page",
+  "titleInlineContent" : [
+    {
+      "text" : "swift install page",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swift.org\/install"
+}
+}
+}

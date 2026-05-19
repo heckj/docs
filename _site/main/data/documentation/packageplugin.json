@@ -1,0 +1,1346 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "PackagePlugin",
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "PackagePlugin"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Build tool plugins generate source files as part of a build, or perform other actions at the start of every build.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The package manager invokes build tool plugins before a package is built in order to construct command invocations to run as part of the build.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Command plugins provide actions that users can perform at any time and aren’t associated with a build.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Read ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagemanagerdocs\/WritingBuildToolPlugin",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to learn how to create build tool plugins, or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagemanagerdocs\/WritingCommandPlugin",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to learn how to create command plugins.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Implementing-Command-Plugins",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContext",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Plugin"
+      ],
+      "title" : "Implementing Command Plugins"
+    },
+    {
+      "anchor" : "Extracting-Arguments",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor"
+      ],
+      "title" : "Extracting Arguments"
+    },
+    {
+      "anchor" : "Implementing-Build-Plugins",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/BuildToolPlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContext",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Command"
+      ],
+      "title" : "Implementing Build Plugins"
+    },
+    {
+      "anchor" : "Interacting-with-Package-Manager",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManagerProxyError"
+      ],
+      "title" : "Interacting with Package Manager"
+    },
+    {
+      "anchor" : "Inspecting-the-Package-Representation",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ToolsVersion",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageOrigin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageDependency",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct"
+      ],
+      "title" : "Inspecting the Package Representation"
+    },
+    {
+      "anchor" : "Inspecting-Package-Targets",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/TargetDependency",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SourceModuleTarget",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/BinaryArtifactTarget",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget"
+      ],
+      "title" : "Inspecting Package Targets"
+    },
+    {
+      "anchor" : "Inspecting-Package-Files",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/File",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileType",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Path",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PathList"
+      ],
+      "title" : "Inspecting Package Files"
+    },
+    {
+      "anchor" : "Plugin-Diagnostics-and-Errors",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContextError",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError"
+      ],
+      "title" : "Plugin Diagnostics and Errors"
+    },
+    {
+      "anchor" : "Extended-Modules",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Swift"
+      ],
+      "title" : "Extended Modules"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ArgumentExtractor": {
+  "abstract" : [
+    {
+      "text" : "A rudimentary helper for extracting options and flags from a list of strings that represent command line arguments.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ArgumentExtractor"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ArgumentExtractor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArgumentExtractor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ArgumentExtractor",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/argumentextractor"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/BinaryArtifactTarget": {
+  "abstract" : [
+    {
+      "text" : "A target describing an artifact that is distributed as a binary.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BinaryArtifactTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/BinaryArtifactTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BinaryArtifactTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BinaryArtifactTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/binaryartifacttarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/BuildToolPlugin": {
+  "abstract" : [
+    {
+      "text" : "The plugin protocol that defines functionality for all plugins having a buildTool capability.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuildToolPlugin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/BuildToolPlugin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BuildToolPlugin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BuildToolPlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/buildtoolplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ClangSourceModuleTarget": {
+  "abstract" : [
+    {
+      "text" : "A target consisting of a source code module compiled using Clang.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClangSourceModuleTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ClangSourceModuleTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClangSourceModuleTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClangSourceModuleTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/clangsourcemoduletarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Command": {
+  "abstract" : [
+    {
+      "text" : "A command to run during the build.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Command"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Command",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Command"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Command",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/command"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/CommandPlugin": {
+  "abstract" : [
+    {
+      "text" : "The plugin protocol that defines functionality for all plugins that have a command capability.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CommandPlugin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/CommandPlugin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CommandPlugin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CommandPlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/commandplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Emits errors, warnings, and remarks to show as a result of running the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "plugin.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Diagnostics"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Diagnostics"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/diagnostics"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct": {
+  "abstract" : [
+    {
+      "text" : "An executable product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExecutableProduct"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExecutableProduct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExecutableProduct",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/File": {
+  "abstract" : [
+    {
+      "text" : "Information about a single file in a FileList.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "File"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/File",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "File"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "File",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/file"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList": {
+  "abstract" : [
+    {
+      "text" : "Provides information about a list of files.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FileList"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FileList"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FileList",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filelist"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileType": {
+  "abstract" : [
+    {
+      "text" : "Information about the type of a file.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FileType"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FileType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FileType",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filetype"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/LibraryProduct": {
+  "abstract" : [
+    {
+      "text" : "A library product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LibraryProduct"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LibraryProduct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LibraryProduct",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/libraryproduct"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ModuleKind": {
+  "abstract" : [
+    {
+      "text" : "The kind of module.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ModuleKind"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ModuleKind",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ModuleKind"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ModuleKind",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/modulekind"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Package": {
+  "abstract" : [
+    {
+      "text" : "A single package in a graph of packages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Package",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/package"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageDependency": {
+  "abstract" : [
+    {
+      "text" : "A resolved dependency of a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageDependency"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageDependency",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageDependency"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageDependency",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagedependency"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager": {
+  "abstract" : [
+    {
+      "text" : "Provides specialized information and services from the Swift Package Manager",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or an IDE that supports Swift packages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageManager"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageManager"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageManager",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanager"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManagerProxyError": {
+  "abstract" : [
+    {
+      "text" : "Errors from methods using the package manager.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageManagerProxyError"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManagerProxyError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageManagerProxyError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageManagerProxyError",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packagemanagerproxyerror"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageOrigin": {
+  "abstract" : [
+    {
+      "text" : "The origin of a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PackageOrigin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageOrigin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PackageOrigin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PackageOrigin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/packageorigin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Path": {
+  "abstract" : [
+    {
+      "text" : "A simple representation of a path in the file system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Path"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Path",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Path"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Path",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/path"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PathList": {
+  "abstract" : [
+    {
+      "text" : "Provides information about a list of paths.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PathList"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PathList",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PathList"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PathList",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/pathlist"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Plugin": {
+  "abstract" : [
+    {
+      "text" : "A protocol that defines functionality common to all package manger plugins.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Plugin"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Plugin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Plugin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Plugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginContext": {
+  "abstract" : [
+    {
+      "text" : "A collection of information about the package on which the package manager invokes the  plugin,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "as well as contextual information based on the plugin’s intent and requirements.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PluginContext"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PluginContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PluginContext",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugincontext"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginContextError": {
+  "abstract" : [
+    {
+      "text" : "Errors thrown while a plugin operates.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PluginContextError"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContextError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PluginContextError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PluginContextError",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugincontexterror"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError": {
+  "abstract" : [
+    {
+      "text" : "Errors thrown while loading a plugin.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PluginDeserializationError"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PluginDeserializationError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PluginDeserializationError",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Product": {
+  "abstract" : [
+    {
+      "text" : "A single product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Product"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Product"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Product",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/product"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SourceModuleTarget": {
+  "abstract" : [
+    {
+      "text" : "A target consisting of a source code module.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SourceModuleTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SourceModuleTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SourceModuleTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SourceModuleTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/sourcemoduletarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Swift": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Swift",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swift"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SwiftSourceModuleTarget": {
+  "abstract" : [
+    {
+      "text" : "A target consisting of a source code module compiled using Swift.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SwiftSourceModuleTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SwiftSourceModuleTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SwiftSourceModuleTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/swiftsourcemoduletarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/SystemLibraryTarget": {
+  "abstract" : [
+    {
+      "text" : "A target describing a system library that is expected to be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "present on the host system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SystemLibraryTarget"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SystemLibraryTarget"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SystemLibraryTarget",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/systemlibrarytarget"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/Target": {
+  "abstract" : [
+    {
+      "text" : "A single target defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Target"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Target"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Target",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/target"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/TargetDependency": {
+  "abstract" : [
+    {
+      "text" : "A dependency of a target on a product or on another target.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TargetDependency"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/TargetDependency",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TargetDependency"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TargetDependency",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/targetdependency"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ToolsVersion": {
+  "abstract" : [
+    {
+      "text" : "A version of Swift package manager on whose semantics a package relies.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ToolsVersion"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ToolsVersion",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ToolsVersion"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ToolsVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/toolsversion"
+},
+"https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/WritingBuildToolPlugin": {
+  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagemanagerdocs\/WritingBuildToolPlugin",
+  "title" : "Writing a build tool plugin",
+  "titleInlineContent" : [
+    {
+      "text" : "Writing a build tool plugin",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagemanagerdocs\/WritingBuildToolPlugin"
+},
+"https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/WritingCommandPlugin": {
+  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagemanagerdocs\/WritingCommandPlugin",
+  "title" : "Writing a command plugin",
+  "titleInlineContent" : [
+    {
+      "text" : "Writing a command plugin",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagemanagerdocs\/WritingCommandPlugin"
+}
+}
+}

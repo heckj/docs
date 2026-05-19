@@ -1,0 +1,2093 @@
+{
+  "abstract" : [
+    {
+      "text" : "Use exit tests to test functionality that might cause a test process to exit.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/exit-testing"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "introducedAt" : "6.2",
+        "name" : "Swift"
+      },
+      {
+        "beta" : false,
+        "introducedAt" : "26.0",
+        "name" : "Xcode"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Exit testing"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Your code might contain calls to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/precondition(_:_:file:line:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/fatalerror(_:file:line:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or other functions that can cause the current process to exit. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Customer {",
+            "  func eat(_ food: consuming some Food) {",
+            "    precondition(food.isDelicious, \"Tasty food only!\")",
+            "    precondition(food.isNutritious, \"Healthy food only!\")",
+            "    ...",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In this function, if ",
+              "type" : "text"
+            },
+            {
+              "code" : "food.isDelicious",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "food.isNutritious",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is ",
+              "type" : "text"
+            },
+            {
+              "code" : "false",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "precondition fails and Swift forces the process to exit. You can write an exit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "test to validate preconditions like the ones above and to make sure that your",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "functions correctly catch invalid inputs.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Exit tests are available on macOS, Linux, FreeBSD, OpenBSD, and Windows.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Create-an-exit-test",
+          "level" : 3,
+          "text" : "Create an exit test",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To create an exit test, call either the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(processExitsWith:observing:_:sourceLocation:performing:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(processExitsWith:observing:_:sourceLocation:performing:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "macro:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func `Customer won't eat food unless it's delicious`() async {",
+            "  let result = await #expect(processExitsWith: .failure) {",
+            "    var food = ...",
+            "    food.isDelicious = false",
+            "    Customer.current.eat(food)",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The closure or function reference you pass to the macro is the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "body",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "exit test. When an exit test is performed at runtime, the testing library starts",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a new process with the same executable as the current process. The current task",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is then suspended (as with ",
+              "type" : "text"
+            },
+            {
+              "code" : "await",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") and waits for the child process to exit.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "An exit test cannot run within another exit test.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The parent process doesn’t call the body of the exit test. Instead, the child",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "process treats the body of the exit test as its ",
+              "type" : "text"
+            },
+            {
+              "code" : "main()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function and calls it",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "directly.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the body returns before the child process exits, the process exits as if",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "main()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " returned normally. If the body throws an error, Swift handles it as if",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "it were thrown from ",
+              "type" : "text"
+            },
+            {
+              "code" : "main()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and forces the process to exit abnormally.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Specify-an-exit-condition",
+          "level" : 3,
+          "text" : "Specify an exit condition",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you create an exit test, specify how you expect the child process exits by",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "passing an instance of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you expect the exit test’s body to run to completion or exit normally (for",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "example, by calling ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/developer.apple.com\/library\/archive\/documentation\/System\/Conceptual\/ManPages_iPhoneOS\/man3\/exit.3.html",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "from the C standard library), pass ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/success",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you expect the body to cause the child process to exit abnormally, but the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "exact status reported by the system is not important, pass",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/failure",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you need to check for a specific exit code or signal, pass",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/exitCode(_:)",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " or ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/signal(_:)",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When the child process exits, the parent process resumes and compares the exit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "status of the child process against the expected exit condition you passed. If",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "they match, the exit test passes; otherwise, it fails and the testing library",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "records an issue.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Capture-state-from-the-parent-process",
+          "level" : 3,
+          "text" : "Capture state from the parent process",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To pass information from the parent process to the child process, you specify",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the Swift values you want to pass in a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures\/#Capturing-Values",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "on the exit test’s body:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test(arguments: Food.allJunkFood)",
+            "func `Customer won't eat food unless it's nutritious`(_ food: Food) async {",
+            "  await #expect(processExitsWith: .failure) { [food] in",
+            "    Customer.current.eat(food)",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you use ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(processExitsWith:observing:_:sourceLocation:performing:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "or ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(processExitsWith:observing:_:sourceLocation:performing:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " with a",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Swift compiler version lower than 6.3, the macro doesn’t capture state.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If a captured value is an argument to the current function or is ",
+              "type" : "text"
+            },
+            {
+              "code" : "self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "compiler infers the value’s type. Otherwise, explicitly specify the type of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "value using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "as",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func `Customer won't eat food unless it's nutritious`() async {",
+            "  var food = ...",
+            "  food.isNutritious = false",
+            "  await #expect(processExitsWith: .failure) { [self, food = food as Food] in",
+            "    self.prepare(food)",
+            "    Customer.current.eat(food)",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Every value you capture in an exit test must conform to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/sendable",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/codable",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". The",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "testing library passes each value to the exit test body by performing the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "following steps:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "It encodes each value using ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/encodable\/encode(to:)",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "in the parent process",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "It passes the encoded value to the child process",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "It decodes each value using ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/decodable\/init(from:)",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "in the child process",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If a captured value’s type does not conform to both ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "Codable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "if the value is not explicitly specified in the exit test body’s capture list,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the compiler emits an error:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Test func `Customer won't eat food unless it's nutritious`() async {",
+            "  var food = ...",
+            "  food.isNutritious = false",
+            "  await #expect(processExitsWith: .failure) {",
+            "    Customer.current.eat(food) \/\/ ❌ ERROR: implicitly capturing 'food'",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Gather-output-from-the-child-process",
+          "level" : 3,
+          "text" : "Gather output from the child process",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(processExitsWith:observing:_:sourceLocation:performing:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(processExitsWith:observing:_:sourceLocation:performing:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " macros",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "return an instance of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Result",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " that contains information about the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "state of the child process.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, the child process is configured without a standard output or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "standard error stream. If your test needs to review the content of either of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "these streams, pass the key path to the corresponding ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Result",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "property to the macro:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension Customer {",
+            "  func eat(_ food: consuming some Food) {",
+            "    print(\"Let's see if I want to eat \\(food)...\")",
+            "    precondition(food.isDelicious, \"Tasty food only!\")",
+            "    precondition(food.isNutritious, \"Healthy food only!\")",
+            "    ...",
+            "  }",
+            "}",
+            "",
+            "@Test func `Customer won't eat food unless it's delicious`() async {",
+            "  let result = await #expect(",
+            "    processExitsWith: .failure,",
+            "    observing: [\\.standardOutputContent]",
+            "  ) {",
+            "    var food = ...",
+            "    food.isDelicious = false",
+            "    Customer.current.eat(food)",
+            "  }",
+            "  if let result {",
+            "    #expect(result.standardOutputContent.contains(UInt8(ascii: \"L\")))",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The content of the standard output and standard error streams can",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "contain any arbitrary sequence of bytes, including sequences that aren’t valid",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "UTF-8 and can’t be decoded by ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/string\/init(cstring:)-6kr8s",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "These streams are globally accessible within the child process, and any code",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "running in an exit test may write to it including the operating system and any",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "third-party dependencies you declare in your package description or Xcode",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "project.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The testing library always sets ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Result\/exitStatus",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to the actual",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "exit status of the child process (as reported by the system) even if you do not",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "observe ",
+              "type" : "text"
+            },
+            {
+              "code" : "\\.exitStatus",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Checking-how-processes-exit",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(processExitsWith:observing:_:sourceLocation:performing:)",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/require(processExitsWith:observing:_:sourceLocation:performing:)",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitStatus",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest"
+      ],
+      "title" : "Checking how processes exit"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/exit-testing"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/ExitStatus": {
+  "abstract" : [
+    {
+      "text" : "An enumeration describing possible status a process will report on exit.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExitStatus"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitStatus",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExitStatus"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExitStatus",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exitstatus"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest": {
+  "abstract" : [
+    {
+      "text" : "A type describing an exit test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExitTest"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExitTest"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExitTest",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition": {
+  "abstract" : [
+    {
+      "text" : "The possible conditions under which an exit test will complete.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Condition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExitTest.Condition",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/exitCode(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a condition that matches when a process terminates with a given",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "exit code.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "exitCode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/exitCode(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "exitCode(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/exitcode(_:)"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/failure": {
+  "abstract" : [
+    {
+      "text" : "A condition that matches when a process exits abnormally",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/failure",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "failure",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/failure"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/signal(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a condition that matches when a process exits with a given signal.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "signal"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/signal(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "signal(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/signal(_:)"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/success": {
+  "abstract" : [
+    {
+      "text" : "A condition that matches when a process exits normally.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "success"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/success",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "success",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/success"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Result": {
+  "abstract" : [
+    {
+      "text" : "A type representing the result of an exit test after it has exited and",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "returned control to the calling test function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Result",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Result"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExitTest.Result",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/result"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Result/exitStatus": {
+  "abstract" : [
+    {
+      "text" : "The exit status reported by the process hosting the exit test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "exitStatus"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10ExitStatusO",
+      "text" : "ExitStatus"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Result\/exitStatus",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "exitStatus",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/result\/exitstatus"
+},
+"doc://org.swift.testing/documentation/Testing/Expectations": {
+  "abstract" : [
+    {
+      "text" : "Check for expected values, outcomes, and asynchronous events in tests.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Expectations and confirmations",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expectations"
+},
+"doc://org.swift.testing/documentation/Testing/expect(processExitsWith:observing:_:sourceLocation:performing:)": {
+  "abstract" : [
+    {
+      "text" : "Check that an expression causes the process to terminate in a given fashion.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "macro"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "expect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "processExitsWith"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "observing"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s14PartialKeyPathC",
+      "text" : "PartialKeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV6ResultV",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "> & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure "
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "performing"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV6ResultV",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/expect(processExitsWith:observing:_:sourceLocation:performing:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "expect(processExitsWith:observing:_:sourceLocation:performing:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expect(processexitswith:observing:_:sourcelocation:performing:)"
+},
+"doc://org.swift.testing/documentation/Testing/require(processExitsWith:observing:_:sourceLocation:performing:)": {
+  "abstract" : [
+    {
+      "text" : "Check that an expression causes the process to terminate in a given fashion",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and throw an error if it did not.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "macro"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "require"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "processExitsWith"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "observing"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s14PartialKeyPathC",
+      "text" : "PartialKeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV6ResultV",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "> & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure "
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV",
+      "text" : "Comment"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing14SourceLocationV",
+      "text" : "SourceLocation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "performing"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV6ResultV",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/require(processExitsWith:observing:_:sourceLocation:performing:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "require(processExitsWith:observing:_:sourceLocation:performing:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/require(processexitswith:observing:_:sourcelocation:performing:)"
+},
+"https://developer.apple.com/documentation/swift/codable": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/codable",
+  "title" : "Codable",
+  "titleInlineContent" : [
+    {
+      "code" : "Codable",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/codable"
+},
+"https://developer.apple.com/documentation/swift/decodable/init(from:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/decodable\/init(from:)",
+  "title" : "init(from:)",
+  "titleInlineContent" : [
+    {
+      "code" : "init(from:)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/decodable\/init(from:)"
+},
+"https://developer.apple.com/documentation/swift/encodable/encode(to:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/encodable\/encode(to:)",
+  "title" : "encode(to:)",
+  "titleInlineContent" : [
+    {
+      "code" : "encode(to:)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/encodable\/encode(to:)"
+},
+"https://developer.apple.com/documentation/swift/fatalerror(_:file:line:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/fatalerror(_:file:line:)",
+  "title" : "fatalError()",
+  "titleInlineContent" : [
+    {
+      "code" : "fatalError()",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/fatalerror(_:file:line:)"
+},
+"https://developer.apple.com/documentation/swift/precondition(_:_:file:line:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/precondition(_:_:file:line:)",
+  "title" : "precondition()",
+  "titleInlineContent" : [
+    {
+      "code" : "precondition()",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/precondition(_:_:file:line:)"
+},
+"https://developer.apple.com/documentation/swift/sendable": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/sendable",
+  "title" : "Sendable",
+  "titleInlineContent" : [
+    {
+      "code" : "Sendable",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/sendable"
+},
+"https://developer.apple.com/documentation/swift/string/init(cstring:)-6kr8s": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/string\/init(cstring:)-6kr8s",
+  "title" : "String.init(cString:)",
+  "titleInlineContent" : [
+    {
+      "code" : "String.init(cString:)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/string\/init(cstring:)-6kr8s"
+},
+"https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/exit.3.html": {
+  "identifier" : "https:\/\/developer.apple.com\/library\/archive\/documentation\/System\/Conceptual\/ManPages_iPhoneOS\/man3\/exit.3.html",
+  "title" : "exit(EXIT_SUCCESS)",
+  "titleInlineContent" : [
+    {
+      "code" : "exit(EXIT_SUCCESS)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/library\/archive\/documentation\/System\/Conceptual\/ManPages_iPhoneOS\/man3\/exit.3.html"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/#Capturing-Values": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures\/#Capturing-Values",
+  "title" : "capture list",
+  "titleInlineContent" : [
+    {
+      "text" : "capture list",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures\/#Capturing-Values"
+}
+}
+}

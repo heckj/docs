@@ -1,0 +1,214 @@
+{
+  "abstract" : [
+    {
+      "text" : "Upcoming language features enable new (but potentially source breaking) functionality that be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "enabled by default in an upcoming language mode.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/upcoming-language-features"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "collectionGroup",
+    "title" : "Upcoming language features"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Upcoming language features allow the incremental adoption of language features that would otherwise",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "only be available in a new language mode, without having to fully migrate to that mode. They can be",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "enabled on the command line with ",
+              "type" : "text"
+            },
+            {
+              "code" : "-enable-upcoming-feature <feature>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Some upcoming features have an additional “migration” mode, where the compiler will emit warnings",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "with fix-its to help migrate to that mode. This can be enabled with ",
+              "type" : "text"
+            },
+            {
+              "code" : "-enable-upcoming-feature <feature>:migrate",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups"
+      ]
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Topics",
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-any",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/member-import-visibility",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/nonisolated-nonsending-by-default"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/diagnostic-groups": {
+  "abstract" : [
+    {
+      "text" : "Detailed explanations for various compiler diagnostics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Diagnostic groups",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/diagnostic-groups"
+},
+"doc://diagnostics/documentation/diagnostics/existential-any": {
+  "abstract" : [
+    {
+      "code" : "any",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " existential type syntax.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-any",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existential any (ExistentialAny)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/existential-any"
+},
+"doc://diagnostics/documentation/diagnostics/member-import-visibility": {
+  "abstract" : [
+    {
+      "text" : "Enables errors for uses of members that cannot be accessed because their defining module is not directly",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "imported.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/member-import-visibility",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Member import visibility (MemberImportVisibility)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/member-import-visibility"
+},
+"doc://diagnostics/documentation/diagnostics/nonisolated-nonsending-by-default": {
+  "abstract" : [
+    {
+      "text" : "Runs nonisolated async functions on the caller’s actor by default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/nonisolated-nonsending-by-default",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "nonisolated(nonsending) by Default (NonisolatedNonsendingByDefault)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/nonisolated-nonsending-by-default"
+}
+}
+}

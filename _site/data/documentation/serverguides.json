@@ -1,0 +1,120 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/ServerGuides\/documentation\/ServerGuides"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "ServerGuides",
+    "modules" : [
+      {
+        "name" : "Server Guides"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "Server Guides"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Topics",
+      "identifiers" : [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building",
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging",
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/serverguides"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://ServerGuides/documentation/ServerGuides": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Server Guides",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides"
+},
+"doc://ServerGuides/documentation/ServerGuides/building": {
+  "abstract" : [
+    {
+      "text" : "Assemble your server applications using Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Building Swift Server Applications",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/building"
+},
+"doc://ServerGuides/documentation/ServerGuides/deploying-static-binaries": {
+  "abstract" : [
+    {
+      "text" : "Build fully self-contained Swift executables and deploy them",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to minimal containers or directly to Linux machines.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deploying Swift services as static binaries",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/deploying-static-binaries"
+},
+"doc://ServerGuides/documentation/ServerGuides/packaging": {
+  "abstract" : [
+    {
+      "text" : "Build a container that includes your Swift service with its resources and dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Packaging Swift services with containers",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/packaging"
+}
+}
+}

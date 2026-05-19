@@ -1,0 +1,867 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Argument matching for trailing closures (TrailingClosureMatching)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Where trailing closures are used to pass one or more arguments to a function, the argument label for the first trailing closure is always omitted:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func animate(",
+            "  withDuration duration: Double,",
+            "  animations: () -> Void,",
+            "  completion: (() -> Void)? = nil",
+            ") { \/* ... *\/ }",
+            "",
+            "animate(withDuration: 0.3) \/* `animations:` is unwritten. *\/ {",
+            "  \/\/ Animate something.",
+            "} completion: {",
+            "  \/\/ Completion handler.",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Sometimes, an unlabeled trailing closure argument can be matched to more than one function parameter. Before Swift 5.3, the compiler would use a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "backward scanning rule",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " to match the unlabeled trailing closure, scanning backwards from the end of the parameter list until finding a parameter that can accept a closure argument (a function type, unconstrained generic type, ",
+              "type" : "text"
+            },
+            {
+              "code" : "Any",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", etc.):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "animate(withDuration: 0.3) {",
+            "  \/\/ Animate something?",
+            "  \/\/ The compiler matches this to the `completion` parameter.",
+            "}",
+            "\/\/ error: missing argument for parameter 'animations' in call"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "We encounter a compiler error in this example because the backward scanning rule matches the trailing closure to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "completion",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter instead of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "animations",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter, even though ",
+              "type" : "text"
+            },
+            {
+              "code" : "completion",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has a default value while ",
+              "type" : "text"
+            },
+            {
+              "code" : "animations",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " does not.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift 5.3 introduces a new ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "forward scanning rule",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : ", which matches trailing closures to function parameters from left to right (after matching non-trailing arguments). This leads to more predictable and easy-to-understand behavior in many situations. With the new rule, the unlabeled closure in the example above is matched to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "animations",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter, just as most users would expect:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "animate(withDuration: 0.3) {",
+            "  \/\/ Animate something.",
+            "} \/\/ `completion` has the default value `nil`."
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When scanning forwards to match an unlabeled trailing closure argument, the compiler will skip any parameter that does not ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "structurally resemble",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " a function type and also apply a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "heuristic",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " to skip parameters that do not require an argument in favor of a subsequent parameter that does (see below). These rules make possible the ergonomic use of a modified version of the API given in the example above, where ",
+              "type" : "text"
+            },
+            {
+              "code" : "withDuration",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has a default value:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func animate(",
+            "  withDuration duration: Double = 1.0,",
+            "  animations: () -> Void,",
+            "  completion: (() -> Void)? = nil",
+            ") { \/* ... *\/ }",
+            "",
+            "animate {",
+            "  \/\/ Animate something.",
+            "  \/\/",
+            "  \/\/ The closure is not matched to `withDuration` but to `animations` because",
+            "  \/\/ the first parameter doesn't structurally resemble a function type.",
+            "  \/\/",
+            "  \/\/ If, in place of `withDuration`, there is a parameter with a default value",
+            "  \/\/ that does structurally resemble a function type, the closure would still be",
+            "  \/\/ matched to `animations` because it requires an argument while the first",
+            "  \/\/ parameter does not.",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For source compatibility in Swift 5, the compiler will attempt to apply ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "both",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " the new forward scanning rule and the old backward scanning rule when it encounters a function call with a single trailing closure. If the forward and backward scans produce ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "different valid",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " matches of arguments to parameters, the compiler will prefer the result of the backward scanning rule and produce a warning. To silence this warning, rewrite the function call to label the argument explicitly without using trailing closure syntax.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Structural-resemblance-to-a-function-type",
+          "level" : 2,
+          "text" : "Structural resemblance to a function type",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A parameter structurally resembles a function type if both of the following are true:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "the parameter is not ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "inout",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "the ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "adjusted type",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " of the parameter is a function type.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The adjusted type of the parameter is the parameter’s type as it appears in the function declaration, looking through any type aliases, and performing three additional adjustments:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If the parameter is an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "@autoclosure",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", use the result type of the parameter’s declared (function) type before performing the second adjustment.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If the parameter is variadic, look at the base element type.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Remove all outer “optional” types.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "anchor" : "Heuristic-for-skipping-parameters",
+          "level" : 2,
+          "text" : "Heuristic for skipping parameters",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To maintain source compatibility, the forward scanning rule applies an additional heuristic when matching trailing closure arguments. If:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "the parameter that would match an unlabeled trailing closure argument according to the forward scanning rule does not require an argument (because it is variadic or has a default argument), ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "and",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "there are parameters ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "following",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " that parameter that ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "do",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " require an argument, which appear before the first parameter whose label matches that of the ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "next",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " trailing closure (if any),",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "then the compiler does not match the unlabeled trailing closure to that parameter. Instead, it examines the next parameter to see if that should be matched to the unlabeled trailing closure, as in the following example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func showAlert(",
+            "  message: String,",
+            "  onPresentation: (() ->  Void)? = nil,",
+            "  onDismissal: () -> Void",
+            ") { \/* ... *\/ }",
+            "",
+            "\/\/ `onPresentation` does not require an argument, but `onDismissal` does, and",
+            "\/\/ there is no subsequent trailing closure labeled `onDismissal`.",
+            "\/\/ Therefore, the unlabeled trailing closure is matched to `onDismissal`.",
+            "showAlert(message: \"Hello, World!\") {",
+            "  \/\/ On dismissal action.",
+            "}",
+            "",
+            "\/\/ Although `onPresentation` does not require an argument, there are no",
+            "\/\/ subsequent parameters that require an argument before the parameter whose",
+            "\/\/ label matches the next trailing closure (`onDismissal`).",
+            "\/\/ Therefore, the unlabeled trailing closure is matched to `onPresentation`.",
+            "showAlert(message: \"Hello, World!\") {",
+            "  \/\/ On presentation action.",
+            "} onDismissal: {",
+            "  \/\/ On dismissal action.",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0279-multiple-trailing-closures.md",
+        "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0286-forward-scan-trailing-closures.md"
+      ],
+      "title" : "Related Documentation"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-type",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/explicit-sendable-annotations"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-call": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling an actor-isolated method from a synchronous nonisolated context (ActorIsolatedCall)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-call"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-mutating-async": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling a mutating async actor-isolated method (ActorIsolatedMutatingAsync)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-mutating-async"
+},
+"doc://diagnostics/documentation/diagnostics/add-preconcurrency-import": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add @preconcurrency import (AddPreconcurrencyImport)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/add-preconcurrency-import"
+},
+"doc://diagnostics/documentation/diagnostics/always-available-domain": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "@available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attributes and ",
+      "type" : "text"
+    },
+    {
+      "code" : "if #available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " statements that reference custom availability domains which have been permanently enabled.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Always enabled availability domains (AlwaysAvailableDomain)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/always-available-domain"
+},
+"doc://diagnostics/documentation/diagnostics/compilation-caching": {
+  "abstract" : [
+    {
+      "text" : "Errors and warnings related to the compiler’s CAS compilation caching.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Compilation caching (CompilationCaching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/compilation-caching"
+},
+"doc://diagnostics/documentation/diagnostics/deprecated-declaration": {
+  "abstract" : [
+    {
+      "text" : "Warnings related to deprecated APIs that may be removed in future versions and should be replaced with more current alternatives.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated declaration warnings (DeprecatedDeclaration)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/deprecated-declaration"
+},
+"doc://diagnostics/documentation/diagnostics/diagnostic-groups": {
+  "abstract" : [
+    {
+      "text" : "Detailed explanations for various compiler diagnostics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Diagnostic groups",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/diagnostic-groups"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-callable-requirements": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "@dynamicCallable implementation requirements (DynamicCallable)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-callable-requirements"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-exclusivity": {
+  "abstract" : [
+    {
+      "text" : "Experimental",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dynamic exclusivity (DynamicExclusivity)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-exclusivity"
+},
+"doc://diagnostics/documentation/diagnostics/embedded-restrictions": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a subset of the Swift language that that introduces some restrictions on the use of language features to eliminate the need for the Swift runtime. These restrictions are captured by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedRestrictions",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " diagnostic group.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Embedded Swift language restrictions (EmbeddedRestrictions)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/embedded-restrictions"
+},
+"doc://diagnostics/documentation/diagnostics/existential-type": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-type",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existential Types and Performance (ExistentialType)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/existential-type"
+},
+"doc://diagnostics/documentation/diagnostics/explicit-sendable-annotations": {
+  "abstract" : [
+    {
+      "text" : "Adds a warning for any public types without a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Sendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " annotation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/explicit-sendable-annotations",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Explicit `Sendable` annotations on public type declarations (ExplicitSendable)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/explicit-sendable-annotations"
+},
+"doc://diagnostics/documentation/diagnostics/implementation-only-deprecated": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "import",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " declarations with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "@_implementationOnly",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attribute.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated implementation-only imports (ImplementationOnlyDeprecated)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/implementation-only-deprecated"
+},
+"doc://diagnostics/documentation/diagnostics/region-isolation-cross-isolation-data-race": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Cross-isolation data race (RegionIsolationCrossIsolationDataRace)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race"
+},
+"doc://diagnostics/documentation/diagnostics/sendable-closure-captures": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Captures in a `@Sendable` closure (SendableClosureCaptures)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/sendable-closure-captures"
+},
+"doc://diagnostics/documentation/diagnostics/string-interpolation-conformance": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conforming to `StringInterpolationProtocol` (StringInterpolationConformance)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/string-interpolation-conformance"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0279-multiple-trailing-closures.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0279-multiple-trailing-closures.md",
+  "title" : "SE-0279: Multiple trailing closures",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0279: Multiple trailing closures",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0279-multiple-trailing-closures.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0286-forward-scan-trailing-closures.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0286-forward-scan-trailing-closures.md",
+  "title" : "SE-0286: Forward-scan matching for trailing closures",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0286: Forward-scan matching for trailing closures",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0286-forward-scan-trailing-closures.md"
+}
+}
+}

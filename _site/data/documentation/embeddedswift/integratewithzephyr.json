@@ -1,0 +1,1935 @@
+{
+  "abstract" : [
+    {
+      "text" : "Integrating Swift with Zephyr RTOS for embedded systems development",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Zephyr RTOS SDK"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/www.zephyrproject.org\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " is an open-source RTOS for embedded systems that is sponsored by the Linux Foundation. Since it depends on CMake primarily for its build system, it can easily be integrated to be used with Embedded Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following document outlines how to setup a Swift to Zephyr project for an emulated ARM Cortex M0, explaining a few key concepts along the way. For a complete working example on real hardware, however, refer to the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-embedded-examples\/tree\/main\/nrfx-blink-sdk",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " project that is compatible with nRF or other boards.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Embedded Swift is experimental. Public releases of Swift do not support Embedded Swift, yet. See ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for details.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Target-Architecture-Compatibility",
+          "level" : 2,
+          "text" : "Target Architecture Compatibility",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Zephyr ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/introduction\/index.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", but not all are supported by Embedded Swift. Please refer to the following table for an overview of Zephyr-supported architectures that are supported by Swift, along with the correct target triple to use:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Architecture",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Details",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Swift Triple",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "ARMv6-M",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cortex M0, M0+, M1",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "armv6m-none-none-eabi",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "ARMv7-M",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cortex M3",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "armv7-none-none-eabi",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "ARMv7-EM",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cortex M4\/M4F, M7",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "armv7em-none-none-eabi",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "ARMv8-M",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cortex M23-85",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "aarch64-none-none-elf",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Intel",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "32-bit (i686)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "i686-unknown-none-elf",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Intel",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "64-bit (x86_64)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "x86_64-unknown-none-elf",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "RISC-V",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "32-bit",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "riscv32-none-none-eabi",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "RISC-V",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "64-bit",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "riscv64-none-none-eabi",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "anchor" : "Zephyr-Setup",
+          "level" : 2,
+          "text" : "Zephyr Setup",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Before setting up a Swift project that works with Zephyr, you need to setup dependencies and a Zephyr workspace as per the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/develop\/getting_started\/index.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". Regardless of your platform (macOS or Linux), ensure that you can build the blinky example without errors before starting with Swift integration:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "cd ~\/zephyrproject\/zephyr",
+            "west build -p always -b reel_board samples\/basic\/blinky"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " revision of the Zephyr sources are checked out when calling ",
+              "type" : "text"
+            },
+            {
+              "code" : "west init",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which contains pre-release and development changes that may cause instability and changing APIs that are not desirable. To checkout a specific release version of Zephyr, use the following commands:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "cd ~\/zephyrproject\/zephyr",
+            "git checkout v4.1.0",
+            "west update",
+            "west packages pip --install",
+            "",
+            "# For older versions of Zephyr (pre 4.1.0), use:",
+            "pip install -r ~\/zephyrproject\/zephyr\/scripts\/requirements.txt"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Refer to the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/releases\/index.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " page for more information on current and LTS releases.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Project-Setup",
+          "level" : 2,
+          "text" : "Project Setup",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once Zephyr is setup, the next step is to setup a project with the following files included:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "SwiftZephyrProject\/src\/BridgingHeader.h",
+            "SwiftZephyrProject\/src\/Main.swift",
+            "SwiftZephyrProject\/src\/Stubs.c",
+            "SwiftZephyrProject\/CMakeLists.txt",
+            "SwiftZephyrProject\/prj.conf"
+          ],
+          "syntax" : "plain",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These are the minimum required files in order to build a Zephyr project. By convention, source files should be placed in the src\/ subdirectory, but this is not a hard requirement. Also, ",
+              "type" : "text"
+            },
+            {
+              "code" : "prj.conf",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is required even if it is empty, or the project will not build.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Inside of ",
+              "type" : "text"
+            },
+            {
+              "code" : "src\/BridgingHeader.h",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", add the following content:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "#pragma once",
+            "",
+            "#include <autoconf.h>",
+            "#include <zephyr\/kernel.h>"
+          ],
+          "syntax" : "c",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "src\/Main.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file must contain a ",
+              "type" : "text"
+            },
+            {
+              "code" : "static func main()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as follows:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@main",
+            "struct Main {",
+            "  static func main() {",
+            "    print(\"Hello Zephyr from Swift!\")",
+            "",
+            "    while true {",
+            "      k_msleep(1000)",
+            "      print(\"Loop\")",
+            "    }",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Since Embedded Swift requires ",
+              "type" : "text"
+            },
+            {
+              "code" : "posix_memalign",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to be defined, add the following to ",
+              "type" : "text"
+            },
+            {
+              "code" : "src\/Stubs.c",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to define it:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "#include <stdlib.h>",
+            "#include <errno.h>",
+            "",
+            "void *aligned_alloc(size_t alignment, size_t size);",
+            "",
+            "\/\/ Embedded Swift currently requires posix_memalign, but the C libraries in the",
+            "\/\/ Zephyr SDK do not provide it. Let's implement it and forward the calls to",
+            "\/\/ aligned_alloc(3).",
+            "int",
+            "posix_memalign(void **memptr, size_t alignment, size_t size)",
+            "{",
+            "  void *p = aligned_alloc(alignment, size);",
+            "  if (p) {",
+            "    *memptr = p;",
+            "    return 0;",
+            "  }",
+            "",
+            "  return errno;",
+            "}"
+          ],
+          "syntax" : "c",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Finally, add the following line to ",
+              "type" : "text"
+            },
+            {
+              "code" : "prj.conf",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " so that the output of ",
+              "type" : "text"
+            },
+            {
+              "code" : "print()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " statements is sent to stdout:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "CONFIG_STDOUT_CONSOLE=y"
+          ],
+          "syntax" : "conf",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "CMakeListstxt-Setup",
+          "level" : 3,
+          "text" : "CMakeLists.txt Setup",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "CMakeLists.txt",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " setup is more involved and complex since target, compilation flags, and library linking must be specified for Swift. First, some initial setup and flags:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "cmake_minimum_required(VERSION 3.29)",
+            "find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})",
+            "",
+            "# Enable \"wmo\" as needed by Embedded Swift",
+            "set(CMAKE_Swift_COMPILATION_MODE wholemodule)",
+            "",
+            "# Create a new project called \"SwiftZephyrProject\" and enable \"Swift\" as a supported language",
+            "project(SwiftZephyrProject Swift)"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Next, set the compiler target to the arch you are building for. For this example we use ",
+              "type" : "text"
+            },
+            {
+              "code" : "armv6m-none-none-eabi",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " which is compatible with the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/boards\/qemu\/cortex_m0\/doc\/index.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " which we will compile for in a later step. If you are targeting a different architecture, see the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "#zephyr-target-architecture-compatibility",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to see which target triple to use.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Use the armv6m-none-none-eabi target triple for Swift",
+            "set(CMAKE_Swift_COMPILER_TARGET armv6m-none-none-eabi)"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After setting the target triple, some additional additional Swift compiler flags need to be defined.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Set global Swift compiler flags",
+            "add_compile_options(",
+            "    # Enable Embedded Swift",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-enable-experimental-feature Embedded>\"",
+            "",
+            "    # Enable function sections to enable dead code stripping on elf",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xfrontend -function-sections>\"",
+            "",
+            "    # Use software floating point operations matching GCC",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc -mfloat-abi=soft>\"",
+            "",
+            "    # Use compacted C enums matching GCC",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc -fshort-enums>\"",
+            "",
+            "    # Disable PIC",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc -fno-pic>\"",
+            "",
+            "    # Disable PIE",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc -fno-pie>\"",
+            "",
+            "    # Add Libc include paths",
+            "    \"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc -I -Xcc ${ZEPHYR_SDK_INSTALL_DIR}\/arm-zephyr-eabi\/picolibc\/include>\"",
+            ")"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "-mfloat-abi=soft",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " flag may need to change to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "-mfloat-abi=hard",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for ARM CPUs that support hard-float, such as the Cortex-M4F and Cortex-M7. This and the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "-fshort-enums",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " flags are not required for non-ARM architectures such as Intel and RISC-V.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There are quite a few other Zephyr flags that can also be imported (optional) in order to get Zephyr include paths and flags such ",
+              "type" : "text"
+            },
+            {
+              "code" : "-mcpu",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "mthumb",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "-mabi",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and so on:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Import TOOLCHAIN_C_FLAGS from Zephyr as -Xcc flags",
+            "foreach(flag ${TOOLCHAIN_C_FLAGS})",
+            "    # Skip flags that are not known to swiftc",
+            "    string(FIND \"${flag}\" \"-imacro\" is_imacro)",
+            "    string(FIND \"${flag}\" \"-mfp16-format\" is_mfp16)",
+            "    if(NOT is_imacro EQUAL -1 OR NOT is_mfp16 EQUAL -1)",
+            "        continue()",
+            "    endif()",
+            "",
+            "    add_compile_options(\"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc ${flag}>\")",
+            "endforeach()"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Next, add the following block to automatically grab Zephyr compilation flags (such as ",
+              "type" : "text"
+            },
+            {
+              "code" : "-D__ZEPHYR__=1",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "-DKERNEL",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") and set them as Swift compiler definitions. This is required to successfully build Swift code that works with Zephyr:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Add definitions from Zephyr to -Xcc flags",
+            "get_target_property(ZEPHYR_DEFINES zephyr_interface INTERFACE_COMPILE_DEFINITIONS)",
+            "if(ZEPHYR_DEFINES)",
+            "    foreach(flag ${ZEPHYR_DEFINES})",
+            "        # Ignore expressions like \"$<SOMETHING>\"",
+            "        string(FIND \"${flag}\" \"$<\" start_of_expression)",
+            "        if(NOT start_of_expression EQUAL -1)",
+            "            continue()",
+            "        endif()",
+            "",
+            "        add_compile_options(\"$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xcc -D${flag}>\")",
+            "    endforeach()",
+            "endif()"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Finally, setup targets, libraries, and additional compile options:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "target_sources(app PRIVATE src\/Stubs.c)",
+            "",
+            "# The Swift code providing \"main\" needs to be in an OBJECT library (instead of STATIC library) to make sure it actually gets linker.",
+            "# A STATIC library would get dropped from linking because Zephyr provides a default weak empty main definition.",
+            "add_library(app_swift OBJECT src\/Main.swift)",
+            "",
+            "add_dependencies(app_swift syscall_list_h_target)",
+            "target_compile_options(app_swift PRIVATE",
+            "    -parse-as-library",
+            "",
+            "    -Osize",
+            "",
+            "    -Xfrontend -disable-stack-protector",
+            "",
+            "    # FIXME: add dependency on BridgingHeader.h",
+            "    -import-bridging-header ${CMAKE_CURRENT_LIST_DIR}\/src\/BridgingHeader.h",
+            ")",
+            "",
+            "# Copy include paths from C target to Swift target",
+            "target_include_directories(app_swift PRIVATE",
+            "    \"$<TARGET_PROPERTY:app,INCLUDE_DIRECTORIES>\"",
+            ")",
+            "",
+            "# Link the Swift target into the primary target",
+            "target_link_libraries(app PRIVATE app_swift)"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Building-and-Running",
+          "level" : 3,
+          "text" : "Building and Running",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build the project, ensure that the Zephyr workspace is sourced first:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "source ~\/zephyrproject\/.venv\/bin\/activate"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Run the following command to configure the project with CMake:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "(.venv)> cmake -B build -G Ninja -DBOARD=qemu_cortex_m0 -DUSE_CCACHE=0 .",
+            "Loading Zephyr default modules (Zephyr base (cached)).",
+            "...",
+            "-- Configuring done (7.6s)",
+            "-- Generating done (0.2s)",
+            "-- Build files have been written to: ~\/SwiftZephyrProject\/build"
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Then, the project can be built using ",
+              "type" : "text"
+            },
+            {
+              "code" : "cmake --build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "(.venv)> cmake --build build",
+            "[1\/135] Preparing syscall dependency handling",
+            "",
+            "[2\/135] Generating include\/generated\/zephyr\/version.h",
+            "-- Zephyr version: 4.1.0 (~\/zephyrproject\/zephyr), build: v4.1.0",
+            "[130\/135] Linking C executable zephyr\/zephyr_pre0.elf",
+            "~\/zephyr-sdk-0.17.0\/arm-zephyr-eabi\/bin\/..\/lib\/gcc\/arm-zephyr-eabi\/12.2.0\/..\/..\/..\/..\/arm-zephyr-eabi\/bin\/ld.bfd: warning: orphan section `.swift_modhash' from `app\/libapp.a(Main.swift.obj)' being placed in section `.swift_modhash'",
+            "[135\/135] Linking C executable zephyr\/zephyr.elf",
+            "~\/zephyr-sdk-0.17.0\/arm-zephyr-eabi\/bin\/..\/lib\/gcc\/arm-zephyr-eabi\/12.2.0\/..\/..\/..\/..\/arm-zephyr-eabi\/bin\/ld.bfd: warning: orphan section `.swift_modhash' from `app\/libapp.a(Main.swift.obj)' being placed in section `.swift_modhash'",
+            "Memory region         Used Size  Region Size  %age Used",
+            "           FLASH:       14674 B       256 KB      5.60%",
+            "             RAM:        4032 B        16 KB     24.61%",
+            "        IDT_LIST:          0 GB        32 KB      0.00%",
+            "Generating files from ~\/SwiftZephyrProject\/build\/zephyr\/zephyr.elf for board: qemu_cortex_m0"
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Finally, to run the example in the qemu emulator, use ",
+              "type" : "text"
+            },
+            {
+              "code" : "ninja run",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "(.venv)> ninja -C build run",
+            "ninja: Entering directory `build'",
+            "[0\/1] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m0",
+            "*** Booting Zephyr OS build v4.1.0 ***",
+            "Hello Zephyr from Swift!",
+            "Loop",
+            "Loop",
+            "Loop"
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Congrats, you now have a Swift project running using Zephyr!",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "West-Integration",
+          "level" : 2,
+          "text" : "West Integration",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Up to now we have setup a project that works perfectly fine when used with just CMake and Ninja. However, projects can also be integrated with West, which is the official CLI tool used for Zephyr projects. To use ",
+              "type" : "text"
+            },
+            {
+              "code" : "west",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", start by adding a ",
+              "type" : "text"
+            },
+            {
+              "code" : "west.yml",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file to the root of the project:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "manifest:",
+            "  remotes:",
+            "    - name: zephyrproject-rtos",
+            "      url-base: https:\/\/github.com\/zephyrproject-rtos",
+            "",
+            "  projects:",
+            "    - name: zephyr",
+            "      remote: zephyrproject-rtos",
+            "      revision: v4.1.0",
+            "      import:",
+            "        name-allowlist:",
+            "          - cmsis  # required by the ARM port"
+          ],
+          "syntax" : "yml",
+          "type" : "codeListing"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "It is recommended to set the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "revision",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to a tagged version of Zephyr instead of always getting the main revision, which could have changing APIs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Also, please note that depending on what architecture you are targeting, you may need to add more\/different targets to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "name-allowlist",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", which is useful to get needed dependencies when compiling a project from a CI. See the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-embedded-examples\/blob\/main\/.github\/workflows\/build-zephyr.yml",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " for an example of setting up a CI for Zephyr.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Next, set the ",
+              "type" : "text"
+            },
+            {
+              "code" : "ZEPHYR_BASE",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " environment variable to tell ",
+              "type" : "text"
+            },
+            {
+              "code" : "west",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " where the Zephyr workspace is located:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "(.venv)> export ZEPHYR_BASE=~\/zephyrproject\/zephyr"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This could even be set as a global env variable for the user in ",
+              "type" : "text"
+            },
+            {
+              "code" : "~\/.bashrc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "~\/.zshrc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " if desired.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With this, ",
+              "type" : "text"
+            },
+            {
+              "code" : "west",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " commands now can be run instead of having to use ",
+              "type" : "text"
+            },
+            {
+              "code" : "cmake",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "ninja",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to build and run:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "(.venv)> west build -b qemu_cortex_m0 . -p always",
+            "...",
+            "(.venv)> west build -t run",
+            "-- west build: running target run",
+            "[0\/1] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m0",
+            "*** Booting Zephyr OS build v4.1.0 ***",
+            "Hello Zephyr from Swift!",
+            "Loop",
+            "Loop",
+            "Loop",
+            "Loop"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This setup may also be desirable since ",
+              "type" : "text"
+            },
+            {
+              "code" : "west flash",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is also available and can be used instead of invoking the flashing tools manually.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If compiling a firmware for a real\/physical board such as the ",
+              "type" : "text"
+            },
+            {
+              "code" : "nrf52840dk\/nrf52840",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "west flash",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will work if the SEGGER J-Link host tools are installed. As an example, with the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "..\/..\/..\/..\/nrfx-blink-sdk\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " project:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "> cd nrfx-blink-sdk",
+            "> source ~\/zephyrproject\/.venv\/bin\/activate",
+            "(.venv)> export ZEPHYR_BASE=~\/zephyrproject\/zephyr",
+            "(.venv)> west build -b nrf52840dk\/nrf52840 . -p always",
+            "...",
+            "(.venv)> west flash -r jlink",
+            "-- west flash: rebuilding",
+            "ninja: no work to do.",
+            "-- west flash: using runner jlink",
+            "-- runners.jlink: reset after flashing requested",
+            "-- runners.jlink: JLink version: 8.26",
+            "-- runners.jlink: Flashing file: ~\/swift-embedded-examples\/nrfx-blink-sdk\/build\/zephyr\/zephyr.hex"
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "-r jlink",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " param is needed for this example to use the J-Link tools instead of using ",
+              "type" : "text"
+            },
+            {
+              "code" : "nrfjprog",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which is the default for this board and also ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.nordicsemi.com\/Products\/Development-tools\/nRF-Command-Line-Tools",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Customizing-the-Linker",
+          "level" : 2,
+          "text" : "Customizing the Linker",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The default linker configuration for building a Zephyr project from CMake works well for simple projects, but it can be customized as needed. The following sections show off some useful ways to customize linking Zephyr projects for Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Stripping-Out-Unused-Sections",
+          "level" : 3,
+          "text" : "Stripping Out Unused Sections",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When compiling Swift to Zephyr projects, you may see some warnings about orphaned sections from the linker, like ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift_modhash",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "~\/zephyr-sdk-0.17.0\/arm-zephyr-eabi\/bin\/..\/lib\/gcc\/arm-zephyr-eabi\/12.2.0\/..\/..\/..\/..\/arm-zephyr-eabi\/bin\/ld.bfd: warning: orphan section `.swift_modhash' from `app\/libapp.a(Main.swift.obj)' being placed in section `.swift_modhash'",
+            "[135\/135] Linking C executable zephyr\/zephyr.elf",
+            "~\/zephyr-sdk-0.17.0\/arm-zephyr-eabi\/bin\/..\/lib\/gcc\/arm-zephyr-eabi\/12.2.0\/..\/..\/..\/..\/arm-zephyr-eabi\/bin\/ld.bfd: warning: orphan section `.swift_modhash' from `app\/libapp.a(Main.swift.obj)' being placed in section `.swift_modhash"
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These types of warnings can be suppressed by passing a custom linker script to Zephyr that discards the sections, especially if they are not needed. For example, a script called ",
+              "type" : "text"
+            },
+            {
+              "code" : "sections.ld",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be created at the root of the project with the following contents:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/DISCARD\/ : { *(.swift_modhash*) }",
+            "\/DISCARD\/ : { *(.ARM.attributes*) *(.ARM.exidx) }"
+          ],
+          "syntax" : "ld",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Then, in ",
+              "type" : "text"
+            },
+            {
+              "code" : "CMakeLists.txt",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", add the following line:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Remove unused sections",
+            "zephyr_linker_sources(SECTIONS \"sections.ld\")"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This can also help to reduce the size of the output elf\/binary since unused sections are stripped out. Be careful what sections you strip out, however, as some sections may be required.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Linking-Swift-Libraries",
+          "level" : 3,
+          "text" : "Linking Swift Libraries",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This example adds the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftUnicodeDataTables",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " library from Swift to be linked into the Zephyr project. This is useful for linking unicode symbols when using strings. See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for more information on this.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In order to add additional linker params, the CMake ",
+              "type" : "text"
+            },
+            {
+              "code" : "target_link_libraries",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " invocation can be used against ",
+              "type" : "text"
+            },
+            {
+              "code" : "zephyr_pre0",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "zephyr_final",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# The code is using a String as a Dictionary key and thus require linking with libswiftUnicodeDataTables.a",
+            "# We compute the path where this file reside, taking into accout how the toolchain is referenced (Swiftly or TOOLCHAINS env variable). ",
+            "find_program(SWIFTLY \"swiftly\")",
+            "IF(SWIFTLY)",
+            "  execute_process(COMMAND swiftly use --print-location OUTPUT_VARIABLE toolchain_path)",
+            "  cmake_path(SET additional_lib_path NORMALIZE \"${toolchain_path}\/usr\/lib\/swift\/embedded\/${CMAKE_Swift_COMPILER_TARGET}\")",
+            "ELSE()",
+            "  get_filename_component(compiler_bin_dir ${CMAKE_Swift_COMPILER} DIRECTORY)",
+            "  cmake_path(SET additional_lib_path NORMALIZE \"${compiler_bin_dir}\/..\/lib\/swift\/embedded\/${CMAKE_Swift_COMPILER_TARGET}\")",
+            "ENDIF()",
+            "",
+            "target_link_directories(zephyr_pre0 PRIVATE \"${additional_lib_path}\")",
+            "target_link_libraries(zephyr_pre0",
+            "    -Wl,--whole-archive",
+            "    swiftUnicodeDataTables",
+            "    -Wl,--no-whole-archive",
+            "    )",
+            "",
+            "target_link_directories(zephyr_final PRIVATE \"${additional_lib_path}\")",
+            "target_link_libraries(zephyr_final",
+            "    -Wl,--whole-archive",
+            "    swiftUnicodeDataTables",
+            "    -Wl,--no-whole-archive",
+            "    )"
+          ],
+          "syntax" : "cmake",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Extra code is required to find the right paths where the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftUnicodeDataTables.a",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file is located, depending on how Swift is installed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When this is built, depending on the target architecture, warnings may then be printed about 32-bit enums, like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "~\/zephyr-sdk-0.17.0\/arm-zephyr-eabi\/bin\/..\/lib\/gcc\/arm-zephyr-eabi\/12.2.0\/..\/..\/..\/..\/arm-zephyr-eabi\/bin\/ld.bfd: warning: ~\/.local\/share\/swiftly\/toolchains\/6.1.0\/usr\/lib\/swift\/embedded\/armv6m-none-none-eabi\/libswiftUnicodeDataTables.a(UnicodeWord.cpp.o) uses 32-bit enums yet the output is to use variable-size enums; use of enum values across objects may fail"
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To suppress these, simply add ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Wl,--no-enum-size-warning",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "target_link_libraries",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " invocations.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "SDK-Support",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico"
+      ],
+      "title" : "SDK Support"
+    }
+  ]
+, 
+"references": {
+"#zephyr-target-architecture-compatibility": {
+  "identifier" : "#zephyr-target-architecture-compatibility",
+  "title" : "Zephyr Target Architecture Compatibility",
+  "titleInlineContent" : [
+    {
+      "text" : "Zephyr Target Architecture Compatibility",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "#zephyr-target-architecture-compatibility"
+},
+"../../../../nrfx-blink-sdk/": {
+  "identifier" : "..\/..\/..\/..\/nrfx-blink-sdk\/",
+  "title" : "nrfx-blink-sdk",
+  "titleInlineContent" : [
+    {
+      "text" : "nrfx-blink-sdk",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "..\/..\/..\/..\/nrfx-blink-sdk\/"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Baremetal": {
+  "abstract" : [
+    {
+      "text" : "Programming without an SDK for maximum control and minimal size",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal use of Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/baremetal"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/InstallEmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/installembeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithPico": {
+  "abstract" : [
+    {
+      "text" : "Setting up a project that can seamlessly use C APIs from the Pico SDK.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithpico"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegratingWithPlatforms": {
+  "abstract" : [
+    {
+      "text" : "Understand the common patterns and approaches for integrating Swift with existing embedded systems",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Integrating with embedded platforms",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratingwithplatforms"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Strings": {
+  "abstract" : [
+    {
+      "text" : "How to enable full Unicode-compliant string support in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Strings",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/strings"
+},
+"https://docs.zephyrproject.org/latest/boards/qemu/cortex_m0/doc/index.html": {
+  "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/boards\/qemu\/cortex_m0\/doc\/index.html",
+  "title" : "Cortex-M0",
+  "titleInlineContent" : [
+    {
+      "text" : "Cortex-M0",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.zephyrproject.org\/latest\/boards\/qemu\/cortex_m0\/doc\/index.html"
+},
+"https://docs.zephyrproject.org/latest/develop/getting_started/index.html": {
+  "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/develop\/getting_started\/index.html",
+  "title" : "Getting Started Guide",
+  "titleInlineContent" : [
+    {
+      "text" : "Getting Started Guide",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.zephyrproject.org\/latest\/develop\/getting_started\/index.html"
+},
+"https://docs.zephyrproject.org/latest/introduction/index.html": {
+  "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/introduction\/index.html",
+  "title" : "supports quite a few target architectures",
+  "titleInlineContent" : [
+    {
+      "text" : "supports quite a few target architectures",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.zephyrproject.org\/latest\/introduction\/index.html"
+},
+"https://docs.zephyrproject.org/latest/releases/index.html": {
+  "identifier" : "https:\/\/docs.zephyrproject.org\/latest\/releases\/index.html",
+  "title" : "Zephyr Releases",
+  "titleInlineContent" : [
+    {
+      "text" : "Zephyr Releases",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.zephyrproject.org\/latest\/releases\/index.html"
+},
+"https://github.com/swiftlang/swift-embedded-examples/blob/main/.github/workflows/build-zephyr.yml": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-embedded-examples\/blob\/main\/.github\/workflows\/build-zephyr.yml",
+  "title" : "Zephyr workflow from swift-embedded-examples",
+  "titleInlineContent" : [
+    {
+      "text" : "Zephyr workflow from swift-embedded-examples",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-embedded-examples\/blob\/main\/.github\/workflows\/build-zephyr.yml"
+},
+"https://github.com/swiftlang/swift-embedded-examples/tree/main/nrfx-blink-sdk": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-embedded-examples\/tree\/main\/nrfx-blink-sdk",
+  "title" : "nrfx-blink-sdk",
+  "titleInlineContent" : [
+    {
+      "text" : "nrfx-blink-sdk",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-embedded-examples\/tree\/main\/nrfx-blink-sdk"
+},
+"https://www.nordicsemi.com/Products/Development-tools/nRF-Command-Line-Tools": {
+  "identifier" : "https:\/\/www.nordicsemi.com\/Products\/Development-tools\/nRF-Command-Line-Tools",
+  "title" : "deprecated",
+  "titleInlineContent" : [
+    {
+      "text" : "deprecated",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.nordicsemi.com\/Products\/Development-tools\/nRF-Command-Line-Tools"
+},
+"https://www.zephyrproject.org/": {
+  "identifier" : "https:\/\/www.zephyrproject.org\/",
+  "title" : "Zephyr",
+  "titleInlineContent" : [
+    {
+      "text" : "Zephyr",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.zephyrproject.org\/"
+}
+}
+}

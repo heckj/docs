@@ -1,0 +1,375 @@
+{
+  "abstract" : [
+    {
+      "text" : "Install the Swift toolchain, Android NDK, and Swift SDK for Android",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid"
+      ],
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/GettingStarted"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "SwiftAndroid"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Getting Started"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Development requires three components:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Swift Toolchain",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " – install with ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swiftly",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ": ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swiftly install latest",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Android NDK",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " – download from ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/developer.android.com\/ndk\/downloads",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " (r27d+ recommended)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Swift SDK for Android",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " – install with ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift sdk install",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " (see ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/swift-sdk-for-android-getting-started.html",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "anchor" : "Hello-World",
+          "level" : 2,
+          "text" : "Hello World",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "$ swift package init --type executable",
+            "$ swift build --swift-sdk aarch64-unknown-linux-android28",
+            "$ adb push .build\/aarch64-unknown-linux-android28\/debug\/HelloWorld \/data\/local\/tmp\/",
+            "$ adb shell \/data\/local\/tmp\/HelloWorld",
+            "Hello, world!"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Target-triples",
+          "level" : 2,
+          "text" : "Target triples",
+          "type" : "heading"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Architecture",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Triple",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "ARM64",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "aarch64-unknown-linux-android28",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "ARM32",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "armv7-unknown-linux-androideabi28",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "x86_64",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "x86_64-unknown-linux-android28",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftandroid\/gettingstarted"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftAndroid/documentation/SwiftAndroid": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftAndroid",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/SwiftAndroid": {
+  "abstract" : [
+    {
+      "text" : "Use Swift to build native libraries and applications for Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift on Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/swiftandroid"
+},
+"https://developer.android.com/ndk/downloads": {
+  "identifier" : "https:\/\/developer.android.com\/ndk\/downloads",
+  "title" : "developer.android.com",
+  "titleInlineContent" : [
+    {
+      "text" : "developer.android.com",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.android.com\/ndk\/downloads"
+},
+"https://github.com/swiftlang/swiftly": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swiftly",
+  "title" : "swiftly",
+  "titleInlineContent" : [
+    {
+      "text" : "swiftly",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swiftly"
+},
+"https://www.swift.org/documentation/articles/swift-sdk-for-android-getting-started.html": {
+  "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/swift-sdk-for-android-getting-started.html",
+  "title" : "swift.org",
+  "titleInlineContent" : [
+    {
+      "text" : "swift.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/documentation\/articles\/swift-sdk-for-android-getting-started.html"
+}
+}
+}

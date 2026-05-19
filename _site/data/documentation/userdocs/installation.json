@@ -1,0 +1,267 @@
+{
+  "abstract" : [
+    {
+      "text" : "Install the Swift extension via the VS Code Marketplace.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/installation"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Installation"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift extension is supported on macOS, Linux, and Windows. To set it up:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Install Swift from the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/www.swift.org\/install",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Install ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/code.visualstudio.com\/Download",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Install the Swift extension from the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=swiftlang.swift-vscode",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once your machine is ready, you can start writing Swift code:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use the ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Swift: Create New Project...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " command from the command palette to initialize a new project.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Navigate to ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "File > Open Folder",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " in the menu bar to open an existing project on your machine.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/supported-toolchains"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/supported-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Find out which versions of Swift the extension supports.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/supported-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Supported Toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/supported-toolchains"
+},
+"https://code.visualstudio.com/Download": {
+  "identifier" : "https:\/\/code.visualstudio.com\/Download",
+  "title" : "Visual Studio Code",
+  "titleInlineContent" : [
+    {
+      "text" : "Visual Studio Code",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/Download"
+},
+"https://marketplace.visualstudio.com/items?itemName=swiftlang.swift-vscode": {
+  "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=swiftlang.swift-vscode",
+  "title" : "VS Code Marketplace",
+  "titleInlineContent" : [
+    {
+      "text" : "VS Code Marketplace",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/marketplace.visualstudio.com\/items?itemName=swiftlang.swift-vscode"
+},
+"https://www.swift.org/install": {
+  "identifier" : "https:\/\/www.swift.org\/install",
+  "title" : "Swift.org website",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift.org website",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/install"
+}
+}
+}

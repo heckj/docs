@@ -1,0 +1,1094 @@
+{
+  "abstract" : [
+    {
+      "text" : "Useful VS Code commands added by the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/commands"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Commands"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift extension adds the following commands, each prefixed with ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"Swift: \"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in the command palette.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Configuration",
+          "level" : 4,
+          "text" : "Configuration",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Create New Project...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Create a new Swift project using a template. This opens a dialog to guide you through creating a new project structure.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Create New Swift File...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Create a new ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " file in the current workspace.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Select Toolchain...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Select the locally installed Swift toolchain (including Xcode toolchains on macOS) that you want to use Swift tools from.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Install Swiftly Toolchain...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Install a Swift toolchain using Swiftly. Shows a list of available stable Swift releases that can be downloaded and installed. Requires Swiftly to be installed first.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Install Swiftly Snapshot Toolchain...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Install a Swift snapshot toolchain using Swiftly. Shows a list of available development snapshots that can be downloaded and installed. Requires Swiftly to be installed first.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Generate SourceKit-LSP Configuration",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Generate the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".sourcekit-lsp\/config.json",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " file for the selected project(s). The generated configuration file will be pre-populated with the JSON schema for the version of the Swift toolchain that is being used. Use the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift.sourcekit-lsp.configurationBranch",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " setting to pin the SourceKit-LSP branch that the schema comes from.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following command is only available on macOS:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Select Target Platform...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - An experimental command available in Swift 6.1 that offers code completion for iOS, tvOS, watchOS, and visionOS projects.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Building-and-Debugging",
+          "level" : 4,
+          "text" : "Building and Debugging",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Run Build",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift build",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " for the package associated with the open file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Debug Build",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift build",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " with debugging enabled for the package associated with the open file, launching the binary and attaching the debugger.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Attach to Process...",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Attach the debugger to an already running process for debugging.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Clean Build Folder",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Clean the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : ".build",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " folder for the package associated with the open file, removing all previously built products.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Generate Launch Configurations",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Generate and persist ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " debug launch configurations to the launch.json file for the project. This is useful when the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift.autoGenerateLaunchConfigurations",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " setting is disabled.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Dependency-Management",
+          "level" : 4,
+          "text" : "Dependency Management",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Resolve Package Dependencies",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift package resolve",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " on packages associated with the open file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Update Package Dependencies",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift package update",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " on packages associated with the open file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Reset Package Dependencies",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift package reset",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " on packages associated with the open file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Add to Workspace",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Add the current package to the active workspace in VS Code.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Clean Build",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift package clean",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " on packages associated with the open file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Open Package.swift",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Open ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Package.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " for the package associated with the open file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Use Local Version",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Switch the package dependency to use a local version of the package instead of the remote repository version.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Edit Locally",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Make the package dependency editable locally, allowing changes to the dependency to be reflected immediately.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Revert To Original Version",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Revert the package dependency to its original, unedited state after local changes have been made.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "View Repository",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Open the external repository of the selected Swift package in a browser.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Testing",
+          "level" : 4,
+          "text" : "Testing",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Test: Run All Tests",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run all the tests across all test targets in the open project.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Test: Rerun Last Run",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Repeat the last test run.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Test: Open Coverage",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Open the last generated coverage report, if one exists.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Test: Run All Tests in Parallel",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run all tests in parallel. This action only affects XCTests. Swift-testing tests are parallel by default, and their parallelism ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/developer.apple.com\/documentation\/testing\/parallelization",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Snippets-and-Scripts",
+          "level" : 4,
+          "text" : "Snippets and Scripts",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Insert Function Comment",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Insert a standard comment block for documenting a Swift function in the current file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Run Swift Script",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Run the currently open file, as a Swift script. The file must not be part of a build target. If the file has not been saved it will save it to a temporary file so it can be run.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Run Swift Snippet",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - If the currently open file is a Swift snippet then run it.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Debug Swift Snippet",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - If the currently open file is a Swift snippet then debug it.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Diagnostics",
+          "level" : 4,
+          "text" : "Diagnostics",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Capture Diagnostic Bundle",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Capture a diagnostic bundle from VS Code, containing logs and information to aid in troubleshooting Swift-related issues.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Clear Diagnostics Collection",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Clear all collected diagnostics in the current workspace to start fresh.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Restart LSP Server",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Restart the Swift Language Server Protocol (LSP) server for the current workspace.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "Re-Index Project",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Force a re-index of the project to refresh code completion and symbol navigation support.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Commands can be accessed from the VS Code command palette which is common to all VS Code extensions. See the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/code.visualstudio.com\/docs\/getstarted\/userinterface#_command-palette",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for a more in-depth overview.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "💡 Tip",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Reference",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/settings"
+      ],
+      "title" : "Reference"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/settings": {
+  "abstract" : [
+    {
+      "text" : "Configure the behavior of the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/settings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Extension Settings",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/settings"
+},
+"https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/getstarted\/userinterface#_command-palette",
+  "title" : "VS Code documentation about the command palette",
+  "titleInlineContent" : [
+    {
+      "text" : "VS Code documentation about the command palette",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/getstarted\/userinterface#_command-palette"
+},
+"https://developer.apple.com/documentation/testing/parallelization": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/testing\/parallelization",
+  "title" : "is controlled in code",
+  "titleInlineContent" : [
+    {
+      "text" : "is controlled in code",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/testing\/parallelization"
+}
+}
+}

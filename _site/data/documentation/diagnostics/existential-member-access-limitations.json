@@ -1,0 +1,583 @@
+{
+  "abstract" : [
+    {
+      "text" : "Protocol requirements and protocol extension members may be accessed via a conformance constraint on a generic parameter, an opaque result type, or via the protocol type itself:",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-member-access-limitations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Using protocol members with references to `Self` or `Self`-rooted associated types (ExistentialMemberAccess)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "\/\/ An appropriately constrained generic parameter.",
+            "func foo<T: CustomStringConvertible>(arg: T) {",
+            "  let description: String = arg.description",
+            "}",
+            "",
+            "do {",
+            "  \/\/ An appropriately constrained opaque result type.",
+            "  func foo() -> some CustomStringConvertible { true }",
+            "",
+            "  let description: String = foo().description",
+            "}",
+            "",
+            "\/\/ The protocol type.",
+            "func foo(arg: CustomStringConvertible) {",
+            "  let description: String = arg.description",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "While the former two options enable full access to the protocol interface, not all members may be accessible when the protocol is used as a type and not a constraint. Specifically, a protocol member cannot be accessed on a protocol type when its type signature contains a reference to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-rooted associated type. Accessing such members on a protocol type is not supported because today the compiler does not have a well-defined meaning and means of representation for  ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and  ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-rooted associated types with respect to a protocol type  ",
+              "type" : "text"
+            },
+            {
+              "code" : "P",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".  As a result, the following code is not allowed:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol Shape {",
+            "  func matches(_ other: Self) -> Bool",
+            "}",
+            "",
+            "func foo(_ shape: Shape) {",
+            "  \/\/ error: member 'matches' cannot be used on value of protocol type 'Shape'; use a generic constraint instead",
+            "  shape.matches(shape)",
+            "}",
+            "",
+            "func foo(_ arg: Identifiable) {",
+            "  \/\/ error: member 'id' cannot be used on value of protocol type 'Identifiable'; use a generic constraint instead",
+            "  _ = arg.id",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An exception to this limitation are members that contain ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " only in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Covariance_and_contravariance_(computer_science)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " position (such as a method result type), where  ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be safely substituted with the protocol or protocol composition type used to access the member — a representable supertype. On the other hand, resorting to this ploy in contravariant parameter type position, like allowing one to pass a type-erased value to a method that accepts ",
+              "type" : "text"
+            },
+            {
+              "code" : "Self",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", is not type-safe and would expose the opportunity to pass in an argument of non-matching type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol Shape {",
+            "  func duplicate() -> Self",
+            "}",
+            "",
+            "func duplicateShape(_ shape: Shape) -> Shape {",
+            "  return shape.duplicate \/\/ OK, produces a value of type 'Shape'",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most use cases involving usage of protocol members that fall under the above restriction can instead be supported by constrained generics, opaque result types, or manual type-erasing wrappers. To learn more, see the sections on ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " in the Language Guide. For a better understanding of existential types in particular, and an in-depth exploration of the relationships among these built-in abstraction models, we recommend reading ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics",
+        "https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814",
+        "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes",
+        "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols"
+      ],
+      "title" : "Related Documentation"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-type"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-call": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling an actor-isolated method from a synchronous nonisolated context (ActorIsolatedCall)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-call"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-mutating-async": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling a mutating async actor-isolated method (ActorIsolatedMutatingAsync)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-mutating-async"
+},
+"doc://diagnostics/documentation/diagnostics/add-preconcurrency-import": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add @preconcurrency import (AddPreconcurrencyImport)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/add-preconcurrency-import"
+},
+"doc://diagnostics/documentation/diagnostics/always-available-domain": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "@available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attributes and ",
+      "type" : "text"
+    },
+    {
+      "code" : "if #available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " statements that reference custom availability domains which have been permanently enabled.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Always enabled availability domains (AlwaysAvailableDomain)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/always-available-domain"
+},
+"doc://diagnostics/documentation/diagnostics/compilation-caching": {
+  "abstract" : [
+    {
+      "text" : "Errors and warnings related to the compiler’s CAS compilation caching.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Compilation caching (CompilationCaching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/compilation-caching"
+},
+"doc://diagnostics/documentation/diagnostics/deprecated-declaration": {
+  "abstract" : [
+    {
+      "text" : "Warnings related to deprecated APIs that may be removed in future versions and should be replaced with more current alternatives.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated declaration warnings (DeprecatedDeclaration)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/deprecated-declaration"
+},
+"doc://diagnostics/documentation/diagnostics/diagnostic-groups": {
+  "abstract" : [
+    {
+      "text" : "Detailed explanations for various compiler diagnostics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Diagnostic groups",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/diagnostic-groups"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-callable-requirements": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "@dynamicCallable implementation requirements (DynamicCallable)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-callable-requirements"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-exclusivity": {
+  "abstract" : [
+    {
+      "text" : "Experimental",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dynamic exclusivity (DynamicExclusivity)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-exclusivity"
+},
+"doc://diagnostics/documentation/diagnostics/embedded-restrictions": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a subset of the Swift language that that introduces some restrictions on the use of language features to eliminate the need for the Swift runtime. These restrictions are captured by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedRestrictions",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " diagnostic group.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Embedded Swift language restrictions (EmbeddedRestrictions)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/embedded-restrictions"
+},
+"doc://diagnostics/documentation/diagnostics/existential-type": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-type",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existential Types and Performance (ExistentialType)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/existential-type"
+},
+"doc://diagnostics/documentation/diagnostics/implementation-only-deprecated": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "import",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " declarations with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "@_implementationOnly",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attribute.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated implementation-only imports (ImplementationOnlyDeprecated)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/implementation-only-deprecated"
+},
+"doc://diagnostics/documentation/diagnostics/region-isolation-cross-isolation-data-race": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Cross-isolation data race (RegionIsolationCrossIsolationDataRace)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race"
+},
+"doc://diagnostics/documentation/diagnostics/sendable-closure-captures": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Captures in a `@Sendable` closure (SendableClosureCaptures)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/sendable-closure-captures"
+},
+"doc://diagnostics/documentation/diagnostics/string-interpolation-conformance": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conforming to `StringInterpolationProtocol` (StringInterpolationConformance)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/string-interpolation-conformance"
+},
+"doc://diagnostics/documentation/diagnostics/trailing-closure-matching": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Argument matching for trailing closures (TrailingClosureMatching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/trailing-closure-matching"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/generics": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics",
+  "title" : "Generics",
+  "titleInlineContent" : [
+    {
+      "text" : "Generics",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/opaquetypes": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes",
+  "title" : "Opaque Types",
+  "titleInlineContent" : [
+    {
+      "text" : "Opaque Types",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols",
+  "title" : "Protocols",
+  "titleInlineContent" : [
+    {
+      "text" : "Protocols",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols"
+},
+"https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Covariance_and_contravariance_(computer_science)",
+  "title" : "covariant",
+  "titleInlineContent" : [
+    {
+      "text" : "covariant",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Covariance_and_contravariance_(computer_science)"
+},
+"https://forums.swift.org/t/improving-the-ui-of-generics/22814": {
+  "identifier" : "https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814",
+  "title" : "Improving the UI of generics",
+  "titleInlineContent" : [
+    {
+      "text" : "Improving the UI of generics",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814"
+}
+}
+}

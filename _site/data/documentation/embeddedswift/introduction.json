@@ -1,0 +1,743 @@
+{
+  "abstract" : [
+    {
+      "text" : "Write Swift code for microcontrollers, embedded systems, and bare-metal applications",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Introduction to Embedded Swift"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Embedded Swift is an experimental and rapidly developing feature of the Swift language that enables development of baremetal, embedded and standalone software. It’s a subset of the Swift language designed for producing small, efficient binaries with minimal dependencies, making it suitable for resource-constrained environments.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Embedded Swift is experimental. Public releases of Swift do not support Embedded Swift, yet. See ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for details.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "How-does-Embedded-Swift-differ-from-regular-Swift",
+          "level" : 2,
+          "text" : "How does Embedded Swift differ from regular Swift?",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Regular Swift is not a good fit for small constrained environments like microcontrollers, mainly due to codesize and memory footprint. Regular Swift typically requires at least a few megabytes of code and data to support dynamic language features like reflection, and separately compiled generics with ABI stability. Embedded Swift, on the other hand, can be deployed to environments with as little as kilobytes of available memory. This is achieved by:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Eliminating runtime type metadata where possible",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Removing reflection capabilities",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using compile-time specialization (monomorphization) for generic code",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Minimizing dependencies on external libraries",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It’s also a good mental model to think of the Swift compiler in Embedded Swift mode as operating on a way a ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "traditional C compiler",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " does — specifically in the sense that the compiler produces an object file that does not call into or depend on symbols that are not explicitly used in the source code. This is achieved even for code that uses generics, protocols, tuples, arrays, and more — all the higher-level language features are “compiled out” (e.g. generics are specialized), and standard library code is pulled into the object file as needed (e.g. array implementation).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This results in properties that are a great fit for embedded software development:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Small binaries",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " that can be as tiny as a few hundred bytes for “Hello World”-like programs (fully self-contained).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "No hidden runtime costs",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " – Embedded Swift’s runtime library does not manage any data structures behind your back, is itself less than a kilobyte in size, and is eligible to be removed if unused.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "No hidden allocations",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " which would cause unpredictable performance cliffs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Full C\/C++ interoperability",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " to directly interact with existing C libraries and hardware-specific code, making it easy to integrate with vendor SDKs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Modern language features",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " like optionals, generics, and strong type safety are all available in Embedded Swift.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Full safety of Swift",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " is retained in Embedded Swift.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For a detailed introduction and motivation into Embedded Swift, please see “",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/visions\/embedded-swift.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : "”, a Swift Evolution document highlighting the main goals and approaches. Note that this is a historical document and does not capture latest development and further evolution. For an up-to-date in-depth breakdown of the language features of Embedded Swift, please see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "What-Embedded-Swift-is-and-isnt",
+          "level" : 2,
+          "text" : "What Embedded Swift is and isn’t",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Embedded Swift ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "is",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a way to produce small and freestanding binaries (with no, or trivial dependencies).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Embedded Swift ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "is not",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a complete one-click solution to program all embedded boards and MCUs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Embedded Swift ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "is",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a compilation model that’s analogous to a traditional C compiler in the sense that the compiler produces an object file (.o) that can be simply linked with your existing code, and it’s not going to require you to port any libraries or runtimes.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Embedded Swift ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "is not",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a HAL, it’s not an SDK for development, it’s not a set of libraries to program peripherals using high-level APIs. It’s instead a compilation mode that’s suitable for creating these components.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Platform-support",
+          "level" : 2,
+          "text" : "Platform support",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift toolchain has the ability to produce code for almost any standard ARM and RISC-V platform, and that makes Embedded Swift versatile and not limited to specific platforms or hardware devices. This way, Embedded Swift can potentially target many different microcontroller families and embedded devices.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Boards with active community support include the Raspberry Pi Pico, various STM32 development boards, various nRF52840 based boards and several ESP32 variants, with more platforms being regularly added as the community grows.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Interoperability-with-existing-SDKs",
+          "level" : 2,
+          "text" : "Interoperability with existing SDKs",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Software projects using Embedded Swift are typically developed in one of the following ways:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Integrating with an existing SDK (typically in C, or C++) that provides either an embedded OS, or OS-like facilities, hardware drivers, and overall functionality that’s needed for embedded software.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Writing fully “bare-metal” code, without any pre-existing setup or SDK. This is typically done for extremely constrained environments and\/or when full control of every piece of code is needed.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Both the approaches are readily available in Embedded Swift, and the choice of which approach to use depends on your specific project requirements, hardware constraints, and development preferences. For integrating with existing SDKs, Swift’s C\/C++ interoperability makes it straightforward to call native SDK functions, while the bare-metal approach gives you complete control over every aspect of your code’s execution environment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Getting-Started",
+          "level" : 2,
+          "text" : "Getting Started",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To start using Embedded Swift, please see the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " page for installation instructions.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once you’ve set up the toolchain, we recommend exploring the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/WaysToGetStarted",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " page which provides various paths for getting started, including the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to try Embedded Swift on your development machine, and more advanced guides such as ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for programming an actual embedded device.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For details about using Embedded Swift, consult the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " documentation, which explains how to build code with Embedded Swift and shows integration patterns with embedded SDKs and build systems.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Getting-Started",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift"
+      ],
+      "title" : "Getting Started"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Basics": {
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Basics of using Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/basics"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/InstallEmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/installembeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/LanguageSubset": {
+  "abstract" : [
+    {
+      "text" : "Details of the Embedded Swift language subset compared to full Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language subset",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/languagesubset"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/PicoGuide": {
+  "abstract" : [
+    {
+      "text" : "Tutorial for targetting a Raspberry Pi Pico as an embedded device that runs a simple Swift program",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico Blink (Pico SDK)",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/picoguide"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/WaysToGetStarted": {
+  "abstract" : [
+    {
+      "text" : "Possible directions to explore to start using Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/WaysToGetStarted",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Getting started with Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/waystogetstarted"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/macOSGuide": {
+  "abstract" : [
+    {
+      "text" : "Tutorial for building a simple program for your host OS with Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Try out Embedded Swift on macOS",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/macosguide"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/visions/embedded-swift.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/visions\/embedded-swift.md",
+  "title" : "A Vision for Embedded Swift",
+  "titleInlineContent" : [
+    {
+      "text" : "A Vision for Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/visions\/embedded-swift.md"
+}
+}
+}

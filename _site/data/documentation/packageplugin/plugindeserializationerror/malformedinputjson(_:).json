@@ -1,0 +1,402 @@
+{
+  "abstract" : [
+    {
+      "text" : "The input JSON is malformed in some way; the message provides more details.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/malformedInputJSON(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13PackagePlugin0B20DeserializationErrorO18malformedInputJSONyACSScACmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "malformedInputJSON"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "PluginDeserializationError.malformedInputJSON(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "malformedInputJSON"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Errors-while-deserializing",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/missingBuildToolPluginProtocolConformance(protocolName:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/missingCommandPluginProtocolConformance(protocolName:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/missingXcodeProjectPluginSupport",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/internalError(_:)"
+      ],
+      "title" : "Errors while deserializing"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/plugindeserializationerror\/malformedinputjson(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError": {
+  "abstract" : [
+    {
+      "text" : "Errors thrown while loading a plugin.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PluginDeserializationError"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PluginDeserializationError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PluginDeserializationError",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError/internalError(_:)": {
+  "abstract" : [
+    {
+      "text" : "An internal error of some kind; the message provides more details.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "internalError"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/internalError(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PluginDeserializationError.internalError(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror\/internalerror(_:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError/malformedInputJSON(_:)": {
+  "abstract" : [
+    {
+      "text" : "The input JSON is malformed in some way; the message provides more details.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "malformedInputJSON"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/malformedInputJSON(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PluginDeserializationError.malformedInputJSON(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror\/malformedinputjson(_:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError/missingBuildToolPluginProtocolConformance(protocolName:)": {
+  "abstract" : [
+    {
+      "text" : "The plugin doesn’t conform to the BuildToolPlugin protocol.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "missingBuildToolPluginProtocolConformance"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "protocolName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/missingBuildToolPluginProtocolConformance(protocolName:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PluginDeserializationError.missingBuildToolPluginProtocolConformance(protocolName:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror\/missingbuildtoolpluginprotocolconformance(protocolname:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError/missingCommandPluginProtocolConformance(protocolName:)": {
+  "abstract" : [
+    {
+      "text" : "The plugin doesn’t conform to the CommandPlugin protocol.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "missingCommandPluginProtocolConformance"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "protocolName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/missingCommandPluginProtocolConformance(protocolName:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PluginDeserializationError.missingCommandPluginProtocolConformance(protocolName:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror\/missingcommandpluginprotocolconformance(protocolname:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PluginDeserializationError/missingXcodeProjectPluginSupport": {
+  "abstract" : [
+    {
+      "text" : "The plugin doesn’t support Xcode",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "missingXcodeProjectPluginSupport"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginDeserializationError\/missingXcodeProjectPluginSupport",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PluginDeserializationError.missingXcodeProjectPluginSupport",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/plugindeserializationerror\/missingxcodeprojectpluginsupport"
+}
+}
+}

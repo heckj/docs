@@ -1,0 +1,519 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/opaque-type-inference"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Underlying type inference for opaque result types (OpaqueTypeInference)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Opaque result types are a useful tool for abstracting the return type of a function or subscript, or type of a property. Although the concrete underlying type of an opaque type is hidden from clients, it is still inferred by the compiler, which enforces certain usage requirements:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Property declarations with opaque types must have an initializer expression or getter, and functions or subscripts returning opaque types must have at least one ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "return",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " statement:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "code" : [
+            "let x: some Equatable \/\/ error: property declares an opaque return type, but has no initializer expression from which to infer an underlying type",
+            "let y: some Equatable = 42 \/\/ OK",
+            "let z: some Equatable { \/\/ Also OK",
+            "  return \"hello, \" + \"world!\"",
+            "}",
+            "",
+            "func foo() -> some Equatable { \/\/ error: function declares an opaque return type, but has no return statements in its body from which to infer an underlying type",
+            "  fatalError(\"Unimplemented\")",
+            "}",
+            "",
+            "func bar() -> some Equatable { \/\/ OK",
+            "  fatalError(\"Unimplemented\")",
+            "  return 42",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The underlying type of an opaque type must be unique. In other words, if a function or subscript returns an opaque type, it must return values of the same underlying type from every ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "return",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " statement in its body.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "code" : [
+            "func foo(bar: Bool) -> some Equatable { \/\/ error: function declares an opaque return type, but the return statements in its body do not have matching underlying types",
+            "  if bar {",
+            "    return \"hello, world!\" \/\/ note: return statement has underlying type 'String'",
+            "  } else {",
+            "    return 1 \/\/ note: return statement has underlying type 'Int'",
+            "  }",
+            "}",
+            "",
+            "func bar(baz: Bool) -> some Equatable { \/\/ OK, both branches of the if statement return a value of the same underlying type, Int.",
+            "  if baz {",
+            "    return 100",
+            "  } else {",
+            "    return 200",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Functions returning opaque types may be recursive. However, such functions must have at least one ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "return",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " statement that returns a concrete underlying type as opposed to the function’s own opaque result type. Additionally, recursive calls may not be used to create an infinitely recursive opaque type.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "code" : [
+            "func foo(_ x: Int) -> some Equatable { \/\/ error: function declares an opaque return type, but has no return statements in its body from which to infer an underlying type",
+            "  \/\/ Not allowed because there aren't any non-recursive returns to infer the underlying type from.",
+            "  return foo(x+1)",
+            "}",
+            "",
+            "struct EquatableWrapper<T: Equatable>: Equatable { var value: T }",
+            "func foo() -> some Equatable { \/\/ error: function opaque return type was inferred as 'EquatableWrapper<some Equatable>', which defines the opaque type in terms of itself",
+            "  \/\/ Not allowed because the use of EquatableWrapper creates an infinitely recursive underlying type: EquatableWrapper<EquatableWrapper<EquatableWrapper<...>>>...>",
+            "  return EquatableWrapper(value: foo())",
+            "}",
+            "",
+            "func bar(_ x: Int) -> some Equatable { \/\/ OK, the underlying type can be inferred from the second return statement.",
+            "  if x > 0 {",
+            "    return bar(x-1)",
+            "  } else {",
+            "    return x",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To learn more about opaque result types, see the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " section of ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The Swift Programming Language",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes"
+      ],
+      "title" : "Related Documentation"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-type"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-call": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling an actor-isolated method from a synchronous nonisolated context (ActorIsolatedCall)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-call"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-mutating-async": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling a mutating async actor-isolated method (ActorIsolatedMutatingAsync)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-mutating-async"
+},
+"doc://diagnostics/documentation/diagnostics/add-preconcurrency-import": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add @preconcurrency import (AddPreconcurrencyImport)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/add-preconcurrency-import"
+},
+"doc://diagnostics/documentation/diagnostics/always-available-domain": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "@available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attributes and ",
+      "type" : "text"
+    },
+    {
+      "code" : "if #available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " statements that reference custom availability domains which have been permanently enabled.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Always enabled availability domains (AlwaysAvailableDomain)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/always-available-domain"
+},
+"doc://diagnostics/documentation/diagnostics/compilation-caching": {
+  "abstract" : [
+    {
+      "text" : "Errors and warnings related to the compiler’s CAS compilation caching.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Compilation caching (CompilationCaching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/compilation-caching"
+},
+"doc://diagnostics/documentation/diagnostics/deprecated-declaration": {
+  "abstract" : [
+    {
+      "text" : "Warnings related to deprecated APIs that may be removed in future versions and should be replaced with more current alternatives.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated declaration warnings (DeprecatedDeclaration)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/deprecated-declaration"
+},
+"doc://diagnostics/documentation/diagnostics/diagnostic-groups": {
+  "abstract" : [
+    {
+      "text" : "Detailed explanations for various compiler diagnostics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Diagnostic groups",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/diagnostic-groups"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-callable-requirements": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "@dynamicCallable implementation requirements (DynamicCallable)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-callable-requirements"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-exclusivity": {
+  "abstract" : [
+    {
+      "text" : "Experimental",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dynamic exclusivity (DynamicExclusivity)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-exclusivity"
+},
+"doc://diagnostics/documentation/diagnostics/embedded-restrictions": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a subset of the Swift language that that introduces some restrictions on the use of language features to eliminate the need for the Swift runtime. These restrictions are captured by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedRestrictions",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " diagnostic group.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Embedded Swift language restrictions (EmbeddedRestrictions)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/embedded-restrictions"
+},
+"doc://diagnostics/documentation/diagnostics/existential-type": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/existential-type",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existential Types and Performance (ExistentialType)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/existential-type"
+},
+"doc://diagnostics/documentation/diagnostics/implementation-only-deprecated": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "import",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " declarations with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "@_implementationOnly",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attribute.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated implementation-only imports (ImplementationOnlyDeprecated)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/implementation-only-deprecated"
+},
+"doc://diagnostics/documentation/diagnostics/region-isolation-cross-isolation-data-race": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Cross-isolation data race (RegionIsolationCrossIsolationDataRace)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race"
+},
+"doc://diagnostics/documentation/diagnostics/sendable-closure-captures": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Captures in a `@Sendable` closure (SendableClosureCaptures)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/sendable-closure-captures"
+},
+"doc://diagnostics/documentation/diagnostics/string-interpolation-conformance": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conforming to `StringInterpolationProtocol` (StringInterpolationConformance)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/string-interpolation-conformance"
+},
+"doc://diagnostics/documentation/diagnostics/trailing-closure-matching": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Argument matching for trailing closures (TrailingClosureMatching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/trailing-closure-matching"
+},
+"https://docs.swift.org/swift-book/documentation/the-swift-programming-language/opaquetypes": {
+  "identifier" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes",
+  "title" : "Opaque Types",
+  "titleInlineContent" : [
+    {
+      "text" : "Opaque Types",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/opaquetypes"
+}
+}
+}

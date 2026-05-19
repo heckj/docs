@@ -1,0 +1,60 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/LanguageGuides\/documentation\/LanguageGuides"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "LanguageGuides",
+    "modules" : [
+      {
+        "name" : "Language Guides"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "Language Guides"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/languageguides"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://LanguageGuides/documentation/LanguageGuides": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/LanguageGuides\/documentation\/LanguageGuides",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Language Guides",
+  "type" : "topic",
+  "url" : "\/documentation\/languageguides"
+}
+}
+}

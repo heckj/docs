@@ -1,0 +1,367 @@
+{
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "collection",
+    "title" : "Embedded Swift"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Getting-Started",
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift"
+      ],
+      "title" : "Getting Started"
+    },
+    {
+      "anchor" : "Guided-Examples",
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/WaysToGetStarted",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide"
+      ],
+      "title" : "Guided Examples"
+    },
+    {
+      "anchor" : "Using-Embedded-Swift",
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods"
+      ],
+      "title" : "Using Embedded Swift"
+    },
+    {
+      "anchor" : "SDK-Support",
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr"
+      ],
+      "title" : "SDK Support"
+    },
+    {
+      "anchor" : "Compiler-Development-and-Details",
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ABI",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Status"
+      ],
+      "title" : "Compiler Development and Details"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ABI": {
+  "abstract" : [
+    {
+      "text" : "Understanding the different ABI (Application Binary Interface) for Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ABI",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "ABI of Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/abi"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Baremetal": {
+  "abstract" : [
+    {
+      "text" : "Programming without an SDK for maximum control and minimal size",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal use of Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/baremetal"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Basics": {
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Basics of using Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/basics"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ConditionalCompilation": {
+  "abstract" : [
+    {
+      "text" : "How to share code between Embedded Swift and full Swift using conditional compilation",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conditionalizing compilation for Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/conditionalcompilation"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Existentials": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on existentials (“any” types) that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existentials",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/existentials"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ExternalDependencies": {
+  "abstract" : [
+    {
+      "text" : "What external system dependencies should you expect from Embedded Swift compilations",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "External dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/externaldependencies"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/InstallEmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/installembeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithPico": {
+  "abstract" : [
+    {
+      "text" : "Setting up a project that can seamlessly use C APIs from the Pico SDK.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithpico"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithZephyr": {
+  "abstract" : [
+    {
+      "text" : "Integrating Swift with Zephyr RTOS for embedded systems development",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Zephyr RTOS SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithzephyr"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegratingWithPlatforms": {
+  "abstract" : [
+    {
+      "text" : "Understand the common patterns and approaches for integrating Swift with existing embedded systems",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Integrating with embedded platforms",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratingwithplatforms"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Introduction": {
+  "abstract" : [
+    {
+      "text" : "Write Swift code for microcontrollers, embedded systems, and bare-metal applications",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Introduction to Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/introduction"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/LanguageSubset": {
+  "abstract" : [
+    {
+      "text" : "Details of the Embedded Swift language subset compared to full Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language subset",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/languagesubset"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Libraries": {
+  "abstract" : [
+    {
+      "text" : "Understand the library setup and linkage model of Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Libraries and modules in Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/libraries"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/NonFinalGenericMethods": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on unbound generic methods that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Non-final generic methods",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/nonfinalgenericmethods"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/PicoGuide": {
+  "abstract" : [
+    {
+      "text" : "Tutorial for targetting a Raspberry Pi Pico as an embedded device that runs a simple Swift program",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico Blink (Pico SDK)",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/picoguide"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/STM32BaremetalGuide": {
+  "abstract" : [
+    {
+      "text" : "Program a STM32 microcontroller directly with low-level Swift code",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal Setup for STM32 with Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/stm32baremetalguide"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Status": {
+  "abstract" : [
+    {
+      "text" : "Implementation status of compiler and language features in Embedded Swift, comparison to standard Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Status",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Implementation Status",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/status"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Strings": {
+  "abstract" : [
+    {
+      "text" : "How to enable full Unicode-compliant string support in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Strings",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/strings"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/WaysToGetStarted": {
+  "abstract" : [
+    {
+      "text" : "Possible directions to explore to start using Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/WaysToGetStarted",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Getting started with Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/waystogetstarted"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/macOSGuide": {
+  "abstract" : [
+    {
+      "text" : "Tutorial for building a simple program for your host OS with Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Try out Embedded Swift on macOS",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/macosguide"
+}
+}
+}

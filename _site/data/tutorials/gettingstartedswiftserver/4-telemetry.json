@@ -1,0 +1,2835 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code"
+              }
+            ]
+          },
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      },
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+            "sections" : [
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review"
+              },
+              {
+                "kind" : "heading",
+                "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/$volume",
+        "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app"
+      ]
+    ],
+    "reference" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "Get Started with Swift Server",
+    "categoryPathComponent" : "getting-started-swift-server",
+    "role" : "project",
+    "title" : "Add observability with OpenTelemetry"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "Build a basic Vapor app",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Export logs, metrics, and traces from the tutorial app using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "OpenTelemetry, and visualize them with Grafana.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 10,
+      "kind" : "hero",
+      "title" : "Add observability with OpenTelemetry"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Add-telemetry-dependencies",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the OpenTelemetry and system metrics packages to the project.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift-metrics",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift-distributed-tracing",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift-otel",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift-system-metrics",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "to the package dependencies and target products.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-package.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the telemetry dependencies to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Package.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Add telemetry dependencies"
+        },
+        {
+          "anchor" : "Configure-OpenTelemetry",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Configure OpenTelemetry to export logs, metrics, and traces.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Logs fan out to both the terminal and an external collector via",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "the OpenTelemetry Protocol (OTLP), while metrics and traces are",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "sent to the same OTLP collector.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Import ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Metrics",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "OTel",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServiceLifecycle",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "SystemMetrics",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Tracing",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "These provide the APIs for metrics collection, the swift-otel library",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "for exporting telemetry in the OpenTelemetry data format,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "service lifecycle management, system-level metrics, and distributed tracing.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-telemetry.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Add",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the new imports to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Telemetry.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The function creates OpenTelemetry backends for logs, metrics, and tracing that export",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "data via OTLP. It bootstraps the logging system with a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "MultiplexLogHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " so every",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "log line fans out to both the Vapor console logger and the OTel exporter, and installs",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "an OTel metadata provider so logs emitted during a traced request carry ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "trace_id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "span_id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " from the active span. It registers the metrics and tracing backends globally",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "to set up Vapor tracing later, and starts a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "SystemMetricsMonitor",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " that automatically",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "collects CPU, memory, and process-level metrics. All OTel services are combined into a",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServiceGroup",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " for coordinated lifecycle management.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-telemetry.1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Expand",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "configureTelemetry",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " function to set up OpenTelemetry.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Configure OpenTelemetry"
+        },
+        {
+          "anchor" : "Wire-up-the-entry-point-and-server",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Update the entry point to integrate the telemetry service into the application lifecycle,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "and add HTTP tracing middleware to the server.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Update the telemetry call to use the new function that returns a logger and telemetry service.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Add the telemetry service to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServiceGroup",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " so that it starts and",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "stops alongside the server. Because services start in array order and shut down in",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "reverse, placing telemetry first keeps it running while the server drains.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-entrypoint.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Entrypoint.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add Vapor’s ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TracingMiddleware",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to automatically create a trace span for every HTTP request.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Enable ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "traceAutoPropagation",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " so that trace context is extracted from incoming request headers",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "and propagated to outgoing calls.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-serverservice.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ServerService.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Log inside ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "listTODOs",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "createTODO",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " using the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Logger.current",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " task-local that",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "RequestLoggerInjectionMiddleware",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " set. Because these log lines run inside the span",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TracingMiddleware",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " starts, the metadata provider attaches ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "trace_id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "span_id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " —",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "giving you a concrete log line per request that correlates with its trace in Grafana.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-apihandler.0.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "APIHandler.swift",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Wire up the entry point and server"
+        },
+        {
+          "anchor" : "Set-up-the-observability-stack",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a Grafana container to the Docker Compose setup to collect and visualize",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "logs, metrics, and traces via the OpenTelemetry Protocol (OTLP).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "grafana",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " service using the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "grafana\/otel-lgtm",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " image, which bundles Grafana,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Loki (logs), Tempo (traces), and Prometheus (metrics). Also add OTLP environment",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "variables to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "web",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " service so the app knows where to export telemetry.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-docker-compose.0.yaml",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Edit",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "docker-compose.yaml",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Set up the observability stack"
+        },
+        {
+          "anchor" : "Run-and-observe",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Start the observability stack, run the app, and view logs, metrics, and traces in Grafana.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the terminal that was already running ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "docker compose up postgres",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", press",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Ctrl-C",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and relaunch with both services. Postgres reuses the same container, so",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "the TODOs you created in the previous chapter are still there.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Restart",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the infrastructure to add Grafana alongside PostgreSQL.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the terminal running ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift run SwiftServerTodos",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", press ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Ctrl-C",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", then relaunch",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "with the OTLP exporter environment variables set. The exporter points at Grafana’s",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "OTLP endpoint on the host (port ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "4317",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ").",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash.1.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Restart",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " the app with OpenTelemetry export configured.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the existing ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "curl",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " terminal, create and list TODOs to generate HTTP trace data.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash-curl.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Generate",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " some traces by making requests to the service.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Navigate to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "http:\/\/localhost:3000",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and open the ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Explore",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " view. The",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "grafana\/otel-lgtm",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " image preconfigures three data sources you can switch",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "between at the top of the page — Loki for logs, Tempo for traces, and",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "Prometheus for metrics.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash.2.0.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Open",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " Grafana in your browser.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Pick ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "SwiftServerTodos",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " as the service name to see the log lines the app just",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "emitted. Log lines written while a request was being handled carry ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "trace_id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "span_id",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " fields — expand a line to see them, and use the trace ID link",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "to jump straight to the trace in Tempo.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash.2.1.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Switch",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " to Loki to explore logs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the Search tab, pick ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "SwiftServerTodos",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " as the service name and run the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "query to list recent HTTP requests. Click a trace to expand the span tree —",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "the Vapor request span wraps its Fluent child spans — and use the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Logs for this span",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " link to jump back to Loki.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash.2.2.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Switch",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " to Tempo to explore traces.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Try ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "process_cpu_seconds_total",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "process_resident_memory_bytes",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "process_virtual_memory_bytes",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to see the system metrics emitted by",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "SystemMetricsMonitor",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". Use the Metrics Explorer to browse everything else the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "app exports.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "4-bash.2.3.txt",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Switch",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " to Prometheus to explore metrics.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Run and observe"
+        }
+      ]
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "Review what you built and where to find resources to build something you can ship to production.",
+          "type" : "text"
+        }
+      ],
+      "action" : {
+        "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+        "isActive" : true,
+        "overridingTitle" : "Read article",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Read article",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "featuredEyebrow" : "Article",
+      "kind" : "callToAction",
+      "title" : "Review and where to go next"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/gettingstartedswiftserver\/4-telemetry"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"4-apihandler.0.swift": {
+  "content" : [
+    "import Fluent",
+    "import Foundation",
+    "import HTTPTypes",
+    "import Logging",
+    "import OpenAPIRuntime",
+    "",
+    "struct APIHandler: APIProtocol {",
+    "",
+    "    var db: Database",
+    "",
+    "    func listTODOs(",
+    "        _ input: Operations.ListTODOs.Input",
+    "    ) async throws -> Operations.ListTODOs.Output {",
+    "        try Logger.current.info(\"Listing TODOs\")",
+    "",
+    "        let dbTodos = try await db.query(DB.TODO.self).all()",
+    "",
+    "        let apiTodos = try dbTodos.map { todo in",
+    "            Components.Schemas.TODODetail(",
+    "                id: try todo.requireID(),",
+    "                contents: todo.contents",
+    "            )",
+    "        }",
+    "",
+    "        return .ok(.init(body: .json(.init(items: apiTodos))))",
+    "    }",
+    "",
+    "    func createTODO(",
+    "        _ input: Operations.CreateTODO.Input",
+    "    ) async throws -> Operations.CreateTODO.Output {",
+    "        switch input.body {",
+    "        case .json(let todo):",
+    "            let newId = UUID().uuidString",
+    "            let contents = todo.contents",
+    "",
+    "            try Logger.current.info(",
+    "                \"Creating TODO\",",
+    "                metadata: [\"todo.id\": \"\\(newId)\"]",
+    "            )",
+    "",
+    "            let dbTodo = DB.TODO()",
+    "            dbTodo.id = newId",
+    "            dbTodo.contents = contents",
+    "",
+    "            try await dbTodo.save(on: db)",
+    "",
+    "            return .created(",
+    "                .init(",
+    "                    body: .json(",
+    "                        .init(",
+    "                            id: newId,",
+    "                            contents: contents",
+    "                        )",
+    "                    )",
+    "                )",
+    "            )",
+    "        }",
+    "    }",
+    "",
+    "    func getTODODetail(",
+    "        _ input: Operations.GetTODODetail.Input",
+    "    ) async throws -> Operations.GetTODODetail.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "",
+    "    func deleteTODO(",
+    "        _ input: Operations.DeleteTODO.Input",
+    "    ) async throws -> Operations.DeleteTODO.Output {",
+    "        .undocumented(statusCode: 500, .init())",
+    "    }",
+    "}"
+  ],
+  "fileName" : "APIHandler.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 3
+    },
+    {
+      "line" : 4
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    }
+  ],
+  "identifier" : "4-apihandler.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"4-bash-curl.0.txt": {
+  "content" : [
+    "% curl -i -X POST \\",
+    "  -H \"Content-Type: application\/json\" \\",
+    "  -d '{ \"contents\": \"my first traced todo\" }' \\",
+    "  localhost:8080\/api\/todos",
+    "",
+    "% curl localhost:8080\/api\/todos"
+  ],
+  "fileName" : "Terminal 2",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash-curl.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-bash.0.txt": {
+  "content" : [
+    "# In the terminal already running `docker compose up postgres`, press Ctrl-C",
+    "# to stop it, then relaunch bringing Grafana up alongside Postgres.",
+    "% docker compose up postgres grafana"
+  ],
+  "fileName" : "Terminal",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-bash.1.txt": {
+  "content" : [
+    "# In the terminal already running `swift run SwiftServerTodos`, press Ctrl-C",
+    "# to stop it, then restart with the OTLP exporter environment variables set.",
+    "% OTEL_EXPORTER_OTLP_PROTOCOL=grpc \\",
+    "  OTEL_EXPORTER_OTLP_ENDPOINT=http:\/\/localhost:4317 \\",
+    "  swift run SwiftServerTodos"
+  ],
+  "fileName" : "Terminal 1",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash.1.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-bash.2.0.txt": {
+  "content" : [
+    "Open your browser at http:\/\/localhost:3000",
+    "",
+    "Click Explore in the left sidebar. At the top of the page you can switch",
+    "between three preconfigured data sources:",
+    "",
+    "  Loki       — logs",
+    "  Tempo      — traces",
+    "  Prometheus — metrics"
+  ],
+  "fileName" : "Browser",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash.2.0.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-bash.2.1.txt": {
+  "content" : [
+    "Select \"Loki\" from the data source drop-down.",
+    "",
+    "Switch from Builder to Code query builder and enter:",
+    "",
+    "  {service_name=\"SwiftServerTodos\"}",
+    "",
+    "Press \"Run query\". Every log line the app emitted shows up here. Lines",
+    "written while a request was being handled carry `trace_id` and `span_id`",
+    "fields — expand a line to see them. Clicking the `trace_id` jumps straight",
+    "to the corresponding trace in Tempo.",
+    "",
+    "Startup and migration logs are emitted before any request span exists, so",
+    "they don't have a `trace_id`."
+  ],
+  "fileName" : "Browser — logs",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash.2.1.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-bash.2.2.txt": {
+  "content" : [
+    "Select \"Tempo\" from the data source drop-down.",
+    "",
+    "Open the \"Search\" tab and set \"Service Name\" to `SwiftServerTodos`, then",
+    "press \"Run query\". The list on the right shows recent HTTP requests.",
+    "Click any row to open the full trace.",
+    "",
+    "Inside the trace, the Vapor request span wraps its Fluent child spans.",
+    "Use the \"Logs for this span\" link to jump back to Loki and read the",
+    "log lines written while that request was being handled."
+  ],
+  "fileName" : "Browser — traces",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash.2.2.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-bash.2.3.txt": {
+  "content" : [
+    "Select \"Prometheus\" from the data source drop-down.",
+    "",
+    "In the Builder mode, try one of the system metrics emitted by",
+    "`SystemMetricsMonitor`:",
+    "",
+    "  `process_cpu_seconds_total`",
+    "",
+    "The Metric combobox lists all the reported metrics, for example",
+    "`http_requests_total` repoted by Vapor."
+  ],
+  "fileName" : "Browser — metrics",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "4-bash.2.3.txt",
+  "syntax" : "",
+  "type" : "file"
+},
+"4-docker-compose.0.yaml": {
+  "content" : [
+    "services:",
+    "  web:",
+    "    build: .",
+    "    ports:",
+    "      - \"8080:8080\"",
+    "    environment:",
+    "      LOG_LEVEL: debug",
+    "      POSTGRES_URL: postgres:\/\/postgres@postgres:5432\/postgres?sslmode=disable",
+    "      OTEL_EXPORTER_OTLP_PROTOCOL: grpc",
+    "      OTEL_EXPORTER_OTLP_ENDPOINT: http:\/\/grafana:4317",
+    "    depends_on:",
+    "      postgres:",
+    "        condition: service_healthy",
+    "",
+    "  postgres:",
+    "    image: postgres:latest",
+    "    environment:",
+    "      POSTGRES_USER: postgres",
+    "      POSTGRES_DB: postgres",
+    "      POSTGRES_HOST_AUTH_METHOD: trust",
+    "    ports:",
+    "      - \"5432:5432\"",
+    "    healthcheck:",
+    "      test: [\"CMD-SHELL\", \"pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}\"]",
+    "      interval: 5s",
+    "      timeout: 5s",
+    "      retries: 5",
+    "",
+    "  grafana:",
+    "    image: grafana\/otel-lgtm:latest",
+    "    ports:",
+    "      - \"3000:3000\"",
+    "      - \"4317:4317\""
+  ],
+  "fileName" : "docker-compose.yaml",
+  "fileType" : "yaml",
+  "highlights" : [
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 30
+    },
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 33
+    }
+  ],
+  "identifier" : "4-docker-compose.0.yaml",
+  "syntax" : "yaml",
+  "type" : "file"
+},
+"4-entrypoint.0.swift": {
+  "content" : [
+    "import Configuration",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "@main",
+    "struct Entrypoint {",
+    "    static func main() async throws {",
+    "        let config = ConfigReader(provider: EnvironmentVariablesProvider())",
+    "",
+    "        \/\/ Configure telemetry",
+    "        let (logger, telemetryService) = try await configureTelemetry(config)",
+    "",
+    "        \/\/ Create the server",
+    "        let serverConfig = config.scoped(to: \"address\")",
+    "        let app = try await Vapor.Application.make(logger: logger)",
+    "        app.http.server.configuration.address = .hostname(",
+    "            serverConfig.string(forKey: \"address\", default: \"0.0.0.0\"),",
+    "            port: serverConfig.int(forKey: \"port\", default: 8080)",
+    "        )",
+    "",
+    "        \/\/ Configure the database",
+    "        try await configureDatabase(app: app, config: config)",
+    "",
+    "        \/\/ Configure the server",
+    "        let serverService = try await configureServer(app)",
+    "",
+    "        \/\/ Services start in array order and shut down in reverse.",
+    "        let services: [Service] = [telemetryService, serverService]",
+    "        let serviceGroup = ServiceGroup(",
+    "            services: services,",
+    "            gracefulShutdownSignals: [.sigint],",
+    "            cancellationSignals: [.sigterm],",
+    "            logger: logger",
+    "        )",
+    "        try await serviceGroup.run()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Entrypoint.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 11
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 33
+    }
+  ],
+  "identifier" : "4-entrypoint.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"4-package.0.swift": {
+  "content" : [
+    "\/\/ swift-tools-version: 6.3",
+    "",
+    "import PackageDescription",
+    "",
+    "let package = Package(",
+    "    name: \"swift-server-todos\",",
+    "    platforms: [",
+    "        .macOS(.v15)",
+    "    ],",
+    "    dependencies: [",
+    "        \/\/ Server scaffolding",
+    "        .package(url: \"https:\/\/github.com\/vapor\/vapor\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-service-lifecycle\", from: \"2.1.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-generator\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-openapi-runtime\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-server\/swift-openapi-vapor\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-configuration\", from: \"1.2.0\"),",
+    "",
+    "        \/\/ Telemetry",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-log\", from: \"1.5.2\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-metrics\", from: \"2.5.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-distributed-tracing\", from: \"1.2.0\"),",
+    "        .package(url: \"https:\/\/github.com\/swift-otel\/swift-otel\", from: \"1.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/apple\/swift-system-metrics\", from: \"1.2.1\"),",
+    "",
+    "        \/\/ Database",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent.git\", from: \"4.0.0\"),",
+    "        .package(url: \"https:\/\/github.com\/vapor\/fluent-postgres-driver.git\", from: \"2.0.0\"),",
+    "    ],",
+    "    targets: [",
+    "        .executableTarget(",
+    "            name: \"SwiftServerTodos\",",
+    "            dependencies: [",
+    "                \/\/ Server scaffolding",
+    "                .product(name: \"Vapor\", package: \"vapor\"),",
+    "                .product(name: \"ServiceLifecycle\", package: \"swift-service-lifecycle\"),",
+    "                .product(name: \"OpenAPIRuntime\", package: \"swift-openapi-runtime\"),",
+    "                .product(name: \"OpenAPIVapor\", package: \"swift-openapi-vapor\"),",
+    "                .product(name: \"Configuration\", package: \"swift-configuration\"),",
+    "",
+    "                \/\/ Telemetry",
+    "                .product(name: \"Logging\", package: \"swift-log\"),",
+    "                .product(name: \"Metrics\", package: \"swift-metrics\"),",
+    "                .product(name: \"Tracing\", package: \"swift-distributed-tracing\"),",
+    "                .product(name: \"OTel\", package: \"swift-otel\"),",
+    "                .product(name: \"SystemMetrics\", package: \"swift-system-metrics\"),",
+    "",
+    "                \/\/ Database",
+    "                .product(name: \"Fluent\", package: \"fluent\"),",
+    "                .product(name: \"FluentPostgresDriver\", package: \"fluent-postgres-driver\"),",
+    "            ],",
+    "            plugins: [",
+    "                .plugin(name: \"OpenAPIGenerator\", package: \"swift-openapi-generator\")",
+    "            ]",
+    "        )",
+    "    ]",
+    ")"
+  ],
+  "fileName" : "Package.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 43
+    },
+    {
+      "line" : 44
+    },
+    {
+      "line" : 45
+    },
+    {
+      "line" : 46
+    }
+  ],
+  "identifier" : "4-package.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"4-serverservice.0.swift": {
+  "content" : [
+    "import OpenAPIVapor",
+    "import ServiceLifecycle",
+    "import Vapor",
+    "",
+    "func configureServer(_ app: Application) async throws -> ServerService {",
+    "    app.middleware.use(RequestLoggerInjectionMiddleware())",
+    "    app.middleware.use(TracingMiddleware())",
+    "    app.traceAutoPropagation = true",
+    "",
+    "    \/\/ A health endpoint.",
+    "    app.get(\"health\") { _ in",
+    "        \"ok\\n\"",
+    "    }",
+    "",
+    "    \/\/ Create app state.",
+    "    let handler = APIHandler(db: app.db)",
+    "",
+    "    \/\/ Register the generated handlers.",
+    "    let transport = VaporTransport(routesBuilder: app)",
+    "    try handler.registerHandlers(",
+    "        on: transport,",
+    "        serverURL: Servers.Server1.url()",
+    "    )",
+    "",
+    "    return ServerService(app: app)",
+    "}",
+    "",
+    "struct ServerService: Service {",
+    "    var app: Application",
+    "    func run() async throws {",
+    "        try await app.execute()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ServerService.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    }
+  ],
+  "identifier" : "4-serverservice.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"4-telemetry.0.swift": {
+  "content" : [
+    "import Configuration",
+    "import Foundation",
+    "import Logging",
+    "import Metrics",
+    "import OTel",
+    "import ServiceLifecycle",
+    "import SystemMetrics",
+    "import Tracing",
+    "import Vapor",
+    "",
+    "func configureTelemetry(_ config: ConfigReader) async throws {",
+    "    let level = config.scoped(to: \"log\")",
+    "        .string(forKey: \"level\")",
+    "        .flatMap { Logger.Level.init(rawValue: $0) } ?? .info",
+    "    LoggingSystem.bootstrap { label in",
+    "        ConsoleLogger(label: label, console: Terminal(), level: level)",
+    "    }",
+    "}",
+    "",
+    "extension Logger {",
+    "    @TaskLocal",
+    "    static var _current: Logger?",
+    "",
+    "    static var current: Logger {",
+    "        get throws {",
+    "            guard let _current else {",
+    "                struct NoCurrentLoggerError: Error {}",
+    "                throw NoCurrentLoggerError()",
+    "            }",
+    "            return _current",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct RequestLoggerInjectionMiddleware: Vapor.AsyncMiddleware {",
+    "    func respond(to request: Request, chainingTo next: any AsyncResponder) async throws -> Response {",
+    "        try await Logger.$_current.withValue(request.logger) {",
+    "            try await next.respond(to: request)",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Telemetry.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 4
+    },
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    }
+  ],
+  "identifier" : "4-telemetry.0.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"4-telemetry.1.swift": {
+  "content" : [
+    "import Configuration",
+    "import Foundation",
+    "import Logging",
+    "import Metrics",
+    "import OTel",
+    "import ServiceLifecycle",
+    "import SystemMetrics",
+    "import Tracing",
+    "import Vapor",
+    "",
+    "func configureTelemetry(_ config: ConfigReader) async throws -> (Logger, some Service) {",
+    "    let level = config.scoped(to: \"log\")",
+    "        .string(forKey: \"level\")",
+    "        .flatMap { Logger.Level.init(rawValue: $0) } ?? .info",
+    "",
+    "    \/\/ Logs, metrics, and traces are exported via OpenTelemetry (OTLP).",
+    "    \/\/ The OTel diagnostic logger is left as default (stderr) so OTel's own",
+    "    \/\/ internal logs don't recurse back through the multiplexed handler below.",
+    "    var otelConfig = OTel.Configuration.default",
+    "    otelConfig.serviceName = \"SwiftServerTodos\"",
+    "",
+    "    \/\/ Create the OTel backends.",
+    "    let otelLoggingBackend = try OTel.makeLoggingBackend(configuration: otelConfig)",
+    "    let otelMetricsBackend = try OTel.makeMetricsBackend(configuration: otelConfig)",
+    "    let otelTracingBackend = try OTel.makeTracingBackend(configuration: otelConfig)",
+    "",
+    "    \/\/ Fan logs out to both the Vapor console logger and the OTel exporter.",
+    "    \/\/ The OTel metadata provider attaches `trace_id` and `span_id` from the",
+    "    \/\/ active span, so logs emitted during a traced request can be correlated",
+    "    \/\/ with their trace in Grafana.",
+    "    LoggingSystem.bootstrap(",
+    "        { label, metadataProvider in",
+    "            MultiplexLogHandler(",
+    "                [",
+    "                    ConsoleLogger(label: label, console: Terminal(), level: level),",
+    "                    otelLoggingBackend.factory(label),",
+    "                ],",
+    "                metadataProvider: metadataProvider",
+    "            )",
+    "        },",
+    "        metadataProvider: OTel.makeLoggingMetadataProvider()",
+    "    )",
+    "    MetricsSystem.bootstrap(otelMetricsBackend.factory)",
+    "    InstrumentationSystem.bootstrap(otelTracingBackend.factory)",
+    "",
+    "    let logger = Logger(label: \"SwiftServerTodos\")",
+    "",
+    "    \/\/ Collect system-level metrics (CPU, memory, file descriptors, etc.).",
+    "    let systemMetricsMonitor = SystemMetricsMonitor(",
+    "        metricsFactory: otelMetricsBackend.factory,",
+    "        logger: logger",
+    "    )",
+    "",
+    "    \/\/ Combine all OTel services so they start and stop together.",
+    "    let telemetryService = ServiceGroup(",
+    "        services: [",
+    "            otelLoggingBackend.service,",
+    "            otelMetricsBackend.service,",
+    "            otelTracingBackend.service,",
+    "            systemMetricsMonitor,",
+    "        ], logger: logger)",
+    "",
+    "    return (logger, telemetryService)",
+    "}",
+    "",
+    "extension Logger {",
+    "    @TaskLocal",
+    "    static var _current: Logger?",
+    "",
+    "    static var current: Logger {",
+    "        get throws {",
+    "            guard let _current else {",
+    "                struct NoCurrentLoggerError: Error {}",
+    "                throw NoCurrentLoggerError()",
+    "            }",
+    "            return _current",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct RequestLoggerInjectionMiddleware: Vapor.AsyncMiddleware {",
+    "    func respond(to request: Request, chainingTo next: any AsyncResponder) async throws -> Response {",
+    "        try await Logger.$_current.withValue(request.logger) {",
+    "            try await next.respond(to: request)",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "Telemetry.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 11
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    },
+    {
+      "line" : 27
+    },
+    {
+      "line" : 28
+    },
+    {
+      "line" : 29
+    },
+    {
+      "line" : 30
+    },
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 33
+    },
+    {
+      "line" : 34
+    },
+    {
+      "line" : 35
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    },
+    {
+      "line" : 41
+    },
+    {
+      "line" : 42
+    },
+    {
+      "line" : 43
+    },
+    {
+      "line" : 44
+    },
+    {
+      "line" : 45
+    },
+    {
+      "line" : 46
+    },
+    {
+      "line" : 47
+    },
+    {
+      "line" : 48
+    },
+    {
+      "line" : 49
+    },
+    {
+      "line" : 50
+    },
+    {
+      "line" : 51
+    },
+    {
+      "line" : 52
+    },
+    {
+      "line" : 53
+    },
+    {
+      "line" : 54
+    },
+    {
+      "line" : 55
+    },
+    {
+      "line" : 56
+    },
+    {
+      "line" : 57
+    },
+    {
+      "line" : 58
+    },
+    {
+      "line" : 59
+    },
+    {
+      "line" : 60
+    },
+    {
+      "line" : 61
+    },
+    {
+      "line" : 62
+    },
+    {
+      "line" : 63
+    }
+  ],
+  "identifier" : "4-telemetry.1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Set up your development environment",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Clone-and-build-the-tutorial-repository": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Clone-and-build-the-tutorial-repository",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Clone and build the tutorial repository",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Clone-and-build-the-tutorial-repository"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/0-setup#Verify-installed-tools": {
+  "abstract" : [
+    {
+      "text" : "Ensure you have the right tools and example code before learning how to write your Swift server application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/0-setup#Verify-installed-tools",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Verify installed tools",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/0-setup#Verify-installed-tools"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Introduction",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/1-introduction#Explore-the-parts-of-a-basic-app": {
+  "abstract" : [
+    {
+      "text" : "The tutorial example contains a Package.swift file that defines the dependencies and targets for the app, as well as a Sources directory with starter files. The finished tutorial is also provided in the Completed folder.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/1-introduction#Explore-the-parts-of-a-basic-app",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Explore the parts of a basic app",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/1-introduction#Explore-the-parts-of-a-basic-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Specify routes using OpenAPI",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Add-an-OpenAPI-document": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Add-an-OpenAPI-document",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add an OpenAPI document",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Add-an-OpenAPI-document"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#Configure-Vapor-to-use-the-API-handler": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#Configure-Vapor-to-use-the-API-handler",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure Vapor to use the API handler",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#Configure-Vapor-to-use-the-API-handler"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/2-openapi#OpenAPI-generator": {
+  "abstract" : [
+    {
+      "text" : "Learn how to add an OpenAPI document, generate server stubs using the OpenAPI plugin, and integrate the generated code into the app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/2-openapi#OpenAPI-generator",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "OpenAPI generator",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/2-openapi#OpenAPI-generator"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Integrate a database",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Add-the-database-layer-to-the-routes": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Add-the-database-layer-to-the-routes",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add the database layer to the routes",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Add-the-database-layer-to-the-routes"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Configure-the-database-tables-and-connection": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Configure-the-database-tables-and-connection",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure the database tables and connection",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Configure-the-database-tables-and-connection"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Run-and-test-the-code": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Run-and-test-the-code",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and test the code",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Run-and-test-the-code"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/3-database#Set-up-the-infrastructure": {
+  "abstract" : [
+    {
+      "text" : "Use the Fluent ORM to connect a PostgreSQL database to the tutorial app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/3-database#Set-up-the-infrastructure",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the infrastructure",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/3-database#Set-up-the-infrastructure"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Add observability with OpenTelemetry",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Add-telemetry-dependencies": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Add-telemetry-dependencies",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add telemetry dependencies",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Add-telemetry-dependencies"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Configure-OpenTelemetry": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Configure-OpenTelemetry",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure OpenTelemetry",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Configure-OpenTelemetry"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Run-and-observe": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Run-and-observe",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Run and observe",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Run-and-observe"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Set-up-the-observability-stack": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Set-up-the-observability-stack",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Set up the observability stack",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Set-up-the-observability-stack"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/4-telemetry#Wire-up-the-entry-point-and-server": {
+  "abstract" : [
+    {
+      "text" : "Export logs, metrics, and traces from the tutorial app using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "OpenTelemetry, and visualize them with Grafana.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/4-telemetry#Wire-up-the-entry-point-and-server",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Wire up the entry point and server",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/4-telemetry#Wire-up-the-entry-point-and-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and where to go next",
+  "type" : "topic",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Review": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Review",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Review",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Review"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Summary": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Summary",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Summary",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Summary"
+},
+"doc://com.apple.ASE.getting-started/tutorials/GettingStartedSwiftServer/5-wrapup#Where-do-I-go-from-here": {
+  "abstract" : [
+    {
+      "text" : "Review what you built and where to find resources to build something you can ship to production.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/GettingStartedSwiftServer\/5-wrapup#Where-do-I-go-from-here",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Where do I go from here?",
+  "type" : "section",
+  "url" : "\/tutorials\/gettingstartedswiftserver\/5-wrapup#Where-do-I-go-from-here"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
+  "abstract" : [
+    {
+      "text" : "Learn about cloud services in Swift by building and extending a Vapor app.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Explore Swift on the server by building a Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Before-you-begin": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Before-you-begin",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Before you begin",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/before-you-begin"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Build-a-basic-Vapor-app": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Build-a-basic-Vapor-app",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Build a basic Vapor app",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/build-a-basic-vapor-app"
+},
+"doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server/Review-and-next-steps": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.apple.ASE.getting-started\/tutorials\/getting-started-swift-server\/Review-and-next-steps",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Review and next steps",
+  "type" : "topic",
+  "url" : "\/tutorials\/getting-started-swift-server\/review-and-next-steps"
+}
+}
+}

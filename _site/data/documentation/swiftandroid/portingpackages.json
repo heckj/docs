@@ -1,0 +1,186 @@
+{
+  "abstract" : [
+    {
+      "text" : "Adapt existing Swift packages to build and run on Android",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid"
+      ],
+      [
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+        "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/PortingPackages"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "SwiftAndroid"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Porting Swift Packages to Android"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Many Swift packages build for Android with minimal changes. The typical process is: attempt a build, fix platform-specific code with conditional compilation, then test on a device.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Good-candidates",
+          "level" : 2,
+          "text" : "Good candidates",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Business logic, algorithms, data structures",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Networking and API clients",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Parsers, formatters, encoders\/decoders",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "SQLite and other database access",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Conditional-imports",
+          "level" : 2,
+          "text" : "Conditional imports",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "#if canImport(Darwin)",
+            "import Darwin",
+            "#elseif canImport(Android)",
+            "import Android",
+            "#elseif canImport(Glibc)",
+            "import Glibc",
+            "#endif"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftandroid\/portingpackages"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftAndroid/documentation/SwiftAndroid": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftAndroid",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid"
+},
+"doc://SwiftAndroid/documentation/SwiftAndroid/SwiftAndroid": {
+  "abstract" : [
+    {
+      "text" : "Use Swift to build native libraries and applications for Android",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftAndroid\/documentation\/SwiftAndroid\/SwiftAndroid",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift on Android",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftandroid\/swiftandroid"
+}
+}
+}

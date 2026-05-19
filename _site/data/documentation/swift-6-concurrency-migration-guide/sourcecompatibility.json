@@ -1,0 +1,961 @@
+{
+  "abstract" : [
+    {
+      "text" : "See an overview of potential source compatibility issues.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/SourceCompatibility"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Source Compatibility"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift 6 includes a number of evolution proposals that could potentially affect",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "source compatibility.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These are all opt-in for the Swift 5 language mode.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "For the previous release’s Migration Guide, see ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/www.swift.org\/migration-guide-swift5\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Handling-Future-Enum-Cases",
+          "level" : 2,
+          "text" : "Handling Future Enum Cases",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0192-non-exhaustive-enums.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "NonfrozenEnumExhaustivity",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Lack of a required ",
+              "type" : "text"
+            },
+            {
+              "code" : "@unknown default",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has changed from a warning to an error.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Concise-magic-file-names",
+          "level" : 2,
+          "text" : "Concise magic file names",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0274-magic-file.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "ConciseMagicFile",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The special expression ",
+              "type" : "text"
+            },
+            {
+              "code" : "#file",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has changed to a human-readable string",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "containing the filename and module name.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Forward-scan-matching-for-trailing-closures",
+          "level" : 2,
+          "text" : "Forward-scan matching for trailing closures",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0286-forward-scan-trailing-closures.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "ForwardTrailingClosures",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Could affect code involving multiple, defaulted closure parameters.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Incremental-migration-to-concurrency-checking",
+          "level" : 2,
+          "text" : "Incremental migration to concurrency checking",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0337-support-incremental-migration-to-concurrency-checking.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "StrictConcurrency",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Will introduce errors for any code that risks data races.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This feature implicitly also enables ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "#Isolated-default-value-expressions",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ",",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "#Strict-concurrency-for-global-variables",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ",",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "and ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "#Region-based-Isolation",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Implicitly-Opened-Existentials",
+          "level" : 2,
+          "text" : "Implicitly Opened Existentials",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0352-implicit-open-existentials.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "ImplicitOpenExistentials",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Could affect overload resolution for functions that involve both",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "existentials and generic types.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Regex-Literals",
+          "level" : 2,
+          "text" : "Regex Literals",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0354-regex-literals.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "BareSlashRegexLiterals",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Could impact the parsing of code that was previously using a bare slash.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Deprecate-UIApplicationMain-and-NSApplicationMain",
+          "level" : 2,
+          "text" : "Deprecate @UIApplicationMain and @NSApplicationMain",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "DeprecateApplicationMain",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Will introduce an error for any code that has not migrated to using ",
+              "type" : "text"
+            },
+            {
+              "code" : "@main",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Importing-Forward-Declared-Objective-C-Interfaces-and-Protocols",
+          "level" : 2,
+          "text" : "Importing Forward Declared Objective-C Interfaces and Protocols",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0384-importing-forward-declared-objc-interfaces-and-protocols.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "ImportObjcForwardDeclarations",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Will expose previously-invisible types that could conflict with existing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "sources.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Remove-Actor-Isolation-Inference-caused-by-Property-Wrappers",
+          "level" : 2,
+          "text" : "Remove Actor Isolation Inference caused by Property Wrappers",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0401-remove-property-wrapper-isolation.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "DisableOutwardActorInference",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Could change the inferred isolation of a type and its members.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Isolated-default-value-expressions",
+          "level" : 2,
+          "text" : "Isolated default value expressions",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0411-isolated-default-values.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "IsolatedDefaultValues",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Will introduce errors for code that risks data races.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Strict-concurrency-for-global-variables",
+          "level" : 2,
+          "text" : "Strict concurrency for global variables",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0412-strict-concurrency-for-global-variables.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "GlobalConcurrency",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Will introduce errors for code that risks data races.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Region-based-Isolation",
+          "level" : 2,
+          "text" : "Region based Isolation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "RegionBasedIsolation",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Increases the constraints of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Actor.assumeIsolated",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Inferring-Sendable-for-methods-and-key-path-literals",
+          "level" : 2,
+          "text" : "Inferring `Sendable` for methods and key path literals",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0418-inferring-sendable-for-methods.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "InferSendableFromCaptures",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Could affect overload resolution for functions that differ only by sendability.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Dynamic-actor-isolation-enforcement-from-non-strict-concurrency-contexts",
+          "level" : 2,
+          "text" : "Dynamic actor isolation enforcement from non-strict-concurrency contexts",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0423-dynamic-actor-isolation.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "DynamicActorIsolation",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Introduces new assertions that could affect existing code if the runtime",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "isolation does not match expectations.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Usability-of-global-actor-isolated-types",
+          "level" : 2,
+          "text" : "Usability of global-actor-isolated types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0434-global-actor-isolated-types-usability.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ": ",
+              "type" : "text"
+            },
+            {
+              "code" : "GlobalActorIsolatedTypesUsability",
+              "type" : "codeVoice"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Could affect type inference and overload resolution for functions that are",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "globally-isolated but not ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Sendable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"#Isolated-default-value-expressions": {
+  "identifier" : "#Isolated-default-value-expressions",
+  "title" : "IsolatedDefaultValues",
+  "titleInlineContent" : [
+    {
+      "code" : "IsolatedDefaultValues",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "#Isolated-default-value-expressions"
+},
+"#Region-based-Isolation": {
+  "identifier" : "#Region-based-Isolation",
+  "title" : "RegionBasedIsolation",
+  "titleInlineContent" : [
+    {
+      "code" : "RegionBasedIsolation",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "#Region-based-Isolation"
+},
+"#Strict-concurrency-for-global-variables": {
+  "identifier" : "#Strict-concurrency-for-global-variables",
+  "title" : "GlobalConcurrency",
+  "titleInlineContent" : [
+    {
+      "code" : "GlobalConcurrency",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "#Strict-concurrency-for-global-variables"
+},
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0192-non-exhaustive-enums.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0192-non-exhaustive-enums.md",
+  "title" : "SE-0192",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0192",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0192-non-exhaustive-enums.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0274-magic-file.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0274-magic-file.md",
+  "title" : "SE-0274",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0274",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0274-magic-file.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0286-forward-scan-trailing-closures.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0286-forward-scan-trailing-closures.md",
+  "title" : "SE-0286",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0286",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0286-forward-scan-trailing-closures.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0337-support-incremental-migration-to-concurrency-checking.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0337-support-incremental-migration-to-concurrency-checking.md",
+  "title" : "SE-0337",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0337",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0337-support-incremental-migration-to-concurrency-checking.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0352-implicit-open-existentials.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0352-implicit-open-existentials.md",
+  "title" : "SE-0352",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0352",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0352-implicit-open-existentials.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0354-regex-literals.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0354-regex-literals.md",
+  "title" : "SE-0354",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0354",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0354-regex-literals.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md",
+  "title" : "SE-0383",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0383",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0384-importing-forward-declared-objc-interfaces-and-protocols.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0384-importing-forward-declared-objc-interfaces-and-protocols.md",
+  "title" : "SE-0384",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0384",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0384-importing-forward-declared-objc-interfaces-and-protocols.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0401-remove-property-wrapper-isolation.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0401-remove-property-wrapper-isolation.md",
+  "title" : "SE-0401",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0401",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0401-remove-property-wrapper-isolation.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0411-isolated-default-values.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0411-isolated-default-values.md",
+  "title" : "SE-0411",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0411",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0411-isolated-default-values.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0412-strict-concurrency-for-global-variables.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0412-strict-concurrency-for-global-variables.md",
+  "title" : "SE-0412",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0412",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0412-strict-concurrency-for-global-variables.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0414-region-based-isolation.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md",
+  "title" : "SE-0414",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0414",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0418-inferring-sendable-for-methods.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0418-inferring-sendable-for-methods.md",
+  "title" : "SE-0418",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0418",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0418-inferring-sendable-for-methods.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0423-dynamic-actor-isolation.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0423-dynamic-actor-isolation.md",
+  "title" : "SE-0423",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0423",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0423-dynamic-actor-isolation.md"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0434-global-actor-isolated-types-usability.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0434-global-actor-isolated-types-usability.md",
+  "title" : "SE-0434",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0434",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0434-global-actor-isolated-types-usability.md"
+},
+"https://www.swift.org/migration-guide-swift5/": {
+  "identifier" : "https:\/\/www.swift.org\/migration-guide-swift5\/",
+  "title" : "Migrating to Swift 5",
+  "titleInlineContent" : [
+    {
+      "text" : "Migrating to Swift 5",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/migration-guide-swift5\/"
+}
+}
+}

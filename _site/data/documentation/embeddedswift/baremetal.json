@@ -1,0 +1,970 @@
+{
+  "abstract" : [
+    {
+      "text" : "Programming without an SDK for maximum control and minimal size",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Baremetal use of Embedded Swift"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Developing in “baremetal mode” means programming directly for the hardware without any operating system or SDK abstractions. This provides maximum control and minimum codesize, but requires deeper understanding of the hardware.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Embedded Swift supports true baremetal development, where you directly program hardware peripherals by manipulating memory-mapped registers. This approach is suitable for:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Extremely resource-constrained environments",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Safety-critical applications that need deterministic behavior",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Projects requiring full control over every aspect of the hardware",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Educational purposes to understand how hardware and software interact",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Key-components-of-a-baremetal-project",
+          "level" : 2,
+          "text" : "Key components of a baremetal project",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A complete baremetal project typically includes:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Startup code",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Sets up the initial environment before ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "main()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " runs",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Interrupt vector table",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Maps hardware events to handler functions",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Linker script",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Defines memory layout and sections",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Hardware register definition code",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - To interface with peripherals",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Runtime support",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - E.g. implementations of functions like ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "memcpy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "malloc",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Application logic",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - Your actual embedded application code",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For a full working example of all these components, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". The rest of this document provides general platform-independent guidance when working in baremetal mode. However, much of the problem space of baremetal development is outside of the scope of this documentation, and requires deeper familiary with your specific setup. This information is typically provided by your board vendor, the spec of the MCU, the ISA spec of the execution core, the C toolchain documentation, ELF file format spec, and other similar sources.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Hardware-access-patterns",
+          "level" : 2,
+          "text" : "Hardware access patterns",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "1-Direct-memory-access-using-pointers",
+          "level" : 3,
+          "text" : "1. Direct memory access using pointers",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that using UnsafePointers to directly access registers at known addresses is not recommended in almost any situation because doing that correctly is tricky, it’s inherently unsafe (and shifts the safety responsibility to the user) and can easily cause very hard to debug runtime problems. However, sometimes it might be neccessary to use this method.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "One common issue when directly accessing hardware registers is that the compiler may optimize away repeated reads or writes, thinking they’re redundant. This is a problem that’s inherent to pointers in most programming languages (including C and C++).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Accessing a register at address 0x40010000",
+            "let gpioBase = 0x40010000",
+            "",
+            "\/\/ ❌ Do not do this - the memory write might be optimized out",
+            "let gpioDataRegister = UnsafeMutablePointer<UInt32>(bitPattern: gpioBase)!",
+            "gpioDataRegister.pointee |= (1 << 5) \/\/ Set bit 5"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Hardware registers are volatile - their values can change independently of your program’s execution (due to hardware events, interrupts, or peripheral operation). To ensure correct behavior, you must inform the compiler that these memory locations are volatile, preventing unwanted optimizations:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Need to use these flags: -enable-experimental-feature Volatile",
+            "import _Volatile",
+            "",
+            "\/\/ ✅ Use VolatileMappedRegister for volatile semantics",
+            "let gpioBase: UInt = 0x40010000",
+            "let gpioDataRegister = VolatileMappedRegister<UInt32>(unsafeBitPattern: gpioBase)",
+            "... = gpioDataRegister.load()",
+            "gpioDataRegister.store(1 << 5)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Whenever possible, consider using Swift MMIO (see below) which does also provide proper volatile semantics, but more importantly provides type safety on individual registers and their fields.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "2-Using-Swift-MMIO-for-type-safe-register-access",
+          "level" : 3,
+          "text" : "2. Using Swift MMIO for type-safe register access",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift MMIO provides strongly-typed access to memory-mapped hardware and can automatically generate register definitions from SVD files. It can provide a higher-level type-safe access to hardware registers, for example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Type-safe register access",
+            "gpioa.odr.write { $0.odr5 = true } \/\/ Set pin 5 high"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-mmio\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for details and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for a guided example of using it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Creating-a-linker-script-and-data-segment-relocation",
+          "level" : 2,
+          "text" : "Creating a linker script and data segment relocation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A baremetal project requires a custom linker script to properly place code and data in memory. This is a relatively complex task to get right, and requires understanding of the memory map, flash and RAM setup of your target device, as well as understanding the ELF file format and what code\/data sections do you expect your entire program to use.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Besides just defining the position of code at runtime, a linker script needs to also:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Handle and coordinate the initialization of “zero-fill” global variables (aka the BSS section)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Handle and coordinate the initialization of non-zero writable global variables (copying initial values from flash to RAM)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Here’s an incomplete sketch of an example linker script:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "MEMORY",
+            "{",
+            "   flash (rx)  : ORIGIN = 0x08000000, LENGTH = 1024K",
+            "   sram (rwx)  : ORIGIN = 0x20000000, LENGTH = 320K",
+            "}",
+            "",
+            "SECTIONS",
+            "{",
+            "  .text   : { *(.vectors*) ; *(.text*) } > flash",
+            "  .rodata : { *(.rodata*) ; *(.got*) } > flash",
+            "  .bss    : { *(.bss*) } > sram             ; needs runtime handling",
+            "  .data   : { *(.data*) } > sram AT>flash   ; needs runtime handling",
+            "",
+            "  ...",
+            "}"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A sketch of an example corresponding startup code (in C):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "void ResetISR(void) {",
+            "  \/\/ Initialize bss section",
+            "  uint8_t *bss = &__bss_start;",
+            "  while (bss < &__bss_end) *bss = 0;",
+            "",
+            "  \/\/ Initialize read-write data section",
+            "  extern uint8_t __data_start_flash, __data_start, __data_end;",
+            "  uint8_t *src = &__data_start_flash;",
+            "  uint8_t *dst = &__data_start;",
+            "  while (dst < &__data_end) *dst++ = *src++;",
+            "",
+            "  \/\/ Call main",
+            "  extern int main(void);",
+            "  main();",
+            "",
+            "  \/\/ If main returns, loop forever",
+            "  while(1);",
+            "}"
+          ],
+          "syntax" : "c",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Both these code snippets are not fully functional, they are only demonstrating the complexity of what the linker script and startup code need to do to initialize global variables.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Tip: If this handling is not done correctly, a typical symptom is that global variables “don’t work”, i.e. reading from them doesn’t yield the right value, and writing to them doesn’t persist. A good way to double check this is by using a debugger, dumping memory at runtime and checking if it matches the virtual memory layout of the ELF file.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Vector-table-and-interrupts",
+          "level" : 2,
+          "text" : "Vector table and interrupts",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The vector table is a critical component that maps hardware interrupts and exceptions to specific handler functions in your code. It’s typically placed at the beginning of flash memory and contains function pointers that the processor uses when responding to various events.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The processor automatically jumps to the appropriate handler when an interrupt occurs by indexing into this table. If you don’t provide a specific handler, it’s common to point to a default handler that can help with debugging.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example vector table structure:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Vector table for ARM Cortex-M",
+            "__attribute__((section(\".vectors\"))) const void *VectorTable[] = {",
+            "  (void*)0x20008000,  \/\/ Initial stack pointer",
+            "  ResetISR,           \/\/ Reset handler",
+            "  DefaultHandler,     \/\/ NMI handler",
+            "  DefaultHandler,     \/\/ Hard fault handler",
+            "  \/\/ Additional vectors as needed",
+            "};"
+          ],
+          "syntax" : "c",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you want to actually handle an interrupt (e.g. a GPIO or UART interrupt) in your Swift code, you can forward declare the function in C, and define it using ",
+              "type" : "text"
+            },
+            {
+              "code" : "@cdecl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in Swift:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ In startup.c or header file",
+            "void UART1_IRQHandler(void);"
+          ],
+          "syntax" : "c",
+          "type" : "codeListing"
+        },
+        {
+          "code" : [
+            "\/\/ In Swift code",
+            "@_cdecl(\"UART1_IRQHandler\")",
+            "func uartInterruptHandler() {",
+            "    \/\/ Handle UART interrupt in Swift",
+            "    \/\/ Clear interrupt flags, process received data, etc.",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "However, note that Swift currently does not provide any form of synchronization or “interrupt safety” for the code that executes the interrupt. Namely, if your interrupt handler modifies global variables that are also accessed by your main program, you need to be careful about data races and ensure proper synchronization (such as using atomic operations or disabling interrupts during critical sections). Additionally, interrupt handlers should be kept short and fast to avoid blocking other important system events.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Building-a-minimal-project",
+          "level" : 2,
+          "text" : "Building a minimal project",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build an Embedded Swift baremetal project with SwiftPM, you will need a setup like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Your main application target defined in Package.swift.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A helper C code helper target defined in Package.swift - this will contain your C startup code, vector table and possibly an assembly file.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Invoke ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift build",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " with a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "--triple",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " argument that specifies the target CPU architecture and output object file format.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "toolset.json",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " file that defines the common Swift and C compilation flags, and linking flags. This will e.g. enable the Embedded Swift mode when compiling Swift code, and point the linker at the right linker script.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example file structure:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "MyBaremetalProject\/",
+            "├── Package.swift",
+            "├── toolset.json",
+            "├── Sources\/",
+            "│   ├── MyApp\/",
+            "│   │   └── main.swift",
+            "│   └── CStartup\/",
+            "│       ├── startup.c",
+            "│       ├── linker.ld",
+            "│       └── include\/",
+            "│           └── startup.h",
+            "└── README.md"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example toolset.json file:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "  \"schemaVersion\": \"1.0\",",
+            "  \"swiftCompiler\": {",
+            "    \"extraCLIOptions\": [",
+            "      \"-enable-experimental-feature\", \"Embedded\",",
+            "      \"-Xclang-linker\", \"-nostdlib\",",
+            "    ]",
+            "  },",
+            "  \"linker\": {",
+            "    \"extraCLIOptions\": [",
+            "      \"-T\", \"Sources\/CStartup\/linker.ld\",",
+            "      \"--gc-sections\",",
+            "    ]",
+            "  }",
+            "}"
+          ],
+          "syntax" : "json",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example Package.swift file:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version: 5.9",
+            "import PackageDescription",
+            "",
+            "let package = Package(",
+            "    name: \"MyBaremetalProject\",",
+            "    products: [",
+            "        .executable(",
+            "            name: \"MyBaremetalApp\",",
+            "            targets: [\"MyApp\"]",
+            "        )",
+            "    ],",
+            "    targets: [",
+            "        .executableTarget(",
+            "            name: \"MyApp\",",
+            "            dependencies: [\"CStartup\"],",
+            "            swiftSettings: [",
+            "                .enableExperimentalFeature(\"Embedded\")",
+            "            ]",
+            "        ),",
+            "        .target(",
+            "            name: \"CStartup\",",
+            "            publicHeadersPath: \"include\"",
+            "        )",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example compilation invocation:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build --triple armv7em-none-eabi --toolset toolset.json"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "SDK-Support",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr"
+      ],
+      "title" : "SDK Support"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithPico": {
+  "abstract" : [
+    {
+      "text" : "Setting up a project that can seamlessly use C APIs from the Pico SDK.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithpico"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithZephyr": {
+  "abstract" : [
+    {
+      "text" : "Integrating Swift with Zephyr RTOS for embedded systems development",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Zephyr RTOS SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithzephyr"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegratingWithPlatforms": {
+  "abstract" : [
+    {
+      "text" : "Understand the common patterns and approaches for integrating Swift with existing embedded systems",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Integrating with embedded platforms",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratingwithplatforms"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/STM32BaremetalGuide": {
+  "abstract" : [
+    {
+      "text" : "Program a STM32 microcontroller directly with low-level Swift code",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal Setup for STM32 with Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/stm32baremetalguide"
+},
+"https://github.com/apple/swift-mmio/": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-mmio\/",
+  "title" : "Swift MMIO",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift MMIO",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-mmio\/"
+}
+}
+}

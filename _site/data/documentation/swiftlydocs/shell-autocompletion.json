@@ -1,0 +1,440 @@
+{
+  "abstract" : [
+    {
+      "text" : "Generate shell autocompletions for swiftly.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/shell-autocompletion"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swiftly"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Add shell auto-completions"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swiftly can generate shell autocompletion scripts for your shell to automatically complete subcommands, arguments, options and flags. It does this using the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/apple.github.io\/swift-argument-parser\/documentation\/argumentparser\/installingcompletionscripts\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", which has support for Bash, Z shell, and Fish.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can ask swiftly to generate the script using the hidden ",
+              "type" : "text"
+            },
+            {
+              "code" : "--generate-completion-script",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag with the type of shell like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swiftly --generate-completion-script <shell>"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "tabs" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you have ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/ohmyz.sh\/",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " installed then this command will install the swiftly completions into the default directory:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "swiftly --generate-completion-script zsh > ~\/.oh-my-zsh\/completions\/_swiftly"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Otherwise, you’ll need to add a path for completion scripts to your function path, and turn on completion script autoloading. First, add these lines to ~\/.zshrc:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "fpath=(~\/.zsh\/completions $fpath)",
+                    "autoload -U compinit",
+                    "compinit"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Next, create the completion directory and add the swiftly completions to it:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "mkdir -p ~\/.zsh\/completions && swiftly --generate-completion-script zsh > ~\/.zsh\/completions\/_swiftly"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ],
+              "title" : "zsh"
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you have ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/scop\/bash-completion",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " installed then this command will install the swiftly completions into the default directory:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "swiftly --generate-completion-script bash > swiftly.bash",
+                    "# copy swiftly.bash to \/usr\/local\/etc\/bash_completion.d"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Without bash-completion create a directory for the completion and generate the script in there:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "mkdir -p ~\/.bash_completions && swiftly --generate-completion-script bash > ~\/.bash_completions\/swiftly.bash"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a line to source that script in your ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "~\/.bash_profile",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "~\/.bashrc",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " file:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "source ~\/.bash_completions\/swiftly.bash"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ],
+              "title" : "bash"
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Generate the completion script to any path in the environment variable ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "$fish_completion_path",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". Typically this command will generate the script in the right place:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "swiftly --generate-completion-script fish > ~\/.config\/fish\/completions\/swiftly.fish"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ],
+              "title" : "fish"
+            }
+          ],
+          "type" : "tabNavigator"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once you have installed the completions you can type out a swiftly command, and press a special key (for example, tab) and the shell will show you the available subcommand, argument, or options to make it easier to assemble a working command-line.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+        "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble"
+      ],
+      "title" : "Guides"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftlydocs\/shell-autocompletion"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+  "abstract" : [
+    {
+      "text" : "Install and manage your Swift programming language toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swiftly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/automated-install": {
+  "abstract" : [
+    {
+      "text" : "Automatically install swiftly and Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/automated-install",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install swiftly automatically",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/automated-install"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/install-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Install swift toolchains with Swiftly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/install-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/install-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/trouble": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/trouble",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Troubleshooting",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/trouble"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/uninstall-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Remove unneeded Swift toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/uninstall-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Uninstall Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/uninstall-toolchains"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/update-toolchain": {
+  "abstract" : [
+    {
+      "text" : "Update installed toolchains.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/update-toolchain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Update Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/update-toolchain"
+},
+"doc://SwiftlyDocs/documentation/SwiftlyDocs/use-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Choose an installed toolchain to use as default.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs\/use-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Use Swift toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftlydocs\/use-toolchains"
+},
+"https://apple.github.io/swift-argument-parser/documentation/argumentparser/installingcompletionscripts/": {
+  "identifier" : "https:\/\/apple.github.io\/swift-argument-parser\/documentation\/argumentparser\/installingcompletionscripts\/",
+  "title" : "swift-argument-parser",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-argument-parser",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/apple.github.io\/swift-argument-parser\/documentation\/argumentparser\/installingcompletionscripts\/"
+},
+"https://github.com/scop/bash-completion": {
+  "identifier" : "https:\/\/github.com\/scop\/bash-completion",
+  "title" : "bash-completion",
+  "titleInlineContent" : [
+    {
+      "text" : "bash-completion",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/scop\/bash-completion"
+},
+"https://ohmyz.sh/": {
+  "identifier" : "https:\/\/ohmyz.sh\/",
+  "title" : "oh-my-zsh",
+  "titleInlineContent" : [
+    {
+      "text" : "oh-my-zsh",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/ohmyz.sh\/"
+}
+}
+}

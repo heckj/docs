@@ -1,0 +1,947 @@
+{
+  "abstract" : [
+    {
+      "text" : "Understand the common patterns and approaches for integrating Swift with existing embedded systems",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Integrating with embedded platforms"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most embedded platforms provide SDKs consisting of drivers, libraries, and HAL (Hardware Abstraction Layer) components, typically written in the C language. Embedded Swift’s C interoperability makes it possible to seamlessly integrate with these existing SDKs.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will enable using the entire API surface of an SDK directly from Swift, and is usually the easiest way to get started — because all functionality from the SDK will simply be available in your Swift code. Additionally, you could build Swift wrappers around the C SDK to provide a more idiomatic Swift API. This approach requires a bit more work but can result in a more ergonomic and type-safe interface, leveraging Swift’s strong type system and safety features to prevent common errors when interacting with low-level hardware.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively, for the most constrained environments or when you need complete control over the hardware, you can develop baremetal Swift applications without relying on any SDK. This approach requires implementing your own hardware initialization code and peripheral drivers directly in Swift or in C with Swift wrappers. Baremetal development gives you the maximum flexibility but requires deeper understanding of the target hardware.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Common-Integration-Patterns",
+          "level" : 2,
+          "text" : "Common Integration Patterns",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Using-a-Bridging-Header",
+          "level" : 3,
+          "text" : "Using a Bridging Header",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The simplest method for integrating with an embedded platform SDK is using a bridging header that imports the necessary C headers:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ BridgingHeader.h",
+            "#include \"platform_specific_header.h\"",
+            "#include \"hardware_drivers.h\""
+          ],
+          "syntax" : "c",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When compiling Swift code, include this header:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swiftc -enable-experimental-feature Embedded -wmo \\",
+            "  -import-bridging-header BridgingHeader.h \\",
+            "  -target <target-triple> \\",
+            "  YourSwiftCode.swift -c -o output.o"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Using a bridging header is discouraged when building an entire set of Swift libraries, but it’s a very simple approach when the goal is to simply add a single Swift module into an existing software ecosystem.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Integrating-with-Build-Systems",
+          "level" : 3,
+          "text" : "Integrating with Build Systems",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most embedded platforms use one of these build systems:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "CMake",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Make",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Platform-specific build tools",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " - These usually allow integration of custom build steps.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For (1) and (2), articles will be added to this documentation in the future.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For (3), it is always possible to manually invoke the Swift compiler (",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") with the right flags to produce a .o file that can be further used in the build system. Follow the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " article for details.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Matching-platforms-ISA-and-ABI",
+          "level" : 3,
+          "text" : "Matching platform’s ISA and ABI",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When integrating Swift code with embedded platforms, it’s crucial to properly match the Instruction Set Architecture (ISA) and Application Binary Interface (ABI) of the target system. The Swift compiler needs specific arguments to generate code that’s compatible with the target microcontroller’s architecture and calling conventions. Mismatches in these settings can lead to hard-to-debug issues or even complete failure to execute.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Different microcontrollers require specific target triples and compiler flags to generate appropriate machine code. Here are common configurations you’ll need:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "ARM Cortex-M0\/M0+",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-target armv6m-none-none-eabi",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - For low-power, minimal ARM cores",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "ARM Cortex-M3\/M4",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-target armv7m-none-none-eabi",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - For more capable 32-bit ARM cores",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "ARM Cortex-M4F",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " (with FPU): ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-target armv7em-none-none-eabi -Xcc -mfloat-abi=hard -Xcc -mfpu=fpv4-sp-d16",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - For cores with hardware floating-point",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "RISC-V",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-target riscv32-none-none-elf",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - For RISC-V based microcontrollers",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Additional important compiler flags to consider include:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-Xcc -mfloat-abi=[soft|hard]",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - Determines whether floating-point arguments are passed in integer registers (soft) or floating-point registers (hard)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-Xcc -fshort-enums",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - Makes enums use the smallest possible integer type, important for ABI compatibility with C code",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-Xcc -mcpu=specific-cpu",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - Specifies the exact CPU model for more optimized code generation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-Xfrontend -function-sections",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " - Places each function in its own section, enabling better dead code elimination during linking (this is a recommended setting for ELF targets)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Platform-Examples",
+          "level" : 2,
+          "text" : "Platform Examples",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Raspberry-Pi-Pico",
+          "level" : 3,
+          "text" : "Raspberry Pi Pico",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For detailed instructions on integrating with the Raspberry Pi Pico SDK, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "ESP32",
+          "level" : 3,
+          "text" : "ESP32",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that only chips based on RISC-V architecture (e.g. ESP32-C3, ESP32-C6, ESP32-P4) are supported with Embedded Swift. The Xtensa ISA (used in e.g. ESP8266 or ESP32-S2 and ESP32-S3) is not supported.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For ESP microcontrollers using the ESP-IDF framework, an article will be added to this documentation in the future.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "STM32",
+          "level" : 3,
+          "text" : "STM32",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "STM32 microcontrollers can be programmed with Embedded Swift in two ways:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using the STM32Cube HAL\/LL libraries - This requires proper integration with the STM32Cube build system",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Bare-metal approach - See ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " for details",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "anchor" : "Zephyr",
+          "level" : 3,
+          "text" : "Zephyr",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For detailed documentation on how to integrate Embedded Swift with Zephyr, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Bare-metal-Development",
+          "level" : 3,
+          "text" : "Bare-metal Development",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For completely bare-metal development without any SDK, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for guidance on implementing the necessary startup code and hardware initialization.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Tips--tricks",
+          "level" : 2,
+          "text" : "Tips & tricks",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "print()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " in your Swift code creates a dependency on ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "putchar",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", which must be provided by your platform. Make sure your embedded environment has this C standard library function available if you plan to use Swift’s printing functionality.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "For debugging, consider implementing a custom print handler by implementing a C function called ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "putchar",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " that redirects output to your debug channel (UART, SWO, RTT, etc.). Many embedded platforms already do that by default.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-g",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " compiler flag during development to include debug information, making it easier to trace issues with a debugger like GDB or OpenOCD.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use optimization flags to control code size and performance:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Use ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "-Onone",
+                              "type" : "codeVoice"
+                            },
+                            {
+                              "text" : " during development for faster compilation and better debugging",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Use ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "-O",
+                              "type" : "codeVoice"
+                            },
+                            {
+                              "text" : " or ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "-Osize",
+                              "type" : "codeVoice"
+                            },
+                            {
+                              "text" : " for release builds to minimize code size and maximize performance",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Consider ",
+                              "type" : "text"
+                            },
+                            {
+                              "code" : "-Osize",
+                              "type" : "codeVoice"
+                            },
+                            {
+                              "text" : " specifically for extremely constrained memory environments",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "When you cannot use ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-Onone",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " (e.g. because the resulting binary size exceeds the platform limits), but you still want to maximize debuggability, use the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-assert-config=Debug",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " flag. This enables assertions, and also extra debug prints on failures.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Remember that Embedded Swift is designed to have minimal impact on the overall system architecture, allowing you to start with small Swift components and gradually expand your Swift codebase as you become more comfortable with the language in embedded contexts.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "SDK-Support",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr"
+      ],
+      "title" : "SDK Support"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Baremetal": {
+  "abstract" : [
+    {
+      "text" : "Programming without an SDK for maximum control and minimal size",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Baremetal",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal use of Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/baremetal"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Basics": {
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Basics of using Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/basics"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithPico": {
+  "abstract" : [
+    {
+      "text" : "Setting up a project that can seamlessly use C APIs from the Pico SDK.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithPico",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithpico"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegrateWithZephyr": {
+  "abstract" : [
+    {
+      "text" : "Integrating Swift with Zephyr RTOS for embedded systems development",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegrateWithZephyr",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Zephyr RTOS SDK",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratewithzephyr"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/STM32BaremetalGuide": {
+  "abstract" : [
+    {
+      "text" : "Program a STM32 microcontroller directly with low-level Swift code",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal Setup for STM32 with Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/stm32baremetalguide"
+}
+}
+}

@@ -1,0 +1,764 @@
+{
+  "abstract" : [
+    {
+      "text" : "Creates a condition that matches when a process exits with a given signal.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.testing\/documentation\/Testing",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/signal(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Testing",
+    "externalID" : "s:7Testing8ExitTestV9ConditionV6signalyAEs5Int32VFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "signal"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s4CInta",
+        "text" : "CInt"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing8ExitTestV",
+        "text" : "ExitTest"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+        "text" : "Condition"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Testing"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "introducedAt" : "6.2",
+        "name" : "Swift"
+      },
+      {
+        "beta" : false,
+        "introducedAt" : "26.0",
+        "name" : "Xcode"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "signal(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "signal"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "signal"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s4CInta",
+              "text" : "CInt"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing8ExitTestV",
+              "text" : "ExitTest"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+              "text" : "Condition"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The signal that caused the process to exit.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "signal"
+        }
+      ]
+    },
+    {
+      "kind" : "mentions",
+      "mentions" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/exit-testing"
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The C programming language defines a number of standard signals. Platforms",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "may additionally define their own non-standard signal codes:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Platform",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Header",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "macOS",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/developer.apple.com\/library\/archive\/documentation\/System\/Conceptual\/ManPages_iPhoneOS\/man3\/signal.3.html",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Linux",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/www.kernel.org\/doc\/man-pages\/online\/pages\/man7\/signal.7.html",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "FreeBSD",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/man.freebsd.org\/cgi\/man.cgi?signal(3)",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "OpenBSD",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/man.openbsd.org\/signal.3",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Windows",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/learn.microsoft.com\/en-us\/cpp\/c-runtime-library\/signal-constants",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Failing-exit-conditions",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/failure",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/exitCode(_:)"
+      ],
+      "title" : "Failing exit conditions"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/testing\/exittest\/condition\/signal(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.testing/documentation/Testing": {
+  "abstract" : [
+    {
+      "text" : "Create and run tests for your Swift packages and Xcode projects.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest": {
+  "abstract" : [
+    {
+      "text" : "A type describing an exit test.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExitTest"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExitTest"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExitTest",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition": {
+  "abstract" : [
+    {
+      "text" : "The possible conditions under which an exit test will complete.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Condition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExitTest.Condition",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/exitCode(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a condition that matches when a process terminates with a given",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "exit code.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "exitCode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/exitCode(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "exitCode(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/exitcode(_:)"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/failure": {
+  "abstract" : [
+    {
+      "text" : "A condition that matches when a process exits abnormally",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/failure",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "failure",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/failure"
+},
+"doc://org.swift.testing/documentation/Testing/ExitTest/Condition/signal(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a condition that matches when a process exits with a given signal.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "signal"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV",
+      "text" : "ExitTest"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/signal(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "signal(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exittest\/condition\/signal(_:)"
+},
+"doc://org.swift.testing/documentation/Testing/exit-testing": {
+  "abstract" : [
+    {
+      "text" : "Use exit tests to test functionality that might cause a test process to exit.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/exit-testing",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Exit testing",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/exit-testing"
+},
+"https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/signal.3.html": {
+  "identifier" : "https:\/\/developer.apple.com\/library\/archive\/documentation\/System\/Conceptual\/ManPages_iPhoneOS\/man3\/signal.3.html",
+  "title" : "<signal.h>",
+  "titleInlineContent" : [
+    {
+      "code" : "<signal.h>",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/library\/archive\/documentation\/System\/Conceptual\/ManPages_iPhoneOS\/man3\/signal.3.html"
+},
+"https://learn.microsoft.com/en-us/cpp/c-runtime-library/signal-constants": {
+  "identifier" : "https:\/\/learn.microsoft.com\/en-us\/cpp\/c-runtime-library\/signal-constants",
+  "title" : "<signal.h>",
+  "titleInlineContent" : [
+    {
+      "code" : "<signal.h>",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/learn.microsoft.com\/en-us\/cpp\/c-runtime-library\/signal-constants"
+},
+"https://man.freebsd.org/cgi/man.cgi?signal(3)": {
+  "identifier" : "https:\/\/man.freebsd.org\/cgi\/man.cgi?signal(3)",
+  "title" : "<signal.h>",
+  "titleInlineContent" : [
+    {
+      "code" : "<signal.h>",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/man.freebsd.org\/cgi\/man.cgi?signal(3)"
+},
+"https://man.openbsd.org/signal.3": {
+  "identifier" : "https:\/\/man.openbsd.org\/signal.3",
+  "title" : "<signal.h>",
+  "titleInlineContent" : [
+    {
+      "code" : "<signal.h>",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/man.openbsd.org\/signal.3"
+},
+"https://www.kernel.org/doc/man-pages/online/pages/man7/signal.7.html": {
+  "identifier" : "https:\/\/www.kernel.org\/doc\/man-pages\/online\/pages\/man7\/signal.7.html",
+  "title" : "<signal.h>",
+  "titleInlineContent" : [
+    {
+      "code" : "<signal.h>",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.kernel.org\/doc\/man-pages\/online\/pages\/man7\/signal.7.html"
+}
+}
+}

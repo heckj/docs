@@ -1,0 +1,1439 @@
+{
+  "abstract" : [
+    {
+      "text" : "Assemble your server applications using Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Server Guides"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Building Swift Server Applications"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "\/documentation\/package-manager\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to build server applications.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It provides a cross-platform foundation for building Swift code.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can build using the command line or through an integrated development environment (IDE) such as Xcode or Visual Studio Code.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Choose-a-build-configuration",
+          "level" : 2,
+          "text" : "Choose a build configuration",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift Package Manager supports two distinct build configurations, each optimized for different stages of your development workflow.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The configurations are ",
+              "type" : "text"
+            },
+            {
+              "code" : "debug",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", frequently used during development, and ",
+              "type" : "text"
+            },
+            {
+              "code" : "release",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which you use when profiling or creating production artifacts.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Use-debug-builds-during-development",
+          "level" : 3,
+          "text" : "Use debug builds during development",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you run ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " without additional flags, Swift Package Manager creates a debug build:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Debug builds include full debugging symbols and runtime safety checks, which are essential during active development.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The compiler skips most optimizations to keep compilation times fast and preserve maximum debugging information.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This lets you quickly test changes and debug your app using lldb and breakpoints.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, skipping optimizations can come at a significant cost to runtime performance.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Debug builds typically run more slowly than their release counterparts.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Create-release-builds-for-production",
+          "level" : 3,
+          "text" : "Create release builds for production",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For production deployments, use the release configuration by adding the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-c release",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build -c release"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The release configuration turns on all compiler optimizations.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The trade-off is longer compilation times because the optimizer performs extensive analysis and transformations.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Release builds still include some debugging information for crash analysis, but omit development-only checks and assertions.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Optimize-your-builds",
+          "level" : 2,
+          "text" : "Optimize your builds",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Beyond choosing debug or release mode, several compiler flags can fine-tune your builds for specific scenarios.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-specific-products",
+          "level" : 3,
+          "text" : "Build specific products",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your package defines multiple executables or library products, Swift Package Manager builds everything declared in the package by default.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Build only what you need using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--product",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build --product MyAPIServer"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Building a specific product is useful in monorepo setups or packages with multiple deployment targets.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It avoids compiling tools or test utilities you don’t need for a given deployment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Enable-cross-module-optimization",
+          "level" : 3,
+          "text" : "Enable cross-module optimization",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift supports cross-module optimization, which lets the compiler optimize code across module boundaries:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build -c release -Xswiftc -cross-module-optimization"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Xswiftc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag passes options to the Swift compiler.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "-cross-module-optimization",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " tells the compiler to optimize across module boundaries.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "By default, Swift optimizes each module in isolation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Cross-module optimization removes this boundary, enabling techniques such as inlining function calls between modules.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For code that frequently calls small functions across module boundaries, this can yield meaningful performance improvements.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, results vary by project because optimizations are specific to your code.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Always benchmark your specific workload with and without this flag before deploying to production.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Review-your-build-artifacts",
+          "level" : 2,
+          "text" : "Review your build artifacts",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After compiling, locate your build artifacts.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Swift Package Manager places them in directories that vary by platform and architecture:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Show where debug build artifacts are located",
+            "swift build --show-bin-path",
+            "",
+            "# Show where release build artifacts are located",
+            "swift build --show-bin-path -c release"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The build products are written to the scratch path, which defaults to ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", but the specific location can vary based on platform or Swift compiler.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--show-bin-path",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag in deployment scripts to locate the build product without hardcoding platform-specific paths.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-services-for-other-platforms",
+          "level" : 3,
+          "text" : "Build services for other platforms",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift build artifacts are both platform- and architecture-specific.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Artifacts you create on macOS run only on macOS; those you create on Linux run only on Linux.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This creates a challenge when you work on macOS and deploy to Linux servers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can use Xcode for development, but it can’t produce Linux artifacts for deployment.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Swift provides two main approaches for cross-platform building.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-with-Linux-containers",
+          "level" : 4,
+          "text" : "Build with Linux containers",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "On macOS, you can use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/container",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " or the Docker CLI to verify your project builds under Linux.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Apple publishes official Swift Docker images to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/hub.docker.com\/_\/swift",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", which provide complete Linux build environments.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build your application using the latest Swift release image:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Build with Container",
+            "container run -c 2 -m 8g --rm -it \\",
+            "  -v \"$PWD:\/code\" -w \/code \\",
+            "  swift:latest swift build",
+            "",
+            "# Build with Docker",
+            "docker run --rm -it \\",
+            "  -v \"$PWD:\/code\" -w \/code \\",
+            "  swift:latest swift build"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These commands mount your current directory as ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/code",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in the container, set it as the working directory, and run ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " inside the Linux environment.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift:latest",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " container image provides this environment and ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " produces Linux-compatible build artifacts.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you’re on Apple silicon and need to target x86_64 Linux servers, you need to specify the target platform with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--platform",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " option:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Build with Container",
+            "container run -c 2 -m 8g --rm -it \\",
+            "  -v \"$PWD:\/code\" -w \/code \\",
+            "  --platform linux\/amd64 \\",
+            "  -e QEMU_CPU=max \\",
+            "  swift:latest swift build",
+            "",
+            "# Build with Docker",
+            "docker run --rm -it \\",
+            "  -v \"$PWD:\/code\" -w \/code \\",
+            "  --platform linux\/amd64 \\",
+            "  -e QEMU_CPU=max \\",
+            "  swift:latest swift build"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "--platform",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag runs the container with QEMU emulation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "-e QEMU_CPU=max",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " environment variable enables the maximum set of CPU features within the emulated environment, giving your code access to the broadest instruction set the emulation supports.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build your code into a container, you typically use a container declaration — a Dockerfile or Containerfile — that specifies all the steps to assemble the container image holding your build artifacts.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Container-based builds work well in CI\/CD pipelines and for validating that your code builds cleanly on Linux.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, Docker container builds can be slower than native builds, especially on Apple silicon where x86_64 containers run through emulation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more information on packaging your application or service, read ",
+              "type" : "text"
+            },
+            {
+              "identifier" : ".\/packaging.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Choose-static-or-dynamic-linking-for-the-standard-library",
+          "level" : 4,
+          "text" : "Choose static or dynamic linking for the standard library",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, Swift build artifacts link the standard library dynamically.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This keeps individual build artifacts smaller, and multiple programs can share a single copy of the Swift runtime.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, dynamic linking requires the Swift runtime to be installed on your deployment target.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For deployment scenarios where you want more self-contained build artifacts, statically link the Swift standard library:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build -c release --static-swift-stdlib"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The resulting build artifacts still dynamically link to glibc, but have fewer other dependencies on the target system.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These executables bundle the Swift runtime directly:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Aspect",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Dynamic linking",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Static linking",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Build artifact size",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Smaller (runtime not included)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Larger (runtime included in binary)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Deployment complexity",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Requires Swift runtime on target system",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Self-contained, no runtime needed",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Version management",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Must match runtime version on system",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Each artifact includes its own runtime version",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For deploying to VMs or bare metal where you don’t control the system configuration, static linking removes the dependency on a pre-installed Swift runtime.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This technique doesn’t apply on Apple platforms.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Cross-compile-with-the-Static-Linux-SDK",
+          "level" : 4,
+          "text" : "Cross-compile with the Static Linux SDK",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the performance overhead of Docker-based builds affects your workflow, Swift 5.9 and later provide Static Linux SDKs.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Find the link to install the static Linux SDK on the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/install\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and detailed instructions in the article ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/static-linux-getting-started.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The SDK enables cross-compilation directly from macOS to Linux without using a container:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Build for x86_64 Linux",
+            "swift build -c release --swift-sdk x86_64-swift-linux-musl",
+            "",
+            "# Build for ARM64 Linux",
+            "swift build -c release --swift-sdk aarch64-swift-linux-musl"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These SDK targets use musl libc (a lightweight C library) instead of glibc (the GNU C library) to produce statically linked build artifacts.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The resulting executables have minimal dependencies on the target Linux system, making them highly portable across Linux distributions.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, the resulting executables are typically larger than dynamically linked equivalents.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Cross-compilation runs natively on your Mac’s architecture without emulation, so it’s faster than Docker-based builds.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The trade-off is build environment fidelity: you verify that your code cross-compiles to Linux, not that it builds on an actual Linux system.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Cross-compilation also limits you to the static libraries available in the SDK;",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "your code can’t use ",
+              "type" : "text"
+            },
+            {
+              "code" : "dlopen",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or similar mechanisms to dynamically load libraries available on the target system.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For most projects, this distinction doesn’t matter.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "However, packages with complex C dependencies can behave differently when built natively on Linux versus cross-compiled.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-with-VS-Code-using-a-Dev-Container",
+          "level" : 3,
+          "text" : "Build with VS Code using a Dev Container",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Visual Studio Code supports the Dev Container feature that lets you open, build, and debug your project within a container running on your local machine.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The Dev Container builds your code in the Linux environment that the container provides.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For more information on using a Dev Container, read ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.swift.org\/vscode\/documentation\/userdocs\/remote-dev\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Inspect-a-binary",
+          "level" : 3,
+          "text" : "Inspect a binary",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you’re uncertain what platform a binary was built for, use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "file",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " command to inspect it:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "file .build\/debug\/MyServer"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Output from a debug build on macOS with Apple silicon:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".build\/debug\/MyServer: Mach-O 64-bit executable arm64"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Output from a debug build on Linux, built inside a container on Apple silicon:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".build\/debug\/MyServer: ELF 64-bit LSB pie executable,",
+            "  ARM aarch64, version 1 (SYSV), dynamically linked,",
+            "  interpreter \/lib\/ld-linux-aarch64.so.1, for GNU\/Linux 3.7.0,",
+            "  BuildID[sha1]=ec68ac934b11eb7364fce53c95c42f5b83c3cb8d,",
+            "  with debug_info, not stripped"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Output from a debug build on macOS, built using the Container tool with x86_64 emulation:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".build\/debug\/MyServer: ELF 64-bit LSB pie executable,",
+            "  x86-64, version 1 (SYSV), dynamically linked,",
+            "  interpreter \/lib64\/ld-linux-x86-64.so.2, for GNU\/Linux 3.2.0,",
+            "  BuildID[sha1]=40357329617ac9629e934b94415ff4078681b45a,",
+            "  with debug_info, not stripped"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Output from a debug build using the static Linux SDK (",
+              "type" : "text"
+            },
+            {
+              "code" : "swift build --swift-sdk x86_64-swift-linux-musl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            ".build\/debug\/MyServer: ELF 64-bit LSB executable,",
+            "  x86-64, version 1 (SYSV), statically linked,",
+            "  BuildID[sha1]=04ae4f872265b1e0d85ff821fd26fc102993b9f2,",
+            "  with debug_info, not stripped"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging",
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/serverguides\/building"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"./packaging.md": {
+  "identifier" : ".\/packaging.md",
+  "title" : "Packaging Swift Server Applications",
+  "titleInlineContent" : [
+    {
+      "text" : "Packaging Swift Server Applications",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : ".\/packaging.md"
+},
+"/documentation/package-manager/": {
+  "identifier" : "\/documentation\/package-manager\/",
+  "title" : "Swift Package Manager",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Package Manager",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "\/documentation\/package-manager\/"
+},
+"doc://ServerGuides/documentation/ServerGuides": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Server Guides",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides"
+},
+"doc://ServerGuides/documentation/ServerGuides/deploying-static-binaries": {
+  "abstract" : [
+    {
+      "text" : "Build fully self-contained Swift executables and deploy them",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to minimal containers or directly to Linux machines.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deploying Swift services as static binaries",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/deploying-static-binaries"
+},
+"doc://ServerGuides/documentation/ServerGuides/packaging": {
+  "abstract" : [
+    {
+      "text" : "Build a container that includes your Swift service with its resources and dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Packaging Swift services with containers",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/packaging"
+},
+"https://docs.swift.org/vscode/documentation/userdocs/remote-dev/": {
+  "identifier" : "https:\/\/docs.swift.org\/vscode\/documentation\/userdocs\/remote-dev\/",
+  "title" : "Visual Studio Code Dev Containers",
+  "titleInlineContent" : [
+    {
+      "text" : "Visual Studio Code Dev Containers",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/vscode\/documentation\/userdocs\/remote-dev\/"
+},
+"https://github.com/apple/container": {
+  "identifier" : "https:\/\/github.com\/apple\/container",
+  "title" : "Container",
+  "titleInlineContent" : [
+    {
+      "text" : "Container",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/container"
+},
+"https://hub.docker.com/_/swift": {
+  "identifier" : "https:\/\/hub.docker.com\/_\/swift",
+  "title" : "Docker Hub",
+  "titleInlineContent" : [
+    {
+      "text" : "Docker Hub",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/hub.docker.com\/_\/swift"
+},
+"https://www.swift.org/documentation/articles/static-linux-getting-started.html": {
+  "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/static-linux-getting-started.html",
+  "title" : "Getting Started with the Static Linux SDK",
+  "titleInlineContent" : [
+    {
+      "text" : "Getting Started with the Static Linux SDK",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/documentation\/articles\/static-linux-getting-started.html"
+},
+"https://www.swift.org/install/": {
+  "identifier" : "https:\/\/www.swift.org\/install\/",
+  "title" : "install page at Swift.org",
+  "titleInlineContent" : [
+    {
+      "text" : "install page at Swift.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/install\/"
+}
+}
+}

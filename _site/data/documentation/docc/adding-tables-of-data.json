@@ -1,0 +1,1650 @@
+{
+  "abstract" : [
+    {
+      "text" : "Arrange information into rows and columns.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-tables-of-data"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "DocC"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Adding Tables of Data"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To add a table to your documentation, start a new paragraph and add the following required elements, each on its own line:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A table header, with the heading text of each column, separated by pipes (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "|",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A separator row, with at least 3 hyphens (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ") for each column, separated by pipes",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "One or more rows of table cells, separating each cell of formatted content by a pipe",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "code" : [
+            "Sloth speed  | Description                          ",
+            "------------ | ------------------------------------- ",
+            "`slow`       | Moves slightly faster than a snail  ",
+            "`medium`     | Moves at an average speed           ",
+            "`fast`       | Moves faster than a hare            ",
+            "`supersonic` | Moves faster than the speed of sound"
+          ],
+          "syntax" : "md",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The example markup above defines the table that’s shown below. Each column is only as wide as its widest cell and the table is only as wide as the sum of its columns.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Sloth speed",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Description",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "slow",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Moves slightly faster than a snail",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "medium",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Moves at an average speed",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "fast",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Moves faster than a hare",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "supersonic",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Moves faster than the speed of sound",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You don’t need to pad the cells to align the column separators (",
+              "type" : "text"
+            },
+            {
+              "code" : "|",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "). However, it might make your table ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "markup",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " easier to read, especially for large or complex tables.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can also define the same table with the markup that’s shown below. All other examples will use padded cells for readability.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "Sloth speed|Description",
+            "---|---",
+            "`slow`|Moves slightly faster than a snail",
+            "`medium`|Moves at an average speed",
+            "`fast`|Moves faster than a hare",
+            "`supersonic`|Moves faster than the speed of sound"
+          ],
+          "syntax" : "md",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can add leading and\/or trailing pipes (",
+              "type" : "text"
+            },
+            {
+              "code" : "|",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") if you find that table markup easier to read. This doesn’t affect the rendered table on the page. The leading and trailing pipes ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "can",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " be applied inconsistently for each row, but doing so may make it harder to discern the structure of the table.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "| Sloth speed  | Description                          |                         ",
+            "| ------------ | ------------------------------------ |",
+            "| `slow`       | Moves slightly faster than a snail   | ",
+            "| `medium`     | Moves at an average speed            |  ",
+            "| `fast`       | Moves faster than a hare             |",
+            "| `supersonic` | Moves faster than the speed of sound |"
+          ],
+          "syntax" : "md",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The content of a table cell supports the same style attributes as other text and supports links to other content, including symbols. If a table cell’s content includes a pipe (",
+              "type" : "text"
+            },
+            {
+              "code" : "|",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") you need to escape the pipe character by preceding it with a backslash",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(",
+              "type" : "text"
+            },
+            {
+              "code" : "\\",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "). For more information about styling text, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content#Format-Text-in-Bold-Italics-and-Code-Voice",
+              "isActive" : true,
+              "overridingTitle" : "Format Text in Bold, Italics, and Code Voice",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "Format Text in Bold, Italics, and Code Voice",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A table cell can only contain a single line of formatted content. Lists, asides, code blocks, headings, and directives are not supported inside a table cell.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Aligning-content-in-a-column",
+          "level" : 3,
+          "text" : "Aligning content in a column",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, all table columns align their content to the leading edge. To change the horizontal alignment for a column, modify the table’s separator row to add a colon (",
+              "type" : "text"
+            },
+            {
+              "code" : ":",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") around the hyphens (",
+              "type" : "text"
+            },
+            {
+              "code" : "-",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") for that column, either before the hyphens for leading alignment, before ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "and",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " after the hyphens for center alignment, or after the hyphens for trailing alignment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "alignments" : [
+            "left",
+            "center",
+            "right"
+          ],
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Leading",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Center",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Trailing",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : ":-----",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : ":----:",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "-----:",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "table-align-leading",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "table-align-center",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "table-align-trailing",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "anchor" : "Spanning-cells-across-columns",
+          "level" : 3,
+          "text" : "Spanning cells across columns",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, each table cell is one column wide and one row tall. To span a table cell across multiple columns, place two or more column separators (",
+              "type" : "text"
+            },
+            {
+              "code" : "|",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") next to each other after the cell’s content. If the spanning cell is the last or only element of a row, you need to add the extra trailing pipe (",
+              "type" : "text"
+            },
+            {
+              "code" : "|",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") for that row, otherwise DocC interprets the row as having an additional empty cell at the end. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "code" : [
+                    "First | Second | Third |",
+                    "----- | ------ | ----- |",
+                    "One           || Two   |",
+                    "Three | Four          ||",
+                    "Five                 |||"
+                  ],
+                  "syntax" : "md",
+                  "type" : "codeListing"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "extendedData" : {
+                    "1_0" : {
+                      "colspan" : 2,
+                      "rowspan" : 1
+                    },
+                    "1_1" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "2_1" : {
+                      "colspan" : 2,
+                      "rowspan" : 1
+                    },
+                    "2_2" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "3_0" : {
+                      "colspan" : 3,
+                      "rowspan" : 1
+                    },
+                    "3_1" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "3_2" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    }
+                  },
+                  "header" : "row",
+                  "rows" : [
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "First",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Second",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Third",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "One",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Two",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Three",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Four",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Five",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ]
+                  ],
+                  "type" : "table"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "You might find it easier to discern the structure of your table from its markup if you use trailing pipes consistently when spanning cells.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A spanning cell determines its horizontal alignment from the left-most column that it spans. Going from left to right in the example below:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cells “One” and “Five” use leading alignment because they both span the first column",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cell “Four” uses center alignment because it spans the second column",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cell “Two” uses trailing alignment because it spans the third column",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "code" : [
+                    "Leading | Center | Trailing |",
+                    ":------ | :----: | -------: |",
+                    "One             || Two      |",
+                    "Three   | Four             ||",
+                    "Five                      |||"
+                  ],
+                  "syntax" : "md",
+                  "type" : "codeListing"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "alignments" : [
+                    "left",
+                    "center",
+                    "right"
+                  ],
+                  "extendedData" : {
+                    "1_0" : {
+                      "colspan" : 2,
+                      "rowspan" : 1
+                    },
+                    "1_1" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "2_1" : {
+                      "colspan" : 2,
+                      "rowspan" : 1
+                    },
+                    "2_2" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "3_0" : {
+                      "colspan" : 3,
+                      "rowspan" : 1
+                    },
+                    "3_1" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "3_2" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    }
+                  },
+                  "header" : "row",
+                  "rows" : [
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Leading",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Center",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Trailing",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "One",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Two",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Three",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Four",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Five",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ]
+                  ],
+                  "type" : "table"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "anchor" : "Spanning-cells-across-rows",
+          "level" : 3,
+          "text" : "Spanning cells across rows",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To span a table cell across multiple rows, write the cell’s content in the first row and a single caret (",
+              "type" : "text"
+            },
+            {
+              "code" : "^",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") in one or more cells below it. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "code" : [
+                    "First | Second | Third | Fourth ",
+                    "----- | ------ | ----- | ------",
+                    "One   | Two    | Three | Four",
+                    "^     | Five   | ^     | Six",
+                    "Seven | ^      | ^     | Eight"
+                  ],
+                  "syntax" : "md",
+                  "type" : "codeListing"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "extendedData" : {
+                    "1_0" : {
+                      "colspan" : 1,
+                      "rowspan" : 2
+                    },
+                    "1_2" : {
+                      "colspan" : 1,
+                      "rowspan" : 3
+                    },
+                    "2_0" : {
+                      "colspan" : 1,
+                      "rowspan" : 0
+                    },
+                    "2_1" : {
+                      "colspan" : 1,
+                      "rowspan" : 2
+                    },
+                    "2_2" : {
+                      "colspan" : 1,
+                      "rowspan" : 0
+                    },
+                    "3_1" : {
+                      "colspan" : 1,
+                      "rowspan" : 0
+                    },
+                    "3_2" : {
+                      "colspan" : 1,
+                      "rowspan" : 0
+                    }
+                  },
+                  "header" : "row",
+                  "rows" : [
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "First",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Second",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Third",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Fourth",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "One",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Two",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Three",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Four",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Five",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Six",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Seven",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Eight",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ]
+                  ],
+                  "type" : "table"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A table cell can span both columns and rows by combining the syntax for both. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "code" : [
+                    "First | Second | Third ",
+                    "----- | ------ | ----- ",
+                    "One           || Two   ",
+                    "^             || Three "
+                  ],
+                  "syntax" : "md",
+                  "type" : "codeListing"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "extendedData" : {
+                    "1_0" : {
+                      "colspan" : 2,
+                      "rowspan" : 2
+                    },
+                    "1_1" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    },
+                    "2_0" : {
+                      "colspan" : 2,
+                      "rowspan" : 0
+                    },
+                    "2_1" : {
+                      "colspan" : 0,
+                      "rowspan" : 1
+                    }
+                  },
+                  "header" : "row",
+                  "rows" : [
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "First",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Second",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Third",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "One",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Two",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ],
+                    [
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ],
+                      [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Three",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    ]
+                  ],
+                  "type" : "table"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Structure-and-Formatting",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/other-formatting-options",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-images",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages"
+      ],
+      "title" : "Structure and Formatting"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/adding-tables-of-data"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/adding-images": {
+  "abstract" : [
+    {
+      "text" : "Elevate your content’s visual appeal by adding images.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-images",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Images to Your Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-images"
+},
+"doc://org.swift.docc/documentation/docc/adding-structure-to-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Make symbols easier to find by arranging them into groups and collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Structure to Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-structure-to-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/customizing-the-appearance-of-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Customize the look and feel of your documentation webpages.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Customizing the Appearance of Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/formatting-your-documentation-content": {
+  "abstract" : [
+    {
+      "text" : "Enhance your content’s presentation with special formatting and styling for text and lists.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Formatting Your Documentation Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/formatting-your-documentation-content"
+},
+"doc://org.swift.docc/documentation/docc/formatting-your-documentation-content#Format-Text-in-Bold-Italics-and-Code-Voice": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content#Format-Text-in-Bold-Italics-and-Code-Voice",
+  "kind" : "section",
+  "title" : "Format Text in Bold, Italics, and Code Voice",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/formatting-your-documentation-content#Format-Text-in-Bold-Italics-and-Code-Voice"
+},
+"doc://org.swift.docc/documentation/docc/other-formatting-options": {
+  "abstract" : [
+    {
+      "text" : "Improve the presentation and structure of your content by incorporating special page elements.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/other-formatting-options",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Other Formatting Options",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/other-formatting-options"
+},
+"table-align-center": {
+  "alt" : "Four different rectangular blocks with their centers horizontally aligned",
+  "identifier" : "table-align-center",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/table-align-center.svg"
+    }
+  ]
+},
+"table-align-leading": {
+  "alt" : "Four different rectangular blocks with their left edges aligned",
+  "identifier" : "table-align-leading",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/table-align-leading.svg"
+    }
+  ]
+},
+"table-align-trailing": {
+  "alt" : "Four different rectangular blocks with their right edges aligned",
+  "identifier" : "table-align-trailing",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/table-align-trailing.svg"
+    }
+  ]
+}
+}
+}

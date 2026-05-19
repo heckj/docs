@@ -1,0 +1,889 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create developer documentation from in-source comments, add articles with code snippets,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and add tutorials for a guided learning experience.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-a-swift-framework-or-package"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "DocC"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Documenting a Swift Framework or Package"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC, or ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Documentation Compiler",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ", makes it easy to produce",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "rich and engaging developer documentation for your Swift frameworks and packages.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The compiler builds documentation by combining in-source comments with extension files,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "articles, and other resources,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "allowing you to create rich and engaging documentation for developers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With DocC, you provide a combination of reference and conceptual content, and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "connect it together using powerful organization and linking capabilities. Because you write",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "documentation directly in source, you can use the tools you’re already familiar",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "with, like Git, to track changes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-Simple-Documentation-from-Your-Source-Comments",
+          "level" : 3,
+          "text" : "Build Simple Documentation from Your Source Comments",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For DocC to compile your documentation, the Swift compiler first builds your Swift framework",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or package, and stores additional information about its public APIs alongside",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the compiled artifacts. DocC consumes that information and compiles the documentation into a DocC Archive. This process repeats for every Swift framework or package your target depends on.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "docc-compilation-default",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build documentation for your Swift framework or package, use the DocC command-line interface in preview mode and specify a location. On macOS, DocC monitors the files in the location and recompiles when you make changes. On other platforms, you need to quit and restart DocC to recompile the documentation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "1_sloth",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "You can also use the Swift-DocC Plugin to ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-hosting-online\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC uses the comments you write in your source code as the content for the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "documentation pages it generates. At a minimum, add basic documentation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "comments to the framework’s public symbols so that DocC can use this information as the symbols’",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "single-sentence abstracts or summaries.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively, add thorough documentation comments to provide further detail, including",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "information about parameters, return values, and errors. For more information, see",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Configure-a-Richer-Documentation-Experience",
+          "level" : 3,
+          "text" : "Configure a Richer Documentation Experience",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default, DocC compiles only in-source symbol documentation and then",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "groups those symbols together by their kind, such as protocols, classes,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "enumerations, and so forth. When you want to provide additional content or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "customize the organization of symbols, use a documentation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "catalog (a directory with a ‘.docc’ extension).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC combines the public API information from the Swift compiler with the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "contents of the documentation catalog to generate a much richer DocC Archive.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "docc-compilation-catalog",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use a documentation catalog when you want to include any of the following:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A landing page that introduces a framework and arranges its top-level",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "symbols, as well as extension files that provide custom organization for the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "symbols’ properties and methods. For more information, see",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Extension files that supplement in-source comments, and articles that",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "provide supporting conceptual content. For more information, see",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Tutorials that teach developers APIs through",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "step-by-step, interactive content. For more information, see",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/building-an-interactive-tutorial",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Resource files to use in your documentation, like images and videos.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "To use a documentation catalog in a Swift package, make sure the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "manifest’s Swift tools version is set to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "5.5",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " or later.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Important",
+          "style" : "important",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To associate a documentation catalog with a target in your package, add the catalog to the same directory as the target’s other source files (",
+              "type" : "text"
+            },
+            {
+              "code" : "[PackageRoot]\/Sources\/[TargetName]",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " by default).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Building-Publishing-and-Previewing-Documentation-with-the-DocC-Plug-in",
+          "level" : 2,
+          "text" : "Building, Publishing, and Previewing Documentation with the DocC Plug-in",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The preferred way of building documentation for your Swift package is by using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the Swift-DocC Plugin. Refer to instructions in the plugin’s",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to get started with ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-a-specific-target",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/previewing-documentation",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and publishing your documentation to your ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-hosting-online",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/publishing-to-github-pages",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can also use the DocC command-line interface, as described in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/distributing-documentation-to-other-developers",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files"
+      ],
+      "title" : "Related Documentation"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/documenting-a-swift-framework-or-package"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"1_sloth": {
+  "alt" : "A screenshot showing the Sloth structure documentation in its rendered form.",
+  "identifier" : "1_sloth",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/1_sloth@2x.png"
+    }
+  ]
+},
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/adding-structure-to-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Make symbols easier to find by arranging them into groups and collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Structure to Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-structure-to-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/adding-supplemental-content-to-a-documentation-catalog": {
+  "abstract" : [
+    {
+      "text" : "Include articles and extension files to extend your source documentation comments or provide supporting conceptual content.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Supplemental Content to a Documentation Catalog",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog"
+},
+"doc://org.swift.docc/documentation/docc/building-an-interactive-tutorial": {
+  "abstract" : [
+    {
+      "text" : "Construct a step-by-step guided learning experience for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/building-an-interactive-tutorial",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Building an Interactive Tutorial",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/building-an-interactive-tutorial"
+},
+"doc://org.swift.docc/documentation/docc/distributing-documentation-to-other-developers": {
+  "abstract" : [
+    {
+      "text" : "Share your documentation by hosting it on a web server.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/distributing-documentation-to-other-developers",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Distributing Documentation to Other Developers",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/distributing-documentation-to-other-developers"
+},
+"doc://org.swift.docc/documentation/docc/writing-symbol-documentation-in-your-source-files": {
+  "abstract" : [
+    {
+      "text" : "Add reference documentation to your symbols that explains how to use them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Writing Symbol Documentation in Your Source Files",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/writing-symbol-documentation-in-your-source-files"
+},
+"docc-compilation-catalog": {
+  "alt" : "A diagram showing how the Swift compiler turns code into a Swift framework and supplies information about the framework’s public APIs to the documentation compiler, which combines that with a documentation catalog to generate a rich DocC Archive.",
+  "identifier" : "docc-compilation-catalog",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/docc-compilation-catalog@2x.png"
+    },
+    {
+      "traits" : [
+        "2x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/docc-compilation-catalog~dark@2x.png"
+    }
+  ]
+},
+"docc-compilation-default": {
+  "alt" : "A diagram showing how the Swift compiler turns code into a Swift framework and supplies information about the framework’s public APIs to the documentation compiler, which generates a DocC Archive using that information.",
+  "identifier" : "docc-compilation-default",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/docc-compilation-default@2x.png"
+    },
+    {
+      "traits" : [
+        "2x",
+        "dark"
+      ],
+      "url" : "\/images\/org.swift.docc\/docc-compilation-default~dark@2x.png"
+    }
+  ]
+},
+"https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/": {
+  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/",
+  "title" : "documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/"
+},
+"https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/generating-documentation-for-a-specific-target": {
+  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-a-specific-target",
+  "title" : "building",
+  "titleInlineContent" : [
+    {
+      "text" : "building",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-a-specific-target"
+},
+"https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/generating-documentation-for-hosting-online": {
+  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-hosting-online",
+  "title" : "website",
+  "titleInlineContent" : [
+    {
+      "text" : "website",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-hosting-online"
+},
+"https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/generating-documentation-for-hosting-online/": {
+  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-hosting-online\/",
+  "title" : "build a documentation archive for a Swift package",
+  "titleInlineContent" : [
+    {
+      "text" : "build a documentation archive for a Swift package",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/generating-documentation-for-hosting-online\/"
+},
+"https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/previewing-documentation": {
+  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/previewing-documentation",
+  "title" : "previewing",
+  "titleInlineContent" : [
+    {
+      "text" : "previewing",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/previewing-documentation"
+},
+"https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/publishing-to-github-pages": {
+  "identifier" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/publishing-to-github-pages",
+  "title" : "GitHub Pages",
+  "titleInlineContent" : [
+    {
+      "text" : "GitHub Pages",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftlang.github.io\/swift-docc-plugin\/documentation\/swiftdoccplugin\/publishing-to-github-pages"
+}
+}
+}

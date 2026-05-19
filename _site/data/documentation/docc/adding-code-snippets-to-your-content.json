@@ -1,0 +1,1132 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create and include code snippets to illustrate and provide examples of how to use your API.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.docc\/documentation\/docc"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "DocC"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "introducedAt" : "5.7",
+        "name" : "Swift"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "Article",
+    "title" : "Adding Code Snippets to your Content"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC supports code listings in your code, as described in ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In addition to code listings written directly in the markup, Swift Package Manager and DocC supports compiler verified code examples called “snippets”.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift Package Manager looks for, and builds, any code included in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Snippets",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directory for your package.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC supports referencing all, or parts, of those files to present as code listings.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In addition to snippets presenting your code examples, you can run snippets directly on the command line.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This allows you to verify that code examples, referenced in your documentation, continue to compile as you evolve you app or library.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Add-the-Swift-DocC-plugin",
+          "level" : 3,
+          "text" : "Add the Swift DocC plugin",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To generate or preview documentation with snippets, add ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-docc-plugin",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " as a dependency to your package.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, use the command:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift package add-dependency https:\/\/github.com\/apple\/swift-docc-plugin --from 1.1.0"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Or edit your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to add the dependency:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let package = Package(",
+            "    \/\/ name, platforms, products, etc.",
+            "    dependencies: [",
+            "        \/\/ other dependencies",
+            "        .package(url: \"https:\/\/github.com\/swiftlang\/swift-docc-plugin\", from: \"1.1.0\"),",
+            "    ],",
+            "    targets: [",
+            "        \/\/ targets",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Create-a-code-snippet",
+          "level" : 3,
+          "text" : "Create a code snippet",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift Package Manager expects to find your code examples in the directory ",
+              "type" : "text"
+            },
+            {
+              "code" : "Snippets",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " at the top of your project, parallel to the file ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and the directory ",
+              "type" : "text"
+            },
+            {
+              "code" : "Sources",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "At the root of your project, create the directory ",
+              "type" : "text"
+            },
+            {
+              "code" : "Snippets",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Within the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Snippets",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directory, create a file with your code snippet.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Your Swift package directory structure should resemble this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "YourProject",
+            "  ├── Package.swift",
+            "  ├── Snippets",
+            "  │   └── example-snippet.swift",
+            "  ├── Sources",
+            "  │   └── YourProject",
+            "  │       └── YourProject.swift",
+            "etc..."
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Snippets are a package-wide resource located in a “Snippets” directory next to the package’s “Sources” and “Tests” directories.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example illustrates a code example in the file ",
+              "type" : "text"
+            },
+            {
+              "code" : "Snippets\/example-snippet.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "import Foundation",
+            "",
+            "print(\"Hello\")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Your snippets can import targets defined in your local package, as well as products from its direct dependencies.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Each snippet is its own unit and can’t access code from other snippet files.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Every time you build your project, the Swift Package Manager compiles any code snippets, and then fails if the build if they are unable to compile.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Run-the-snippet",
+          "level" : 3,
+          "text" : "Run the snippet",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You and consumers of your library can run your snippets from the command line using ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift run snippet-name",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " where “snippet-name” corresponds to a file name in your Snippets directory without the “.swift” file extension.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Run the earlier code example file named ",
+              "type" : "text"
+            },
+            {
+              "code" : "example-snippet.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " using the following command:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift run example-snippet"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Embed-the-snippet",
+          "level" : 3,
+          "text" : "Embed the snippet",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To embed your snippet in an article or within the symbol reference pages, use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Snippet",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directive.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Snippet(path: \"example-snippet\")"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "path",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " argument is the relative path from the package’s top-level “Snippets” directory to your snippet file without the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " extension.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you prefer, you can specify the relative path from the package’s ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "root",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " directory (by including a “Snippets\/” prefix).",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can also include the package name—as defined in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "—before the “Snippets\/” prefix.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Neither of these leading path components are necessary because all your snippet code files are always located in your package’s “Snippets” directory.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Before Swift-DocC 6.2.1, the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "@Snippet",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " path needed to include both the package name component and the “Snippets” component:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "code" : [
+                "@Snippet(path: \"my-package\/Snippets\/example-snippet\")"
+              ],
+              "syntax" : "markdown",
+              "type" : "codeListing"
+            }
+          ],
+          "name" : "Earlier Versions",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A snippet reference displays as a block between other paragraphs.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In the example package above, the ",
+              "type" : "text"
+            },
+            {
+              "code" : "YourProject.md",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file might contain this markdown:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# ``YourProject``",
+            "",
+            "Add a single sentence or sentence fragment, which DocC uses as the page’s abstract or summary.",
+            "",
+            "## Overview",
+            "",
+            "Add one or more paragraphs that introduce your content overview.",
+            "",
+            "@Snippet(path: \"example-snippet\")"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your snippet code requires setup — like imports or variable definitions — that distract from the snippet’s main focus, you can add ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/\/ snippet.hide",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/\/ snippet.show",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " lines in the snippet code to exclude the lines in between from displaying in your documentation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "These comments act as a toggle to hide or show content from the snippet.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "print(\"Hello\")",
+            "",
+            "\/\/ snippet.hide",
+            "",
+            "print(\"Hidden\")",
+            "",
+            "\/\/ snippet.show",
+            "",
+            "print(\"Shown\")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Hide segments of your snippet for content such as license footers, test code, or unique setup code.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Generally, it is useful for things that you wouldn’t want the reader to use as a starting point.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Preview-your-content",
+          "level" : 3,
+          "text" : "Preview your content",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-docc-plugin",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to preview content that includes snippets.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To run the preview, use the following command from a terminal.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Replace ",
+              "type" : "text"
+            },
+            {
+              "code" : "YourTarget",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with a target from your package to preview:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift package --disable-sandbox preview-documentation --target YourTarget"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Slice-up-your-snippet-to-break-it-up-in-your-content",
+          "level" : 3,
+          "text" : "Slice up your snippet to break it up in your content",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Long snippets dropped into documentation can result in a wall of text that is harder to parse and understand.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Instead, annotate non-overlapping slices in the snippet, which allows you to reference and embed the slice portion of the example code.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Annotating slices in a snippet looks similar to annotating ",
+              "type" : "text"
+            },
+            {
+              "code" : "snippet.show",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "snippet.hide",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You define the slice’s identity in the comment, and that slice continues until the next instance of ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/\/ snippet.end",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " appears on a new line.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When selecting your identifiers, use URL-compatible path characters.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, to start a slice with an ID of ",
+              "type" : "text"
+            },
+            {
+              "code" : "setup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", add the following comment on a new line.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ snippet.setup"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Then end the ",
+              "type" : "text"
+            },
+            {
+              "code" : "setup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " slice with:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ snippet.end"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Adding a new slice identifier automatically terminates an earlier slice.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, the follow code examples are effectively the same:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ snippet.setup",
+            "var item = MyObject.init()",
+            "\/\/ snippet.end",
+            "",
+            "\/\/ snippet.configure",
+            "item.size = 3",
+            "\/\/ snippet.end"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "code" : [
+            "\/\/ snippet.setup",
+            "var item = MyObject.init()",
+            "",
+            "\/\/ snippet.configure",
+            "item.size = 3"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@Snippet",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directive with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "slice",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter to embed that slice as sample code on your documentation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Extending the earlier snippet example, the slice ",
+              "type" : "text"
+            },
+            {
+              "code" : "setup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " would be referenced with",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Snippet(path: \"example-snippet\", slice: \"setup\")"
+          ],
+          "syntax" : "markdown",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Documentation-Content",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations"
+      ],
+      "title" : "Documentation Content"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Directives",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/Snippet"
+      ],
+      "title" : "Directives"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc\/adding-code-snippets-to-your-content"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/Snippet": {
+  "abstract" : [
+    {
+      "text" : "Embeds a code example from the project’s code snippets.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Snippet"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "identifier",
+      "text" : "path"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "slice"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/Snippet",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "attribute",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "__docc_universal_symbol_reference_$Snippet",
+      "text" : "Snippet"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Snippet",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/snippet"
+},
+"doc://org.swift.docc/documentation/docc/adding-supplemental-content-to-a-documentation-catalog": {
+  "abstract" : [
+    {
+      "text" : "Include articles and extension files to extend your source documentation comments or provide supporting conceptual content.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Supplemental Content to a Documentation Catalog",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog"
+},
+"doc://org.swift.docc/documentation/docc/documenting-api-with-different-language-representations": {
+  "abstract" : [
+    {
+      "text" : "Create documentation for API that’s callable from more than one source language.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documenting API with Different Language Representations",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/documenting-api-with-different-language-representations"
+},
+"doc://org.swift.docc/documentation/docc/formatting-your-documentation-content": {
+  "abstract" : [
+    {
+      "text" : "Enhance your content’s presentation with special formatting and styling for text and lists.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Formatting Your Documentation Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/formatting-your-documentation-content"
+},
+"doc://org.swift.docc/documentation/docc/linking-to-symbols-and-other-content": {
+  "abstract" : [
+    {
+      "text" : "Facilitate navigation between pages using links.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Linking to Symbols and Other Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/linking-to-symbols-and-other-content"
+},
+"doc://org.swift.docc/documentation/docc/writing-symbol-documentation-in-your-source-files": {
+  "abstract" : [
+    {
+      "text" : "Add reference documentation to your symbols that explains how to use them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Writing Symbol Documentation in Your Source Files",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/writing-symbol-documentation-in-your-source-files"
+},
+"https://github.com/apple/swift-docc-plugin": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-docc-plugin",
+  "title" : "swift-docc-plugin",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-docc-plugin",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-docc-plugin"
+},
+"https://github.com/swiftlang/swift-docc-plugin": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-docc-plugin",
+  "title" : "swift-docc-plugin",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-docc-plugin",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-docc-plugin"
+}
+}
+}

@@ -1,0 +1,5288 @@
+{
+  "bundleID" : "org.swift.tspl",
+  "nonSymbolPaths" : {
+    "0" : "\/documentation\/The-Swift-Programming-Language\/Declarations#In-Out-Parameters",
+    "1" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Arithmetic-Operators",
+    "10" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Switch-Case-Attributes",
+    "100" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Functions-and-Closures",
+    "101" : "\/documentation\/The-Swift-Programming-Language\/Methods",
+    "102" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Iterating-over-Enumeration-Cases",
+    "103" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Function-Types",
+    "104" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#String-Interpolation",
+    "105" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Modules-Source-Files-and-Packages",
+    "106" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Property-Declaration",
+    "107" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Regular-Expression-Literals",
+    "108" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Logical-NOT-Operator",
+    "109" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#String-Literals",
+    "11" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Functions-that-Never-Return",
+    "110" : "\/documentation\/The-Swift-Programming-Language\/Generics#Extensions-with-a-Generic-Where-Clause",
+    "111" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Integer-Bounds",
+    "112" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Macro-Declaration",
+    "113" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Declarations",
+    "114" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Await-Operator",
+    "115" : "\/documentation\/The-Swift-Programming-Language\/OpaqueTypes#Opaque-Parameter-Types",
+    "116" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Arrays",
+    "117" : "\/documentation\/The-Swift-Programming-Language\/Properties#Querying-and-Setting-Type-Properties",
+    "118" : "\/documentation\/The-Swift-Programming-Language\/Functions#Function-Parameters-and-Return-Values",
+    "119" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Precedence-for-Custom-Infix-Operators",
+    "12" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#No-Implicit-Fallthrough",
+    "120" : "\/documentation\/The-Swift-Programming-Language\/Attributes#globalActor",
+    "121" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Deinitializer-Declaration",
+    "122" : "\/documentation\/The-Swift-Programming-Language\/Deinitialization#How-Deinitialization-Works",
+    "123" : "\/documentation\/The-Swift-Programming-Language\/Functions#Default-Parameter-Values",
+    "124" : "\/documentation\/The-Swift-Programming-Language\/Attributes#escaping",
+    "125" : "\/documentation\/The-Swift-Programming-Language\/Properties",
+    "126" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Assertions-and-Preconditions",
+    "127" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Result-Transformations",
+    "128" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Identity-Operators",
+    "129" : "\/tutorials\/The-Swift-Programming-Language",
+    "13" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Enumerations-with-Cases-of-a-Raw-Value-Type",
+    "130" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Method-Requirements",
+    "131" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Type-Safety-and-Type-Inference",
+    "132" : "\/documentation\/The-Swift-Programming-Language\/Generics#Generic-Types",
+    "133" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Control-Transfer-Statements",
+    "134" : "\/documentation\/The-Swift-Programming-Language\/Generics#Associated-Types",
+    "135" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Accessing-Subscripts-of-Optional-Type",
+    "136" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Enumerations-with-Cases-of-Any-Type",
+    "137" : "\/documentation\/The-Swift-Programming-Language#Revision-History",
+    "138" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Type-Attributes",
+    "139" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Constants-and-Variables",
+    "14" : "\/documentation\/The-Swift-Programming-Language\/AccessControl",
+    "140" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Type-Aliases",
+    "141" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Logical-OR-Operator",
+    "142" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Access-Levels-for-Single-Target-Apps",
+    "143" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Optional-Binding",
+    "144" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Performing-Set-Operations",
+    "145" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Required-Initializers",
+    "146" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Implicitly-Unwrapped-Optionals",
+    "147" : "\/documentation\/The-Swift-Programming-Language\/TypeCasting#Type-Casting-for-Any-and-AnyObject",
+    "148" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Simple-Values",
+    "149" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Computed-Properties",
+    "15" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Deferred-Actions",
+    "150" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Bitwise-AND-Operator",
+    "151" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Isolation",
+    "152" : "\/documentation\/The-Swift-Programming-Language\/Functions#Functions-Without-Return-Values",
+    "153" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Forced-Value-Expression",
+    "154" : "\/documentation\/The-Swift-Programming-Language\/Types#Function-Type",
+    "155" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-an-Empty-Dictionary",
+    "156" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Borrowing-and-Consuming-Parameters",
+    "157" : "\/documentation\/The-Swift-Programming-Language\/MemorySafety#Conflicting-Access-to-Properties",
+    "158" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Initializers",
+    "159" : "\/documentation\/The-Swift-Programming-Language\/Functions#Nested-Functions",
+    "16" : "\/documentation\/The-Swift-Programming-Language\/Generics#Type-Constraint-Syntax",
+    "160" : "\/documentation\/The-Swift-Programming-Language\/Types#Restrictions-for-Nonescaping-Closures",
+    "161" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Terminology",
+    "162" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Guiding-Principle-of-Access-Levels",
+    "163" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Unstructured-Concurrency",
+    "164" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#UTF-16-Representation",
+    "165" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Macro-Expansion-Expression",
+    "166" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Enumeration-Case-Pattern",
+    "167" : "\/documentation\/The-Swift-Programming-Language\/Macros#Developing-and-Debugging-Macros",
+    "168" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Where",
+    "169" : "\/documentation\/The-Swift-Programming-Language\/Statements#Break-Statement",
+    "17" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Extended-String-Delimiters",
+    "170" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Default-Property-Values",
+    "171" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Half-Open-Range-Operator",
+    "172" : "\/documentation\/The-Swift-Programming-Language\/Properties#Stored-Properties-and-Instance-Variables",
+    "173" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Automatic-Initializer-Inheritance",
+    "174" : "\/documentation\/The-Swift-Programming-Language\/Subscripts#Subscript-Options",
+    "175" : "\/documentation\/The-Swift-Programming-Language\/Attributes#requiresstoredpropertyinits",
+    "176" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Tuple-Pattern",
+    "177" : "\/documentation\/The-Swift-Programming-Language\/Statements#Availability-Condition",
+    "178" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Fundamental-Set-Operations",
+    "179" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Attributes",
+    "18" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Integer-and-Floating-Point-Conversion",
+    "180" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Handling-Errors-Using-Do-Catch",
+    "181" : "\/documentation\/The-Swift-Programming-Language",
+    "182" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Accessing-Properties-Through-Optional-Chaining",
+    "183" : "\/documentation\/The-Swift-Programming-Language\/TypeCasting#Checking-Type",
+    "184" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Customizing-Initialization",
+    "185" : "\/documentation\/The-Swift-Programming-Language\/Subscripts#Subscript-Usage",
+    "186" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Objects-and-Classes",
+    "187" : "\/documentation\/The-Swift-Programming-Language\/Macros#Implementing-a-Macro",
+    "188" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Initializer-Delegation-for-Class-Types",
+    "189" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Optionals",
+    "19" : "\/documentation\/The-Swift-Programming-Language\/Subscripts",
+    "190" : "\/documentation\/The-Swift-Programming-Language\/Functions#Functions-With-an-Implicit-Return",
+    "191" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#String-Mutability",
+    "192" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Enumeration-Syntax",
+    "193" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining",
+    "194" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Declaration",
+    "195" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Declaration-Attributes",
+    "196" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Special-Kinds-of-Methods",
+    "197" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Capture-Lists",
+    "198" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Code-Blocks",
+    "199" : "\/tutorials",
+    "2" : "\/documentation\/The-Swift-Programming-Language\/Statements#If-Statement",
+    "20" : "\/documentation\/The-Swift-Programming-Language\/Subscripts#Type-Subscripts",
+    "200" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Combining-Logical-Operators",
+    "201" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Counting-Characters",
+    "202" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Implicitly-Assigned-Raw-Values",
+    "203" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators",
+    "204" : "\/documentation\/The-Swift-Programming-Language\/Attributes#propertyWrapper",
+    "205" : "\/documentation\/The-Swift-Programming-Language\/Deinitialization",
+    "206" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Initializers",
+    "207" : "\/documentation\/The-Swift-Programming-Language\/Methods#Instance-Methods",
+    "208" : "\/documentation\/The-Swift-Programming-Language\/Functions#Function-Types",
+    "209" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#String-Indices",
+    "21" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Strong-Reference-Cycles-Between-Class-Instances",
+    "210" : "\/documentation\/The-Swift-Programming-Language\/Attributes#autoclosure",
+    "211" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Conditional-Statements",
+    "212" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Comparing-Structures-and-Classes",
+    "213" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Overridden-Requirements-Arent-Used-in-Some-Generic-Contexts",
+    "214" : "\/documentation\/The-Swift-Programming-Language\/Attributes#NSApplicationMain",
+    "215" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Key-Path-String-Expression",
+    "216" : "\/documentation\/The-Swift-Programming-Language\/Types#Protocol-Composition-Type",
+    "217" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Preventing-Overrides",
+    "218" : "\/documentation\/The-Swift-Programming-Language\/Statements#Throw-Statement",
+    "219" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Designated-Initializers-and-Convenience-Initializers",
+    "22" : "\/documentation\/The-Swift-Programming-Language\/Statements#Return-Statement",
+    "220" : "\/documentation\/The-Swift-Programming-Language\/Statements#Do-Statement",
+    "221" : "\/documentation\/The-Swift-Programming-Language\/Types",
+    "222" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Operator-Declaration",
+    "223" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Working-with-Characters",
+    "224" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Continue",
+    "225" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Superclass-Expression",
+    "226" : "\/documentation\/The-Swift-Programming-Language\/Attributes#preconcurrency",
+    "227" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Numeric-Literals",
+    "228" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Custom-Types",
+    "229" : "\/documentation\/The-Swift-Programming-Language\/Attributes#NSManaged",
+    "23" : "\/documentation\/The-Swift-Programming-Language\/Properties#Property-Wrappers",
+    "230" : "\/documentation\/The-Swift-Programming-Language\/Attributes#resultBuilder",
+    "231" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Semicolons",
+    "232" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Providing-Default-Implementations",
+    "233" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Tasks-and-Task-Groups",
+    "234" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Subclassing",
+    "235" : "\/documentation\/The-Swift-Programming-Language\/Generics#Generic-Where-Clauses",
+    "236" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Set-Type-Syntax",
+    "237" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Access-Control-Syntax",
+    "238" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Memberwise-Initializers-for-Structure-Types",
+    "239" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Selector-Expression",
+    "24" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Default-Memberwise-Initializers-for-Structure-Types",
+    "240" : "\/documentation\/The-Swift-Programming-Language\/Closures#Operator-Methods",
+    "241" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-an-Empty-Array",
+    "242" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Assignment-Operator",
+    "243" : "\/documentation\/The-Swift-Programming-Language\/MemorySafety",
+    "244" : "\/documentation\/The-Swift-Programming-Language\/GenericParametersAndArguments#Generic-Where-Clauses",
+    "245" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#String-Literals",
+    "246" : "\/documentation\/The-Swift-Programming-Language\/Properties#Lazy-Stored-Properties",
+    "247" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Recursive-Enumerations",
+    "248" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Enforcing-Preconditions",
+    "249" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Dictionaries",
+    "25" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Result-Building-Methods",
+    "250" : "\/documentation\/The-Swift-Programming-Language\/Functions#Function-Types-as-Return-Types",
+    "251" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Accessing-and-Modifying-a-String",
+    "252" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Unicode-Scalar-Representation",
+    "253" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-and-Initializing-an-Empty-Set",
+    "254" : "\/documentation\/The-Swift-Programming-Language\/Methods#Assigning-to-self-Within-a-Mutating-Method",
+    "255" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Postfix-Expressions",
+    "256" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow",
+    "257" : "\/documentation\/The-Swift-Programming-Language\/Functions#Optional-Tuple-Return-Types",
+    "258" : "\/documentation\/The-Swift-Programming-Language\/Attributes#export",
+    "259" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Overriding-Properties",
+    "26" : "\/documentation\/The-Swift-Programming-Language\/Expressions",
+    "260" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Self-Expression",
+    "261" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Protocols-that-Have-Only-Semantic-Requirements",
+    "262" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Custom-Operators",
+    "263" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Naming-Constants-and-Variables",
+    "264" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#How-ARC-Works",
+    "265" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Sendable-Types",
+    "266" : "\/documentation\/The-Swift-Programming-Language\/Properties#Property-Observers",
+    "267" : "\/documentation\/The-Swift-Programming-Language\/Statements#Fallthrough-Statement",
+    "268" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Constants-Variables-Properties-and-Subscripts",
+    "269" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Defining-Model-Classes-for-Optional-Chaining",
+    "27" : "\/documentation\/The-Swift-Programming-Language\/NestedTypes",
+    "270" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure",
+    "271" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Protocols-and-Extensions",
+    "272" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Implicit-Conversion-to-a-Pointer-Type",
+    "273" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Actor-Declaration",
+    "274" : "\/documentation\/The-Swift-Programming-Language\/Statements",
+    "275" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Type-Aliases",
+    "276" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Optional-Property-Types",
+    "277" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Shifting-Behavior-for-Signed-Integers",
+    "278" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Class-Implementations-of-Protocol-Initializer-Requirements",
+    "279" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Accessing-Properties",
+    "28" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Bitwise-NOT-Operator",
+    "280" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Keywords-and-Punctuation",
+    "281" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Unicode-Representations-of-Strings",
+    "282" : "\/documentation\/The-Swift-Programming-Language\/Attributes#objcMembers",
+    "283" : "\/documentation\/The-Swift-Programming-Language#Language-Reference",
+    "284" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes",
+    "285" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Error-Handling",
+    "286" : "\/documentation\/The-Swift-Programming-Language\/OpaqueTypes#Boxed-Protocol-Types",
+    "287" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Hash-Values-for-Set-Types",
+    "288" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Bitwise-OR-Operator",
+    "289" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Propagation-of-Initialization-Failure",
+    "29" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Accessing-Superclass-Methods-Properties-and-Subscripts",
+    "290" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Prefix-Expressions",
+    "291" : "\/documentation\/The-Swift-Programming-Language\/Statements#Conditional-Compilation-Block",
+    "292" : "\/documentation\/The-Swift-Programming-Language\/Attributes#UIApplicationMain",
+    "293" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Integer-Conversion",
+    "294" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Calling-Methods-Through-Optional-Chaining",
+    "295" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Debugging-with-Assertions",
+    "296" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Compound-Cases",
+    "297" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Unowned-References",
+    "298" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Associated-Type-Declaration",
+    "299" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Enumeration-Declaration",
+    "3" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Tuple-Types",
+    "30" : "\/documentation\/The-Swift-Programming-Language\/Functions#Functions-with-Multiple-Return-Values",
+    "300" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators",
+    "301" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Mutability-of-Collections",
+    "302" : "\/documentation\/The-Swift-Programming-Language\/Statements#Line-Control-Statement",
+    "303" : "\/documentation\/The-Swift-Programming-Language\/Macros#Attached-Macros",
+    "304" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Iterating-Over-a-Dictionary",
+    "305" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Calling-Asynchronous-Functions-in-Parallel",
+    "306" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Syntax-for-Designated-and-Convenience-Initializers",
+    "307" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Error-Handling",
+    "308" : "\/documentation\/The-Swift-Programming-Language\/Statements#Labeled-Statement",
+    "309" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Initializer-Declaration",
+    "31" : "\/documentation\/The-Swift-Programming-Language\/Generics#Naming-Type-Parameters",
+    "310" : "\/documentation\/The-Swift-Programming-Language\/Types#Type-Inference",
+    "311" : "\/documentation\/The-Swift-Programming-Language\/Generics#Extending-an-Existing-Type-to-Specify-an-Associated-Type",
+    "312" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Equivalence-Operators",
+    "313" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Representing-and-Throwing-Errors",
+    "314" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Initialization-Parameters",
+    "315" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Logical-AND-Operator",
+    "316" : "\/documentation\/The-Swift-Programming-Language\/Closures#The-Sorted-Method",
+    "317" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Throwing-Functions-and-Methods",
+    "318" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Overflow-Operators",
+    "319" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Protocol-Extensions",
+    "32" : "\/documentation\/The-Swift-Programming-Language\/Statements#Guard-Statement",
+    "320" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Try-Operator",
+    "321" : "\/documentation\/The-Swift-Programming-Language\/Attributes#dynamicCallable",
+    "322" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Literals",
+    "323" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Structures-and-Enumerations-Are-Value-Types",
+    "324" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Set-Membership-and-Equality",
+    "325" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Closure-Expression",
+    "326" : "\/documentation\/The-Swift-Programming-Language\/MemorySafety#Conflicting-Access-to-self-in-Methods",
+    "327" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Initializer-Delegation-for-Value-Types",
+    "328" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Asynchronous-Functions-and-Methods",
+    "329" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Methods-with-Special-Names",
+    "33" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Types",
+    "330" : "\/documentation\/The-Swift-Programming-Language\/Closures#Inferring-Type-From-Context",
+    "331" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Remainder-Operator",
+    "332" : "\/documentation\/The-Swift-Programming-Language\/Functions#Using-Function-Types",
+    "333" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Enumerations-with-Indirection",
+    "334" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Operators",
+    "335" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Wildcard-Pattern",
+    "336" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Generics",
+    "337" : "\/documentation\/The-Swift-Programming-Language\/Types#Array-Type",
+    "338" : "\/documentation\/The-Swift-Programming-Language\/Statements#Loop-Statements",
+    "339" : "\/documentation\/The-Swift-Programming-Language\/Statements#Repeat-While-Statement",
+    "34" : "\/documentation\/The-Swift-Programming-Language\/Types#Metatype-Type",
+    "340" : "\/documentation\/The-Swift-Programming-Language\/Attributes#inlinable",
+    "341" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Subscript-Expression",
+    "342" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Conditionally-Conforming-to-a-Protocol",
+    "343" : "\/documentation\/The-Swift-Programming-Language\/Attributes#GKInspectable",
+    "344" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Mutating-Instance-Methods",
+    "345" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Parameter-Names-and-Argument-Labels",
+    "346" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Break",
+    "347" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Optional-Pattern",
+    "348" : "\/documentation\/The-Swift-Programming-Language\/Types#Self-Type",
+    "349" : "\/documentation\/The-Swift-Programming-Language\/Attributes#unchecked",
+    "35" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Tuple-Expression",
+    "350" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Conditional-Conformance",
+    "351" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Overriding-a-Failable-Initializer",
+    "352" : "\/documentation\/The-Swift-Programming-Language\/Types#Optional-Type",
+    "353" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Custom-Result-Builder-Attributes",
+    "354" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Initializing-an-Empty-String",
+    "355" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Floating-Point-Numbers",
+    "356" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Array-Type-Shorthand-Syntax",
+    "357" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Sets",
+    "358" : "\/documentation\/The-Swift-Programming-Language\/Generics#Type-Parameters",
+    "359" : "\/documentation\/The-Swift-Programming-Language\/TheBasics",
+    "36" : "\/documentation\/The-Swift-Programming-Language\/Functions#Specifying-Argument-Labels",
+    "360" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Extended-Grapheme-Clusters",
+    "361" : "\/documentation\/The-Swift-Programming-Language\/Attributes#testable",
+    "362" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Subscript-Declaration",
+    "363" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Wildcard-Expression",
+    "364" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Expression-Pattern",
+    "365" : "\/documentation\/The-Swift-Programming-Language\/Compatibility",
+    "366" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Access-Control-Levels",
+    "367" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Private-Members-in-Extensions",
+    "368" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Propagating-Errors-Using-Throwing-Functions",
+    "369" : "\/documentation\/The-Swift-Programming-Language\/Attributes#available",
+    "37" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Defining-a-Base-Class",
+    "370" : "\/documentation\/The-Swift-Programming-Language\/Closures#Closure-Expressions",
+    "371" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Declaration-Attributes-Used-by-Interface-Builder",
+    "372" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Resolving-Explicit-Redundancy",
+    "373" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters",
+    "374" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Access-Levels-for-Frameworks",
+    "375" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Raw-Values",
+    "376" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Initializer-Declaration",
+    "377" : "\/documentation\/The-Swift-Programming-Language\/Functions#Functions-Without-Parameters",
+    "378" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Type-Casting-Patterns",
+    "379" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Logical-Operators",
+    "38" : "\/documentation\/The-Swift-Programming-Language\/Generics",
+    "380" : "\/documentation\/The-Swift-Programming-Language\/Statements#Compiler-Control-Statements",
+    "381" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Patterns",
+    "382" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Declaration-Modifiers",
+    "383" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Failable-Initializers-for-Enumerations",
+    "384" : "\/documentation\/The-Swift-Programming-Language\/Generics#The-Problem-that-Generics-Solve",
+    "385" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Type-Annotations",
+    "386" : "\/documentation\/The-Swift-Programming-Language\/Properties#Computed-Properties",
+    "387" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Unicode-Scalar-Values",
+    "388" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Stored-Variable-Observers-and-Property-Observers",
+    "389" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Protocol-Inheritance",
+    "39" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Protocol-Inheritance",
+    "390" : "\/documentation\/The-Swift-Programming-Language\/Subscripts#Subscript-Syntax",
+    "391" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Collections-of-Protocol-Types",
+    "392" : "\/documentation\/The-Swift-Programming-Language\/Statements#Switch-Statement",
+    "393" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Handling-Errors",
+    "394" : "\/documentation\/The-Swift-Programming-Language\/Functions",
+    "395" : "\/documentation\/The-Swift-Programming-Language\/Statements#Switch-Statements-Must-Be-Exhaustive",
+    "396" : "\/documentation\/The-Swift-Programming-Language\/Types#Type-Annotation",
+    "397" : "\/documentation\/The-Swift-Programming-Language\/Properties#Shorthand-Getter-Declaration",
+    "398" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Resolving-Implicit-Redundancy",
+    "399" : "\/documentation\/The-Swift-Programming-Language\/MemorySafety#Understanding-Conflicting-Access-to-Memory",
+    "4" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Overriding-Property-Observers",
+    "40" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Identifiers",
+    "400" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Initializer-Requirements",
+    "401" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Default-Initializers",
+    "402" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Strings-Are-Value-Types",
+    "403" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Memory-Safety",
+    "404" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Value-Bindings",
+    "405" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Special-Characters-in-String-Literals",
+    "406" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Parameter-Modifiers",
+    "407" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Comparison-Operators",
+    "408" : "\/documentation\/The-Swift-Programming-Language\/Generics#Type-Constraints-in-Action",
+    "409" : "\/documentation\/The-Swift-Programming-Language\/GenericParametersAndArguments",
+    "41" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Enumeration-Types",
+    "410" : "\/documentation\/The-Swift-Programming-Language\/Generics#Implicit-Constraints",
+    "411" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Two-Phase-Initialization",
+    "412" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Resolving-Strong-Reference-Cycles-for-Closures",
+    "413" : "\/documentation\/The-Swift-Programming-Language\/Attributes#backDeployed",
+    "414" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Extension-Declaration",
+    "415" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Tuples",
+    "416" : "\/documentation\/The-Swift-Programming-Language\/Patterns",
+    "417" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Chaining-on-Methods-with-Optional-Return-Values",
+    "418" : "\/documentation\/The-Swift-Programming-Language\/Statements#Compile-Time-Diagnostic-Statement",
+    "419" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Linking-Multiple-Levels-of-Chaining",
+    "42" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Failable-Initializers-for-Enumerations-with-Raw-Values",
+    "420" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Accessing-Subscripts-Through-Optional-Chaining",
+    "421" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Checking-API-Availability",
+    "422" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Compound-Assignment-Operators",
+    "423" : "\/documentation\/The-Swift-Programming-Language\/OpaqueTypes#The-Problem-that-Opaque-Types-Solve",
+    "424" : "\/documentation\/The-Swift-Programming-Language\/Statements#Execution-Does-Not-Fall-Through-Cases-Implicitly",
+    "425" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Global-Actors",
+    "426" : "\/documentation\/The-Swift-Programming-Language\/Functions#Function-Argument-Labels-and-Parameter-Names",
+    "427" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Literal-Expression",
+    "428" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Implicit-Member-Expression",
+    "429" : "\/documentation\/The-Swift-Programming-Language\/Properties#Type-Properties",
+    "43" : "\/documentation\/The-Swift-Programming-Language\/Properties#Global-and-Local-Variables",
+    "430" : "\/documentation\/The-Swift-Programming-Language\/Statements#While-Statement",
+    "431" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#While-Loops",
+    "432" : "\/documentation\/The-Swift-Programming-Language\/Generics#Using-a-Protocol-in-Its-Associated-Types-Constraints",
+    "433" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Pointers",
+    "434" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Variable-Declaration",
+    "435" : "\/documentation\/The-Swift-Programming-Language\/Methods#Type-Methods",
+    "436" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Explicit-Parentheses",
+    "437" : "\/documentation\/The-Swift-Programming-Language\/Generics#Extending-a-Generic-Type",
+    "438" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Comments",
+    "439" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Labeled-Statements",
+    "44" : "\/documentation\/The-Swift-Programming-Language\/Inheritance",
+    "440" : "\/documentation\/The-Swift-Programming-Language\/Properties#Read-Only-Computed-Properties",
+    "441" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Fallthrough",
+    "442" : "\/documentation\/The-Swift-Programming-Language\/Declarations",
+    "443" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Accessing-and-Modifying-a-Dictionary",
+    "444" : "\/documentation\/The-Swift-Programming-Language\/Closures#Autoclosures",
+    "445" : "\/documentation\/The-Swift-Programming-Language\/Attributes#main",
+    "446" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Initializer-Expression",
+    "447" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Mutating-Method-Requirements",
+    "448" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Whitespace-and-Comments",
+    "449" : "\/documentation\/The-Swift-Programming-Language\/Types#Opaque-Type",
+    "45" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Weak-References",
+    "450" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Inserting-and-Removing",
+    "451" : "\/documentation\/The-Swift-Programming-Language\/Initialization#The-init-Failable-Initializer",
+    "452" : "\/documentation\/The-Swift-Programming-Language\/Concurrency",
+    "453" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Subscripts",
+    "454" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Matching-Enumeration-Values-with-a-Switch-Statement",
+    "455" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#If",
+    "456" : "\/documentation\/The-Swift-Programming-Language\/Methods#Modifying-Value-Types-from-Within-Instance-Methods",
+    "457" : "\/documentation\/The-Swift-Programming-Language\/Expressions#In-Out-Expression",
+    "458" : "\/documentation\/The-Swift-Programming-Language\/Macros",
+    "459" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Function-Call-Expression",
+    "46" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Specifying-Cleanup-Actions",
+    "460" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Enumerations-and-Structures",
+    "461" : "\/documentation\/The-Swift-Programming-Language\/Types#Tuple-Type",
+    "462" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Conditional-Expression",
+    "463" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Overriding-Property-Getters-and-Setters",
+    "464" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Force-Unwrapping",
+    "465" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#One-Sided-Ranges",
+    "466" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Protocols-as-Types",
+    "467" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#While",
+    "468" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Unicode",
+    "469" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Primary-Expressions",
+    "47" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Accessing-Enumeration-Cases",
+    "470" : "\/documentation\/The-Swift-Programming-Language\/Types#Type-Identifier",
+    "471" : "\/documentation\/The-Swift-Programming-Language\/Attributes#usableFromInline",
+    "472" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Classes-Are-Reference-Types",
+    "473" : "\/documentation\/The-Swift-Programming-Language\/GenericParametersAndArguments#Generic-Parameter-Clause",
+    "474" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Shifting-Behavior-for-Unsigned-Integers",
+    "475" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Failable-Initializers",
+    "476" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Extension-Syntax",
+    "477" : "\/documentation\/The-Swift-Programming-Language\/AboutSwift",
+    "478" : "\/documentation\/The-Swift-Programming-Language\/Macros#Macro-Expansion",
+    "479" : "\/documentation\/The-Swift-Programming-Language\/Properties#Type-Property-Syntax",
+    "48" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Structure-Declaration",
+    "480" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling",
+    "481" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Disabling-Error-Propagation",
+    "482" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#ARC-in-Action",
+    "483" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Optional-Chaining-Expression",
+    "484" : "\/documentation\/The-Swift-Programming-Language\/OpaqueTypes#Differences-Between-Opaque-Types-and-Boxed-Protocol-Types",
+    "485" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Class-Declaration",
+    "486" : "\/documentation\/The-Swift-Programming-Language\/Generics#Type-Constraints",
+    "487" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Generics",
+    "488" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Assigning-Constant-Properties-During-Initialization",
+    "489" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-an-Array-with-a-Default-Value",
+    "49" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Switch",
+    "490" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Memberwise-Initializers-for-Structure-Types",
+    "491" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Default-Access-Levels",
+    "492" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Iterating-Over-a-Set",
+    "493" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Protocols",
+    "494" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#UTF-8-Representation",
+    "495" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Getters-and-Setters",
+    "496" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#nil",
+    "497" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Identifier-Pattern",
+    "498" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Raw-Values-and-Associated-Values",
+    "499" : "\/documentation\/The-Swift-Programming-Language\/Statements#For-In-Statement",
+    "5" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Generic-Parameters-and-Arguments",
+    "50" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Class-Only-Protocols",
+    "500" : "\/documentation\/The-Swift-Programming-Language\/Types#Boxed-Protocol-Type",
+    "501" : "\/documentation\/The-Swift-Programming-Language\/MemorySafety#Conflicting-Access-to-In-Out-Parameters",
+    "502" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Access-Levels-for-Unit-Test-Targets",
+    "503" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Extensions",
+    "504" : "\/documentation\/The-Swift-Programming-Language#Language-Guide",
+    "505" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Providing-a-Fallback-Value",
+    "506" : "\/documentation\/The-Swift-Programming-Language\/Attributes#unknown",
+    "507" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Type-Subscript-Declarations",
+    "508" : "\/documentation\/The-Swift-Programming-Language\/Statements#Continue-Statement",
+    "509" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Dictionary-Type-Shorthand-Syntax",
+    "51" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-an-Array-by-Adding-Two-Arrays-Together",
+    "510" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Accessing-and-Modifying-a-Set",
+    "511" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Associated-Values",
+    "512" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Bitwise-Left-and-Right-Shift-Operators",
+    "513" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Concurrency",
+    "514" : "\/documentation\/The-Swift-Programming-Language\/Closures#Capturing-Values",
+    "515" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Type-Variable-Properties",
+    "516" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Parenthesized-Expression",
+    "517" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Lexical-Structure",
+    "518" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-a-Dictionary-with-a-Dictionary-Literal",
+    "519" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Designated-and-Convenience-Initializers-in-Action",
+    "52" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Subscript-Declaration",
+    "520" : "\/documentation\/The-Swift-Programming-Language\/Types#Implicitly-Unwrapped-Optional-Type",
+    "521" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Booleans",
+    "522" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Integer-Literals",
+    "523" : "\/documentation\/The-Swift-Programming-Language\/Functions#Function-Types-as-Parameter-Types",
+    "524" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Weak-and-Unowned-References",
+    "525" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Specifying-the-Error-Type",
+    "526" : "\/documentation\/The-Swift-Programming-Language\/OpaqueTypes",
+    "527" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Actors",
+    "528" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Prefix-and-Suffix-Equality",
+    "529" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Interval-Matching",
+    "53" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Closed-Range-Operator",
+    "530" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Unowned-References-and-Implicitly-Unwrapped-Optional-Properties",
+    "531" : "\/documentation\/The-Swift-Programming-Language\/MemorySafety#Characteristics-of-Memory-Access",
+    "532" : "\/documentation\/The-Swift-Programming-Language\/NestedTypes#Nested-Types-in-Action",
+    "533" : "\/documentation\/The-Swift-Programming-Language\/Properties#Shorthand-Setter-Declaration",
+    "534" : "\/documentation\/The-Swift-Programming-Language\/Attributes#convention",
+    "535" : "\/documentation\/The-Swift-Programming-Language\/Statements#Switching-Over-Future-Enumeration-Cases",
+    "536" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Range-Operators",
+    "537" : "\/documentation\/The-Swift-Programming-Language\/Statements#Branch-Statements",
+    "538" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Structure-and-Class-Instances",
+    "539" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Concatenating-Strings-and-Characters",
+    "54" : "\/documentation\/The-Swift-Programming-Language\/Initialization",
+    "540" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Import-Declaration",
+    "541" : "\/documentation\/The-Swift-Programming-Language\/Closures#Closures-Are-Reference-Types",
+    "542" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour",
+    "543" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Break-in-a-Switch-Statement",
+    "544" : "\/documentation\/The-Swift-Programming-Language\/Closures#Implicit-Returns-from-Single-Expression-Closures",
+    "545" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Overriding",
+    "546" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Initializers",
+    "547" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Failable-Initializers",
+    "548" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Initializer-Parameters-Without-Argument-Labels",
+    "549" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Type-Alias-Declaration",
+    "55" : "\/documentation\/The-Swift-Programming-Language\/LexicalStructure#Floating-Point-Literals",
+    "550" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Numeric-Type-Conversion",
+    "551" : "\/documentation\/The-Swift-Programming-Language\/Closures#Trailing-Closures",
+    "552" : "\/documentation\/The-Swift-Programming-Language\/TypeCasting",
+    "553" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Implicit-Conformance-to-a-Protocol",
+    "554" : "\/documentation\/The-Swift-Programming-Language\/Types#Type-Inheritance-Clause",
+    "555" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Early-Exit",
+    "556" : "\/documentation\/The-Swift-Programming-Language\/RevisionHistory",
+    "557" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Precedence-Group-Declaration",
+    "558" : "\/documentation\/The-Swift-Programming-Language\/Properties#Stored-Properties-of-Constant-Structure-Instances",
+    "559" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Rethrowing-Functions-and-Methods",
+    "56" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Unary-Minus-Operator",
+    "560" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Explicit-Member-Expression",
+    "561" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Prefix-and-Postfix-Operators",
+    "562" : "\/documentation\/The-Swift-Programming-Language\/Enumerations#Initializing-from-a-Raw-Value",
+    "563" : "\/documentation\/The-Swift-Programming-Language\/Closures#Escaping-Closures",
+    "564" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Constant-Declaration",
+    "565" : "\/documentation\/The-Swift-Programming-Language\/Generics#Generic-Functions",
+    "566" : "\/documentation\/The-Swift-Programming-Language\/OptionalChaining#Optional-Chaining-as-an-Alternative-to-Forced-Unwrapping",
+    "567" : "\/documentation\/The-Swift-Programming-Language\/AboutTheLanguageReference#How-to-Read-the-Grammar",
+    "568" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Key-Path-Expression",
+    "569" : "\/documentation\/The-Swift-Programming-Language\/Functions#Variadic-Parameters",
+    "57" : "\/documentation\/The-Swift-Programming-Language\/Statements#Control-Transfer-Statements",
+    "570" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Task-Cancellation",
+    "571" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Ternary-Conditional-Operator",
+    "572" : "\/documentation\/The-Swift-Programming-Language\/Enumerations",
+    "573" : "\/documentation\/The-Swift-Programming-Language\/Closures#Closure-Expression-Syntax",
+    "574" : "\/documentation\/The-Swift-Programming-Language\/Macros#Freestanding-Macros",
+    "575" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Computed-Variables-and-Computed-Properties",
+    "576" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Setting-a-Default-Property-Value-with-a-Closure-or-Function",
+    "577" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Failable-Initializer-Requirements",
+    "578" : "\/documentation\/The-Swift-Programming-Language\/Generics#Associated-Types-in-Action",
+    "579" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Defining-and-Calling-Asynchronous-Functions",
+    "58" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Patterns",
+    "580" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Parameter-Names",
+    "581" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Assignment-Operator",
+    "582" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Statements",
+    "583" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar",
+    "584" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Strong-Reference-Cycles-for-Closures",
+    "585" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Resolving-Strong-Reference-Cycles-Between-Class-Instances",
+    "586" : "\/documentation\/The-Swift-Programming-Language\/Methods#The-self-Property",
+    "587" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting",
+    "588" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Compound-Assignment-Operators",
+    "589" : "\/documentation\/The-Swift-Programming-Language\/Functions#Omitting-Argument-Labels",
+    "59" : "\/documentation\/The-Swift-Programming-Language\/Protocols",
+    "590" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures#Definition-Syntax",
+    "591" : "\/documentation\/The-Swift-Programming-Language\/NestedTypes#Referring-to-Nested-Types",
+    "592" : "\/documentation\/The-Swift-Programming-Language\/GenericParametersAndArguments#Generic-Argument-Clause",
+    "593" : "\/documentation\/The-Swift-Programming-Language\/Attributes#dynamicMemberLookup",
+    "594" : "\/documentation\/The-Swift-Programming-Language\/Generics#Adding-Constraints-to-an-Associated-Type",
+    "595" : "\/documentation\/The-Swift-Programming-Language\/Properties#Stored-Properties",
+    "596" : "\/documentation\/The-Swift-Programming-Language\/Generics#Generic-Subscripts",
+    "597" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Protocol-Conformance",
+    "598" : "\/documentation\/The-Swift-Programming-Language\/Attributes#NSCopying",
+    "599" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Property-Requirements",
+    "6" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Top-Level-Code",
+    "60" : "\/documentation\/The-Swift-Programming-Language\/Attributes#discardableResult",
+    "600" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Initializer-Inheritance-and-Overriding",
+    "601" : "\/documentation\/The-Swift-Programming-Language\/Patterns#Value-Binding-Pattern",
+    "602" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-an-Array-with-an-Array-Literal",
+    "603" : "\/documentation\/The-Swift-Programming-Language\/Generics#Associated-Types-with-a-Generic-Where-Clause",
+    "604" : "\/documentation\/The-Swift-Programming-Language\/Inheritance#Overriding-Methods",
+    "605" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Result-Builders",
+    "606" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Stored-Variables-and-Stored-Variable-Properties",
+    "607" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Function-Declaration",
+    "608" : "\/documentation\/The-Swift-Programming-Language",
+    "609" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Declaring-Protocol-Adoption-with-an-Extension",
+    "61" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Postfix-Self-Expression",
+    "610" : "\/documentation\/The-Swift-Programming-Language\/Closures#Shorthand-Argument-Names",
+    "611" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Conformance-Must-Not-Be-Redundant",
+    "612" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Iterating-Over-an-Array",
+    "613" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Defining-a-Capture-List",
+    "614" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#UInt",
+    "615" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#The-Main-Actor",
+    "616" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Unary-Plus-Operator",
+    "617" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Methods",
+    "618" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Optional-Protocol-Requirements",
+    "619" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Ternary-Conditional-Operator",
+    "62" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#String-and-Character-Equality",
+    "620" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Infix-Expressions",
+    "621" : "\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar#Expressions",
+    "622" : "\/documentation\/The-Swift-Programming-Language\/Deinitialization#Deinitializers-in-Action",
+    "623" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Subclassing",
+    "624" : "\/documentation\/The-Swift-Programming-Language\/Types#Dictionary-Type",
+    "625" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Multiline-String-Literals",
+    "626" : "\/documentation\/The-Swift-Programming-Language\/Types#Any-Type",
+    "627" : "\/documentation\/The-Swift-Programming-Language\/Expressions#Type-Casting-Operators",
+    "628" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Adding-Protocol-Conformance-with-an-Extension",
+    "629" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#For-In-Loops",
+    "63" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Int",
+    "630" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Creating-a-Set-with-an-Array-Literal",
+    "631" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Integers",
+    "632" : "\/documentation\/The-Swift-Programming-Language\/Properties#Projecting-a-Value-From-a-Property-Wrapper",
+    "633" : "\/documentation\/The-Swift-Programming-Language\/Attributes#Sendable",
+    "634" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Special-Kinds-of-Parameters",
+    "635" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Repeat-While",
+    "636" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Class-Inheritance-and-Initialization",
+    "637" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Default-Initializers",
+    "638" : "\/documentation\/The-Swift-Programming-Language\/Attributes#objc",
+    "639" : "\/documentation\/The-Swift-Programming-Language\/GuidedTour#Control-Flow",
+    "64" : "\/documentation\/The-Swift-Programming-Language\/CollectionTypes#Accessing-and-Modifying-an-Array",
+    "640" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Substrings",
+    "641" : "\/documentation\/The-Swift-Programming-Language\/Attributes#nonobjc",
+    "642" : "\/documentation\/The-Swift-Programming-Language\/Closures",
+    "643" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Precedence-and-Associativity",
+    "644" : "\/documentation\/The-Swift-Programming-Language\/Functions#Defining-and-Calling-Functions",
+    "645" : "\/documentation\/The-Swift-Programming-Language\/Attributes#frozen",
+    "646" : "\/documentation\/The-Swift-Programming-Language\/Properties#Setting-Initial-Values-for-Wrapped-Properties",
+    "647" : "\/documentation\/The-Swift-Programming-Language\/Declarations#Protocol-Method-Declaration",
+    "648" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Protocol-Composition",
+    "649" : "\/documentation\/The-Swift-Programming-Language\/GenericParametersAndArguments#Integer-Generic-Parameters",
+    "65" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Adding-Constraints-to-Protocol-Extensions",
+    "66" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Operator-Methods",
+    "67" : "\/documentation\/The-Swift-Programming-Language\/Extensions",
+    "68" : "\/documentation\/The-Swift-Programming-Language\/TypeCasting#Downcasting",
+    "69" : "\/documentation\/The-Swift-Programming-Language\/Attributes#warnunqualifiedaccess",
+    "7" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Delegation",
+    "70" : "\/documentation\/The-Swift-Programming-Language\/ControlFlow#Break-in-a-Loop-Statement",
+    "71" : "\/documentation\/The-Swift-Programming-Language\/Attributes#freestanding",
+    "72" : "\/documentation\/The-Swift-Programming-Language\/Macros#Macro-Declarations",
+    "73" : "\/documentation\/The-Swift-Programming-Language\/Generics#Contextual-Where-Clauses",
+    "74" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Tuples",
+    "75" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Protocol-Syntax",
+    "76" : "\/documentation\/The-Swift-Programming-Language\/ErrorHandling#Converting-Errors-to-Optional-Values",
+    "77" : "\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters#Comparing-Strings",
+    "78" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Bitwise-Operators",
+    "79" : "\/documentation\/The-Swift-Programming-Language\/Attributes",
+    "8" : "\/documentation\/The-Swift-Programming-Language\/Functions#Functions-With-Multiple-Parameters",
+    "80" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Nested-Types",
+    "81" : "\/documentation\/The-Swift-Programming-Language\/AccessControl#Access-Levels",
+    "82" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Printing-Constants-and-Variables",
+    "83" : "\/documentation\/The-Swift-Programming-Language\/TypeCasting#Defining-a-Class-Hierarchy-for-Type-Casting",
+    "84" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Value-Overflow",
+    "85" : "\/documentation\/The-Swift-Programming-Language\/AboutTheLanguageReference",
+    "86" : "\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting#Unowned-Optional-References",
+    "87" : "\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures",
+    "88" : "\/documentation\/The-Swift-Programming-Language\/Attributes#attached",
+    "89" : "\/documentation\/The-Swift-Programming-Language\/Concurrency#Asynchronous-Sequences",
+    "9" : "\/documentation\/The-Swift-Programming-Language\/TheBasics#Declaring-Constants-and-Variables",
+    "90" : "\/documentation\/The-Swift-Programming-Language\/Functions#In-Out-Parameters",
+    "91" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Adopting-a-Protocol-Using-a-Synthesized-Implementation",
+    "92" : "\/documentation\/The-Swift-Programming-Language#Welcome-to-Swift",
+    "93" : "\/documentation\/The-Swift-Programming-Language\/AdvancedOperators#Bitwise-XOR-Operator",
+    "94" : "\/documentation\/The-Swift-Programming-Language\/Statements#Defer-Statement",
+    "95" : "\/documentation\/The-Swift-Programming-Language\/Initialization#Setting-Initial-Values-for-Stored-Properties",
+    "96" : "\/documentation\/The-Swift-Programming-Language\/Protocols#Checking-for-Protocol-Conformance",
+    "97" : "\/documentation\/The-Swift-Programming-Language\/Extensions#Nested-Types",
+    "98" : "\/documentation\/The-Swift-Programming-Language\/BasicOperators#Nil-Coalescing-Operator",
+    "99" : "\/documentation\/The-Swift-Programming-Language\/OpaqueTypes#Returning-an-Opaque-Type"
+  },
+  "pathHierarchy" : {
+    "articlesContainer" : 608,
+    "modules" : [
+      181
+    ],
+    "nodes" : [
+      {
+        "name" : "In-Out-Parameters"
+      },
+      {
+        "name" : "Arithmetic-Operators"
+      },
+      {
+        "name" : "If-Statement"
+      },
+      {
+        "name" : "Tuple-Types"
+      },
+      {
+        "name" : "Overriding-Property-Observers"
+      },
+      {
+        "name" : "Generic-Parameters-and-Arguments"
+      },
+      {
+        "name" : "Top-Level-Code"
+      },
+      {
+        "name" : "Delegation"
+      },
+      {
+        "name" : "Functions-With-Multiple-Parameters"
+      },
+      {
+        "name" : "Declaring-Constants-and-Variables"
+      },
+      {
+        "name" : "Switch-Case-Attributes"
+      },
+      {
+        "name" : "Functions-that-Never-Return"
+      },
+      {
+        "name" : "No-Implicit-Fallthrough"
+      },
+      {
+        "name" : "Enumerations-with-Cases-of-a-Raw-Value-Type"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 637
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 81
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 105
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 268
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 495
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 623
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 103
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 24
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 140
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 336
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 142
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 491
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 367
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 41
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 597
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 389
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 3
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 498
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 374
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 80
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 162
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 158
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 237
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 502
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 493
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 228
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 503
+          }
+        ],
+        "name" : "AccessControl"
+      },
+      {
+        "name" : "Deferred-Actions"
+      },
+      {
+        "name" : "Type-Constraint-Syntax"
+      },
+      {
+        "name" : "Extended-String-Delimiters"
+      },
+      {
+        "name" : "Integer-and-Floating-Point-Conversion"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 174
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 20
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 390
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 185
+          }
+        ],
+        "name" : "Subscripts"
+      },
+      {
+        "name" : "Type-Subscripts"
+      },
+      {
+        "name" : "Strong-Reference-Cycles-Between-Class-Instances"
+      },
+      {
+        "name" : "Return-Statement"
+      },
+      {
+        "name" : "Property-Wrappers"
+      },
+      {
+        "name" : "Default-Memberwise-Initializers-for-Structure-Types"
+      },
+      {
+        "name" : "Result-Building-Methods"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 462
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 620
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 516
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 459
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 153
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 61
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 255
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 560
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 446
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 165
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 568
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 428
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 215
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 469
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 197
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 114
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 627
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 325
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 571
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 427
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 341
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 225
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 35
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 272
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 483
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 581
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 363
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 457
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 320
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 260
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 290
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 239
+          }
+        ],
+        "name" : "Expressions"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 591
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 532
+          }
+        ],
+        "name" : "NestedTypes"
+      },
+      {
+        "name" : "Bitwise-NOT-Operator"
+      },
+      {
+        "name" : "Accessing-Superclass-Methods-Properties-and-Subscripts"
+      },
+      {
+        "name" : "Functions-with-Multiple-Return-Values"
+      },
+      {
+        "name" : "Naming-Type-Parameters"
+      },
+      {
+        "name" : "Guard-Statement"
+      },
+      {
+        "name" : "Types"
+      },
+      {
+        "name" : "Metatype-Type"
+      },
+      {
+        "name" : "Tuple-Expression"
+      },
+      {
+        "name" : "Specifying-Argument-Labels"
+      },
+      {
+        "name" : "Defining-a-Base-Class"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 410
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 16
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 565
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 432
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 134
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 486
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 594
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 235
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 73
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 384
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 603
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 596
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 437
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 578
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 132
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 408
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 311
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 358
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 31
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 110
+          }
+        ],
+        "name" : "Generics"
+      },
+      {
+        "name" : "Protocol-Inheritance"
+      },
+      {
+        "name" : "Identifiers"
+      },
+      {
+        "name" : "Enumeration-Types"
+      },
+      {
+        "name" : "Failable-Initializers-for-Enumerations-with-Raw-Values"
+      },
+      {
+        "name" : "Global-and-Local-Variables"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 29
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 37
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 259
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 217
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 234
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 463
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 545
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 604
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 4
+          }
+        ],
+        "name" : "Inheritance"
+      },
+      {
+        "name" : "Weak-References"
+      },
+      {
+        "name" : "Specifying-Cleanup-Actions"
+      },
+      {
+        "name" : "Accessing-Enumeration-Cases"
+      },
+      {
+        "name" : "Structure-Declaration"
+      },
+      {
+        "name" : "Switch"
+      },
+      {
+        "name" : "Class-Only-Protocols"
+      },
+      {
+        "name" : "Creating-an-Array-by-Adding-Two-Arrays-Together"
+      },
+      {
+        "name" : "Subscript-Declaration"
+      },
+      {
+        "name" : "Closed-Range-Operator"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 188
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 383
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 351
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 345
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 600
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 327
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 636
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 548
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 451
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 314
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 173
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 411
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 546
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 145
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 306
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 184
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 219
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 95
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 401
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 490
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 547
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 276
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 488
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 170
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 576
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 519
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 289
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 42
+          }
+        ],
+        "name" : "Initialization"
+      },
+      {
+        "name" : "Floating-Point-Literals"
+      },
+      {
+        "name" : "Unary-Minus-Operator"
+      },
+      {
+        "name" : "Control-Transfer-Statements"
+      },
+      {
+        "name" : "Patterns"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 96
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 400
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 65
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 130
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 447
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 577
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 7
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 39
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 628
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 618
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 319
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 91
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 50
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 278
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 599
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 261
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 342
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 391
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 232
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 648
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 609
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 75
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 466
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 553
+          }
+        ],
+        "name" : "Protocols"
+      },
+      {
+        "name" : "discardableResult"
+      },
+      {
+        "name" : "Postfix-Self-Expression"
+      },
+      {
+        "name" : "String-and-Character-Equality"
+      },
+      {
+        "name" : "Int"
+      },
+      {
+        "name" : "Accessing-and-Modifying-an-Array"
+      },
+      {
+        "name" : "Adding-Constraints-to-Protocol-Extensions"
+      },
+      {
+        "name" : "Operator-Methods"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 453
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 617
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 206
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 344
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 97
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 149
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 476
+          }
+        ],
+        "name" : "Extensions"
+      },
+      {
+        "name" : "Downcasting"
+      },
+      {
+        "name" : "warnunqualifiedaccess"
+      },
+      {
+        "name" : "Break-in-a-Loop-Statement"
+      },
+      {
+        "name" : "freestanding"
+      },
+      {
+        "name" : "Macro-Declarations"
+      },
+      {
+        "name" : "Contextual-Where-Clauses"
+      },
+      {
+        "name" : "Tuples"
+      },
+      {
+        "name" : "Protocol-Syntax"
+      },
+      {
+        "name" : "Converting-Errors-to-Optional-Values"
+      },
+      {
+        "name" : "Comparing-Strings"
+      },
+      {
+        "name" : "Bitwise-Operators"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 638
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 69
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 369
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 445
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 175
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 413
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 349
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 71
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 25
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 633
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 340
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 204
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 343
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 120
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 292
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 506
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 258
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 195
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 124
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 321
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 127
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 226
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 371
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 210
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 230
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 471
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 598
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 593
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 645
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 229
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 214
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 353
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 361
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 138
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 60
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 10
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 534
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 282
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 88
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 641
+          }
+        ],
+        "name" : "Attributes"
+      },
+      {
+        "name" : "Nested-Types"
+      },
+      {
+        "name" : "Access-Levels"
+      },
+      {
+        "name" : "Printing-Constants-and-Variables"
+      },
+      {
+        "name" : "Defining-a-Class-Hierarchy-for-Type-Casting"
+      },
+      {
+        "name" : "Value-Overflow"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 567
+          }
+        ],
+        "name" : "AboutTheLanguageReference"
+      },
+      {
+        "name" : "Unowned-Optional-References"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 590
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 472
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 238
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 323
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 538
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 128
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 433
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 279
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 212
+          }
+        ],
+        "name" : "ClassesAndStructures"
+      },
+      {
+        "name" : "attached"
+      },
+      {
+        "name" : "Asynchronous-Sequences"
+      },
+      {
+        "name" : "In-Out-Parameters"
+      },
+      {
+        "name" : "Adopting-a-Protocol-Using-a-Synthesized-Implementation"
+      },
+      {
+        "name" : "Welcome-to-Swift"
+      },
+      {
+        "name" : "Bitwise-XOR-Operator"
+      },
+      {
+        "name" : "Defer-Statement"
+      },
+      {
+        "name" : "Setting-Initial-Values-for-Stored-Properties"
+      },
+      {
+        "name" : "Checking-for-Protocol-Conformance"
+      },
+      {
+        "name" : "Nested-Types"
+      },
+      {
+        "name" : "Nil-Coalescing-Operator"
+      },
+      {
+        "name" : "Returning-an-Opaque-Type"
+      },
+      {
+        "name" : "Functions-and-Closures"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 456
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 586
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 254
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 435
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 207
+          }
+        ],
+        "name" : "Methods"
+      },
+      {
+        "name" : "Iterating-over-Enumeration-Cases"
+      },
+      {
+        "name" : "Function-Types"
+      },
+      {
+        "name" : "String-Interpolation"
+      },
+      {
+        "name" : "Modules-Source-Files-and-Packages"
+      },
+      {
+        "name" : "Protocol-Property-Declaration"
+      },
+      {
+        "name" : "Regular-Expression-Literals"
+      },
+      {
+        "name" : "Logical-NOT-Operator"
+      },
+      {
+        "name" : "String-Literals"
+      },
+      {
+        "name" : "Extensions-with-a-Generic-Where-Clause"
+      },
+      {
+        "name" : "Integer-Bounds"
+      },
+      {
+        "name" : "Macro-Declaration"
+      },
+      {
+        "name" : "Declarations"
+      },
+      {
+        "name" : "Await-Operator"
+      },
+      {
+        "name" : "Opaque-Parameter-Types"
+      },
+      {
+        "name" : "Arrays"
+      },
+      {
+        "name" : "Querying-and-Setting-Type-Properties"
+      },
+      {
+        "name" : "Function-Parameters-and-Return-Values"
+      },
+      {
+        "name" : "Precedence-for-Custom-Infix-Operators"
+      },
+      {
+        "name" : "globalActor"
+      },
+      {
+        "name" : "Deinitializer-Declaration"
+      },
+      {
+        "name" : "How-Deinitialization-Works"
+      },
+      {
+        "name" : "Default-Parameter-Values"
+      },
+      {
+        "name" : "escaping"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 23
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 172
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 479
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 429
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 397
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 533
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 440
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 43
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 632
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 595
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 266
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 386
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 246
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 117
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 646
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 558
+          }
+        ],
+        "name" : "Properties"
+      },
+      {
+        "name" : "Assertions-and-Preconditions"
+      },
+      {
+        "name" : "Result-Transformations"
+      },
+      {
+        "name" : "Identity-Operators"
+      },
+      {
+        "name" : "The-Swift-Programming-Language"
+      },
+      {
+        "name" : "Method-Requirements"
+      },
+      {
+        "name" : "Type-Safety-and-Type-Inference"
+      },
+      {
+        "name" : "Generic-Types"
+      },
+      {
+        "name" : "Control-Transfer-Statements"
+      },
+      {
+        "name" : "Associated-Types"
+      },
+      {
+        "name" : "Accessing-Subscripts-of-Optional-Type"
+      },
+      {
+        "name" : "Enumerations-with-Cases-of-Any-Type"
+      },
+      {
+        "name" : "Revision-History"
+      },
+      {
+        "name" : "Type-Attributes"
+      },
+      {
+        "name" : "Constants-and-Variables"
+      },
+      {
+        "name" : "Type-Aliases"
+      },
+      {
+        "name" : "Logical-OR-Operator"
+      },
+      {
+        "name" : "Access-Levels-for-Single-Target-Apps"
+      },
+      {
+        "name" : "Optional-Binding"
+      },
+      {
+        "name" : "Performing-Set-Operations"
+      },
+      {
+        "name" : "Required-Initializers"
+      },
+      {
+        "name" : "Implicitly-Unwrapped-Optionals"
+      },
+      {
+        "name" : "Type-Casting-for-Any-and-AnyObject"
+      },
+      {
+        "name" : "Simple-Values"
+      },
+      {
+        "name" : "Computed-Properties"
+      },
+      {
+        "name" : "Bitwise-AND-Operator"
+      },
+      {
+        "name" : "Isolation"
+      },
+      {
+        "name" : "Functions-Without-Return-Values"
+      },
+      {
+        "name" : "Forced-Value-Expression"
+      },
+      {
+        "name" : "Function-Type"
+      },
+      {
+        "name" : "Creating-an-Empty-Dictionary"
+      },
+      {
+        "name" : "Borrowing-and-Consuming-Parameters"
+      },
+      {
+        "name" : "Conflicting-Access-to-Properties"
+      },
+      {
+        "name" : "Initializers"
+      },
+      {
+        "name" : "Nested-Functions"
+      },
+      {
+        "name" : "Restrictions-for-Nonescaping-Closures"
+      },
+      {
+        "name" : "Terminology"
+      },
+      {
+        "name" : "Guiding-Principle-of-Access-Levels"
+      },
+      {
+        "name" : "Unstructured-Concurrency"
+      },
+      {
+        "name" : "UTF-16-Representation"
+      },
+      {
+        "name" : "Macro-Expansion-Expression"
+      },
+      {
+        "name" : "Enumeration-Case-Pattern"
+      },
+      {
+        "name" : "Developing-and-Debugging-Macros"
+      },
+      {
+        "name" : "Where"
+      },
+      {
+        "name" : "Break-Statement"
+      },
+      {
+        "name" : "Default-Property-Values"
+      },
+      {
+        "name" : "Half-Open-Range-Operator"
+      },
+      {
+        "name" : "Stored-Properties-and-Instance-Variables"
+      },
+      {
+        "name" : "Automatic-Initializer-Inheritance"
+      },
+      {
+        "name" : "Subscript-Options"
+      },
+      {
+        "name" : "requiresstoredpropertyinits"
+      },
+      {
+        "name" : "Tuple-Pattern"
+      },
+      {
+        "name" : "Availability-Condition"
+      },
+      {
+        "name" : "Fundamental-Set-Operations"
+      },
+      {
+        "name" : "Attributes"
+      },
+      {
+        "name" : "Handling-Errors-Using-Do-Catch"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 504
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 137
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 92
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 283
+          }
+        ],
+        "name" : "The-Swift-Programming-Language"
+      },
+      {
+        "name" : "Accessing-Properties-Through-Optional-Chaining"
+      },
+      {
+        "name" : "Checking-Type"
+      },
+      {
+        "name" : "Customizing-Initialization"
+      },
+      {
+        "name" : "Subscript-Usage"
+      },
+      {
+        "name" : "Objects-and-Classes"
+      },
+      {
+        "name" : "Implementing-a-Macro"
+      },
+      {
+        "name" : "Initializer-Delegation-for-Class-Types"
+      },
+      {
+        "name" : "Optionals"
+      },
+      {
+        "name" : "Functions-With-an-Implicit-Return"
+      },
+      {
+        "name" : "String-Mutability"
+      },
+      {
+        "name" : "Enumeration-Syntax"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 419
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 182
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 417
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 135
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 294
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 269
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 566
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 420
+          }
+        ],
+        "name" : "OptionalChaining"
+      },
+      {
+        "name" : "Protocol-Declaration"
+      },
+      {
+        "name" : "Declaration-Attributes"
+      },
+      {
+        "name" : "Special-Kinds-of-Methods"
+      },
+      {
+        "name" : "Capture-Lists"
+      },
+      {
+        "name" : "Code-Blocks"
+      },
+      {
+        "name" : "tutorials"
+      },
+      {
+        "name" : "Combining-Logical-Operators"
+      },
+      {
+        "name" : "Counting-Characters"
+      },
+      {
+        "name" : "Implicitly-Assigned-Raw-Values"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 407
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 242
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 53
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 161
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 141
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 315
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 1
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 56
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 98
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 616
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 619
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 171
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 331
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 465
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 108
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 588
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 200
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 436
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 536
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 379
+          }
+        ],
+        "name" : "BasicOperators"
+      },
+      {
+        "name" : "propertyWrapper"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 122
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 622
+          }
+        ],
+        "name" : "Deinitialization"
+      },
+      {
+        "name" : "Initializers"
+      },
+      {
+        "name" : "Instance-Methods"
+      },
+      {
+        "name" : "Function-Types"
+      },
+      {
+        "name" : "String-Indices"
+      },
+      {
+        "name" : "autoclosure"
+      },
+      {
+        "name" : "Conditional-Statements"
+      },
+      {
+        "name" : "Comparing-Structures-and-Classes"
+      },
+      {
+        "name" : "Overridden-Requirements-Arent-Used-in-Some-Generic-Contexts"
+      },
+      {
+        "name" : "NSApplicationMain"
+      },
+      {
+        "name" : "Key-Path-String-Expression"
+      },
+      {
+        "name" : "Protocol-Composition-Type"
+      },
+      {
+        "name" : "Preventing-Overrides"
+      },
+      {
+        "name" : "Throw-Statement"
+      },
+      {
+        "name" : "Designated-Initializers-and-Convenience-Initializers"
+      },
+      {
+        "name" : "Do-Statement"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 470
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 626
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 216
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 554
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 449
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 396
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 310
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 34
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 160
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 154
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 624
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 461
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 520
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 348
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 337
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 500
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 352
+          }
+        ],
+        "name" : "Types"
+      },
+      {
+        "name" : "Operator-Declaration"
+      },
+      {
+        "name" : "Working-with-Characters"
+      },
+      {
+        "name" : "Continue"
+      },
+      {
+        "name" : "Superclass-Expression"
+      },
+      {
+        "name" : "preconcurrency"
+      },
+      {
+        "name" : "Numeric-Literals"
+      },
+      {
+        "name" : "Custom-Types"
+      },
+      {
+        "name" : "NSManaged"
+      },
+      {
+        "name" : "resultBuilder"
+      },
+      {
+        "name" : "Semicolons"
+      },
+      {
+        "name" : "Providing-Default-Implementations"
+      },
+      {
+        "name" : "Tasks-and-Task-Groups"
+      },
+      {
+        "name" : "Subclassing"
+      },
+      {
+        "name" : "Generic-Where-Clauses"
+      },
+      {
+        "name" : "Set-Type-Syntax"
+      },
+      {
+        "name" : "Access-Control-Syntax"
+      },
+      {
+        "name" : "Memberwise-Initializers-for-Structure-Types"
+      },
+      {
+        "name" : "Selector-Expression"
+      },
+      {
+        "name" : "Operator-Methods"
+      },
+      {
+        "name" : "Creating-an-Empty-Array"
+      },
+      {
+        "name" : "Assignment-Operator"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 501
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 326
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 157
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 399
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 531
+          }
+        ],
+        "name" : "MemorySafety"
+      },
+      {
+        "name" : "Generic-Where-Clauses"
+      },
+      {
+        "name" : "String-Literals"
+      },
+      {
+        "name" : "Lazy-Stored-Properties"
+      },
+      {
+        "name" : "Recursive-Enumerations"
+      },
+      {
+        "name" : "Enforcing-Preconditions"
+      },
+      {
+        "name" : "Dictionaries"
+      },
+      {
+        "name" : "Function-Types-as-Return-Types"
+      },
+      {
+        "name" : "Accessing-and-Modifying-a-String"
+      },
+      {
+        "name" : "Unicode-Scalar-Representation"
+      },
+      {
+        "name" : "Creating-and-Initializing-an-Empty-Set"
+      },
+      {
+        "name" : "Assigning-to-self-Within-a-Mutating-Method"
+      },
+      {
+        "name" : "Postfix-Expressions"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 431
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 629
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 70
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 404
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 49
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 381
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 455
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 12
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 168
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 441
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 415
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 555
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 635
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 467
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 296
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 529
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 224
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 346
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 543
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 15
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 133
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 211
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 439
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 421
+          }
+        ],
+        "name" : "ControlFlow"
+      },
+      {
+        "name" : "Optional-Tuple-Return-Types"
+      },
+      {
+        "name" : "export"
+      },
+      {
+        "name" : "Overriding-Properties"
+      },
+      {
+        "name" : "Self-Expression"
+      },
+      {
+        "name" : "Protocols-that-Have-Only-Semantic-Requirements"
+      },
+      {
+        "name" : "Custom-Operators"
+      },
+      {
+        "name" : "Naming-Constants-and-Variables"
+      },
+      {
+        "name" : "How-ARC-Works"
+      },
+      {
+        "name" : "Sendable-Types"
+      },
+      {
+        "name" : "Property-Observers"
+      },
+      {
+        "name" : "Fallthrough-Statement"
+      },
+      {
+        "name" : "Constants-Variables-Properties-and-Subscripts"
+      },
+      {
+        "name" : "Defining-Model-Classes-for-Optional-Chaining"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 322
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 448
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 522
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 245
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 334
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 107
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 40
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 55
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 280
+          }
+        ],
+        "name" : "LexicalStructure"
+      },
+      {
+        "name" : "Protocols-and-Extensions"
+      },
+      {
+        "name" : "Implicit-Conversion-to-a-Pointer-Type"
+      },
+      {
+        "name" : "Actor-Declaration"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 94
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 177
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 338
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 302
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 339
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 2
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 430
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 392
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 308
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 424
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 22
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 57
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 535
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 267
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 499
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 32
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 291
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 418
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 218
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 508
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 395
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 380
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 169
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 537
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 220
+          }
+        ],
+        "name" : "Statements"
+      },
+      {
+        "name" : "Type-Aliases"
+      },
+      {
+        "name" : "Optional-Property-Types"
+      },
+      {
+        "name" : "Shifting-Behavior-for-Signed-Integers"
+      },
+      {
+        "name" : "Class-Implementations-of-Protocol-Initializer-Requirements"
+      },
+      {
+        "name" : "Accessing-Properties"
+      },
+      {
+        "name" : "Keywords-and-Punctuation"
+      },
+      {
+        "name" : "Unicode-Representations-of-Strings"
+      },
+      {
+        "name" : "objcMembers"
+      },
+      {
+        "name" : "Language-Reference"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 357
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 116
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 241
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 509
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 249
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 253
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 287
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 356
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 64
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 324
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 443
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 612
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 492
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 155
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 510
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 630
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 602
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 518
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 236
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 51
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 144
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 301
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 304
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 178
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 489
+          }
+        ],
+        "name" : "CollectionTypes"
+      },
+      {
+        "name" : "Error-Handling"
+      },
+      {
+        "name" : "Boxed-Protocol-Types"
+      },
+      {
+        "name" : "Hash-Values-for-Set-Types"
+      },
+      {
+        "name" : "Bitwise-OR-Operator"
+      },
+      {
+        "name" : "Propagation-of-Initialization-Failure"
+      },
+      {
+        "name" : "Prefix-Expressions"
+      },
+      {
+        "name" : "Conditional-Compilation-Block"
+      },
+      {
+        "name" : "UIApplicationMain"
+      },
+      {
+        "name" : "Integer-Conversion"
+      },
+      {
+        "name" : "Calling-Methods-Through-Optional-Chaining"
+      },
+      {
+        "name" : "Debugging-with-Assertions"
+      },
+      {
+        "name" : "Compound-Cases"
+      },
+      {
+        "name" : "Unowned-References"
+      },
+      {
+        "name" : "Protocol-Associated-Type-Declaration"
+      },
+      {
+        "name" : "Enumeration-Declaration"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 277
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 643
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 262
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 422
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 512
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 288
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 474
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 312
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 28
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 561
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 78
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 150
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 605
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 318
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 119
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 84
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 93
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 66
+          }
+        ],
+        "name" : "AdvancedOperators"
+      },
+      {
+        "name" : "Mutability-of-Collections"
+      },
+      {
+        "name" : "Line-Control-Statement"
+      },
+      {
+        "name" : "Attached-Macros"
+      },
+      {
+        "name" : "Iterating-Over-a-Dictionary"
+      },
+      {
+        "name" : "Calling-Asynchronous-Functions-in-Parallel"
+      },
+      {
+        "name" : "Syntax-for-Designated-and-Convenience-Initializers"
+      },
+      {
+        "name" : "Error-Handling"
+      },
+      {
+        "name" : "Labeled-Statement"
+      },
+      {
+        "name" : "Initializer-Declaration"
+      },
+      {
+        "name" : "Type-Inference"
+      },
+      {
+        "name" : "Extending-an-Existing-Type-to-Specify-an-Associated-Type"
+      },
+      {
+        "name" : "Equivalence-Operators"
+      },
+      {
+        "name" : "Representing-and-Throwing-Errors"
+      },
+      {
+        "name" : "Initialization-Parameters"
+      },
+      {
+        "name" : "Logical-AND-Operator"
+      },
+      {
+        "name" : "The-Sorted-Method"
+      },
+      {
+        "name" : "Throwing-Functions-and-Methods"
+      },
+      {
+        "name" : "Overflow-Operators"
+      },
+      {
+        "name" : "Protocol-Extensions"
+      },
+      {
+        "name" : "Try-Operator"
+      },
+      {
+        "name" : "dynamicCallable"
+      },
+      {
+        "name" : "Literals"
+      },
+      {
+        "name" : "Structures-and-Enumerations-Are-Value-Types"
+      },
+      {
+        "name" : "Set-Membership-and-Equality"
+      },
+      {
+        "name" : "Closure-Expression"
+      },
+      {
+        "name" : "Conflicting-Access-to-self-in-Methods"
+      },
+      {
+        "name" : "Initializer-Delegation-for-Value-Types"
+      },
+      {
+        "name" : "Asynchronous-Functions-and-Methods"
+      },
+      {
+        "name" : "Methods-with-Special-Names"
+      },
+      {
+        "name" : "Inferring-Type-From-Context"
+      },
+      {
+        "name" : "Remainder-Operator"
+      },
+      {
+        "name" : "Using-Function-Types"
+      },
+      {
+        "name" : "Enumerations-with-Indirection"
+      },
+      {
+        "name" : "Operators"
+      },
+      {
+        "name" : "Wildcard-Pattern"
+      },
+      {
+        "name" : "Generics"
+      },
+      {
+        "name" : "Array-Type"
+      },
+      {
+        "name" : "Loop-Statements"
+      },
+      {
+        "name" : "Repeat-While-Statement"
+      },
+      {
+        "name" : "inlinable"
+      },
+      {
+        "name" : "Subscript-Expression"
+      },
+      {
+        "name" : "Conditionally-Conforming-to-a-Protocol"
+      },
+      {
+        "name" : "GKInspectable"
+      },
+      {
+        "name" : "Mutating-Instance-Methods"
+      },
+      {
+        "name" : "Parameter-Names-and-Argument-Labels"
+      },
+      {
+        "name" : "Break"
+      },
+      {
+        "name" : "Optional-Pattern"
+      },
+      {
+        "name" : "Self-Type"
+      },
+      {
+        "name" : "unchecked"
+      },
+      {
+        "name" : "Conditional-Conformance"
+      },
+      {
+        "name" : "Overriding-a-Failable-Initializer"
+      },
+      {
+        "name" : "Optional-Type"
+      },
+      {
+        "name" : "Custom-Result-Builder-Attributes"
+      },
+      {
+        "name" : "Initializing-an-Empty-String"
+      },
+      {
+        "name" : "Floating-Point-Numbers"
+      },
+      {
+        "name" : "Array-Type-Shorthand-Syntax"
+      },
+      {
+        "name" : "Sets"
+      },
+      {
+        "name" : "Type-Parameters"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 18
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 248
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 74
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 227
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 614
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 63
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 505
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 131
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 385
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 521
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 231
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 146
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 263
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 438
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 82
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 275
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 631
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 9
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 111
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 307
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 189
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 355
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 295
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 403
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 550
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 126
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 464
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 139
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 143
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 293
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 496
+          }
+        ],
+        "name" : "TheBasics"
+      },
+      {
+        "name" : "Extended-Grapheme-Clusters"
+      },
+      {
+        "name" : "testable"
+      },
+      {
+        "name" : "Protocol-Subscript-Declaration"
+      },
+      {
+        "name" : "Wildcard-Expression"
+      },
+      {
+        "name" : "Expression-Pattern"
+      },
+      {
+        "name" : "Compatibility"
+      },
+      {
+        "name" : "Access-Control-Levels"
+      },
+      {
+        "name" : "Private-Members-in-Extensions"
+      },
+      {
+        "name" : "Propagating-Errors-Using-Throwing-Functions"
+      },
+      {
+        "name" : "available"
+      },
+      {
+        "name" : "Closure-Expressions"
+      },
+      {
+        "name" : "Declaration-Attributes-Used-by-Interface-Builder"
+      },
+      {
+        "name" : "Resolving-Explicit-Redundancy"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 252
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 625
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 387
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 201
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 468
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 405
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 223
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 191
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 539
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 494
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 360
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 164
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 354
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 104
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 209
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 281
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 402
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 109
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 450
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 62
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 77
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 251
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 640
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 528
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 17
+          }
+        ],
+        "name" : "StringsAndCharacters"
+      },
+      {
+        "name" : "Access-Levels-for-Frameworks"
+      },
+      {
+        "name" : "Raw-Values"
+      },
+      {
+        "name" : "Protocol-Initializer-Declaration"
+      },
+      {
+        "name" : "Functions-Without-Parameters"
+      },
+      {
+        "name" : "Type-Casting-Patterns"
+      },
+      {
+        "name" : "Logical-Operators"
+      },
+      {
+        "name" : "Compiler-Control-Statements"
+      },
+      {
+        "name" : "Patterns"
+      },
+      {
+        "name" : "Declaration-Modifiers"
+      },
+      {
+        "name" : "Failable-Initializers-for-Enumerations"
+      },
+      {
+        "name" : "The-Problem-that-Generics-Solve"
+      },
+      {
+        "name" : "Type-Annotations"
+      },
+      {
+        "name" : "Computed-Properties"
+      },
+      {
+        "name" : "Unicode-Scalar-Values"
+      },
+      {
+        "name" : "Stored-Variable-Observers-and-Property-Observers"
+      },
+      {
+        "name" : "Protocol-Inheritance"
+      },
+      {
+        "name" : "Subscript-Syntax"
+      },
+      {
+        "name" : "Collections-of-Protocol-Types"
+      },
+      {
+        "name" : "Switch-Statement"
+      },
+      {
+        "name" : "Handling-Errors"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 90
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 208
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 377
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 257
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 426
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 332
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 152
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 523
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 123
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 118
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 36
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 30
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 8
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 644
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 190
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 250
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 159
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 589
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 569
+          }
+        ],
+        "name" : "Functions"
+      },
+      {
+        "name" : "Switch-Statements-Must-Be-Exhaustive"
+      },
+      {
+        "name" : "Type-Annotation"
+      },
+      {
+        "name" : "Shorthand-Getter-Declaration"
+      },
+      {
+        "name" : "Resolving-Implicit-Redundancy"
+      },
+      {
+        "name" : "Understanding-Conflicting-Access-to-Memory"
+      },
+      {
+        "name" : "Initializer-Requirements"
+      },
+      {
+        "name" : "Default-Initializers"
+      },
+      {
+        "name" : "Strings-Are-Value-Types"
+      },
+      {
+        "name" : "Memory-Safety"
+      },
+      {
+        "name" : "Value-Bindings"
+      },
+      {
+        "name" : "Special-Characters-in-String-Literals"
+      },
+      {
+        "name" : "Parameter-Modifiers"
+      },
+      {
+        "name" : "Comparison-Operators"
+      },
+      {
+        "name" : "Type-Constraints-in-Action"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 473
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 244
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 649
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 592
+          }
+        ],
+        "name" : "GenericParametersAndArguments"
+      },
+      {
+        "name" : "Implicit-Constraints"
+      },
+      {
+        "name" : "Two-Phase-Initialization"
+      },
+      {
+        "name" : "Resolving-Strong-Reference-Cycles-for-Closures"
+      },
+      {
+        "name" : "backDeployed"
+      },
+      {
+        "name" : "Extension-Declaration"
+      },
+      {
+        "name" : "Tuples"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 378
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 601
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 364
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 347
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 166
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 176
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 497
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 335
+          }
+        ],
+        "name" : "Patterns"
+      },
+      {
+        "name" : "Chaining-on-Methods-with-Optional-Return-Values"
+      },
+      {
+        "name" : "Compile-Time-Diagnostic-Statement"
+      },
+      {
+        "name" : "Linking-Multiple-Levels-of-Chaining"
+      },
+      {
+        "name" : "Accessing-Subscripts-Through-Optional-Chaining"
+      },
+      {
+        "name" : "Checking-API-Availability"
+      },
+      {
+        "name" : "Compound-Assignment-Operators"
+      },
+      {
+        "name" : "The-Problem-that-Opaque-Types-Solve"
+      },
+      {
+        "name" : "Execution-Does-Not-Fall-Through-Cases-Implicitly"
+      },
+      {
+        "name" : "Global-Actors"
+      },
+      {
+        "name" : "Function-Argument-Labels-and-Parameter-Names"
+      },
+      {
+        "name" : "Literal-Expression"
+      },
+      {
+        "name" : "Implicit-Member-Expression"
+      },
+      {
+        "name" : "Type-Properties"
+      },
+      {
+        "name" : "While-Statement"
+      },
+      {
+        "name" : "While-Loops"
+      },
+      {
+        "name" : "Using-a-Protocol-in-Its-Associated-Types-Constraints"
+      },
+      {
+        "name" : "Pointers"
+      },
+      {
+        "name" : "Variable-Declaration"
+      },
+      {
+        "name" : "Type-Methods"
+      },
+      {
+        "name" : "Explicit-Parentheses"
+      },
+      {
+        "name" : "Extending-a-Generic-Type"
+      },
+      {
+        "name" : "Comments"
+      },
+      {
+        "name" : "Labeled-Statements"
+      },
+      {
+        "name" : "Read-Only-Computed-Properties"
+      },
+      {
+        "name" : "Fallthrough"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 11
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 112
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 298
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 388
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 515
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 329
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 434
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 273
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 485
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 398
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 194
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 634
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 317
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 136
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 213
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 47
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 580
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 0
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 540
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 372
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 557
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 366
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 362
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 376
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 564
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 309
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 647
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 575
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 475
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 156
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 6
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 559
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 414
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 507
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 48
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 222
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 299
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 607
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 106
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 198
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 350
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 52
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 13
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 333
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 406
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 611
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 121
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 328
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 606
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 382
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 549
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 196
+          }
+        ],
+        "name" : "Declarations"
+      },
+      {
+        "name" : "Accessing-and-Modifying-a-Dictionary"
+      },
+      {
+        "name" : "Autoclosures"
+      },
+      {
+        "name" : "main"
+      },
+      {
+        "name" : "Initializer-Expression"
+      },
+      {
+        "name" : "Mutating-Method-Requirements"
+      },
+      {
+        "name" : "Whitespace-and-Comments"
+      },
+      {
+        "name" : "Opaque-Type"
+      },
+      {
+        "name" : "Inserting-and-Removing"
+      },
+      {
+        "name" : "The-init-Failable-Initializer"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 89
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 233
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 570
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 265
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 615
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 579
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 163
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 305
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 151
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 425
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 527
+          }
+        ],
+        "name" : "Concurrency"
+      },
+      {
+        "name" : "Subscripts"
+      },
+      {
+        "name" : "Matching-Enumeration-Values-with-a-Switch-Statement"
+      },
+      {
+        "name" : "If"
+      },
+      {
+        "name" : "Modifying-Value-Types-from-Within-Instance-Methods"
+      },
+      {
+        "name" : "In-Out-Expression"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 478
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 303
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 72
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 574
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 187
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 167
+          }
+        ],
+        "name" : "Macros"
+      },
+      {
+        "name" : "Function-Call-Expression"
+      },
+      {
+        "name" : "Enumerations-and-Structures"
+      },
+      {
+        "name" : "Tuple-Type"
+      },
+      {
+        "name" : "Conditional-Expression"
+      },
+      {
+        "name" : "Overriding-Property-Getters-and-Setters"
+      },
+      {
+        "name" : "Force-Unwrapping"
+      },
+      {
+        "name" : "One-Sided-Ranges"
+      },
+      {
+        "name" : "Protocols-as-Types"
+      },
+      {
+        "name" : "While"
+      },
+      {
+        "name" : "Unicode"
+      },
+      {
+        "name" : "Primary-Expressions"
+      },
+      {
+        "name" : "Type-Identifier"
+      },
+      {
+        "name" : "usableFromInline"
+      },
+      {
+        "name" : "Classes-Are-Reference-Types"
+      },
+      {
+        "name" : "Generic-Parameter-Clause"
+      },
+      {
+        "name" : "Shifting-Behavior-for-Unsigned-Integers"
+      },
+      {
+        "name" : "Failable-Initializers"
+      },
+      {
+        "name" : "Extension-Syntax"
+      },
+      {
+        "name" : "AboutSwift"
+      },
+      {
+        "name" : "Macro-Expansion"
+      },
+      {
+        "name" : "Type-Property-Syntax"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 180
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 76
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 525
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 481
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 368
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 313
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 393
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 46
+          }
+        ],
+        "name" : "ErrorHandling"
+      },
+      {
+        "name" : "Disabling-Error-Propagation"
+      },
+      {
+        "name" : "ARC-in-Action"
+      },
+      {
+        "name" : "Optional-Chaining-Expression"
+      },
+      {
+        "name" : "Differences-Between-Opaque-Types-and-Boxed-Protocol-Types"
+      },
+      {
+        "name" : "Class-Declaration"
+      },
+      {
+        "name" : "Type-Constraints"
+      },
+      {
+        "name" : "Generics"
+      },
+      {
+        "name" : "Assigning-Constant-Properties-During-Initialization"
+      },
+      {
+        "name" : "Creating-an-Array-with-a-Default-Value"
+      },
+      {
+        "name" : "Memberwise-Initializers-for-Structure-Types"
+      },
+      {
+        "name" : "Default-Access-Levels"
+      },
+      {
+        "name" : "Iterating-Over-a-Set"
+      },
+      {
+        "name" : "Protocols"
+      },
+      {
+        "name" : "UTF-8-Representation"
+      },
+      {
+        "name" : "Getters-and-Setters"
+      },
+      {
+        "name" : "nil"
+      },
+      {
+        "name" : "Identifier-Pattern"
+      },
+      {
+        "name" : "Raw-Values-and-Associated-Values"
+      },
+      {
+        "name" : "For-In-Statement"
+      },
+      {
+        "name" : "Boxed-Protocol-Type"
+      },
+      {
+        "name" : "Conflicting-Access-to-In-Out-Parameters"
+      },
+      {
+        "name" : "Access-Levels-for-Unit-Test-Targets"
+      },
+      {
+        "name" : "Extensions"
+      },
+      {
+        "name" : "Language-Guide"
+      },
+      {
+        "name" : "Providing-a-Fallback-Value"
+      },
+      {
+        "name" : "unknown"
+      },
+      {
+        "name" : "Type-Subscript-Declarations"
+      },
+      {
+        "name" : "Continue-Statement"
+      },
+      {
+        "name" : "Dictionary-Type-Shorthand-Syntax"
+      },
+      {
+        "name" : "Accessing-and-Modifying-a-Set"
+      },
+      {
+        "name" : "Associated-Values"
+      },
+      {
+        "name" : "Bitwise-Left-and-Right-Shift-Operators"
+      },
+      {
+        "name" : "Concurrency"
+      },
+      {
+        "name" : "Capturing-Values"
+      },
+      {
+        "name" : "Type-Variable-Properties"
+      },
+      {
+        "name" : "Parenthesized-Expression"
+      },
+      {
+        "name" : "Lexical-Structure"
+      },
+      {
+        "name" : "Creating-a-Dictionary-with-a-Dictionary-Literal"
+      },
+      {
+        "name" : "Designated-and-Convenience-Initializers-in-Action"
+      },
+      {
+        "name" : "Implicitly-Unwrapped-Optional-Type"
+      },
+      {
+        "name" : "Booleans"
+      },
+      {
+        "name" : "Integer-Literals"
+      },
+      {
+        "name" : "Function-Types-as-Parameter-Types"
+      },
+      {
+        "name" : "Weak-and-Unowned-References"
+      },
+      {
+        "name" : "Specifying-the-Error-Type"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 99
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 423
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 286
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 484
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 115
+          }
+        ],
+        "name" : "OpaqueTypes"
+      },
+      {
+        "name" : "Actors"
+      },
+      {
+        "name" : "Prefix-and-Suffix-Equality"
+      },
+      {
+        "name" : "Interval-Matching"
+      },
+      {
+        "name" : "Unowned-References-and-Implicitly-Unwrapped-Optional-Properties"
+      },
+      {
+        "name" : "Characteristics-of-Memory-Access"
+      },
+      {
+        "name" : "Nested-Types-in-Action"
+      },
+      {
+        "name" : "Shorthand-Setter-Declaration"
+      },
+      {
+        "name" : "convention"
+      },
+      {
+        "name" : "Switching-Over-Future-Enumeration-Cases"
+      },
+      {
+        "name" : "Range-Operators"
+      },
+      {
+        "name" : "Branch-Statements"
+      },
+      {
+        "name" : "Structure-and-Class-Instances"
+      },
+      {
+        "name" : "Concatenating-Strings-and-Characters"
+      },
+      {
+        "name" : "Import-Declaration"
+      },
+      {
+        "name" : "Closures-Are-Reference-Types"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 100
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 487
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 513
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 271
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 186
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 285
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 460
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 639
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 148
+          }
+        ],
+        "name" : "GuidedTour"
+      },
+      {
+        "name" : "Break-in-a-Switch-Statement"
+      },
+      {
+        "name" : "Implicit-Returns-from-Single-Expression-Closures"
+      },
+      {
+        "name" : "Overriding"
+      },
+      {
+        "name" : "Initializers"
+      },
+      {
+        "name" : "Failable-Initializers"
+      },
+      {
+        "name" : "Initializer-Parameters-Without-Argument-Labels"
+      },
+      {
+        "name" : "Type-Alias-Declaration"
+      },
+      {
+        "name" : "Numeric-Type-Conversion"
+      },
+      {
+        "name" : "Trailing-Closures"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 147
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 83
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 183
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 68
+          }
+        ],
+        "name" : "TypeCasting"
+      },
+      {
+        "name" : "Implicit-Conformance-to-a-Protocol"
+      },
+      {
+        "name" : "Type-Inheritance-Clause"
+      },
+      {
+        "name" : "Early-Exit"
+      },
+      {
+        "name" : "RevisionHistory"
+      },
+      {
+        "name" : "Precedence-Group-Declaration"
+      },
+      {
+        "name" : "Stored-Properties-of-Constant-Structure-Instances"
+      },
+      {
+        "name" : "Rethrowing-Functions-and-Methods"
+      },
+      {
+        "name" : "Explicit-Member-Expression"
+      },
+      {
+        "name" : "Prefix-and-Postfix-Operators"
+      },
+      {
+        "name" : "Initializing-from-a-Raw-Value"
+      },
+      {
+        "name" : "Escaping-Closures"
+      },
+      {
+        "name" : "Constant-Declaration"
+      },
+      {
+        "name" : "Generic-Functions"
+      },
+      {
+        "name" : "Optional-Chaining-as-an-Alternative-to-Forced-Unwrapping"
+      },
+      {
+        "name" : "How-to-Read-the-Grammar"
+      },
+      {
+        "name" : "Key-Path-Expression"
+      },
+      {
+        "name" : "Variadic-Parameters"
+      },
+      {
+        "name" : "Task-Cancellation"
+      },
+      {
+        "name" : "Ternary-Conditional-Operator"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 511
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 247
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 192
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 375
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 562
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 102
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 454
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 202
+          }
+        ],
+        "name" : "Enumerations"
+      },
+      {
+        "name" : "Closure-Expression-Syntax"
+      },
+      {
+        "name" : "Freestanding-Macros"
+      },
+      {
+        "name" : "Computed-Variables-and-Computed-Properties"
+      },
+      {
+        "name" : "Setting-a-Default-Property-Value-with-a-Closure-or-Function"
+      },
+      {
+        "name" : "Failable-Initializer-Requirements"
+      },
+      {
+        "name" : "Associated-Types-in-Action"
+      },
+      {
+        "name" : "Defining-and-Calling-Asynchronous-Functions"
+      },
+      {
+        "name" : "Parameter-Names"
+      },
+      {
+        "name" : "Assignment-Operator"
+      },
+      {
+        "name" : "Statements"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 582
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 517
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 5
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 33
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 621
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 113
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 179
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 58
+          }
+        ],
+        "name" : "SummaryOfTheGrammar"
+      },
+      {
+        "name" : "Strong-Reference-Cycles-for-Closures"
+      },
+      {
+        "name" : "Resolving-Strong-Reference-Cycles-Between-Class-Instances"
+      },
+      {
+        "name" : "The-self-Property"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 530
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 613
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 297
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 86
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 45
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 412
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 264
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 585
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 584
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 524
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 21
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 482
+          }
+        ],
+        "name" : "AutomaticReferenceCounting"
+      },
+      {
+        "name" : "Compound-Assignment-Operators"
+      },
+      {
+        "name" : "Omitting-Argument-Labels"
+      },
+      {
+        "name" : "Definition-Syntax"
+      },
+      {
+        "name" : "Referring-to-Nested-Types"
+      },
+      {
+        "name" : "Generic-Argument-Clause"
+      },
+      {
+        "name" : "dynamicMemberLookup"
+      },
+      {
+        "name" : "Adding-Constraints-to-an-Associated-Type"
+      },
+      {
+        "name" : "Stored-Properties"
+      },
+      {
+        "name" : "Generic-Subscripts"
+      },
+      {
+        "name" : "Protocol-Conformance"
+      },
+      {
+        "name" : "NSCopying"
+      },
+      {
+        "name" : "Property-Requirements"
+      },
+      {
+        "name" : "Initializer-Inheritance-and-Overriding"
+      },
+      {
+        "name" : "Value-Binding-Pattern"
+      },
+      {
+        "name" : "Creating-an-Array-with-an-Array-Literal"
+      },
+      {
+        "name" : "Associated-Types-with-a-Generic-Where-Clause"
+      },
+      {
+        "name" : "Overriding-Methods"
+      },
+      {
+        "name" : "Result-Builders"
+      },
+      {
+        "name" : "Stored-Variables-and-Stored-Variable-Properties"
+      },
+      {
+        "name" : "Function-Declaration"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "article",
+            "nodeID" : 526
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 59
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 44
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 85
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 373
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 556
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 243
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 67
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 300
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 642
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 572
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 79
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 452
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 480
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 365
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 205
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 274
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 14
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 101
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 270
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 284
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 458
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 587
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 87
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 203
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 193
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 19
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 359
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 394
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 27
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 552
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 442
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 583
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 477
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 26
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 221
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 416
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 409
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 125
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 256
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 542
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 54
+          },
+          {
+            "kind" : "article",
+            "nodeID" : 38
+          }
+        ],
+        "name" : "The-Swift-Programming-Language"
+      },
+      {
+        "name" : "Declaring-Protocol-Adoption-with-an-Extension"
+      },
+      {
+        "name" : "Shorthand-Argument-Names"
+      },
+      {
+        "name" : "Protocol-Conformance-Must-Not-Be-Redundant"
+      },
+      {
+        "name" : "Iterating-Over-an-Array"
+      },
+      {
+        "name" : "Defining-a-Capture-List"
+      },
+      {
+        "name" : "UInt"
+      },
+      {
+        "name" : "The-Main-Actor"
+      },
+      {
+        "name" : "Unary-Plus-Operator"
+      },
+      {
+        "name" : "Methods"
+      },
+      {
+        "name" : "Optional-Protocol-Requirements"
+      },
+      {
+        "name" : "Ternary-Conditional-Operator"
+      },
+      {
+        "name" : "Infix-Expressions"
+      },
+      {
+        "name" : "Expressions"
+      },
+      {
+        "name" : "Deinitializers-in-Action"
+      },
+      {
+        "name" : "Subclassing"
+      },
+      {
+        "name" : "Dictionary-Type"
+      },
+      {
+        "name" : "Multiline-String-Literals"
+      },
+      {
+        "name" : "Any-Type"
+      },
+      {
+        "name" : "Type-Casting-Operators"
+      },
+      {
+        "name" : "Adding-Protocol-Conformance-with-an-Extension"
+      },
+      {
+        "name" : "For-In-Loops"
+      },
+      {
+        "name" : "Creating-a-Set-with-an-Array-Literal"
+      },
+      {
+        "name" : "Integers"
+      },
+      {
+        "name" : "Projecting-a-Value-From-a-Property-Wrapper"
+      },
+      {
+        "name" : "Sendable"
+      },
+      {
+        "name" : "Special-Kinds-of-Parameters"
+      },
+      {
+        "name" : "Repeat-While"
+      },
+      {
+        "name" : "Class-Inheritance-and-Initialization"
+      },
+      {
+        "name" : "Default-Initializers"
+      },
+      {
+        "name" : "objc"
+      },
+      {
+        "name" : "Control-Flow"
+      },
+      {
+        "name" : "Substrings"
+      },
+      {
+        "name" : "nonobjc"
+      },
+      {
+        "children" : [
+          {
+            "kind" : "anchor",
+            "nodeID" : 240
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 563
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 573
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 330
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 444
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 541
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 551
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 544
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 610
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 514
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 370
+          },
+          {
+            "kind" : "anchor",
+            "nodeID" : 316
+          }
+        ],
+        "name" : "Closures"
+      },
+      {
+        "name" : "Precedence-and-Associativity"
+      },
+      {
+        "name" : "Defining-and-Calling-Functions"
+      },
+      {
+        "name" : "frozen"
+      },
+      {
+        "name" : "Setting-Initial-Values-for-Wrapped-Properties"
+      },
+      {
+        "name" : "Protocol-Method-Declaration"
+      },
+      {
+        "name" : "Protocol-Composition"
+      },
+      {
+        "name" : "Integer-Generic-Parameters"
+      }
+    ],
+    "tutorialContainer" : 129,
+    "tutorialOverviewContainer" : 199
+  },
+  "version" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}

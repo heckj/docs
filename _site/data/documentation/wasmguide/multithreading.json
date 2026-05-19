@@ -1,0 +1,431 @@
+{
+  "abstract" : [
+    {
+      "text" : "While Swift Concurrency is available in Swift for WebAssembly out of the box, it is single-threaded by default. Read this article for special considerations relevant to multi-threading.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Multithreading"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Multi-threading"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Using-threads-in-WebAssembly",
+          "level" : 2,
+          "text" : "Using threads in WebAssembly",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "While the WebAssembly spec defines ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/WebAssembly\/threads",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "it does not define a way to create threads. This means that WebAssembly modules can’t create",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "threads themselves, and the host environment must provide a way to create threads and run",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "WebAssembly modules on them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "wasi-threads-proposal",
+          "level" : 3,
+          "text" : "`wasi-threads` proposal",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasi-threads",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " feature is only available in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasm32-unknown-wasip1-threads",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " target triple, which is explicitly distinct from the ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasm32-unknown-wasip1",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " target triple.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasm32-unknown-wasip1-threads",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " target triple is only available in development snapshots of Swift SDK for WebAssembly.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can run WebAssembly programs built with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasm32-unknown-wasip1-threads",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " target by using the WasmKit runtime via ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift run",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", passing ",
+              "type" : "text"
+            },
+            {
+              "code" : "--swift-sdk",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " option to it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# Install a Swift SDK that supports threads (replace URL with the latest available release from swift.org\/install)",
+            "$ swift sdk install https:\/\/github.com\/swiftwasm\/swift\/releases\/download\/swift-wasm-DEVELOPMENT-SNAPSHOT-YYYY-MM-DD-a\/swift-wasm-DEVELOPMENT-SNAPSHOT-YYYY-MM-DD-a-wasm32-unknown-wasip1-threads.artifactbundle.zip --checksum <swift_sdk_checksum>",
+            "",
+            "# Run using the installed Swift SDK",
+            "$ swift run --swift-sdk \"$(swiftc -print-target-info | jq -r '.swiftCompilerTag')_wasm-threads\""
+          ],
+          "syntax" : "console",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "WebWorkerTaskExecutor-multi-threading-in-the-browser",
+          "level" : 3,
+          "text" : "`WebWorkerTaskExecutor` - multi-threading in the browser",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For browser use cases JavaScriptKit provides ",
+              "type" : "text"
+            },
+            {
+              "code" : "WebWorkerTaskExecutor",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0417-task-executor-preference.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " implementation that runs tasks in a Web Worker. This allows you to run Swift code concurrently in a Web Worker sharing the same memory space.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This feature is available when you use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasm32-unknown-wasip1-threads",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " target and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/JavaScript\/Reference\/Global_Objects\/SharedArrayBuffer",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for sharing Wasm linear memory between instantiated Wasm threads.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See more details in the following links:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/pull\/256",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/tree\/main\/Examples\/Multithreading",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/main\/documentation\/javascripteventloop\/webworkertaskexecutor",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/multithreading"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer": {
+  "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/JavaScript\/Reference\/Global_Objects\/SharedArrayBuffer",
+  "title" : "SharedArrayBuffer",
+  "titleInlineContent" : [
+    {
+      "code" : "SharedArrayBuffer",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/JavaScript\/Reference\/Global_Objects\/SharedArrayBuffer"
+},
+"https://github.com/WebAssembly/threads": {
+  "identifier" : "https:\/\/github.com\/WebAssembly\/threads",
+  "title" : "atomic operations",
+  "titleInlineContent" : [
+    {
+      "text" : "atomic operations",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/WebAssembly\/threads"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0417-task-executor-preference.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0417-task-executor-preference.md",
+  "title" : "TaskExecutor",
+  "titleInlineContent" : [
+    {
+      "code" : "TaskExecutor",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0417-task-executor-preference.md"
+},
+"https://github.com/swiftwasm/JavaScriptKit/pull/256": {
+  "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/pull\/256",
+  "title" : "Add WebWorkerTaskExecutor · Pull Request #256 · swiftwasm\/JavaScriptKit",
+  "titleInlineContent" : [
+    {
+      "text" : "Add ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebWorkerTaskExecutor",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " · Pull Request #256 · swiftwasm\/JavaScriptKit",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/pull\/256"
+},
+"https://github.com/swiftwasm/JavaScriptKit/tree/main/Examples/Multithreading": {
+  "identifier" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/tree\/main\/Examples\/Multithreading",
+  "title" : "JavaScriptKit\/Examples\/Multithreading at main · swiftwasm\/JavaScriptKit",
+  "titleInlineContent" : [
+    {
+      "text" : "JavaScriptKit\/Examples\/Multithreading at main · swiftwasm\/JavaScriptKit",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftwasm\/JavaScriptKit\/tree\/main\/Examples\/Multithreading"
+},
+"https://swiftpackageindex.com/swiftwasm/javascriptkit/main/documentation/javascripteventloop/webworkertaskexecutor": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/main\/documentation\/javascripteventloop\/webworkertaskexecutor",
+  "title" : "WebWorkerTaskExecutor | Documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "WebWorkerTaskExecutor | Documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/main\/documentation\/javascripteventloop\/webworkertaskexecutor"
+}
+}
+}

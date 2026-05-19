@@ -1,0 +1,715 @@
+{
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Basics of using Embedded Swift"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Using-Embedded-Swift",
+          "level" : 2,
+          "text" : "Using Embedded Swift",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A typical setup and build and run cycle for an embedded development board involves:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Getting an SDK with the C compilers, headers and libraries for the target",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Building the C source code, and Swift source code into object files.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Linking all the libraries, C object files, and Swift object files.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Post-processing the linked firmware into a flashable format (UF2, BIN, HEX, or bespoke formats)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Uploading the flashable binary to the board over a USB cable using some vendor-provided JTAG\/SWD tool, by copying it to a fake USB Mass Storage volume presented by the board or a custom platform bootloader.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Restarting the board, observing physical effects of the firmware (LEDs light up) or UART output over USB, or presence on network, etc.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Many of these steps are out of scope for this document, because they are unrelated to Swift, and need to be set up and achieved independently of using Embedded Swift. For that, refer to your hardware vendor provided documentation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This document only focuses on (2) from the list above, and it’s important that you first get familiar with the details of firmware development for your board without Swift in the mix. Even if you want to build a completely pure Swift firmware, you are still going to need the vendor provided tooling for linking, post-processing, uploading, etc.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Building-code-using-Embedded-Swift",
+          "level" : 2,
+          "text" : "Building code using Embedded Swift",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A basic way to build a set of Swift source files in Embedded Swift mode, is to simply give the compiler the following:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "a target triple",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "-enable-experimental-feature Embedded",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " flag",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "the set of source files that form the input module:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "code" : [
+            "$ swiftc -target <target triple> -enable-experimental-feature Embedded -wmo \\",
+            "  input1.swift input2.swift ... -c -o output.o"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "On macOS, it’s common to have Xcode installed, which comes with a toolchain that does not support Embedded Swift yet. Unless you download, install, and activate a swift.org toolchain, you’ll see this error:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftc input1.swift -enable-experimental-feature Embedded -wmo",
+            "<unknown>:0: error: unable to load standard library for target 'arm64-apple-macosx15.0'"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To resolve that, install a nightly Swift toolchain using Swiftly. You can follow the guide at ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for full instructions on that.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Building-Swift-firmware-for-a-concrete-embedded-target",
+          "level" : 2,
+          "text" : "Building Swift firmware for a concrete embedded target",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To build Swift firmware (for now ignoring integration with SDKs, libraries and other pre-existing C code), we can use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-target",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " argument to specify the CPU architecture. The target triple also decides whether the output object file will be an ELF file, or a Mach-O. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# To build an ARMv7 Mach-O object file:",
+            "$ swiftc -target armv7-apple-none-macho -enable-experimental-feature Embedded -wmo \\",
+            "  input1.swift input2.swift ... -c -o output.o",
+            "",
+            "# To build an ARMv7 ELF object file:",
+            "$ swiftc -target armv7-none-none-eabi -enable-experimental-feature Embedded -wmo \\",
+            "  input1.swift input2.swift ... -c -o output.o"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Passing only a single ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " file to swiftc results in the generation of a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "_main",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " (Mach-O targets) or ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "main",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " (ELF) symbol. During linking, this symbol could potentially clash with other objects that also define one. To avoid this, compile multiple Swift files together or use the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "-parse-as-library",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " flag.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Additionally, you probably want to specify additional Clang and\/or LLVM flags to get the compiler to produce code for the exact ISA and ABI you need for your target.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, a Raspberry Pi Pico \/ Pico W should target the ARMv6-M architecture via the ",
+              "type" : "text"
+            },
+            {
+              "code" : "armv6m-*",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " target triple, but the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-mfloat-abi=soft",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " Clang option should also be used, and if you want to match ABI with libraries built with the GNU toolchain, you might also need ",
+              "type" : "text"
+            },
+            {
+              "code" : "-fshort-enums",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". To pass those to Swift, use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Xcc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " prefix:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# To build an ELF object file for ARMv6-M with soft float ABI (floating-point arguments passed in integer registers) and \"short enums\":",
+            "$ swiftc -target armv6m-none-none-eabi -enable-experimental-feature Embedded -wmo \\",
+            "   -Xcc -mfloat-abi=soft -Xcc -fshort-enums \\",
+            "  input1.swift input2.swift ... -c -o output.o"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This might not be obvious: ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Xcc",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flags are typically only used to alter behavior of the Clang importer, but passing flags to Clang this way also works to specify LLVM target options like selecting a specific CPU architecture (",
+              "type" : "text"
+            },
+            {
+              "code" : "-march",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "-mcpu",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "-mmcu",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), FPU unit availability (",
+              "type" : "text"
+            },
+            {
+              "code" : "-mfpu",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), which registers are used to pass floating-point values (",
+              "type" : "text"
+            },
+            {
+              "code" : "-mfloat-abi",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), and others.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Integrating-with-existing-embedded-SDKs-and-build-systems",
+          "level" : 2,
+          "text" : "Integrating with existing embedded SDKs and build systems",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It’s very common to integrate with existing SDKs in embedded development. This typically involves:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Setting up the build environment",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " with the right compiler flags, include paths, and linker settings to match the SDK’s requirements.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Creating a bridging header",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " that exposes the C functions and types from the SDK to Swift.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Configuring the build system",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " to compile Swift code with the right flags and link it with the SDK’s libraries.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most embedded SDKs provide a build system integration, commonly with CMake, Make, or their own custom build scripts. For details and concrete examples of how to integrate with more common platforms, SDKs and build systems, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Using-Embedded-Swift",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods"
+      ],
+      "title" : "Using Embedded Swift"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ConditionalCompilation": {
+  "abstract" : [
+    {
+      "text" : "How to share code between Embedded Swift and full Swift using conditional compilation",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conditionalizing compilation for Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/conditionalcompilation"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Existentials": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on existentials (“any” types) that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Existentials",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Existentials",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/existentials"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ExternalDependencies": {
+  "abstract" : [
+    {
+      "text" : "What external system dependencies should you expect from Embedded Swift compilations",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ExternalDependencies",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "External dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/externaldependencies"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/InstallEmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/installembeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/IntegratingWithPlatforms": {
+  "abstract" : [
+    {
+      "text" : "Understand the common patterns and approaches for integrating Swift with existing embedded systems",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/IntegratingWithPlatforms",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Integrating with embedded platforms",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/integratingwithplatforms"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Libraries": {
+  "abstract" : [
+    {
+      "text" : "Understand the library setup and linkage model of Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Libraries and modules in Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/libraries"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/NonFinalGenericMethods": {
+  "abstract" : [
+    {
+      "text" : "Restrictions on unbound generic methods that apply in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/NonFinalGenericMethods",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Non-final generic methods",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/nonfinalgenericmethods"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Strings": {
+  "abstract" : [
+    {
+      "text" : "How to enable full Unicode-compliant string support in Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Strings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Strings",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/strings"
+}
+}
+}

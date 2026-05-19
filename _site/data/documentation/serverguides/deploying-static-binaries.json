@@ -1,0 +1,999 @@
+{
+  "abstract" : [
+    {
+      "text" : "Build fully self-contained Swift executables and deploy them",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to minimal containers or directly to Linux machines.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/deploying-static-binaries"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Server Guides"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Deploying Swift services as static binaries"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Static Linux SDK produces Swift executables with no external dependencies —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "not even the C library.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This lets you run the binary on any Linux machine regardless of distribution,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which opens deployment options that aren’t possible with dynamically linked builds.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can copy the binary into a ",
+              "type" : "text"
+            },
+            {
+              "code" : "scratch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or distroless container image that contains nothing but your executable.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Or skip containers entirely and copy the binary to a virtual machine.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Either way, the result is the smallest possible deployment artifact with the smallest possible attack surface.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This article walks you through installing the SDK, building a static binary, and deploying it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Install-the-Static-Linux-SDK",
+          "level" : 3,
+          "text" : "Install the Static Linux SDK",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Static Linux SDK requires an open source Swift toolchain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The toolchain bundled with Xcode doesn’t support SDK-based cross-compilation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to install an open source Swift toolchain, then install the Static Linux SDK for that toolchain.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Go to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/install\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for the links and commands to install both.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Install the SDK with ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift sdk install",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", providing the URL for your Swift version.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The command follows this form:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift sdk install <url> --checksum <checksum>"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After installation, verify the SDK is available:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift sdk list"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The output includes SDK names like ",
+              "type" : "text"
+            },
+            {
+              "code" : "x86_64-swift-linux-musl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ",
+              "type" : "text"
+            },
+            {
+              "code" : "aarch64-swift-linux-musl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " that you use in build commands.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Build-a-static-binary",
+          "level" : 3,
+          "text" : "Build a static binary",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Build your service with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--swift-sdk",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "specifying the target architecture:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build -c release --swift-sdk aarch64-swift-linux-musl"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For x86_64 targets, use the corresponding SDK name:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build -c release --swift-sdk x86_64-swift-linux-musl"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This produces a statically linked ELF binary in ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build\/release\/",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that you can copy to any Linux system and run directly.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The SDK uses ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/musl.libc.org",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " instead of Glibc",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and statically links everything the executable needs —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "including the Swift standard library, Foundation, and system libraries",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "like libcurl and libxml2.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Because Musl replaces Glibc,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "some packages that import C libraries need changes —",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "for example, changing import lines from ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Glibc",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Musl",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The Swift standard library and Foundation handle this automatically.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Deploy-to-a-distroless-container-image",
+          "level" : 3,
+          "text" : "Deploy to a distroless container image",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A distroless container image contains no operating system utilities —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "no package manager, no shell, nothing but what you put in it.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This eliminates an entire class of potential vulnerabilities",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "because there are no extra programs an attacker could exploit.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because the Static Linux SDK cross-compiles from your development machine,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you don’t need a multi-stage Dockerfile with a Swift SDK builder image.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Build the binary locally, then use a minimal ",
+              "type" : "text"
+            },
+            {
+              "code" : "Dockerfile",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that copies the pre-built executable into a ",
+              "type" : "text"
+            },
+            {
+              "code" : "scratch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " image —",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a completely empty base image:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build -c release --swift-sdk aarch64-swift-linux-musl"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "code" : [
+            "FROM scratch",
+            "COPY .build\/release\/<executable-name> \/",
+            "",
+            "EXPOSE 8080",
+            "ENTRYPOINT [\"\/<executable-name>\"]"
+          ],
+          "syntax" : "Dockerfile",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The final image contains a single file: your executable.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your service makes outbound TLS connections,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the image also needs CA certificates.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Copy them from any Linux image at build time:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "FROM ubuntu:noble AS certs",
+            "RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates",
+            "",
+            "FROM scratch",
+            "COPY --from=certs \/etc\/ssl\/certs\/ca-certificates.crt \/etc\/ssl\/certs\/",
+            "COPY .build\/release\/<executable-name> \/",
+            "",
+            "EXPOSE 8080",
+            "ENTRYPOINT [\"\/<executable-name>\"]"
+          ],
+          "syntax" : "Dockerfile",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Build the container image:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container build -t <my-app>:latest ."
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "scratch",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "-based image doesn’t include a shell,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "so you can’t use ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "container run --rm -it <my-app> \/bin\/sh",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " to debug.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "If you need a shell for troubleshooting,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "use a slim base image during development and switch to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "scratch",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for production.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Build-and-publish-with-Swift-Container-Plugin",
+          "level" : 3,
+          "text" : "Build and publish with Swift Container Plugin",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-container-plugin",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "combines building, packaging, and pushing to a registry into a single command.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "It builds your service with the Static Linux SDK,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "packages the executable into a container image,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and publishes the image to a container registry — all without a Dockerfile.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Add the plugin to your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "dependencies: [",
+            "    .package(url: \"https:\/\/github.com\/apple\/swift-container-plugin\", from: \"0.1.0\"),",
+            "],"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Then build and publish:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift package --swift-sdk aarch64-swift-linux-musl \\",
+            "    build-container-image --repository registry.example.com\/my-app"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The plugin produces a minimal image equivalent to one from a ",
+              "type" : "text"
+            },
+            {
+              "code" : "scratch",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-based Dockerfile",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and pushes it to the specified registry.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Run the published image with any container runtime:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "container run -p 8080:8080 registry.example.com\/my-app"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The container plugin is especially useful in CI pipelines",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "where you want a single, repeatable command",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "that produces a ready-to-deploy image.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Deploy-directly-to-a-Linux-machine",
+          "level" : 3,
+          "text" : "Deploy directly to a Linux machine",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A static binary runs on any Linux machine, so you can copy it directly to a virtual machine or bare-metal server:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "scp .build\/release\/<executable-name> user@server:\/usr\/local\/bin\/"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "On the server, run the executable directly:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "ssh user@server \/usr\/local\/bin\/<executable-name>"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use your preferred configuration management tool, such as Ansible, Chef, Puppet, or shell scripts,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to automate deployment across multiple hosts.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building",
+        "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/serverguides\/deploying-static-binaries"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://ServerGuides/documentation/ServerGuides": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Server Guides",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides"
+},
+"doc://ServerGuides/documentation/ServerGuides/building": {
+  "abstract" : [
+    {
+      "text" : "Assemble your server applications using Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/building",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Building Swift Server Applications",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/building"
+},
+"doc://ServerGuides/documentation/ServerGuides/packaging": {
+  "abstract" : [
+    {
+      "text" : "Build a container that includes your Swift service with its resources and dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides\/packaging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Packaging Swift services with containers",
+  "type" : "topic",
+  "url" : "\/documentation\/serverguides\/packaging"
+},
+"https://github.com/apple/swift-container-plugin": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-container-plugin",
+  "title" : "Swift Container Plugin",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Container Plugin",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-container-plugin"
+},
+"https://musl.libc.org": {
+  "identifier" : "https:\/\/musl.libc.org",
+  "title" : "Musl",
+  "titleInlineContent" : [
+    {
+      "text" : "Musl",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/musl.libc.org"
+},
+"https://www.swift.org/install/": {
+  "identifier" : "https:\/\/www.swift.org\/install\/",
+  "title" : "swift.org",
+  "titleInlineContent" : [
+    {
+      "text" : "swift.org",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/install\/"
+}
+}
+}

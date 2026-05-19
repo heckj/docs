@@ -1,0 +1,714 @@
+{
+  "abstract" : [
+    {
+      "text" : "WebAssembly modules often need to interact with their host environment.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This guide demonstrates how to build a Swift guest module that both exports",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "functions to the host and imports functions from it, using ",
+      "type" : "text"
+    },
+    {
+      "code" : "WasmKit",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as the host application.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/ImportingExportingFunctions"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Importing and Exporting Functions"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This process involves two Swift packages:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Guest",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": The WebAssembly module running inside the virtual machine.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Host",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": The application that loads and executes the guest module.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "anchor" : "1-The-Guest-Module",
+          "level" : 2,
+          "text" : "1. The Guest Module",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "First, create a Swift package for the guest module. This module will:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Export",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "add",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " function that the host can call.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Import",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "print_result",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " function from the host to display the result.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "code" : "Package.swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for the Guest:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Enable the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Extern",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " experimental feature to use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_extern",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " attribute.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version:6.2",
+            "import PackageDescription",
+            "",
+            "let package = Package(",
+            "    name: \"Guest\",",
+            "    products: [",
+            "        .library(name: \"Guest\", targets: [\"Guest\"]),",
+            "    ],",
+            "    targets: [",
+            "        .target(",
+            "            name: \"Guest\",",
+            "            swiftSettings: [",
+            "                .enableExperimentalFeature(\"Extern\")",
+            "            ]",
+            "        ),",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source code for the Guest (",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Sources\/Guest\/Guest.swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "):",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The imported function must be annotated with both ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_extern(c, ...)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_extern(wasm, ...)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_extern(c, ...)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ensures the C calling convention is used, so the Wasm import has the expected",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "signature. ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_extern(wasm, ...)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " declares it as a Wasm import from the host module.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In Swift 6.3 and later (including development snapshots), you can use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@c",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " attribute (",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0495-cdecl.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ") for the export:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ 1. Import a function from the host",
+            "@_extern(c, \"print_result\")",
+            "@_extern(wasm, module: \"host\", name: \"print_result\")",
+            "func print_result(_ value: Int32)",
+            "",
+            "\/\/ 2. Export a function to the host",
+            "@_expose(wasm, \"add_and_print\")",
+            "@c",
+            "public func addAndPrint(_ lhs: Int32, _ rhs: Int32) -> Int32 {",
+            "    let result = lhs + rhs",
+            "    \/\/ Call the imported host function",
+            "    print_result(result)",
+            "    return result",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "On earlier Swift versions, use ",
+              "type" : "text"
+            },
+            {
+              "code" : "@_cdecl",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instead:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ 1. Import a function from the host",
+            "@_extern(c, \"print_result\")",
+            "@_extern(wasm, module: \"host\", name: \"print_result\")",
+            "func print_result(_ value: Int32)",
+            "",
+            "\/\/ 2. Export a function to the host",
+            "@_expose(wasm, \"add_and_print\")",
+            "@_cdecl(\"add_and_print\")",
+            "public func addAndPrint(_ lhs: Int32, _ rhs: Int32) -> Int32 {",
+            "    let result = lhs + rhs",
+            "    \/\/ Call the imported host function",
+            "    print_result(result)",
+            "    return result",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "2-Building-the-Guest",
+          "level" : 2,
+          "text" : "2. Building the Guest",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Compile the guest package using the Swift SDK for WebAssembly.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# In the root directory of your guest package",
+            "swift build --swift-sdk <YOUR_WASM_SDK_ID>"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift Package Manager will produce a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".wasm",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file at ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build\/wasm32-unknown-wasi\/debug\/Guest.wasm",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Copy it to a known location:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "cp .build\/wasm32-unknown-wasi\/debug\/Guest.wasm guest.wasm"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "3-The-Host-Application-WasmKit",
+          "level" : 2,
+          "text" : "3. The Host Application (WasmKit)",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now, create the host application that will execute the guest module.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "code" : "Package.swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for the Host:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Add ",
+              "type" : "text"
+            },
+            {
+              "code" : "WasmKit",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "WasmKitWASI",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as dependencies.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ swift-tools-version:6.2",
+            "import PackageDescription",
+            "",
+            "let package = Package(",
+            "    name: \"Host\",",
+            "    platforms: [.macOS(.v14)],",
+            "    dependencies: [",
+            "        .package(url: \"https:\/\/github.com\/swiftwasm\/WasmKit.git\", from: \"0.2.0\"),",
+            "    ],",
+            "    targets: [",
+            "        .executableTarget(name: \"Host\", dependencies: [",
+            "            .product(name: \"WasmKit\", package: \"WasmKit\"),",
+            "            .product(name: \"WasmKitWASI\", package: \"WasmKit\"),",
+            "        ]),",
+            "    ]",
+            ")"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Source code for the Host (",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Sources\/Host\/Host.swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "):",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "import WasmKit",
+            "import WasmKitWASI",
+            "import Foundation",
+            "",
+            "@main",
+            "struct Host {",
+            "    static func main() throws {",
+            "        let wasmBinary = try Data(contentsOf: URL(fileURLWithPath: \"path\/to\/your\/guest.wasm\"))",
+            "",
+            "        let engine = Engine()",
+            "        let store = Store(engine: engine)",
+            "        let module = try parseWasm(bytes: Array(wasmBinary))",
+            "",
+            "        \/\/ 1. Define the host function to provide to the guest",
+            "        let printResult = Function(store: store, parameters: [.i32]) { _, args in",
+            "            let value = args[0]",
+            "            print(\"[Host] The result is: \\(value)\")",
+            "            return []",
+            "        }",
+            "",
+            "        \/\/ 2. Set up WASI and instantiate the module",
+            "        var imports = Imports()",
+            "        let wasi = try WASIBridgeToHost()",
+            "        wasi.link(to: &imports, store: store)",
+            "        imports.define(module: \"host\", name: \"print_result\", printResult)",
+            "",
+            "        let instance = try module.instantiate(store: store, imports: imports)",
+            "",
+            "        \/\/ Initialize the reactor (library) instance",
+            "        try wasi.initialize(instance)",
+            "",
+            "        \/\/ 3. Call the exported function from the guest",
+            "        let addAndPrint = instance.exports[function: \"add_and_print\"]!",
+            "        _ = try addAndPrint([.i32(42), .i32(3)])",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "4-Running-the-Host",
+          "level" : 2,
+          "text" : "4. Running the Host",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Run the host application to see the interaction in action.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "# In the root directory of your host package",
+            "swift run",
+            "# Expected output: [Host] The result is: i32(45)"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/importingexportingfunctions"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://github.com/swiftlang/swift-evolution/blob/main/proposals/0495-cdecl.md": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0495-cdecl.md",
+  "title" : "SE-0495",
+  "titleInlineContent" : [
+    {
+      "text" : "SE-0495",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0495-cdecl.md"
+}
+}
+}

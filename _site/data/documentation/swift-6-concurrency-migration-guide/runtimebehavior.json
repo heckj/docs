@@ -1,0 +1,229 @@
+{
+  "abstract" : [
+    {
+      "text" : "Learn how Swift concurrency runtime semantics differ from other runtimes you may",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be familiar with, and familiarize yourself with common patterns to achieve",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "similar end results in terms of execution semantics.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.migration.6\/documentation\/Swift-6-Concurrency-Migration-Guide\/RuntimeBehavior"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "title" : "Runtime Behavior"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift’s concurrency model with a strong focus on async\/await, actors and tasks,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "means that some patterns from other libraries or concurrency runtimes don’t",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "translate directly into this new model. In this section, we’ll explore common",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "patterns and differences in runtime behavior to be aware of, and how to address",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "them while you migrate your code to Swift concurrency.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Limiting-concurrency-using-Task-Groups",
+          "level" : 2,
+          "text" : "Limiting concurrency using Task Groups",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Sometimes you may find yourself with a large list of work to be processed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "While it is possible to just enqueue “all” those work items to a task group like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Potentially wasteful -- perhaps this creates thousands of tasks concurrently (?!)",
+            "",
+            "let lotsOfWork: [Work] = ...",
+            "await withTaskGroup(of: Something.self) { group in",
+            "  for work in lotsOfWork {",
+            "    \/\/ If this is thousands of items, we may end up creating a lot of tasks here.",
+            "    group.addTask {",
+            "      await work.work()",
+            "    }",
+            "  }",
+            "",
+            "  for await result in group {",
+            "    process(result) \/\/ process the result somehow, depends on your needs",
+            "  }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you expect to deal with hundreds or thousands of items, it might be inefficient to enqueue them all immediately.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Creating a task (in ",
+              "type" : "text"
+            },
+            {
+              "code" : "addTask",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") allocates memory for the task in order to suspend and execute it.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "While the amount of memory for each task isn’t large, it can be significant when creating thousands of tasks that won’t execute immediately.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When faced with such a situation, you can manually throttle the number of concurrently added tasks in the group, as follows:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let lotsOfWork: [Work] = ... ",
+            "let maxConcurrentWorkTasks = min(lotsOfWork.count, 10)",
+            "assert(maxConcurrentWorkTasks > 0)",
+            "",
+            "await withTaskGroup(of: Something.self) { group in",
+            "    var submittedWork = 0",
+            "    for _ in 0..<maxConcurrentWorkTasks {",
+            "        group.addTask { \/\/ or 'addTaskUnlessCancelled'",
+            "            await lotsOfWork[submittedWork].work() ",
+            "        }",
+            "        submittedWork += 1",
+            "    }",
+            "    ",
+            "    for await result in group {",
+            "        process(result) \/\/ process the result somehow, depends on your needs",
+            "    ",
+            "        \/\/ Every time we get a result back, check if there's more work we should submit and do so",
+            "        if submittedWork < lotsOfWork.count, ",
+            "           let remainingWorkItem = lotsOfWork[submittedWork] {",
+            "            group.addTask { \/\/ or 'addTaskUnlessCancelled'",
+            "                await remainingWorkItem.work() ",
+            "            }  ",
+            "            submittedWork += 1",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ]
+, 
+"references": {
+"doc://org.swift.migration.6/documentation/MigrationGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.migration.6\/documentation\/MigrationGuide",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Migrating to Swift 6",
+  "type" : "topic",
+  "url" : "\/documentation\/migrationguide"
+}
+}
+}

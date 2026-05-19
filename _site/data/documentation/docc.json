@@ -1,0 +1,446 @@
+{
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.docc\/documentation\/docc"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "docc",
+    "modules" : [
+      {
+        "name" : "docc",
+        "relatedModules" : [
+
+        ]
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Tool",
+    "symbolKind" : "module",
+    "title" : "DocC"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The DocC documentation compiler converts Markdown-based text into rich documentation for Swift frameworks and packages. You can preview the documentation in its published form as you work on it, and also host it on a website when it’s complete.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "DocC syntax — called ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "documentation markup",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " — is a custom variant of Markdown that adds functionality for developer-specific documentation features, like cross-symbol linking, term-definition lists, code listings, and asides. You add documentation markup to your source code, compile it with DocC, and produce reference documentation for your APIs. You can also use documentation markup, along with a set of directives that instruct how DocC generates your content, to offer step-by-step tutorials that teach developers to use your APIs through interactive coding exercises or to craft comprehensive articles that explain specific technologies or topics.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "docc-hero",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Essentials",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-a-swift-framework-or-package"
+      ],
+      "title" : "Essentials"
+    },
+    {
+      "anchor" : "Documentation-Content",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations"
+      ],
+      "title" : "Documentation Content"
+    },
+    {
+      "anchor" : "Structure-and-Formatting",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-tables-of-data",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/other-formatting-options",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-images",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages"
+      ],
+      "title" : "Structure and Formatting"
+    },
+    {
+      "anchor" : "Distribution",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/distributing-documentation-to-other-developers"
+      ],
+      "title" : "Distribution"
+    },
+    {
+      "anchor" : "Documentation-Types",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/api-reference-syntax",
+        "doc:\/\/org.swift.docc\/documentation\/docc\/tutorial-syntax"
+      ],
+      "title" : "Documentation Types"
+    },
+    {
+      "anchor" : "Shared-Syntax",
+      "identifiers" : [
+        "doc:\/\/org.swift.docc\/documentation\/docc\/Comment"
+      ],
+      "title" : "Shared Syntax"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/docc"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.docc/documentation/docc": {
+  "abstract" : [
+    {
+      "text" : "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "DocC",
+  "type" : "topic",
+  "url" : "\/documentation\/docc"
+},
+"doc://org.swift.docc/documentation/docc/Comment": {
+  "abstract" : [
+    {
+      "text" : "Captures a writer comment that’s not visible in the rendered documentation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Comment"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/Comment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "attribute",
+      "text" : "@"
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "__docc_universal_symbol_reference_$Comment",
+      "text" : "Comment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Comment",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/comment"
+},
+"doc://org.swift.docc/documentation/docc/adding-code-snippets-to-your-content": {
+  "abstract" : [
+    {
+      "text" : "Create and include code snippets to illustrate and provide examples of how to use your API.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-code-snippets-to-your-content",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Adding Code Snippets to your Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-code-snippets-to-your-content"
+},
+"doc://org.swift.docc/documentation/docc/adding-images": {
+  "abstract" : [
+    {
+      "text" : "Elevate your content’s visual appeal by adding images.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-images",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Images to Your Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-images"
+},
+"doc://org.swift.docc/documentation/docc/adding-structure-to-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Make symbols easier to find by arranging them into groups and collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-structure-to-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Structure to Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-structure-to-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/adding-supplemental-content-to-a-documentation-catalog": {
+  "abstract" : [
+    {
+      "text" : "Include articles and extension files to extend your source documentation comments or provide supporting conceptual content.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Supplemental Content to a Documentation Catalog",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-supplemental-content-to-a-documentation-catalog"
+},
+"doc://org.swift.docc/documentation/docc/adding-tables-of-data": {
+  "abstract" : [
+    {
+      "text" : "Arrange information into rows and columns.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/adding-tables-of-data",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding Tables of Data",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/adding-tables-of-data"
+},
+"doc://org.swift.docc/documentation/docc/api-reference-syntax": {
+  "abstract" : [
+    {
+      "text" : "Teach your APIs through reference documentation you create from code comments and extension files, or create detailed articles and conceptual guides.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/api-reference-syntax",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "API Documentation",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/api-reference-syntax"
+},
+"doc://org.swift.docc/documentation/docc/customizing-the-appearance-of-your-documentation-pages": {
+  "abstract" : [
+    {
+      "text" : "Customize the look and feel of your documentation webpages.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Customizing the Appearance of Your Documentation Pages",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/customizing-the-appearance-of-your-documentation-pages"
+},
+"doc://org.swift.docc/documentation/docc/distributing-documentation-to-other-developers": {
+  "abstract" : [
+    {
+      "text" : "Share your documentation by hosting it on a web server.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/distributing-documentation-to-other-developers",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Distributing Documentation to Other Developers",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/distributing-documentation-to-other-developers"
+},
+"doc://org.swift.docc/documentation/docc/documenting-a-swift-framework-or-package": {
+  "abstract" : [
+    {
+      "text" : "Create developer documentation from in-source comments, add articles with code snippets,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and add tutorials for a guided learning experience.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-a-swift-framework-or-package",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documenting a Swift Framework or Package",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/documenting-a-swift-framework-or-package"
+},
+"doc://org.swift.docc/documentation/docc/documenting-api-with-different-language-representations": {
+  "abstract" : [
+    {
+      "text" : "Create documentation for API that’s callable from more than one source language.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/documenting-api-with-different-language-representations",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documenting API with Different Language Representations",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/documenting-api-with-different-language-representations"
+},
+"doc://org.swift.docc/documentation/docc/formatting-your-documentation-content": {
+  "abstract" : [
+    {
+      "text" : "Enhance your content’s presentation with special formatting and styling for text and lists.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/formatting-your-documentation-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Formatting Your Documentation Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/formatting-your-documentation-content"
+},
+"doc://org.swift.docc/documentation/docc/linking-to-symbols-and-other-content": {
+  "abstract" : [
+    {
+      "text" : "Facilitate navigation between pages using links.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/linking-to-symbols-and-other-content",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Linking to Symbols and Other Content",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/linking-to-symbols-and-other-content"
+},
+"doc://org.swift.docc/documentation/docc/other-formatting-options": {
+  "abstract" : [
+    {
+      "text" : "Improve the presentation and structure of your content by incorporating special page elements.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/other-formatting-options",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Other Formatting Options",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/other-formatting-options"
+},
+"doc://org.swift.docc/documentation/docc/tutorial-syntax": {
+  "abstract" : [
+    {
+      "text" : "Teach developers your Swift APIs through step-by-step, interactive content.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/tutorial-syntax",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Interactive Tutorials",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/tutorial-syntax"
+},
+"doc://org.swift.docc/documentation/docc/writing-symbol-documentation-in-your-source-files": {
+  "abstract" : [
+    {
+      "text" : "Add reference documentation to your symbols that explains how to use them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc\/writing-symbol-documentation-in-your-source-files",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Writing Symbol Documentation in Your Source Files",
+  "type" : "topic",
+  "url" : "\/documentation\/docc\/writing-symbol-documentation-in-your-source-files"
+},
+"docc-hero": {
+  "alt" : "On the left, a diagram shows a blocked-out example of a compiled tutorial and Markdown. In the middle, a diagram shows a blocked-out example of Markdown. On the right, a diagram shows a blocked-out example of compiled developer documentation.",
+  "identifier" : "docc-hero",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/org.swift.docc\/docc-hero@2x.png"
+    }
+  ]
+}
+}
+}

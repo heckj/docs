@@ -1,0 +1,263 @@
+{
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Install Embedded Swift"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The best way to install Swift for embedded development is using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "http:\/\/github.com\/swiftlang\/swiftly",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", the official Swift toolchain installer and manager. Since Embedded Swift is still experimental and not yet supported in public Swift releases, you’ll need to use a development toolchain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For instructions on how to install ",
+              "type" : "text"
+            },
+            {
+              "code" : "swiftly",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", check out the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/swiftly\/documentation\/swiftly\/getting-started",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " guide.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Swiftly installs the latest release toolchain during ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "swiftly init",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", if you only plan on using Embedded Swift, you can avoid downloading this toolchain by using the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "swiftly init --skip-install",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " option.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After installing Swiftly, install the latest main “Development Snapshot” toolchain available for your platform by running:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swiftly install main-snapshot",
+            "...",
+            "main-snapshot-2025-04-12 installed successfully!"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To test that you have Swift installed, run ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift --version",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " from your shell or terminal app. It should say “6.2-dev”, meaning you have a “Development Snapshot” toolchain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swift --version",
+            "Apple Swift version 6.2-dev (LLVM 81ab6d9f7e4810f, Swift 9cc1947527bacea)",
+            "Target: arm64-apple-macosx15.0",
+            "Build config: +assertions"
+          ],
+          "syntax" : "shell",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "When using other shells, like one integrated into an IDE, be careful to verify that the version of Swift reported matches that of the shell you used to install Swift.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Warning",
+          "style" : "warning",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Getting-Started",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset"
+      ],
+      "title" : "Getting Started"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Introduction": {
+  "abstract" : [
+    {
+      "text" : "Write Swift code for microcontrollers, embedded systems, and bare-metal applications",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Introduction to Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/introduction"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/LanguageSubset": {
+  "abstract" : [
+    {
+      "text" : "Details of the Embedded Swift language subset compared to full Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language subset",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/languagesubset"
+},
+"http://github.com/swiftlang/swiftly": {
+  "identifier" : "http:\/\/github.com\/swiftlang\/swiftly",
+  "title" : "swiftly",
+  "titleInlineContent" : [
+    {
+      "code" : "swiftly",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "http:\/\/github.com\/swiftlang\/swiftly"
+},
+"https://www.swift.org/swiftly/documentation/swiftly/getting-started": {
+  "identifier" : "https:\/\/www.swift.org\/swiftly\/documentation\/swiftly\/getting-started",
+  "title" : "Getting Started",
+  "titleInlineContent" : [
+    {
+      "text" : "Getting Started",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/swiftly\/documentation\/swiftly\/getting-started"
+}
+}
+}

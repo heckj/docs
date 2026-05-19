@@ -1,0 +1,953 @@
+{
+  "abstract" : [
+    {
+      "text" : "An enabled trait of a dependency.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "PackageDescription",
+    "externalID" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Trait"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PackageDescription"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Trait"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.1",
+        "name" : "SwiftPM",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "Package.Dependency.Trait"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Trait"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/SQ",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s26ExpressibleByStringLiteralP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s33ExpressibleByUnicodeScalarLiteralP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/SH",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Declaring-Requirements",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/traits",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/RegistryRequirement",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/SourceControlRequirement"
+      ],
+      "title" : "Declaring Requirements"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Declaring-a-Dependency-Trait",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/trait(name:condition:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/defaults"
+      ],
+      "title" : "Declaring a Dependency Trait"
+    },
+    {
+      "anchor" : "Creating-a-Dependency-Trait",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/init(name:condition:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/init(stringLiteral:)",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/Condition-swift.struct"
+      ],
+      "title" : "Creating a Dependency Trait"
+    },
+    {
+      "anchor" : "Inspecting-a-Dependency-Trait",
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/name",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/condition-swift.property"
+      ],
+      "title" : "Inspecting a Dependency Trait"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/Equatable-Implementations",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/ExpressibleByStringLiteral-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagedescription\/package\/dependency\/trait"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packagedescription/SH": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/SQ": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+  "abstract" : [
+    {
+      "text" : "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackageDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package": {
+  "abstract" : [
+    {
+      "text" : "The configuration of a Swift package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Package"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency": {
+  "abstract" : [
+    {
+      "text" : "A package dependency of a Swift package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Dependency"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Dependency"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package.Dependency",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/RegistryRequirement": {
+  "abstract" : [
+    {
+      "text" : "An enum that represents the requirement for a package dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RegistryRequirement"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/RegistryRequirement",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RegistryRequirement"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package.Dependency.RegistryRequirement",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/registryrequirement"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/SourceControlRequirement": {
+  "abstract" : [
+    {
+      "text" : "An enum that represents the requirement for a package dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SourceControlRequirement"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/SourceControlRequirement",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SourceControlRequirement"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package.Dependency.SourceControlRequirement",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/sourcecontrolrequirement"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait": {
+  "abstract" : [
+    {
+      "text" : "An enabled trait of a dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Trait"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package.Dependency.Trait",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/Condition-swift.struct": {
+  "abstract" : [
+    {
+      "text" : "A condition that limits the application of a trait for a dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Condition"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/Condition-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Condition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Package.Dependency.Trait.Condition",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/condition-swift.struct"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/equatable-implementations"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/ExpressibleByExtendedGraphemeClusterLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/expressiblebyextendedgraphemeclusterliteral-implementations"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/ExpressibleByStringLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/ExpressibleByStringLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByStringLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/expressiblebystringliteral-implementations"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/condition-swift.property": {
+  "abstract" : [
+    {
+      "text" : "The condition under which the package manager enables the dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
+      "text" : "Dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+      "text" : "Trait"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV9ConditionV",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/condition-swift.property",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "condition",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/condition-swift.property"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/defaults": {
+  "abstract" : [
+    {
+      "text" : "Enables all default traits of the dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "defaults"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
+      "text" : "Dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/defaults",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "defaults",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/defaults"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/init(name:condition:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new enabled trait.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
+      "text" : "Dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+      "text" : "Trait"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV9ConditionV",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/init(name:condition:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(name:condition:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/init(name:condition:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/init(stringLiteral:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new enabled trait.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "stringLiteral"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17StringLiteralTypea",
+      "text" : "StringLiteralType"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/init(stringLiteral:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(stringLiteral:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/init(stringliteral:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/name": {
+  "abstract" : [
+    {
+      "text" : "The name of the enabled trait.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/name"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/Trait/trait(name:condition:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new enabled trait.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "trait"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
+      "text" : "Dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+      "text" : "Trait"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV9ConditionV",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
+      "text" : "Dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/Trait\/trait(name:condition:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "trait(name:condition:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/trait\/trait(name:condition:)"
+},
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Package/Dependency/traits": {
+  "abstract" : [
+    {
+      "text" : "The dependencies traits configuration.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "traits"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sh",
+      "text" : "Set"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C",
+      "text" : "Package"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
+      "text" : "Dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC5TraitV",
+      "text" : "Trait"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency\/traits",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "traits",
+  "type" : "topic",
+  "url" : "\/documentation\/packagedescription\/package\/dependency\/traits"
+},
+"doc://org.swift.swiftpm.packagedescription/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s26ExpressibleByStringLiteralP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s26ExpressibleByStringLiteralP",
+  "title" : "Swift.ExpressibleByStringLiteral",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s33ExpressibleByUnicodeScalarLiteralP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s33ExpressibleByUnicodeScalarLiteralP",
+  "title" : "Swift.ExpressibleByUnicodeScalarLiteral",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s43ExpressibleByExtendedGraphemeClusterLiteralP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
+  "title" : "Swift.ExpressibleByExtendedGraphemeClusterLiteral",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s8SendableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

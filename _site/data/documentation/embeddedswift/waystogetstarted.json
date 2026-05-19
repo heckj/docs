@@ -1,0 +1,531 @@
+{
+  "abstract" : [
+    {
+      "text" : "Possible directions to explore to start using Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/WaysToGetStarted"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Getting started with Embedded Swift"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Introduction",
+          "level" : 2,
+          "text" : "Introduction",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Embedded Swift is a way to write code for embedded systems using the Swift programming language. Depending on the use case, there are different ways of using it, different ways of integrating with existing ecosystems, and different setups for different hardware devices. This guide will help you explore various paths to get started with embedded development using Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Before diving into Embedded Swift development, you should have:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Basic knowledge of the Swift programming language",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A Swift toolchain installed on your development host",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "A target embedded platform in mind (e.g. a Raspberry Pi Pico)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "this can also be a simulated hardware platform (e.g. in QEMU), or even a full desktop OS environment in case you’re not interested in controlling low-level hardware or custom electronic peripherals",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Embedded Swift is experimental. Public releases of Swift do not support Embedded Swift, yet. See ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for details.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Guided-Tutorials",
+          "level" : 2,
+          "text" : "Guided Tutorials",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To help you get started with Embedded Swift, we’ve prepared several step-by-step guides that cover different platforms and use cases:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Try out Embedded Swift on your development machine",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Build and run Swift code on a Raspberry Pi Pico",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Set up a baremetal Swift project for STM32 microcontrollers",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These guides provide a practical introduction to Embedded Swift development with specific hardware targets, showing you how to build, upload, and run your first Swift programs on embedded systems.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Other-Resources",
+          "level" : 2,
+          "text" : "Other Resources",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For a deeper understanding of Embedded Swift concepts and philosophy, check out these resources:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Learn about the core concepts and philosophy of Embedded Swift",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Understand which Swift language features are available in Embedded Swift",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Detailed instructions for installing the required toolchain",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For developers coming from embedded C\/C++ backgrounds or those integrating Swift into existing projects:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Essential knowledge for using Embedded Swift effectively",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - How to share code between Embedded Swift and standard Swift",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " - Understanding how libraries work in Embedded Swift",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guided-Examples",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+        "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide"
+      ],
+      "title" : "Guided Examples"
+    }
+  ]
+, 
+"references": {
+"doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Basics": {
+  "abstract" : [
+    {
+      "text" : "Basic information for using Embedded Swift in typical embedded projects",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Basics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Basics of using Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/basics"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/ConditionalCompilation": {
+  "abstract" : [
+    {
+      "text" : "How to share code between Embedded Swift and full Swift using conditional compilation",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/ConditionalCompilation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conditionalizing compilation for Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/conditionalcompilation"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/InstallEmbeddedSwift": {
+  "abstract" : [
+    {
+      "text" : "Get the tools needed to use Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/InstallEmbeddedSwift",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Install Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/installembeddedswift"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Introduction": {
+  "abstract" : [
+    {
+      "text" : "Write Swift code for microcontrollers, embedded systems, and bare-metal applications",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Introduction",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Introduction to Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/introduction"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/LanguageSubset": {
+  "abstract" : [
+    {
+      "text" : "Details of the Embedded Swift language subset compared to full Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/LanguageSubset",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language subset",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/languagesubset"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/Libraries": {
+  "abstract" : [
+    {
+      "text" : "Understand the library setup and linkage model of Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/Libraries",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Libraries and modules in Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/libraries"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/PicoGuide": {
+  "abstract" : [
+    {
+      "text" : "Tutorial for targetting a Raspberry Pi Pico as an embedded device that runs a simple Swift program",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/PicoGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Raspberry Pi Pico Blink (Pico SDK)",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/picoguide"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/STM32BaremetalGuide": {
+  "abstract" : [
+    {
+      "text" : "Program a STM32 microcontroller directly with low-level Swift code",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/STM32BaremetalGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Baremetal Setup for STM32 with Embedded Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/stm32baremetalguide"
+},
+"doc://EmbeddedSwift/documentation/EmbeddedSwift/macOSGuide": {
+  "abstract" : [
+    {
+      "text" : "Tutorial for building a simple program for your host OS with Embedded Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/EmbeddedSwift\/documentation\/EmbeddedSwift\/macOSGuide",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Try out Embedded Swift on macOS",
+  "type" : "topic",
+  "url" : "\/documentation\/embeddedswift\/macosguide"
+}
+}
+}

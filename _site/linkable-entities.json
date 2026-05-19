@@ -1,0 +1,700 @@
+[
+  {
+    "abstract" : [
+      {
+        "text" : "Learn what functionality is available in older language modes.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/compatibility",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Compatibility",
+    "title" : "Version Compatibility"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Release resources that require custom cleanup.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/deinitialization",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Deinitialization",
+    "title" : "Deinitialization"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Determine a value’s runtime type and give it more specific type information.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/typecasting",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/TypeCasting",
+    "title" : "Type Casting"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Access members of an optional value without unwrapping.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/optionalchaining",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/OptionalChaining",
+    "title" : "Optional Chaining"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Manage the visibility of code by declaration, file, and module.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/accesscontrol",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/AccessControl",
+    "title" : "Access Control"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Explore the features and syntax of Swift.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/guidedtour",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/GuidedTour",
+    "title" : "A Swift Tour"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Generalize declarations to abstract away concrete types.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/genericparametersandarguments",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/GenericParametersAndArguments",
+    "title" : "Generic Parameters and Arguments"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Hide implementation details about a value’s type.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/opaquetypes",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/OpaqueTypes",
+    "title" : "Opaque and Boxed Protocol Types"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Model custom types that encapsulate data.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/classesandstructures",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/ClassesAndStructures",
+    "title" : "Structures and Classes"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Store and manipulate text.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/stringsandcharacters",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/StringsAndCharacters",
+    "title" : "Strings and Characters"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Access stored and computed values that are part of an instance or type.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/properties",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Properties",
+    "title" : "Properties"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Match and destructure values.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/patterns",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Patterns",
+    "title" : "Patterns"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Perform operations like assignment, arithmetic, and comparison.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/basicoperators",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/BasicOperators",
+    "title" : "Basic Operators"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Write code that works for multiple types and specify requirements for those types.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/generics",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Generics",
+    "title" : "Generics"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Set the initial values for a type’s stored properties and perform one-time setup.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/initialization",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Initialization",
+    "title" : "Initialization"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Read the notation that the formal grammar uses.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/aboutthelanguagereference",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/AboutTheLanguageReference",
+    "title" : "About the Language Reference"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Define requirements that conforming types must implement.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/protocols",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Protocols",
+    "title" : "Protocols"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Model custom types that define a list of possible values.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/enumerations",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Enumerations",
+    "title" : "Enumerations"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Use macros to generate code at compile time.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/macros",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Macros",
+    "title" : "Macros"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Define types inside the scope of another type.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/nestedtypes",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/NestedTypes",
+    "title" : "Nested Types"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Use built-in named and compound types.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/types",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Types",
+    "title" : "Types"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Structure your code to avoid conflicts when accessing memory.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/memorysafety",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/MemorySafety",
+    "title" : "Memory Safety"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Structure code with branches, loops, and early exits.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/controlflow",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/ControlFlow",
+    "title" : "Control Flow"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Define custom operators, perform bitwise operations, and use builder syntax.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/advancedoperators",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/AdvancedOperators",
+    "title" : "Advanced Operators"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Understand the high-level goals of the language.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/aboutswift",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/AboutSwift",
+    "title" : "About Swift"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Define and call functions that are part of an instance or type.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/methods",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Methods",
+    "title" : "Methods"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Work with common kinds of data and write basic syntax.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/thebasics",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/TheBasics",
+    "title" : "The Basics"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Access the elements of a collection.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/subscripts",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Subscripts",
+    "title" : "Subscripts"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.collection",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language",
+    "title" : "The Swift Programming Language (6.3 beta)"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Perform asynchronous operations.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/concurrency",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Concurrency",
+    "title" : "Concurrency"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Define and call functions, label their arguments, and use their return values.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/functions",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Functions",
+    "title" : "Functions"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Use the lowest-level components of the syntax.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/lexicalstructure",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/LexicalStructure",
+    "title" : "Lexical Structure"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Add functionality to an existing type.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/extensions",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Extensions",
+    "title" : "Extensions"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Subclass to add or override functionality.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/inheritance",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Inheritance",
+    "title" : "Inheritance"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Respond to and recover from errors.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/errorhandling",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/ErrorHandling",
+    "title" : "Error Handling"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Group code that executes together, without creating a named function.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/closures",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Closures",
+    "title" : "Closures"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Model the lifetime of objects and their relationships.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/automaticreferencecounting",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/AutomaticReferenceCounting",
+    "title" : "Automatic Reference Counting"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Organize data using arrays, sets, and dictionaries.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/collectiontypes",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/CollectionTypes",
+    "title" : "Collection Types"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Introduce types, operators, variables, and other names and constructs.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/declarations",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Declarations",
+    "title" : "Declarations"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Add information to declarations and types.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/attributes",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Attributes",
+    "title" : "Attributes"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Group expressions and control the flow of execution.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/statements",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Statements",
+    "title" : "Statements"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Review the recent changes to this book.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/revisionhistory",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/RevisionHistory",
+    "title" : "Document Revision History"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Access, modify, and assign values.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/expressions",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/Expressions",
+    "title" : "Expressions"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "Read the whole formal grammar.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.article",
+    "language" : "swift",
+    "path" : "\/documentation\/the-swift-programming-language\/summaryofthegrammar",
+    "referenceURL" : "doc:\/\/org.swift.tspl\/documentation\/The-Swift-Programming-Language\/SummaryOfTheGrammar",
+    "title" : "Summary of the Grammar"
+  }
+]

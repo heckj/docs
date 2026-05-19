@@ -1,0 +1,439 @@
+{
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "Swift for WebAssembly Guide"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For initial setup, building your first application, and editor configuration, please",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "refer to the official ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/wasm-getting-started.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " article on Swift.org.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Once you have your environment set up, you can dive into the topics below to learn more about building powerful ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/webassembly.org",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " applications with Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "JavaScript-Interoperability",
+          "level" : 2,
+          "text" : "JavaScript Interoperability",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Running Swift in the browser is a common use case for WebAssembly. When not using high-level libraries,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "direct calls to JavaScript from Swift to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Learn_web_development\/Extensions\/Client-side_APIs\/Introduction",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/API\/Document_Object_Model",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " may be necessary.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/JavaScriptKit\/documentation\/javascriptkit",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for details on how to interact with JavaScript from Swift.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Topics",
+      "identifiers" : [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Porting",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Testing",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Concurrency",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Debugging",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Troubleshooting",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/ImportingExportingFunctions",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Multithreading"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/wasmguide"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/Concurrency": {
+  "abstract" : [
+    {
+      "text" : "On macOS, iOS, and Linux, the ",
+      "type" : "text"
+    },
+    {
+      "code" : "libdispatch",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "-based executor is used by default, but ",
+      "type" : "text"
+    },
+    {
+      "code" : "libdispatch",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is not supported in a single-threaded WebAssembly environment.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "However, there are still two global task executors available in Swift for Wasm.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Concurrency",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Concurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/concurrency"
+},
+"doc://WasmGuide/documentation/WasmGuide/Debugging": {
+  "abstract" : [
+    {
+      "text" : "Debugging is a crucial part of the development process. With official toolchains providing more integrated tools, debugging WebAssembly modules has become more streamlined.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Debugging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Debugging",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/debugging"
+},
+"doc://WasmGuide/documentation/WasmGuide/ImportingExportingFunctions": {
+  "abstract" : [
+    {
+      "text" : "WebAssembly modules often need to interact with their host environment.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This guide demonstrates how to build a Swift guest module that both exports",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "functions to the host and imports functions from it, using ",
+      "type" : "text"
+    },
+    {
+      "code" : "WasmKit",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as the host application.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/ImportingExportingFunctions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Importing and Exporting Functions",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/importingexportingfunctions"
+},
+"doc://WasmGuide/documentation/WasmGuide/Multithreading": {
+  "abstract" : [
+    {
+      "text" : "While Swift Concurrency is available in Swift for WebAssembly out of the box, it is single-threaded by default. Read this article for special considerations relevant to multi-threading.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Multithreading",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Multi-threading",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/multithreading"
+},
+"doc://WasmGuide/documentation/WasmGuide/Porting": {
+  "abstract" : [
+    {
+      "text" : "Make your code cross-platform and compatible with WebAssembly by checking for libraries and APIs",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "available for this platform.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Porting",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Porting code from other platforms",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/porting"
+},
+"doc://WasmGuide/documentation/WasmGuide/Testing": {
+  "abstract" : [
+    {
+      "text" : "Swift for WebAssembly supports both ",
+      "type" : "text"
+    },
+    {
+      "code" : "swift-testing",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "XCTest",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for writing test suites. Your project needs to have a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Package.swift",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " package manifest with test targets configured.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Testing",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Testing",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/testing"
+},
+"doc://WasmGuide/documentation/WasmGuide/Troubleshooting": {
+  "abstract" : [
+    {
+      "text" : "These are some common issues you may run into while using Swift with WebAssembly.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Troubleshooting",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Troubleshooting",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/troubleshooting"
+},
+"https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction": {
+  "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Learn_web_development\/Extensions\/Client-side_APIs\/Introduction",
+  "title" : "Web APIs",
+  "titleInlineContent" : [
+    {
+      "text" : "Web APIs",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Learn_web_development\/Extensions\/Client-side_APIs\/Introduction"
+},
+"https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model": {
+  "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/API\/Document_Object_Model",
+  "title" : "DOM APIs",
+  "titleInlineContent" : [
+    {
+      "text" : "DOM APIs",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/API\/Document_Object_Model"
+},
+"https://swiftpackageindex.com/swiftwasm/JavaScriptKit/documentation/javascriptkit": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/JavaScriptKit\/documentation\/javascriptkit",
+  "title" : "JavaScriptKit documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "JavaScriptKit documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/swiftwasm\/JavaScriptKit\/documentation\/javascriptkit"
+},
+"https://webassembly.org": {
+  "identifier" : "https:\/\/webassembly.org",
+  "title" : "WebAssembly",
+  "titleInlineContent" : [
+    {
+      "text" : "WebAssembly",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/webassembly.org"
+},
+"https://www.swift.org/documentation/articles/wasm-getting-started.html": {
+  "identifier" : "https:\/\/www.swift.org\/documentation\/articles\/wasm-getting-started.html",
+  "title" : "Getting Started with Swift SDKs for WebAssembly",
+  "titleInlineContent" : [
+    {
+      "text" : "Getting Started with Swift SDKs for WebAssembly",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/documentation\/articles\/wasm-getting-started.html"
+}
+}
+}

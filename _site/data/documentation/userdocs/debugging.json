@@ -1,0 +1,1297 @@
+{
+  "abstract" : [
+    {
+      "text" : "Debug your Swift executables using LLDB.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/debugging"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Debugging"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you open a Swift package (a directory containing a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file), the extension automatically generates build tasks and launch configurations for each executable within the package. Additionally, if the package includes tests, the extension creates a configuration specifically designed to run those tests. These configurations all leverage the CodeLLDB extension as the debugger of choice.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Debugging workflows are common to all VS Code extensions. See the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/code.visualstudio.com\/docs\/debugtest\/testing",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " for a more in-depth overview.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Debugging works best when using a version of the Swift toolchain 6.0 or higher.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "💡 Tip",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use the ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Run > Start Debugging",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " menu item to run an executable and start debugging. If you have multiple launch configurations you can choose which launch configuration to use in the debugger view.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Launch-Configurations",
+          "level" : 2,
+          "text" : "Launch Configurations",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift extension will automatically generate launch configurations for all of your executable products. You can customize these configurations via the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".vscode\/launch.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file in your workspace to add environment variables, arguments, etc.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Each generated launch configuration will have the ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"type\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " set to ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"swift\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". The properties for the swift launch configuration match the ones ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=llvm-vs-code-extensions.lldb-dap",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". You can use code completion in VS Code to help with adding properties to your launch configuration.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Launching-an-Executable",
+          "level" : 3,
+          "text" : "Launching an Executable",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The most basic launch configuration uses the ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"launch\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " request and provides a program that will be debugged. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"label\": \"Debug my-executable\", \/\/ Human readable name for the configuration",
+            "    \"type\": \"swift\",                \/\/ All Swift launch configurations use the same type",
+            "    \"request\": \"launch\",            \/\/ Launch an executable",
+            "    \"program\": \"${workspaceFolder}\/.build\/debug\/my-executable\"",
+            "}"
+          ],
+          "syntax" : "javascript",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "program",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property supports a ",
+              "type" : "text"
+            },
+            {
+              "code" : "${binPath}",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " variable that resolves to the relative path from the build directory to the binary output directory. This is useful because the binary output location can vary depending on the Swift build system in use (e.g. ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build\/debug",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " vs ",
+              "type" : "text"
+            },
+            {
+              "code" : ".build\/out\/Products\/Debug",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"label\": \"Debug my-executable\",",
+            "    \"type\": \"swift\",",
+            "    \"request\": \"launch\",",
+            "    \"program\": \"${workspaceFolder}\/.build\/${binPath}\/my-executable\",",
+            "    \"configuration\": \"debug\"",
+            "}"
+          ],
+          "syntax" : "javascript",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For SwiftPM based projects, you may specify a ",
+              "type" : "text"
+            },
+            {
+              "code" : "target",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "configuration",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instead of a ",
+              "type" : "text"
+            },
+            {
+              "code" : "program",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to make your debug configurations shareable between different developers on different platforms:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"label\": \"Debug my-executable\", \/\/ Human readable name for the configuration",
+            "    \"type\": \"swift\",                \/\/ All Swift launch configurations use the same type",
+            "    \"request\": \"launch\",            \/\/ Launch an executable",
+            "    \"target\": \"my-executable\",",
+            "    \"configuration\": \"debug\"",
+            "}"
+          ],
+          "syntax" : "javascript",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There are many more options that you can specify which will alter the behavior of the debugger:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Parameter",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Description",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "program",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "string",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Path to the executable to launch.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "target",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "string",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Name of the target to launch. Only available in SwiftPM projects.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "configuration",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "string",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Configuration used to build the target (debug or release). Only available in SwiftPM projects.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "args",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "An array of command line argument strings to be passed to the program being launched.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "cwd",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "string",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The program working directory.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "env",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "dictionary",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Environment variables to set when launching the program. The format of each environment variable string is “VAR=VALUE” for environment variables with values or just “VAR” for environment variables with no values.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "stopOnEntry",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "boolean",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Whether to stop program immediately after launching.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "runInTerminal",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "boolean",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Launch the program inside an integrated terminal in the IDE. Useful for debugging interactive command line programs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "initCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Initialization commands executed upon debugger startup.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "preRunCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Commands executed just before the program is launched.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "postRunCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Commands executed just as soon as the program is successfully launched when it’s in a stopped state prior to any automatic continuation.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "launchCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Custom commands that are executed instead of launching a process. A target will be created with the launch arguments prior to executing these commands. The commands may optionally create a new target and must perform a launch. A valid process must exist after these commands complete or the \"launch\" will fail. Launch the process with \"process launch -s\" to make the process to at the entry point since lldb-dap will auto resume if necessary.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "stopCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Commands executed each time the program stops.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "exitCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Commands executed when the program exits.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "terminateCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Commands executed when the debugging session ends.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        },
+        {
+          "anchor" : "Attaching-to-a-Process",
+          "level" : 3,
+          "text" : "Attaching to a Process",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can attach to an existing process by using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"attach\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " request and providing one or both of a ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"program\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"pid\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to attach to:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "{",
+            "    \"label\": \"Debug my-executable\", \/\/ Human readable name for the configuration",
+            "    \"type\": \"swift\",                \/\/ All Swift launch configurations use the same type",
+            "    \"request\": \"attach\",            \/\/ Attach to a process",
+            "    \"program\": \"${workspaceFolder}\/.build\/debug\/my-executable\",",
+            "    \"pid\": \"${command:pickProcess}\"",
+            "}"
+          ],
+          "syntax" : "javascript",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The options for attach requests are mostly the same as the launch request with the addition of the following:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "header" : "row",
+          "rows" : [
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Parameter",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Type",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Description",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "program",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "string",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Path to the executable to attach to. This value is optional but can help to resolve breakpoints prior the attaching to the program.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "pid",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "number",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The process id of the process you wish to attach to. If ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "pid",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " is omitted, the debugger will attempt to attach to the program by finding a process whose file name matches the file name from ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "program",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". Setting this value to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "${command:pickMyProcess}",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " will allow interactive process selection in the IDE.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "waitFor",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "boolean",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Wait for the process to launch.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "attachCommands",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "[string]",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "LLDB commands that will be executed after ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "preRunCommands",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " which take place of the code that normally does the attach. The commands can create a new target and attach or launch it however desired. This allows custom launch and attach configurations. Core files can use ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "target create --core \/path\/to\/core",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to attach to core files.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            ]
+          ],
+          "type" : "table"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Features",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+        "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+        "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+        "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+        "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview"
+      ],
+      "title" : "Features"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/automatic-task-creation": {
+  "abstract" : [
+    {
+      "text" : "Add tasks for common operations with your Package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Automatic Task Creation",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/automatic-task-creation"
+},
+"doc://userdocs/documentation/userdocs/docc-live-preview": {
+  "abstract" : [
+    {
+      "text" : "Show a live preview of your Swift documentation while editing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documentation Live Preview",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/docc-live-preview"
+},
+"doc://userdocs/documentation/userdocs/language-features": {
+  "abstract" : [
+    {
+      "text" : "Navigate and write your Swift code more easily with Language features.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language Features",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/language-features"
+},
+"doc://userdocs/documentation/userdocs/project-view": {
+  "abstract" : [
+    {
+      "text" : "Use this view to get a high level view of your Swift project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Swift Project View",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/project-view"
+},
+"doc://userdocs/documentation/userdocs/test-explorer": {
+  "abstract" : [
+    {
+      "text" : "View test results in the Test Explorer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Running and Debugging Tests",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/test-explorer"
+},
+"https://code.visualstudio.com/docs/debugtest/testing": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/debugtest\/testing",
+  "title" : "VS Code documentation about testing",
+  "titleInlineContent" : [
+    {
+      "text" : "VS Code documentation about testing",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/debugtest\/testing"
+},
+"https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.lldb-dap": {
+  "identifier" : "https:\/\/marketplace.visualstudio.com\/items?itemName=llvm-vs-code-extensions.lldb-dap",
+  "title" : "provided by lldb-dap",
+  "titleInlineContent" : [
+    {
+      "text" : "provided by ",
+      "type" : "text"
+    },
+    {
+      "code" : "lldb-dap",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/marketplace.visualstudio.com\/items?itemName=llvm-vs-code-extensions.lldb-dap"
+}
+}
+}

@@ -1,0 +1,137 @@
+{
+  "abstract" : [
+    {
+      "text" : "Try out the latest updates by switching to the pre-release version.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/install-pre-release"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Installing Pre-Release Builds"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The Swift extension provides pre-release builds that you can use to test out unreleased features or get bug fixes before the project publishes an official release. Pre-release build numbers are one minor version ahead of the most recent release.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The “Switch to Pre-Release Version” button in the VS Code extensions view is used to install the latest pre-release builds:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "install-pre-release.png",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you select to use a pre-release version, the button changes to “Switch to Release Version”, which lets you go back to the official release.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Advanced",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/remote-dev"
+      ],
+      "title" : "Advanced"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/remote-dev": {
+  "abstract" : [
+    {
+      "text" : "Create reusable development environments using containers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/remote-dev",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Visual Studio Code Dev Containers",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/remote-dev"
+},
+"install-pre-release.png": {
+  "alt" : "A snapshot of VS Code that has Extensions highlighted, showing the Swift extension. In the detail panel of the extension view, a red box highlights the button “Switch to Pre-Release Version”.",
+  "identifier" : "install-pre-release.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/userdocs\/install-pre-release.png"
+    }
+  ]
+}
+}
+}

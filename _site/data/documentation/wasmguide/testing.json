@@ -1,0 +1,648 @@
+{
+  "abstract" : [
+    {
+      "text" : "Swift for WebAssembly supports both ",
+      "type" : "text"
+    },
+    {
+      "code" : "swift-testing",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "XCTest",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for writing test suites. Your project needs to have a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Package.swift",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " package manifest with test targets configured.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide"
+      ],
+      [
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+        "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/Testing"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "WasmGuide"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Testing"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Testing-in-JavaScript-environments",
+          "level" : 2,
+          "text" : "Testing in JavaScript environments",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you’re building a Wasm app that runs in JavaScript environments (browsers or Node.js),",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you can use JavaScriptKit’s testing utilities to run your tests directly in those environments.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For detailed information on how to set up and run tests in JavaScript environments, please refer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/documentation\/javascriptkit\/testing",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Standalone-testing-with-WASI",
+          "level" : 2,
+          "text" : "Standalone testing with WASI",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you prefer to run tests in a standalone environment without JavaScript, you can use WasmKit as described below.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Make sure your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has test targets configured. For example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift test",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is supported for WebAssembly targets only in development snapshots of the Swift toolchain. Building tests and running them are two separate steps in Swift 6.2. but after building your tests, you can use a WASI-compatible host such as ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftwasm\/WasmKit",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to run the test bundle.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Ensure that you have a ",
+              "type" : "text"
+            },
+            {
+              "code" : ".testTarget",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " defined in your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "targets: [",
+            "    .target(name: \"Example\"),",
+            "    .testTarget(name: \"ExampleTests\", dependencies: [\"Example\"]),",
+            "]"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Running-test-suites",
+          "level" : 2,
+          "text" : "Running test suites",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Swift-Development-Snapshots",
+          "level" : 3,
+          "text" : "Swift Development Snapshots",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In Swift development snapshots, running ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift test --swift-sdk <wasm_swift_sdk_id>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is fully",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "supported. When you have ",
+              "type" : "text"
+            },
+            {
+              "code" : "jq",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " installed, you can run this command to compute Swift SDK ID automatically:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift test --swift-sdk \"$(swiftc -print-target-info | jq -r '.swiftCompilerTag')_wasm\""
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Swift-62",
+          "level" : 3,
+          "text" : "Swift 6.2",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In Swift 6.2, ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift test",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " doesn’t know what WebAssembly environment you’d like to use",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to run your tests; building tests and running them are two separate steps. To",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "build tests for WebAssembly, use the following command:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build --swift-sdk wasm32-unknown-wasi --build-tests"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After building tests, you can run them using a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/wasi.dev\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : "-compliant",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "WebAssembly runtime such as ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/swiftwasm\/WasmKit",
+              "isActive" : true,
+              "overridingTitle" : "WasmKit",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "WasmKit",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Starting with Swift 6.2, WasmKit is included in Swift toolchains for Linux and macOS",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "distributed on swift.org. For example, to run tests using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "WasmKit, use the following command (replace ",
+              "type" : "text"
+            },
+            {
+              "code" : "{YOURPACKAGE}",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with your package’s",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "name):",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "wasmkit run .build\/debug\/{YOURPACKAGE}PackageTests.wasm --testing-library swift-testing"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most WebAssembly runtimes forward trailing arguments to the WebAssembly program,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so you can pass command-line options of the testing library. For example, to list",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "all tests and filter them by name, use the following commands:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "wasmkit run .build\/debug\/{YOURPACKAGE}PackageTests.wasm list --testing-library swift-testing",
+            "wasmkit run .build\/debug\/{YOURPACKAGE}PackageTests.wasm --testing-library swift-testing --filter \"FoodTruckTests.foodTruckExists\""
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Code-coverage",
+          "level" : 3,
+          "text" : "Code coverage",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can also generate code coverage reports for your test suite when using development snapshots of the toolchain (not supported in Swift 6.2).",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To do this, you need to build your test suite with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--enable-code-coverage",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag and the linker options ",
+              "type" : "text"
+            },
+            {
+              "code" : "-Xlinker -lwasi-emulated-getpid",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ swift build --build-tests --swift-sdk $SWIFT_SDK_ID --enable-code-coverage -Xlinker -lwasi-emulated-getpid"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After building your test suite, you can run it with ",
+              "type" : "text"
+            },
+            {
+              "code" : "wasmkit",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as described above. The raw coverage",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "data will be stored in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "default.profraw",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file in the current directory. You can use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "llvm-profdata",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ",
+              "type" : "text"
+            },
+            {
+              "code" : "llvm-cov",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " tools to generate a human-readable report:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "$ wasmkit run --dir . .build\/wasm32-unknown-wasip1\/debug\/ExamplePackageTests.wasm",
+            "$ llvm-profdata merge default.profraw -o default.profdata",
+            "$ llvm-cov show .build\/wasm32-unknown-wasip1\/debug\/ExamplePackageTests.wasm -instr-profile=default.profdata",
+            "# or generate an HTML report",
+            "$ llvm-cov show .build\/wasm32-unknown-wasip1\/debug\/ExamplePackageTests.wasm -instr-profile=default.profdata --format=html -o coverage",
+            "$ open coverage\/index.html"
+          ],
+          "syntax" : "sh",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "coverage-support.png",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/wasmguide\/testing"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"coverage-support.png": {
+  "alt" : null,
+  "identifier" : "coverage-support.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/WasmGuide\/coverage-support.png"
+    }
+  ]
+},
+"doc://WasmGuide/documentation/WasmGuide": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "WasmGuide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide"
+},
+"doc://WasmGuide/documentation/WasmGuide/WasmGuide": {
+  "abstract" : [
+    {
+      "text" : "This guide explores advanced topics for developing WebAssembly applications with Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/WasmGuide\/documentation\/WasmGuide\/WasmGuide",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Swift for WebAssembly Guide",
+  "type" : "topic",
+  "url" : "\/documentation\/wasmguide\/wasmguide"
+},
+"https://github.com/swiftwasm/WasmKit": {
+  "identifier" : "https:\/\/github.com\/swiftwasm\/WasmKit",
+  "title" : "WasmKit",
+  "titleInlineContent" : [
+    {
+      "text" : "WasmKit",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftwasm\/WasmKit"
+},
+"https://swiftpackageindex.com/swiftwasm/javascriptkit/documentation/javascriptkit/testing": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/documentation\/javascriptkit\/testing",
+  "title" : "JavaScriptKit Testing documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "JavaScriptKit Testing documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/swiftwasm\/javascriptkit\/documentation\/javascriptkit\/testing"
+},
+"https://wasi.dev/": {
+  "identifier" : "https:\/\/wasi.dev\/",
+  "title" : "WASI",
+  "titleInlineContent" : [
+    {
+      "text" : "WASI",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/wasi.dev\/"
+}
+}
+}

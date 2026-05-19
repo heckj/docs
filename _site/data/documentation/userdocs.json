@@ -1,0 +1,371 @@
+{
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "collection",
+    "title" : "The Swift Extension for VS Code"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This extension adds language support for Swift to Visual Studio Code, providing a seamless experience for developing Swift applications on platforms such as macOS, Linux and Windows. It supports:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Code completion",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Jump to definition, peek definition, find all references, symbol search",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Error annotations and apply suggestions from errors",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Automatic generation of launch configurations for debugging",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Automatic task creation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Package dependency view",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Test Explorer view",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Side-by-side live preview of Swift documentation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Topics",
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/installation",
+        "doc:\/\/userdocs\/documentation\/userdocs\/supported-toolchains"
+      ]
+    },
+    {
+      "anchor" : "Features",
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+        "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+        "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+        "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+        "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+        "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview"
+      ],
+      "title" : "Features"
+    },
+    {
+      "anchor" : "Advanced",
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/remote-dev",
+        "doc:\/\/userdocs\/documentation\/userdocs\/install-pre-release"
+      ],
+      "title" : "Advanced"
+    },
+    {
+      "anchor" : "Reference",
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/commands",
+        "doc:\/\/userdocs\/documentation\/userdocs\/settings"
+      ],
+      "title" : "Reference"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs/automatic-task-creation": {
+  "abstract" : [
+    {
+      "text" : "Add tasks for common operations with your Package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Automatic Task Creation",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/automatic-task-creation"
+},
+"doc://userdocs/documentation/userdocs/commands": {
+  "abstract" : [
+    {
+      "text" : "Useful VS Code commands added by the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/commands",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Commands",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/commands"
+},
+"doc://userdocs/documentation/userdocs/debugging": {
+  "abstract" : [
+    {
+      "text" : "Debug your Swift executables using LLDB.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Debugging",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/debugging"
+},
+"doc://userdocs/documentation/userdocs/docc-live-preview": {
+  "abstract" : [
+    {
+      "text" : "Show a live preview of your Swift documentation while editing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documentation Live Preview",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/docc-live-preview"
+},
+"doc://userdocs/documentation/userdocs/install-pre-release": {
+  "abstract" : [
+    {
+      "text" : "Try out the latest updates by switching to the pre-release version.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/install-pre-release",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Installing Pre-Release Builds",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/install-pre-release"
+},
+"doc://userdocs/documentation/userdocs/installation": {
+  "abstract" : [
+    {
+      "text" : "Install the Swift extension via the VS Code Marketplace.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/installation",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Installation",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/installation"
+},
+"doc://userdocs/documentation/userdocs/language-features": {
+  "abstract" : [
+    {
+      "text" : "Navigate and write your Swift code more easily with Language features.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language Features",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/language-features"
+},
+"doc://userdocs/documentation/userdocs/project-view": {
+  "abstract" : [
+    {
+      "text" : "Use this view to get a high level view of your Swift project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Swift Project View",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/project-view"
+},
+"doc://userdocs/documentation/userdocs/remote-dev": {
+  "abstract" : [
+    {
+      "text" : "Create reusable development environments using containers.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/remote-dev",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Visual Studio Code Dev Containers",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/remote-dev"
+},
+"doc://userdocs/documentation/userdocs/settings": {
+  "abstract" : [
+    {
+      "text" : "Configure the behavior of the Swift extension.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/settings",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Extension Settings",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/settings"
+},
+"doc://userdocs/documentation/userdocs/supported-toolchains": {
+  "abstract" : [
+    {
+      "text" : "Find out which versions of Swift the extension supports.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/supported-toolchains",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Supported Toolchains",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/supported-toolchains"
+},
+"doc://userdocs/documentation/userdocs/test-explorer": {
+  "abstract" : [
+    {
+      "text" : "View test results in the Test Explorer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Running and Debugging Tests",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/test-explorer"
+}
+}
+}

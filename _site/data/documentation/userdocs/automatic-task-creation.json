@@ -1,0 +1,424 @@
+{
+  "abstract" : [
+    {
+      "text" : "Add tasks for common operations with your Package.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/userdocs\/documentation\/userdocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/userdocs\/documentation\/userdocs\/automatic-task-creation"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Automatic Task Creation"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For workspaces that contain a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file, the Swift extension adds the following tasks:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Build All",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Build all targets in the Package.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Build Debug <Executable>",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Each executable product in a Package.swift get a task for building a debug build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Build Release <Executable>",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Each executable product in a Package.swift get a task for building a release build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Tasks use workflows common to all VS Code extensions. For more information see ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/code.visualstudio.com\/docs\/editor\/tasks",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "💡 Tip",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These tasks are available via the commands ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Terminal ▸ Run Task…",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Terminal ▸ Run Build Task…",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " in the command palette.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Create-tasks-for-library-targets",
+          "level" : 2,
+          "text" : "Create tasks for library targets",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "By default build tasks are only automatically created for executable products. If you set the ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift.createTasksForLibraryProducts",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " setting to true, then additional tasks will be created:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Build Debug <Library>",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Each library product in a Package.swift get a task for building a debug build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Build Release <Library>",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Each library product in a Package.swift get a task for building a release build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Tasks will not be created for automatic library products, as you cannot specify a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "--product",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " option for automatic products when building. For more information see the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/docs.swift.org\/package-manager\/PackageDescription\/PackageDescription.html#product",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "⚠️ Important",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Features",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+        "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+        "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+        "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+        "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview"
+      ],
+      "title" : "Features"
+    }
+  ]
+, 
+"references": {
+"doc://userdocs/documentation/userdocs": {
+  "abstract" : [
+    {
+      "text" : "Language support for Swift in Visual Studio Code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "The Swift Extension for VS Code",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs"
+},
+"doc://userdocs/documentation/userdocs/debugging": {
+  "abstract" : [
+    {
+      "text" : "Debug your Swift executables using LLDB.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/debugging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Debugging",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/debugging"
+},
+"doc://userdocs/documentation/userdocs/docc-live-preview": {
+  "abstract" : [
+    {
+      "text" : "Show a live preview of your Swift documentation while editing.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/docc-live-preview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Documentation Live Preview",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/docc-live-preview"
+},
+"doc://userdocs/documentation/userdocs/language-features": {
+  "abstract" : [
+    {
+      "text" : "Navigate and write your Swift code more easily with Language features.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/language-features",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Language Features",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/language-features"
+},
+"doc://userdocs/documentation/userdocs/project-view": {
+  "abstract" : [
+    {
+      "text" : "Use this view to get a high level view of your Swift project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/project-view",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Swift Project View",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/project-view"
+},
+"doc://userdocs/documentation/userdocs/test-explorer": {
+  "abstract" : [
+    {
+      "text" : "View test results in the Test Explorer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/userdocs\/documentation\/userdocs\/test-explorer",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Running and Debugging Tests",
+  "type" : "topic",
+  "url" : "\/documentation\/userdocs\/test-explorer"
+},
+"https://code.visualstudio.com/docs/editor/tasks": {
+  "identifier" : "https:\/\/code.visualstudio.com\/docs\/editor\/tasks",
+  "title" : "the VS Code documentation for tasks",
+  "titleInlineContent" : [
+    {
+      "text" : "the VS Code documentation for tasks",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/code.visualstudio.com\/docs\/editor\/tasks"
+},
+"https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#product": {
+  "identifier" : "https:\/\/docs.swift.org\/package-manager\/PackageDescription\/PackageDescription.html#product",
+  "title" : "Swift Package Manager documentation for Product definitions",
+  "titleInlineContent" : [
+    {
+      "text" : "Swift Package Manager documentation for Product definitions",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.swift.org\/package-manager\/PackageDescription\/PackageDescription.html#product"
+}
+}
+}

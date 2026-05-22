@@ -122,8 +122,8 @@ container build -t <my-app>:latest .
 
 ### Include the backtracer for crash diagnostics
 
-A static binary in a `scratch` container has no toolchain layout for the runtime
-to fall back on, so the location where it expects to find `swift-backtrace` doesn't exist.
+A static binary in a `scratch` container has no toolchain layout for the runtime to fall back on.
+As a result, the runtime's default path to `swift-backtrace` doesn't exist in the image.
 To get backtraces from crashes, copy the static helper from a Swift container image
 into your final image and explicitly pass its path to the runtime:
 
@@ -142,6 +142,7 @@ ENTRYPOINT ["/<executable-name>"]
 
 The `swift-backtrace=/swift-backtrace` setting overrides the runtime's default search
 and points it to the correct location.
+The `symbolicate=off` setting keeps crash handling fast; you resolve addresses against the original binary later.
 
 For the full set of `SWIFT_BACKTRACE` options, see <doc:swift-backtrace-configuration>.
 To debug your service using a captured trace, see <doc:debugging-a-service-using-a-backtrace>.

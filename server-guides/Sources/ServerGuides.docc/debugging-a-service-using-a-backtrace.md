@@ -1,14 +1,14 @@
 # Debugging a service using a backtrace
 
-Read a captured backtrace, map it back to your code, and recognize what the crash is telling you.
+Interpret a Swift service's crash trace to find the failing code on Linux.
 
 ## Overview
 
 When your Swift service crashes on Linux, the runtime spawns a helper process,
 `swift-backtrace`, that prints a stack trace describing what was running and where it failed.
-This article assumes you have such a trace from a crash and walks through how to use it:
-persisting it from a container, reading its structure, mapping frames back to your source,
-recognizing the common crash patterns, and reproducing the crash locally.
+This article assumes you already have a trace from a crash.
+It covers how to persist the trace from a container, read its structure,
+map frames back to your source, recognize common crash patterns, and reproduce the crash locally.
 
 For the configuration options the trace responds to, see <doc:swift-backtrace-configuration>.
 To install the backtracer in a container image,
@@ -17,7 +17,7 @@ see <doc:packaging#Include-the-backtracer-in-the-runtime-image>.
 ### Persist backtraces from a container
 
 When a container exits, its filesystem is gone,
-so a crash that wrote to a file inside the container loses the trace
+so a crash that writes to a file inside the container loses the trace
 on the next restart.
 For durable, addressable crash files, write to a mounted volume:
 
@@ -41,7 +41,7 @@ see <doc:swift-backtrace-configuration#Output>.
 ### Read the trace structure
 
 A captured trace has four parts: a header naming the signal,
-a thread block per thread the backtracer captured,
+a thread block for each thread the backtracer captures,
 a frame list inside each thread, and an optional images list.
 Here's a representative trace, abbreviated:
 
@@ -75,8 +75,8 @@ Each **frame line** has the form:
 ```
 
 The backtracer demangles the symbol by default.
-The `at <path>:<line>` portion is present only when the binary carries DWARF debug information
-and `symbolicate=full` (the default) is in effect.
+The `at <path>:<line>` portion appears only when the binary carries DWARF debug information
+and you run with `symbolicate=full` (the default).
 Stripped production binaries with `symbolicate=off` produce frames with the address and image name only.
 
 By default the trace includes registers and a list of loaded images for the crashed thread.
@@ -114,13 +114,16 @@ Tools like `addr2line` work as well; pick whichever your build environment alrea
 
 #### Resolve symbols from a separate debug-info file
 
-If you ship debug information as a sidecar file rather than embedded in the binary (see <doc:building#Split-debug-information-into-a-sidecar-file>), place the sidecar where symbolicators look for it.
-Symbolicators check two locations in order:
+You can ship debug information as a sidecar file rather than embedding it in the binary
+(see <doc:building#Split-debug-information-into-a-sidecar-file>).
+Place the sidecar where symbolicators look for it.
+Symbolicators look first at the path recorded by `objcopy --add-gnu-debuglink`
+(resolved relative to the binary, then under `/usr/lib/debug/<binary-dir>/`),
+and then at the build-ID index at `/usr/lib/debug/.build-id/<first-2-hex>/<remaining-hex>.debug`,
+where the hex digits come from the binary's build ID.
 
-1. The path recorded by `objcopy --add-gnu-debuglink`, resolved relative to the binary and then under `/usr/lib/debug/<binary-dir>/`.
-2. The build-ID index: `/usr/lib/debug/.build-id/<first-2-hex>/<remaining-hex>.debug`, where the hex digits come from the binary's build ID.
-
-The build-ID index is what `-debuginfo` and `-dbgsym` packages populate when installed, so a developer machine with the matching debug-info package installed resolves symbols transparently:
+The `-debuginfo` and `-dbgsym` packages populate the build-ID index when you install them,
+so a developer machine with the matching debug-info package installed resolves symbols transparently:
 
 ```
 /usr/bin/MyServer                                # stripped, build ID ab12cd34...
@@ -159,7 +162,7 @@ For runtime-trap crashes (the `SIGABRT` rows in the previous table), the relevan
 in the topmost frame of *your* code in the trace —
 the standard library trap is a few frames up from there.
 For `SIGSEGV` in unsafe code or dependencies, the topmost frame names the call that touched bad memory,
-but the actual cause can be earlier code that produced the bad pointer or freed memory still in use.
+but the actual cause is often earlier code that produces a bad pointer or frees memory still in use.
 
 ### Reproduce locally
 
@@ -171,8 +174,8 @@ Two paths are useful:
 - **Run under `lldb`.**
   Launch the service with `lldb` and let it stop at the crash for live inspection of variables and threads.
 - **Rerun with the interactive backtracer.**
-  Setting `SWIFT_BACKTRACE=interactive=yes` causes the backtracer to drop into a debugger-like prompt at crash time
-  rather than printing and exiting.
+  Set `SWIFT_BACKTRACE=interactive=yes` so the backtracer drops into a debugger-like prompt at crash time
+  instead of printing and exiting.
   See <doc:swift-backtrace-configuration#Enabling-and-presentation> for the option.
   Interactive mode requires a TTY, so it's a developer-machine tool, not a production setting.
 
@@ -199,6 +202,6 @@ the cause is almost always one of the following:
 - term Frame pointers are missing:
   The fast unwinder follows frame pointers, so a binary built with `-fomit-frame-pointer`
   (or a C/C++ dependency built that way) produces traces that stop at the first frame without one.
-  Swift code emits frame pointers by default since Swift 5.10.
+  Current Swift toolchains preserve frame pointers in release builds on Linux server architectures.
   Force the precise unwinder with `SWIFT_BACKTRACE=unwind=precise` to use DWARF instead,
   or rebuild affected dependencies with `-fno-omit-frame-pointer`.

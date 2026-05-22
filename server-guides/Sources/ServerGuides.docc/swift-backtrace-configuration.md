@@ -30,17 +30,20 @@ SWIFT_BACKTRACE=enable=yes,interactive=no,format=json,output-to=/var/log/crashes
 The defaults target interactive use at a terminal.
 For server deployments, the most common adjustments are
 `interactive=no` for containers without a TTY,
-and either `format=json` or `output-to=<path>` so traces land somewhere your log pipeline can ingest.
+and either `format=json` or `output-to=<path>` so traces are written to a location your log pipeline can ingest.
 
 ### Enabling and presentation
 
 | Option | Values | Default | Notes |
 |---|---|---|---|
-| `enable` | `yes`, `no`, `tty` | `yes` | `tty` enables backtracing only when stderr is a terminal. |
-| `interactive` | `yes`, `no`, `tty` | `tty` | Interactive mode drops into a debugger-like prompt; disable for non-TTY containers. |
-| `color` | `yes`, `no`, `tty` | `tty` | ANSI color in output. |
+| `enable` | `yes`, `no`, `tty` | `yes` | `tty` enables backtracing when stdout is a terminal. |
+| `interactive` | `yes`, `no`, `tty` | `tty` | Drops into a debugger-like prompt; `tty` enables it when both stdout and stdin are terminals. Disable for non-TTY containers. |
+| `color` | `yes`, `no`, `tty` | `tty` | ANSI color in output; `tty` enables it when the resolved output stream is a terminal (stderr or stdout, depending on `output-to`). |
 | `demangle` | `yes`, `no` | `yes` | Demangle Swift symbols in frames. |
 | `preset` | `friendly`, `medium`, `full`, `auto` | `auto` | Bundles `threads`, `registers`, and `images` defaults. `friendly` is concise; `full` shows everything. |
+
+When `output-to` points at a file, the `tty` resolutions above are overridden:
+`enable=tty` becomes `yes`, while `interactive=tty` and `color=tty` become `no`.
 
 ### Captured content
 
@@ -49,9 +52,9 @@ and either `format=json` or `output-to=<path>` so traces land somewhere your log
 | `threads` | `crashed`, `all`, `preset` | `preset` | `crashed` shows only the failing thread; `all` is useful for deadlocks. |
 | `registers` | `none`, `crashed`, `all`, `preset` | `preset` | Whether to dump CPU registers alongside frames. |
 | `images` | `none`, `mentioned`, `all`, `preset` | `preset` | Loaded shared-library list; `mentioned` includes only those referenced by frames. |
-| `limit` | integer, `none` | `64` | Maximum frames per thread. Prevents runaway output on infinite recursion. |
+| `limit` | integer, `none` | `64` | Maximum frames per thread, to prevent runaway output on infinite recursion. |
 | `top` | integer | `16` | When `limit` truncates, always keep this many frames from the top of stack. |
-| `sanitize` | `yes`, `no`, `preset` | `preset` | Strip PII from paths in captured frames. Has no effect on Linux; the runtime parses the option but doesn't transform paths outside macOS. |
+| `sanitize` | `yes`, `no`, `preset` | `preset` | Strips PII from paths in captured frames. Has no effect on Linux; the runtime parses the option but doesn't transform paths outside macOS. |
 
 When the captured stack has more than `limit` frames, the backtracer keeps
 `top` frames from the top of the stack (the deepest, most recent calls)
@@ -59,7 +62,7 @@ and `limit - 1 - top` frames from the bottom (the entry into the program),
 joined by a `...` marker.
 For example, a 10-frame stack with `limit=5,top=2` shows frames 10, 9, then
 `...`, then 2, 1 — letting you see both where execution started and where
-the fault occurred when a runaway recursion blows past the limit.
+the fault occurred when a runaway recursion exceeds the limit.
 
 ### Unwinding and symbolication
 
@@ -67,7 +70,7 @@ the fault occurred when a runaway recursion blows past the limit.
 |---|---|---|---|
 | `unwind` | `auto`, `fast`, `precise` | `auto` | `fast` uses frame pointers only; `precise` consults DWARF unwind info. `auto` picks per-frame. |
 | `symbolicate` | `full`, `fast`, `off` | `full` | `full` resolves inlined frames using DWARF; `fast` resolves only the outermost symbol; `off` reports raw addresses. |
-| `cache` | `yes`, `no` | `yes` | Cache symbol lookups across frames. |
+| `cache` | `yes`, `no` | `yes` | Caches symbol lookups across frames. |
 
 Symbolication quality depends on what's in your binary.
 Stripped binaries report addresses without symbol names.
@@ -111,7 +114,7 @@ JSON output produces one object per crash, with a top-level
 along with registers when configured. See <doc:swift-backtrace-configuration#JSON-crash-log-schema>
 for the full schema.
 
-Pipe it to your log shipper or write to a mounted volume:
+Pipe the JSON output to your log shipper or write it to a mounted volume:
 
 ```bash
 SWIFT_BACKTRACE=format=json,output-to=/var/crash-logs/
@@ -124,7 +127,7 @@ SWIFT_BACKTRACE=format=json,output-to=/var/crash-logs/
 | `timeout` | duration (`30s`), `none` | `30s` | How long the runtime waits for the backtracer to finish. |
 | `swift-backtrace` | path | auto-detected | Override the implicit search and use the given absolute path directly. Required for statically linked binaries in minimal containers, where the implicit search can't reliably find the helper. |
 | `warnings` | `enabled`, `suppressed` | `enabled` | Diagnostic messages from the backtracer itself. |
-| `close-fds` | `yes`, `no` | `no` | Close all open file descriptors in the crashing process before gathering the trace. Useful in CI environments where leaked file descriptors can cause resource contention. |
+| `close-fds` | `yes`, `no` | `no` | Close all open file descriptors in the crashing process before gathering the trace, useful in CI environments where leaked file descriptors cause resource contention. |
 
 The runtime locates `swift-backtrace` by deriving a Swift root directory
 and searching a fixed set of subdirectories underneath it.
@@ -151,7 +154,7 @@ CPU architecture (for example, `x86_64` or `aarch64`):
 ```
 
 The runtime doesn't consult `PATH`. If none of the above contain the helper,
-crashes go uncaught — set `SWIFT_BACKTRACE=swift-backtrace=<path>` to point
+the runtime can't capture crashes — set `SWIFT_BACKTRACE=swift-backtrace=<path>` to point
 at it explicitly, or place the binary at one of the search locations.
 
 ### JSON crash log schema
@@ -185,7 +188,7 @@ The following fields appear conditionally, depending on backtracer settings:
 | `capturedMemory` | Dictionary of captured memory contents, keyed by hex address strings. Absent when `sanitize` is enabled or no data was captured. |
 | `omittedImages` | When `images=mentioned`, count of images whose details were omitted. |
 | `images` | Array of image records (unless `images=none`). |
-| `backtraceTime` | Time taken to generate the report, in seconds. |
+| `backtraceTime` | Time to generate the report, in seconds. |
 
 #### Thread records
 
@@ -206,7 +209,7 @@ Each frame has a `kind`:
 | `returnAddress` | Frame address is a return address. |
 | `asyncResumePoint` | Frame address is a resumption point in an `async` function. |
 | `omittedFrames` | Frame-omission record (carries a `count` field). |
-| `truncated` | Backtrace was truncated at this point. |
+| `truncated` | The backtrace is truncated at this point. |
 
 Address-bearing frames also include `address` (hex string).
 Symbolicated frames can add `inlined`, `runtimeFailure`, `thunk`, or
@@ -238,7 +241,7 @@ dereferences a NULL-adjacent pointer.
 The binary was built with debug information and run on Linux arm64 with
 default backtracer settings (`format=json`, preset `auto`, `demangle=yes`,
 `symbolicate=full`).
-For length, the `registers` and `capturedMemory` objects show only a
+To keep this example concise, the `registers` and `capturedMemory` objects show only a
 representative subset of their entries; a real trace contains every
 general-purpose register and many more captured memory snapshots.
 
@@ -390,12 +393,12 @@ A few things to notice in this trace:
   closure it dispatched.
 - The frames marked `system: true` (`Main.$main()` and
   `completeTaskWithClosure`) come from compiler-generated entry-point glue
-  and the Swift Concurrency runtime. They don't usually have a meaningful
+  and the Swift concurrency runtime. They don't usually have a meaningful
   source location, so the backtracer reports `<compiler-generated>`.
 - The frame marked `thunk: true` is a compiler-generated bridge that adapts
   one async calling convention to another.
-- `omittedImages: 12` means twelve loaded shared libraries weren't included
-  because no captured frame referenced them — the default `images=mentioned`
+- `omittedImages: 12` means 12 loaded shared libraries aren't included
+  because no captured frame references them — the default `images=mentioned`
   keeps the report compact. Set `images=all` to include every loaded image.
 
 ### See also

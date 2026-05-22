@@ -145,6 +145,8 @@ COPY --from=builder /usr/libexec/swift/linux/swift-backtrace-static \
      /usr/bin/swift-backtrace
 ```
 
+The runtime looks for a binary named `swift-backtrace`, so the COPY renames the static helper as it copies it into `/usr/bin`.
+
 For containers without a TTY, set `SWIFT_BACKTRACE` so the backtracer
 runs non-interactively and writes machine-readable output:
 
@@ -152,9 +154,10 @@ runs non-interactively and writes machine-readable output:
 ENV SWIFT_BACKTRACE=enable=yes,interactive=no
 ```
 
-Swift 5.10 and later emit frame pointers by default,
+Current Swift toolchains preserve frame pointers in release builds on Linux server architectures,
 so typical builds don't need extra flags.
-Linux requires frame pointers for complete backtraces.
+The fast unwinder relies on frame pointers; without them, the runtime falls back to DWARF-based unwinding,
+which is slower but still produces complete traces when `.eh_frame` information is present.
 
 For the full set of `SWIFT_BACKTRACE` options, see <doc:swift-backtrace-configuration>.
 To debug your service using a captured trace, see <doc:debugging-a-service-using-a-backtrace>.
@@ -221,7 +224,7 @@ before the second stage picks it up.
 ### Build for a different platform
 
 If your development machine and deployment target use different CPU architectures —
-for example, building on Apple Silicon (arm64) and deploying to x86_64 cloud infrastructure —
+for example, building on Apple silicon (arm64) and deploying to x86_64 cloud infrastructure —
 you need to specify the target platform when building the image.
 
 With `docker`, use the `--platform` flag:

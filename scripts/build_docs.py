@@ -17,11 +17,28 @@
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
+import tarfile
+import urllib.error
+import urllib.request
+import zipfile
+from collections import namedtuple
 from datetime import datetime, timezone
 from pathlib import Path
+
+from strip_availability import strip_archive
+
+
+class ArchiveFetchError(Exception):
+    """Fatal failure fetching or extracting an archive source.
+
+    Raised by fetch_archive() when a download, extraction, or archive
+    resolution step fails. Propagated by main() to abort the entire build,
+    rather than being collected into the per-source failure list.
+    """
 
 
 # Common DocC build flags applied to all documentation builds
@@ -70,29 +87,189 @@ def check_prerequisites():
             sys.exit(1)
 
 
-def find_docc_command():
-    """Find the docc tool — prefer xcrun on macOS, fall back to PATH.
+Tools = namedtuple("Tools", ["swiftly", "swift", "docc"])
 
-    Returns a list of command components (e.g. ["xcrun", "docc"] or ["docc"]),
-    or an empty list if docc is not found.
+
+def discover_tools():
+    """Discover the swift toolchain commands available in PATH.
+
+    Returns a `Tools` triple of command prefixes (each a list; empty when
+    unavailable). When swiftly is present, all three route through it so
+    `.swift-version` files are honored at command-resolution time. Otherwise
+    swift comes directly from PATH, and docc is located via `xcrun --find`
+    on macOS with a fallback to PATH.
     """
+    if shutil.which("swiftly"):
+        return Tools(
+            swiftly=["swiftly"],
+            swift=["swiftly", "run", "swift"],
+            docc=["swiftly", "run", "docc"],
+        )
+
+    swift = ["swift"] if shutil.which("swift") else []
+
+    docc = []
     if shutil.which("xcrun"):
         try:
             subprocess.run(
                 ["xcrun", "--find", "docc"],
-                check=True,
-                capture_output=True,
+                check=True, capture_output=True,
             )
-            return ["xcrun", "docc"]
+            docc = ["xcrun", "docc"]
         except subprocess.CalledProcessError:
             pass
-    if shutil.which("docc"):
-        return ["docc"]
-    return []
+    if not docc and shutil.which("docc"):
+        docc = ["docc"]
+
+    return Tools(swiftly=[], swift=swift, docc=docc)
+
+
+def ensure_toolchain_installed(source_dir, swiftly_cmd):
+    """Pre-install the toolchain pinned by `.swift-version`, if any.
+
+    Walks no directories — only checks for `.swift-version` directly in
+    source_dir. swiftly itself walks parents at command-resolution time, but
+    we only auto-install when the source root explicitly pins a version.
+    No-op when swiftly is unavailable or no version file is present.
+    """
+    if not swiftly_cmd:
+        return
+    if not (source_dir / ".swift-version").is_file():
+        return
+    print(f"Ensuring pinned toolchain is installed (swiftly install)...")
+    subprocess.run(
+        swiftly_cmd + ["install", "--assume-yes"],
+        cwd=str(source_dir),
+        check=True,
+    )
+
+
+_TOOLS_VERSION_RE = re.compile(
+    r"^//\s*swift-tools-version\s*:\s*(\d+(?:\.\d+){0,2})"
+)
+
+_SWIFT_VERSION_RE = re.compile(r"Swift version (\d+)\.(\d+)")
+
+
+def get_active_swift_version():
+    """Return the active swift toolchain as (major, minor), or None.
+
+    Runs `swift --version` and parses the version line. When swiftly is
+    installed, `swift` is its proxy and reports the active toolchain;
+    otherwise this reports the system swift. Returns None if swift is
+    unavailable, the invocation fails, or the output can't be parsed.
+    """
+    if shutil.which("swift") is None:
+        return None
+    try:
+        result = subprocess.run(
+            ["swift", "--version"],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except (subprocess.CalledProcessError, OSError):
+        return None
+    m = _SWIFT_VERSION_RE.search(result.stdout)
+    if not m:
+        return None
+    return (int(m.group(1)), int(m.group(2)))
+
+
+def select_swift_toolchain(swift_cmd, source_dir, swiftly_cmd, active_swift_version):
+    """Decide whether to pin a specific swiftly toolchain for this source.
+
+    Package.swift's `swift-tools-version` declares a *minimum* toolchain. If
+    the active toolchain already meets that minimum, the default is fine and
+    we leave swift_cmd alone. Only when the active toolchain is older (or
+    unknown) do we install the required version and pin via `+X.Y`.
+
+    Returns swift_cmd unchanged when:
+      - swiftly is unavailable
+      - source_dir has a `.swift-version` file (handled by
+        ensure_toolchain_installed; that path takes precedence)
+      - Package.swift has no recognizable tools-version line
+      - active_swift_version >= the tools-version
+
+    Otherwise installs the tools-version via swiftly and returns
+    swift_cmd + ['+X.Y']. If installation fails, returns swift_cmd unchanged
+    so the build can proceed against whatever's available.
+    """
+    if not swiftly_cmd:
+        return swift_cmd
+    if (source_dir / ".swift-version").is_file():
+        return swift_cmd
+    tools_version = read_swift_tools_version(source_dir)
+    if not tools_version:
+        return swift_cmd
+
+    parts = tools_version.split(".")
+    try:
+        required = (int(parts[0]), int(parts[1]) if len(parts) > 1 else 0)
+    except ValueError:
+        return swift_cmd
+
+    if active_swift_version is not None and active_swift_version >= required:
+        print(
+            f"Active swift toolchain {active_swift_version[0]}."
+            f"{active_swift_version[1]} satisfies Package.swift requirement "
+            f"{tools_version}; using default."
+        )
+        return swift_cmd
+
+    print(
+        f"Package.swift requires swift-tools-version {tools_version}; "
+        f"using `swiftly +{tools_version}`."
+    )
+    try:
+        subprocess.run(
+            swiftly_cmd + ["install", tools_version, "--assume-yes"],
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        print(
+            f"  Note: `swiftly install {tools_version}` failed ({e}); "
+            "continuing with default toolchain."
+        )
+        return swift_cmd
+    return swift_cmd + [f"+{tools_version}"]
+
+
+def read_swift_tools_version(source_dir):
+    """Parse the `// swift-tools-version:` declaration in Package.swift.
+
+    Returns the version as a major.minor string (e.g. "6.3" or "5.10"),
+    stripping any patch component. Returns None if Package.swift is missing,
+    empty, or doesn't have a recognizable tools-version line.
+
+    Used as a fallback selector for swiftly when a source has no
+    `.swift-version` file but its Package.swift declares a minimum toolchain.
+    """
+    package_swift = Path(source_dir) / "Package.swift"
+    if not package_swift.is_file():
+        return None
+    try:
+        text = package_swift.read_text()
+    except OSError:
+        return None
+    if not text:
+        return None
+    first_line = text.splitlines()[0]
+    m = _TOOLS_VERSION_RE.match(first_line)
+    if not m:
+        return None
+    parts = m.group(1).split(".")
+    return ".".join(parts[:2]) if len(parts) >= 2 else parts[0]
 
 
 def validate_sources(config):
-    """Validate the loaded JSON structure."""
+    """Return a list of validation error strings; empty list means valid.
+
+    Pure check — does not print or exit. The caller decides how to surface
+    errors. Returns early after structural problems (missing top-level keys,
+    `sources` not a list) so per-entry validation only runs against a validated
+    shape.
+    """
     errors = []
 
     if "version" not in config:
@@ -100,18 +277,12 @@ def validate_sources(config):
 
     if "sources" not in config:
         errors.append("Top-level 'sources' field is missing")
-        # Can't validate further without sources
-        if errors:
-            for e in errors:
-                print(f"Validation error: {e}")
-            sys.exit(1)
+        return errors
 
     sources = config["sources"]
     if not isinstance(sources, list):
         errors.append("'sources' must be an array")
-        for e in errors:
-            print(f"Validation error: {e}")
-        sys.exit(1)
+        return errors
 
     for i, entry in enumerate(sources):
         entry_id = entry.get("id", "")
@@ -123,9 +294,10 @@ def validate_sources(config):
         entry_type = entry.get("type", "")
         if not entry_type:
             errors.append(f"{label} is missing 'type'")
-        elif entry_type not in ("local", "git"):
+        elif entry_type not in ("local", "git", "archive"):
             errors.append(
-                f"{label} has unknown type '{entry_type}' (expected 'local' or 'git')"
+                f"{label} has unknown type '{entry_type}' "
+                "(expected 'local', 'git', or 'archive')"
             )
 
         if entry_type == "local" and not entry.get("path"):
@@ -137,16 +309,63 @@ def validate_sources(config):
         if entry_type == "git" and not entry.get("ref"):
             errors.append(f"{label} is type 'git' but missing 'ref'")
 
-        has_targets = "targets" in entry
-        has_docc_catalog = "docc_catalog" in entry
-
-        if not has_targets and not has_docc_catalog:
-            errors.append(f"{label} must have either 'targets' or 'docc_catalog'")
-
-        if has_targets and has_docc_catalog:
-            errors.append(
-                f"{label} has both 'targets' and 'docc_catalog' (they are mutually exclusive)"
+        if entry_type == "archive":
+            if not entry.get("url"):
+                errors.append(f"{label} is type 'archive' but missing 'url'")
+            docc_archive_name = entry.get("docc_archive_name", "")
+            if not docc_archive_name:
+                errors.append(
+                    f"{label} is type 'archive' but missing 'docc_archive_name'"
+                )
+            elif not docc_archive_name.endswith(".doccarchive"):
+                errors.append(
+                    f"{label} 'docc_archive_name' must end with '.doccarchive' "
+                    f"(got '{docc_archive_name}')"
+                )
+            archive_format = entry.get("format", "tar.gz")
+            if archive_format not in ("tar.gz", "zip"):
+                errors.append(
+                    f"{label} has unsupported 'format' '{archive_format}' "
+                    "(supported: 'tar.gz', 'zip')"
+                )
+            if "strip_availability" in entry and not isinstance(
+                entry["strip_availability"], bool
+            ):
+                errors.append(
+                    f"{label} 'strip_availability' must be a boolean "
+                    f"(got {type(entry['strip_availability']).__name__})"
+                )
+            disallowed_for_archive = (
+                "targets", "docc_catalog", "path", "repo", "ref",
+                "preflight", "add_docc_plugin", "extra_flags",
             )
+            for field in disallowed_for_archive:
+                if field in entry:
+                    errors.append(
+                        f"{label} is type 'archive' but has '{field}' "
+                        "(not allowed for archive sources)"
+                    )
+
+        if entry_type in ("local", "git"):
+            has_targets = "targets" in entry
+            has_docc_catalog = "docc_catalog" in entry
+
+            if not has_targets and not has_docc_catalog:
+                errors.append(
+                    f"{label} must have either 'targets' or 'docc_catalog'"
+                )
+
+            if has_targets and has_docc_catalog:
+                errors.append(
+                    f"{label} has both 'targets' and 'docc_catalog' "
+                    "(they are mutually exclusive)"
+                )
+
+            if "strip_availability" in entry:
+                errors.append(
+                    f"{label} has 'strip_availability' but is not type "
+                    "'archive' (only allowed on archive sources)"
+                )
 
         if entry.get("add_docc_plugin") and entry_type != "git":
             errors.append(f"{label} has 'add_docc_plugin' but is not type 'git'")
@@ -154,13 +373,32 @@ def validate_sources(config):
         if "preflight" in entry and not entry["preflight"]:
             errors.append(f"{label} has 'preflight' but it is empty")
 
-    if errors:
-        for e in errors:
-            print(f"Validation error: {e}")
-        print(f"\nFix the errors in sources.json before continuing.")
-        sys.exit(1)
+    return errors
 
-    print(f"Validated {len(sources)} source entries.")
+
+def clean_package_build_dirs(root_dir, sources):
+    """Remove `.build/` dirs for every local Swift package this script touches.
+
+    Targets the union of: `local`-typed sources in `sources.json` (their
+    `path` resolved under `root_dir`) and any sibling of `root_dir` that
+    contains a `Package.swift`. Existence of `Package.swift` gates the
+    repo-root sweep so unrelated subdirectories like `common/` are left alone.
+    Returns the list of removed `.build/` paths in deterministic order.
+    """
+    targets = set()
+    for s in sources:
+        if s.get("type") == "local" and s.get("path"):
+            targets.add((root_dir / s["path"]).resolve())
+    for pkg_manifest in root_dir.glob("*/Package.swift"):
+        targets.add(pkg_manifest.parent.resolve())
+
+    removed = []
+    for pkg_dir in sorted(targets):
+        build_dir = pkg_dir / ".build"
+        if build_dir.exists():
+            shutil.rmtree(str(build_dir))
+            removed.append(build_dir)
+    return removed
 
 
 def clone_or_update(source, workspace, ref):
@@ -212,7 +450,60 @@ def clone_or_update(source, workspace, ref):
     return source_dir
 
 
-def find_docc_catalog_for_target(source_dir, target):
+def fetch_archive(source, workspace):
+    """Download and extract a pre-built .doccarchive from a URL.
+
+    Always re-downloads (no caching). Returns the Path to the extracted
+    .doccarchive directory. Raises ArchiveFetchError on any failure so the
+    caller can abort the whole build.
+    """
+    source_id = source["id"]
+    url = source["url"]
+    docc_archive_name = source["docc_archive_name"]
+    archive_format = source.get("format", "tar.gz")
+
+    download_dir = workspace / "_downloads" / source_id
+    if download_dir.exists():
+        shutil.rmtree(str(download_dir))
+    download_dir.mkdir(parents=True)
+
+    filename = Path(url).name or f"{source_id}.{archive_format}"
+    download_path = download_dir / filename
+    extract_dir = download_dir / "extracted"
+    extract_dir.mkdir()
+
+    print(f"Downloading {url}...")
+    try:
+        urllib.request.urlretrieve(url, str(download_path))
+    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+        raise ArchiveFetchError(
+            f"failed to download archive for '{source_id}' from {url}: {e}"
+        ) from e
+
+    print(f"Extracting to {extract_dir}...")
+    try:
+        if archive_format == "zip":
+            with zipfile.ZipFile(str(download_path)) as zf:
+                zf.extractall(path=str(extract_dir))
+        else:
+            with tarfile.open(str(download_path), "r:gz") as tar:
+                tar.extractall(path=str(extract_dir), filter="data")
+    except (tarfile.TarError, zipfile.BadZipFile, OSError, ValueError) as e:
+        raise ArchiveFetchError(
+            f"failed to extract archive for '{source_id}': {e}"
+        ) from e
+
+    matches = [p for p in extract_dir.rglob(docc_archive_name) if p.is_dir()]
+    if not matches:
+        raise ArchiveFetchError(
+            f"'{docc_archive_name}' not found in archive for '{source_id}'"
+        )
+    archive_path = min(matches, key=lambda p: len(p.parts))
+    print(f"Found {docc_archive_name} at {archive_path}")
+    return archive_path
+
+
+def find_docc_catalog_for_target(source_dir, target, swift_cmd):
     """Discover the .docc catalog directory for a Swift package target.
 
     Uses `swift package describe --type json` to find the target's source path,
@@ -220,7 +511,7 @@ def find_docc_catalog_for_target(source_dir, target):
     """
     try:
         result = subprocess.run(
-            ["swift", "package", "describe", "--type", "json"],
+            swift_cmd + ["package", "describe", "--type", "json"],
             cwd=str(source_dir),
             capture_output=True,
             text=True,
@@ -266,7 +557,7 @@ def find_doccarchive(search_dir, target):
     return None
 
 
-def add_docc_plugin(source_dir):
+def add_docc_plugin(source_dir, swift_cmd):
     """Inject swift-docc-plugin dependency if not already present."""
     package_swift = source_dir / "Package.swift"
     if "swift-docc-plugin" in package_swift.read_text():
@@ -274,8 +565,8 @@ def add_docc_plugin(source_dir):
         return
     print("Adding swift-docc-plugin dependency...")
     subprocess.run(
-        [
-            "swift", "package", "add-dependency",
+        swift_cmd + [
+            "package", "add-dependency",
             "https://github.com/swiftlang/swift-docc-plugin",
             "--from", "1.1.0",
         ],
@@ -284,136 +575,201 @@ def add_docc_plugin(source_dir):
     )
 
 
-def build_source(source, root_dir, workspace, common_dir, temp_archive_dir, docc_cmd, env):
-    """Build a single source entry.
+def _build_archive_source(source, workspace, temp_archive_dir):
+    """Fetch an archive source, copy it into the staging dir, optionally strip.
 
-    Returns a tuple of (list_of_archive_paths, manifest_entry) on success,
-    or raises an exception on failure.
+    Returns (archives, manifest_entry). Raises ArchiveFetchError on download
+    or extraction failure (caller treats this as fatal).
     """
     source_id = source["id"]
-    source_type = source["type"]
-    docc_catalog = source.get("docc_catalog", "")
-    targets = source.get("targets", [])
+    archive_path = fetch_archive(source, workspace)
+    dest = temp_archive_dir / f"{source_id}.doccarchive"
+    if dest.exists():
+        shutil.rmtree(str(dest))
+    shutil.copytree(str(archive_path), str(dest))
+    print(f"Copied {archive_path} -> {dest}")
+
+    if source.get("strip_availability"):
+        print(f"Stripping availability from {dest}...")
+        scanned, modified, removed = strip_archive(dest)
+        print(
+            f"  scanned {scanned} files; modified {modified}; "
+            f"removed {removed} 'platforms' keys"
+        )
+
+    manifest_entry = {
+        "id": source_id,
+        "type": "archive",
+        "ref": source.get("version_label", ""),
+        "commit": "",
+        "url": source["url"],
+    }
+    return [dest], manifest_entry
+
+
+def _build_package_targets(source, source_dir, common_dir, temp_archive_dir, swift_cmd, env):
+    """Build each Swift package target with `swift package generate-documentation`."""
+    source_id = source["id"]
+    targets = source["targets"]
     extra_flags = source.get("extra_flags", [])
+
+    for target in targets:
+        catalog_dir = find_docc_catalog_for_target(source_dir, target, swift_cmd)
+        if catalog_dir:
+            install_templates(catalog_dir, common_dir, f"{source_id}/{target}")
+        else:
+            print(
+                f"  Note: could not locate .docc catalog for target '{target}', "
+                "skipping template install"
+            )
+
+    archives = []
+    for target in targets:
+        print(f"Building target: {target}")
+        cmd = swift_cmd + [
+            "package", "generate-documentation",
+            "--target", target,
+        ] + DOCC_BUILD_FLAGS + extra_flags
+        subprocess.run(cmd, cwd=str(source_dir), check=True, env=env)
+
+        archive = find_doccarchive(source_dir, target)
+        if not archive:
+            raise RuntimeError(
+                f"could not find .doccarchive for target '{target}'"
+            )
+
+        output_name = source_id if len(targets) == 1 else f"{source_id}-{target}"
+        dest = temp_archive_dir / f"{output_name}.doccarchive"
+        if dest.exists():
+            shutil.rmtree(str(dest))
+        shutil.copytree(str(archive), str(dest))
+        print(f"Exported {archive} -> {dest}")
+        archives.append(dest)
+    return archives
+
+
+def _build_docc_catalog(source, source_dir, common_dir, temp_archive_dir, docc_cmd, env):
+    """Convert a standalone `.docc` catalog with `docc convert`."""
+    source_id = source["id"]
+    docc_catalog = source["docc_catalog"]
+    extra_flags = source.get("extra_flags", [])
+
+    catalog_path = source_dir / docc_catalog
+    if not catalog_path.is_dir():
+        raise RuntimeError(f"docc catalog not found at '{catalog_path}'")
+    if not docc_cmd:
+        raise RuntimeError("'docc' tool not found (tried xcrun and PATH)")
+
+    install_templates(catalog_path, common_dir, source_id)
+
+    dest = temp_archive_dir / f"{source_id}.doccarchive"
+    if dest.exists():
+        shutil.rmtree(str(dest))
+
+    print("Converting catalog with docc convert...")
+    cmd = docc_cmd + [
+        "convert", str(catalog_path),
+        "--output-path", str(dest),
+    ] + DOCC_BUILD_FLAGS + extra_flags
+    subprocess.run(cmd, check=True, env=env)
+    return [dest]
+
+
+def _collect_git_metadata(source_dir, configured_ref=None):
+    """Read (ref, commit) from a git working tree.
+
+    For git-type sources, configured_ref is the ref from sources.json and is
+    returned verbatim — only the commit comes from `git rev-parse HEAD`. For
+    local sources (configured_ref is None), both come from git, defaulting to
+    'unknown' when the working tree isn't a git checkout.
+    """
+    if configured_ref is not None:
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(source_dir), "rev-parse", "HEAD"],
+                capture_output=True, text=True, check=True,
+            )
+            return configured_ref, result.stdout.strip()
+        except subprocess.CalledProcessError:
+            return configured_ref, "unknown"
+
+    try:
+        ref_result = subprocess.run(
+            ["git", "-C", str(source_dir), "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True, text=True, check=True,
+        )
+        commit_result = subprocess.run(
+            ["git", "-C", str(source_dir), "rev-parse", "HEAD"],
+            capture_output=True, text=True, check=True,
+        )
+        return ref_result.stdout.strip(), commit_result.stdout.strip()
+    except subprocess.CalledProcessError:
+        return "unknown", "unknown"
+
+
+def build_source(source, root_dir, workspace, common_dir, temp_archive_dir, docc_cmd, env, swift_cmd=None, swiftly_cmd=None, active_swift_version=None):
+    """Build a single source entry.
+
+    Returns (archives, manifest_entry) on success. Dispatches to a helper for
+    each source type; archive sources short-circuit before any toolchain or
+    preflight setup.
+    """
+    if swift_cmd is None:
+        swift_cmd = ["swift"]
+    if swiftly_cmd is None:
+        swiftly_cmd = []
+
+    source_id = source["id"]
+    source_type = source["type"]
 
     print()
     print("=" * 40)
     print(f"Building: {source_id}")
     print("=" * 40)
 
-    # Resolve source directory
+    if source_type == "archive":
+        archives, manifest_entry = _build_archive_source(
+            source, workspace, temp_archive_dir
+        )
+        print(f"Done: {source_id}")
+        return archives, manifest_entry
+
     if source_type == "local":
         source_dir = root_dir / source["path"]
         if not source_dir.is_dir():
             raise RuntimeError(f"local path '{source_dir}' does not exist")
     elif source_type == "git":
-        ref = source["ref"]
-        source_dir = clone_or_update(source, workspace, ref)
+        source_dir = clone_or_update(source, workspace, source["ref"])
     else:
         raise RuntimeError(f"unknown type '{source_type}'")
 
-    # Run preflight command if configured
+    ensure_toolchain_installed(source_dir, swiftly_cmd)
+    swift_cmd = select_swift_toolchain(
+        swift_cmd, source_dir, swiftly_cmd, active_swift_version
+    )
+
     preflight = source.get("preflight", "")
     if preflight:
         print(f"Running preflight: {preflight}")
         subprocess.run(
             ["bash", "-c", preflight],
-            cwd=str(source_dir),
-            check=True,
-            env=env,
+            cwd=str(source_dir), check=True, env=env,
         )
 
-    # Inject swift-docc-plugin if requested
     if source.get("add_docc_plugin"):
-        add_docc_plugin(source_dir)
+        add_docc_plugin(source_dir, swift_cmd)
 
-    archives = []
-
-    if targets:
-        # Install templates into each target's .docc catalog
-        for target in targets:
-            catalog_dir = find_docc_catalog_for_target(source_dir, target)
-            if catalog_dir:
-                install_templates(catalog_dir, common_dir, f"{source_id}/{target}")
-            else:
-                print(
-                    f"  Note: could not locate .docc catalog for target '{target}', "
-                    "skipping template install"
-                )
-
-        # Build each target via swift package
-        for target in targets:
-            print(f"Building target: {target}")
-            cmd = [
-                "swift", "package", "generate-documentation",
-                "--target", target,
-            ] + DOCC_BUILD_FLAGS + extra_flags
-            subprocess.run(cmd, cwd=str(source_dir), check=True, env=env)
-
-            archive = find_doccarchive(source_dir, target)
-            if not archive:
-                raise RuntimeError(
-                    f"could not find .doccarchive for target '{target}'"
-                )
-
-            output_name = source_id if len(targets) == 1 else f"{source_id}-{target}"
-            dest = temp_archive_dir / f"{output_name}.doccarchive"
-            if dest.exists():
-                shutil.rmtree(str(dest))
-            shutil.copytree(str(archive), str(dest))
-            print(f"Exported {archive} -> {dest}")
-            archives.append(dest)
+    if source.get("targets"):
+        archives = _build_package_targets(
+            source, source_dir, common_dir, temp_archive_dir, swift_cmd, env
+        )
     else:
-        # Use docc convert directly
-        catalog_path = source_dir / docc_catalog
-        if not catalog_path.is_dir():
-            raise RuntimeError(f"docc catalog not found at '{catalog_path}'")
+        archives = _build_docc_catalog(
+            source, source_dir, common_dir, temp_archive_dir, docc_cmd, env
+        )
 
-        if not docc_cmd:
-            raise RuntimeError("'docc' tool not found (tried xcrun and PATH)")
-
-        install_templates(catalog_path, common_dir, source_id)
-
-        dest = temp_archive_dir / f"{source_id}.doccarchive"
-        if dest.exists():
-            shutil.rmtree(str(dest))
-
-        print("Converting catalog with docc convert...")
-        cmd = docc_cmd + [
-            "convert", str(catalog_path),
-            "--output-path", str(dest),
-        ] + DOCC_BUILD_FLAGS + extra_flags
-        subprocess.run(cmd, check=True, env=env)
-        archives.append(dest)
-
-    # Build manifest entry
-    commit_sha = ""
-    actual_ref = ""
-    if source_type == "git":
-        actual_ref = source["ref"]
-        try:
-            result = subprocess.run(
-                ["git", "-C", str(source_dir), "rev-parse", "HEAD"],
-                capture_output=True, text=True, check=True,
-            )
-            commit_sha = result.stdout.strip()
-        except subprocess.CalledProcessError:
-            commit_sha = "unknown"
-    elif source_type == "local":
-        try:
-            result = subprocess.run(
-                ["git", "-C", str(source_dir), "rev-parse", "--abbrev-ref", "HEAD"],
-                capture_output=True, text=True, check=True,
-            )
-            actual_ref = result.stdout.strip()
-            result = subprocess.run(
-                ["git", "-C", str(source_dir), "rev-parse", "HEAD"],
-                capture_output=True, text=True, check=True,
-            )
-            commit_sha = result.stdout.strip()
-        except subprocess.CalledProcessError:
-            actual_ref = "unknown"
-            commit_sha = "unknown"
+    configured_ref = source["ref"] if source_type == "git" else None
+    actual_ref, commit_sha = _collect_git_metadata(source_dir, configured_ref)
 
     manifest_entry = {
         "id": source_id,
@@ -421,7 +777,6 @@ def build_source(source, root_dir, workspace, common_dir, temp_archive_dir, docc
         "ref": actual_ref,
         "commit": commit_sha,
     }
-
     print(f"Done: {source_id}")
     return archives, manifest_entry
 
@@ -440,6 +795,88 @@ def merge_archives(archives, output_path, docc_cmd):
     ]
     subprocess.run(cmd, check=True)
     print(f"Combined archive: {output_path}")
+
+
+def transform_static_hosting(archive_path, hosting_base_path, docc_cmd):
+    """Bake a hosting base path into a finished .doccarchive in place.
+
+    Runs `docc process-archive transform-for-static-hosting` on the archive
+    so its router and links resolve under /<hosting_base_path>/, then swaps
+    the transformed archive into the original location. On failure, leaves
+    the original archive untouched.
+    """
+    if not docc_cmd:
+        raise RuntimeError("'docc' tool not found (tried xcrun and PATH)")
+
+    archive_path = Path(archive_path)
+    transformed = archive_path.parent / f".{archive_path.name}.transforming"
+    if transformed.exists():
+        shutil.rmtree(str(transformed))
+
+    print(f"Applying hosting base path '{hosting_base_path}' to {archive_path.name}...")
+    cmd = docc_cmd + [
+        "process-archive", "transform-for-static-hosting",
+        str(archive_path),
+        "--hosting-base-path", hosting_base_path,
+        "--output-path", str(transformed),
+    ]
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError:
+        if transformed.exists():
+            shutil.rmtree(str(transformed))
+        raise
+
+    shutil.rmtree(str(archive_path))
+    shutil.move(str(transformed), str(archive_path))
+    print(f"Transformed archive: {archive_path}")
+
+
+def _finalize_combined_archive(all_archives, output_dir, version, docc_cmd, prior_failed):
+    """Merge per-source archives and apply the static-hosting transform.
+
+    Returns (succeeded_steps, failed_steps): names that should be added to
+    the build summary's success and failure lists, respectively. Bails early
+    on missing prerequisites; isolates the merge step from the transform step
+    so a transform failure still records the merge as succeeded.
+    """
+    print()
+    print("=" * 40)
+    print("Merging combined documentation archive")
+    print("=" * 40)
+
+    if prior_failed:
+        print("Error: cannot merge — the following sources failed to build:")
+        for fid in prior_failed:
+            print(f"  - {fid}")
+        print("Skipping merge step.")
+        return [], ["combined-merge"]
+
+    if not docc_cmd:
+        print("Error: 'docc' tool not found, cannot merge archives")
+        return [], ["combined-merge"]
+
+    missing = [a for a in all_archives if not a.is_dir()]
+    if missing:
+        print("Error: the following expected archives are missing:")
+        for ma in missing:
+            print(f"  - {ma}")
+        return [], ["combined-merge"]
+
+    combined_output = output_dir / f"{version}"
+    try:
+        merge_archives(all_archives, combined_output, docc_cmd)
+    except subprocess.CalledProcessError:
+        print("Error: docc merge failed")
+        return [], ["combined-merge"]
+
+    try:
+        transform_static_hosting(combined_output, version, docc_cmd)
+    except subprocess.CalledProcessError:
+        print("Error: docc process-archive transform-for-static-hosting failed")
+        return ["combined-merge"], ["static-hosting-transform"]
+
+    return ["combined-merge", "static-hosting-transform"], []
 
 
 def write_manifest(output_dir, version, entries):
@@ -466,7 +903,15 @@ def main():
     workspace = Path(args.workspace) if args.workspace else root_dir / ".workspace"
 
     check_prerequisites()
-    docc_cmd = find_docc_command()
+    tools = discover_tools()
+    active_swift_version = get_active_swift_version()
+    if tools.swiftly:
+        print("swiftly detected — swift and docc invocations will honor .swift-version files.")
+    if active_swift_version:
+        print(
+            f"Active swift toolchain: "
+            f"{active_swift_version[0]}.{active_swift_version[1]}"
+        )
 
     # Validate common template files exist
     for tmpl in TEMPLATE_FILES:
@@ -486,7 +931,13 @@ def main():
         print(f"Error: sources.json is not valid JSON: {e}")
         sys.exit(1)
 
-    validate_sources(config)
+    validate_errors = validate_sources(config)
+    if validate_errors:
+        for e in validate_errors:
+            print(f"Validation error: {e}")
+        print("\nFix the errors in sources.json before continuing.")
+        sys.exit(1)
+    print(f"Validated {len(config['sources'])} source entries.")
 
     version = config["version"]
     sources = config["sources"]
@@ -500,6 +951,8 @@ def main():
         print(f"Removing workspace: {workspace}")
         if workspace.exists():
             shutil.rmtree(str(workspace))
+        for build_dir in clean_package_build_dirs(root_dir, sources):
+            print(f"Removed package build dir: {build_dir}")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     workspace.mkdir(parents=True, exist_ok=True)
@@ -514,24 +967,42 @@ def main():
     all_archives = []
     manifest_entries = []
 
-    for source in sources:
-        source_id = source["id"]
+    # Preflight: fetch archive-type sources first so network or extraction
+    # failures abort the run before any slow git clones or swift builds.
+    archive_sources = [s for s in sources if s["type"] == "archive"]
+    other_sources = [s for s in sources if s["type"] != "archive"]
 
-        # Filter if --only is set
-        if args.only and source_id != args.only:
-            continue
+    def attempt_build(source, fatal=(), recoverable=()):
+        """Run build_source for one entry, sorting exceptions by severity.
 
+        `fatal` exceptions print and sys.exit(1). `recoverable` exceptions are
+        logged and recorded in `failed`. Anything else propagates uncaught.
+        """
+        sid = source["id"]
+        if args.only and sid != args.only:
+            return
         try:
-            archives, manifest_entry = build_source(
+            archives, entry = build_source(
                 source, root_dir, workspace, common_dir,
-                temp_archive_dir, docc_cmd, env,
+                temp_archive_dir, tools.docc, env,
+                swift_cmd=tools.swift, swiftly_cmd=tools.swiftly,
+                active_swift_version=active_swift_version,
             )
-            succeeded.append(source_id)
-            all_archives.extend(archives)
-            manifest_entries.append(manifest_entry)
-        except Exception as e:
-            print(f"Error building {source_id}: {e}")
-            failed.append(source_id)
+        except fatal as e:
+            print(f"Fatal: {e}")
+            sys.exit(1)
+        except recoverable as e:
+            print(f"Error building {sid}: {e}")
+            failed.append(sid)
+            return
+        succeeded.append(sid)
+        all_archives.extend(archives)
+        manifest_entries.append(entry)
+
+    for source in archive_sources:
+        attempt_build(source, fatal=(ArchiveFetchError,))
+    for source in other_sources:
+        attempt_build(source, recoverable=(Exception,))
 
     # When --only is used, copy the single source's archive to output directly
     if args.only and all_archives:
@@ -544,36 +1015,11 @@ def main():
 
     # Merge all archives — only when building everything (not --only)
     if all_archives and not args.only:
-        print()
-        print("=" * 40)
-        print("Merging combined documentation archive")
-        print("=" * 40)
-
-        if failed:
-            print("Error: cannot merge — the following sources failed to build:")
-            for fid in failed:
-                print(f"  - {fid}")
-            print("Skipping merge step.")
-            failed.append("combined-merge")
-        elif not docc_cmd:
-            print("Error: 'docc' tool not found, cannot merge archives")
-            failed.append("combined-merge")
-        else:
-            # Verify every expected archive exists on disk
-            missing = [a for a in all_archives if not a.is_dir()]
-            if missing:
-                print("Error: the following expected archives are missing:")
-                for ma in missing:
-                    print(f"  - {ma}")
-                failed.append("combined-merge")
-            else:
-                combined_output = output_dir / f"{version}"
-                try:
-                    merge_archives(all_archives, combined_output, docc_cmd)
-                    succeeded.append("combined-merge")
-                except subprocess.CalledProcessError:
-                    print("Error: docc merge failed")
-                    failed.append("combined-merge")
+        s_steps, f_steps = _finalize_combined_archive(
+            all_archives, output_dir, version, tools.docc, failed
+        )
+        succeeded.extend(s_steps)
+        failed.extend(f_steps)
 
     # Clean up intermediate archives
     if not args.only and temp_archive_dir.exists():

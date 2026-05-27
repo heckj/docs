@@ -1,0 +1,1172 @@
+{
+  "abstract" : [
+    {
+      "text" : "Swift Package Manager add several new features in version 6.4.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleaseNotes"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/6.4"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Swift Package Manager"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "SwiftPM 6.4 Release Notes"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The key features include:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "adding first class support for Software Bill of Materials (SBOM)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "making the Swift Build build system the default",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Software-Bill-of-Materials-SBOM-support",
+          "level" : 2,
+          "text" : "Software Bill of Materials (SBOM) support",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift Package Manager can now generate SBOM for your Swift Package.  Read more ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
+              "isActive" : true,
+              "overridingTitle" : "here",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "here",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "SwiftBuild-The-new-default-build-system",
+          "level" : 2,
+          "text" : "SwiftBuild: The new default build system",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "SwiftPM has changed it’s default build system to Swift Build.  Read more ",
+              "type" : "text"
+            },
+            {
+              "text" : "here",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Key-improvements-and-differences-between-Native-build-system",
+          "level" : 3,
+          "text" : "Key improvements and differences between Native build system",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Build artifacts are output to a different location.  For all build systems, using the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift build --show-bin-path <other build arguments>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " is the recommended way to determine the build output location.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "code" : "--static-swift-stdlib",
+                          "type" : "codeVoice"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : ": Stricter validation (errors instead of silently ignoring)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "The native build system silently ignored this option on some platforms; Swift Build now produces an error.",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "The Swift Build build system will generate an error on platforms where static libraries are not supported.",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Swift Build does not support test targets depending on other test targets.  To work around this,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "create a non-test target for the test target to depend on.  A runtime error (sample below) will occur if this target is added as a",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "dependency on non-test targets.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "dyld[67034]: Library not loaded: @rpath\/libTesting.dylib",
+                    "Referenced from: <30F1D85A-75C7-358C-B169-96E34550501C> \/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/swift-package",
+                    "Reason: tried: '\/usr\/lib\/swift\/libTesting.dylib' (no such file, not in dyld cache), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/usr\/lib\/swift\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/usr\/lib\/swift\/libTesting.dylib' (no such file, not in dyld cache), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/usr\/lib\/swift\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file)"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Swift Build tasks planned by build tool plugins no longer have unrestricted access to environment variables in order",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "to avoid excessive invalidation in incremental builds.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Detailed-differences",
+          "level" : 4,
+          "text" : "Detailed differences",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "Resource-support-parity-with-xcodebuild",
+          "level" : 5,
+          "text" : "Resource support parity with xcodebuild",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "When targeting Apple platforms, SwiftPM, the same set of resource rules as that ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "xcodebuild",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " followsare consistently applied when a package contains resource types like asset catalogs, storyboards, Metal sources, etc.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Swift-Driver-integration",
+          "level" : 5,
+          "text" : "Swift Driver integration",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "--use-integrated-swift-driver",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " command-line option is deprecated and has not effect. Swift Build always uses the library-based Swift driver.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "On supported platforms, SwiftPM will make use of explicitly-built Clang and Swift modules.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Enhanced-diagnostics",
+          "level" : 5,
+          "text" : "Enhanced diagnostics",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Logging and diagnostic differences between native and Swift Build build systems",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Other",
+          "level" : 5,
+          "text" : "Other",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Supports building universal binaries when targeting Apple platforms. Example invocation: ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift build --arch arm64 --arch x86_64",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Known-issues",
+          "level" : 3,
+          "text" : "Known issues",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Swift Build fails to build projects with Linux SDKs generated ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "by",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "emphasis"
+                    },
+                    {
+                      "text" : " the SDK generator.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "text" : "Tracking",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "strong"
+                            },
+                            {
+                              "text" : ": ",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10006",
+                              "isActive" : true,
+                              "type" : "reference"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Using the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "--explicit-target-dependency-import-check",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " command line option does not behave as expected when building with Swift Build",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "text" : "Tracking",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "strong"
+                            },
+                            {
+                              "text" : ": ",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/9620",
+                              "isActive" : true,
+                              "type" : "reference"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "build settings are set in the SwiftPM PIF builder",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Swift Build does not support overlapping executable product names and library product names (case-insensitive).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "text" : "Tracking",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "strong"
+                            },
+                            {
+                              "text" : ": ",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/9184",
+                              "isActive" : true,
+                              "type" : "reference"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "code" : "swift sdk configure",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " recently updated for the Native.  The functionality is being migrated to Swift Build.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Submitted recently for native build system under ",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/pull\/9229",
+                              "isActive" : true,
+                              "type" : "reference"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "text" : "Tracking",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "strong"
+                            },
+                            {
+                              "text" : ": ",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10012",
+                              "isActive" : true,
+                              "type" : "reference"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Building projects use swift-java and build tool plugins may fail",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "inlineContent" : [
+                                {
+                                  "text" : "Tracking",
+                                  "type" : "text"
+                                }
+                              ],
+                              "type" : "strong"
+                            },
+                            {
+                              "text" : ": ",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10060",
+                              "isActive" : true,
+                              "type" : "reference"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Troubleshooting",
+          "level" : 3,
+          "text" : "Troubleshooting",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If your package fails to build with Swift Build in Swift 6.4, you can fall back to the previous native build system using the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--build-system native",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " flag:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift build --build-system native",
+            "swift test --build-system native",
+            "swift run --build-system native"
+          ],
+          "syntax" : "bash",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you build passes using the Native build system, but fails using Swift Build, please ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "#Reporting-issues",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Reporting-issues",
+          "level" : 1,
+          "text" : "Reporting issues",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Please follow these steps when reporting issues:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Review the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "#Known-issues",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " listed above to ensure your issue has not already been identified.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If your issue is not listed, ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " on GitHub.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Include the following information in your report:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "The exact command that failed",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Complete error output",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "System information (operating system, Swift version, etc.)",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Whether the same command works with the native build system",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/6.3",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.9",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.8",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.7",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.6",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.5",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.4",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.3"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packagemanagerdocs\/6.4"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"#Known-issues": {
+  "identifier" : "#Known-issues",
+  "title" : "known issues",
+  "titleInlineContent" : [
+    {
+      "text" : "known issues",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "#Known-issues"
+},
+"#Reporting-issues": {
+  "identifier" : "#Reporting-issues",
+  "title" : "report the issue",
+  "titleInlineContent" : [
+    {
+      "text" : "report the issue",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "#Reporting-issues"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs": {
+  "abstract" : [
+    {
+      "text" : "Organize, manage, and edit Swift packages.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swift Package Manager",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.3": {
+  "abstract" : [
+    {
+      "text" : "SwiftPM brings several new features in version 5.3, all of which are opt-in based on the tools-version.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.3",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.3 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.3"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.4": {
+  "abstract" : [
+    {
+      "text" : "SwiftPM 5.4 includes several improvements, all of which are opt-in based on specifying a tools version of 5.4.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.4",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.4 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.4"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.5": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.5",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.5 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.5"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.6": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.6",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.6 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.6"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.7": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.7",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.7 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.7"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.8": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.8",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.8 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.8"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/5.9": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/5.9",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 5.9 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/5.9"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/6.3": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/6.3",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "SwiftPM 6.3 Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/6.3"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/GeneratingSBOMs": {
+  "abstract" : [
+    {
+      "text" : "Create an inventory of components and dependencies using SBOM documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Generating Software Bill of Materials (SBOM)",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/generatingsboms"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ReleaseNotes": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleaseNotes",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Release Notes",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/releasenotes"
+},
+"https://github.com/swiftlang/swift-package-manager/issues": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues",
+  "title" : "submit a new issue",
+  "titleInlineContent" : [
+    {
+      "text" : "submit a new issue",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues"
+},
+"https://github.com/swiftlang/swift-package-manager/issues/10006": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10006",
+  "title" : "package-manager#10006",
+  "titleInlineContent" : [
+    {
+      "text" : "package-manager#10006",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10006"
+},
+"https://github.com/swiftlang/swift-package-manager/issues/10012": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10012",
+  "title" : "swift-package-manager#10012",
+  "titleInlineContent" : [
+    {
+      "text" : "swift-package-manager#10012",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10012"
+},
+"https://github.com/swiftlang/swift-package-manager/issues/10060": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10060",
+  "title" : "swiftlang\/swift-package-manager#10060",
+  "titleInlineContent" : [
+    {
+      "text" : "swiftlang\/swift-package-manager#10060",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/10060"
+},
+"https://github.com/swiftlang/swift-package-manager/issues/9184": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/9184",
+  "title" : "swiftlang\/swift-package-manager#9184",
+  "titleInlineContent" : [
+    {
+      "text" : "swiftlang\/swift-package-manager#9184",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/9184"
+},
+"https://github.com/swiftlang/swift-package-manager/issues/9620": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/9620",
+  "title" : "swiftlang\/swift-package-manager#9620",
+  "titleInlineContent" : [
+    {
+      "text" : "swiftlang\/swift-package-manager#9620",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/9620"
+},
+"https://github.com/swiftlang/swift-package-manager/pull/9229": {
+  "identifier" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/pull\/9229",
+  "title" : "swiftlang\/swift-package-manager#p229",
+  "titleInlineContent" : [
+    {
+      "text" : "swiftlang\/swift-package-manager#p229",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/pull\/9229"
+}
+}
+}

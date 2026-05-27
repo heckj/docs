@@ -67,7 +67,7 @@ the fault occurred when a runaway recursion exceeds the limit.
 
 | Option | Values | Default | Notes |
 |---|---|---|---|
-| `unwind` | `auto`, `fast`, `precise` | `auto` | `fast` uses frame pointers only; `precise` consults DWARF unwind information. `auto` picks per-frame. |
+| `unwind` | `auto`, `fast`, `precise` | `auto` | `fast` uses frame pointers only; `precise` may consult debug information, if present. `auto` picks a default based on the platform. |
 | `symbolicate` | `full`, `fast`, `off` | `full` | `full` resolves inlined frames using DWARF; `fast` resolves only the outermost symbol; `off` reports raw addresses. |
 | `cache` | `yes`, `no` | `yes` | Caches symbol lookups across frames. |
 

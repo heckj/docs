@@ -208,5 +208,4 @@ the cause is almost always one of the following:
   The fast unwinder follows frame pointers, so a binary built with `-fomit-frame-pointer`
   (or a C/C++ dependency built that way) produces traces that stop at the first frame without one.
   Current Swift toolchains preserve frame pointers in release builds on Linux server architectures.
-  Force the precise unwinder with `SWIFT_BACKTRACE=unwind=precise` to use DWARF instead,
-  or rebuild affected dependencies with `-fno-omit-frame-pointer`.
+  Rebuild affected dependencies with `-fno-omit-frame-pointer`.

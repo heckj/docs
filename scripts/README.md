@@ -19,12 +19,14 @@ open http://localhost:8000/main/documentation/
 
 `navigation.json` controls the left-hand navigator of the **combined** archive
 (`docc merge` output): it groups modules under labelled sections, hides
-internal modules, and orders them. Each entry names a `source` (a `sources.json`
-id) and the module `path` it applies to. Every module in the merged index must
-be either placed in a group or listed under `hidden` — `build_docs.py` validates
-and applies this automatically (the `navigator-curation` build step), and fails
-the build on any mismatch or uncovered module. See `../hacking-index-json.md`
-for the underlying mechanics.
+internal modules, and orders them. Hidden modules are also pruned from the
+synthesized landing page body (`data/documentation.json`), so they disappear
+from the main page's module list as well as the sidebar. Each entry names a
+`source` (a `sources.json` id) and the module `path` it applies to. Every module
+in the merged index must be either placed in a group or listed under `hidden` —
+`build_docs.py` validates and applies this automatically (the
+`navigator-curation` build step), and fails the build on any mismatch or
+uncovered module. See `../hacking-index-json.md` for the underlying mechanics.
 
 ### Checking the manifest while editing
 

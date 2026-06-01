@@ -26,6 +26,7 @@ See ``hacking-index-json.md`` for the verified mechanics.
 import json
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 class NavigationError(Exception):
@@ -195,7 +196,10 @@ def _curate_doc(doc, navigation):
 def curate_navigator(archive_path, navigation):
     """Rewrite <archive_path>/index/index.json per the navigation manifest.
 
-    Raises NavigationError / OSError / json.JSONDecodeError on failure.
+    Also prunes hidden modules from the synthesized landing page
+    (data/documentation.json) so they disappear from the page body, not just
+    the sidebar. Raises NavigationError / OSError / json.JSONDecodeError on
+    failure.
     """
     index_path, doc = _load_index(archive_path)
     _curate_doc(doc, navigation)
@@ -203,6 +207,54 @@ def curate_navigator(archive_path, navigation):
     tmp = index_path.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
     os.replace(tmp, index_path)
+
+    _curate_landing_page(archive_path, navigation)
+
+
+def _hidden_paths(navigation):
+    """Lowercased paths the manifest marks hidden."""
+    return {entry["path"].lower() for entry in navigation.get("hidden", [])}
+
+
+def _identifier_path(identifier):
+    """Path component of a topic reference, lowercased.
+
+    ``doc://com.apple.Swift/documentation/Cxx`` → ``/documentation/cxx`` — the
+    same normalized key the manifest uses, so a hidden entry matches its
+    landing-page topic regardless of bundle host or original casing.
+    """
+    return urlparse(identifier).path.lower()
+
+
+def _curate_landing_page(archive_path, navigation):
+    """Remove hidden modules' topics from the synthesized landing page.
+
+    No-op when data/documentation.json is absent or has no topic sections. A
+    topic section left empty after pruning is dropped.
+    """
+    page = Path(archive_path) / "data" / "documentation.json"
+    if not page.is_file():
+        return
+    doc = json.loads(page.read_text())
+    sections = doc.get("topicSections")
+    if not isinstance(sections, list):
+        return
+
+    hidden = _hidden_paths(navigation)
+    kept_sections = []
+    for section in sections:
+        identifiers = [
+            ident for ident in section.get("identifiers", [])
+            if _identifier_path(ident) not in hidden
+        ]
+        if identifiers:
+            section["identifiers"] = identifiers
+            kept_sections.append(section)
+    doc["topicSections"] = kept_sections
+
+    tmp = page.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+    os.replace(tmp, page)
 
 
 def dry_run(archive_path, navigation):

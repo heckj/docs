@@ -1732,6 +1732,7 @@ class CurateNavigator(unittest.TestCase):
 
 
 class CurateNavigatorDryRun(unittest.TestCase):
+
     def _nav(self):
         return {
             "version": 1,
@@ -1826,6 +1827,105 @@ class ValidateNavigationCLI(unittest.TestCase):
                 ],
             )
             self.assertEqual(validate_navigation_cli.main(argv), 1)
+
+
+def _write_landing_page(archive, sections):
+    """Write a minimal synthesized landing page (data/documentation.json).
+
+    `sections` is a list of (title, [identifiers]).
+    """
+    data = archive / "data"
+    data.mkdir(parents=True, exist_ok=True)
+    doc = {
+        "identifier": {"url": "doc://X/documentation", "interfaceLanguage": "swift"},
+        "kind": "symbol",
+        "topicSections": [
+            {"title": t, "identifiers": list(ids)} for t, ids in sections
+        ],
+        "references": {},
+    }
+    (data / "documentation.json").write_text(json.dumps(doc, indent=2) + "\n")
+
+
+def _landing_sections(archive):
+    doc = json.loads((archive / "data" / "documentation.json").read_text())
+    return [(s.get("title"), s.get("identifiers")) for s in doc.get("topicSections", [])]
+
+
+class CurateLandingPage(unittest.TestCase):
+    def _nav(self):
+        return {
+            "version": 1,
+            "groups": [{"title": "Language", "modules": [
+                {"source": "a", "path": "/documentation/swift"},
+                {"source": "a", "path": "/documentation/testing"},
+            ]}],
+            "hidden": [{"source": "a", "path": "/documentation/internal"}],
+        }
+
+    def _index_children(self):
+        return [
+            _module("Swift", "/documentation/swift"),
+            _module("Internal", "/documentation/internal"),
+            _module("Testing", "/documentation/testing"),
+        ]
+
+    def test_hidden_modules_removed_from_landing_page(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            _write_landing_page(archive, [
+                ("Modules", [
+                    "doc://Test/documentation/Swift",
+                    "doc://Test/documentation/Internal",  # hidden, mixed case
+                    "doc://Test/documentation/Testing",
+                ]),
+                ("Tutorials", ["doc://Test/tutorials/getting-started"]),
+            ])
+            curate_navigator.curate_navigator(archive, self._nav())
+            sections = dict(_landing_sections(archive))
+
+        self.assertEqual(sections["Modules"], [
+            "doc://Test/documentation/Swift",
+            "doc://Test/documentation/Testing",
+        ])
+        # Non-hidden sections are untouched.
+        self.assertEqual(sections["Tutorials"], ["doc://Test/tutorials/getting-started"])
+
+    def test_section_emptied_by_hiding_is_dropped(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            _write_landing_page(archive, [
+                ("Modules", ["doc://Test/documentation/Swift",
+                             "doc://Test/documentation/Testing"]),
+                ("Internal Stuff", ["doc://Test/documentation/Internal"]),
+            ])
+            curate_navigator.curate_navigator(archive, self._nav())
+            titles = [t for t, _ in _landing_sections(archive)]
+
+        self.assertEqual(titles, ["Modules"])
+
+    def test_missing_landing_page_is_noop(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            # No data/documentation.json written.
+            curate_navigator.curate_navigator(archive, self._nav())
+            # Index still curated; no error raised.
+            self.assertEqual(_children_of(archive)[0]["type"], "groupMarker")
+
+    def test_landing_page_idempotent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            _write_landing_page(archive, [
+                ("Modules", ["doc://Test/documentation/Swift",
+                             "doc://Test/documentation/Internal",
+                             "doc://Test/documentation/Testing"]),
+            ])
+            page = archive / "data" / "documentation.json"
+            curate_navigator.curate_navigator(archive, self._nav())
+            once = page.read_bytes()
+            curate_navigator.curate_navigator(archive, self._nav())
+            twice = page.read_bytes()
+        self.assertEqual(once, twice)
 
 
 if __name__ == "__main__":

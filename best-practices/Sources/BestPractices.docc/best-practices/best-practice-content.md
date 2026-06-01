@@ -16,7 +16,7 @@ The Ecosystem steering group reviews the best practices after every new minor Sw
 
 ### Create a guidance article
 
-Use the [template provided in the Ecosystem docs repository](https://github.com/swiftlang/docs/blob/main/ecosystem-tools/templates/0000-best-practice-template.md) to create guidance.
+Use the [template provided in the Ecosystem docs repository](https://github.com/swiftlang/docs/blob/main/best-practices/templates/0000-best-practice-template.md) to create guidance.
 Use a numbered filename to contain the content.
 Prefix guidelines from the ecosystem group with `BSP-` and use the next number available.
 When published with DocC, the filename of the article becomes a component in the URL and provides a consistent reference point.
@@ -43,7 +43,7 @@ Provide code examples that illustrate the guidance, using DocC's snippets featur
 
   - For anything other than trivial code examples, create and use a snippet Swift file to verify that code samples compile.
   - To use a snippet, create a Swift file in the Snippets directory and reference the snippet in this template.
-  - Reference the snippet in the best practice using the @Snippet directive. For example, if you create a snippet file named `BSP-0005.swift` in the Snippets directory, use the directive reference: `@Snippet(path: "EcosystemTools/Snippets/BSP-0005")`
+  - Reference the snippet in the best practice using the @Snippet directive. For example, if you create a snippet file named `BSP-0005.swift` in the Snippets directory, use the directive reference: `@Snippet(path: "BestPractices/Snippets/BSP-0005")`
 
 ### Share alternatives considered
 

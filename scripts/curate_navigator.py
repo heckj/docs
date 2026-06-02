@@ -211,26 +211,33 @@ def curate_navigator(archive_path, navigation):
     _curate_landing_page(archive_path, navigation)
 
 
-def _hidden_paths(navigation):
-    """Lowercased paths the manifest marks hidden."""
-    return {entry["path"].lower() for entry in navigation.get("hidden", [])}
-
-
 def _identifier_path(identifier):
     """Path component of a topic reference, lowercased.
 
     ``doc://com.apple.Swift/documentation/Cxx`` → ``/documentation/cxx`` — the
-    same normalized key the manifest uses, so a hidden entry matches its
+    same normalized key the manifest uses, so a manifest entry matches its
     landing-page topic regardless of bundle host or original casing.
     """
     return urlparse(identifier).path.lower()
 
 
 def _curate_landing_page(archive_path, navigation):
-    """Remove hidden modules' topics from the synthesized landing page.
+    """Rewrite the synthesized landing page (data/documentation.json).
 
-    No-op when data/documentation.json is absent or has no topic sections. A
-    topic section left empty after pruning is dropped.
+    The merged archive's landing page ships with two flat sections — "Modules"
+    and "Tutorials" — driven by docc-merge defaults. This rewrites them in
+    place to mirror the curated sidebar:
+
+      * one ``topicSection`` per ``navigation.groups`` entry, in declared order,
+        titled by the group's ``title``, with identifiers in the group's
+        ``modules`` order;
+      * groups whose modules don't match any identifier on the page are
+        dropped (e.g. a nav module the merge step never surfaced as a card);
+      * each kept identifier's reference is forced to ``kind:"symbol"``,
+        ``role:"collection"`` so all cards render with the same collection icon
+        regardless of how upstream framed the source's root page.
+
+    No-op when ``data/documentation.json`` is absent or has no topic sections.
     """
     page = Path(archive_path) / "data" / "documentation.json"
     if not page.is_file():
@@ -240,21 +247,52 @@ def _curate_landing_page(archive_path, navigation):
     if not isinstance(sections, list):
         return
 
-    hidden = _hidden_paths(navigation)
-    kept_sections = []
+    # Index every identifier on the page by its lowercased path component, so
+    # nav-manifest paths (which match the navigator) line up with landing-page
+    # references regardless of bundle host or original casing.
+    page_by_path = {}
     for section in sections:
-        identifiers = [
-            ident for ident in section.get("identifiers", [])
-            if _identifier_path(ident) not in hidden
-        ]
-        if identifiers:
-            section["identifiers"] = identifiers
-            kept_sections.append(section)
-    doc["topicSections"] = kept_sections
+        for ident in section.get("identifiers", []):
+            page_by_path.setdefault(_identifier_path(ident), ident)
+
+    new_sections = []
+    placed_idents = []
+    for group in navigation.get("groups", []):
+        group_idents = []
+        for entry in group.get("modules", []):
+            ident = page_by_path.get(entry["path"].lower())
+            if ident is not None:
+                group_idents.append(ident)
+        if group_idents:
+            new_sections.append({
+                "title": group["title"],
+                "identifiers": group_idents,
+                "anchor": _section_anchor(group["title"]),
+            })
+            placed_idents.extend(group_idents)
+    doc["topicSections"] = new_sections
+
+    refs = doc.get("references")
+    if isinstance(refs, dict):
+        for ident in placed_idents:
+            ref = refs.get(ident)
+            if isinstance(ref, dict):
+                ref["kind"] = "symbol"
+                ref["role"] = "collection"
 
     tmp = page.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
     os.replace(tmp, page)
+
+
+def _section_anchor(title):
+    """Slug DocC uses for a topicSection's anchor — title with spaces dashed.
+
+    Verified against existing converted pages: ``"Creating a Package"`` →
+    ``"Creating-a-Package"``. Case is preserved; only ASCII whitespace is
+    replaced with a dash. Existing dashes in the title pass through unchanged.
+    """
+    return "-".join(title.split())
 
 
 def dry_run(archive_path, navigation):

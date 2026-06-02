@@ -34,9 +34,9 @@
     {
       "title": "Tools",
       "modules": [
-        { "source": "swiftly", "path": "/documentation/swiftlydocs", "title": "Swiftly" },
+        { "source": "docc-documentation", "path": "/documentation/docc" },
         { "source": "vscode-swift", "path": "/documentation/userdocs", "title": "Swift for VS Code" },
-        { "source": "docc-documentation", "path": "/documentation/docc" }
+        { "source": "swiftly", "path": "/documentation/swiftlydocs", "title": "Swiftly" }
       ]
     },
     {

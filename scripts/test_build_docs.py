@@ -1829,20 +1829,34 @@ class ValidateNavigationCLI(unittest.TestCase):
             self.assertEqual(validate_navigation_cli.main(argv), 1)
 
 
-def _write_landing_page(archive, sections):
+def _write_landing_page(archive, sections, references=None):
     """Write a minimal synthesized landing page (data/documentation.json).
 
-    `sections` is a list of (title, [identifiers]).
+    `sections` is a list of (title, [identifiers]). When `references` is
+    omitted, every identifier appearing in any section is given a stock
+    article-shaped reference, mirroring how docc emits article-kind cards by
+    default for standalone .docc catalogs.
     """
     data = archive / "data"
     data.mkdir(parents=True, exist_ok=True)
+    if references is None:
+        references = {}
+        for _, ids in sections:
+            for ident in ids:
+                references.setdefault(ident, {
+                    "identifier": ident,
+                    "kind": "article",
+                    "title": ident.rsplit("/", 1)[-1],
+                    "type": "topic",
+                    "url": "/documentation/x",
+                })
     doc = {
         "identifier": {"url": "doc://X/documentation", "interfaceLanguage": "swift"},
         "kind": "symbol",
         "topicSections": [
             {"title": t, "identifiers": list(ids)} for t, ids in sections
         ],
-        "references": {},
+        "references": references,
     }
     (data / "documentation.json").write_text(json.dumps(doc, indent=2) + "\n")
 
@@ -1856,10 +1870,16 @@ class CurateLandingPage(unittest.TestCase):
     def _nav(self):
         return {
             "version": 1,
-            "groups": [{"title": "Language", "modules": [
-                {"source": "a", "path": "/documentation/swift"},
-                {"source": "a", "path": "/documentation/testing"},
-            ]}],
+            "groups": [
+                {"title": "Language", "modules": [
+                    {"source": "a", "path": "/documentation/swift"},
+                    {"source": "a", "path": "/documentation/testing"},
+                ]},
+                {"title": "Server-Side Swift", "modules": [
+                    {"source": "a", "path": "/documentation/serverguides"},
+                    {"source": "a", "path": "/tutorials/getting-started-swift-server"},
+                ]},
+            ],
             "hidden": [{"source": "a", "path": "/documentation/internal"}],
         }
 
@@ -1868,41 +1888,116 @@ class CurateLandingPage(unittest.TestCase):
             _module("Swift", "/documentation/swift"),
             _module("Internal", "/documentation/internal"),
             _module("Testing", "/documentation/testing"),
+            _module("Server Guides", "/documentation/serverguides"),
+            _module("Getting Started", "/tutorials/getting-started-swift-server"),
         ]
 
-    def test_hidden_modules_removed_from_landing_page(self):
+    def _docc_merge_landing(self):
+        """Approximate what docc merge produces: one Modules + one Tutorials."""
+        return [
+            ("Modules", [
+                "doc://Test/documentation/Swift",
+                "doc://Test/documentation/Internal",
+                "doc://Test/documentation/Testing",
+                "doc://Test/documentation/ServerGuides",
+            ]),
+            ("Tutorials", [
+                "doc://Test/tutorials/getting-started-swift-server",
+            ]),
+        ]
+
+    def test_landing_page_sections_match_nav_groups(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            _write_landing_page(archive, self._docc_merge_landing())
+            curate_navigator.curate_navigator(archive, self._nav())
+            sections = _landing_sections(archive)
+
+        # One section per nav group, in nav order.
+        self.assertEqual([t for t, _ in sections],
+                         ["Language", "Server-Side Swift"])
+        # Identifiers in declared nav order; hidden module dropped from Language.
+        self.assertEqual(sections[0][1], [
+            "doc://Test/documentation/Swift",
+            "doc://Test/documentation/Testing",
+        ])
+        # Tutorials get folded into Server-Side Swift via nav-group placement.
+        self.assertEqual(sections[1][1], [
+            "doc://Test/documentation/ServerGuides",
+            "doc://Test/tutorials/getting-started-swift-server",
+        ])
+
+    def test_hidden_modules_dropped_from_landing_page(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            _write_landing_page(archive, self._docc_merge_landing())
+            curate_navigator.curate_navigator(archive, self._nav())
+            sections = _landing_sections(archive)
+
+        all_ids = [i for _, ids in sections for i in ids]
+        self.assertNotIn("doc://Test/documentation/Internal", all_ids)
+
+    def test_group_with_no_matches_is_dropped(self):
+        nav = {
+            "version": 1,
+            "groups": [
+                {"title": "Language", "modules": [
+                    {"source": "a", "path": "/documentation/swift"},
+                ]},
+                # Group whose modules don't appear in the landing page (e.g. the
+                # navigator references a path the merge step didn't surface).
+                {"title": "Empty Group", "modules": [
+                    {"source": "a", "path": "/documentation/never-on-page"},
+                ]},
+            ],
+            "hidden": [],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), [
+                _module("Swift", "/documentation/swift"),
+                _module("NeverOnPage", "/documentation/never-on-page"),
+            ])
+            _write_landing_page(archive, [
+                ("Modules", ["doc://Test/documentation/Swift"]),
+            ])
+            curate_navigator.curate_navigator(archive, nav)
+            titles = [t for t, _ in _landing_sections(archive)]
+
+        self.assertEqual(titles, ["Language"])
+
+    def test_overwrites_kept_reference_kind_and_role(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = _make_index(Path(tmp), self._index_children())
+            _write_landing_page(archive, self._docc_merge_landing())
+            curate_navigator.curate_navigator(archive, self._nav())
+            doc = json.loads((archive / "data" / "documentation.json").read_text())
+            refs = doc["references"]
+
+        for ident in (
+            "doc://Test/documentation/Swift",
+            "doc://Test/documentation/Testing",
+            "doc://Test/documentation/ServerGuides",
+            "doc://Test/tutorials/getting-started-swift-server",
+        ):
+            self.assertEqual(refs[ident]["kind"], "symbol", ident)
+            self.assertEqual(refs[ident]["role"], "collection", ident)
+
+    def test_hidden_reference_kind_and_role_unchanged(self):
         with tempfile.TemporaryDirectory() as tmp:
             archive = _make_index(Path(tmp), self._index_children())
             _write_landing_page(archive, [
                 ("Modules", [
                     "doc://Test/documentation/Swift",
-                    "doc://Test/documentation/Internal",  # hidden, mixed case
-                    "doc://Test/documentation/Testing",
+                    "doc://Test/documentation/Internal",
                 ]),
-                ("Tutorials", ["doc://Test/tutorials/getting-started"]),
             ])
             curate_navigator.curate_navigator(archive, self._nav())
-            sections = dict(_landing_sections(archive))
+            doc = json.loads((archive / "data" / "documentation.json").read_text())
+            refs = doc["references"]
 
-        self.assertEqual(sections["Modules"], [
-            "doc://Test/documentation/Swift",
-            "doc://Test/documentation/Testing",
-        ])
-        # Non-hidden sections are untouched.
-        self.assertEqual(sections["Tutorials"], ["doc://Test/tutorials/getting-started"])
-
-    def test_section_emptied_by_hiding_is_dropped(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            archive = _make_index(Path(tmp), self._index_children())
-            _write_landing_page(archive, [
-                ("Modules", ["doc://Test/documentation/Swift",
-                             "doc://Test/documentation/Testing"]),
-                ("Internal Stuff", ["doc://Test/documentation/Internal"]),
-            ])
-            curate_navigator.curate_navigator(archive, self._nav())
-            titles = [t for t, _ in _landing_sections(archive)]
-
-        self.assertEqual(titles, ["Modules"])
+        # Hidden reference's fields are not touched (kind stays "article").
+        self.assertEqual(refs["doc://Test/documentation/Internal"]["kind"], "article")
+        self.assertNotIn("role", refs["doc://Test/documentation/Internal"])
 
     def test_missing_landing_page_is_noop(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -1915,11 +2010,7 @@ class CurateLandingPage(unittest.TestCase):
     def test_landing_page_idempotent(self):
         with tempfile.TemporaryDirectory() as tmp:
             archive = _make_index(Path(tmp), self._index_children())
-            _write_landing_page(archive, [
-                ("Modules", ["doc://Test/documentation/Swift",
-                             "doc://Test/documentation/Internal",
-                             "doc://Test/documentation/Testing"]),
-            ])
+            _write_landing_page(archive, self._docc_merge_landing())
             page = archive / "data" / "documentation.json"
             curate_navigator.curate_navigator(archive, self._nav())
             once = page.read_bytes()

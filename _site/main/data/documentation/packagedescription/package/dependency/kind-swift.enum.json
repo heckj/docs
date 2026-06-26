@@ -367,24 +367,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
-      "text" : "Dependency"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC19RegistryRequirementO",
       "text" : "RegistryRequirement"
     },
@@ -468,24 +450,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
-      "text" : "Dependency"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC24SourceControlRequirementO",
       "text" : "SourceControlRequirement"
     },
@@ -524,24 +488,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
-      "text" : "Dependency"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

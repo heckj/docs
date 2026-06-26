@@ -91,7 +91,6 @@
             "  [--skip=<skip>...] [--xunit-output=<xunit-output>]",
             "  [--enable-testable-imports|disable-testable-imports]",
             "  [--enable-code-coverage|disable-code-coverage]",
-            "  [--debugger]",
             "  [--traits=<traits>] [--enable-all-traits]",
             "  [--disable-default-traits] [--version] [--help]"
           ],
@@ -2965,61 +2964,6 @@
               "inlineContent" : [
                 {
                   "text" : "Enable code coverage.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "emphasis"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "items" : [
-            {
-              "definition" : {
-                "content" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "paragraph"
-                  }
-                ]
-              },
-              "term" : {
-                "inlineContent" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "–debugger",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "strong"
-                  }
-                ]
-              }
-            }
-          ],
-          "type" : "termList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Launch tests inside an LLDB debugging session. Use the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "failbreak",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " alias to attach breakpoints that will trigger on test failures.",
                   "type" : "text"
                 }
               ],
@@ -8286,6 +8230,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",

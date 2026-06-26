@@ -283,14 +283,6 @@
   ],
   "topicSections" : [
     {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/ParallelizationTrait\/TestScopeProvider"
-      ],
-      "title" : "Type Aliases"
-    },
-    {
       "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
@@ -525,40 +517,6 @@
   "title" : "SuiteTrait Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/parallelizationtrait\/suitetrait-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/ParallelizationTrait/TestScopeProvider": {
-  "abstract" : [
-    {
-      "text" : "The type of the test scope provider for this trait.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ParallelizationTrait\/TestScopeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ParallelizationTrait.TestScopeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/parallelizationtrait\/testscopeprovider"
 },
 "doc://org.swift.testing/documentation/Testing/ParallelizationTrait/TestScoping-Implementations": {
   "abstract" : [
@@ -902,8 +860,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing20ParallelizationTraitV",
-      "text" : "ParallelizationTrait"
+      "text" : "Self"
     }
   ],
   "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Trait\/serialized",

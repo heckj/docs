@@ -606,15 +606,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
       "text" : "PluginUsage"
     },

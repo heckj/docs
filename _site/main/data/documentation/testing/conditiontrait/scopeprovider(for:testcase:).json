@@ -764,14 +764,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:7Testing5TraitP17TestScopeProviderQa",
       "text" : "TestScopeProvider"
     },

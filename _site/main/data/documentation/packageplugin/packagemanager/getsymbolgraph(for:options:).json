@@ -51,7 +51,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": any "
+        "text" : ": "
       },
       {
         "kind" : "typeIdentifier",
@@ -72,15 +72,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-        "text" : "PackageManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV18SymbolGraphOptionsV",
         "text" : "SymbolGraphOptions"
       },
@@ -95,15 +86,6 @@
       {
         "kind" : "text",
         "text" : " -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-        "text" : "PackageManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -162,7 +144,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target",
@@ -183,16 +165,6 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-              "text" : "PackageManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphOptions",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV18SymbolGraphOptionsV",
@@ -209,16 +181,6 @@
             {
               "kind" : "text",
               "text" : " -> "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-              "text" : "PackageManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/SymbolGraphResult",
@@ -516,7 +478,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -537,15 +499,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV18SymbolGraphOptionsV",
       "text" : "SymbolGraphOptions"
     },
@@ -560,15 +513,6 @@
     {
       "kind" : "text",
       "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

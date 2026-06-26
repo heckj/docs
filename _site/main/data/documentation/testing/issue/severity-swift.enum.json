@@ -173,14 +173,6 @@
   ],
   "topicSections" : [
     {
-      "anchor" : "Operators",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/==(_:_:)"
-      ],
-      "title" : "Operators"
-    },
-    {
       "anchor" : "Enumeration-Cases",
       "generated" : true,
       "identifiers" : [
@@ -190,29 +182,12 @@
       "title" : "Enumeration Cases"
     },
     {
-      "anchor" : "Instance-Properties",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/hashValue"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
-      "anchor" : "Instance-Methods",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/hash(into:)"
-      ],
-      "title" : "Instance Methods"
-    },
-    {
       "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/Comparable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/CustomStringConvertible-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/Decodable-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/Encodable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/Equatable-Implementations"
       ],
       "title" : "Default Implementations"
@@ -339,88 +314,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/issue\/severity-swift.enum"
 },
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/==(_:_:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "=="
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-      "text" : "Severity"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-      "text" : "Severity"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/==(_:_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "==(_:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/==(_:_:)"
-},
 "doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/Comparable-Implementations": {
   "abstract" : [
 
@@ -453,17 +346,6 @@
   "title" : "Decodable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/decodable-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/Encodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/Encodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Encodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/encodable-implementations"
 },
 "doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/Equatable-Implementations": {
   "abstract" : [
@@ -503,94 +385,6 @@
   "title" : "Issue.Severity.error",
   "type" : "topic",
   "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/error"
-},
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/hash(into:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "hash"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "into"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6HasherV",
-      "text" : "Hasher"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/hash(into:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "hash(into:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/hash(into:)"
-},
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/hashValue": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "hashValue"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Si",
-      "text" : "Int"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/hashValue",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "hashValue",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/hashvalue"
 },
 "doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/warning": {
   "abstract" : [

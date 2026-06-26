@@ -1,0 +1,91 @@
+{
+  "version": "main",
+  "build_time": "2026-06-26T21:11:39Z",
+  "sources": [
+    {
+      "id": "swift-book",
+      "type": "git",
+      "ref": "main",
+      "commit": "ef25a6f9cc4fcbf935b93c635c94d92a28614e13"
+    },
+    {
+      "id": "swift-stdlib",
+      "type": "archive",
+      "ref": "",
+      "commit": "",
+      "url": "https://download.swift.org/docs/main/swift_docc.zip"
+    },
+    {
+      "id": "swift-migration-guide",
+      "type": "git",
+      "ref": "main",
+      "commit": "949b5e1be201af4346f60b243e7955bd5849f3f6"
+    },
+    {
+      "id": "compiler-diagnostics",
+      "type": "git",
+      "ref": "main",
+      "commit": "828fc86da5c55fb80d4f47eea5f0e78ec9c9111a"
+    },
+    {
+      "id": "swiftpm",
+      "type": "git",
+      "ref": "release/6.3",
+      "commit": "5f6969f5b083b4415632114d4897c6f820761a7f"
+    },
+    {
+      "id": "swift-testing",
+      "type": "git",
+      "ref": "release/6.3",
+      "commit": "48d727cc1cf4eda667c858c501495f1018f69d21"
+    },
+    {
+      "id": "docc-documentation",
+      "type": "git",
+      "ref": "main",
+      "commit": "c9321a3ab6ee1441ef4a3317127ec3f98565426c"
+    },
+    {
+      "id": "embedded-swift",
+      "type": "git",
+      "ref": "main",
+      "commit": "1136eff7db7bb690b41572cd123208fd19171e87"
+    },
+    {
+      "id": "swift-wasm",
+      "type": "git",
+      "ref": "main",
+      "commit": "d3d2ee74c02e231b159ce714844df51a34780ae7"
+    },
+    {
+      "id": "server-guides",
+      "type": "local",
+      "ref": "build-docs-prototype",
+      "commit": "366f8f6c609b9913b8bdec90960999af76789f4b"
+    },
+    {
+      "id": "swift-android",
+      "type": "git",
+      "ref": "main",
+      "commit": "2fb71ee6961292a57edebb1553fde84600750ea4"
+    },
+    {
+      "id": "swift-server-todos-tutorial",
+      "type": "git",
+      "ref": "main",
+      "commit": "01b29a7dc2aac2f4f6539eeea63556ecdb441548"
+    },
+    {
+      "id": "vscode-swift",
+      "type": "git",
+      "ref": "main",
+      "commit": "b0bbb95ad8b1cea572094821713efc2cacc8d04f"
+    },
+    {
+      "id": "swiftly",
+      "type": "git",
+      "ref": "main",
+      "commit": "d0795a223706ab274c0f361be38a5cef14c8d296"
+    }
+  ]
+}

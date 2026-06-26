@@ -114,18 +114,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Swift/Optional/testDescription": {
   "abstract" : [
-    {
-      "text" : "A description of this instance to use when presenting it in a test’s",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "output.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

@@ -121,6 +121,14 @@
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/targets"
       ],
       "title" : "Inspecting an Executable Target"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/Product-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -185,6 +193,17 @@
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/executableproduct"
 },
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct/Product-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct\/Product-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Product Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/executableproduct\/product-implementations"
+},
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/ExecutableProduct/id": {
   "abstract" : [
     {
@@ -208,15 +227,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
-      "text" : "ExecutableProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -253,7 +263,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -335,7 +345,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",

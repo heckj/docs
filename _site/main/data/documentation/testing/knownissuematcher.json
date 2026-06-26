@@ -107,6 +107,22 @@
               "text" : " ("
             },
             {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "issue"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
               "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:7Testing5IssueV",
@@ -363,7 +379,15 @@
     },
     {
       "kind" : "text",
-      "text" : " (any "
+      "text" : " ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -500,7 +524,15 @@
     },
     {
       "kind" : "text",
-      "text" : " (any "
+      "text" : " ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

@@ -30,7 +30,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": [any "
+        "text" : ": ["
       },
       {
         "kind" : "typeIdentifier",
@@ -86,7 +86,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": [any "
+              "text" : ": ["
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SourceModuleTarget",
@@ -412,15 +412,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A0V",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A0V2IDa",
       "text" : "ID"
     }
@@ -488,7 +479,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",

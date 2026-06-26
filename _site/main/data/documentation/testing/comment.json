@@ -284,17 +284,9 @@
       "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/rawValue-swift.property"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/rawValue"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/RawValue-swift.typealias"
-      ],
-      "title" : "Type Aliases"
     },
     {
       "anchor" : "Default-Implementations",
@@ -305,7 +297,6 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/ExpressibleByStringInterpolation-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/ExpressibleByStringLiteral-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/ExpressibleByUnicodeScalarLiteral-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/RawRepresentable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/SuiteTrait-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/Trait-Implementations"
@@ -503,17 +494,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/comment\/expressiblebystringliteral-implementations"
 },
-"doc://org.swift.testing/documentation/Testing/Comment/ExpressibleByUnicodeScalarLiteral-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/ExpressibleByUnicodeScalarLiteral-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/comment\/expressiblebyunicodescalarliteral-implementations"
-},
 "doc://org.swift.testing/documentation/Testing/Comment/RawRepresentable-Implementations": {
   "abstract" : [
 
@@ -524,37 +504,6 @@
   "title" : "RawRepresentable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/comment\/rawrepresentable-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/Comment/RawValue-swift.typealias": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RawValue"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/RawValue-swift.typealias",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RawValue"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Comment.RawValue",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/comment\/rawvalue-swift.typealias"
 },
 "doc://org.swift.testing/documentation/Testing/Comment/SuiteTrait-Implementations": {
   "abstract" : [
@@ -616,7 +565,7 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/comment\/init(rawvalue:)"
 },
-"doc://org.swift.testing/documentation/Testing/Comment/rawValue-swift.property": {
+"doc://org.swift.testing/documentation/Testing/Comment/rawValue": {
   "abstract" : [
     {
       "text" : "The single comment string that this comment contains.",
@@ -646,12 +595,12 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/rawValue-swift.property",
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/rawValue",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "rawValue",
   "type" : "topic",
-  "url" : "\/documentation\/testing\/comment\/rawvalue-swift.property"
+  "url" : "\/documentation\/testing\/comment\/rawvalue"
 },
 "doc://org.swift.testing/documentation/Testing/ConditionTrait": {
   "abstract" : [

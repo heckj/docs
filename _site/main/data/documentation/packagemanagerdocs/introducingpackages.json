@@ -77,9 +77,8 @@
               "type" : "text"
             },
             {
-              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/product",
-              "isActive" : true,
-              "type" : "reference"
+              "code" : "Products",
+              "type" : "codeVoice"
             },
             {
               "text" : ", a list of what the package produces.",
@@ -147,9 +146,8 @@
               "type" : "text"
             },
             {
-              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/package\/dependency",
-              "isActive" : true,
-              "type" : "reference"
+              "code" : "Dependencies",
+              "type" : "codeVoice"
             },
             {
               "text" : ", that provide products from other Swift packages.",
@@ -173,9 +171,8 @@
               "type" : "text"
             },
             {
-              "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/target",
-              "isActive" : true,
-              "type" : "reference"
+              "code" : "Targets",
+              "type" : "codeVoice"
             },
             {
               "text" : ", the basic building block of a Swift package.",
@@ -494,6 +491,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",
@@ -566,42 +569,6 @@
   ],
   "type" : "link",
   "url" : "https:\/\/developer.apple.com\/documentation\/packagedescription"
-},
-"https://docs.swift.org/swiftpm/documentation/packagedescription/package/dependency": {
-  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/package\/dependency",
-  "title" : "Dependencies",
-  "titleInlineContent" : [
-    {
-      "text" : "Dependencies",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/package\/dependency"
-},
-"https://docs.swift.org/swiftpm/documentation/packagedescription/product": {
-  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/product",
-  "title" : "Products",
-  "titleInlineContent" : [
-    {
-      "text" : "Products",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/product"
-},
-"https://docs.swift.org/swiftpm/documentation/packagedescription/target": {
-  "identifier" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/target",
-  "title" : "Targets",
-  "titleInlineContent" : [
-    {
-      "text" : "Targets",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/docs.swift.org\/swiftpm\/documentation\/packagedescription\/target"
 }
 }
 }

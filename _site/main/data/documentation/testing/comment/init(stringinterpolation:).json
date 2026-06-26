@@ -48,15 +48,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7Testing7CommentV",
-        "text" : "Comment"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing7CommentV19StringInterpolationV",
         "text" : "StringInterpolation"
       },
       {
@@ -124,17 +116,8 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7Testing7CommentV",
-              "text" : "Comment"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing7CommentV19StringInterpolationV",
               "text" : "StringInterpolation"
             },
             {
@@ -240,15 +223,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing7CommentV",
-      "text" : "Comment"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV19StringInterpolationV",
       "text" : "StringInterpolation"
     },
     {

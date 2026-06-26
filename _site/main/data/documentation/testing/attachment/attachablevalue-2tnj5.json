@@ -72,6 +72,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
         "text" : "AttachableValue"
       }
     ],
@@ -126,6 +127,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
               "text" : "AttachableValue"
             },
             {
@@ -282,6 +284,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
       "text" : "AttachableValue"
     }
   ],

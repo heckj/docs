@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "The user-provided comments for this trait.",
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "Trait.comments",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
       "type" : "text"
     }
   ],
@@ -129,26 +137,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The default value of this property is an empty array.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -223,10 +211,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Comment/comments": {
   "abstract" : [
-    {
-      "text" : "The user-provided comments for this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

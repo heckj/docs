@@ -47,11 +47,11 @@
       },
       {
         "kind" : "attribute",
-        "text" : "@autoclosure "
+        "text" : "@autoclosure"
       },
       {
         "kind" : "text",
-        "text" : "() -> "
+        "text" : " () -> "
       },
       {
         "kind" : "typeIdentifier",
@@ -190,11 +190,11 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@autoclosure "
+              "text" : "@autoclosure"
             },
             {
               "kind" : "text",
-              "text" : "() -> "
+              "text" : " () -> "
             },
             {
               "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment",
@@ -287,7 +287,6 @@
     {
       "kind" : "mentions",
       "mentions" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/describing-values",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/testing-for-errors-in-swift-code",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/MigratingFromXCTest"
       ]
@@ -509,20 +508,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/sourcelocation"
 },
-"doc://org.swift.testing/documentation/Testing/describing-values": {
-  "abstract" : [
-    {
-      "text" : "Add custom descriptions and mirrors to values you use in your tests.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/describing-values",
-  "kind" : "article",
-  "role" : "article",
-  "title" : "Describing and reflecting values",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/describing-values"
-},
 "doc://org.swift.testing/documentation/Testing/expect(_:_:sourceLocation:)": {
   "abstract" : [
     {
@@ -558,11 +543,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -641,11 +626,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -723,6 +708,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1TL_xmfp",
       "text" : "T"
     },
     {
@@ -731,11 +717,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -765,6 +751,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1TL_xmfp",
       "text" : "T"
     }
   ],

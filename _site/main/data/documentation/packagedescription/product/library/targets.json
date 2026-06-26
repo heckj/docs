@@ -316,24 +316,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription7ProductC",
-      "text" : "Product"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription7ProductC7LibraryC",
-      "text" : "Library"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription7ProductC7LibraryC0D4TypeO",
       "text" : "LibraryType"
     },

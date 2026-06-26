@@ -7776,7 +7776,7 @@
               "type" : "text"
             },
             {
-              "code" : "possibleNumber",
+              "code" : "Int(possibleNumber)",
               "type" : "codeVoice"
             },
             {

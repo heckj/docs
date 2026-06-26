@@ -118,6 +118,7 @@
     {
       "identifiers" : [
         "doc:\/\/org.swift.swiftpm.packageplugin\/s8CopyableP",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/s9EscapableP",
         "doc:\/\/org.swift.swiftpm.packageplugin\/ST"
       ],
       "kind" : "relationships",
@@ -373,6 +374,11 @@
 "doc://org.swift.swiftpm.packageplugin/s8CopyableP": {
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/s8CopyableP",
   "title" : "Swift.Copyable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packageplugin/s9EscapableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/s9EscapableP",
+  "title" : "Swift.Escapable",
   "type" : "unresolvable"
 }
 }

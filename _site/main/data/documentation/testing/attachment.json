@@ -506,6 +506,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
       "text" : "AttachableValue"
     }
   ],
@@ -574,6 +575,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVA2A17AttachableWrapperRzRi_zrlE0C5Valuexmfp",
       "text" : "AttachableValue"
     },
     {
@@ -740,6 +742,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentV_5named2as14sourceLocationACyxGqd___SSSgAA21AttachableImageFormatVSgAA06SourceF0VtcAA01_gH7WrapperCyqd__GRbzAA0gK0RzAA0g2AsH0Rd__lufc1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -871,6 +874,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
       "text" : "AttachableValue"
     },
     {
@@ -1030,6 +1034,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentV6record_5named2as14sourceLocationyqd___SSSgAA21AttachableImageFormatVSgAA06SourceG0VtAA01_hI7WrapperCyqd__GRbzAA0hL0RzAA0h2AsI0Rd__lFZ1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -1169,6 +1174,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
       "text" : "AttachableValue"
     },
     {
@@ -1287,24 +1293,11 @@
     },
     {
       "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing10AttachmentV",
-      "text" : "Attachment"
+      "text" : " `Self`"
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "AttachableValue"
-    },
-    {
-      "kind" : "text",
-      "text" : ">, "
+      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -1431,6 +1424,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15withUnsafeBytesyqd__qd__SWKXEKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -1447,6 +1441,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15withUnsafeBytesyqd__qd__SWKXEKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],

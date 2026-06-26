@@ -78,12 +78,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Ss",
-        "text" : "Substring"
+        "text" : "<`Self`"
       },
       {
         "kind" : "text",
@@ -108,6 +103,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Ss7TestingE15withUnsafeBytes3for_xAA10AttachmentVySsG_xSWKXEtKlF1RL_xmfp",
         "text" : "R"
       },
       {
@@ -124,6 +120,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Ss7TestingE15withUnsafeBytes3for_xAA10AttachmentVySsG_xSWKXEtKlF1RL_xmfp",
         "text" : "R"
       }
     ],
@@ -219,12 +216,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Ss",
-              "text" : "Substring"
+              "text" : "<`Self`"
             },
             {
               "kind" : "text",
@@ -265,6 +257,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Ss7TestingE15withUnsafeBytes3for_xAA10AttachmentVySsG_xSWKXEtKlF1RL_xmfp",
               "text" : "R"
             },
             {
@@ -281,6 +274,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Ss7TestingE15withUnsafeBytes3for_xAA10AttachmentVySsG_xSWKXEtKlF1RL_xmfp",
               "text" : "R"
             }
           ]
@@ -462,12 +456,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Ss",
-      "text" : "Substring"
+      "text" : "<`Self`"
     },
     {
       "kind" : "text",
@@ -492,6 +481,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Ss7TestingE15withUnsafeBytes3for_xAA10AttachmentVySsG_xSWKXEtKlF1RL_xmfp",
       "text" : "R"
     },
     {
@@ -508,6 +498,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Ss7TestingE15withUnsafeBytes3for_xAA10AttachmentVySsG_xSWKXEtKlF1RL_xmfp",
       "text" : "R"
     }
   ],

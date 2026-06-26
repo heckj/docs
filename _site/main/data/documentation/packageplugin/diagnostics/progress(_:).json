@@ -310,15 +310,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin11DiagnosticsV",
-      "text" : "Diagnostics"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin11DiagnosticsV8SeverityO",
       "text" : "Severity"
     },

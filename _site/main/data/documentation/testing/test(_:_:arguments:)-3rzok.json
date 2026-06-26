@@ -59,7 +59,15 @@
       },
       {
         "kind" : "text",
-        "text" : "?, any "
+        "text" : "?, "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -89,6 +97,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing2C1L_xmfp",
         "text" : "C1"
       },
       {
@@ -97,6 +106,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing2C2L_q_mfp",
         "text" : "C2"
       },
       {
@@ -226,7 +236,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TestTrait",
@@ -265,6 +283,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing2C1L_xmfp",
               "text" : "C1"
             },
             {
@@ -273,6 +292,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing2C2L_q_mfp",
               "text" : "C2"
             },
             {
@@ -776,7 +796,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -806,6 +834,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C1L_xmfp",
       "text" : "C1"
     },
     {
@@ -814,6 +843,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C2L_q_mfp",
       "text" : "C2"
     },
     {
@@ -867,7 +897,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -888,6 +926,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1CL_xmfp",
       "text" : "C"
     },
     {
@@ -949,7 +988,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -970,6 +1017,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C1L_xmfp",
       "text" : "C1"
     },
     {
@@ -978,6 +1026,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C2L_q_mfp",
       "text" : "C2"
     },
     {

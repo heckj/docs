@@ -54,6 +54,22 @@
       },
       {
         "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "alignment"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Alignment"
+      },
+      {
+        "kind" : "text",
         "text" : ")"
       }
     ],
@@ -131,6 +147,26 @@
             },
             {
               "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "alignment"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Alignment"
+            },
+            {
+              "kind" : "text",
+              "text" : " = leading"
+            },
+            {
+              "kind" : "text",
               "text" : ")"
             },
             {
@@ -205,6 +241,107 @@
             }
           ],
           "name" : "size"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The alignment of this column’s content.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "(optional)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "strong"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "items" : [
+                {
+                  "definition" : {
+                    "content" : [
+                      {
+                        "inlineContent" : [
+                          {
+                            "text" : "Align to the leading edge.",
+                            "type" : "text"
+                          }
+                        ],
+                        "type" : "paragraph"
+                      }
+                    ]
+                  },
+                  "term" : {
+                    "inlineContent" : [
+                      {
+                        "code" : "leading",
+                        "type" : "codeVoice"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "definition" : {
+                    "content" : [
+                      {
+                        "inlineContent" : [
+                          {
+                            "text" : "Align to the center.",
+                            "type" : "text"
+                          }
+                        ],
+                        "type" : "paragraph"
+                      }
+                    ]
+                  },
+                  "term" : {
+                    "inlineContent" : [
+                      {
+                        "code" : "center",
+                        "type" : "codeVoice"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "definition" : {
+                    "content" : [
+                      {
+                        "inlineContent" : [
+                          {
+                            "text" : "Align to the trailing edge.",
+                            "type" : "text"
+                          }
+                        ],
+                        "type" : "paragraph"
+                      }
+                    ]
+                  },
+                  "term" : {
+                    "inlineContent" : [
+                      {
+                        "code" : "trailing",
+                        "type" : "codeVoice"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "type" : "termList"
+            }
+          ],
+          "name" : "alignment"
         }
       ]
     },
@@ -246,9 +383,92 @@
             {
               "text" : " directive.",
               "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "code" : "size",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to span multiple columns and ",
+              "type" : "text"
+            },
+            {
+              "code" : "alignment",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to control content positioning.",
+              "type" : "text"
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Row {",
+            "    @Column {",
+            "        Default (leading) alignment",
+            "    }",
+            "",
+            "    @Column(alignment: center) {",
+            "        Centered content",
+            "    }",
+            "",
+            "    @Column(size: 2, alignment: trailing) {",
+            "        Trailing alignment; twice as wide",
+            "    }",
+            "}"
+          ],
+          "syntax" : "md",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Before Swift-DocC 6.4, the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "alignment",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " parameter wasn’t supported for ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "@Column",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Earlier Versions",
+          "style" : "note",
+          "type" : "aside"
         }
       ],
       "kind" : "content"
@@ -285,6 +505,12 @@
   ],
   "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "DocC"
+    }
+  ],
   "role" : "collection",
   "title" : "DocC",
   "type" : "topic",
@@ -329,6 +555,22 @@
     {
       "kind" : "typeIdentifier",
       "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "alignment"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Alignment"
     },
     {
       "kind" : "text",

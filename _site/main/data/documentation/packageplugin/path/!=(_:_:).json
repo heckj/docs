@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:SQsE2neoiySbx_xtFZ::SYNTHESIZED::s:13PackagePlugin4PathV",
+    "externalID" : "s:SQsRi_zRi0_zrlE2neoiySbx_xtFZ::SYNTHESIZED::s:13PackagePlugin4PathV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -59,12 +59,28 @@
         "text" : "("
       },
       {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "text" : "Self"
       },
       {
         "kind" : "text",
         "text" : ", "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -141,6 +157,14 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
               "text" : "Self"
             },
@@ -155,6 +179,14 @@
             {
               "kind" : "text",
               "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -279,12 +311,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

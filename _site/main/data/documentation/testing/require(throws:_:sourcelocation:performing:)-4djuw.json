@@ -56,6 +56,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing1EL_xmfp",
         "text" : "E"
       },
       {
@@ -64,11 +65,11 @@
       },
       {
         "kind" : "attribute",
-        "text" : "@autoclosure "
+        "text" : "@autoclosure"
       },
       {
         "kind" : "text",
-        "text" : "() -> "
+        "text" : " () -> "
       },
       {
         "kind" : "typeIdentifier",
@@ -122,6 +123,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing1RL_q_mfp",
         "text" : "R"
       },
       {
@@ -130,6 +132,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing1EL_xmfp",
         "text" : "E"
       }
     ],
@@ -242,6 +245,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing1EL_xmfp",
               "text" : "E"
             },
             {
@@ -266,11 +270,11 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@autoclosure "
+              "text" : "@autoclosure"
             },
             {
               "kind" : "text",
-              "text" : "() -> "
+              "text" : " () -> "
             },
             {
               "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment",
@@ -334,6 +338,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing1RL_q_mfp",
               "text" : "R"
             },
             {
@@ -342,6 +347,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing1EL_xmfp",
               "text" : "E"
             },
             {
@@ -907,11 +913,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -965,6 +971,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1RL_xmfp",
       "text" : "R"
     },
     {
@@ -977,7 +984,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1011,7 +1026,15 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> (any "
+      "text" : ") -> ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1080,6 +1103,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     },
     {
@@ -1088,11 +1112,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1146,6 +1170,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1RL_q_mfp",
       "text" : "R"
     },
     {
@@ -1154,6 +1179,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     },
     {
@@ -1218,6 +1244,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     },
     {
@@ -1226,11 +1253,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1284,6 +1311,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1RL_q_mfp",
       "text" : "R"
     },
     {
@@ -1292,6 +1320,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     },
     {
@@ -1349,11 +1378,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1407,6 +1436,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1RL_xmfp",
       "text" : "R"
     },
     {
@@ -1419,7 +1449,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1453,7 +1491,15 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> any "
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1515,6 +1561,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     },
     {
@@ -1523,11 +1570,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1581,6 +1628,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1RL_q_mfp",
       "text" : "R"
     },
     {
@@ -1589,6 +1637,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     }
   ],
@@ -1657,6 +1706,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     },
     {
@@ -1665,11 +1715,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1723,6 +1773,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1RL_q_mfp",
       "text" : "R"
     },
     {
@@ -1731,6 +1782,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1EL_xmfp",
       "text" : "E"
     }
   ],

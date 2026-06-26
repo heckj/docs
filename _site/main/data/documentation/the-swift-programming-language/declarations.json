@@ -18474,7 +18474,7 @@
               "type" : "text"
             },
             {
-              "text" : "or a computed property that’s both readable and writeable",
+              "text" : "or a computed property that’s both readable and writable",
               "type" : "text"
             },
             {

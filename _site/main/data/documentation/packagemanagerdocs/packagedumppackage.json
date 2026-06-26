@@ -2438,6 +2438,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",

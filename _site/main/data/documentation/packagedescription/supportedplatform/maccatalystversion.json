@@ -302,15 +302,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV18MacCatalystVersionV",
       "text" : "MacCatalystVersion"
     }
@@ -353,15 +344,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -410,15 +392,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV18MacCatalystVersionV",
       "text" : "MacCatalystVersion"
     }
@@ -461,15 +434,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -518,15 +482,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV18MacCatalystVersionV",
       "text" : "MacCatalystVersion"
     }
@@ -572,15 +527,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV18MacCatalystVersionV",
       "text" : "MacCatalystVersion"
     }
@@ -623,15 +569,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

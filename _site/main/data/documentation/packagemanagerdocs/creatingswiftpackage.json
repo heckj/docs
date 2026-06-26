@@ -475,63 +475,6 @@
           "type" : "unorderedList"
         },
         {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A ",
-                  "type" : "text"
-                },
-                {
-                  "code" : ".testTarget",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " cannot depend on another ",
-                  "type" : "text"
-                },
-                {
-                  "code" : ".testTarget",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ".  To work around this, create a non-test target",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "for the test target to depend on.  A runtime error (sample below) will occur if the “test only” target is added as a",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "dependency on non-test targets.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            },
-            {
-              "code" : [
-                "dyld[67034]: Library not loaded: @rpath\/libTesting.dylib",
-                "Referenced from: <30F1D85A-75C7-358C-B169-96E34550501C> \/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/swift-package",
-                "Reason: tried: '\/usr\/lib\/swift\/libTesting.dylib' (no such file, not in dyld cache), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/usr\/lib\/swift\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/usr\/lib\/swift\/libTesting.dylib' (no such file, not in dyld cache), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/usr\/lib\/swift\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/git\/swiftlang\/swift-package-manager-3\/.build\/out\/Products\/Debug\/PackageFrameworks\/libTesting.dylib' (no such file), '\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Users\/jappleseed\/Library\/Developer\/Toolchains\/swift-DEVELOPMENT-SNAPSHOT-2026-04-01-a.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file), '\/System\/Volumes\/Preboot\/Cryptexes\/OS\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift-6.2\/macosx\/libTesting.dylib' (no such file)"
-              ],
-              "syntax" : null,
-              "type" : "codeListing"
-            }
-          ],
-          "name" : "Note",
-          "style" : "note",
-          "type" : "aside"
-        },
-        {
           "inlineContent" : [
             {
               "text" : "The sample macro, ",
@@ -604,6 +547,7 @@
       "anchor" : "Guides",
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftBuildPreview",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SettingSwiftToolsVersion",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ResolvingPackageVersions",
@@ -612,7 +556,6 @@
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftVersionSpecificPackaging",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/BundlingResources",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleasingPublishingAPackage",
-        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ContinuousIntegration",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/Plugins",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ModuleAliasing",
@@ -667,6 +610,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",
@@ -727,20 +676,6 @@
   "title" : "Creating C language targets",
   "type" : "topic",
   "url" : "\/documentation\/packagemanagerdocs\/creatingclanguagetargets"
-},
-"doc://PackageManagerDocs/documentation/PackageManagerDocs/GeneratingSBOMs": {
-  "abstract" : [
-    {
-      "text" : "Create an inventory of components and dependencies using SBOM documents.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
-  "kind" : "article",
-  "role" : "article",
-  "title" : "Generating Software Bill of Materials (SBOM)",
-  "type" : "topic",
-  "url" : "\/documentation\/packagemanagerdocs\/generatingsboms"
 },
 "doc://PackageManagerDocs/documentation/PackageManagerDocs/ModuleAliasing": {
   "abstract" : [
@@ -865,6 +800,20 @@
   "title" : "swift build",
   "type" : "topic",
   "url" : "\/documentation\/packagemanagerdocs\/swiftbuild"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftBuildPreview": {
+  "abstract" : [
+    {
+      "text" : "Understand, use, and preview the next-generation build system for Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftBuildPreview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "[6.3] Preview the Swift Build System Integration",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/swiftbuildpreview"
 },
 "doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftTest": {
   "abstract" : [

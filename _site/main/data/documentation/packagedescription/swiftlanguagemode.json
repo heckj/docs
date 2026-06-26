@@ -82,7 +82,8 @@
     {
       "identifiers" : [
         "doc:\/\/org.swift.swiftpm.packagedescription\/s8CopyableP",
-        "doc:\/\/org.swift.swiftpm.packagedescription\/s23CustomStringConvertibleP"
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s23CustomStringConvertibleP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s9EscapableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -686,6 +687,11 @@
 "doc://org.swift.swiftpm.packagedescription/s8CopyableP": {
   "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s8CopyableP",
   "title" : "Swift.Copyable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s9EscapableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s9EscapableP",
+  "title" : "Swift.Escapable",
   "type" : "unresolvable"
 }
 }

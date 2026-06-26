@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Collection.endIndex",
+      "code" : "RandomAccessCollection.endIndex",
       "type" : "codeVoice"
     },
     {

@@ -381,7 +381,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -411,6 +419,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C1L_xmfp",
       "text" : "C1"
     },
     {
@@ -419,6 +428,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C2L_q_mfp",
       "text" : "C2"
     },
     {
@@ -472,7 +482,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -493,6 +511,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing1CL_xmfp",
       "text" : "C"
     },
     {
@@ -554,7 +573,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -575,6 +602,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C1L_xmfp",
       "text" : "C1"
     },
     {
@@ -583,6 +611,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing2C2L_q_mfp",
       "text" : "C2"
     },
     {
@@ -670,21 +699,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV4CaseV",
-      "text" : "Case"
+      "text" : ": `Self`"
     },
     {
       "kind" : "text",

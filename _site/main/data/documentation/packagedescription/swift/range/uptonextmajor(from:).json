@@ -115,6 +115,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sn18PackageDescriptionE5Boundxmfp",
         "text" : "Bound"
       },
       {
@@ -207,6 +208,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sn18PackageDescriptionE5Boundxmfp",
               "text" : "Bound"
             },
             {
@@ -439,6 +441,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sn18PackageDescriptionE5Boundxmfp",
       "text" : "Bound"
     },
     {

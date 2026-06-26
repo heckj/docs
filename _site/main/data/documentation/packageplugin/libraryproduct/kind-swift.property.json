@@ -39,15 +39,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-        "text" : "LibraryProduct"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV4KindO",
         "text" : "Kind"
       }
@@ -88,16 +79,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-              "text" : "LibraryProduct"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/Kind-swift.enum",
@@ -254,15 +235,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-      "text" : "LibraryProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
       "text" : "ID"
     }
@@ -297,15 +269,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-      "text" : "LibraryProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -387,7 +350,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",

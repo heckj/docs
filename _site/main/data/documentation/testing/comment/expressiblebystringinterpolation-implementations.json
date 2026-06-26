@@ -126,15 +126,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing7CommentV",
-      "text" : "Comment"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing7CommentV19StringInterpolationV",
       "text" : "StringInterpolation"
     },
     {

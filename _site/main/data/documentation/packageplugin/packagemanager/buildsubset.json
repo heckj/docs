@@ -525,15 +525,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildSubsetO",
       "text" : "BuildSubset"
     },
@@ -551,15 +542,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV15BuildParametersV",
       "text" : "BuildParameters"
     },
@@ -574,15 +556,6 @@
     {
       "kind" : "text",
       "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

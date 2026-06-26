@@ -76,7 +76,15 @@
       },
       {
         "kind" : "text",
-        "text" : "(("
+        "text" : "("
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " ("
       },
       {
         "kind" : "typeIdentifier",
@@ -176,7 +184,11 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@escaping "
+              "text" : "@escaping"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "attribute",
@@ -680,15 +692,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:7Testing5IssueV4KindO",
       "text" : "Kind"
     }
@@ -764,21 +767,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV4CaseV",
-      "text" : "Case"
+      "text" : ": `Self`"
     },
     {
       "kind" : "text",
@@ -822,12 +811,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
+      "text" : ": `Self`"
     },
     {
       "kind" : "text",
@@ -945,7 +929,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(("
+      "text" : "("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",
@@ -1039,7 +1031,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(("
+      "text" : "("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",

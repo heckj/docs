@@ -379,24 +379,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildResultV",
-      "text" : "BuildResult"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildResultV13BuiltArtifactV",
       "text" : "BuiltArtifact"
     },
@@ -546,15 +528,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildSubsetO",
       "text" : "BuildSubset"
     },
@@ -572,15 +545,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV15BuildParametersV",
       "text" : "BuildParameters"
     },
@@ -595,15 +559,6 @@
     {
       "kind" : "text",
       "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

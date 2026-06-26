@@ -902,7 +902,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Swift SDK’s and toolset.json files aren’t working for the most part.",
+                      "text" : "Swift SDK’s and toolset.json files aren’t working for the most part. The webassembly SDK is ready to use.",
                       "type" : "text"
                     }
                   ],
@@ -1362,6 +1362,30 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Guides",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingSwiftPackage",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SettingSwiftToolsVersion",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ResolvingPackageVersions",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingCLanguageTargets",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingBuildConfigurations",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftVersionSpecificPackaging",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/BundlingResources",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleasingPublishingAPackage",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ContinuousIntegration",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/Plugins",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ModuleAliasing",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingSwiftPackageRegistry",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageCollections",
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingShellCompletion"
+      ],
+      "title" : "Guides"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -1421,10 +1445,226 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",
   "url" : "\/documentation\/packagemanagerdocs"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/AddingDependencies": {
+  "abstract" : [
+    {
+      "text" : "Use other Swift packages, system libraries, or binary dependencies in your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/AddingDependencies",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Adding dependencies to a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/addingdependencies"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/BundlingResources": {
+  "abstract" : [
+    {
+      "text" : "Add resource files to your Swift package and access them in your code.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/BundlingResources",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Bundling resources with a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/bundlingresources"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ContinuousIntegration": {
+  "abstract" : [
+    {
+      "text" : "Build Swift packages with an existing continuous integration setup and prepare apps that consume package dependencies within an existing CI pipeline.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ContinuousIntegration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Continuous Integration Workflows",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/continuousintegration"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/CreatingCLanguageTargets": {
+  "abstract" : [
+    {
+      "text" : "Include C language code as a target in your Swift package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingCLanguageTargets",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Creating C language targets",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/creatingclanguagetargets"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/CreatingSwiftPackage": {
+  "abstract" : [
+    {
+      "text" : "Bundle executable or shareable code into a standalone Swift package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingSwiftPackage",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Creating a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/creatingswiftpackage"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ModuleAliasing": {
+  "abstract" : [
+    {
+      "text" : "Create aliased names for modules to avoid collisions between targets in your package or its dependencies.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ModuleAliasing",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Module Aliasing",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/modulealiasing"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/PackageCollections": {
+  "abstract" : [
+    {
+      "text" : "Learn to create, publish and use Swift package collections.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageCollections",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Package Collections",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/packagecollections"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/Plugins": {
+  "abstract" : [
+    {
+      "text" : "Extend package manager functionality with build or command plugins.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/Plugins",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Plugins",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/plugins"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ReleasingPublishingAPackage": {
+  "abstract" : [
+    {
+      "text" : "Share a specific version of your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleasingPublishingAPackage",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Releasing and publishing a Swift package",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/releasingpublishingapackage"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/ResolvingPackageVersions": {
+  "abstract" : [
+    {
+      "text" : "Coordinate and constrain dependencies for your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ResolvingPackageVersions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Resolving and updating dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/resolvingpackageversions"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SettingSwiftToolsVersion": {
+  "abstract" : [
+    {
+      "text" : "Define the minimum version of the swift compiler required for your package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SettingSwiftToolsVersion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Setting the Swift tools version",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/settingswifttoolsversion"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftVersionSpecificPackaging": {
+  "abstract" : [
+    {
+      "text" : "Provide a package manifest for a specific version of Swift.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftVersionSpecificPackaging",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Packaging based on the version of Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/swiftversionspecificpackaging"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/UsingBuildConfigurations": {
+  "abstract" : [
+    {
+      "text" : "Control the build configuration for your app or package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingBuildConfigurations",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Using build configurations",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/usingbuildconfigurations"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/UsingShellCompletion": {
+  "abstract" : [
+    {
+      "text" : "Customize your shell to automatically complete swift package commands.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingShellCompletion",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Using shell completion scripts",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/usingshellcompletion"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/UsingSwiftPackageRegistry": {
+  "abstract" : [
+    {
+      "text" : "Configure and use a package registry for Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/UsingSwiftPackageRegistry",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Using a package registry",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/usingswiftpackageregistry"
 },
 "https://forums.swift.org/t/evolving-swiftpm-builds-with-swift-build/77596": {
   "identifier" : "https:\/\/forums.swift.org\/t\/evolving-swiftpm-builds-with-swift-build\/77596",

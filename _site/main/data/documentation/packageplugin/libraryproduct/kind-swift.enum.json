@@ -365,15 +365,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-      "text" : "LibraryProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
       "text" : "ID"
     }
@@ -408,15 +399,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-      "text" : "LibraryProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -498,7 +480,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",

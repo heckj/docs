@@ -1,0 +1,144 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/Product-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "PackagePlugin"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Product Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/sourceModules"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/packageplugin\/libraryproduct\/product-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+  "abstract" : [
+    {
+      "text" : "Create plugins that extend the Swift Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PackagePlugin",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/LibraryProduct": {
+  "abstract" : [
+    {
+      "text" : "A library product defined in a package.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LibraryProduct"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LibraryProduct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LibraryProduct",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/libraryproduct"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/LibraryProduct/sourceModules": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sourceModules"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin18SourceModuleTargetP",
+      "text" : "SourceModuleTarget"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/sourceModules",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sourceModules",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/libraryproduct\/sourcemodules"
+}
+}
+}

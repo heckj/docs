@@ -69,7 +69,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": any "
+        "text" : ": "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -180,7 +188,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -539,7 +555,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -639,7 +663,15 @@
     },
     {
       "kind" : "text",
-      "text" : " (any "
+      "text" : " ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -694,10 +726,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing12confirmation_13expectedCount9isolation14sourceLocation_xAA7CommentVSg_SiScA_pSgYiAA06SourceG0VxAA12ConfirmationVYaKYTXEtYaKlF1RL_xmfp",
       "text" : "R"
     },
     {
@@ -722,6 +759,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing12confirmation_13expectedCount9isolation14sourceLocation_xAA7CommentVSg_SiScA_pSgYiAA06SourceG0VxAA12ConfirmationVYaKYTXEtYaKlF1RL_xmfp",
       "text" : "R"
     }
   ],
@@ -809,15 +847,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s8SendableP",
-      "text" : "Sendable"
-    },
-    {
-      "kind" : "text",
-      "text" : " & "
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:ST",
       "text" : "Sequence"
     },
@@ -832,7 +861,16 @@
     },
     {
       "kind" : "text",
-      "text" : ">, "
+      "text" : "> & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -848,7 +886,15 @@
     },
     {
       "kind" : "text",
-      "text" : " (any "
+      "text" : " ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -903,10 +949,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing12confirmation_13expectedCount9isolation14sourceLocation_xAA7CommentVSg_q_ScA_pSgYiAA06SourceG0VxAA12ConfirmationVYaKYTXEtYaKSXR_s8SendableR_STR_Si5BoundSXRt_Si7ElementSTRt_r0_lF1RL_xmfp",
       "text" : "R"
     },
     {
@@ -931,6 +982,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing12confirmation_13expectedCount9isolation14sourceLocation_xAA7CommentVSg_q_ScA_pSgYiAA06SourceG0VxAA12ConfirmationVYaKYTXEtYaKSXR_s8SendableR_STR_Si5BoundSXRt_Si7ElementSTRt_r0_lF1RL_xmfp",
       "text" : "R"
     }
   ],

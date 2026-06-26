@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Additional flags to pass to all linker invocations for the destination platform.",
+      "text" : "Additional flags to pass to all linker invocations.",
       "type" : "text"
     }
   ],
@@ -253,15 +253,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV18BuildConfigurationO",
       "text" : "BuildConfiguration"
     }
@@ -336,15 +327,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV17BuildLogVerbosityO",
       "text" : "BuildLogVerbosity"
     }
@@ -359,7 +341,7 @@
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/BuildParameters/otherCFlags": {
   "abstract" : [
     {
-      "text" : "Additional flags to pass to all C compiler invocations for the destination platform.",
+      "text" : "Additional flags to pass to all C compiler invocations.",
       "type" : "text"
     }
   ],
@@ -400,7 +382,7 @@
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/BuildParameters/otherCxxFlags": {
   "abstract" : [
     {
-      "text" : "Additional flags to pass to all C++ compiler invocations for the destination platform.",
+      "text" : "Additional flags to pass to all C++ compiler invocations.",
       "type" : "text"
     }
   ],
@@ -441,7 +423,7 @@
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/BuildParameters/otherLinkerFlags": {
   "abstract" : [
     {
-      "text" : "Additional flags to pass to all linker invocations for the destination platform.",
+      "text" : "Additional flags to pass to all linker invocations.",
       "type" : "text"
     }
   ],
@@ -482,7 +464,7 @@
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/PackageManager/BuildParameters/otherSwiftcFlags": {
   "abstract" : [
     {
-      "text" : "Additional flags to pass to all Swift compiler invocations for the destination platform.",
+      "text" : "Additional flags to pass to all Swift compiler invocations.",
       "type" : "text"
     }
   ],

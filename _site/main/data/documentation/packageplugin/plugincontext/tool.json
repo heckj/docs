@@ -507,15 +507,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0B7ContextV",
-      "text" : "PluginContext"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0B7ContextV4ToolV",
       "text" : "Tool"
     }

@@ -61,7 +61,7 @@
       },
       {
         "kind" : "text",
-        "text" : " -> [any "
+        "text" : " -> ["
       },
       {
         "kind" : "typeIdentifier",
@@ -141,7 +141,7 @@
             },
             {
               "kind" : "text",
-              "text" : " -> [any "
+              "text" : " -> ["
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product",
@@ -282,7 +282,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -348,7 +348,7 @@
     },
     {
       "kind" : "text",
-      "text" : " -> [any "
+      "text" : " -> ["
     },
     {
       "kind" : "typeIdentifier",
@@ -409,6 +409,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V8products6ofTypeSayxGxm_tAA7ProductRzlF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -417,6 +418,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V8products6ofTypeSayxGxm_tAA7ProductRzlF1TL_xmfp",
       "text" : "T"
     },
     {

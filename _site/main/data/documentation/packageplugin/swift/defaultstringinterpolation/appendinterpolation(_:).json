@@ -239,9 +239,18 @@
       "text" : " "
     },
     {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:s26DefaultStringInterpolationV",
-      "text" : "DefaultStringInterpolation"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS19StringInterpolationa",
+      "text" : "StringInterpolation"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Swift\/DefaultStringInterpolation",

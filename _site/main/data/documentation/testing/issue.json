@@ -416,7 +416,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -506,15 +514,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:7Testing5IssueV4KindO",
       "text" : "Kind"
     }
@@ -556,7 +555,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(any "
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -654,15 +661,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -798,15 +796,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

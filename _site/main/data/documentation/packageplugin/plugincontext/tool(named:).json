@@ -64,15 +64,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0B7ContextV",
-        "text" : "PluginContext"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin0B7ContextV4ToolV",
         "text" : "Tool"
       }
@@ -146,16 +137,6 @@
             {
               "kind" : "text",
               "text" : " -> "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContext",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0B7ContextV",
-              "text" : "PluginContext"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PluginContext\/Tool",
@@ -525,15 +506,6 @@
     {
       "kind" : "text",
       "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0B7ContextV",
-      "text" : "PluginContext"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

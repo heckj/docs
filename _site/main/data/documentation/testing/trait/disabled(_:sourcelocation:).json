@@ -743,7 +743,15 @@
     },
     {
       "kind" : "text",
-      "text" : ", () "
+      "text" : ", "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -856,11 +864,19 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() "
+      "text" : " "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1013,7 +1029,15 @@
     },
     {
       "kind" : "text",
-      "text" : ", () "
+      "text" : ", "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1134,11 +1158,19 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() "
+      "text" : " "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1269,8 +1301,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-      "text" : "TimeLimitTrait"
+      "text" : "Self"
     },
     {
       "kind" : "text",

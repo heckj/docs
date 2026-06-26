@@ -47,15 +47,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin11DiagnosticsV",
-        "text" : "Diagnostics"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin11DiagnosticsV8SeverityO",
         "text" : "Severity"
       },
@@ -167,16 +158,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin11DiagnosticsV",
-              "text" : "Diagnostics"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Diagnostics\/Severity",
@@ -503,15 +484,6 @@
     {
       "kind" : "text",
       "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin11DiagnosticsV",
-      "text" : "Diagnostics"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

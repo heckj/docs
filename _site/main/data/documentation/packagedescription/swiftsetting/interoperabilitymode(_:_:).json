@@ -47,15 +47,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
-        "text" : "SwiftSetting"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV20InteroperabilityModeO",
         "text" : "InteroperabilityMode"
       },
@@ -147,16 +138,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
-              "text" : "SwiftSetting"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/SwiftSetting\/InteroperabilityMode",
@@ -487,15 +468,6 @@
     {
       "kind" : "text",
       "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
-      "text" : "SwiftSetting"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

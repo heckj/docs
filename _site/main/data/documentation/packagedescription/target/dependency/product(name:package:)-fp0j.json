@@ -101,9 +101,6 @@
         "name" : "PackageDescription"
       }
     ],
-    "platforms" : [
-
-    ],
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",

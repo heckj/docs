@@ -40,14 +40,6 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/init(stringLiteral:)"
       ],
       "title" : "Initializers"
-    },
-    {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/StringLiteralType"
-      ],
-      "title" : "Type Aliases"
     }
   ],
   "variants" : [
@@ -111,37 +103,6 @@
   "title" : "Comment",
   "type" : "topic",
   "url" : "\/documentation\/testing\/comment"
-},
-"doc://org.swift.testing/documentation/Testing/Comment/StringLiteralType": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "StringLiteralType"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Comment\/StringLiteralType",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "StringLiteralType"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Comment.StringLiteralType",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/comment\/stringliteraltype"
 },
 "doc://org.swift.testing/documentation/Testing/Comment/init(extendedGraphemeClusterLiteral:)": {
   "abstract" : [

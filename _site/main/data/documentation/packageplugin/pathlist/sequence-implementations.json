@@ -1172,7 +1172,16 @@
     },
     {
       "kind" : "text",
-      "text" : "(("
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation9PredicateV",
+      "text" : "Predicate"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -1189,28 +1198,11 @@
     },
     {
       "kind" : "text",
-      "text" : ") "
+      "text" : ">) "
     },
     {
       "kind" : "keyword",
       "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "rethrows"
     },
     {
       "kind" : "text",
@@ -1827,15 +1819,6 @@
     {
       "kind" : "text",
       "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin8PathListV",
-      "text" : "PathList"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

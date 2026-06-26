@@ -384,15 +384,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
       "text" : "Severity"
     }

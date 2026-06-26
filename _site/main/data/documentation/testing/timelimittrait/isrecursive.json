@@ -1,15 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Whether this instance should be applied recursively to child test suites",
+      "text" : "Inherited from ",
       "type" : "text"
     },
     {
-      "text" : " ",
-      "type" : "text"
+      "code" : "SuiteTrait.isRecursive",
+      "type" : "codeVoice"
     },
     {
-      "text" : "and test functions.",
+      "text" : ".",
       "type" : "text"
     }
   ],
@@ -62,6 +62,20 @@
         "deprecated" : false,
         "introducedAt" : "16.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -153,59 +167,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "If the value is ",
-              "type" : "text"
-            },
-            {
-              "code" : "true",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", then the testing library applies this trait",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "recursively to child test suites and test functions. Otherwise, it only",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "applies the trait to the test suite to which you added the trait.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "By default, traits are not recursively applied to children.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -280,18 +241,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/TimeLimitTrait/isRecursive": {
   "abstract" : [
-    {
-      "text" : "Whether this instance should be applied recursively to child test suites",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "and test functions.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

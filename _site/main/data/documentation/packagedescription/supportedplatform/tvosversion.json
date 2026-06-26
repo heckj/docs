@@ -307,15 +307,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV11TVOSVersionV",
       "text" : "TVOSVersion"
     }
@@ -359,15 +350,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -416,15 +398,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV11TVOSVersionV",
       "text" : "TVOSVersion"
     }
@@ -467,15 +440,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -524,15 +488,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV11TVOSVersionV",
       "text" : "TVOSVersion"
     }
@@ -575,15 +530,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -632,15 +578,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV11TVOSVersionV",
       "text" : "TVOSVersion"
     }
@@ -683,15 +620,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -740,15 +668,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV11TVOSVersionV",
       "text" : "TVOSVersion"
     }
@@ -791,15 +710,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -846,15 +756,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

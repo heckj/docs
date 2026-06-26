@@ -656,6 +656,7 @@
       "anchor" : "Guides",
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftBuildPreview",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/CreatingSwiftPackage",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SettingSwiftToolsVersion",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ResolvingPackageVersions",
@@ -664,7 +665,6 @@
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftVersionSpecificPackaging",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/BundlingResources",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ReleasingPublishingAPackage",
-        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ContinuousIntegration",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/Plugins",
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/ModuleAliasing",
@@ -732,6 +732,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",
@@ -834,20 +840,6 @@
   "title" : "Swift package example that uses system library dependency with pkg-config",
   "type" : "topic",
   "url" : "\/documentation\/packagemanagerdocs\/examplesystemlibrarypkgconfig"
-},
-"doc://PackageManagerDocs/documentation/PackageManagerDocs/GeneratingSBOMs": {
-  "abstract" : [
-    {
-      "text" : "Create an inventory of components and dependencies using SBOM documents.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/GeneratingSBOMs",
-  "kind" : "article",
-  "role" : "article",
-  "title" : "Generating Software Bill of Materials (SBOM)",
-  "type" : "topic",
-  "url" : "\/documentation\/packagemanagerdocs\/generatingsboms"
 },
 "doc://PackageManagerDocs/documentation/PackageManagerDocs/ModuleAliasing": {
   "abstract" : [
@@ -1020,6 +1012,20 @@
   "title" : "swift build",
   "type" : "topic",
   "url" : "\/documentation\/packagemanagerdocs\/swiftbuild"
+},
+"doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftBuildPreview": {
+  "abstract" : [
+    {
+      "text" : "Understand, use, and preview the next-generation build system for Package Manager.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/SwiftBuildPreview",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "[6.3] Preview the Swift Build System Integration",
+  "type" : "topic",
+  "url" : "\/documentation\/packagemanagerdocs\/swiftbuildpreview"
 },
 "doc://PackageManagerDocs/documentation/PackageManagerDocs/SwiftRun": {
   "abstract" : [

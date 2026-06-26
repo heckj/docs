@@ -117,6 +117,7 @@
         "doc:\/\/org.swift.swiftpm.packagedescription\/s8CopyableP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s23CustomStringConvertibleP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/SQ",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s9EscapableP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s26ExpressibleByStringLiteralP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s33ExpressibleByUnicodeScalarLiteralP",
@@ -308,12 +309,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -894,6 +911,11 @@
 "doc://org.swift.swiftpm.packagedescription/s8CopyableP": {
   "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s8CopyableP",
   "title" : "Swift.Copyable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s9EscapableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s9EscapableP",
+  "title" : "Swift.Escapable",
   "type" : "unresolvable"
 },
 "https://tools.ietf.org/html/rfc5646": {

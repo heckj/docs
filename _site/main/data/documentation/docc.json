@@ -27,6 +27,12 @@
         ]
       }
     ],
+    "navigatorTitle" : [
+      {
+        "kind" : "text",
+        "text" : "DocC"
+      }
+    ],
     "role" : "collection",
     "roleHeading" : "Tool",
     "symbolKind" : "module",
@@ -170,6 +176,12 @@
   ],
   "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "DocC"
+    }
+  ],
   "role" : "collection",
   "title" : "DocC",
   "type" : "topic",

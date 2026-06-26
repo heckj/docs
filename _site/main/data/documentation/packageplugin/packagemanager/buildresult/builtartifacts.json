@@ -40,24 +40,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-        "text" : "PackageManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildResultV",
-        "text" : "BuildResult"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildResultV13BuiltArtifactV",
         "text" : "BuiltArtifact"
       },
@@ -102,26 +84,6 @@
             {
               "kind" : "text",
               "text" : ": ["
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-              "text" : "PackageManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/BuildResult",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildResultV",
-              "text" : "BuildResult"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/BuildResult\/BuiltArtifact",
@@ -340,24 +302,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV11BuildResultV",
-      "text" : "BuildResult"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

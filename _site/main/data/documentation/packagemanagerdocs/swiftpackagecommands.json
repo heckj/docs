@@ -162,13 +162,6 @@
       "title" : "Configuring Mirrors"
     },
     {
-      "anchor" : "Generating-SBOMs",
-      "identifiers" : [
-        "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageGenerateSBOM"
-      ],
-      "title" : "Generating SBOMs"
-    },
-    {
       "anchor" : "Experimental-commands",
       "identifiers" : [
         "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageExperimentalInstall",
@@ -221,6 +214,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",
@@ -613,20 +612,6 @@
   "title" : "swift package experimental-uninstall",
   "type" : "topic",
   "url" : "\/documentation\/packagemanagerdocs\/packageexperimentaluninstall"
-},
-"doc://PackageManagerDocs/documentation/PackageManagerDocs/PackageGenerateSBOM": {
-  "abstract" : [
-    {
-      "text" : "Generate a Software Bill of Materials (SBOM).",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs\/PackageGenerateSBOM",
-  "kind" : "article",
-  "role" : "article",
-  "title" : "swift.package.generate-sbom",
-  "type" : "topic",
-  "url" : "\/documentation\/packagemanagerdocs\/packagegeneratesbom"
 },
 "doc://PackageManagerDocs/documentation/PackageManagerDocs/PackageInit": {
   "abstract" : [

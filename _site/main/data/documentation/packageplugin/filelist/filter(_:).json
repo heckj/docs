@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:STsE6filterySay7ElementQzGSbACKXEKF::SYNTHESIZED::s:13PackagePlugin8FileListV",
+    "externalID" : "s:ST10FoundationE6filterySay7ElementQzGAA9PredicateVyAD_QPGKF::SYNTHESIZED::s:13PackagePlugin8FileListV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -44,7 +44,16 @@
       },
       {
         "kind" : "text",
-        "text" : "(("
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10Foundation9PredicateV",
+        "text" : "Predicate"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
       },
       {
         "kind" : "typeIdentifier",
@@ -61,28 +70,11 @@
       },
       {
         "kind" : "text",
-        "text" : ") "
+        "text" : ">) "
       },
       {
         "kind" : "keyword",
         "text" : "throws"
-      },
-      {
-        "kind" : "text",
-        "text" : " -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Sb",
-        "text" : "Bool"
-      },
-      {
-        "kind" : "text",
-        "text" : ") "
-      },
-      {
-        "kind" : "keyword",
-        "text" : "rethrows"
       },
       {
         "kind" : "text",
@@ -112,6 +104,50 @@
         "relatedModules" : [
           "Swift"
         ]
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "14.0",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.0",
+        "name" : "watchOS",
+        "unavailable" : false
       }
     ],
     "role" : "symbol",
@@ -156,11 +192,20 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "isIncluded"
+              "text" : "predicate"
             },
             {
               "kind" : "text",
-              "text" : ": ("
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10Foundation9PredicateV",
+              "text" : "Predicate"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
@@ -177,28 +222,11 @@
             },
             {
               "kind" : "text",
-              "text" : ") "
+              "text" : ">) "
             },
             {
               "kind" : "keyword",
               "text" : "throws"
-            },
-            {
-              "kind" : "text",
-              "text" : " -> "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sb",
-              "text" : "Bool"
-            },
-            {
-              "kind" : "text",
-              "text" : ") "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "rethrows"
             },
             {
               "kind" : "text",
@@ -316,7 +344,16 @@
     },
     {
       "kind" : "text",
-      "text" : "(("
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation9PredicateV",
+      "text" : "Predicate"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -333,28 +370,11 @@
     },
     {
       "kind" : "text",
-      "text" : ") "
+      "text" : ">) "
     },
     {
       "kind" : "keyword",
       "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "rethrows"
     },
     {
       "kind" : "text",

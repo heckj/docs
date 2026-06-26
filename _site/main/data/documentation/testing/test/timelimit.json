@@ -64,6 +64,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "macOS",
         "unavailable" : false
@@ -399,8 +413,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-      "text" : "TimeLimitTrait"
+      "text" : "Self"
     },
     {
       "kind" : "text",

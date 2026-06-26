@@ -499,15 +499,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A0V",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A0V2IDa",
       "text" : "ID"
     }
@@ -578,7 +569,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -644,7 +635,7 @@
     },
     {
       "kind" : "text",
-      "text" : " -> [any "
+      "text" : " -> ["
     },
     {
       "kind" : "typeIdentifier",
@@ -705,6 +696,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V8products6ofTypeSayxGxm_tAA7ProductRzlF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -713,6 +705,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V8products6ofTypeSayxGxm_tAA7ProductRzlF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -746,7 +739,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -787,7 +780,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -853,7 +846,7 @@
     },
     {
       "kind" : "text",
-      "text" : " -> [any "
+      "text" : " -> ["
     },
     {
       "kind" : "typeIdentifier",
@@ -914,6 +907,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V7targets6ofTypeSayxGxm_tAA6TargetRzlF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -922,6 +916,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13PackagePlugin0A0V7targets6ofTypeSayxGxm_tAA6TargetRzlF1TL_xmfp",
       "text" : "T"
     },
     {

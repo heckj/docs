@@ -39,15 +39,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
-        "text" : "ExecutableProduct"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
         "text" : "ID"
       }
@@ -88,16 +79,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/ExecutableProduct",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
-              "text" : "ExecutableProduct"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Product\/ID-swift.typealias",
@@ -219,15 +200,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin17ExecutableProductV",
-      "text" : "ExecutableProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin7ProductP2IDa",
       "text" : "ID"
     }
@@ -261,7 +233,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -343,7 +315,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",

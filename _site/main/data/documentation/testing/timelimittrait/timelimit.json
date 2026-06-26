@@ -35,7 +35,11 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": Swift"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -54,6 +58,20 @@
         "deprecated" : false,
         "introducedAt" : "16.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -122,7 +140,11 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": Swift"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
             },
             {
               "kind" : "typeIdentifier",
@@ -227,7 +249,11 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": Swift"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

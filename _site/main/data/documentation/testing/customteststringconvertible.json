@@ -108,12 +108,6 @@
       "kind" : "declarations"
     },
     {
-      "kind" : "mentions",
-      "mentions" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/describing-values"
-      ]
-    },
-    {
       "content" : [
         {
           "anchor" : "overview",
@@ -391,12 +385,13 @@
       "title" : "Related Documentation"
     },
     {
-      "anchor" : "Value-description-and-reflection",
+      "anchor" : "Retrieving-information-about-checked-expectations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/describing-values"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectation",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExpectationFailedError"
       ],
-      "title" : "Value description and reflection"
+      "title" : "Retrieving information about checked expectations"
     }
   ],
   "topicSections" : [
@@ -526,6 +521,82 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/customteststringconvertible\/testdescription"
 },
+"doc://org.swift.testing/documentation/Testing/Expectation": {
+  "abstract" : [
+    {
+      "text" : "A type describing an expectation that has been evaluated.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Expectation"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Expectation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Expectation",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expectation"
+},
+"doc://org.swift.testing/documentation/Testing/ExpectationFailedError": {
+  "abstract" : [
+    {
+      "text" : "A type describing an error thrown when an expectation fails during",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "evaluation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExpectationFailedError"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExpectationFailedError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExpectationFailedError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExpectationFailedError",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expectationfailederror"
+},
 "doc://org.swift.testing/documentation/Testing/Swift/ClosedRange": {
   "abstract" : [
 
@@ -554,6 +625,22 @@
       },
       {
         "code" : "Comparable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", ",
+        "type" : "text"
+      },
+      {
+        "code" : "Copyable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", and ",
+        "type" : "text"
+      },
+      {
+        "code" : "Escapable",
         "type" : "codeVoice"
       },
       {
@@ -693,6 +780,22 @@
         "type" : "codeVoice"
       },
       {
+        "text" : ", ",
+        "type" : "text"
+      },
+      {
+        "code" : "Copyable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", and ",
+        "type" : "text"
+      },
+      {
+        "code" : "Escapable",
+        "type" : "codeVoice"
+      },
+      {
         "text" : ".",
         "type" : "text"
       }
@@ -754,6 +857,22 @@
       },
       {
         "code" : "Comparable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", ",
+        "type" : "text"
+      },
+      {
+        "code" : "Copyable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", and ",
+        "type" : "text"
+      },
+      {
+        "code" : "Escapable",
         "type" : "codeVoice"
       },
       {
@@ -821,6 +940,22 @@
         "type" : "codeVoice"
       },
       {
+        "text" : ", ",
+        "type" : "text"
+      },
+      {
+        "code" : "Copyable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", and ",
+        "type" : "text"
+      },
+      {
+        "code" : "Escapable",
+        "type" : "codeVoice"
+      },
+      {
         "text" : ".",
         "type" : "text"
       }
@@ -882,6 +1017,22 @@
       },
       {
         "code" : "Comparable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", ",
+        "type" : "text"
+      },
+      {
+        "code" : "Copyable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ", and ",
+        "type" : "text"
+      },
+      {
+        "code" : "Escapable",
         "type" : "codeVoice"
       },
       {
@@ -1029,20 +1180,6 @@
   "title" : "Substring",
   "type" : "topic",
   "url" : "\/documentation\/testing\/swift\/substring"
-},
-"doc://org.swift.testing/documentation/Testing/describing-values": {
-  "abstract" : [
-    {
-      "text" : "Add custom descriptions and mirrors to values you use in your tests.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/describing-values",
-  "kind" : "article",
-  "role" : "article",
-  "title" : "Describing and reflecting values",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/describing-values"
 }
 }
 }

@@ -339,7 +339,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -405,7 +413,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(any "
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -687,7 +703,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(any "
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -754,15 +778,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -838,11 +853,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",

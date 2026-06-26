@@ -55,6 +55,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "macOS",
         "unavailable" : false
@@ -206,14 +220,6 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/timeLimit"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/TestScopeProvider"
-      ],
-      "title" : "Type Aliases"
     },
     {
       "anchor" : "Default-Implementations",
@@ -642,40 +648,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/timelimittrait\/duration"
 },
-"doc://org.swift.testing/documentation/Testing/TimeLimitTrait/TestScopeProvider": {
-  "abstract" : [
-    {
-      "text" : "The type of the test scope provider for this trait.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait\/TestScopeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TimeLimitTrait.TestScopeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/timelimittrait\/testscopeprovider"
-},
 "doc://org.swift.testing/documentation/Testing/TimeLimitTrait/Trait-Implementations": {
   "abstract" : [
 
@@ -689,18 +661,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/TimeLimitTrait/isRecursive": {
   "abstract" : [
-    {
-      "text" : "Whether this instance should be applied recursively to child test suites",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "and test functions.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -754,7 +715,11 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": Swift"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -885,8 +850,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-      "text" : "TimeLimitTrait"
+      "text" : "Self"
     },
     {
       "kind" : "text",

@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Sequence.prefix(_:)",
+      "code" : "Collection.prefix(_:)",
       "type" : "codeVoice"
     },
     {
@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:STsE6prefixys14PrefixSequenceVyxGSiF::SYNTHESIZED::s:13PackagePlugin8FileListV",
+    "externalID" : "s:SlsE6prefixy11SubSequenceQzSiF::SYNTHESIZED::s:13PackagePlugin8FileListV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -57,20 +57,16 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:s14PrefixSequenceV",
-        "text" : "PrefixSequence"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
         "text" : "Self"
       },
       {
         "kind" : "text",
-        "text" : ">"
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sl11SubSequenceQa",
+        "text" : "SubSequence"
       }
     ],
     "modules" : [
@@ -140,20 +136,16 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s14PrefixSequenceV",
-              "text" : "PrefixSequence"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
               "text" : "Self"
             },
             {
               "kind" : "text",
-              "text" : ">"
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sl11SubSequenceQa",
+              "text" : "SubSequence"
             }
           ]
         }
@@ -263,20 +255,16 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s14PrefixSequenceV",
-      "text" : "PrefixSequence"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
-      "text" : ">"
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(_:)",

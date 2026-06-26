@@ -36,8 +36,7 @@
       "anchor" : "Operators",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitStatus\/!=(_:_:)",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitStatus\/==(_:_:)"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitStatus\/!=(_:_:)"
       ],
       "title" : "Operators"
     }
@@ -138,12 +137,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -165,70 +180,6 @@
   "title" : "!=(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/testing\/exitstatus\/!=(_:_:)"
-},
-"doc://org.swift.testing/documentation/Testing/ExitStatus/==(_:_:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "=="
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing10ExitStatusO",
-      "text" : "ExitStatus"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing10ExitStatusO",
-      "text" : "ExitStatus"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitStatus\/==(_:_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "==(_:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/exitstatus\/==(_:_:)"
 },
 "doc://org.swift.testing/documentation/Testing/Expectations": {
   "abstract" : [

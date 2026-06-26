@@ -1369,21 +1369,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing8ExitTestV",
-      "text" : "ExitTest"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
-      "text" : "Condition"
+      "text" : ": `Self`"
     }
   ],
   "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/failure",
@@ -1486,21 +1472,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing8ExitTestV",
-      "text" : "ExitTest"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing8ExitTestV9ConditionV",
-      "text" : "Condition"
+      "text" : ": `Self`"
     }
   ],
   "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExitTest\/Condition\/success",
@@ -1659,7 +1631,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1699,11 +1679,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1737,7 +1717,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1854,7 +1842,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1894,11 +1890,11 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() -> "
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1932,7 +1928,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",

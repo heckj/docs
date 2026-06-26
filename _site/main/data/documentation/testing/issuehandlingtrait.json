@@ -290,14 +290,6 @@
       "title" : "Instance Methods"
     },
     {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/IssueHandlingTrait\/TestScopeProvider"
-      ],
-      "title" : "Type Aliases"
-    },
-    {
       "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
@@ -479,40 +471,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/issuehandlingtrait"
 },
-"doc://org.swift.testing/documentation/Testing/IssueHandlingTrait/TestScopeProvider": {
-  "abstract" : [
-    {
-      "text" : "The type of the test scope provider for this trait.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/IssueHandlingTrait\/TestScopeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "IssueHandlingTrait.TestScopeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/issuehandlingtrait\/testscopeprovider"
-},
 "doc://org.swift.testing/documentation/Testing/IssueHandlingTrait/TestScoping-Implementations": {
   "abstract" : [
 
@@ -587,18 +545,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/IssueHandlingTrait/isRecursive": {
   "abstract" : [
-    {
-      "text" : "Whether this instance should be applied recursively to child test suites",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "and test functions.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -988,7 +935,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(("
+      "text" : "("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",
@@ -1082,7 +1037,15 @@
     },
     {
       "kind" : "text",
-      "text" : "(("
+      "text" : "("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",

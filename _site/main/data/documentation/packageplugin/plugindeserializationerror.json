@@ -84,6 +84,7 @@
         "doc:\/\/org.swift.swiftpm.packageplugin\/s8CopyableP",
         "doc:\/\/org.swift.swiftpm.packageplugin\/s23CustomStringConvertibleP",
         "doc:\/\/org.swift.swiftpm.packageplugin\/s5ErrorP",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/s9EscapableP",
         "doc:\/\/org.swift.swiftpm.packageplugin\/s8SendableP",
         "doc:\/\/org.swift.swiftpm.packageplugin\/s16SendableMetatypeP"
       ],
@@ -524,6 +525,11 @@
 "doc://org.swift.swiftpm.packageplugin/s8SendableP": {
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/s8SendableP",
   "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packageplugin/s9EscapableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/s9EscapableP",
+  "title" : "Swift.Escapable",
   "type" : "unresolvable"
 }
 }

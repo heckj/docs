@@ -138,18 +138,9 @@
   ],
   "topicSections" : [
     {
-      "anchor" : "Operators",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/==(_:_:)"
-      ],
-      "title" : "Operators"
-    },
-    {
       "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/hashValue",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/moduleName",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/nameComponents",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/parent",
@@ -158,20 +149,11 @@
       "title" : "Instance Properties"
     },
     {
-      "anchor" : "Instance-Methods",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/hash(into:)"
-      ],
-      "title" : "Instance Methods"
-    },
-    {
       "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/CustomStringConvertible-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/Decodable-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/Encodable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/Equatable-Implementations"
       ],
       "title" : "Default Implementations"
@@ -290,88 +272,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/test\/id-swift.struct"
 },
-"doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/==(_:_:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "=="
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV2IDV",
-      "text" : "ID"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV2IDV",
-      "text" : "ID"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/==(_:_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "==(_:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/test\/id-swift.struct\/==(_:_:)"
-},
 "doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/CustomStringConvertible-Implementations": {
   "abstract" : [
 
@@ -394,17 +294,6 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/test\/id-swift.struct\/decodable-implementations"
 },
-"doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/Encodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/Encodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Encodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/test\/id-swift.struct\/encodable-implementations"
-},
 "doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/Equatable-Implementations": {
   "abstract" : [
 
@@ -415,94 +304,6 @@
   "title" : "Equatable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/test\/id-swift.struct\/equatable-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/hash(into:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "hash"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "into"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6HasherV",
-      "text" : "Hasher"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/hash(into:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "hash(into:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/test\/id-swift.struct\/hash(into:)"
-},
-"doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/hashValue": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "hashValue"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Si",
-      "text" : "Int"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Test\/ID-swift.struct\/hashValue",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "hashValue",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/test\/id-swift.struct\/hashvalue"
 },
 "doc://org.swift.testing/documentation/Testing/Test/ID-swift.struct/moduleName": {
   "abstract" : [
@@ -613,15 +414,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

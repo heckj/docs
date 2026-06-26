@@ -113,18 +113,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/ParallelizationTrait/isRecursive": {
   "abstract" : [
-    {
-      "text" : "Whether this instance should be applied recursively to child test suites",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "and test functions.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

@@ -50,14 +50,6 @@
       "title" : "Instance Methods"
     },
     {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/TestScopeProvider"
-      ],
-      "title" : "Type Aliases"
-    },
-    {
       "anchor" : "Type-Methods",
       "generated" : true,
       "identifiers" : [
@@ -128,46 +120,9 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/tag\/list"
 },
-"doc://org.swift.testing/documentation/Testing/Tag/List/TestScopeProvider": {
-  "abstract" : [
-    {
-      "text" : "The type of the test scope provider for this trait.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/TestScopeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Tag.List.TestScopeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/tag\/list\/testscopeprovider"
-},
 "doc://org.swift.testing/documentation/Testing/Tag/List/comments": {
   "abstract" : [
-    {
-      "text" : "The user-provided comments for this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -205,10 +160,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Tag/List/prepare(for:)": {
   "abstract" : [
-    {
-      "text" : "Prepare to run the test that has this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

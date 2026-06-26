@@ -197,8 +197,7 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/CustomStringConvertible-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/Decodable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/Encodable-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/Equatable-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/Hashable-Implementations"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/Equatable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -555,17 +554,6 @@
   "title" : "Equatable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/tag\/equatable-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/Tag/Hashable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/Hashable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Hashable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/tag\/hashable-implementations"
 },
 "doc://org.swift.testing/documentation/Testing/Tag/List": {
   "abstract" : [

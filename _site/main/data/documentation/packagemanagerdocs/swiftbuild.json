@@ -89,8 +89,6 @@
             "  [--traits=<traits>] [--enable-all-traits]",
             "  [--disable-default-traits]",
             "  [--static-swift-stdlib|no-static-swift-stdlib]",
-            "  [--sbom-spec=<sbom-spec>...] [--sbom-output-dir=<sbom-output-dir>]",
-            "  [--sbom-filter=<sbom-filter>] [--sbom-warning-only]",
             "  [--version] [--help]"
           ],
           "syntax" : null,
@@ -2960,194 +2958,6 @@
                   {
                     "inlineContent" : [
                       {
-                        "text" : "–sbom-spec=<sbom-spec>",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "strong"
-                  }
-                ]
-              }
-            }
-          ],
-          "type" : "termList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Set the SBOM specification(s) and generate SBOM(s).",
-                  "type" : "text"
-                }
-              ],
-              "type" : "emphasis"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "items" : [
-            {
-              "definition" : {
-                "content" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "paragraph"
-                  }
-                ]
-              },
-              "term" : {
-                "inlineContent" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "–sbom-output-dir=<sbom-output-dir>",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "strong"
-                  }
-                ]
-              }
-            }
-          ],
-          "type" : "termList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The absolute or relative directory path to generate the SBOM(s) in. Must be used with –sbom-spec. (default: <scratch_path>\/sboms).",
-                  "type" : "text"
-                }
-              ],
-              "type" : "emphasis"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "items" : [
-            {
-              "definition" : {
-                "content" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "paragraph"
-                  }
-                ]
-              },
-              "term" : {
-                "inlineContent" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "–sbom-filter=<sbom-filter>",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "strong"
-                  }
-                ]
-              }
-            }
-          ],
-          "type" : "termList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Filter the SBOM components and dependencies by products and\/or packages. Must be used with –sbom-spec.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "emphasis"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "items" : [
-            {
-              "definition" : {
-                "content" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "paragraph"
-                  }
-                ]
-              },
-              "term" : {
-                "inlineContent" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "–sbom-warning-only",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "strong"
-                  }
-                ]
-              }
-            }
-          ],
-          "type" : "termList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Treat SBOM generation errors as warnings. Must be used with –sbom-spec. (default: false).",
-                  "type" : "text"
-                }
-              ],
-              "type" : "emphasis"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "items" : [
-            {
-              "definition" : {
-                "content" : [
-                  {
-                    "inlineContent" : [
-                      {
-                        "text" : "",
-                        "type" : "text"
-                      }
-                    ],
-                    "type" : "paragraph"
-                  }
-                ]
-              },
-              "term" : {
-                "inlineContent" : [
-                  {
-                    "inlineContent" : [
-                      {
                         "text" : "–version",
                         "type" : "text"
                       }
@@ -3314,6 +3124,12 @@
   ],
   "identifier" : "doc:\/\/PackageManagerDocs\/documentation\/PackageManagerDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swift Package Manager"
+    }
+  ],
   "role" : "collection",
   "title" : "Swift Package Manager",
   "type" : "topic",

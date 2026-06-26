@@ -133,7 +133,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -182,7 +182,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -191,7 +191,7 @@
     },
     {
       "kind" : "text",
-      "text" : ")?"
+      "text" : "?"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SystemLibraryTarget\/sourceModule",

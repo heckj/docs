@@ -438,23 +438,11 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " attribute when declaring it. When a",
+              "text" : " attribute when declaring it. Use the",
               "type" : "text"
             },
             {
               "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "test can’t run due to limited availability, the testing library reports it as",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "skipped. Use the ",
               "type" : "text"
             },
             {
@@ -470,7 +458,7 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " attribute to include a",
+              "text" : " attribute to specify a message to log if",
               "type" : "text"
             },
             {
@@ -478,7 +466,7 @@
               "type" : "text"
             },
             {
-              "text" : "message explaining why the test is unable to run:",
+              "text" : "a test is unable to run due to limited availability:",
               "type" : "text"
             }
           ],
@@ -620,7 +608,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -704,7 +700,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?, any "
+      "text" : "?, "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

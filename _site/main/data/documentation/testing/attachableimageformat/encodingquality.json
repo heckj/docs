@@ -99,15 +99,7 @@
             },
             {
               "kind" : "text",
-              "text" : " { "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "get"
-            },
-            {
-              "kind" : "text",
-              "text" : " }"
+              "text" : " { get }"
             }
           ]
         }

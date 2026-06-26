@@ -122,6 +122,14 @@
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/Kind-swift.enum"
       ],
       "title" : "Inspecting a Library Product"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/Product-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -254,6 +262,17 @@
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/libraryproduct\/kind-swift.enum"
 },
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/LibraryProduct/Product-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/LibraryProduct\/Product-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Product Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/libraryproduct\/product-implementations"
+},
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/LibraryProduct/id": {
   "abstract" : [
     {
@@ -277,15 +296,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-      "text" : "LibraryProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -323,15 +333,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin14LibraryProductV",
-      "text" : "LibraryProduct"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -413,7 +414,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",

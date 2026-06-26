@@ -427,6 +427,20 @@
                 {
                   "inlineContent" : [
                     {
+                      "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/canimport-missing-module",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
                       "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/module-version-missing",
                       "isActive" : true,
                       "type" : "reference"
@@ -470,6 +484,34 @@
                   "inlineContent" : [
                     {
                       "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/option-obsoleted-by-module-selectors",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/unstable-global-actor-shared",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/public-import-of-project-internal-module",
                       "isActive" : true,
                       "type" : "reference"
                     }
@@ -582,6 +624,20 @@
                   "inlineContent" : [
                     {
                       "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-effect-marker",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-unsafe",
                       "isActive" : true,
                       "type" : "reference"
                     }
@@ -755,6 +811,7 @@
         "doc:\/\/diagnostics\/documentation\/diagnostics\/isolated-conformances",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/error-in-future-swift-version",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/old-suppressed-associatedtypes",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/canimport-missing-module",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/missing-module-on-known-paths",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/module-version-missing",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/module-not-testable",
@@ -765,9 +822,12 @@
         "doc:\/\/diagnostics\/documentation\/diagnostics\/option-obsoleted-by-module-selectors",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/exclusivity-violation",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/performance-hints",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/unstable-global-actor-shared",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/property-wrapper-requirements",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/conformance-isolation",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/protocol-type-non-conformance",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/public-import-of-project-internal-module",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-isolation-history",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/result-builder-methods",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/spi-import-ignored",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/semantic-copies",
@@ -777,11 +837,13 @@
         "doc:\/\/diagnostics\/documentation\/diagnostics\/strict-language-features",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/strict-memory-safety",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/temporary-pointers",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/non-sendable-superclass",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/unavailable-sendable-conformance",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/opaque-type-inference",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-unknown-pattern",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/unknown-warning-group",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-effect-marker",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-unsafe",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/availability-unrecognized-name",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/mutable-global-variable",
         "doc:\/\/diagnostics\/documentation\/diagnostics\/unsupported-scoped-import",
@@ -904,6 +966,36 @@
   "title" : "Unrecognized availability platforms (AvailabilityUnrecognizedName)",
   "type" : "topic",
   "url" : "\/documentation\/diagnostics\/availability-unrecognized-name"
+},
+"doc://diagnostics/documentation/diagnostics/canimport-missing-module": {
+  "abstract" : [
+    {
+      "text" : "Warnings that indicate a versioned ",
+      "type" : "text"
+    },
+    {
+      "code" : "#if canImport(<ModuleName>, _version: <version>)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : "#if canImport(<ModuleName>, _underlyingVersion: <version>)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " directive could not find the named module.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/canimport-missing-module",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Missing module for canImport (CanImportMissingModule)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/canimport-missing-module"
 },
 "doc://diagnostics/documentation/diagnostics/clang-declaration-import": {
   "abstract" : [
@@ -1283,6 +1375,17 @@
   "type" : "topic",
   "url" : "\/documentation\/diagnostics\/nominal-types"
 },
+"doc://diagnostics/documentation/diagnostics/non-sendable-superclass": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/non-sendable-superclass",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Unable to conform to Sendable with a non-Sendable superclass (NonSendableSuperclass)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/non-sendable-superclass"
+},
 "doc://diagnostics/documentation/diagnostics/old-suppressed-associatedtypes": {
   "abstract" : [
     {
@@ -1510,6 +1613,17 @@
   "type" : "topic",
   "url" : "\/documentation\/diagnostics\/protocol-type-non-conformance"
 },
+"doc://diagnostics/documentation/diagnostics/public-import-of-project-internal-module": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/public-import-of-project-internal-module",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Public imports of project-internal modules (PublicImportOfProjectInternalModule)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/public-import-of-project-internal-module"
+},
 "doc://diagnostics/documentation/diagnostics/region-isolation-cross-isolation-data-race": {
   "abstract" : [
 
@@ -1520,6 +1634,17 @@
   "title" : "Cross-isolation data race (RegionIsolationCrossIsolationDataRace)",
   "type" : "topic",
   "url" : "\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race"
+},
+"doc://diagnostics/documentation/diagnostics/region-isolation-isolation-history": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-isolation-history",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Region isolation history (RegionIsolationIsolationHistory)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/region-isolation-isolation-history"
 },
 "doc://diagnostics/documentation/diagnostics/region-isolation-unknown-pattern": {
   "abstract" : [
@@ -1763,6 +1888,28 @@
   "title" : "Unnecessary effect markers (UnnecessaryEffectMarker)",
   "type" : "topic",
   "url" : "\/documentation\/diagnostics\/unnecessary-effect-marker"
+},
+"doc://diagnostics/documentation/diagnostics/unnecessary-unsafe": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-unsafe",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Unnecessary unsafe (UnnecessaryUnsafe)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/unnecessary-unsafe"
+},
+"doc://diagnostics/documentation/diagnostics/unstable-global-actor-shared": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/unstable-global-actor-shared",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Potentially unstable witness for `static var shared` (UnstableGlobalActorShared)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/unstable-global-actor-shared"
 },
 "doc://diagnostics/documentation/diagnostics/unsupported-scoped-import": {
   "abstract" : [

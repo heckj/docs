@@ -83,6 +83,7 @@
     {
       "identifiers" : [
         "doc:\/\/org.swift.swiftpm.packagedescription\/s8CopyableP",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/s9EscapableP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s26ExpressibleByStringLiteralP",
         "doc:\/\/org.swift.swiftpm.packagedescription\/s33ExpressibleByUnicodeScalarLiteralP",
@@ -1416,15 +1417,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC10DependencyO",
       "text" : "Dependency"
     },
@@ -1502,6 +1494,11 @@
 "doc://org.swift.swiftpm.packagedescription/s8SendableP": {
   "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s8SendableP",
   "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+},
+"doc://org.swift.swiftpm.packagedescription/s9EscapableP": {
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/s9EscapableP",
+  "title" : "Swift.Escapable",
   "type" : "unresolvable"
 }
 }

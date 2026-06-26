@@ -359,12 +359,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "text" : "<`Self`"
     },
     {
       "kind" : "text",
@@ -389,6 +384,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS7TestingE15withUnsafeBytes3for_xAA10AttachmentVySSG_xSWKXEtKlF1RL_xmfp",
       "text" : "R"
     },
     {
@@ -405,6 +401,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS7TestingE15withUnsafeBytes3for_xAA10AttachmentVySSG_xSWKXEtKlF1RL_xmfp",
       "text" : "R"
     }
   ],

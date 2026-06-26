@@ -429,15 +429,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin19SystemLibraryTargetV",
-      "text" : "SystemLibraryTarget"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
       "text" : "ID"
     }

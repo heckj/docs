@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Sequence.suffix(_:)",
+      "code" : "BidirectionalCollection.suffix(_:)",
       "type" : "codeVoice"
     },
     {
@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:STsE6suffixySay7ElementQzGSiF::SYNTHESIZED::s:13PackagePlugin8FileListV",
+    "externalID" : "s:SKsE6suffixy11SubSequenceQzSiF::SYNTHESIZED::s:13PackagePlugin8FileListV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -53,7 +53,7 @@
       },
       {
         "kind" : "text",
-        "text" : ") -> ["
+        "text" : ") -> "
       },
       {
         "kind" : "typeIdentifier",
@@ -65,12 +65,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:ST7ElementQa",
-        "text" : "Element"
-      },
-      {
-        "kind" : "text",
-        "text" : "]"
+        "preciseIdentifier" : "s:Sl11SubSequenceQa",
+        "text" : "SubSequence"
       }
     ],
     "modules" : [
@@ -136,7 +132,7 @@
             },
             {
               "kind" : "text",
-              "text" : ") -> ["
+              "text" : ") -> "
             },
             {
               "kind" : "typeIdentifier",
@@ -148,12 +144,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:ST7ElementQa",
-              "text" : "Element"
-            },
-            {
-              "kind" : "text",
-              "text" : "]"
+              "preciseIdentifier" : "s:Sl11SubSequenceQa",
+              "text" : "SubSequence"
             }
           ]
         }
@@ -259,7 +251,7 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> ["
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -271,12 +263,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:ST7ElementQa",
-      "text" : "Element"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/suffix(_:)",

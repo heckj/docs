@@ -298,15 +298,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV15VisionOSVersionV",
       "text" : "VisionOSVersion"
     }
@@ -352,15 +343,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV15VisionOSVersionV",
       "text" : "VisionOSVersion"
     }
@@ -403,15 +385,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

@@ -1,15 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "A description of this instance to use when presenting it in a test’s",
+      "text" : "Inherited from ",
       "type" : "text"
     },
     {
-      "text" : " ",
-      "type" : "text"
+      "code" : "CustomTestStringConvertible.testDescription",
+      "type" : "codeVoice"
     },
     {
-      "text" : "output.",
+      "text" : ".",
       "type" : "text"
     }
   ],
@@ -158,43 +158,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Do not use this property directly. To get the test description of a value,",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "use ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Swift\/String\/init(describingForTest:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -278,18 +241,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Swift/PartialRangeUpTo/testDescription": {
   "abstract" : [
-    {
-      "text" : "A description of this instance to use when presenting it in a test’s",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "output.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -352,54 +304,6 @@
   "title" : "testDescription",
   "type" : "topic",
   "url" : "\/documentation\/testing\/swift\/partialrangeupto\/testdescription"
-},
-"doc://org.swift.testing/documentation/Testing/Swift/String/init(describingForTest:)": {
-  "abstract" : [
-    {
-      "text" : "Initialize this instance so that it can be presented in a test’s output.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "describingForTest"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "some"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "Any"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Swift\/String\/init(describingForTest:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init(describingForTest:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/swift\/string\/init(describingfortest:)"
 }
 }
 }

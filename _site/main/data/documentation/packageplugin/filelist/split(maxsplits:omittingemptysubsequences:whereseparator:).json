@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Sequence.split(maxSplits:omittingEmptySubsequences:whereSeparator:)",
+      "code" : "Collection.split(maxSplits:omittingEmptySubsequences:whereSeparator:)",
       "type" : "codeVoice"
     },
     {
@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:STsE5split9maxSplits25omittingEmptySubsequences14whereSeparatorSays10ArraySliceVy7ElementQzGGSi_S2bAHKXEtKF::SYNTHESIZED::s:13PackagePlugin8FileListV",
+    "externalID" : "s:SlsE5split9maxSplits25omittingEmptySubsequences14whereSeparatorSay11SubSequenceQzGSi_S2b7ElementQzKXEtKF::SYNTHESIZED::s:13PackagePlugin8FileListV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -132,15 +132,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:s10ArraySliceV",
-        "text" : "ArraySlice"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
         "text" : "Self"
       },
       {
@@ -149,12 +140,12 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:ST7ElementQa",
-        "text" : "Element"
+        "preciseIdentifier" : "s:Sl11SubSequenceQa",
+        "text" : "SubSequence"
       },
       {
         "kind" : "text",
-        "text" : ">]"
+        "text" : "]"
       }
     ],
     "modules" : [
@@ -291,15 +282,6 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s10ArraySliceV",
-              "text" : "ArraySlice"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
               "text" : "Self"
             },
             {
@@ -308,12 +290,12 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:ST7ElementQa",
-              "text" : "Element"
+              "preciseIdentifier" : "s:Sl11SubSequenceQa",
+              "text" : "SubSequence"
             },
             {
               "kind" : "text",
-              "text" : ">]"
+              "text" : "]"
             }
           ]
         }
@@ -498,15 +480,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s10ArraySliceV",
-      "text" : "ArraySlice"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
@@ -515,12 +488,12 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:ST7ElementQa",
-      "text" : "Element"
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
     },
     {
       "kind" : "text",
-      "text" : ">]"
+      "text" : "]"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/split(maxSplits:omittingEmptySubsequences:whereSeparator:)",

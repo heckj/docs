@@ -48,15 +48,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin8FileListV",
-        "text" : "FileList"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin8FileListV8IteratorV",
         "text" : "Iterator"
       }
@@ -97,16 +88,6 @@
             {
               "kind" : "text",
               "text" : "() -> "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin8FileListV",
-              "text" : "FileList"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/Iterator",
@@ -241,15 +222,6 @@
     {
       "kind" : "text",
       "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin8FileListV",
-      "text" : "FileList"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

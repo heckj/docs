@@ -42,9 +42,9 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/.._(_:)",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/.._(_:_:)",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_(_:_:)",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_(_:_:)-1ynzg",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-39yni",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-3wog1"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_(_:_:)-6po4t",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-8rpvl",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-9udpk"
       ],
       "title" : "Operators"
     }
@@ -521,7 +521,7 @@
   "type" : "topic",
   "url" : "\/documentation\/testing\/tag\/_(_:_:)"
 },
-"doc://org.swift.testing/documentation/Testing/Tag/_(_:_:)-1ynzg": {
+"doc://org.swift.testing/documentation/Testing/Tag/_(_:_:)-6po4t": {
   "abstract" : [
 
   ],
@@ -555,12 +555,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -576,14 +592,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_(_:_:)-1ynzg",
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_(_:_:)-6po4t",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/testing\/tag\/_(_:_:)-1ynzg"
+  "url" : "\/documentation\/testing\/tag\/_(_:_:)-6po4t"
 },
-"doc://org.swift.testing/documentation/Testing/Tag/_=(_:_:)-39yni": {
+"doc://org.swift.testing/documentation/Testing/Tag/_=(_:_:)-8rpvl": {
   "abstract" : [
 
   ],
@@ -617,12 +633,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -638,14 +670,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-39yni",
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-8rpvl",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/testing\/tag\/_=(_:_:)-39yni"
+  "url" : "\/documentation\/testing\/tag\/_=(_:_:)-8rpvl"
 },
-"doc://org.swift.testing/documentation/Testing/Tag/_=(_:_:)-3wog1": {
+"doc://org.swift.testing/documentation/Testing/Tag/_=(_:_:)-9udpk": {
   "abstract" : [
 
   ],
@@ -679,12 +711,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -700,12 +748,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-3wog1",
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/_=(_:_:)-9udpk",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/testing\/tag\/_=(_:_:)-3wog1"
+  "url" : "\/documentation\/testing\/tag\/_=(_:_:)-9udpk"
 },
 "doc://org.swift.testing/documentation/Testing/Traits": {
   "abstract" : [

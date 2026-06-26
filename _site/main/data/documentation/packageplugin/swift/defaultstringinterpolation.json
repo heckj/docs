@@ -25,9 +25,18 @@
         "text" : " "
       },
       {
-        "kind" : "identifier",
-        "preciseIdentifier" : "s:s26DefaultStringInterpolationV",
-        "text" : "DefaultStringInterpolation"
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS19StringInterpolationa",
+        "text" : "StringInterpolation"
       }
     ],
     "modules" : [
@@ -70,8 +79,17 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s26DefaultStringInterpolationV",
-              "text" : "DefaultStringInterpolation"
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS19StringInterpolationa",
+              "text" : "StringInterpolation"
             }
           ]
         }
@@ -150,9 +168,18 @@
       "text" : " "
     },
     {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:s26DefaultStringInterpolationV",
-      "text" : "DefaultStringInterpolation"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS19StringInterpolationa",
+      "text" : "StringInterpolation"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Swift\/DefaultStringInterpolation",

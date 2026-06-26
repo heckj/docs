@@ -64,15 +64,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:18PackageDescription8ResourceV",
-        "text" : "Resource"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:18PackageDescription8ResourceV12LocalizationO",
         "text" : "Localization"
       },
@@ -172,16 +163,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Resource",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:18PackageDescription8ResourceV",
-              "text" : "Resource"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Resource\/Localization",
@@ -625,15 +606,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription8ResourceV",
-      "text" : "Resource"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

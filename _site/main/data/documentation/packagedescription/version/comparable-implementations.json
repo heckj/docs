@@ -43,9 +43,9 @@
         "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/.._(_:)",
         "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/.._(_:_:)",
         "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_(_:_:)",
-        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_(_:_:)-6qwjc",
-        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-2r3us",
-        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-7n9wi"
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_(_:_:)-6mvx",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-3107x",
+        "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-3ol54"
       ],
       "title" : "Operators"
     }
@@ -601,7 +601,7 @@
   "type" : "topic",
   "url" : "\/documentation\/packagedescription\/version\/_(_:_:)"
 },
-"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/_(_:_:)-6qwjc": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/_(_:_:)-6mvx": {
   "abstract" : [
 
   ],
@@ -635,12 +635,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -656,14 +672,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_(_:_:)-6qwjc",
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_(_:_:)-6mvx",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/packagedescription\/version\/_(_:_:)-6qwjc"
+  "url" : "\/documentation\/packagedescription\/version\/_(_:_:)-6mvx"
 },
-"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/_=(_:_:)-2r3us": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/_=(_:_:)-3107x": {
   "abstract" : [
 
   ],
@@ -697,12 +713,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -718,14 +750,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-2r3us",
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-3107x",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/packagedescription\/version\/_=(_:_:)-2r3us"
+  "url" : "\/documentation\/packagedescription\/version\/_=(_:_:)-3107x"
 },
-"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/_=(_:_:)-7n9wi": {
+"doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription/Version/_=(_:_:)-3ol54": {
   "abstract" : [
 
   ],
@@ -759,12 +791,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -780,12 +828,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-7n9wi",
+  "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Version\/_=(_:_:)-3ol54",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/packagedescription\/version\/_=(_:_:)-7n9wi"
+  "url" : "\/documentation\/packagedescription\/version\/_=(_:_:)-3ol54"
 }
 }
 }

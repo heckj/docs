@@ -122,10 +122,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/TimeLimitTrait/comments": {
   "abstract" : [
-    {
-      "text" : "The user-provided comments for this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -163,10 +160,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/TimeLimitTrait/prepare(for:)": {
   "abstract" : [
-    {
-      "text" : "Prepare to run the test that has this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -412,8 +406,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-      "text" : "TimeLimitTrait"
+      "text" : "Self"
     },
     {
       "kind" : "text",

@@ -398,15 +398,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
-      "text" : "SwiftSetting"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV20InteroperabilityModeO",
       "text" : "InteroperabilityMode"
     },

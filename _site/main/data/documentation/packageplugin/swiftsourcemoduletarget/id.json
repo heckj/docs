@@ -39,15 +39,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin23SwiftSourceModuleTargetV",
-        "text" : "SwiftSourceModuleTarget"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
         "text" : "ID"
       }
@@ -88,16 +79,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/SwiftSourceModuleTarget",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin23SwiftSourceModuleTargetV",
-              "text" : "SwiftSourceModuleTarget"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/ID-swift.typealias",
@@ -393,15 +374,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin23SwiftSourceModuleTargetV",
-      "text" : "SwiftSourceModuleTarget"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

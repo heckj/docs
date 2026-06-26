@@ -164,15 +164,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:7Testing4TestV2IDV",
       "text" : "ID"
     }

@@ -605,10 +605,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Trait/prepare(for:)-4pe01": {
   "abstract" : [
-    {
-      "text" : "Prepare to run the test that has this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -739,14 +736,6 @@
     {
       "kind" : "text",
       "text" : "?) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

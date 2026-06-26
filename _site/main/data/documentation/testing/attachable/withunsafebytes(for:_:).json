@@ -5,16 +5,6 @@
       "type" : "text"
     }
   ],
-  "defaultImplementationsSections" : [
-    {
-      "anchor" : "Attachable-Implementations",
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-623lu\/Attachable\/withUnsafeBytes(for:_:)-4m3s9",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-623lu\/Attachable\/withUnsafeBytes(for:_:)-8ied9"
-      ],
-      "title" : "Attachable Implementations"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -107,6 +97,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
         "text" : "R"
       },
       {
@@ -123,6 +114,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
         "text" : "R"
       }
     ],
@@ -269,6 +261,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
               "text" : "R"
             },
             {
@@ -285,6 +278,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
               "text" : "R"
             }
           ]
@@ -553,7 +547,6 @@
       "type" : "text"
     }
   ],
-  "defaultImplementations" : 2,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -631,6 +624,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -647,6 +641,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],
@@ -713,401 +708,6 @@
   "title" : "Migrating a test from XCTest",
   "type" : "topic",
   "url" : "\/documentation\/testing\/migratingfromxctest"
-},
-"doc://org.swift.testing/documentation/Testing/Testing-623lu/Attachable/withUnsafeBytes(for:_:)-4m3s9": {
-  "abstract" : [
-    {
-      "text" : "Encode this value into a buffer using either ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation\/propertylistencoder",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "or ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation\/jsonencoder",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ",",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "then call a function and pass that buffer to it.",
-      "type" : "text"
-    }
-  ],
-  "conformance" : {
-    "availabilityPrefix" : [
-      {
-        "text" : "Available when",
-        "type" : "text"
-      }
-    ],
-    "conformancePrefix" : [
-      {
-        "text" : "Conforms when",
-        "type" : "text"
-      }
-    ],
-    "constraints" : [
-      {
-        "code" : "Self",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " conforms to ",
-        "type" : "text"
-      },
-      {
-        "code" : "Encodable",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " and ",
-        "type" : "text"
-      },
-      {
-        "code" : "Self",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " is ",
-        "type" : "text"
-      },
-      {
-        "code" : "Attachable",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : ".",
-        "type" : "text"
-      }
-    ]
-  },
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "withUnsafeBytes"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "R"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "borrowing"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing10AttachmentV",
-      "text" : "Attachment"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ">, ("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SW",
-      "text" : "UnsafeRawBufferPointer"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "R"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "R"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-623lu\/Attachable\/withUnsafeBytes(for:_:)-4m3s9",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "withUnsafeBytes(for:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/testing-623lu\/attachable\/withunsafebytes(for:_:)-4m3s9"
-},
-"doc://org.swift.testing/documentation/Testing/Testing-623lu/Attachable/withUnsafeBytes(for:_:)-8ied9": {
-  "abstract" : [
-    {
-      "text" : "Encode this object using ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation\/nskeyedarchiver",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "into a buffer, then call a function and pass that buffer to it.",
-      "type" : "text"
-    }
-  ],
-  "conformance" : {
-    "availabilityPrefix" : [
-      {
-        "text" : "Available when",
-        "type" : "text"
-      }
-    ],
-    "conformancePrefix" : [
-      {
-        "text" : "Conforms when",
-        "type" : "text"
-      }
-    ],
-    "constraints" : [
-      {
-        "code" : "Self",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " conforms to ",
-        "type" : "text"
-      },
-      {
-        "code" : "NSSecureCoding",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " and ",
-        "type" : "text"
-      },
-      {
-        "code" : "Self",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " is ",
-        "type" : "text"
-      },
-      {
-        "code" : "Attachable",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : ".",
-        "type" : "text"
-      }
-    ]
-  },
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "withUnsafeBytes"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "R"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "borrowing"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing10AttachmentV",
-      "text" : "Attachment"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ">, ("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SW",
-      "text" : "UnsafeRawBufferPointer"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "R"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "R"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-623lu\/Attachable\/withUnsafeBytes(for:_:)-8ied9",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "withUnsafeBytes(for:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/testing-623lu\/attachable\/withunsafebytes(for:_:)-8ied9"
-},
-"https://developer.apple.com/documentation/foundation/jsonencoder": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation\/jsonencoder",
-  "title" : "JSONEncoder",
-  "titleInlineContent" : [
-    {
-      "code" : "JSONEncoder",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/foundation\/jsonencoder"
-},
-"https://developer.apple.com/documentation/foundation/nskeyedarchiver": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation\/nskeyedarchiver",
-  "title" : "NSKeyedArchiver",
-  "titleInlineContent" : [
-    {
-      "code" : "NSKeyedArchiver",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/foundation\/nskeyedarchiver"
-},
-"https://developer.apple.com/documentation/foundation/propertylistencoder": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation\/propertylistencoder",
-  "title" : "PropertyListEncoder",
-  "titleInlineContent" : [
-    {
-      "code" : "PropertyListEncoder",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/foundation\/propertylistencoder"
 }
 }
 }

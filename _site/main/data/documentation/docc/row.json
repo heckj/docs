@@ -173,6 +173,26 @@
             },
             {
               "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "alignment"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Alignment"
+            },
+            {
+              "kind" : "text",
+              "text" : " = leading"
+            },
+            {
+              "kind" : "text",
               "text" : ")"
             },
             {
@@ -343,6 +363,12 @@
   ],
   "identifier" : "doc:\/\/org.swift.docc\/documentation\/docc",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "DocC"
+    }
+  ],
   "role" : "collection",
   "title" : "DocC",
   "type" : "topic",
@@ -387,6 +413,22 @@
     {
       "kind" : "typeIdentifier",
       "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "alignment"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Alignment"
     },
     {
       "kind" : "text",

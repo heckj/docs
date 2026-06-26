@@ -33,7 +33,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:SQsE2neoiySbx_xtFZ::SYNTHESIZED::s:13PackagePlugin0A7ManagerV10TestResultV0D6TargetV0D4CaseV0D0V0E0O",
+    "externalID" : "s:SQsRi_zRi0_zrlE2neoiySbx_xtFZ::SYNTHESIZED::s:13PackagePlugin0A7ManagerV10TestResultV0D6TargetV0D4CaseV0D0V0E0O",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -64,12 +64,28 @@
         "text" : "("
       },
       {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "text" : "Self"
       },
       {
         "kind" : "text",
         "text" : ", "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -146,6 +162,14 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
               "text" : "Self"
             },
@@ -160,6 +184,14 @@
             {
               "kind" : "text",
               "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -478,12 +510,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

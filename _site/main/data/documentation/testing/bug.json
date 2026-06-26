@@ -234,7 +234,6 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/Decodable-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/Encodable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/Equatable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/Hashable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/SuiteTrait-Implementations",
@@ -349,17 +348,6 @@
   "title" : "Decodable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/bug\/decodable-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/Bug/Encodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/Encodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Encodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/bug\/encodable-implementations"
 },
 "doc://org.swift.testing/documentation/Testing/Bug/Equatable-Implementations": {
   "abstract" : [

@@ -124,15 +124,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:18PackageDescription0A0C",
-        "text" : "Package"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
         "text" : "Dependency"
       },
@@ -213,9 +204,6 @@
       {
         "name" : "PackageDescription"
       }
-    ],
-    "platforms" : [
-
     ],
     "role" : "symbol",
     "roleHeading" : "Initializer",
@@ -336,16 +324,6 @@
             {
               "kind" : "text",
               "text" : ": ["
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:18PackageDescription0A0C",
-              "text" : "Package"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Package\/Dependency",
@@ -950,15 +928,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
       "text" : "Dependency"
     },
@@ -1168,15 +1137,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -1417,15 +1377,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
       "text" : "Dependency"
     },
@@ -1604,15 +1555,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription0A0C10DependencyC",
       "text" : "Dependency"
     },
@@ -1788,15 +1730,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -1992,15 +1925,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription0A0C",
-      "text" : "Package"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

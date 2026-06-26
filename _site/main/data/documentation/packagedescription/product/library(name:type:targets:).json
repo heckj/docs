@@ -80,15 +80,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:18PackageDescription7ProductC",
-        "text" : "Product"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:18PackageDescription7ProductC7LibraryC",
         "text" : "Library"
       },
@@ -197,16 +188,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:18PackageDescription7ProductC",
-              "text" : "Product"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packagedescription\/documentation\/PackageDescription\/Product\/Library",
@@ -694,15 +675,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription7ProductC",
-      "text" : "Product"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

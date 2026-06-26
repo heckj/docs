@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Sequence.reversed()",
+      "code" : "BidirectionalCollection.reversed()",
       "type" : "codeVoice"
     },
     {
@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:STsE8reversedSay7ElementQzGyF::SYNTHESIZED::s:13PackagePlugin8FileListV",
+    "externalID" : "s:SKsE8reverseds18ReversedCollectionVyxGyF::SYNTHESIZED::s:13PackagePlugin8FileListV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -44,7 +44,16 @@
       },
       {
         "kind" : "text",
-        "text" : "() -> ["
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s18ReversedCollectionV",
+        "text" : "ReversedCollection"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
       },
       {
         "kind" : "typeIdentifier",
@@ -52,16 +61,7 @@
       },
       {
         "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:ST7ElementQa",
-        "text" : "Element"
-      },
-      {
-        "kind" : "text",
-        "text" : "]"
+        "text" : ">"
       }
     ],
     "modules" : [
@@ -102,7 +102,16 @@
             },
             {
               "kind" : "text",
-              "text" : "() -> ["
+              "text" : "() -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s18ReversedCollectionV",
+              "text" : "ReversedCollection"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
@@ -110,16 +119,7 @@
             },
             {
               "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:ST7ElementQa",
-              "text" : "Element"
-            },
-            {
-              "kind" : "text",
-              "text" : "]"
+              "text" : ">"
             }
           ]
         }
@@ -216,7 +216,16 @@
     },
     {
       "kind" : "text",
-      "text" : "() -> ["
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s18ReversedCollectionV",
+      "text" : "ReversedCollection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -224,16 +233,7 @@
     },
     {
       "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:ST7ElementQa",
-      "text" : "Element"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
+      "text" : ">"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/reversed()",

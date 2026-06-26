@@ -559,15 +559,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription8ResourceV",
-      "text" : "Resource"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription8ResourceV12LocalizationO",
       "text" : "Localization"
     },

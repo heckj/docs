@@ -130,10 +130,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/ParallelizationTrait/comments": {
   "abstract" : [
-    {
-      "text" : "The user-provided comments for this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -171,10 +168,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/ParallelizationTrait/prepare(for:)": {
   "abstract" : [
-    {
-      "text" : "Prepare to run the test that has this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -232,18 +226,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/ParallelizationTrait/scopeProvider(for:testCase:)": {
   "abstract" : [
-    {
-      "text" : "Get this trait’s scope provider for the specified test and optional test",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "case.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -303,12 +286,7 @@
     },
     {
       "kind" : "text",
-      "text" : "?) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing20ParallelizationTraitV",
-      "text" : "ParallelizationTrait"
+      "text" : "?) -> `Self`"
     },
     {
       "kind" : "text",
@@ -388,8 +366,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing20ParallelizationTraitV",
-      "text" : "ParallelizationTrait"
+      "text" : "Self"
     }
   ],
   "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ParallelizationTrait\/serialized",

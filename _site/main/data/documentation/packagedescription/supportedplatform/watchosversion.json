@@ -306,15 +306,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV14WatchOSVersionV",
       "text" : "WatchOSVersion"
     }
@@ -357,15 +348,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -415,15 +397,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV14WatchOSVersionV",
       "text" : "WatchOSVersion"
     }
@@ -466,15 +439,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -524,15 +488,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV14WatchOSVersionV",
       "text" : "WatchOSVersion"
     }
@@ -575,15 +530,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -632,15 +578,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV14WatchOSVersionV",
       "text" : "WatchOSVersion"
     }
@@ -683,15 +620,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -740,15 +668,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV14WatchOSVersionV",
       "text" : "WatchOSVersion"
     }
@@ -794,15 +713,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV14WatchOSVersionV",
       "text" : "WatchOSVersion"
     }
@@ -845,15 +755,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription17SupportedPlatformV",
-      "text" : "SupportedPlatform"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

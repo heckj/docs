@@ -36,9 +36,9 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/count",
-        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/endIndex",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/first",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/isEmpty",
-        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/startIndex"
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/underestimatedCount"
       ],
       "title" : "Instance Properties"
     },
@@ -46,30 +46,26 @@
       "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/drop(while:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/dropFirst(_:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/firstIndex(where:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/formIndex(_:offsetBy:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/formIndex(_:offsetBy:limitedBy:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/formIndex(after:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/indices(where:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/map(_:)-1989u",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(_:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(through:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(upTo:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(while:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/randomElement()",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/randomElement(using:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/removingSubranges(_:)",
+        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/split(maxSplits:omittingEmptySubsequences:whereSeparator:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/suffix(from:)",
         "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/trimmingPrefix(while:)"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "anchor" : "Subscripts",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/subscript(_:)",
-        "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/subscript(_:)-1ofas"
-      ],
-      "title" : "Subscripts"
     }
   ],
   "variants" : [
@@ -168,7 +164,150 @@
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/filelist\/count"
 },
-"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/endIndex": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/drop(while:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "drop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "while"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/drop(while:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "drop(while:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filelist\/drop(while:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/dropFirst(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dropFirst"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/dropFirst(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dropFirst(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filelist\/dropfirst(_:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/first": {
   "abstract" : [
 
   ],
@@ -183,7 +322,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "endIndex"
+      "text" : "first"
     },
     {
       "kind" : "text",
@@ -191,16 +330,28 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Si",
-      "text" : "Int"
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/endIndex",
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/first",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "endIndex",
+  "title" : "first",
   "type" : "topic",
-  "url" : "\/documentation\/packageplugin\/filelist\/endindex"
+  "url" : "\/documentation\/packageplugin\/filelist\/first"
 },
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/firstIndex(where:)": {
   "abstract" : [
@@ -781,6 +932,57 @@
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/filelist\/map(_:)-1989u"
 },
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/prefix(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prefix"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prefix(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filelist\/prefix(_:)"
+},
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/prefix(through:)": {
   "abstract" : [
 
@@ -914,6 +1116,98 @@
   "title" : "prefix(upTo:)",
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/filelist\/prefix(upto:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/prefix(while:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prefix"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "while"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/prefix(while:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prefix(while:)",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filelist\/prefix(while:)"
 },
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/randomElement()": {
   "abstract" : [
@@ -1111,14 +1405,14 @@
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/filelist\/removingsubranges(_:)"
 },
-"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/startIndex": {
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/split(maxSplits:omittingEmptySubsequences:whereSeparator:)": {
   "abstract" : [
 
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -1126,7 +1420,15 @@
     },
     {
       "kind" : "identifier",
-      "text" : "startIndex"
+      "text" : "split"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxSplits"
     },
     {
       "kind" : "text",
@@ -1136,103 +1438,35 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:Si",
       "text" : "Int"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/startIndex",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "startIndex",
-  "type" : "topic",
-  "url" : "\/documentation\/packageplugin\/filelist\/startindex"
-},
-"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/subscript(_:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "subscript"
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "omittingEmptySubsequences"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Si",
-      "text" : "Int"
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ", "
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin4FileV",
-      "text" : "File"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/subscript(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "subscript(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/packageplugin\/filelist\/subscript(_:)"
-},
-"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/subscript(_:)-1ofas": {
-  "abstract" : [
-
-  ],
-  "conformance" : {
-    "availabilityPrefix" : [
-      {
-        "text" : "Available when",
-        "type" : "text"
-      }
-    ],
-    "conformancePrefix" : [
-      {
-        "text" : "Conforms when",
-        "type" : "text"
-      }
-    ],
-    "constraints" : [
-      {
-        "code" : "SubSequence",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " is ",
-        "type" : "text"
-      },
-      {
-        "code" : "Slice<Self>",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : ".",
-        "type" : "text"
-      }
-    ]
-  },
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "subscript"
+      "kind" : "externalParam",
+      "text" : "whereSeparator"
     },
     {
       "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sn",
-      "text" : "Range"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
+      "text" : ": ("
     },
     {
       "kind" : "typeIdentifier",
@@ -1244,21 +1478,37 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sl5IndexQa",
-      "text" : "Index"
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
     },
     {
       "kind" : "text",
-      "text" : ">) -> "
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s5SliceV",
-      "text" : "Slice"
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> ["
     },
     {
       "kind" : "typeIdentifier",
@@ -1266,15 +1516,24 @@
     },
     {
       "kind" : "text",
-      "text" : ">"
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl11SubSequenceQa",
+      "text" : "SubSequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/subscript(_:)-1ofas",
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/split(maxSplits:omittingEmptySubsequences:whereSeparator:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "subscript(_:)",
+  "title" : "split(maxSplits:omittingEmptySubsequences:whereSeparator:)",
   "type" : "topic",
-  "url" : "\/documentation\/packageplugin\/filelist\/subscript(_:)-1ofas"
+  "url" : "\/documentation\/packageplugin\/filelist\/split(maxsplits:omittingemptysubsequences:whereseparator:)"
 },
 "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/suffix(from:)": {
   "abstract" : [
@@ -1434,6 +1693,40 @@
   "title" : "trimmingPrefix(while:)",
   "type" : "topic",
   "url" : "\/documentation\/packageplugin\/filelist\/trimmingprefix(while:)"
+},
+"doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin/FileList/underestimatedCount": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "underestimatedCount"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/FileList\/underestimatedCount",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "underestimatedCount",
+  "type" : "topic",
+  "url" : "\/documentation\/packageplugin\/filelist\/underestimatedcount"
 }
 }
 }

@@ -1,15 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Provide custom execution scope for a function call which is related to the",
+      "text" : "Inherited from ",
       "type" : "text"
     },
     {
-      "text" : " ",
-      "type" : "text"
+      "code" : "TestScoping.provideScope(for:testCase:performing:)",
+      "type" : "codeVoice"
     },
     {
-      "text" : "specified test or test case.",
+      "text" : ".",
       "type" : "text"
     }
   ],
@@ -95,7 +95,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": () "
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " () "
       },
       {
         "kind" : "keyword",
@@ -143,13 +151,23 @@
     "platforms" : [
       {
         "beta" : false,
-        "introducedAt" : "6.1",
-        "name" : "Swift"
+        "deprecated" : false,
+        "name" : "macOS",
+        "unavailable" : false
       },
       {
         "beta" : false,
-        "introducedAt" : "16.3",
-        "name" : "Xcode"
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "Swift",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Xcode",
+        "unavailable" : false
       }
     ],
     "role" : "symbol",
@@ -303,348 +321,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The test which ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "function",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " encapsulates.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "test"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The test case, if any, which ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "function",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " encapsulates.",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "When invoked on a suite, the value of this argument is ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "nil",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ".",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "testCase"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The function to perform. If ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "test",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " represents a test suite,",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "this function encapsulates running all the tests in that suite. If",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "test",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " represents a test function, this function is the body of that",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "test function (including all cases if the test function is",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "parameterized.)",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "function"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Any error that ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "function",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " throws, or an error that prevents this",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "type from providing a custom scope correctly. The testing library",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "records an error thrown from this method as an issue associated with",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "test",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ". If an error is thrown before this method calls ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "function",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ", the",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "corresponding test doesn’t run.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "Throws",
-          "style" : "note",
-          "type" : "aside"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "When the testing library prepares to run a test, it starts by finding",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "all traits applied to that test, including those inherited from containing",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "suites. It begins with inherited suite traits, sorting them",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "outermost-to-innermost, and if the test is a function, it then adds all",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "traits applied directly to that functions in the order they were applied",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "(left-to-right). It then asks each trait for its scope provider (if any)",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "by calling ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Trait\/scopeProvider(for:testCase:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ". Finally, it calls",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "this method on all non-",
-              "type" : "text"
-            },
-            {
-              "code" : "nil",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " scope providers, giving each an opportunity",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "to perform arbitrary work before or after invoking ",
-              "type" : "text"
-            },
-            {
-              "code" : "function",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "This method should either invoke ",
-              "type" : "text"
-            },
-            {
-              "code" : "function",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " once before returning,",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "or throw an error if it’s unable to provide a custom scope.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Issues recorded by this method are associated with ",
-              "type" : "text"
-            },
-            {
-              "code" : "test",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -719,18 +395,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/IssueHandlingTrait/provideScope(for:testCase:performing:)": {
   "abstract" : [
-    {
-      "text" : "Provide custom execution scope for a function call which is related to the",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "specified test or test case.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -798,7 +463,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -921,108 +594,6 @@
   "title" : "Test.Case",
   "type" : "topic",
   "url" : "\/documentation\/testing\/test\/case"
-},
-"doc://org.swift.testing/documentation/Testing/Trait/scopeProvider(for:testCase:)": {
-  "abstract" : [
-    {
-      "text" : "Get this trait’s scope provider for the specified test and optional test",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "case.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 3,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "scopeProvider"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "testCase"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV",
-      "text" : "Test"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing4TestV4CaseV",
-      "text" : "Case"
-    },
-    {
-      "kind" : "text",
-      "text" : "?) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5TraitP17TestScopeProviderQa",
-      "text" : "TestScopeProvider"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Trait\/scopeProvider(for:testCase:)",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "scopeProvider(for:testCase:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/trait\/scopeprovider(for:testcase:)"
 }
 }
 }

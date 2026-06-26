@@ -1,0 +1,417 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/diagnostics\/documentation\/diagnostics",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-isolation-history"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Region isolation history (RegionIsolationIsolationHistory)"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The region-based isolation checker tracks values using “regions”, which are conservative approximations of object graphs. When a value is sent across an isolation boundary and that send risks a data race, the primary diagnostic explains ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "what",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " was sent and ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "where",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : ". The isolation-history notes in this group explain ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "why",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " the sent value is considered isolated to a particular concurrency domain — that is, how the value came to be considered to be in the same object graph as a value that is isolated to said concurrency domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A typical isolation-history explanation is a chain of “X is connected to Y” notes, anchored at each named intermediate’s declaration, terminating in an “originating” note at the merge that brought the sent value into an isolated region. These notes make it possible to reconstruct the merge history by following the chain backward from the value at the point of send.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "We say “connected” because the region-based isolation checker reasons over regions, which are a conservative approximation of an object graph: when two values share a region, the checker has concluded that the program might construct an object-graph path between them implying that their object graphs are “connected”.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Isolation-history notes are opt-in and are enabled by applying the ",
+              "type" : "text"
+            },
+            {
+              "code" : "@diagnose(RegionIsolationIsolationHistory, as: warning)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " attribute to the function. This opts that single function in to history-note emission.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When the opt-in is not active, only the primary ",
+              "type" : "text"
+            },
+            {
+              "code" : "SendingRisksDataRace",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (or related) diagnostic is emitted; the auxiliary history notes are suppressed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/conversion-from-isolated-any-to-synchronous",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions"
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://diagnostics/documentation/diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Documentation on diagnostics emitted by the compiler and settings that control them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics",
+  "kind" : "article",
+  "role" : "collection",
+  "title" : "Swift compiler diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-call": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-call",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling an actor-isolated method from a synchronous nonisolated context (ActorIsolatedCall)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-call"
+},
+"doc://diagnostics/documentation/diagnostics/actor-isolated-mutating-async": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/actor-isolated-mutating-async",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Calling a mutating async actor-isolated method (ActorIsolatedMutatingAsync)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/actor-isolated-mutating-async"
+},
+"doc://diagnostics/documentation/diagnostics/add-preconcurrency-import": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/add-preconcurrency-import",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Add @preconcurrency import (AddPreconcurrencyImport)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/add-preconcurrency-import"
+},
+"doc://diagnostics/documentation/diagnostics/always-available-domain": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "@available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attributes and ",
+      "type" : "text"
+    },
+    {
+      "code" : "if #available",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " statements that reference custom availability domains which have been permanently enabled.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/always-available-domain",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Always enabled availability domains (AlwaysAvailableDomain)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/always-available-domain"
+},
+"doc://diagnostics/documentation/diagnostics/compilation-caching": {
+  "abstract" : [
+    {
+      "text" : "Errors and warnings related to the compiler’s CAS compilation caching.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/compilation-caching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Compilation caching (CompilationCaching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/compilation-caching"
+},
+"doc://diagnostics/documentation/diagnostics/conversion-from-isolated-any-to-synchronous": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/conversion-from-isolated-any-to-synchronous",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conversion from `@isolated(any)` function type to synchronous function type (ConversionFromIsolatedAnyToSynchronous)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/conversion-from-isolated-any-to-synchronous"
+},
+"doc://diagnostics/documentation/diagnostics/deprecated-declaration": {
+  "abstract" : [
+    {
+      "text" : "Warnings related to deprecated APIs that may be removed in future versions and should be replaced with more current alternatives.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/deprecated-declaration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated declaration warnings (DeprecatedDeclaration)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/deprecated-declaration"
+},
+"doc://diagnostics/documentation/diagnostics/diagnostic-groups": {
+  "abstract" : [
+    {
+      "text" : "Detailed explanations for various compiler diagnostics.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/diagnostic-groups",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Diagnostic groups",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/diagnostic-groups"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-callable-requirements": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "@dynamicCallable implementation requirements (DynamicCallable)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-callable-requirements"
+},
+"doc://diagnostics/documentation/diagnostics/dynamic-exclusivity": {
+  "abstract" : [
+    {
+      "text" : "Experimental",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-exclusivity",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dynamic exclusivity (DynamicExclusivity)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/dynamic-exclusivity"
+},
+"doc://diagnostics/documentation/diagnostics/embedded-restrictions": {
+  "abstract" : [
+    {
+      "text" : "Embedded Swift is a subset of the Swift language that that introduces some restrictions on the use of language features to eliminate the need for the Swift runtime. These restrictions are captured by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedRestrictions",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " diagnostic group.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/embedded-restrictions",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Embedded Swift language restrictions (EmbeddedRestrictions)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/embedded-restrictions"
+},
+"doc://diagnostics/documentation/diagnostics/implementation-only-deprecated": {
+  "abstract" : [
+    {
+      "text" : "Warnings that identify ",
+      "type" : "text"
+    },
+    {
+      "code" : "import",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " declarations with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "@_implementationOnly",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " attribute.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/implementation-only-deprecated",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Deprecated implementation-only imports (ImplementationOnlyDeprecated)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/implementation-only-deprecated"
+},
+"doc://diagnostics/documentation/diagnostics/region-isolation-cross-isolation-data-race": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Cross-isolation data race (RegionIsolationCrossIsolationDataRace)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/region-isolation-cross-isolation-data-race"
+},
+"doc://diagnostics/documentation/diagnostics/sendable-closure-captures": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/sendable-closure-captures",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Captures in a `@Sendable` closure (SendableClosureCaptures)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/sendable-closure-captures"
+},
+"doc://diagnostics/documentation/diagnostics/string-interpolation-conformance": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/string-interpolation-conformance",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Conforming to `StringInterpolationProtocol` (StringInterpolationConformance)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/string-interpolation-conformance"
+},
+"doc://diagnostics/documentation/diagnostics/trailing-closure-matching": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/trailing-closure-matching",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Argument matching for trailing closures (TrailingClosureMatching)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/trailing-closure-matching"
+}
+}
+}

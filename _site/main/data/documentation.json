@@ -1,24 +1,16 @@
 {
-  "schemaVersion": {
-    "major": 0,
-    "minor": 3,
-    "patch": 0
-  },
-  "identifier": {
-    "url": "doc://Swift---main/documentation",
-    "interfaceLanguage": "swift"
-  },
   "kind": "article",
   "topicSections": [
     {
-      "title": "The Swift Language",
+      "title": "Essential Libraries",
       "identifiers": [
-        "doc://com.apple.Swift/documentation/Swift",
         "doc://org.swift.tspl/documentation/The-Swift-Programming-Language",
+        "doc://com.apple.Swift/documentation/Swift",
         "doc://org.swift.migration.6/documentation/MigrationGuide",
-        "doc://diagnostics/documentation/diagnostics"
+        "doc://diagnostics/documentation/diagnostics",
+        "doc://org.swift.testing/documentation/Testing"
       ],
-      "anchor": "The-Swift-Language"
+      "anchor": "Essential-Libraries"
     },
     {
       "title": "Package Manager",
@@ -28,13 +20,6 @@
         "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin"
       ],
       "anchor": "Package-Manager"
-    },
-    {
-      "title": "Testing",
-      "identifiers": [
-        "doc://org.swift.testing/documentation/Testing"
-      ],
-      "anchor": "Testing"
     },
     {
       "title": "Server-Side Swift",
@@ -64,390 +49,423 @@
     }
   ],
   "metadata": {
-    "role": "collection",
     "title": "Swift - main",
-    "roleHeading": "Project"
+    "roleHeading": "Project",
+    "role": "collection"
+  },
+  "schemaVersion": {
+    "minor": 3,
+    "patch": 0,
+    "major": 0
   },
   "sections": [],
+  "identifier": {
+    "interfaceLanguage": "swift",
+    "url": "doc://Swift---main/documentation"
+  },
   "references": {
-    "doc://EmbeddedSwift/documentation/EmbeddedSwift": {
-      "identifier": "doc://EmbeddedSwift/documentation/EmbeddedSwift",
-      "abstract": [
-        {
-          "text": "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift",
-          "type": "text"
-        }
-      ],
-      "title": "Embedded Swift",
-      "kind": "symbol",
-      "type": "topic",
-      "url": "/documentation/embeddedswift",
-      "role": "collection"
-    },
-    "doc://com.apple.Swift/documentation/SwiftOnoneSupport": {
-      "kind": "symbol",
-      "url": "/documentation/swiftononesupport",
-      "role": "collection",
-      "title": "SwiftOnoneSupport",
-      "abstract": [],
-      "identifier": "doc://com.apple.Swift/documentation/SwiftOnoneSupport",
-      "type": "topic"
-    },
-    "doc://org.swift.docc/documentation/docc": {
-      "abstract": [
-        {
-          "text": "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
-          "type": "text"
-        }
-      ],
-      "type": "topic",
-      "kind": "symbol",
-      "url": "/documentation/docc",
-      "identifier": "doc://org.swift.docc/documentation/docc",
-      "role": "collection",
-      "title": "DocC"
-    },
-    "doc://com.apple.Swift/documentation/Runtime": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/Runtime",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/runtime",
-      "title": "Runtime",
-      "abstract": []
-    },
     "doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription": {
+      "url": "/documentation/packagedescription",
       "type": "topic",
       "identifier": "doc://org.swift.swiftpm.packagedescription/documentation/PackageDescription",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/packagedescription",
-      "title": "PackageDescription",
       "abstract": [
         {
-          "type": "text",
-          "text": "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers."
-        }
-      ]
-    },
-    "doc://com.apple.Swift/documentation/RuntimeUnittest": {
-      "kind": "symbol",
-      "identifier": "doc://com.apple.Swift/documentation/RuntimeUnittest",
-      "role": "collection",
-      "type": "topic",
-      "url": "/documentation/runtimeunittest",
-      "abstract": [],
-      "title": "RuntimeUnittest"
-    },
-    "doc://SwiftlyDocs/documentation/SwiftlyDocs": {
-      "identifier": "doc://SwiftlyDocs/documentation/SwiftlyDocs",
-      "url": "/documentation/swiftlydocs",
-      "kind": "symbol",
-      "abstract": [
-        {
-          "type": "text",
-          "text": "Install and manage your Swift programming language toolchains."
-        }
-      ],
-      "role": "collection",
-      "title": "Swiftly",
-      "type": "topic"
-    },
-    "doc://org.swift.tspl/documentation/The-Swift-Programming-Language": {
-      "kind": "symbol",
-      "url": "/documentation/the-swift-programming-language",
-      "identifier": "doc://org.swift.tspl/documentation/The-Swift-Programming-Language",
-      "title": "The Swift Programming Language (6.3)",
-      "abstract": [],
-      "type": "topic",
-      "role": "collection"
-    },
-    "doc://com.apple.Swift/documentation/SwiftPrivateLibcExtras": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/SwiftPrivateLibcExtras",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/swiftprivatelibcextras",
-      "title": "SwiftPrivateLibcExtras",
-      "abstract": []
-    },
-    "doc://com.apple.Swift/documentation/Observation": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/Observation",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/observation",
-      "title": "Observation",
-      "abstract": []
-    },
-    "doc://ServerGuides/documentation/ServerGuides": {
-      "abstract": [],
-      "identifier": "doc://ServerGuides/documentation/ServerGuides",
-      "role": "collection",
-      "title": "Server Guides",
-      "type": "topic",
-      "url": "/documentation/serverguides",
-      "kind": "symbol"
-    },
-    "doc://com.apple.Swift/documentation/_Differentiation": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/_Differentiation",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/_differentiation",
-      "title": "_Differentiation",
-      "abstract": []
-    },
-    "doc://PackageManagerDocs/documentation/PackageManagerDocs": {
-      "type": "topic",
-      "abstract": [
-        {
-          "text": "Organize, manage, and edit Swift packages.",
-          "type": "text"
-        }
-      ],
-      "kind": "symbol",
-      "identifier": "doc://PackageManagerDocs/documentation/PackageManagerDocs",
-      "title": "Swift Package Manager",
-      "role": "collection",
-      "url": "/documentation/packagemanagerdocs"
-    },
-    "doc://com.apple.Swift/documentation/CxxStdlib": {
-      "abstract": [],
-      "identifier": "doc://com.apple.Swift/documentation/CxxStdlib",
-      "role": "collection",
-      "title": "CxxStdlib",
-      "type": "topic",
-      "url": "/documentation/cxxstdlib",
-      "kind": "symbol"
-    },
-    "doc://org.swift.testing/documentation/Testing": {
-      "abstract": [
-        {
-          "text": "Create and run tests for your Swift packages and Xcode projects.",
+          "text": "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers.",
           "type": "text"
         }
       ],
       "role": "collection",
-      "url": "/documentation/testing",
-      "title": "Testing",
       "kind": "symbol",
-      "identifier": "doc://org.swift.testing/documentation/Testing",
-      "type": "topic"
-    },
-    "doc://SwiftAndroid/documentation/SwiftAndroid": {
-      "kind": "symbol",
-      "url": "/documentation/swiftandroid",
-      "role": "collection",
-      "title": "SwiftAndroid",
-      "abstract": [],
-      "identifier": "doc://SwiftAndroid/documentation/SwiftAndroid",
-      "type": "topic"
-    },
-    "doc://com.apple.Swift/documentation/_Volatile": {
-      "url": "/documentation/_volatile",
-      "kind": "symbol",
-      "role": "collection",
-      "title": "_Volatile",
-      "abstract": [],
-      "identifier": "doc://com.apple.Swift/documentation/_Volatile",
-      "type": "topic"
-    },
-    "doc://com.apple.Swift/documentation/_Builtin_float": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/_Builtin_float",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/_builtin_float",
-      "title": "_Builtin_float",
-      "abstract": []
-    },
-    "doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
-      "kind": "symbol",
-      "identifier": "doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server",
-      "role": "collection",
-      "type": "topic",
-      "url": "/tutorials/getting-started-swift-server",
-      "abstract": [
-        {
-          "text": "Learn about cloud services in Swift by building and extending a Vapor app.",
-          "type": "text"
-        }
-      ],
-      "title": "Explore Swift on the server by building a Vapor app"
-    },
-    "doc://com.apple.Swift/documentation/SwiftPrivate": {
-      "kind": "symbol",
-      "identifier": "doc://com.apple.Swift/documentation/SwiftPrivate",
-      "role": "collection",
-      "type": "topic",
-      "url": "/documentation/swiftprivate",
-      "abstract": [],
-      "title": "SwiftPrivate"
-    },
-    "doc://com.apple.Swift/documentation/RegexBuilder": {
-      "abstract": [],
-      "identifier": "doc://com.apple.Swift/documentation/RegexBuilder",
-      "role": "collection",
-      "title": "RegexBuilder",
-      "type": "topic",
-      "url": "/documentation/regexbuilder",
-      "kind": "symbol"
-    },
-    "doc://com.apple.Swift/documentation/SwiftPrivateThreadExtras": {
-      "abstract": [],
-      "identifier": "doc://com.apple.Swift/documentation/SwiftPrivateThreadExtras",
-      "role": "collection",
-      "title": "SwiftPrivateThreadExtras",
-      "type": "topic",
-      "url": "/documentation/swiftprivatethreadextras",
-      "kind": "symbol"
-    },
-    "doc://com.apple.Swift/documentation/Synchronization": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/Synchronization",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/synchronization",
-      "title": "Synchronization",
-      "abstract": []
-    },
-    "doc://com.apple.Swift/documentation/StdlibUnittestFoundationExtras": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/StdlibUnittestFoundationExtras",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/stdlibunittestfoundationextras",
-      "title": "StdlibUnittestFoundationExtras",
-      "abstract": []
-    },
-    "doc://com.apple.Swift/documentation/Swift": {
-      "kind": "symbol",
-      "identifier": "doc://com.apple.Swift/documentation/Swift",
-      "role": "collection",
-      "type": "topic",
-      "url": "/documentation/swift",
-      "abstract": [
-        {
-          "text": "Build apps using a powerful open language.",
-          "type": "text"
-        }
-      ],
-      "title": "Swift"
-    },
-    "doc://org.swift.migration.6/documentation/MigrationGuide": {
-      "kind": "symbol",
-      "url": "/documentation/migrationguide",
-      "identifier": "doc://org.swift.migration.6/documentation/MigrationGuide",
-      "title": "Migrating to Swift 6",
-      "abstract": [],
-      "type": "topic",
-      "role": "collection"
+      "title": "PackageDescription"
     },
     "doc://com.apple.Swift/documentation/SwiftReflectionTest": {
+      "kind": "symbol",
+      "type": "topic",
+      "title": "SwiftReflectionTest",
+      "role": "collection",
       "abstract": [],
       "identifier": "doc://com.apple.Swift/documentation/SwiftReflectionTest",
-      "role": "collection",
-      "title": "SwiftReflectionTest",
-      "type": "topic",
-      "url": "/documentation/swiftreflectiontest",
-      "kind": "symbol"
-    },
-    "doc://com.apple.Swift/documentation/Cxx": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/Cxx",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/cxx",
-      "title": "Cxx",
-      "abstract": []
-    },
-    "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
-      "identifier": "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin",
-      "title": "PackagePlugin",
-      "kind": "symbol",
-      "type": "topic",
-      "role": "collection",
-      "url": "/documentation/packageplugin",
-      "abstract": [
-        {
-          "text": "Create plugins that extend the Swift Package Manager.",
-          "type": "text"
-        }
-      ]
-    },
-    "doc://com.apple.Swift/documentation/StdlibUnittest": {
-      "type": "topic",
-      "abstract": [],
-      "kind": "symbol",
-      "identifier": "doc://com.apple.Swift/documentation/StdlibUnittest",
-      "title": "StdlibUnittest",
-      "role": "collection",
-      "url": "/documentation/stdlibunittest"
-    },
-    "doc://com.apple.Swift/documentation/Distributed": {
-      "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/Distributed",
-      "role": "collection",
-      "kind": "symbol",
-      "url": "/documentation/distributed",
-      "title": "Distributed",
-      "abstract": []
-    },
-    "doc://userdocs/documentation/userdocs": {
-      "identifier": "doc://userdocs/documentation/userdocs",
-      "type": "topic",
-      "abstract": [
-        {
-          "type": "text",
-          "text": "Language support for Swift in Visual Studio Code."
-        }
-      ],
-      "url": "/documentation/userdocs",
-      "title": "The Swift Extension for VS Code",
-      "kind": "symbol",
-      "role": "collection"
+      "url": "/documentation/swiftreflectiontest"
     },
     "doc://diagnostics/documentation/diagnostics": {
-      "kind": "symbol",
-      "url": "/documentation/diagnostics",
       "identifier": "doc://diagnostics/documentation/diagnostics",
-      "title": "Swift compiler diagnostics",
+      "url": "/documentation/diagnostics",
       "abstract": [
         {
           "text": "Documentation on diagnostics emitted by the compiler and settings that control them.",
           "type": "text"
         }
       ],
+      "kind": "symbol",
       "type": "topic",
+      "title": "Swift compiler diagnostics",
       "role": "collection"
     },
     "doc://WasmGuide/documentation/WasmGuide": {
-      "type": "topic",
-      "identifier": "doc://WasmGuide/documentation/WasmGuide",
-      "role": "collection",
       "kind": "symbol",
-      "url": "/documentation/wasmguide",
+      "type": "topic",
       "title": "WasmGuide",
-      "abstract": []
+      "role": "collection",
+      "abstract": [],
+      "identifier": "doc://WasmGuide/documentation/WasmGuide",
+      "url": "/documentation/wasmguide"
     },
-    "doc://com.apple.Swift/documentation/OSLogTestHelper": {
+    "doc://com.apple.Swift/documentation/RegexBuilder": {
+      "url": "/documentation/regexbuilder",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/RegexBuilder",
       "abstract": [],
       "role": "collection",
-      "url": "/documentation/oslogtesthelper",
-      "title": "OSLogTestHelper",
       "kind": "symbol",
-      "identifier": "doc://com.apple.Swift/documentation/OSLogTestHelper",
-      "type": "topic"
+      "title": "RegexBuilder"
     },
-    "doc://com.apple.Swift/documentation/_RegexParser": {
+    "doc://ServerGuides/documentation/ServerGuides": {
+      "navigatorTitle": [
+        {
+          "kind": "text",
+          "text": "Server Guides"
+        }
+      ],
+      "url": "/documentation/serverguides",
       "type": "topic",
-      "identifier": "doc://com.apple.Swift/documentation/_RegexParser",
+      "identifier": "doc://ServerGuides/documentation/ServerGuides",
+      "abstract": [],
       "role": "collection",
       "kind": "symbol",
+      "title": "Server Guides"
+    },
+    "doc://com.apple.Swift/documentation/StdlibUnittestFoundationExtras": {
+      "type": "topic",
+      "role": "collection",
+      "kind": "symbol",
+      "abstract": [],
+      "url": "/documentation/stdlibunittestfoundationextras",
+      "title": "StdlibUnittestFoundationExtras",
+      "identifier": "doc://com.apple.Swift/documentation/StdlibUnittestFoundationExtras"
+    },
+    "doc://com.apple.Swift/documentation/_Volatile": {
+      "url": "/documentation/_volatile",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/_Volatile",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "_Volatile"
+    },
+    "doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server": {
+      "url": "/tutorials/getting-started-swift-server",
+      "type": "topic",
+      "identifier": "doc://com.apple.ASE.getting-started/tutorials/getting-started-swift-server",
+      "abstract": [
+        {
+          "text": "Learn about cloud services in Swift by building and extending a Vapor app.",
+          "type": "text"
+        }
+      ],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "Explore Swift on the server by building a Vapor app"
+    },
+    "doc://org.swift.docc/documentation/docc": {
+      "navigatorTitle": [
+        {
+          "text": "DocC",
+          "kind": "text"
+        }
+      ],
+      "url": "/documentation/docc",
+      "type": "topic",
+      "identifier": "doc://org.swift.docc/documentation/docc",
+      "abstract": [
+        {
+          "text": "Produce rich API reference documentation and interactive tutorials for your Swift framework or package.",
+          "type": "text"
+        }
+      ],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "DocC"
+    },
+    "doc://org.swift.migration.6/documentation/MigrationGuide": {
+      "identifier": "doc://org.swift.migration.6/documentation/MigrationGuide",
+      "url": "/documentation/migrationguide",
+      "abstract": [],
+      "kind": "symbol",
+      "type": "topic",
+      "title": "Migrating to Swift 6",
+      "role": "collection"
+    },
+    "doc://com.apple.Swift/documentation/Observation": {
+      "url": "/documentation/observation",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/Observation",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "Observation"
+    },
+    "doc://org.swift.testing/documentation/Testing": {
+      "kind": "symbol",
+      "identifier": "doc://org.swift.testing/documentation/Testing",
+      "title": "Testing",
+      "abstract": [
+        {
+          "text": "Create and run tests for your Swift packages and Xcode projects.",
+          "type": "text"
+        }
+      ],
+      "type": "topic",
+      "role": "collection",
+      "url": "/documentation/testing"
+    },
+    "doc://com.apple.Swift/documentation/SwiftPrivateLibcExtras": {
+      "url": "/documentation/swiftprivatelibcextras",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/SwiftPrivateLibcExtras",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "SwiftPrivateLibcExtras"
+    },
+    "doc://com.apple.Swift/documentation/Runtime": {
+      "kind": "symbol",
+      "type": "topic",
+      "title": "Runtime",
+      "role": "collection",
+      "abstract": [],
+      "identifier": "doc://com.apple.Swift/documentation/Runtime",
+      "url": "/documentation/runtime"
+    },
+    "doc://com.apple.Swift/documentation/Swift": {
+      "kind": "symbol",
+      "type": "topic",
+      "title": "Swift",
+      "role": "collection",
+      "abstract": [
+        {
+          "type": "text",
+          "text": "Build apps using a powerful open language."
+        }
+      ],
+      "identifier": "doc://com.apple.Swift/documentation/Swift",
+      "url": "/documentation/swift"
+    },
+    "doc://org.swift.tspl/documentation/The-Swift-Programming-Language": {
+      "identifier": "doc://org.swift.tspl/documentation/The-Swift-Programming-Language",
+      "url": "/documentation/the-swift-programming-language",
+      "abstract": [],
+      "kind": "symbol",
+      "type": "topic",
+      "title": "The Swift Programming Language (6.3)",
+      "role": "collection"
+    },
+    "doc://com.apple.Swift/documentation/_Differentiation": {
+      "kind": "symbol",
+      "type": "topic",
+      "title": "_Differentiation",
+      "role": "collection",
+      "abstract": [],
+      "identifier": "doc://com.apple.Swift/documentation/_Differentiation",
+      "url": "/documentation/_differentiation"
+    },
+    "doc://SwiftlyDocs/documentation/SwiftlyDocs": {
+      "kind": "symbol",
+      "navigatorTitle": [
+        {
+          "kind": "text",
+          "text": "Swiftly"
+        }
+      ],
+      "identifier": "doc://SwiftlyDocs/documentation/SwiftlyDocs",
+      "title": "Swiftly",
+      "abstract": [
+        {
+          "text": "Install and manage your Swift programming language toolchains.",
+          "type": "text"
+        }
+      ],
+      "type": "topic",
+      "role": "collection",
+      "url": "/documentation/swiftlydocs"
+    },
+    "doc://com.apple.Swift/documentation/Synchronization": {
+      "kind": "symbol",
+      "identifier": "doc://com.apple.Swift/documentation/Synchronization",
+      "title": "Synchronization",
+      "abstract": [],
+      "type": "topic",
+      "role": "collection",
+      "url": "/documentation/synchronization"
+    },
+    "doc://com.apple.Swift/documentation/SwiftPrivateThreadExtras": {
+      "url": "/documentation/swiftprivatethreadextras",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/SwiftPrivateThreadExtras",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "SwiftPrivateThreadExtras"
+    },
+    "doc://com.apple.Swift/documentation/Distributed": {
+      "type": "topic",
+      "role": "collection",
+      "kind": "symbol",
+      "abstract": [],
+      "url": "/documentation/distributed",
+      "title": "Distributed",
+      "identifier": "doc://com.apple.Swift/documentation/Distributed"
+    },
+    "doc://EmbeddedSwift/documentation/EmbeddedSwift": {
+      "identifier": "doc://EmbeddedSwift/documentation/EmbeddedSwift",
+      "url": "/documentation/embeddedswift",
+      "abstract": [
+        {
+          "type": "text",
+          "text": "Embedded Swift is a compilation and language mode that enables development of baremetal, embedded and standalone software in Swift"
+        }
+      ],
+      "kind": "symbol",
+      "type": "topic",
+      "title": "Embedded Swift",
+      "role": "collection"
+    },
+    "doc://com.apple.Swift/documentation/CxxStdlib": {
+      "type": "topic",
+      "role": "collection",
+      "kind": "symbol",
+      "abstract": [],
+      "url": "/documentation/cxxstdlib",
+      "title": "CxxStdlib",
+      "identifier": "doc://com.apple.Swift/documentation/CxxStdlib"
+    },
+    "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin": {
+      "kind": "symbol",
+      "identifier": "doc://org.swift.swiftpm.packageplugin/documentation/PackagePlugin",
+      "title": "PackagePlugin",
+      "abstract": [
+        {
+          "text": "Create plugins that extend the Swift Package Manager.",
+          "type": "text"
+        }
+      ],
+      "type": "topic",
+      "role": "collection",
+      "url": "/documentation/packageplugin"
+    },
+    "doc://com.apple.Swift/documentation/SwiftPrivate": {
+      "url": "/documentation/swiftprivate",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/SwiftPrivate",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "SwiftPrivate"
+    },
+    "doc://com.apple.Swift/documentation/SwiftOnoneSupport": {
+      "url": "/documentation/swiftononesupport",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/SwiftOnoneSupport",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "SwiftOnoneSupport"
+    },
+    "doc://userdocs/documentation/userdocs": {
+      "identifier": "doc://userdocs/documentation/userdocs",
+      "url": "/documentation/userdocs",
+      "abstract": [
+        {
+          "type": "text",
+          "text": "Language support for Swift in Visual Studio Code."
+        }
+      ],
+      "kind": "symbol",
+      "type": "topic",
+      "title": "The Swift Extension for VS Code",
+      "role": "collection"
+    },
+    "doc://SwiftAndroid/documentation/SwiftAndroid": {
+      "url": "/documentation/swiftandroid",
+      "type": "topic",
+      "identifier": "doc://SwiftAndroid/documentation/SwiftAndroid",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "SwiftAndroid"
+    },
+    "doc://com.apple.Swift/documentation/OSLogTestHelper": {
+      "url": "/documentation/oslogtesthelper",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/OSLogTestHelper",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "OSLogTestHelper"
+    },
+    "doc://com.apple.Swift/documentation/StdlibUnittest": {
+      "kind": "symbol",
+      "type": "topic",
+      "title": "StdlibUnittest",
+      "role": "collection",
+      "abstract": [],
+      "identifier": "doc://com.apple.Swift/documentation/StdlibUnittest",
+      "url": "/documentation/stdlibunittest"
+    },
+    "doc://com.apple.Swift/documentation/_Builtin_float": {
+      "url": "/documentation/_builtin_float",
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/_Builtin_float",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "_Builtin_float"
+    },
+    "doc://PackageManagerDocs/documentation/PackageManagerDocs": {
+      "navigatorTitle": [
+        {
+          "text": "Swift Package Manager",
+          "kind": "text"
+        }
+      ],
+      "url": "/documentation/packagemanagerdocs",
+      "type": "topic",
+      "identifier": "doc://PackageManagerDocs/documentation/PackageManagerDocs",
+      "abstract": [
+        {
+          "text": "Organize, manage, and edit Swift packages.",
+          "type": "text"
+        }
+      ],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "Swift Package Manager"
+    },
+    "doc://com.apple.Swift/documentation/_RegexParser": {
       "url": "/documentation/_regexparser",
-      "title": "_RegexParser",
-      "abstract": []
+      "type": "topic",
+      "identifier": "doc://com.apple.Swift/documentation/_RegexParser",
+      "abstract": [],
+      "role": "collection",
+      "kind": "symbol",
+      "title": "_RegexParser"
+    },
+    "doc://com.apple.Swift/documentation/Cxx": {
+      "kind": "symbol",
+      "identifier": "doc://com.apple.Swift/documentation/Cxx",
+      "title": "Cxx",
+      "abstract": [],
+      "type": "topic",
+      "role": "collection",
+      "url": "/documentation/cxx"
+    },
+    "doc://com.apple.Swift/documentation/RuntimeUnittest": {
+      "type": "topic",
+      "role": "collection",
+      "kind": "symbol",
+      "abstract": [],
+      "url": "/documentation/runtimeunittest",
+      "title": "RuntimeUnittest",
+      "identifier": "doc://com.apple.Swift/documentation/RuntimeUnittest"
     }
   }
 }

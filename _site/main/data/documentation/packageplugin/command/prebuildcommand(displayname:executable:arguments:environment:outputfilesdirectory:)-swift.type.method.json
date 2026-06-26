@@ -106,7 +106,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": [any "
+        "text" : ": ["
       },
       {
         "kind" : "typeIdentifier",
@@ -132,7 +132,7 @@
       },
       {
         "kind" : "text",
-        "text" : " : any "
+        "text" : " : "
       },
       {
         "kind" : "typeIdentifier",
@@ -262,7 +262,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": [any "
+              "text" : ": ["
             },
             {
               "kind" : "typeIdentifier",
@@ -288,7 +288,7 @@
             },
             {
               "kind" : "text",
-              "text" : " : any "
+              "text" : " : "
             },
             {
               "kind" : "typeIdentifier",
@@ -327,6 +327,229 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "An optional string to show in build logs and other",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "status areas.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "displayName"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The absolute path to the executable to invoke.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "executable"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The command-line arguments for the executable.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "arguments"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Any environment variable assignments visible to the executable.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "environment"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A directory into which the command writes its",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "output files.  Any files there recognizable by their extension as",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "source files (for example, ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ") are compiled into the target for which",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "this command was generated as if in its source directory; other",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "files are treated as resources as if explicitly listed in",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Package.swift",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " using ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".process(...)",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "outputFilesDirectory"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Prebuild commands can have a significant performance impact",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and should only be used when there would be no way to know the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "list of output file paths without first reading the contents",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of one or more input files. Typically there is no way to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "determine this list without first running the command, so",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "instead of encoding that list, the caller supplies an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "outputFilesDirectory",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter, and all files in that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "directory after the command runs are treated as output files.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -643,7 +866,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -669,7 +892,7 @@
     },
     {
       "kind" : "text",
-      "text" : " : any "
+      "text" : " : "
     },
     {
       "kind" : "typeIdentifier",
@@ -926,7 +1149,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -952,7 +1175,7 @@
     },
     {
       "kind" : "text",
-      "text" : " : any "
+      "text" : " : "
     },
     {
       "kind" : "typeIdentifier",

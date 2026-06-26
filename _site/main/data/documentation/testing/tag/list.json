@@ -189,7 +189,6 @@
       "identifiers" : [
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/CustomStringConvertible-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/Equatable-Implementations",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/Hashable-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/SuiteTrait-Implementations",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/Trait-Implementations"
       ],
@@ -543,17 +542,6 @@
   "title" : "Equatable Implementations",
   "type" : "topic",
   "url" : "\/documentation\/testing\/tag\/list\/equatable-implementations"
-},
-"doc://org.swift.testing/documentation/Testing/Tag/List/Hashable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Tag\/List\/Hashable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Hashable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/tag\/list\/hashable-implementations"
 },
 "doc://org.swift.testing/documentation/Testing/Tag/List/SuiteTrait-Implementations": {
   "abstract" : [

@@ -240,6 +240,13 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Related-Documentation",
+      "identifiers" : [
+        "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-unsafe"
+      ],
+      "title" : "Related Documentation"
+    },
+    {
       "generated" : true,
       "identifiers" : [
         "doc:\/\/diagnostics\/documentation\/diagnostics\/dynamic-callable-requirements",
@@ -512,6 +519,17 @@
   "title" : "Argument matching for trailing closures (TrailingClosureMatching)",
   "type" : "topic",
   "url" : "\/documentation\/diagnostics\/trailing-closure-matching"
+},
+"doc://diagnostics/documentation/diagnostics/unnecessary-unsafe": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/diagnostics\/documentation\/diagnostics\/unnecessary-unsafe",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Unnecessary unsafe (UnnecessaryUnsafe)",
+  "type" : "topic",
+  "url" : "\/documentation\/diagnostics\/unnecessary-unsafe"
 }
 }
 }

@@ -134,37 +134,6 @@
             }
           ],
           "type" : "paragraph"
-        },
-        {
-          "anchor" : "Test-Libraries-Targets",
-          "level" : 3,
-          "text" : "Test Libraries Targets",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Built-in testing libraries, such as Swift Testing and XCTest, are only available for use in certain runtime contexts.",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "While you can use these within Swift libraries intended for testing, take care so that any such libraries only terminate in test targets, as targets that use Swift Testing or XCTest should never be distributed to end users.",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "Including testing libraries as a dependency to an executable target, as either a direct or transitive dependency, can cause clients to encounter linking issues.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -1185,15 +1154,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC10DependencyO",
       "text" : "Dependency"
     },
@@ -1307,15 +1267,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -1552,15 +1503,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC10DependencyO",
       "text" : "Dependency"
     },
@@ -1731,15 +1673,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
       "text" : "PluginUsage"
     },
@@ -1816,15 +1749,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -2012,15 +1936,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -2338,15 +2253,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC16PluginCapabilityO",
       "text" : "PluginCapability"
     },
@@ -2361,15 +2267,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -2503,15 +2400,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC16PluginCapabilityO",
       "text" : "PluginCapability"
     },
@@ -2526,15 +2414,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -2652,15 +2531,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC16PluginCapabilityO",
       "text" : "PluginCapability"
     },
@@ -2699,15 +2569,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -3104,15 +2965,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC10DependencyO",
       "text" : "Dependency"
     },
@@ -3258,15 +3110,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -3483,15 +3326,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -3728,15 +3562,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC10DependencyO",
       "text" : "Dependency"
     },
@@ -3907,15 +3732,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
       "text" : "PluginUsage"
     },
@@ -3992,15 +3808,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -4191,15 +3998,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
       "text" : "PluginUsage"
     },
@@ -4277,15 +4075,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -4417,15 +4206,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -4625,15 +4405,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -4853,15 +4624,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC10DependencyO",
       "text" : "Dependency"
     },
@@ -5015,15 +4777,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
       "text" : "PluginUsage"
     },
@@ -5100,15 +4853,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -5282,15 +5026,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription6TargetC11PluginUsageO",
       "text" : "PluginUsage"
     },
@@ -5334,15 +5069,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

@@ -187,18 +187,6 @@
       "kind" : "content"
     }
   ],
-  "relationshipsSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-589vu\/CGImage",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-8vko\/CIImage",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-5hidh\/NSImage"
-      ],
-      "kind" : "relationships",
-      "title" : "Conforming Types",
-      "type" : "conformingTypes"
-    }
-  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -372,6 +360,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -388,6 +377,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],
@@ -499,6 +489,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentV_5named2as14sourceLocationACyxGqd___SSSgAA21AttachableImageFormatVSgAA06SourceF0VtcAA01_gH7WrapperCyqd__GRbzAA0gK0RzAA0g2AsH0Rd__lufc1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -638,6 +629,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentV6record_5named2as14sourceLocationyqd___SSSgAA21AttachableImageFormatVSgAA06SourceG0VtAA01_hI7WrapperCyqd__GRbzAA0hL0RzAA0h2AsI0Rd__lFZ1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -712,102 +704,6 @@
   "title" : "Attach images",
   "type" : "topic",
   "url" : "\/documentation\/testing\/attachments#Attach-images"
-},
-"doc://org.swift.testing/documentation/Testing/Testing-589vu/CGImage": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "c:@T@CGImageRef",
-      "text" : "CGImage"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-589vu\/CGImage",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CGImage"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CGImage",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/testing-589vu\/cgimage"
-},
-"doc://org.swift.testing/documentation/Testing/Testing-5hidh/NSImage": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "c:objc(cs)NSImage",
-      "text" : "NSImage"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-5hidh\/NSImage",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "NSImage"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "NSImage",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/testing-5hidh\/nsimage"
-},
-"doc://org.swift.testing/documentation/Testing/Testing-8vko/CIImage": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "c:objc(cs)CIImage",
-      "text" : "CIImage"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Testing-8vko\/CIImage",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CIImage"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CIImage",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/testing-8vko\/ciimage"
 },
 "https://developer.apple.com/documentation/testing/attachable": {
   "identifier" : "https:\/\/developer.apple.com\/documentation\/testing\/attachable",

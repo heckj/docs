@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Comparable.<(_:_:)",
+      "code" : "Comparable.>(_:_:)",
       "type" : "codeVoice"
     },
     {
@@ -28,8 +28,8 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Testing",
-    "externalID" : "s:7Testing5IssueV8SeverityO1loiySbAE_AEtFZ",
+    "extendedModule" : "Swift",
+    "externalID" : "s:SLsRi_zRi0_zrlE1goiySbx_xtFZ::SYNTHESIZED::s:7Testing5IssueV8SeverityO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -49,7 +49,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "<"
+        "text" : ">"
       },
       {
         "kind" : "text",
@@ -60,36 +60,32 @@
         "text" : "("
       },
       {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7Testing5IssueV",
-        "text" : "Issue"
+        "kind" : "keyword",
+        "text" : "borrowing"
       },
       {
         "kind" : "text",
-        "text" : "."
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-        "text" : "Severity"
+        "text" : "Self"
       },
       {
         "kind" : "text",
         "text" : ", "
       },
       {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7Testing5IssueV",
-        "text" : "Issue"
+        "kind" : "keyword",
+        "text" : "borrowing"
       },
       {
         "kind" : "text",
-        "text" : "."
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-        "text" : "Severity"
+        "text" : "Self"
       },
       {
         "kind" : "text",
@@ -103,7 +99,10 @@
     ],
     "modules" : [
       {
-        "name" : "Testing"
+        "name" : "Testing",
+        "relatedModules" : [
+          "Swift"
+        ]
       }
     ],
     "platforms" : [
@@ -131,7 +130,7 @@
     "role" : "symbol",
     "roleHeading" : "Operator",
     "symbolKind" : "op",
-    "title" : "<(_:_:)"
+    "title" : ">(_:_:)"
   },
   "primaryContentSections" : [
     {
@@ -162,7 +161,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "<"
+              "text" : ">"
             },
             {
               "kind" : "text",
@@ -174,27 +173,23 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "a"
+              "text" : "lhs"
             },
             {
               "kind" : "text",
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7Testing5IssueV",
-              "text" : "Issue"
+              "kind" : "keyword",
+              "text" : "borrowing"
             },
             {
               "kind" : "text",
-              "text" : "."
+              "text" : " "
             },
             {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-              "text" : "Severity"
+              "text" : "Self"
             },
             {
               "kind" : "text",
@@ -202,27 +197,23 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "b"
+              "text" : "rhs"
             },
             {
               "kind" : "text",
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7Testing5IssueV",
-              "text" : "Issue"
+              "kind" : "keyword",
+              "text" : "borrowing"
             },
             {
               "kind" : "text",
-              "text" : "."
+              "text" : " "
             },
             {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-              "text" : "Severity"
+              "text" : "Self"
             },
             {
               "kind" : "text",
@@ -366,7 +357,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "<"
+      "text" : ">"
     },
     {
       "kind" : "text",
@@ -377,36 +368,32 @@
       "text" : "("
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
+      "kind" : "keyword",
+      "text" : "borrowing"
     },
     {
       "kind" : "text",
-      "text" : "."
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-      "text" : "Severity"
+      "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
+      "kind" : "keyword",
+      "text" : "borrowing"
     },
     {
       "kind" : "text",
-      "text" : "."
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-      "text" : "Severity"
+      "text" : "Self"
     },
     {
       "kind" : "text",
@@ -421,7 +408,7 @@
   "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "<(_:_:)",
+  "title" : ">(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_(_:_:)"
 }

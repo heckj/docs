@@ -88,8 +88,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-        "text" : "TimeLimitTrait"
+        "text" : "Self"
       },
       {
         "kind" : "text",
@@ -120,6 +119,20 @@
         "deprecated" : false,
         "introducedAt" : "16.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "16.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -215,10 +228,8 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/TimeLimitTrait",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-              "text" : "TimeLimitTrait"
+              "text" : "Self"
             },
             {
               "kind" : "text",
@@ -969,7 +980,15 @@
     },
     {
       "kind" : "text",
-      "text" : ", () "
+      "text" : ", "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1082,11 +1101,19 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() "
+      "text" : " "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1239,7 +1266,15 @@
     },
     {
       "kind" : "text",
-      "text" : ", () "
+      "text" : ", "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1360,11 +1395,19 @@
     },
     {
       "kind" : "attribute",
-      "text" : "@autoclosure "
+      "text" : "@autoclosure"
     },
     {
       "kind" : "text",
-      "text" : "() "
+      "text" : " "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -1495,8 +1538,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing14TimeLimitTraitV",
-      "text" : "TimeLimitTrait"
+      "text" : "Self"
     },
     {
       "kind" : "text",

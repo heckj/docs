@@ -165,7 +165,8 @@
       "anchor" : "Retrieving-information-about-checked-expectations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectation"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Expectation",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible"
       ],
       "title" : "Retrieving information about checked expectations"
     }
@@ -178,6 +179,14 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/ExpectationFailedError\/expectation"
       ],
       "title" : "Instance Properties"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/ExpectationFailedError\/Error-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -207,6 +216,48 @@
   "title" : "Testing",
   "type" : "topic",
   "url" : "\/documentation\/testing"
+},
+"doc://org.swift.testing/documentation/Testing/CustomTestStringConvertible": {
+  "abstract" : [
+    {
+      "text" : "A protocol describing types with a custom string representation when",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "presented as part of a test’s output.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CustomTestStringConvertible"
+    }
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/CustomTestStringConvertible",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CustomTestStringConvertible"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CustomTestStringConvertible",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/customteststringconvertible"
 },
 "doc://org.swift.testing/documentation/Testing/Expectation": {
   "abstract" : [
@@ -283,6 +334,17 @@
   "title" : "ExpectationFailedError",
   "type" : "topic",
   "url" : "\/documentation\/testing\/expectationfailederror"
+},
+"doc://org.swift.testing/documentation/Testing/ExpectationFailedError/Error-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/ExpectationFailedError\/Error-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Error Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/testing\/expectationfailederror\/error-implementations"
 },
 "doc://org.swift.testing/documentation/Testing/ExpectationFailedError/expectation": {
   "abstract" : [

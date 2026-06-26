@@ -81,6 +81,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
         "text" : "R"
       },
       {
@@ -97,6 +98,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
         "text" : "R"
       }
     ],
@@ -227,6 +229,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
               "text" : "R"
             },
             {
@@ -243,6 +246,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
               "text" : "R"
             }
           ]
@@ -547,6 +551,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -563,6 +568,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing17AttachableAsImageP15withUnsafeBytes2as_qd__AA0bD6FormatV_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],

@@ -39,15 +39,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin20BinaryArtifactTargetV",
-        "text" : "BinaryArtifactTarget"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin20BinaryArtifactTargetV4KindO",
         "text" : "Kind"
       }
@@ -88,16 +79,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/BinaryArtifactTarget",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin20BinaryArtifactTargetV",
-              "text" : "BinaryArtifactTarget"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/BinaryArtifactTarget\/Kind-swift.enum",
@@ -493,15 +474,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin20BinaryArtifactTargetV",
-      "text" : "BinaryArtifactTarget"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
       "text" : "ID"
     }
@@ -536,15 +508,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin20BinaryArtifactTargetV",
-      "text" : "BinaryArtifactTarget"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -619,15 +582,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin20BinaryArtifactTargetV",
-      "text" : "BinaryArtifactTarget"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

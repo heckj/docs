@@ -720,15 +720,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV",
-      "text" : "SwiftSetting"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:18PackageDescription12SwiftSettingV20InteroperabilityModeO",
       "text" : "InteroperabilityMode"
     },
@@ -1410,15 +1401,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18PackageDescription6TargetC",
-      "text" : "Target"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

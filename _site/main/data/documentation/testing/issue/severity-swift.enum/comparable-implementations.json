@@ -43,9 +43,8 @@
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/.._(_:)",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/.._(_:_:)",
         "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_(_:_:)",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_(_:_:)-7vhty",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-1kxxv",
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-29sl5"
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-3g01o",
+        "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-5ca3j"
       ],
       "title" : "Operators"
     }
@@ -515,7 +514,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "<"
+      "text" : ">"
     },
     {
       "kind" : "text",
@@ -526,36 +525,32 @@
       "text" : "("
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
+      "kind" : "keyword",
+      "text" : "borrowing"
     },
     {
       "kind" : "text",
-      "text" : "."
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-      "text" : "Severity"
+      "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV",
-      "text" : "Issue"
+      "kind" : "keyword",
+      "text" : "borrowing"
     },
     {
       "kind" : "text",
-      "text" : "."
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing5IssueV8SeverityO",
-      "text" : "Severity"
+      "text" : "Self"
     },
     {
       "kind" : "text",
@@ -570,73 +565,11 @@
   "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "<(_:_:)",
+  "title" : ">(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_(_:_:)"
 },
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/_(_:_:)-7vhty": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : ">"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sb",
-      "text" : "Bool"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_(_:_:)-7vhty",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : ">(_:_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_(_:_:)-7vhty"
-},
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/_=(_:_:)-1kxxv": {
+"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/_=(_:_:)-3g01o": {
   "abstract" : [
 
   ],
@@ -670,12 +603,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -691,14 +640,14 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-1kxxv",
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-3g01o",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : ">=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_=(_:_:)-1kxxv"
+  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_=(_:_:)-3g01o"
 },
-"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/_=(_:_:)-29sl5": {
+"doc://org.swift.testing/documentation/Testing/Issue/Severity-swift.enum/_=(_:_:)-5ca3j": {
   "abstract" : [
 
   ],
@@ -732,12 +681,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -753,12 +718,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-29sl5",
+  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Issue\/Severity-swift.enum\/_=(_:_:)-5ca3j",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_=(_:_:)-29sl5"
+  "url" : "\/documentation\/testing\/issue\/severity-swift.enum\/_=(_:_:)-5ca3j"
 },
 "doc://org.swift.testing/documentation/Testing/known-issues": {
   "abstract" : [

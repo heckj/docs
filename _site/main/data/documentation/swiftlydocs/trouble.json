@@ -146,6 +146,12 @@
   ],
   "identifier" : "doc:\/\/SwiftlyDocs\/documentation\/SwiftlyDocs",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Swiftly"
+    }
+  ],
   "role" : "collection",
   "title" : "Swiftly",
   "type" : "topic",

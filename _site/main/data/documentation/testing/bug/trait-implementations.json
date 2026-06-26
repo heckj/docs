@@ -50,14 +50,6 @@
       "title" : "Instance Methods"
     },
     {
-      "anchor" : "Type-Aliases",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/TestScopeProvider"
-      ],
-      "title" : "Type Aliases"
-    },
-    {
       "anchor" : "Type-Methods",
       "generated" : true,
       "identifiers" : [
@@ -129,40 +121,6 @@
   "title" : "Bug",
   "type" : "topic",
   "url" : "\/documentation\/testing\/bug"
-},
-"doc://org.swift.testing/documentation/Testing/Bug/TestScopeProvider": {
-  "abstract" : [
-    {
-      "text" : "The type of the test scope provider for this trait.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Bug\/TestScopeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TestScopeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Bug.TestScopeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/testing\/bug\/testscopeprovider"
 },
 "doc://org.swift.testing/documentation/Testing/Bug/bug(_:_:)": {
   "abstract" : [
@@ -490,10 +448,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Bug/comments": {
   "abstract" : [
-    {
-      "text" : "The user-provided comments for this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -531,10 +486,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Bug/prepare(for:)": {
   "abstract" : [
-    {
-      "text" : "Prepare to run the test that has this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

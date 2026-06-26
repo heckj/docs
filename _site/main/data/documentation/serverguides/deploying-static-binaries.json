@@ -926,6 +926,12 @@
   ],
   "identifier" : "doc:\/\/ServerGuides\/documentation\/ServerGuides",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "text",
+      "text" : "Server Guides"
+    }
+  ],
   "role" : "collection",
   "title" : "Server Guides",
   "type" : "topic",

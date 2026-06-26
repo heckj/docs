@@ -97,6 +97,14 @@
               "text" : "("
             },
             {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s4CInta",
               "text" : "CInt"

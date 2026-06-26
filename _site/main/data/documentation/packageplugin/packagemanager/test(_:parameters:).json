@@ -47,15 +47,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-        "text" : "PackageManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV10TestSubsetO",
         "text" : "TestSubset"
       },
@@ -73,15 +64,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-        "text" : "PackageManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV14TestParametersV",
         "text" : "TestParameters"
       },
@@ -96,15 +78,6 @@
       {
         "kind" : "text",
         "text" : " -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-        "text" : "PackageManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -166,16 +139,6 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-              "text" : "PackageManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/TestSubset",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV10TestSubsetO",
@@ -194,16 +157,6 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-              "text" : "PackageManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/TestParameters",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV14TestParametersV",
@@ -220,16 +173,6 @@
             {
               "kind" : "text",
               "text" : " -> "
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-              "text" : "PackageManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/PackageManager\/TestResult",
@@ -592,15 +535,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV10TestSubsetO",
       "text" : "TestSubset"
     },
@@ -618,15 +552,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV14TestParametersV",
       "text" : "TestParameters"
     },
@@ -641,15 +566,6 @@
     {
       "kind" : "text",
       "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13PackagePlugin0A7ManagerV",
-      "text" : "PackageManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

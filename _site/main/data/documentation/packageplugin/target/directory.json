@@ -422,14 +422,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:13PackagePlugin6TargetP2IDa",
       "text" : "ID"
     }
@@ -502,7 +494,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
@@ -551,7 +543,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -560,7 +552,7 @@
     },
     {
       "kind" : "text",
-      "text" : ")?"
+      "text" : "?"
     }
   ],
   "identifier" : "doc:\/\/org.swift.swiftpm.packageplugin\/documentation\/PackagePlugin\/Target\/sourceModule",

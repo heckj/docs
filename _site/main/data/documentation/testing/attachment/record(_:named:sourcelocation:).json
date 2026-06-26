@@ -88,6 +88,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
         "text" : "AttachableValue"
       },
       {
@@ -212,6 +213,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
               "text" : "AttachableValue"
             },
             {
@@ -502,7 +504,6 @@
       "type" : "text"
     }
   ],
-  "defaultImplementations" : 2,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -580,6 +581,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -596,6 +598,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],
@@ -723,6 +726,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
       "text" : "AttachableValue"
     },
     {

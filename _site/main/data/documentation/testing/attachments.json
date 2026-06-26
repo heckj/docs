@@ -460,214 +460,6 @@
           "type" : "aside"
         },
         {
-          "anchor" : "Attach-transferable-values",
-          "level" : 3,
-          "text" : "Attach transferable values",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "If you have a value you want to save as an attachment that conforms to",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "https:\/\/developer.apple.com\/documentation\/CoreTransferable\/Transferable",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ",",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "you can create an instance of ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Attachment",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " from it when you import the",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "module.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "import Testing",
-            "import CoreTransferable",
-            "",
-            "struct SalesReport { ... }",
-            "extension SalesReport: Encodable, Attachable {}",
-            "",
-            "@Test func `sales report adds up`() async throws {",
-            "  let salesReport = await generateSalesReport()",
-            "  try salesReport.validate()",
-            "  let attachment = try await Attachment(exporting: salesReport)",
-            "  Attachment.record(attachment)",
-            "}"
-          ],
-          "syntax" : "swift",
-          "type" : "codeListing"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The testing library provides this ",
-                  "type" : "text"
-                },
-                {
-                  "identifier" : "doc:\/\/org.swift.testing\/documentation\/Testing\/Attachment",
-                  "isActive" : true,
-                  "type" : "reference"
-                },
-                {
-                  "text" : " initializer only",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "if your test target imports the ",
-                  "type" : "text"
-                },
-                {
-                  "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable",
-                  "isActive" : true,
-                  "overridingTitle" : "Core Transferable",
-                  "overridingTitleInlineContent" : [
-                    {
-                      "text" : "Core Transferable",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "reference"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "module.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "Important",
-          "style" : "important",
-          "type" : "aside"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "When you create an attachment from a transferable value, the testing library",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "calls the value’s ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable\/transferable\/exported(as:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "function. By default, the testing library calls the value’s ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable\/transferable\/exportedcontenttypes(_:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "function and uses the first returned content type that conforms to ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "https:\/\/developer.apple.com\/documentation\/uniformtypeidentifiers\/uttype-swift.struct\/data",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "If you want to use a different format for the attachment, you can pass another",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "content type supported by the attachable value when you create the attachment.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "let attachment = try await Attachment(exporting: salesReport, as: .pdf)"
-          ],
-          "syntax" : "swift",
-          "type" : "codeListing"
-        },
-        {
           "anchor" : "Attach-files-and-directories",
           "level" : 3,
           "text" : "Attach files and directories",
@@ -1729,7 +1521,6 @@
       "type" : "text"
     }
   ],
-  "defaultImplementations" : 2,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1807,6 +1598,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -1823,6 +1615,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachableP15withUnsafeBytes3for_qd__AA10AttachmentVyxG_qd__SWKXEtKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],
@@ -2065,6 +1858,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentV_5named2as14sourceLocationACyxGqd___SSSgAA21AttachableImageFormatVSgAA06SourceF0VtcAA01_gH7WrapperCyqd__GRbzAA0gK0RzAA0g2AsH0Rd__lufc1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -2204,6 +1998,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentV6record_5named2as14sourceLocationyqd___SSSgAA21AttachableImageFormatVSgAA06SourceG0VtAA01_hI7WrapperCyqd__GRbzAA0hL0RzAA0h2AsI0Rd__lFZ1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -2343,6 +2138,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Testing10AttachmentVAARi_zrlE15AttachableValuexmfp",
       "text" : "AttachableValue"
     },
     {
@@ -2461,24 +2257,11 @@
     },
     {
       "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Testing10AttachmentV",
-      "text" : "Attachment"
+      "text" : " `Self`"
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "AttachableValue"
-    },
-    {
-      "kind" : "text",
-      "text" : ">, "
+      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -2504,18 +2287,6 @@
   "title" : "record(_:sourceLocation:)",
   "type" : "topic",
   "url" : "\/documentation\/testing\/attachment\/record(_:sourcelocation:)"
-},
-"https://developer.apple.com/documentation/CoreTransferable/Transferable": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/CoreTransferable\/Transferable",
-  "title" : "Transferable",
-  "titleInlineContent" : [
-    {
-      "code" : "Transferable",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/CoreTransferable\/Transferable"
 },
 "https://developer.apple.com/documentation/appkit/nsimage": {
   "identifier" : "https:\/\/developer.apple.com\/documentation\/appkit\/nsimage",
@@ -2552,42 +2323,6 @@
   ],
   "type" : "link",
   "url" : "https:\/\/developer.apple.com\/documentation\/coreimage\/ciimage"
-},
-"https://developer.apple.com/documentation/coretransferable": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable",
-  "title" : "Core Transferable",
-  "titleInlineContent" : [
-    {
-      "text" : "Core Transferable",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/coretransferable"
-},
-"https://developer.apple.com/documentation/coretransferable/transferable/exported(as:)": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable\/transferable\/exported(as:)",
-  "title" : "exported(as:)",
-  "titleInlineContent" : [
-    {
-      "code" : "exported(as:)",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/coretransferable\/transferable\/exported(as:)"
-},
-"https://developer.apple.com/documentation/coretransferable/transferable/exportedcontenttypes(_:)": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/coretransferable\/transferable\/exportedcontenttypes(_:)",
-  "title" : "exportedContentTypes(_:)",
-  "titleInlineContent" : [
-    {
-      "code" : "exportedContentTypes(_:)",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/coretransferable\/transferable\/exportedcontenttypes(_:)"
 },
 "https://developer.apple.com/documentation/foundation": {
   "identifier" : "https:\/\/developer.apple.com\/documentation\/foundation",
@@ -2744,18 +2479,6 @@
   ],
   "type" : "link",
   "url" : "https:\/\/developer.apple.com\/documentation\/uikit\/uiimage"
-},
-"https://developer.apple.com/documentation/uniformtypeidentifiers/uttype-swift.struct/data": {
-  "identifier" : "https:\/\/developer.apple.com\/documentation\/uniformtypeidentifiers\/uttype-swift.struct\/data",
-  "title" : "UTType.data",
-  "titleInlineContent" : [
-    {
-      "code" : "UTType.data",
-      "type" : "codeVoice"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/developer.apple.com\/documentation\/uniformtypeidentifiers\/uttype-swift.struct\/data"
 },
 "https://learn.microsoft.com/en-us/windows/win32/api/wincodec/nn-wincodec-iwicbitmapsource": {
   "identifier" : "https:\/\/learn.microsoft.com\/en-us\/windows\/win32\/api\/wincodec\/nn-wincodec-iwicbitmapsource",

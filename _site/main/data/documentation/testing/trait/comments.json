@@ -327,10 +327,7 @@
 },
 "doc://org.swift.testing/documentation/Testing/Trait/comments-5i8gy": {
   "abstract" : [
-    {
-      "text" : "The user-provided comments for this trait.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

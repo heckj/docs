@@ -19,12 +19,12 @@
     {
       "title": "Tools",
       "modules": [
-        { "source": "docc-documentation", "path": "/documentation/docc" },
-        { "source": "swiftpm", "path": "/documentation/packagemanagerdocs", "title": "Swift Package Manager" },
+        { "source": "docc-documentation", "path": "/documentation/docc", "title": "Documentation (DocC)" },
+        { "source": "swiftpm", "path": "/documentation/packagemanagerdocs", "title": "Package Manager (SwiftPM)" },
         { "source": "swiftpm", "path": "/documentation/packagedescription" },
         { "source": "swiftpm", "path": "/documentation/packageplugin" },
-        { "source": "vscode-swift", "path": "/documentation/userdocs", "title": "Swift extension for VS Code" },
-        { "source": "swiftly", "path": "/documentation/swiftlydocs", "title": "Swiftly" }
+        { "source": "vscode-swift", "path": "/documentation/userdocs", "title": "IDE Integration" },
+        { "source": "swiftly", "path": "/documentation/swiftlydocs", "title": "Installer (Swiftly)" }
       ]
     },
     {

@@ -34,7 +34,8 @@
         { "source": "swift-apple-platforms", "path": "/documentation/swiftappleplatforms", "title": "Apple platforms" },
         { "source": "embedded-swift", "path": "/documentation/embeddedswift", "title": "Embedded Swift" },
         { "source": "swift-linux", "path": "/documentation/swiftlinux", "title": "Linux" },
-        { "source": "swift-wasm", "path": "/documentation/wasmguide", "title": "WebAssembly (Wasm)"}
+        { "source": "swift-wasm", "path": "/documentation/wasmguide", "title": "WebAssembly (Wasm)"},
+        { "source": "swift-windows", "path": "/documentation/swiftwindows", "title": "Windows" }
       ]
     },
     {

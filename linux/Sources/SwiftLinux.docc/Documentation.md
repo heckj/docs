@@ -18,10 +18,10 @@ develop and deploy Swift on Linux.
 
 | Distribution | Minimum version |
 |---|---|
-| Ubuntu | 20.04 |
+| Ubuntu | 22.04 |
 | Debian | 12 |
-| Fedora | 39 |
-| Amazon Linux | 2 |
+| Fedora | 41 |
+| Amazon Linux | 2023 |
 | Red Hat Universal Base Image | 9 |
 
 Every supported distribution includes the same set of tools: Swift Package

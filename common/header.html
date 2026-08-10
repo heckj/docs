@@ -12,38 +12,54 @@
 
 <script>
 (function () {
-  var LOGO_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="22" height="22" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12.5.5a12,12,0,1,0,12,12A12,12,0,0,0,12.5.5ZM1.525,13H6.014a20.83,20.83,0,0,0,.469,4.031h-4A10.924,10.924,0,0,1,1.525,13ZM13,6.969V1.552c1.734.339,3.32,2.417,4.222,5.417Zm4.49,1a19.808,19.808,0,0,1,.5,4.031H13V7.969ZM12,1.552V6.969H7.778C8.68,3.969,10.266,1.891,12,1.552Zm0,6.417V12H7.013a19.808,19.808,0,0,1,.5-4.031ZM6.014,12H1.525a10.924,10.924,0,0,1,.96-4.031h4A20.83,20.83,0,0,0,6.014,12Zm1,1H12v4.031H7.51A19.808,19.808,0,0,1,7.013,13ZM12,18.031v5.417c-1.734-.339-3.32-2.417-4.222-5.417Zm1,5.417V18.031h4.222C16.32,21.031,14.734,23.109,13,23.448Zm0-6.417V13h4.987a19.808,19.808,0,0,1-.5,4.031ZM18.986,13h4.489a10.924,10.924,0,0,1-.96,4.031h-4A20.83,20.83,0,0,0,18.986,13Zm0-1a20.83,20.83,0,0,0-.469-4.031h4A10.924,10.924,0,0,1,23.475,12ZM22,6.969H18.265A11.6,11.6,0,0,0,15.6,1.951,11.007,11.007,0,0,1,22,6.969ZM9.4,1.951A11.6,11.6,0,0,0,6.735,6.969H3A11.007,11.007,0,0,1,9.4,1.951ZM3,18.031H6.735A11.6,11.6,0,0,0,9.4,23.049,11.007,11.007,0,0,1,3,18.031Zm12.6,5.018a11.6,11.6,0,0,0,2.665-5.018H22A11.007,11.007,0,0,1,15.6,23.049Z"/></svg>';
+  // Sourced from swiftlang/swift-org-website's assets/images/icon-swift.svg
+  // (the currentColor variant, meant for light/dark masthead use — the
+  // upstream asset intentionally leaves fill unset so consumers apply their
+  // own; fill="currentColor" below is added here to do that).
+  var LOGO_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="22" height="22" aria-hidden="true"><path fill="currentColor" fill-rule="nonzero" transform="matrix(.351937 0 0 .351937 -1.96558 -2.00601)" d="m46.955 36.578c-.002-.002-.003-.003-.005-.005.066-.223.134-.445.191-.673 2.46-9.799-3.543-21.384-13.701-27.484 4.452 6.035 6.42 13.344 4.671 19.735-.156.571-.343 1.118-.55 1.65-.225-.148-.509-.316-.889-.526 0 0-10.104-6.238-21.055-17.273-.288-.29 5.839 8.757 12.793 16.104-3.276-1.839-12.406-8.482-18.186-13.772.71 1.185 1.555 2.325 2.483 3.423 4.827 6.121 11.121 13.673 18.662 19.473-5.298 3.242-12.785 3.494-20.239.003-1.844-.864-3.577-1.907-5.182-3.091 3.156 5.047 8.015 9.401 13.93 11.943 7.054 3.032 14.068 2.826 19.292.05l-.004.006c.024-.015.054-.031.079-.047.214-.115.427-.232.636-.356 2.51-1.303 7.467-2.625 10.129 2.553.651 1.267 2.036-5.448-3.055-11.713z"/></svg>';
 
-  // The Navigator sidebar is rendered client-side by swift-docc-render (Vue),
-  // not present in this page's initial HTML, so it may not exist yet when
-  // this script runs — retry via MutationObserver until it mounts.
+  // The masthead (.nav-content > .pre-title, .nav-title, .nav-menu) is
+  // rendered client-side by swift-docc-render (Vue), not present in this
+  // page's initial HTML, so it may not exist yet when this script runs —
+  // retry via MutationObserver until it mounts. Unlike the Navigator
+  // sidebar, the masthead has no loading-skeleton/real-content swap to
+  // race against: it mounts once from data already known at page load and
+  // stays, so this observer keeps running (harmlessly, guarded by the
+  // .masthead-swift-logo check below) rather than needing to disconnect at
+  // a precise moment.
+  //
+  // Appended as the last child of `.pre-title` rather than inserted as a
+  // sibling between `.pre-title` and `.nav-title`: swift-docc-render's own
+  // CSS assigns `.nav-title` its grid placement via the adjacent-sibling
+  // selector `.pre-title + .nav-title`, which requires them to stay
+  // immediate siblings. Landing inside `.pre-title` keeps that intact while
+  // still sitting visually between the sidebar toggle and the title text —
+  // and, being part of the persistent masthead rather than the sidebar
+  // itself, it stays visible regardless of whether the sidebar is shown,
+  // hidden, or a mobile drawer.
   function insertLogoLink() {
-    var headWrapper = document.querySelector('.navigator .head-wrapper');
-    if (!headWrapper || headWrapper.querySelector('.sidebar-swift-logo')) {
+    var preTitle = document.querySelector('.pre-title');
+    if (!preTitle || preTitle.querySelector('.masthead-swift-logo')) {
       return false;
     }
     var link = document.createElement('a');
     link.href = 'https://www.swift.org';
-    link.className = 'sidebar-swift-logo';
+    link.className = 'masthead-swift-logo';
     link.setAttribute('aria-label', 'Swift.org');
     link.innerHTML = LOGO_SVG;
-    headWrapper.insertBefore(link, headWrapper.firstChild);
+    preTitle.appendChild(link);
     return true;
   }
 
   // Styled on the main document, not this template's own shadow root: the
-  // Navigator sidebar this targets lives outside this custom element's
-  // shadow tree, in the app's regular (light) DOM.
+  // masthead this targets lives outside this custom element's shadow tree,
+  // in the app's regular (light) DOM.
   var style = document.createElement('style');
-  style.textContent = '.sidebar-swift-logo{display:flex;flex-shrink:0;align-items:center;color:var(--color-text);padding-block-start:10px;}';
+  style.textContent = '.masthead-swift-logo{display:flex;align-items:center;padding-inline:8px;color:var(--color-text);}';
   document.head.appendChild(style);
 
   if (!insertLogoLink()) {
-    var observer = new MutationObserver(function () {
-      if (insertLogoLink()) {
-        observer.disconnect();
-      }
-    });
+    var observer = new MutationObserver(insertLogoLink);
     observer.observe(document.body, { childList: true, subtree: true });
   }
 })();

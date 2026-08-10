@@ -38,6 +38,19 @@
     return true;
   }
 
+  // swift-docc-render hardcodes this text to the `documentation.title`
+  // locale string ("Documentation") in DocumentationTopic.vue — there's no
+  // theme-settings.json or DocC metadata hook for it, so it's overwritten
+  // here after render, the same way the logo above is inserted.
+  function relabelNavTitle() {
+    var navTitle = document.querySelector('.nav-title');
+    if (!navTitle || navTitle.textContent.trim() === 'Swift') {
+      return false;
+    }
+    navTitle.textContent = 'Swift';
+    return true;
+  }
+
   // Styled on the main document, not this template's own shadow root: the
   // masthead this targets lives outside this custom element's shadow tree,
   // in the app's regular (light) DOM.
@@ -45,8 +58,14 @@
   style.textContent = '.masthead-swift-logo{display:flex;align-items:center;padding-inline:8px;}';
   document.head.appendChild(style);
 
-  if (!insertLogoLink()) {
-    var observer = new MutationObserver(insertLogoLink);
+  function applyMastheadTweaks() {
+    var logoInserted = insertLogoLink();
+    var titleRelabeled = relabelNavTitle();
+    return logoInserted && titleRelabeled;
+  }
+
+  if (!applyMastheadTweaks()) {
+    var observer = new MutationObserver(applyMastheadTweaks);
     observer.observe(document.body, { childList: true, subtree: true });
   }
 })();

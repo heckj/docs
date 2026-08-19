@@ -12,13 +12,18 @@ python3 -m http.server 8123 --directory .build-output
 Then in another terminal:
 
 ```bash
-open http://localhost:8123/main/documentation/
+open http://localhost:8123/latest/documentation/
 ```
 
-Serve from `.build-output` (the parent), not `.build-output/main`: the build
-bakes a `/main/` hosting base path into every asset URL, so the `/main/` prefix
-must map to the `main/` directory. This example avoids port 8000, which can be 
-commonly used by other apps or examples. 
+Serve from `.build-output` (the parent), not `.build-output/latest`: the build
+bakes a `/latest/` hosting base path into every asset URL, so the `/latest/`
+prefix must map to the `latest/` directory. This example avoids port 8000,
+which can be commonly used by other apps or examples. 
+
+> Note: Ensure that you have a version of Swift available that will build the 
+> content that you point at in sources.json. For latest development tree builds,
+> that typically requires either the latest Xcode beta or a Swift nightly development
+> build to support Swift, SwiftPM, swift-testing, and other core projects.
 
 ## Navigation manifest (combined sidebar curation)
 
@@ -31,7 +36,7 @@ from the main page's module list as well as the sidebar. Each entry names a
 in the merged index must be either placed in a group or listed under `hidden` —
 `build_docs.py` validates and applies this automatically (the
 `navigator-curation` build step), and fails the build on any mismatch or
-uncovered module. See `../hacking-index-json.md` for the underlying mechanics.
+uncovered module. See `hacking-index-json.md` for the underlying mechanics.
 
 A group's `title` is optional — omit it (or set it to `null`) for a headerless
 group whose modules render with no section label in either the sidebar or the

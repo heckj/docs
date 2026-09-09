@@ -21,6 +21,20 @@
       "strip_availability": true
     },
     {
+      "id": "swift-foundation-essentials",
+      "type": "local",
+      "path": ".workspace/swift-foundation",
+      "docc_catalog": "Sources/FoundationEssentials/FoundationEssentials.docc",
+      "additional_symbol_graph_dir": ".build/symbols/FoundationEssentials"
+    },
+    {
+      "id": "swift-foundation-internationalization",
+      "type": "local",
+      "path": ".workspace/swift-foundation",
+      "docc_catalog": "Sources/FoundationInternationalization/FoundationInternationalization.docc",
+      "additional_symbol_graph_dir": ".build/symbols/FoundationInternationalization"
+    },
+    {
       "id": "swift-migration-guide",
       "type": "git",
       "repo": "https://github.com/swiftlang/swift-migration-guide.git",

@@ -15,7 +15,8 @@
       "modules": [
         { "source": "swift-stdlib", "path": "/documentation/swift", "title": "Standard Library" },
         { "source": "swift-testing", "path": "/documentation/testing" },
-        { "title": "Foundation", "url": "https://developer.apple.com/documentation/foundation" },
+        { "source": "swift-foundation-essentials", "path": "/documentation/foundationessentials", "title": "Foundation" },
+        { "source": "swift-foundation-internationalization", "path": "/documentation/foundationinternationalization", "title": "Internationalization" },
         { "source": "libraries", "path": "/documentation/libraries", "title": "Swift project libraries" }
       ]
     },

@@ -250,6 +250,7 @@ class ValidateArchiveType(unittest.TestCase):
             "preflight": "echo hi",
             "add_docc_plugin": True,
             "extra_flags": ["--foo"],
+            "additional_symbol_graph_dir": ".build/symbols/Foo",
         }
         for field, value in disallowed.items():
             with self.subTest(field=field):
@@ -372,6 +373,80 @@ class ValidateStripLinuxAvailability(unittest.TestCase):
         output = _validate(_wrap(entry))
         self.assertIsNotNone(output)
         self.assertIn("strip_linux_availability", output)
+
+
+class ValidateAdditionalSymbolGraphDir(unittest.TestCase):
+    def test_valid_with_docc_catalog_on_local(self):
+        entry = {
+            "id": "swift-foundation-essentials",
+            "type": "local",
+            "path": ".workspace/swift-foundation",
+            "docc_catalog": "Sources/FoundationEssentials/FoundationEssentials.docc",
+            "additional_symbol_graph_dir": ".build/symbols/FoundationEssentials",
+        }
+        self.assertIsNone(_validate(_wrap(entry)))
+
+    def test_valid_with_docc_catalog_on_git(self):
+        entry = {
+            "id": "swift-book",
+            "type": "git",
+            "repo": "https://github.com/swiftlang/swift-book.git",
+            "ref": "main",
+            "docc_catalog": "TSPL.docc",
+            "additional_symbol_graph_dir": ".build/symbols/Foo",
+        }
+        self.assertIsNone(_validate(_wrap(entry)))
+
+    def test_rejected_on_archive_source(self):
+        entry = {
+            "id": "stdlib",
+            "type": "archive",
+            "url": "https://example.com/Swift.doccarchive.tar.gz",
+            "docc_archive_name": "Swift.doccarchive",
+            "additional_symbol_graph_dir": ".build/symbols/Foo",
+        }
+        output = _validate(_wrap(entry))
+        self.assertIsNotNone(output)
+        self.assertIn("additional_symbol_graph_dir", output)
+
+    def test_rejected_with_targets(self):
+        entry = {
+            "id": "swift-testing",
+            "type": "git",
+            "repo": "https://github.com/swiftlang/swift-testing.git",
+            "ref": "main",
+            "targets": ["Testing"],
+            "additional_symbol_graph_dir": ".build/symbols/Testing",
+        }
+        output = _validate(_wrap(entry))
+        self.assertIsNotNone(output)
+        self.assertIn("additional_symbol_graph_dir", output)
+
+    def test_non_string_rejected(self):
+        entry = {
+            "id": "swift-book",
+            "type": "git",
+            "repo": "https://github.com/swiftlang/swift-book.git",
+            "ref": "main",
+            "docc_catalog": "TSPL.docc",
+            "additional_symbol_graph_dir": 123,
+        }
+        output = _validate(_wrap(entry))
+        self.assertIsNotNone(output)
+        self.assertIn("additional_symbol_graph_dir", output)
+
+    def test_empty_string_rejected(self):
+        entry = {
+            "id": "swift-book",
+            "type": "git",
+            "repo": "https://github.com/swiftlang/swift-book.git",
+            "ref": "main",
+            "docc_catalog": "TSPL.docc",
+            "additional_symbol_graph_dir": "",
+        }
+        output = _validate(_wrap(entry))
+        self.assertIsNotNone(output)
+        self.assertIn("additional_symbol_graph_dir", output)
 
 
 class ValidateExistingTypesStillWork(unittest.TestCase):
@@ -751,6 +826,51 @@ def _make_archive_with_platforms(root, archive_name="Swift.doccarchive"):
     (data_dir / "article.json").write_text(json.dumps(article))
 
     return archive
+
+
+class BuildDoccCatalogAdditionalSymbolGraphDir(unittest.TestCase):
+    def _build(self, tmp_path, additional_symbol_graph_dir=None):
+        common = tmp_path / "common"
+        common.mkdir()
+        (common / "header.html").write_text("HDR")
+        (common / "footer.html").write_text("FTR")
+        (common / "favicon.ico").write_bytes(b"ICO")
+
+        source_dir = tmp_path / "checkout"
+        catalog = source_dir / "Foo.docc"
+        catalog.mkdir(parents=True)
+
+        source = {
+            "id": "foo",
+            "docc_catalog": "Foo.docc",
+        }
+        if additional_symbol_graph_dir is not None:
+            source["additional_symbol_graph_dir"] = additional_symbol_graph_dir
+
+        temp_archive_dir = tmp_path / "_archives"
+        temp_archive_dir.mkdir()
+
+        with mock.patch("build_docs.subprocess.run") as mock_run:
+            build_docs._build_docc_catalog(
+                source, source_dir, common, temp_archive_dir,
+                docc_cmd=["docc"], env={},
+            )
+        return mock_run.call_args.args[0]
+
+    def test_appends_flag_when_present(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            cmd = self._build(tmp_path, additional_symbol_graph_dir=".build/symbols/Foo")
+            self.assertIn("--additional-symbol-graph-dir", cmd)
+            idx = cmd.index("--additional-symbol-graph-dir")
+            expected = str(tmp_path / "checkout" / ".build/symbols/Foo")
+            self.assertEqual(cmd[idx + 1], expected)
+
+    def test_omits_flag_when_absent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            cmd = self._build(tmp_path)
+            self.assertNotIn("--additional-symbol-graph-dir", cmd)
 
 
 class StripArchive(unittest.TestCase):

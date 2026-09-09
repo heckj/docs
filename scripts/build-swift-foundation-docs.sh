@@ -25,17 +25,6 @@
 # entries) pick up where this script leaves off: they run `docc convert`
 # directly against the symbol graphs this script produces, and fold the
 # result into the combined archive like any other source.
-#
-# Adapted from Chris Adamson's original build-swift-foundation-docs.sh
-# (https://github.pie.apple.com/devpubs-eng/swift-foundation-docs-builder/pull/1),
-# which also ran `docc convert`/`docc merge`/deploy itself — that part now
-# belongs to build_docs.py, so it's dropped here. Its `-target
-# arm64-apple-macos26` flag is dropped (unneeded; the host's default target is
-# used instead) so this runs on Linux too (confirmed: `docc` and
-# `swift-symbolgraph-extract` ship at /usr/bin on the
-# swiftlang/swift:nightly-main-jammy image, no xcrun needed there). `-sdk` is
-# kept but computed per-platform below — macOS needs it (xcrun-invoked tools
-# don't auto-infer an SDK the way `swift build` does), Linux doesn't.
 
 set -e
 
@@ -45,8 +34,7 @@ WORKSPACE_DIR="$ROOT_DIR/.workspace"
 SOURCE_DIR="$WORKSPACE_DIR/swift-foundation"
 
 # TODO: switch to the upstream repo/ref once
-# https://github.com/swiftlang/swift-foundation/pull/2209 merges. Until then,
-# the curation content this whole effort is about only exists on Chris's fork.
+# https://github.com/swiftlang/swift-foundation/pull/2209 merges.
 GIT_REPO="https://github.com/invalidname/swift-foundation.git"
 GIT_REF="invalidname/docs-initial-curation-183033099"
 
@@ -54,21 +42,19 @@ GIT_REF="invalidname/docs-initial-curation-183033099"
 # reachable via `xcrun` on macOS (mirrors build_docs.py's discover_tools()).
 # On macOS it also needs an explicit -sdk — unlike `swift build`, it doesn't
 # auto-infer one, and fails with "missing required modules: 'Swift', ..." /
-# "did you forget to set an SDK" without it. Linux needs neither xcrun nor
-# -sdk (confirmed against swiftlang/swift:nightly-main-jammy).
+# "did you forget to set an SDK" without it. Linux doesn't need neither xcrun or `-sdk`.
 #
-# The vendored ICU headers also need a platform-specific -I, in the opposite
-# direction: macOS's toolchain has no bundled copy of _FoundationICU, so
+# The vendored ICU headers also need a platform-specific -I:
+# macOS's toolchain has no bundled copy of _FoundationICU, so
 # without also pointing -I directly at .../icuSources/include/_foundation_unicode
 # (where its module.modulemap actually lives), Clang can't find the module at
-# all ("missing required module '_FoundationICU'") — confirmed by testing
-# both ways locally. Linux's toolchain image *does* ship its own copy at
+# all ("missing required module '_FoundationICU'").
+# Linux's toolchain image *does* ship its own copy at
 # /usr/lib/swift/_foundation_unicode/, found automatically regardless of our
-# -I flags; adding that same extra -I there instead makes ICU's own vendored
-# _foundation_unicode/uchar.h reachable via the bare name `<uchar.h>`,
-# shadowing the real system C11 header _foundation_unicode/ptypes.h expects
-# for char16_t, producing "unknown type name 'U_CAPI'" — confirmed via
-# `clang -E -H` include resolution and an end-to-end extraction test.
+# -I flags; adding that same extra -I on Linux makes ICU's own vendored
+# _foundation_unicode/uchar.h reachable via the bare name `<uchar.h>`.
+# This shadows the real system C11 header _foundation_unicode/ptypes.h expects
+# for char16_t, producing "unknown type name 'U_CAPI'".
 if command -v xcrun >/dev/null 2>&1 && xcrun --find swift-symbolgraph-extract >/dev/null 2>&1; then
     SYMBOLGRAPH_EXTRACT="xcrun swift-symbolgraph-extract"
     SDK_FLAGS="-sdk $(xcrun --sdk macosx --show-sdk-path)"
@@ -99,12 +85,11 @@ echo "Building swift-foundation..."
 # `swift build` is currently known to exit non-zero on Linux nightly
 # toolchains, failing at/near the very last build step with a bare
 # "error: Build failed" and no underlying compiler diagnostic anywhere in the
-# log — every other line is a warning. Root cause not yet identified (driver
-# or linker level, not a source compile error). Despite that, both
+# log — every other line is a warning. Despite that, both
 # FoundationEssentials and FoundationInternationalization still get their
-# .swiftmodule produced successfully, so don't let this abort the script —
+# .swiftmodule produced successfully, so we don't let this abort the script —
 # the symbol-graph extraction steps below are the real verification that the
-# two modules we need built correctly; they fail loudly there if they didn't.
+# two modules we need built correctly.
 swift build || echo "swift build reported a non-zero exit; continuing to see whether the modules we need still built."
 
 echo "Setting up .build/symbols directories..."

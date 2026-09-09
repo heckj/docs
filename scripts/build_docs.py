@@ -231,7 +231,7 @@ def validate_sources(config):
             disallowed_for_archive = (
                 "targets", "docc_catalog", "path", "repo", "ref",
                 "preflight", "add_docc_plugin", "extra_flags", "env",
-                "strip_linux_availability",
+                "strip_linux_availability", "additional_symbol_graph_dir",
             )
             for field in disallowed_for_archive:
                 if field in entry:
@@ -268,6 +268,19 @@ def validate_sources(config):
                     f"{label} 'strip_linux_availability' must be a boolean "
                     f"(got {type(entry['strip_linux_availability']).__name__})"
                 )
+
+            if "additional_symbol_graph_dir" in entry:
+                value = entry["additional_symbol_graph_dir"]
+                if not isinstance(value, str) or not value:
+                    errors.append(
+                        f"{label} 'additional_symbol_graph_dir' must be a "
+                        "non-empty string"
+                    )
+                if has_targets:
+                    errors.append(
+                        f"{label} has 'additional_symbol_graph_dir' but also "
+                        "'targets' (only allowed alongside 'docc_catalog')"
+                    )
 
         if entry.get("add_docc_plugin") and entry_type != "git":
             errors.append(f"{label} has 'add_docc_plugin' but is not type 'git'")
@@ -694,11 +707,19 @@ def _build_docc_catalog(source, source_dir, common_dir, temp_archive_dir, docc_c
     if dest.exists():
         shutil.rmtree(str(dest))
 
+    symbol_graph_flags = []
+    additional_symbol_graph_dir = source.get("additional_symbol_graph_dir")
+    if additional_symbol_graph_dir:
+        symbol_graph_flags = [
+            "--additional-symbol-graph-dir",
+            str(source_dir / additional_symbol_graph_dir),
+        ]
+
     print("Converting catalog with docc convert...")
     cmd = docc_cmd + [
         "convert", str(catalog_path),
         "--output-path", str(dest),
-    ] + DOCC_BUILD_FLAGS + extra_flags
+    ] + DOCC_BUILD_FLAGS + symbol_graph_flags + extra_flags
     subprocess.run(cmd, check=True, env=env)
     return [dest]
 

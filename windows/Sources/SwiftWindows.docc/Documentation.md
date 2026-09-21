@@ -23,9 +23,6 @@ Windows is a **Tier 1** platform under
 and a toolchain host — the Swift compiler, Swift Package Manager, and
 SourceKit-LSP all run natively on Windows 10.0 and later.
 
-The LLDB debugger is available on Windows, but the Swift REPL isn't
-currently supported there.
-
 Apple Inc. owns support for Windows and requires pull request testing to
 pass before merging changes that affect it. See
 [Install Swift on Windows](https://www.swift.org/getting-started/#on-windows)

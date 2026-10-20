@@ -19,6 +19,7 @@ Run from the scripts/ directory (or repository root) with:
 """
 
 import json
+import os
 import subprocess
 import sys
 import tarfile
@@ -3772,19 +3773,9 @@ class ValidateReuseCheckout(unittest.TestCase):
 
 def _make_git_checkout(path):
     path.mkdir(parents=True)
-    for cmd in (
-        ["git", "init", "--quiet", "-b", "main"],
-        # Uses the invoking user's git identity. Signing is off for this
-        # throwaway repo so the tests never prompt for a key.
-        ["git", "-c", "commit.gpgsign=false",
-         "commit", "--quiet", "--allow-empty", "-m", "init"],
-    ):
-        subprocess.run(cmd, cwd=str(path), check=True)
-    result = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=str(path),
-        capture_output=True, text=True, check=True,
-    )
-    return result.stdout.strip()
+    _git(path, "init", "--quiet", "-b", "main")
+    _git(path, "commit", "--quiet", "--allow-empty", "-m", "init")
+    return _git(path, "rev-parse", "HEAD")
 
 
 class BuildSourceReuseCheckout(unittest.TestCase):
@@ -3885,13 +3876,32 @@ class BuildDoccCatalogSymbolGraphDir(unittest.TestCase):
                 self._convert(Path(tmp), lambda d: d.mkdir())
 
 
+def _git_env():
+    """The environment for git commands that create commits in test repos.
+
+    Commits use the invoking user's git identity. A CI runner has none, so
+    fall back to a placeholder author. Signing is always off for these
+    throwaway repos (see _git), so the placeholder is never used to sign.
+    """
+    env = dict(os.environ)
+    configured = subprocess.run(
+        ["git", "config", "user.name"], capture_output=True, text=True
+    ).stdout.strip()
+    if not configured:
+        env.update({
+            "GIT_AUTHOR_NAME": "docs tests",
+            "GIT_AUTHOR_EMAIL": "docs-tests@invalid",
+            "GIT_COMMITTER_NAME": "docs tests",
+            "GIT_COMMITTER_EMAIL": "docs-tests@invalid",
+        })
+    return env
+
+
 def _git(path, *args):
-    # Uses the invoking user's git identity. Signing is off for these
-    # throwaway repos so the tests never prompt for a key.
     result = subprocess.run(
         ["git", "-c", "commit.gpgsign=false", "-c", "tag.gpgsign=false",
          "-C", str(path), *args],
-        capture_output=True, text=True, check=True,
+        capture_output=True, text=True, check=True, env=_git_env(),
     )
     return result.stdout.strip()
 

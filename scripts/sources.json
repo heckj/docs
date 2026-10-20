@@ -32,7 +32,7 @@
       "repo": "https://github.com/invalidname/swift-foundation.git",
       "ref": "invalidname/docs-internationalization-curation-183033099",
       "docc_catalog": "Sources/FoundationEssentials/FoundationEssentials.docc",
-      "preflight": "sh \"$DOCS_ROOT/scripts/extract-swift-foundation-symbol-graphs.sh\"",
+      "preflight": "bash \"$DOCS_ROOT/scripts/extract-swift-foundation-symbol-graphs.sh\"",
       "additional_symbol_graph_dir": ".build/symbols/FoundationEssentials"
     },
     {

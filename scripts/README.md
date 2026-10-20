@@ -51,7 +51,7 @@ Use `DOCS_ROOT` to run a helper script that lives in this repository, because
 the checkout belongs to another project:
 
 ```jsonc
-"preflight": "sh \"$DOCS_ROOT/scripts/extract-swift-foundation-symbol-graphs.sh\""
+"preflight": "bash \"$DOCS_ROOT/scripts/extract-swift-foundation-symbol-graphs.sh\""
 ```
 
 A non-zero exit fails the source.
@@ -77,7 +77,7 @@ Give the first source a `repo` and a `ref`, and have later sources name it:
   "repo": "https://github.com/swiftlang/swift-foundation.git",
   "ref": "main",
   "docc_catalog": "Sources/FoundationEssentials/FoundationEssentials.docc",
-  "preflight": "sh \"$DOCS_ROOT/scripts/extract-swift-foundation-symbol-graphs.sh\"",
+  "preflight": "bash \"$DOCS_ROOT/scripts/extract-swift-foundation-symbol-graphs.sh\"",
   "additional_symbol_graph_dir": ".build/symbols/FoundationEssentials"
 },
 {

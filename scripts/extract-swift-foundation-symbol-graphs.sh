@@ -13,30 +13,21 @@
 ##
 ##===----------------------------------------------------------------------===##
 #
-# Phase 1 of building swift-foundation's documentation: clone the repo, build
-# it, and extract symbol graphs for FoundationEssentials and
-# FoundationInternationalization. This is as far as this script goes.
+# Builds swift-foundation and extracts symbol graphs for FoundationEssentials
+# and FoundationInternationalization into .build/symbols/<Module>.
 #
-# `swift package generate-documentation` crashes on swift-foundation
-# (rdar://181833559), so it can't use the plugin path every other package in
-# sources.json uses. Instead, build_docs.py's `docc_catalog` +
-# `additional_symbol_graph_dir` fields (see sources.json's
-# swift-foundation-essentials / swift-foundation-internationalization
-# entries) pick up where this script leaves off: they run `docc convert`
-# directly against the symbol graphs this script produces, and fold the
-# result into the combined archive like any other source.
+# Run this from the root of a swift-foundation checkout. build_docs.py does
+# that for you: sources.json's swift-foundation-essentials entry names this
+# script as its `preflight`, and the swift-foundation-internationalization
+# entry reuses that checkout with `reuse_checkout`.
+#
+# `swift package generate-documentation` currently crashes on swift-foundation,
+# so it can't use the plugin path every other package in sources.json uses. Instead, `docc_catalog` + `additional_symbol_graph_dir`
+# make build_docs.py run `docc convert` directly against the symbol graphs
+# this script produces, and fold the result into the combined archive like
+# any other source. Drop this script once the plugin works on swift-foundation.
 
 set -e
-
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-WORKSPACE_DIR="$ROOT_DIR/.workspace"
-SOURCE_DIR="$WORKSPACE_DIR/swift-foundation"
-
-# TODO: switch to the upstream repo/ref once
-# https://github.com/swiftlang/swift-foundation/pull/2209 merges.
-GIT_REPO="https://github.com/invalidname/swift-foundation.git"
-GIT_REF="invalidname/docs-initial-curation-183033099"
 
 # `swift-symbolgraph-extract` is on PATH directly on Linux, but only
 # reachable via `xcrun` on macOS (mirrors build_docs.py's discover_tools()).
@@ -65,22 +56,6 @@ else
     ICU_EXTRA_INCLUDE_FLAGS=""
 fi
 
-mkdir -p "$WORKSPACE_DIR"
-
-if [ -d "$SOURCE_DIR/.git" ]; then
-    echo "Updating existing clone (ref: ${GIT_REF})..."
-    git -C "$SOURCE_DIR" fetch --quiet origin "$GIT_REF"
-    git -C "$SOURCE_DIR" checkout --quiet "$GIT_REF" \
-        || git -C "$SOURCE_DIR" checkout --quiet -b "$GIT_REF" "origin/$GIT_REF"
-    git -C "$SOURCE_DIR" reset --quiet --hard "origin/$GIT_REF"
-    git -C "$SOURCE_DIR" clean --quiet -fdx
-else
-    echo "Cloning ${GIT_REPO} (ref: ${GIT_REF})..."
-    git clone --quiet --branch "$GIT_REF" "$GIT_REPO" "$SOURCE_DIR"
-fi
-
-cd "$SOURCE_DIR"
-
 echo "Building swift-foundation..."
 # `swift build` is currently known to exit non-zero on Linux nightly
 # toolchains, failing at/near the very last build step with a bare
@@ -97,6 +72,7 @@ rm -rf .build/symbols
 mkdir -p .build/symbols/FoundationEssentials .build/symbols/FoundationInternationalization
 
 echo "Extracting FoundationEssentials symbol graph..."
+# shellcheck disable=SC2086 # the flag variables are intentionally word-split
 $SYMBOLGRAPH_EXTRACT -pretty-print -module-name FoundationEssentials \
     -output-dir .build/symbols/FoundationEssentials \
     -I .build/debug \
@@ -107,6 +83,7 @@ $SYMBOLGRAPH_EXTRACT -pretty-print -module-name FoundationEssentials \
 # See the platform-specific ICU_EXTRA_INCLUDE_FLAGS comment above for why
 # that flag is conditional rather than always present or always absent.
 echo "Extracting FoundationInternationalization symbol graph..."
+# shellcheck disable=SC2086 # the flag variables are intentionally word-split
 $SYMBOLGRAPH_EXTRACT -pretty-print -module-name FoundationInternationalization \
     -output-dir .build/symbols/FoundationInternationalization \
     -I .build/debug \
@@ -116,4 +93,4 @@ $SYMBOLGRAPH_EXTRACT -pretty-print -module-name FoundationInternationalization \
     $SDK_FLAGS \
     -emit-extension-block-symbols
 
-echo "Done. Symbol graphs ready under ${SOURCE_DIR}/.build/symbols/"
+echo "Done. Symbol graphs ready under $(pwd)/.build/symbols/"

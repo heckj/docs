@@ -846,6 +846,9 @@ class BuildDoccCatalogAdditionalSymbolGraphDir(unittest.TestCase):
         }
         if additional_symbol_graph_dir is not None:
             source["additional_symbol_graph_dir"] = additional_symbol_graph_dir
+            graph_dir = source_dir / additional_symbol_graph_dir
+            graph_dir.mkdir(parents=True)
+            (graph_dir / "Foo.symbols.json").write_text("{}")
 
         temp_archive_dir = tmp_path / "_archives"
         temp_archive_dir.mkdir()
@@ -3648,6 +3651,322 @@ class CurateLandingPage(unittest.TestCase):
             curate_navigator.curate_navigator(archive, self._nav())
             twice = page.read_bytes()
         self.assertEqual(once, twice)
+
+
+def _git_source(source_id="swift-foundation-essentials", ref="main", **extra):
+    entry = {
+        "id": source_id,
+        "type": "git",
+        "repo": "https://github.com/swiftlang/swift-foundation.git",
+        "ref": ref,
+        "docc_catalog": "Sources/A/A.docc",
+    }
+    entry.update(extra)
+    return entry
+
+
+def _reusing_source(source_id="swift-foundation-internationalization", **extra):
+    entry = {
+        "id": source_id,
+        "type": "git",
+        "reuse_checkout": "swift-foundation-essentials",
+        "docc_catalog": "Sources/B/B.docc",
+    }
+    entry.update(extra)
+    return entry
+
+
+def _wrap_many(*entries):
+    return {"version": {"slug": "main"}, "sources": list(entries)}
+
+
+class ValidateReuseCheckout(unittest.TestCase):
+    def test_valid_when_it_names_an_earlier_git_source(self):
+        config = _wrap_many(_git_source(), _reusing_source())
+        self.assertIsNone(_validate(config))
+
+    def test_repo_and_ref_not_required_when_reusing(self):
+        output = _validate(_wrap_many(_git_source(), _reusing_source()))
+        self.assertIsNone(output)
+
+    def test_repo_rejected_when_reusing(self):
+        entry = _reusing_source(repo="https://example.com/x.git")
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+        self.assertIn("repo", output)
+
+    def test_ref_rejected_when_reusing(self):
+        entry = _reusing_source(ref="main")
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+
+    def test_unknown_id_rejected(self):
+        entry = _reusing_source(reuse_checkout="nope")
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIsNotNone(output)
+        self.assertIn("nope", output)
+
+    def test_forward_reference_rejected(self):
+        output = _validate(_wrap_many(_reusing_source(), _git_source()))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+
+    def test_self_reference_rejected(self):
+        entry = _reusing_source(
+            source_id="a", reuse_checkout="a"
+        )
+        output = _validate(_wrap_many(entry))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+
+    def test_target_must_be_git_source(self):
+        local = {
+            "id": "swift-foundation-essentials",
+            "type": "local",
+            "path": "x",
+            "docc_catalog": "A.docc",
+        }
+        output = _validate(_wrap_many(local, _reusing_source()))
+        self.assertIsNotNone(output)
+        self.assertIn("git", output)
+
+    def test_non_string_rejected(self):
+        entry = _reusing_source(reuse_checkout=5)
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+
+    def test_rejected_on_local_source(self):
+        entry = {
+            "id": "b",
+            "type": "local",
+            "path": "b",
+            "docc_catalog": "B.docc",
+            "reuse_checkout": "swift-foundation-essentials",
+        }
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+
+    def test_rejected_on_archive_source(self):
+        entry = {
+            "id": "stdlib",
+            "type": "archive",
+            "url": "https://example.com/Swift.doccarchive.tar.gz",
+            "docc_archive_name": "Swift.doccarchive",
+            "reuse_checkout": "swift-foundation-essentials",
+        }
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIsNotNone(output)
+        self.assertIn("reuse_checkout", output)
+
+    def test_git_without_repo_or_ref_still_rejected_without_reuse(self):
+        entry = _reusing_source()
+        del entry["reuse_checkout"]
+        output = _validate(_wrap_many(_git_source(), entry))
+        self.assertIn("repo", output)
+        self.assertIn("ref", output)
+
+
+def _make_git_checkout(path):
+    path.mkdir(parents=True)
+    for cmd in (
+        ["git", "init", "--quiet", "-b", "main"],
+        # Uses the invoking user's git identity. Signing is off for this
+        # throwaway repo so the tests never prompt for a key.
+        ["git", "-c", "commit.gpgsign=false",
+         "commit", "--quiet", "--allow-empty", "-m", "init"],
+    ):
+        subprocess.run(cmd, cwd=str(path), check=True)
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=str(path),
+        capture_output=True, text=True, check=True,
+    )
+    return result.stdout.strip()
+
+
+class BuildSourceReuseCheckout(unittest.TestCase):
+    def _build(self, tmp_path, source, sources=None, **patches):
+        with mock.patch("build_docs.clone_or_update") as clone, \
+                mock.patch(
+                    "build_docs._build_docc_catalog", return_value=[]
+                ) as catalog:
+            result = build_docs.build_source(
+                source,
+                root_dir=tmp_path,
+                workspace=tmp_path / "workspace",
+                common_dir=tmp_path,
+                temp_archive_dir=tmp_path / "_archives",
+                docc_cmd=[],
+                env={},
+                sources=sources,
+            )
+        return result, clone, catalog
+
+    def test_uses_the_named_sources_checkout_without_cloning(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            commit = _make_git_checkout(tmp_path / "workspace" / "swift-foundation-essentials")
+            sources = [_git_source(ref="release/6.4.x"), _reusing_source()]
+
+            (_, entry), clone, catalog = self._build(tmp_path, sources[1], sources)
+
+            clone.assert_not_called()
+            used_dir = catalog.call_args.args[1]
+            self.assertEqual(
+                used_dir, tmp_path / "workspace" / "swift-foundation-essentials"
+            )
+            self.assertEqual(entry["id"], "swift-foundation-internationalization")
+            self.assertEqual(entry["type"], "git")
+            self.assertEqual(entry["ref"], "release/6.4.x")
+            self.assertEqual(entry["commit"], commit)
+
+    def test_missing_checkout_names_the_source_to_build_first(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            sources = [_git_source(), _reusing_source()]
+            with self.assertRaises(RuntimeError) as ctx:
+                self._build(tmp_path, sources[1], sources)
+            self.assertIn("swift-foundation-essentials", str(ctx.exception))
+
+
+class BuildSourcePreflightEnv(unittest.TestCase):
+    def test_preflight_sees_docs_root(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            source_dir = tmp_path / "checkout"
+            source_dir.mkdir()
+            out = tmp_path / "out.txt"
+            source = _git_source(preflight=f'printf %s "$DOCS_ROOT" > {out}')
+            with mock.patch("build_docs.clone_or_update", return_value=source_dir), \
+                    mock.patch("build_docs._build_docc_catalog", return_value=[]):
+                build_docs.build_source(
+                    source,
+                    root_dir=tmp_path,
+                    workspace=tmp_path / "workspace",
+                    common_dir=tmp_path,
+                    temp_archive_dir=tmp_path / "_archives",
+                    docc_cmd=[],
+                    env={},
+                )
+            self.assertEqual(out.read_text(), str(tmp_path))
+
+
+class BuildDoccCatalogSymbolGraphDir(unittest.TestCase):
+    def _convert(self, tmp_path, graph_dir_setup):
+        source_dir = tmp_path / "checkout"
+        (source_dir / "A.docc").mkdir(parents=True)
+        graph_dir_setup(source_dir / "graphs")
+        source = {
+            "id": "a",
+            "type": "git",
+            "docc_catalog": "A.docc",
+            "additional_symbol_graph_dir": "graphs",
+        }
+        with mock.patch("build_docs.install_templates"), \
+                mock.patch("build_docs.subprocess.run") as run:
+            build_docs._build_docc_catalog(
+                source, source_dir, tmp_path, tmp_path / "_archives",
+                ["docc"], {},
+            )
+        return run
+
+    def test_missing_directory_fails_before_running_docc(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(RuntimeError) as ctx:
+                self._convert(Path(tmp), lambda d: None)
+            self.assertIn("graphs", str(ctx.exception))
+
+    def test_empty_directory_fails_before_running_docc(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(RuntimeError):
+                self._convert(Path(tmp), lambda d: d.mkdir())
+
+
+def _git(path, *args):
+    # Uses the invoking user's git identity. Signing is off for these
+    # throwaway repos so the tests never prompt for a key.
+    result = subprocess.run(
+        ["git", "-c", "commit.gpgsign=false", "-c", "tag.gpgsign=false",
+         "-C", str(path), *args],
+        capture_output=True, text=True, check=True,
+    )
+    return result.stdout.strip()
+
+
+def _commit_file(repo, name, text, message):
+    (repo / name).write_text(text)
+    _git(repo, "add", name)
+    _git(repo, "commit", "--quiet", "-m", message)
+    return _git(repo, "rev-parse", "HEAD")
+
+
+class CloneOrUpdate(unittest.TestCase):
+    """clone_or_update against real local repos, including dirty caches."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        tmp = Path(self._tmp.name)
+        self.remote = tmp / "remote"
+        self.remote.mkdir()
+        _git(self.remote, "init", "--quiet", "-b", "main")
+        self.main_commit = _commit_file(self.remote, "f.txt", "main\n", "main")
+        _git(self.remote, "tag", "v1")
+        _git(self.remote, "checkout", "--quiet", "-b", "release")
+        self.release_commit = _commit_file(
+            self.remote, "f.txt", "release\n", "release"
+        )
+        _git(self.remote, "checkout", "--quiet", "main")
+        self.workspace = tmp / "workspace"
+        self.workspace.mkdir()
+        self.source = {"id": "src", "repo": str(self.remote)}
+
+    def _sync(self, ref):
+        return build_docs.clone_or_update(self.source, self.workspace, ref)
+
+    def _head(self, source_dir):
+        return _git(source_dir, "rev-parse", "HEAD")
+
+    def test_fresh_clone_checks_out_the_branch(self):
+        source_dir = self._sync("release")
+        self.assertEqual(self._head(source_dir), self.release_commit)
+
+    def test_update_picks_up_new_upstream_commits(self):
+        source_dir = self._sync("main")
+        new_commit = _commit_file(self.remote, "f.txt", "newer\n", "newer")
+        self._sync("main")
+        self.assertEqual(self._head(source_dir), new_commit)
+
+    def test_update_switches_ref_despite_dirty_tracked_file(self):
+        # Mirrors add_docc_plugin editing Package.swift in a cached clone.
+        source_dir = self._sync("main")
+        (source_dir / "f.txt").write_text("edited by a previous build\n")
+        self._sync("release")
+        self.assertEqual(self._head(source_dir), self.release_commit)
+        self.assertEqual((source_dir / "f.txt").read_text(), "release\n")
+
+    def test_update_removes_untracked_files(self):
+        source_dir = self._sync("main")
+        (source_dir / "generated.md").write_text("stale")
+        self._sync("main")
+        self.assertFalse((source_dir / "generated.md").exists())
+
+    def test_update_follows_a_tag(self):
+        source_dir = self._sync("release")
+        self._sync("v1")
+        self.assertEqual(self._head(source_dir), self.main_commit)
+
+    def test_update_survives_an_upstream_force_push(self):
+        source_dir = self._sync("release")
+        _git(self.remote, "checkout", "--quiet", "release")
+        _git(self.remote, "reset", "--quiet", "--hard", "main")
+        rewritten = _commit_file(self.remote, "f.txt", "rewritten\n", "rewrite")
+        _git(self.remote, "checkout", "--quiet", "main")
+        self._sync("release")
+        self.assertEqual(self._head(source_dir), rewritten)
 
 
 if __name__ == "__main__":
